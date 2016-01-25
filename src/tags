@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
+DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
+OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
+SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
+TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
+TEXHEIGHT	ATFViewer.cpp	32;"	d	file:
+TEXWIDTH	ATFViewer.cpp	31;"	d	file:
+display	ATFViewer.cpp	/^void display(void)$/;"	f
+init	ATFViewer.cpp	/^void init(void)$/;"	f
+main	ATFViewer.cpp	/^int main(int argc, char *argv[])$/;"	f
+resize	ATFViewer.cpp	/^void resize(int w, int h)$/;"	f
