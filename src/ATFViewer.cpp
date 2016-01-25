@@ -24,7 +24,7 @@
 
 #include <iostream>
 #include <cstdio>
-
+#include <cmath>
 #include <GL/glut.h>
 
 
@@ -32,6 +32,14 @@
 #define TEXHEIGHT (600)
 
 using namespace std;
+
+#define PI (3.14159265358979)
+
+GLdouble camera_r=30.0;
+GLdouble camera_theta=300.0*PI/180.0;
+GLdouble camera_phi=60.0*PI/180.0;
+GLdouble camera_target[]={0.0,0.0,0.0};
+
 
 void display(void)
 {
@@ -42,9 +50,12 @@ void display(void)
 	
 	//ビュー変換行列の設定
 	//カメラの位置、向きの設定
+	double cx=camera_target[0] + camera_r * cos(camera_phi) * cos(camera_theta);
+	double cy=camera_target[1] + camera_r * cos(camera_phi) * sin(camera_theta);
+	double cz=camera_target[2] + camera_r * sin(camera_phi);
 	gluLookAt(
-			10.0, -50.0, 30.0,//カメラの位置
-			0.0,   0.0,  0.0,//視点の位置
+			cx,cy,cz,//カメラの位置
+			camera_target[0],camera_target[1],camera_target[2],//視点の位置
 			0.0,   0.0,  1.0 //カメラから見た垂直方向
 			);
 	
@@ -82,10 +93,10 @@ void display(void)
 
 	//世界地図の枠を描く
 	glBegin(GL_LINE_LOOP);
-	glVertex3d(-180.0, 90.0,0.0);
-	glVertex3d(-180.0,-90.0,0.0);
-	glVertex3d( 180.0,-90.0,0.0);
-	glVertex3d( 180.0, 90.0,0.0);
+	glVertex3d( 90.0,90.0,0.0);//-180.0, 90.0,0.0);
+	glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
+	glVertex3d(180.0, 0.0,0.0);// 180.0,-90.0,0.0);
+	glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
 	glEnd();
 	
 
@@ -94,11 +105,12 @@ void display(void)
 	for (int i = 0; i < 10; i++)
 	{
 		double id = (double)i;
+		double d = 0.1;
 		glBegin(GL_LINE_LOOP);
-		glVertex3d(haneda_x-1.0, haneda_y-1.0,5000.0*id);
-		glVertex3d(haneda_x+1.0, haneda_y-1.0,5000.0*id);
-		glVertex3d(haneda_x+1.0, haneda_y+1.0,5000.0*id);
-		glVertex3d(haneda_x-1.0, haneda_y+1.0,5000.0*id);
+		glVertex3d(haneda_x-d, haneda_y-d, 5000.0*id);
+		glVertex3d(haneda_x+d, haneda_y-d, 5000.0*id);
+		glVertex3d(haneda_x+d, haneda_y+d, 5000.0*id);
+		glVertex3d(haneda_x-d, haneda_y+d, 5000.0*id);
 		glEnd();
 	}
 	glBegin(GL_LINE_LOOP);
@@ -109,6 +121,32 @@ void display(void)
 	glEnd();
 	
 
+	//航空機の軌道っぽいものを描く
+	static const GLdouble trj[][3]
+		={
+			{139.0, 35.0,     0.0},
+			{139.0, 36.0,  1000.0},
+			{139.0, 37.0,  5000.0},
+			{140.0, 38.0, 10000.0},
+			{141.0, 36.0, 30000.0},
+			{142.0, 35.0, 30000.0},
+			{143.0, 34.0, 15000.0},
+			{144.0, 33.0,  1000.0},
+			{144.0, 32.0,   500.0},
+			{144.0, 31.0,    0.0},
+		};
+	glBegin(GL_LINES);
+	for (int i = 0; i < 10-1; i++)
+	{
+		glVertex3d(trj[i  ][0],trj[i  ][1],trj[i  ][2]);
+		glVertex3d(trj[i+1][0],trj[i+1][1],trj[i+1][2]);
+		glVertex3d(trj[i  ][0],trj[i  ][1],trj[i  ][2]);
+		glVertex3d(trj[i  ][0],trj[i  ][1],        0.0);
+	}
+	glVertex3d(trj[9][0],trj[9][1],trj[9][2]);
+	glVertex3d(trj[9][0],trj[9][1],      0.0);
+	glEnd();
+	
 	glFlush();
 
 }
@@ -132,6 +170,49 @@ void resize(int w, int h)
 	//を行うための設定
 	glMatrixMode(GL_MODELVIEW);
 
+}
+
+void keyboard(unsigned char key, int x, int y)
+{
+	switch (key)
+	{
+	case 'f':
+		camera_target[0]+=1.0;
+		display();
+		break;
+	case 's':
+		camera_target[0]-=1.0;
+		display();
+		break;
+	case 'e':
+		camera_target[1]+=1.0;
+		display();
+		break;
+	case 'd':
+		camera_target[1]-=1.0;
+		display();
+		break;
+	case 'l':
+		camera_theta+=10.0*PI/180.0;
+		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
+		display();
+		break;
+	case 'j':
+		camera_theta-=10.0*PI/180.0;
+		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
+		display();
+		break;
+	case 'i':
+		camera_phi+=5.0*PI/180.0;
+		camera_phi = (camera_phi >80.0*PI/180.0) ? 80.0*PI/180.0 : camera_phi;
+		display();
+		break;
+	case 'k':
+		camera_phi-=5.0*PI/180.0;
+		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
+		display();
+		break;
+	}
 }
 
 void init(void)
@@ -177,6 +258,7 @@ int main(int argc, char *argv[])
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
 	glutReshapeFunc(resize);
+	glutKeyboardFunc(keyboard);
 	init();
 	glutMainLoop();
 	

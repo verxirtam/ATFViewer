@@ -4,7 +4,7 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS := -g -O0 -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
