@@ -27,6 +27,7 @@
 #include <cmath>
 #include <GL/glut.h>
 
+#include "DBAccessor.h"
 
 #define TEXWIDTH  (600)
 #define TEXHEIGHT (600)
@@ -212,6 +213,16 @@ void keyboard(unsigned char key, int x, int y)
 		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
 		display();
 		break;
+	case 'b':
+		camera_r/=0.875;
+		camera_r = (camera_r > 10000.0) ? 10000.0 : camera_r;
+		display();
+		break;
+	case ' ':
+		camera_r*=0.875;
+		camera_r = (camera_r < 1.0) ? 1.0 : camera_r;
+		display();
+		break;
 	}
 }
 
@@ -253,6 +264,7 @@ void init(void)
 
 int main(int argc, char *argv[])
 {
+	/* 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA);
 	glutCreateWindow(argv[0]);
@@ -261,8 +273,19 @@ int main(int argc, char *argv[])
 	glutKeyboardFunc(keyboard);
 	init();
 	glutMainLoop();
-	
-	
+	*/
+	cout<<"dba() before"<<endl;
+	DBAccessor dba(std::string("../../db/ATFViewer.db"));
+	cout<<"dba() after, setQuery() before"<<endl;
+	dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
+	cout<<"setQuery() after, step_select() before"<<endl;
+	while(SQLITE_ROW == dba.step_select())
+	{
+		cout<<"("<<dba.getColumnDouble(0)<<",";
+		cout<<dba.getColumnDouble(1)<<",";
+		cout<<dba.getColumnInt(2)<<",";
+		cout<<dba.getColumnInt(3)<<")"<<endl;
+	}
 	
 	return 0;
 }
