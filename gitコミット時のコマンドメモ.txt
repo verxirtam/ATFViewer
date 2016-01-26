@@ -1,0 +1,7 @@
+gitコミット時のコマンドメモ
+~/programs/ATFViewer/ATFViewer$ git commit -a -m "キーボードで移動できるようにした"
+~/programs/ATFViewer/ATFViewer$ git push -u origin master
+
+状態取得
+~/programs/ATFViewer/ATFViewer$ git status
+
