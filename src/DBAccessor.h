@@ -97,7 +97,7 @@ public:
 	{
 		return sqlite3_column_int(stmt,i);
 	}
-	long getColumnLong(int i)
+	long long getColumnLongLong(int i)
 	{
 		return (long long)sqlite3_column_int64(stmt,i);
 	}

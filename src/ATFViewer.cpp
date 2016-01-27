@@ -27,6 +27,8 @@
 #include <cmath>
 #include <GL/glut.h>
 
+#include <vector>
+
 #include "DBAccessor.h"
 
 #define TEXWIDTH  (600)
@@ -41,6 +43,23 @@ GLdouble camera_theta=300.0*PI/180.0;
 GLdouble camera_phi=60.0*PI/180.0;
 GLdouble camera_target[]={0.0,0.0,0.0};
 
+
+struct PathPoint
+{
+	double longitude;
+	double latitude;
+	int altitude;
+	long long time;
+	PathPoint(double lo,double la, int a, long long t)
+	{
+		longitude=lo;
+		latitude=la;
+		altitude=a;
+		time=t;
+	}
+};
+
+vector<PathPoint> path;
 
 void display(void)
 {
@@ -123,29 +142,17 @@ void display(void)
 	
 
 	//航空機の軌道っぽいものを描く
-	static const GLdouble trj[][3]
-		={
-			{139.0, 35.0,     0.0},
-			{139.0, 36.0,  1000.0},
-			{139.0, 37.0,  5000.0},
-			{140.0, 38.0, 10000.0},
-			{141.0, 36.0, 30000.0},
-			{142.0, 35.0, 30000.0},
-			{143.0, 34.0, 15000.0},
-			{144.0, 33.0,  1000.0},
-			{144.0, 32.0,   500.0},
-			{144.0, 31.0,    0.0},
-		};
 	glBegin(GL_LINES);
-	for (int i = 0; i < 10-1; i++)
+	int path_size=path.size();
+	for (int i = 0; i < path_size-1; i++)
 	{
-		glVertex3d(trj[i  ][0],trj[i  ][1],trj[i  ][2]);
-		glVertex3d(trj[i+1][0],trj[i+1][1],trj[i+1][2]);
-		glVertex3d(trj[i  ][0],trj[i  ][1],trj[i  ][2]);
-		glVertex3d(trj[i  ][0],trj[i  ][1],        0.0);
+		glVertex3d(path[i  ].longitude, path[i  ].latitude, path[i  ].altitude);
+		glVertex3d(path[i+1].longitude, path[i+1].latitude, path[i+1].altitude);
+		glVertex3d(path[i  ].longitude, path[i  ].latitude, path[i  ].altitude);
+		glVertex3d(path[i  ].longitude, path[i  ].latitude, 0.0);
 	}
-	glVertex3d(trj[9][0],trj[9][1],trj[9][2]);
-	glVertex3d(trj[9][0],trj[9][1],      0.0);
+	glVertex3d(path[path_size-1].longitude, path[path_size-1].latitude, path[path_size-1].altitude);
+	glVertex3d(path[path_size-1].longitude, path[path_size-1].latitude, 0.0);
 	glEnd();
 	
 	glFlush();
@@ -226,9 +233,29 @@ void keyboard(unsigned char key, int x, int y)
 	}
 }
 
+void initPathPoint()
+{
+	
+	cout<<"dba() before"<<endl;
+	DBAccessor dba(std::string("../../db/ATFViewer.db"));
+	cout<<"dba() after, setQuery() before"<<endl;
+	dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
+	cout<<"setQuery() after, step_select() before"<<endl;
+	while(SQLITE_ROW == dba.step_select())
+	{
+		double lo=dba.getColumnDouble(0);
+		double la=dba.getColumnDouble(1);
+		int a=dba.getColumnInt(2);
+		long long t=dba.getColumnLongLong(3);
+		path.push_back(PathPoint(lo,la,a,t));
+	}
+}
+
 void init(void)
 {
- 
+	
+	initPathPoint();
+	
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 
 	//テクスチャの読み込み
@@ -262,9 +289,9 @@ void init(void)
 	glEnable(GL_LIGHT0);
 }
 
+
 int main(int argc, char *argv[])
 {
-	/* 
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGBA);
 	glutCreateWindow(argv[0]);
@@ -273,19 +300,6 @@ int main(int argc, char *argv[])
 	glutKeyboardFunc(keyboard);
 	init();
 	glutMainLoop();
-	*/
-	cout<<"dba() before"<<endl;
-	DBAccessor dba(std::string("../../db/ATFViewer.db"));
-	cout<<"dba() after, setQuery() before"<<endl;
-	dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
-	cout<<"setQuery() after, step_select() before"<<endl;
-	while(SQLITE_ROW == dba.step_select())
-	{
-		cout<<"("<<dba.getColumnDouble(0)<<",";
-		cout<<dba.getColumnDouble(1)<<",";
-		cout<<dba.getColumnInt(2)<<",";
-		cout<<dba.getColumnInt(3)<<")"<<endl;
-	}
 	
 	return 0;
 }
