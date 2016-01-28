@@ -59,7 +59,7 @@ struct PathPoint
 	}
 };
 
-vector<PathPoint> path;
+vector<vector<PathPoint> > paths;
 
 void display(void)
 {
@@ -80,8 +80,8 @@ void display(void)
 			);
 	
 	//光源の設定
-	const static GLfloat light0pos[] = { 0.0, 0.0, 100.0, 1.0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, light0pos);
+	//const static GLfloat light0pos[] = { 0.0, 0.0, 100.0, 1.0 };
+	//glLightfv(GL_LIGHT0, GL_POSITION, light0pos);
 	
 	//モデリング変換行列の設定
 	//羽田がワールド座標系の原点に来るように平行移動する
@@ -91,13 +91,14 @@ void display(void)
 	//モデル座標は経緯度-feetのサイズになっているので
 	//地図っぽくスケーリングする
 	//経緯度はそのままで行けそうなので、feetのみ変更
-	//40000feetが4cmになるように1/10000に縮小する
-	glScaled(1.0,1.0,0.0001);
+	//40000feetが2cmになるように1/20000に縮小する
+	glScaled(1.0,1.0,0.00005);
 	
 	//世界地図を描く
 	//材質の設定
-	static const GLfloat color[] = { 1.0, 1.0, 1.0, 1.0 };
-	glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
+	//static const GLfloat color[] = { 1.0, 1.0, 1.0, 1.0 };
+	//glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
+	glColor3d(1.0,1.0,1.0);
 	glEnable(GL_TEXTURE_2D);
 	glBegin(GL_TRIANGLES);
 	glNormal3d(0.0,0.0,1.0);
@@ -121,12 +122,12 @@ void display(void)
 	
 
 	//羽田の上空にシンボルを描く
-	glColor3d(1.0,1.0,1.0);
 	for (int i = 0; i < 10; i++)
 	{
 		double id = (double)i;
 		double d = 0.1;
 		glBegin(GL_LINE_LOOP);
+		glColor3d(1.0,1.0,0.0);
 		glVertex3d(haneda_x-d, haneda_y-d, 5000.0*id);
 		glVertex3d(haneda_x+d, haneda_y-d, 5000.0*id);
 		glVertex3d(haneda_x+d, haneda_y+d, 5000.0*id);
@@ -134,6 +135,7 @@ void display(void)
 		glEnd();
 	}
 	glBegin(GL_LINE_LOOP);
+	glColor3d(1.0,1.0,1.0);
 	glVertex3d(haneda_x-10.0, haneda_y-10.0,0.0);
 	glVertex3d(haneda_x+10.0, haneda_y-10.0,0.0);
 	glVertex3d(haneda_x+10.0, haneda_y+10.0,0.0);
@@ -142,19 +144,31 @@ void display(void)
 	
 
 	//航空機の軌道っぽいものを描く
-	glBegin(GL_LINES);
-	int path_size=path.size();
-	for (int i = 0; i < path_size-1; i++)
+	for (unsigned int n = 0; n < paths.size(); n++)
 	{
-		glVertex3d(path[i  ].longitude, path[i  ].latitude, path[i  ].altitude);
-		glVertex3d(path[i+1].longitude, path[i+1].latitude, path[i+1].altitude);
-		glVertex3d(path[i  ].longitude, path[i  ].latitude, path[i  ].altitude);
-		glVertex3d(path[i  ].longitude, path[i  ].latitude, 0.0);
+		glBegin(GL_LINES);
+		int path_size=paths[n].size();
+		for (int i = 0; i < path_size-1; i++)
+		{
+			double c=((double)paths[n][i].altitude)/40000.0;
+			c=c*c;
+			glColor3d(c,0.5,1.0-c);
+			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, paths[n][i  ].altitude);
+			double c1=((double)paths[n][i+1].altitude)/40000.0;
+			c1=c1*c1;
+			glColor3d(c1,0.5,1.0-c1);
+			glVertex3d(paths[n][i+1].longitude, paths[n][i+1].latitude, paths[n][i+1].altitude);
+			glColor3d(c,0.5,1.0-c);
+			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, paths[n][i  ].altitude);
+			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, 0.0);
+		}
+		double c=((double)paths[n][path_size-1].altitude)/40000.0;
+		glColor3d(c,0.5,1.0-c);
+		glVertex3d(paths[n][path_size-1].longitude, paths[n][path_size-1].latitude, paths[n][path_size-1].altitude);
+		glVertex3d(paths[n][path_size-1].longitude, paths[n][path_size-1].latitude, 0.0);
+		glEnd();
 	}
-	glVertex3d(path[path_size-1].longitude, path[path_size-1].latitude, path[path_size-1].altitude);
-	glVertex3d(path[path_size-1].longitude, path[path_size-1].latitude, 0.0);
-	glEnd();
-	
+
 	glFlush();
 
 }
@@ -239,15 +253,30 @@ void initPathPoint()
 	cout<<"dba() before"<<endl;
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
-	dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
+	//dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
+	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453278410 and time<1453279000 order by id,time;"));
 	cout<<"setQuery() after, step_select() before"<<endl;
+	
+	//パスのインデックス
+	int n=-1;
+	//直前に読み込んだid
+	//id毎にvectorに格納するため
+	std::string old_id("");
+	
 	while(SQLITE_ROW == dba.step_select())
 	{
-		double lo=dba.getColumnDouble(0);
-		double la=dba.getColumnDouble(1);
-		int a=dba.getColumnInt(2);
-		long long t=dba.getColumnLongLong(3);
-		path.push_back(PathPoint(lo,la,a,t));
+		std::string id(dba.getColumnString(0));
+		double lo=dba.getColumnDouble(1);
+		double la=dba.getColumnDouble(2);
+		int a=dba.getColumnInt(3);
+		long long t=dba.getColumnLongLong(4);
+		if(id != old_id)
+		{
+			n++;
+			paths.push_back(vector<PathPoint>());
+			old_id = id;
+		}
+		paths[n].push_back(PathPoint(lo,la,a,t));
 	}
 }
 
@@ -285,8 +314,8 @@ void init(void)
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
+	//glEnable(GL_LIGHTING);
+	//glEnable(GL_LIGHT0);
 }
 
 
