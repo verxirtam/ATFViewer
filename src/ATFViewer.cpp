@@ -63,7 +63,7 @@ vector<vector<PathPoint> > paths;
 
 void display(void)
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	//モデルビュー変換行列の初期化
 	glLoadIdentity();
@@ -144,31 +144,40 @@ void display(void)
 	
 
 	//航空機の軌道っぽいものを描く
+	//隠面消去を無効にする
+	//アルファブレンドで奥の透明オブジェクトが描画されないことがあるため
+	//また、軌道の手前に描かれるオブジェクトがないため最後に描画すれば前後関係は崩れない
+	glDisable(GL_DEPTH_TEST);
+	//アルファブレンド有効化
+	glEnable(GL_BLEND);
+	//アルファブレンドの方法を指定
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//航空機毎に軌道を描画する
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
-		glBegin(GL_LINES);
+		glBegin(GL_TRIANGLE_STRIP);
+		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].size();
 		for (int i = 0; i < path_size-1; i++)
 		{
+			//航空機の高度に応じて色を設定する
+			//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
 			double c=((double)paths[n][i].altitude)/40000.0;
 			c=c*c;
-			glColor3d(c,0.5,1.0-c);
+			glColor4d(c,0.5,1.0-c,0.5-c*0.5);
 			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, paths[n][i  ].altitude);
-			double c1=((double)paths[n][i+1].altitude)/40000.0;
-			c1=c1*c1;
-			glColor3d(c1,0.5,1.0-c1);
-			glVertex3d(paths[n][i+1].longitude, paths[n][i+1].latitude, paths[n][i+1].altitude);
-			glColor3d(c,0.5,1.0-c);
-			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, paths[n][i  ].altitude);
+			glColor4d(c,0.5,1.0-c,0.0);
 			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, 0.0);
 		}
-		double c=((double)paths[n][path_size-1].altitude)/40000.0;
-		glColor3d(c,0.5,1.0-c);
-		glVertex3d(paths[n][path_size-1].longitude, paths[n][path_size-1].latitude, paths[n][path_size-1].altitude);
-		glVertex3d(paths[n][path_size-1].longitude, paths[n][path_size-1].latitude, 0.0);
 		glEnd();
 	}
+	//アルファブレンド無効化
+	glDisable(GL_BLEND);
+	//デプスバッファ有効化
+	glEnable(GL_DEPTH_TEST);
+	//航空機の軌道の描画完了
 
+	//オブジェクト描画コマンドを発行する
 	glFlush();
 
 }
@@ -254,7 +263,7 @@ void initPathPoint()
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
 	//dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
-	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453278410 and time<1453279000 order by id,time;"));
+	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453278410 and time<1453282000 order by id,time;"));
 	cout<<"setQuery() after, step_select() before"<<endl;
 	
 	//パスのインデックス
@@ -316,13 +325,16 @@ void init(void)
 
 	//glEnable(GL_LIGHTING);
 	//glEnable(GL_LIGHT0);
+	
+	//デプスバッファを使用する
+	glEnable(GL_DEPTH_TEST);
 }
 
 
 int main(int argc, char *argv[])
 {
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_RGBA);
+	glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
 	glutCreateWindow(argv[0]);
 	glutDisplayFunc(display);
 	glutReshapeFunc(resize);
