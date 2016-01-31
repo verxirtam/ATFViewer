@@ -43,6 +43,11 @@ GLdouble camera_theta=300.0*PI/180.0;
 GLdouble camera_phi=60.0*PI/180.0;
 GLdouble camera_target[]={0.0,0.0,0.0};
 
+GLdouble center_offset_long = 0.0;
+GLdouble center_offset_lat  = 0.0;
+GLdouble scale=1.0;
+
+time_t now;
 
 struct PathPoint
 {
@@ -61,6 +66,29 @@ struct PathPoint
 
 vector<vector<PathPoint> > paths;
 
+void drawPath(PathPoint& p)
+{
+	//航空機の高度に応じて色を設定する
+	//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
+	double c=((double)p.altitude)/40000.0;
+	double alfa = 1.0 - (((double)(now - p.time)) / 600.0);
+	c=c*c;
+	glColor4d(c, 0.5, 1.0 - c, alfa * (1.0 - c));
+	glVertex3d(p.longitude, p.latitude, p.altitude);
+	glColor4d(c,0.5,1.0-c,0.0);
+	glVertex3d(p.longitude, p.latitude, 0.0);
+}
+PathPoint getNowPoint(PathPoint& from, PathPoint& to)
+{
+	PathPoint ret(0.0, 0.0, 0, 0);
+	double ratio_from = 1.0 - ((double)(now - from.time))/((double)(to.time - from.time));
+	double ratio_to = 1.0 - ratio_from;
+	ret.longitude = ratio_from * from.longitude + ratio_to * to.longitude;
+	ret.latitude = ratio_from * from.latitude + ratio_to * to.latitude;
+	ret.altitude =(int)( ratio_from * ((double)from.altitude) + ratio_to * ((double)to.altitude));
+	ret.time = now;
+	return ret;
+}
 void display(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -83,16 +111,35 @@ void display(void)
 	//const static GLfloat light0pos[] = { 0.0, 0.0, 100.0, 1.0 };
 	//glLightfv(GL_LIGHT0, GL_POSITION, light0pos);
 	
+	
+	//クリッピング平面を設定
+	double cp[][4]=
+		{
+			{-1.0, 0.0, 0.0, 20.0},
+			{ 1.0, 0.0, 0.0, 20.0},
+			{ 0.0,-1.0, 0.0, 20.0},
+			{ 0.0, 1.0, 0.0, 20.0}
+		};
+	glClipPlane(GL_CLIP_PLANE0,cp[0]);
+	glClipPlane(GL_CLIP_PLANE1,cp[1]);
+	glClipPlane(GL_CLIP_PLANE2,cp[2]);
+	glClipPlane(GL_CLIP_PLANE3,cp[3]);
+	//クリッピング平面の設定
+	glEnable(GL_CLIP_PLANE0);
+	glEnable(GL_CLIP_PLANE1);
+	glEnable(GL_CLIP_PLANE2);
+	glEnable(GL_CLIP_PLANE3);
+	
 	//モデリング変換行列の設定
-	//羽田がワールド座標系の原点に来るように平行移動する
-	double haneda_x = 139.0 + ( 46.0/60.0 + 87.0/3600.0 );
-	double haneda_y =  35.0 + ( 33.0/60.0 + 20.0/3600.0 );
-	glTranslated( - haneda_x, - haneda_y, 0.0);
 	//モデル座標は経緯度-feetのサイズになっているので
 	//地図っぽくスケーリングする
 	//経緯度はそのままで行けそうなので、feetのみ変更
-	//40000feetが2cmになるように1/20000に縮小する
-	glScaled(1.0,1.0,0.00005);
+	//40000feetが4cmになるように1/10000に縮小する
+	glScaled(scale,scale,0.0001);
+	//羽田+offsetがワールド座標系の原点に来るように平行移動する
+	double haneda_x = 139.0 + ( 46.0/60.0 + 87.0/3600.0 );
+	double haneda_y =  35.0 + ( 33.0/60.0 + 20.0/3600.0 );
+	glTranslated( - haneda_x - center_offset_long, - haneda_y - center_offset_lat, 0.0);
 	
 	//世界地図を描く
 	//材質の設定
@@ -155,19 +202,29 @@ void display(void)
 	//航空機毎に軌道を描画する
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
+		//未来の軌道は描かない
+		if (paths[n][0].time > now)
+		{
+			continue;
+		}
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].size();
 		for (int i = 0; i < path_size-1; i++)
 		{
-			//航空機の高度に応じて色を設定する
-			//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
-			double c=((double)paths[n][i].altitude)/40000.0;
-			c=c*c;
-			glColor4d(c,0.5,1.0-c,0.5-c*0.5);
-			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, paths[n][i  ].altitude);
-			glColor4d(c,0.5,1.0-c,0.0);
-			glVertex3d(paths[n][i  ].longitude, paths[n][i  ].latitude, 0.0);
+			if(paths[n][i].time > now)
+			{
+				PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i]);
+				drawPath(now_point);
+				break;
+			}
+			else
+			{
+				if(paths[n][i].time >= (now - 600) )
+				{
+					drawPath(paths[n][i]);
+				}
+			}
 		}
 		glEnd();
 	}
@@ -177,6 +234,12 @@ void display(void)
 	glEnable(GL_DEPTH_TEST);
 	//航空機の軌道の描画完了
 
+	//クリッピング平面の無効化
+	glDisable(GL_CLIP_PLANE0);
+	glDisable(GL_CLIP_PLANE1);
+	glDisable(GL_CLIP_PLANE2);
+	glDisable(GL_CLIP_PLANE3);
+	
 	//オブジェクト描画コマンドを発行する
 	glFlush();
 
@@ -208,19 +271,23 @@ void keyboard(unsigned char key, int x, int y)
 	switch (key)
 	{
 	case 'f':
-		camera_target[0]+=1.0;
+		//camera_target[0]+=1.0;
+		center_offset_long += 1.0 / scale;
 		display();
 		break;
 	case 's':
-		camera_target[0]-=1.0;
+		//camera_target[0]-=1.0;
+		center_offset_long -= 1.0 / scale;
 		display();
 		break;
 	case 'e':
-		camera_target[1]+=1.0;
+		//camera_target[1]+=1.0;
+		center_offset_lat += 1.0 / scale;
 		display();
 		break;
 	case 'd':
-		camera_target[1]-=1.0;
+		//camera_target[1]-=1.0;
+		center_offset_lat -= 1.0 / scale;
 		display();
 		break;
 	case 'l':
@@ -244,13 +311,23 @@ void keyboard(unsigned char key, int x, int y)
 		display();
 		break;
 	case 'b':
-		camera_r/=0.875;
-		camera_r = (camera_r > 10000.0) ? 10000.0 : camera_r;
+		//camera_r/=0.875;
+		//camera_r = (camera_r > 10000.0) ? 10000.0 : camera_r;
+		scale*=0.875;
 		display();
 		break;
 	case ' ':
-		camera_r*=0.875;
-		camera_r = (camera_r < 1.0) ? 1.0 : camera_r;
+		//camera_r*=0.875;
+		//camera_r = (camera_r < 1.0) ? 1.0 : camera_r;
+		scale/=0.875;
+		display();
+		break;
+	case 't':
+		now+=10;
+		if (now > 1453270000)
+		{
+			now = 1453260000;
+		}
 		display();
 		break;
 	}
@@ -263,8 +340,11 @@ void initPathPoint()
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
 	//dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
-	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453278410 and time<1453282000 order by id,time;"));
+	//1時間分の軌道を取得する
+	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453260000 and time<1453270000 order by id,time;"));
 	cout<<"setQuery() after, step_select() before"<<endl;
+	
+	now = 1453260000;
 	
 	//パスのインデックス
 	int n=-1;
@@ -287,6 +367,7 @@ void initPathPoint()
 		}
 		paths[n].push_back(PathPoint(lo,la,a,t));
 	}
+	cout<<"initPathPoint() end"<<endl;
 }
 
 void init(void)
