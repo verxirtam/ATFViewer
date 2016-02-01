@@ -4,52 +4,44 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ATFViewerMain	ATFViewerMain.h	/^	ATFViewerMain()$/;"	f	class:ATFViewerMain
+ATFViewerMain	ATFViewerMain.h	/^class ATFViewerMain$/;"	c
+ATFViewerMain_H	ATFViewerMain.h	22;"	d
 CXXFLAGS	makefile	/^CXXFLAGS := -g -O0 -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
-PI	ATFViewer.cpp	39;"	d	file:
-PathPoint	ATFViewer.cpp	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
-PathPoint	ATFViewer.cpp	/^struct PathPoint$/;"	s	file:
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
-TEXHEIGHT	ATFViewer.cpp	35;"	d	file:
-TEXWIDTH	ATFViewer.cpp	34;"	d	file:
-altitude	ATFViewer.cpp	/^	int altitude;$/;"	m	struct:PathPoint	file:
+_display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
+_keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
+_resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
 begin	DBAccessor.h	/^	void begin()$/;"	f	class:DBAccessor
 bindDouble	DBAccessor.h	/^	void bindDouble(int i, double d)$/;"	f	class:DBAccessor
 bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
 bindLong	DBAccessor.h	/^	void bindLong(int i, long long d)$/;"	f	class:DBAccessor
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
-camera_phi	ATFViewer.cpp	/^GLdouble camera_phi=60.0*PI\/180.0;$/;"	v
-camera_target	ATFViewer.cpp	/^GLdouble camera_target[]={0.0,0.0,0.0};$/;"	v
-camera_theta	ATFViewer.cpp	/^GLdouble camera_theta=300.0*PI\/180.0;$/;"	v
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
-display	ATFViewer.cpp	/^void display(void)$/;"	f
-drawPath	ATFViewer.cpp	/^void drawPath(PathPoint& p)$/;"	f
+display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
+execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
-getNowPoint	ATFViewer.cpp	/^PathPoint getNowPoint(PathPoint& from, PathPoint& to)$/;"	f
-init	ATFViewer.cpp	/^void init(void)$/;"	f
-initPathPoint	ATFViewer.cpp	/^void initPathPoint()$/;"	f
-keyboard	ATFViewer.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
-latitude	ATFViewer.cpp	/^	double latitude;$/;"	m	struct:PathPoint	file:
-longitude	ATFViewer.cpp	/^	double longitude;$/;"	m	struct:PathPoint	file:
-main	ATFViewer.cpp	/^int main(int argc, char *argv[])$/;"	f
-now	ATFViewer.cpp	/^time_t now;$/;"	v
-paths	ATFViewer.cpp	/^vector<vector<PathPoint> > paths;$/;"	v
+getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
+init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
+initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
+keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
+main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
-resize	ATFViewer.cpp	/^void resize(int w, int h)$/;"	f
+resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(void)$/;"	f	class:ATFViewerMain
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
 step	DBAccessor.h	/^	void step()$/;"	f	class:DBAccessor
 step_select	DBAccessor.h	/^	int step_select()$/;"	f	class:DBAccessor
 stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
-time	ATFViewer.cpp	/^	long long time;$/;"	m	struct:PathPoint	file:
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor

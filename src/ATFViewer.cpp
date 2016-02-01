@@ -21,7 +21,7 @@
  * 机の上に地図を広げたイメージ
  * 高度方向は実寸だと見分けがつかないので拡大する
  * */
-
+/*
 #include <iostream>
 #include <cstdio>
 #include <cmath>
@@ -423,6 +423,18 @@ int main(int argc, char *argv[])
 	init();
 	glutMainLoop();
 	
+	return 0;
+}
+
+*/
+
+#include "ATFViewerMain.h"
+
+int main(int argc, char const* argv[])
+{
+	ATFViewerMain& a = ATFViewerMain::getInstance();
+	a.init();
+	a.execMainLoop();
 	return 0;
 }
 
