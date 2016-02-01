@@ -70,7 +70,10 @@ public:
 		int argc=0;
 		char* argv[]={};
 		//GLUTの初期化
-		glutInit(&argc,argv);
+		if( ! glutGet(GLUT_INIT_STATE) )
+		{
+			glutInit(&argc,argv);
+		}
 		//ディスプレイモードの設定
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
 		//ウィンドウの生成
