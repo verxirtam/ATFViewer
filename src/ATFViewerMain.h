@@ -21,19 +21,64 @@
 #ifndef ATFViewerMain_H
 #define ATFViewerMain_H
 
-#include <GL/glut.h>
+#include <iostream>
+#include <vector>
 #include <cstdio>
+#include <cmath>
+
+#include <GL/glut.h>
+
+#include "DBAccessor.h"
+
+struct PathPoint
+{
+	double longitude;
+	double latitude;
+	int altitude;
+	time_t time;
+	PathPoint(double lo,double la, int a, long long t)
+	{
+		longitude=lo;
+		latitude=la;
+		altitude=a;
+		time=t;
+	}
+};
+
+
 
 class ATFViewerMain
 {
 private:
+	const double PI;
+	GLdouble camera_r;
+	GLdouble camera_theta;
+	GLdouble camera_phi;
+	GLdouble camera_target[333];
+	GLdouble center_offset_long;
+	GLdouble center_offset_lat;
+	GLdouble scale;
+	std::vector<std::vector<PathPoint> > paths;
+	time_t now;
 	//初期化
-	ATFViewerMain()
+	ATFViewerMain():
+		PI(3.14159265358979),
+		camera_r(30.0),
+		camera_theta(300.0*PI/180.0),
+		camera_phi(60.0*PI/180.0),
+		center_offset_long(0.0),
+		center_offset_lat(0.0),
+		scale(1.0)
 	{
-		
+		camera_target[0]=0.0;
+		camera_target[1]=0.0;
+		camera_target[2]=0.0;
 	}
 	//シーンの初期化
 	void initScene(void);
+	void initPathPoint(void);
+	void drawPath(PathPoint& p);
+	PathPoint getNowPoint(PathPoint& from, PathPoint& to);
 	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない
 	ATFViewerMain(const ATFViewerMain& a);
 	ATFViewerMain& operator=(const ATFViewerMain& a);
@@ -45,7 +90,7 @@ private:
 	//画面のリサイズ時に実行される関数
 	static void _resize(int w, int h)
 	{
-		ATFViewerMain::getInstance().resize();
+		ATFViewerMain::getInstance().resize(w,h);
 	}
 	//キーボード入力時に実行される関数
 	static void _keyboard(unsigned char key, int x, int y)
@@ -55,7 +100,7 @@ private:
 	//画面更新用の関数
 	void display(void);
 	//画面のリサイズ時に実行される関数
-	void resize(void);
+	void resize(int w, int h);
 	//キーボード入力時に実行される関数
 	void keyboard(unsigned char key, int x, int y);
 public:
@@ -70,10 +115,7 @@ public:
 		int argc=0;
 		char* argv[]={};
 		//GLUTの初期化
-		if( ! glutGet(GLUT_INIT_STATE) )
-		{
-			glutInit(&argc,argv);
-		}
+		glutInit(&argc,argv);
 		//ディスプレイモードの設定
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
 		//ウィンドウの生成
