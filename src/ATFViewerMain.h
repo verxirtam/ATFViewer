@@ -29,6 +29,7 @@
 #include <GL/glut.h>
 
 #include "DBAccessor.h"
+#include "Fixes.h"
 
 struct PathPoint
 {
@@ -60,6 +61,7 @@ private:
 	GLdouble scale;
 	std::vector<std::vector<PathPoint> > paths;
 	time_t now;
+	Fixes fixes;
 	//初期化
 	ATFViewerMain():
 		PI(3.14159265358979),
@@ -68,7 +70,8 @@ private:
 		camera_phi(60.0*PI/180.0),
 		center_offset_long(0.0),
 		center_offset_lat(0.0),
-		scale(1.0)
+		scale(1.0),
+		fixes()
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;

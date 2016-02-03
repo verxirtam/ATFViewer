@@ -29,7 +29,7 @@ bindLong	DBAccessor.h	/^	void bindLong(int i, long long d)$/;"	f	class:DBAccesso
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
 camera_phi	ATFViewerMain.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMain
 camera_r	ATFViewerMain.h	/^	GLdouble camera_r;$/;"	m	class:ATFViewerMain
-camera_target	ATFViewerMain.h	/^	GLdouble camera_target[];$/;"	m	class:ATFViewerMain
+camera_target	ATFViewerMain.h	/^	GLdouble camera_target[333];$/;"	m	class:ATFViewerMain
 camera_theta	ATFViewerMain.h	/^	GLdouble camera_theta;$/;"	m	class:ATFViewerMain
 center_offset_lat	ATFViewerMain.h	/^	GLdouble center_offset_lat;$/;"	m	class:ATFViewerMain
 center_offset_long	ATFViewerMain.h	/^	GLdouble center_offset_long;$/;"	m	class:ATFViewerMain

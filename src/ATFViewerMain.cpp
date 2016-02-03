@@ -198,27 +198,7 @@ void ATFViewerMain::display(void)
 	glEnd();
 	
 
-	//羽田の上空にシンボルを描く
-	for (int i = 0; i < 10; i++)
-	{
-		double id = (double)i;
-		double d = 0.1;
-		glBegin(GL_LINE_LOOP);
-		glColor3d(1.0,1.0,0.0);
-		glVertex3d(haneda_x-d, haneda_y-d, 5000.0*id);
-		glVertex3d(haneda_x+d, haneda_y-d, 5000.0*id);
-		glVertex3d(haneda_x+d, haneda_y+d, 5000.0*id);
-		glVertex3d(haneda_x-d, haneda_y+d, 5000.0*id);
-		glEnd();
-	}
-	glBegin(GL_LINE_LOOP);
-	glColor3d(1.0,1.0,1.0);
-	glVertex3d(haneda_x-10.0, haneda_y-10.0,0.0);
-	glVertex3d(haneda_x+10.0, haneda_y-10.0,0.0);
-	glVertex3d(haneda_x+10.0, haneda_y+10.0,0.0);
-	glVertex3d(haneda_x-10.0, haneda_y+10.0,0.0);
-	glEnd();
-	
+	fixes.display();
 
 	//航空機の軌道っぽいものを描く
 	//隠面消去を無効にする
