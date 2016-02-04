@@ -24,11 +24,11 @@ void ATFViewerMain::drawPath(PathPoint& p)
 	//航空機の高度に応じて色を設定する
 	//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
 	double c=((double)p.altitude)/40000.0;
-	double alfa = 1.0 - (((double)(now - p.time)) / 600.0);
+	double alpha = 1.0 - (((double)(now - p.time)) / 600.0);
 	c=c*c;
-	glColor4d(c, 0.5, 1.0 - c, alfa * (1.0 - c));
+	glColor4d(c, 0.5, 1.0 - c, alpha * (1.0 - c));
 	glVertex3d(p.longitude, p.latitude, p.altitude);
-	glColor4d(c,0.5,1.0-c,0.0);
+	glColor4d(c,0.5,1.0-c,alpha * 0.1);
 	glVertex3d(p.longitude, p.latitude, 0.0);
 }
 PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)
@@ -50,11 +50,13 @@ void ATFViewerMain::initPathPoint(void)
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
 	//dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
-	//1時間分の軌道を取得する
-	dba.setQuery(std::string("select id,longitude,latitude,altitude,time from TrackData where time>=1453260000 and time<1453270000 order by id,time;"));
+	//軌道を取得する
+	std::stringstream sql("");
+	sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
+	sql<<timeMin<<" and time<";
+	sql<<timeMax<<" order by id,time;";
+	dba.setQuery(sql.str());
 	cout<<"setQuery() after, step_select() before"<<endl;
-	
-	now = 1453260000;
 	
 	//パスのインデックス
 	int n=-1;
@@ -121,6 +123,13 @@ void ATFViewerMain::initScene(void)
 
 void ATFViewerMain::display(void)
 {
+	//時刻の更新
+	now+=20;
+	if (now > timeMax)
+	{
+		now = timeMin;
+	}
+	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	//モデルビュー変換行列の初期化
@@ -172,9 +181,6 @@ void ATFViewerMain::display(void)
 	glTranslated( - haneda_x - center_offset_long, - haneda_y - center_offset_lat, 0.0);
 	
 	//世界地図を描く
-	//材質の設定
-	//static const GLfloat color[] = { 1.0, 1.0, 1.0, 1.0 };
-	//glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, color);
 	glColor3d(1.0,1.0,1.0);
 	glEnable(GL_TEXTURE_2D);
 	glBegin(GL_TRIANGLES);
@@ -219,6 +225,7 @@ void ATFViewerMain::display(void)
 		}
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
+		//TODO 線形探索になっているから遅い時刻の描画に時間がかかっている!
 		int path_size=paths[n].size();
 		for (int i = 0; i < path_size-1; i++)
 		{
@@ -251,7 +258,9 @@ void ATFViewerMain::display(void)
 	glDisable(GL_CLIP_PLANE3);
 	
 	//オブジェクト描画コマンドを発行する
-	glFlush();
+	//glFlush();
+	//描画対象のバッファを入れ替える
+	glutSwapBuffers();
 }
 
 void ATFViewerMain::resize(int w, int h)
@@ -331,12 +340,17 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		display();
 		break;
 	case 't':
-		now+=10;
-		if (now > 1453270000)
+		static bool animation_enable = true;
+		if(animation_enable)
 		{
-			now = 1453260000;
+			glutIdleFunc(ATFViewerMain::_idle);
+			animation_enable = false;
 		}
-		display();
+		else
+		{
+			glutIdleFunc(NULL);
+			animation_enable = true;
+		}
 		break;
 	}
 }

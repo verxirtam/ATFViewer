@@ -22,6 +22,7 @@
 #define ATFViewerMain_H
 
 #include <iostream>
+#include <sstream>
 #include <vector>
 #include <cstdio>
 #include <cmath>
@@ -61,6 +62,8 @@ private:
 	GLdouble scale;
 	std::vector<std::vector<PathPoint> > paths;
 	time_t now;
+	const time_t timeMin;
+	const time_t timeMax;
 	Fixes fixes;
 	//初期化
 	ATFViewerMain():
@@ -71,6 +74,9 @@ private:
 		center_offset_long(0.0),
 		center_offset_lat(0.0),
 		scale(1.0),
+		now(1453260000),
+		timeMin(now),
+		timeMax(now+60*60*24),//1453300000),
 		fixes()
 	{
 		camera_target[0]=0.0;
@@ -100,12 +106,20 @@ private:
 	{
 		ATFViewerMain::getInstance().keyboard(key,x,y);
 	}
+	static void _idle(void)
+	{
+		ATFViewerMain::getInstance().idle();
+	}
 	//画面更新用の関数
 	void display(void);
 	//画面のリサイズ時に実行される関数
 	void resize(int w, int h);
 	//キーボード入力時に実行される関数
 	void keyboard(unsigned char key, int x, int y);
+	void idle(void)
+	{
+		glutPostRedisplay();
+	}
 public:
 	//インスタンスの取得
 	inline static ATFViewerMain& getInstance()
@@ -120,7 +134,7 @@ public:
 		//GLUTの初期化
 		glutInit(&argc,argv);
 		//ディスプレイモードの設定
-		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH);
+		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 		//ウィンドウの生成
 		glutCreateWindow("ATFViewer");
 		//画面更新関数の設定
@@ -129,6 +143,8 @@ public:
 		glutReshapeFunc(ATFViewerMain::_resize);
 		//キーボード入力時に実行される関数の設定
 		glutKeyboardFunc(ATFViewerMain::_keyboard);
+		//アイドル時に実行される関数の設定
+		glutIdleFunc(ATFViewerMain::_idle);
 		//シーンの初期化
 		this->initScene();
 	}

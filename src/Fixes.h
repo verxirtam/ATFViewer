@@ -55,11 +55,15 @@ public:
 		name.push_back("POTET");
 		longitude.push_back(127.0+02.0/60.0+23.0/3600.0);
 		latitude.push_back(  32.0+16.0/60.0+48.0/3600.0);
+		name.push_back("SAPRA");
+		longitude.push_back(130.0+43.0/60.0+25.0/3600.0);
+		latitude.push_back(  35.0+49.0/60.0+26.0/3600.0);
 	}
 	void display()
 	{
 		for(unsigned int n = 0; n < longitude.size(); n++)
 		{
+			/*
 			for (int i = 0; i < 10; i++)
 			{
 				double id = (double)i;
@@ -72,6 +76,11 @@ public:
 				glVertex3d(longitude[n]-d, latitude[n]+d, 2000.0*id);
 				glEnd();
 			}
+			*/
+			glBegin(GL_LINES);
+			glVertex3d(longitude[n],latitude[n],    0.0);
+			glVertex3d(longitude[n],latitude[n],50000.0);
+			glEnd();
 		}
 	}
 };

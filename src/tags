@@ -12,6 +12,9 @@ DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
+FIXES_H_	Fixes.h	20;"	d
+Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
+Fixes	Fixes.h	/^class Fixes$/;"	c
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
 PathPoint	ATFViewerMain.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
@@ -19,6 +22,7 @@ PathPoint	ATFViewerMain.h	/^struct PathPoint$/;"	s
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
 _display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
+_idle	ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
 _keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
 altitude	ATFViewerMain.h	/^	int altitude;$/;"	m	struct:PathPoint
@@ -37,22 +41,28 @@ commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
 display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
+display	Fixes.h	/^	void display()$/;"	f	class:Fixes
 drawPath	ATFViewerMain.cpp	/^void ATFViewerMain::drawPath(PathPoint& p)$/;"	f	class:ATFViewerMain
 execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
+fixes	ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)$/;"	f	class:ATFViewerMain
+idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
+latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 longitude	ATFViewerMain.h	/^	double longitude;$/;"	m	struct:PathPoint
+longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
+name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
 paths	ATFViewerMain.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:ATFViewerMain
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
