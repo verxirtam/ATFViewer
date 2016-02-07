@@ -49,7 +49,6 @@ void ATFViewerMain::initPathPoint(void)
 	cout<<"dba() before"<<endl;
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
-	//dba.setQuery(std::string("select longitude,latitude,altitude,time from TrackData where id='895024a' order by time;"));
 	//軌道を取得する
 	std::stringstream sql("");
 	sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
@@ -75,6 +74,7 @@ void ATFViewerMain::initPathPoint(void)
 		{
 			n++;
 			paths.push_back(vector<PathPoint>());
+			paths_first_index.push_back(0);
 			old_id = id;
 		}
 		paths[n].push_back(PathPoint(lo,la,a,t));
@@ -88,34 +88,10 @@ void ATFViewerMain::initScene(void)
 	initPathPoint();
 	
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-	//テクスチャの読み込み
-	//テクスチャ読み込み用の配列
-	const int TEXWIDTH = 600;
-	const int TEXHEIGHT = 600;
-	GLubyte texture[TEXWIDTH][TEXHEIGHT][3];
-	//テクスチャファイルのファイルポインタ
-	std::FILE* fp;
-	//テクスチャファイル名
-	const char texture1[]="/home/daisuke/programs/ATFViewer/res/el_v2_0600_090-180_00-90.raw";
-	//テクスチャファイルの読み込み
-	if ((fp = std::fopen(texture1, "rb")) != NULL)
-	{
-		std::fread(texture, sizeof(texture),1,fp);
-		std::fclose(fp);
-	}
-	else
-	{
-		printf("error.\n");
-		std::perror(texture1);
-	}
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-	//テクスチャの割り当て
-	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, TEXWIDTH, TEXHEIGHT, GL_RGB , GL_UNSIGNED_BYTE, texture);
-	//テクスチャを拡大・縮小するときの保管方法を設定 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-
+	//マップの初期化
+	map.init();
+	
 	//デプスバッファを使用する
 	glEnable(GL_DEPTH_TEST);
 }
@@ -128,6 +104,11 @@ void ATFViewerMain::display(void)
 	if (now > timeMax)
 	{
 		now = timeMin;
+		int nmax = paths_first_index.size();
+		for(int n = 0; n < nmax; n++)
+		{
+			paths_first_index[n]=0;
+		}
 	}
 	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -169,41 +150,11 @@ void ATFViewerMain::display(void)
 	glEnable(GL_CLIP_PLANE2);
 	glEnable(GL_CLIP_PLANE3);
 	
-	//モデリング変換行列の設定
-	//モデル座標は経緯度-feetのサイズになっているので
-	//地図っぽくスケーリングする
-	//経緯度はそのままで行けそうなので、feetのみ変更
-	//40000feetが4cmになるように1/10000に縮小する
-	glScaled(scale,scale,0.0001);
-	//羽田+offsetがワールド座標系の原点に来るように平行移動する
-	double haneda_x = 139.0 + ( 46.0/60.0 + 87.0/3600.0 );
-	double haneda_y =  35.0 + ( 33.0/60.0 + 20.0/3600.0 );
-	glTranslated( - haneda_x - center_offset_long, - haneda_y - center_offset_lat, 0.0);
-	
-	//世界地図を描く
-	glColor3d(1.0,1.0,1.0);
-	glEnable(GL_TEXTURE_2D);
-	glBegin(GL_TRIANGLES);
-	glNormal3d(0.0,0.0,1.0);
-	glTexCoord2d(0.0,0.0);glVertex3d( 90.0,90.0,0.0);//-180.0, 90.0,0.0);
-	glTexCoord2d(0.0,1.0);glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
-	glTexCoord2d(1.0,0.0);glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
-	glNormal3d(0.0,0.0,1.0);
-	glTexCoord2d(0.0,1.0);glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
-	glTexCoord2d(1.0,1.0);glVertex3d(180.0, 0.0,0.0);// 180.0,-90.0,0.0);
-	glTexCoord2d(1.0,0.0);glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
-	glEnd();
-	glDisable(GL_TEXTURE_2D);
+	//マップの描画
+	map.display();
+	//以下はmap座標系（緯度経度座標系）
 
-	//世界地図の枠を描く
-	glBegin(GL_LINE_LOOP);
-	glVertex3d( 90.0,90.0,0.0);//-180.0, 90.0,0.0);
-	glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
-	glVertex3d(180.0, 0.0,0.0);// 180.0,-90.0,0.0);
-	glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
-	glEnd();
-	
-
+	//フィックスを描画する
 	fixes.display();
 
 	//航空機の軌道っぽいものを描く
@@ -219,15 +170,15 @@ void ATFViewerMain::display(void)
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
 		//未来の軌道は描かない
-		if (paths[n][0].time > now)
+		if (paths[n][0].time > now )
 		{
 			continue;
 		}
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
-		//TODO 線形探索になっているから遅い時刻の描画に時間がかかっている!
 		int path_size=paths[n].size();
-		for (int i = 0; i < path_size-1; i++)
+		int imin = paths_first_index[n];
+		for (int i = imin; i < path_size-1; i++)
 		{
 			if(paths[n][i].time > now)
 			{
@@ -240,6 +191,10 @@ void ATFViewerMain::display(void)
 				if(paths[n][i].time >= (now - 600) )
 				{
 					drawPath(paths[n][i]);
+				}
+				else
+				{
+					paths_first_index[n]=i;
 				}
 			}
 		}
@@ -288,23 +243,23 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 	switch (key)
 	{
 	case 'f':
-		//camera_target[0]+=1.0;
-		center_offset_long += 1.0 / scale;
+		//center_offset_long += 1.0 / scale;
+		map.setCenterOffsetLong(map.getCenterOffsetLong() + 1.0 / map.getScale());
 		display();
 		break;
 	case 's':
-		//camera_target[0]-=1.0;
-		center_offset_long -= 1.0 / scale;
+		//center_offset_long -= 1.0 / scale;
+		map.setCenterOffsetLong(map.getCenterOffsetLong() - 1.0 / map.getScale());
 		display();
 		break;
 	case 'e':
-		//camera_target[1]+=1.0;
-		center_offset_lat += 1.0 / scale;
+		//center_offset_lat += 1.0 / scale;
+		map.setCenterOffsetLat(map.getCenterOffsetLat() + 1.0 / map.getScale());
 		display();
 		break;
 	case 'd':
-		//camera_target[1]-=1.0;
-		center_offset_lat -= 1.0 / scale;
+		//center_offset_lat -= 1.0 / scale;
+		map.setCenterOffsetLat(map.getCenterOffsetLat() - 1.0 / map.getScale());
 		display();
 		break;
 	case 'l':
@@ -328,15 +283,13 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		display();
 		break;
 	case 'b':
-		//camera_r/=0.875;
-		//camera_r = (camera_r > 10000.0) ? 10000.0 : camera_r;
-		scale*=0.875;
+		//scale*=0.875;
+		map.setScale(map.getScale()*0.875);
 		display();
 		break;
 	case ' ':
-		//camera_r*=0.875;
-		//camera_r = (camera_r < 1.0) ? 1.0 : camera_r;
-		scale/=0.875;
+		//scale/=0.875;
+		map.setScale(map.getScale()/0.875);
 		display();
 		break;
 	case 't':

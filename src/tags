@@ -15,6 +15,9 @@ DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
 FIXES_H_	Fixes.h	20;"	d
 Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
+MAP_H_	Map.h	21;"	d
+Map	Map.h	/^	Map():$/;"	f	class:Map
+Map	Map.h	/^class Map$/;"	c
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
 PathPoint	ATFViewerMain.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
@@ -33,27 +36,32 @@ bindLong	DBAccessor.h	/^	void bindLong(int i, long long d)$/;"	f	class:DBAccesso
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
 camera_phi	ATFViewerMain.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMain
 camera_r	ATFViewerMain.h	/^	GLdouble camera_r;$/;"	m	class:ATFViewerMain
-camera_target	ATFViewerMain.h	/^	GLdouble camera_target[333];$/;"	m	class:ATFViewerMain
+camera_target	ATFViewerMain.h	/^	GLdouble camera_target[3];$/;"	m	class:ATFViewerMain
 camera_theta	ATFViewerMain.h	/^	GLdouble camera_theta;$/;"	m	class:ATFViewerMain
-center_offset_lat	ATFViewerMain.h	/^	GLdouble center_offset_lat;$/;"	m	class:ATFViewerMain
-center_offset_long	ATFViewerMain.h	/^	GLdouble center_offset_long;$/;"	m	class:ATFViewerMain
+centerOffsetLat	Map.h	/^	GLdouble centerOffsetLat;$/;"	m	class:Map
+centerOffsetLong	Map.h	/^	GLdouble centerOffsetLong;$/;"	m	class:Map
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
 display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
 display	Fixes.h	/^	void display()$/;"	f	class:Fixes
+display	Map.cpp	/^void Map::display(void)$/;"	f	class:Map
 drawPath	ATFViewerMain.cpp	/^void ATFViewerMain::drawPath(PathPoint& p)$/;"	f	class:ATFViewerMain
 execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
 fixes	ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
+getCenterOffsetLat	Map.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:Map
+getCenterOffsetLong	Map.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:Map
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)$/;"	f	class:ATFViewerMain
+getScale	Map.h	/^	GLdouble getScale(void)$/;"	f	class:Map
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
+init	Map.cpp	/^void Map::init(void)$/;"	f	class:Map
 initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
@@ -62,15 +70,22 @@ latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 longitude	ATFViewerMain.h	/^	double longitude;$/;"	m	struct:PathPoint
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
+map	ATFViewerMain.h	/^	Map map;$/;"	m	class:ATFViewerMain
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
 paths	ATFViewerMain.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:ATFViewerMain
+paths_first_index	ATFViewerMain.h	/^	std::vector<int> paths_first_index;$/;"	m	class:ATFViewerMain
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
-scale	ATFViewerMain.h	/^	GLdouble scale;$/;"	m	class:ATFViewerMain
+scale	Map.h	/^	GLdouble scale;$/;"	m	class:Map
+setCenterOffsetLat	Map.h	/^	void setCenterOffsetLat(GLdouble c_lat)$/;"	f	class:Map
+setCenterOffsetLong	Map.h	/^	void setCenterOffsetLong(GLdouble c_long)$/;"	f	class:Map
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
+setScale	Map.h	/^	void setScale(GLdouble s)$/;"	f	class:Map
 step	DBAccessor.h	/^	void step()$/;"	f	class:DBAccessor
 step_select	DBAccessor.h	/^	int step_select()$/;"	f	class:DBAccessor
 stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
 time	ATFViewerMain.h	/^	time_t time;$/;"	m	struct:PathPoint
+timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
+timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor

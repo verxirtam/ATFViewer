@@ -30,6 +30,7 @@
 #include <GL/glut.h>
 
 #include "DBAccessor.h"
+#include "Map.h"
 #include "Fixes.h"
 
 struct PathPoint
@@ -56,14 +57,13 @@ private:
 	GLdouble camera_r;
 	GLdouble camera_theta;
 	GLdouble camera_phi;
-	GLdouble camera_target[333];
-	GLdouble center_offset_long;
-	GLdouble center_offset_lat;
-	GLdouble scale;
+	GLdouble camera_target[3];
 	std::vector<std::vector<PathPoint> > paths;
+	std::vector<int> paths_first_index;
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
+	Map map;
 	Fixes fixes;
 	//初期化
 	ATFViewerMain():
@@ -71,12 +71,12 @@ private:
 		camera_r(30.0),
 		camera_theta(300.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
-		center_offset_long(0.0),
-		center_offset_lat(0.0),
-		scale(1.0),
+		paths(),
+		paths_first_index(),
 		now(1453260000),
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
+		map(),
 		fixes()
 	{
 		camera_target[0]=0.0;

@@ -5,3 +5,20 @@ gitコミット時のコマンドメモ
 状態取得
 ~/programs/ATFViewer/ATFViewer$ git status
 
+直前のコミットを取り消す
+git reset --soft HEAD^
+
+    --hardオプション：コミット取り消した上でワークディレクトリの内容も書き換えたい場合に使用。
+
+    --softオプション：ワークディレクトリの内容はそのままでコミットだけを取り消したい場合に使用。
+
+    HEAD^：直前のコミットを意味する。
+
+    HEAD~{n} ：n個前のコミットを意味する。
+        HEAD^やHEAD~{n}の代わりにコミットのハッシュ値を書いても良い。
+        gitのv1.8.5からは、「HEAD」のエイリアスとして「＠」が用意されている。
+        HEAD~とHEAD^と@^は同じ意味。
+        HEAD^^^とHEAD~3とHEAD~~~とHEAD~{3}と@^^^は同じ意味。
+    参考：
+    <<http://qiita.com/shuntaro_tamura/items/06281261d893acf049ed>>
+

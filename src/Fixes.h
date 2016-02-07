@@ -61,6 +61,7 @@ public:
 	}
 	void display()
 	{
+		glColor3d(0.0,0.0,1.0);
 		for(unsigned int n = 0; n < longitude.size(); n++)
 		{
 			/*

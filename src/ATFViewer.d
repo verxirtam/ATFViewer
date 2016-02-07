@@ -1,1 +1,1 @@
-ATFViewer.o: ATFViewer.cpp ATFViewerMain.h DBAccessor.h Fixes.h
+ATFViewer.o: ATFViewer.cpp ATFViewerMain.h DBAccessor.h Map.h Fixes.h
