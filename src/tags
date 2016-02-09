@@ -57,12 +57,15 @@ getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
+getLatitudeFromDMS	Fixes.cpp	/^double Fixes::getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Fixes
+getLongitudeFromDMS	Fixes.cpp	/^double Fixes::getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Fixes
 getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)$/;"	f	class:ATFViewerMain
 getScale	Map.h	/^	GLdouble getScale(void)$/;"	f	class:Map
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
+init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(void)$/;"	f	class:Map
-initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(void)$/;"	f	class:ATFViewerMain
+initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(DBAccessor& dba)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint

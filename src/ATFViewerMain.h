@@ -85,7 +85,7 @@ private:
 	}
 	//シーンの初期化
 	void initScene(void);
-	void initPathPoint(void);
+	void initPathPoint(DBAccessor& dba);
 	void drawPath(PathPoint& p);
 	PathPoint getNowPoint(PathPoint& from, PathPoint& to);
 	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない

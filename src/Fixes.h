@@ -21,6 +21,11 @@
 
 #include <vector>
 #include <string>
+#include <sstream>
+
+#include <GL/glut.h>
+
+#include "DBAccessor.h"
 
 class Fixes
 {
@@ -31,9 +36,12 @@ private:
 	std::vector<double> longitude;
 	//緯度
 	std::vector<double> latitude;
+	double getLongitudeFromDMS(std::string long_dms);
+	double getLatitudeFromDMS(std::string lat_dms);
 public:
 	Fixes()
 	{
+		/*
 		name.push_back("haneda");
 		longitude.push_back(139.0+46.0/60.0+87.0/3600.0);
 		latitude.push_back(  35.0+33.0/60.0+20.0/3600.0);
@@ -58,7 +66,9 @@ public:
 		name.push_back("SAPRA");
 		longitude.push_back(130.0+43.0/60.0+25.0/3600.0);
 		latitude.push_back(  35.0+49.0/60.0+26.0/3600.0);
+		*/
 	}
+	void init(DBAccessor& dba);
 	void display()
 	{
 		glColor3d(0.0,0.0,1.0);

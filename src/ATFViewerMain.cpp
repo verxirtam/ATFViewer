@@ -43,12 +43,9 @@ PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)
 	return ret;
 }
 
-void ATFViewerMain::initPathPoint(void)
+void ATFViewerMain::initPathPoint(DBAccessor& dba)
 {
 	
-	cout<<"dba() before"<<endl;
-	DBAccessor dba(std::string("../../db/ATFViewer.db"));
-	cout<<"dba() after, setQuery() before"<<endl;
 	//軌道を取得する
 	std::stringstream sql("");
 	sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
@@ -85,10 +82,18 @@ void ATFViewerMain::initPathPoint(void)
 
 void ATFViewerMain::initScene(void)
 {
-	initPathPoint();
+	cout<<"dba() before"<<endl;
+	DBAccessor dba(std::string("../../db/ATFViewer.db"));
+	cout<<"dba() after, setQuery() before"<<endl;
+	
+	
+	initPathPoint(dba);
 	
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 
+	//フィックスの初期化
+	fixes.init(dba);
+	
 	//マップの初期化
 	map.init();
 	

@@ -19,6 +19,8 @@
 #ifndef DBAccessor_H_
 #define DBAccessor_H_
 
+#include <iostream>
+
 #include <string>
 #include <sqlite3.h>
 
