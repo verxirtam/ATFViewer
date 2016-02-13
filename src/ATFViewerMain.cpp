@@ -95,7 +95,7 @@ void ATFViewerMain::initScene(void)
 	fixes.init(dba);
 	
 	//マップの初期化
-	map.init();
+	map.init(dba);
 	
 	//デプスバッファを使用する
 	glEnable(GL_DEPTH_TEST);

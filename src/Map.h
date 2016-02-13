@@ -23,7 +23,26 @@
 #include <cstdio>
 #include <cstdlib>
 
+#include <sstream>
+#include <vector>
+
 #include <GL/glut.h>
+
+#include "Util.h"
+#include "DBAccessor.h"
+
+struct MapVertex
+{
+	double longitude;
+	double latitude;
+	double u;
+	double v;
+};
+
+struct MapVertexIndex
+{
+	int vertexIndex;
+};
 
 class Map
 {
@@ -31,15 +50,24 @@ private:
 	GLdouble centerOffsetLong;
 	GLdouble centerOffsetLat;
 	GLdouble scale;
-	
+	int textureWidth;
+	int textureHeight;
+	std::vector<MapVertex> mapVertex;
+	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
 public:
 	Map():
 		centerOffsetLong(0.0),
 		centerOffsetLat(0.0),
-		scale(1.0)
+		scale(1.0),
+		mapVertex(),
+		mapVertexIndex()
 	{
 	}
-	void init(void);
+	void init(DBAccessor& dba);
+	void getSettings(DBAccessor& dba, std::string& map_id, std::string& texture_file_name);
+	void initTexture(std::string& texture_file_name);
+	void getVertex(DBAccessor& dba,std::string& map_id);
+	void getVertexIndex(DBAccessor& dba,std::string& map_id);
 	void display(void);
 	void setCenterOffsetLong(GLdouble c_long)
 	{

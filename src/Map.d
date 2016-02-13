@@ -1,1 +1,1 @@
-Map.o: Map.cpp Map.h
+Map.o: Map.cpp Map.h Util.h DBAccessor.h

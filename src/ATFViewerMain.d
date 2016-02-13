@@ -1,2 +1,2 @@
 ATFViewerMain.o: ATFViewerMain.cpp ATFViewerMain.h DBAccessor.h Map.h \
- Fixes.h
+ Util.h Fixes.h

@@ -18,12 +18,16 @@ Fixes	Fixes.h	/^class Fixes$/;"	c
 MAP_H_	Map.h	21;"	d
 Map	Map.h	/^	Map():$/;"	f	class:Map
 Map	Map.h	/^class Map$/;"	c
+MapVertex	Map.h	/^struct MapVertex$/;"	s
+MapVertexIndex	Map.h	/^struct MapVertexIndex$/;"	s
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
 PathPoint	ATFViewerMain.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
 PathPoint	ATFViewerMain.h	/^struct PathPoint$/;"	s
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
+UTIL_H_	Util.h	19;"	d
+Util	Util.h	/^class Util$/;"	c
 _display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
 _idle	ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
 _keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
@@ -58,22 +62,32 @@ getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getLatitudeFromDMS	Fixes.cpp	/^double Fixes::getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Fixes
+getLatitudeFromDMS	Util.h	/^	static double Fixes::getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util::Fixes
 getLongitudeFromDMS	Fixes.cpp	/^double Fixes::getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Fixes
+getLongitudeFromDMS	Util.h	/^	static double getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Util
 getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)$/;"	f	class:ATFViewerMain
 getScale	Map.h	/^	GLdouble getScale(void)$/;"	f	class:Map
+getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name, int& texture_width, int& texture_height)$/;"	f	class:Map
+getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
+getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
-init	Map.cpp	/^void Map::init(void)$/;"	f	class:Map
+init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
 initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(DBAccessor& dba)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
+initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name, int& width, int& height)$/;"	f	class:Map
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
+latitude	Map.h	/^	double latitude;$/;"	m	struct:MapVertex
 longitude	ATFViewerMain.h	/^	double longitude;$/;"	m	struct:PathPoint
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
+longitude	Map.h	/^	double longitude;$/;"	m	struct:MapVertex
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 map	ATFViewerMain.h	/^	Map map;$/;"	m	class:ATFViewerMain
+mapVertex	Map.h	/^	std::vector<MapVertex> mapVertex;$/;"	m	class:Map
+mapVertexIndex	Map.h	/^	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	class:Map
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
 paths	ATFViewerMain.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:ATFViewerMain
@@ -91,4 +105,8 @@ stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
 time	ATFViewerMain.h	/^	time_t time;$/;"	m	struct:PathPoint
 timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
+u	Map.h	/^	double u;$/;"	m	struct:MapVertex
+v	Map.h	/^	double v;$/;"	m	struct:MapVertex
+vertexIndex	Map.h	/^	int vertexIndex;$/;"	m	struct:MapVertexIndex
+vertexIndexIndex	Map.h	/^	int vertexIndexIndex;$/;"	m	struct:MapVertexIndex
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor

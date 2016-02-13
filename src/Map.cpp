@@ -17,69 +17,167 @@
  */
 #include "Map.h"
 
-void Map::init(void)
+void Map::init(DBAccessor& dba)
 {
-	//テクスチャの読み込み
-	//テクスチャ読み込み用の配列
-	const int TEXWIDTH = 2048;//600;
-	const int TEXHEIGHT = 2048;//600;
-	GLubyte* texture = (GLubyte*) std::malloc( sizeof(GLubyte) * TEXWIDTH * TEXHEIGHT * 3);
-	//GLubyte texture[TEXWIDTH * TEXHEIGHT * 3];
-	/*
-	GLubyte*** texture;
-	texture = new GLubyte**[TEXWIDTH];
-	for (int  i = 0; i < TEXWIDTH; i++)
+	std::string map_id("test_2048");
+	std::string texture_file_name;
+
+	getSettings(dba,map_id,texture_file_name);
+	initTexture(texture_file_name);
+	getVertex(dba,map_id);
+	getVertexIndex(dba,map_id);
+	
+	std::cout<<"mapVertex"<<std::endl;
+	int imax = mapVertex.size();
+	for(int i = 0; i < imax; i++)
 	{
-		texture[i] = new GLubyte*[TEXHEIGHT];
-		for (int j = 0; j < TEXHEIGHT; j++)
-		{
-			texture[i][j] = new GLubyte[3];
-		}
+		std::cout << i << ", ";
+		std::cout << mapVertex[i].longitude << ", ";
+		std::cout << mapVertex[i].latitude << ", ";
+		std::cout << mapVertex[i].u << ", ";
+		std::cout << mapVertex[i].v;
+		std::cout<<std::endl;
 	}
-	*/
+	std::cout<<std::endl;
+	std::cout<<"mapVertexIndex"<<std::endl;
+	imax = mapVertexIndex.size();
+	for(int i = 0; i < imax; i++)
+	{
+		std::cout << i << ": ";
+		int jmax = mapVertexIndex[i].size();
+		for (int j = 0; j < jmax; j++)
+		{
+			std::cout << mapVertexIndex[i][j].vertexIndex << ", ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)
+{
+	std::stringstream sql("");
+	sql << "select textureFileName, width, height from Map where mapId='";
+	sql << map_id;
+	sql << "';";
+
+	dba.setQuery(sql.str());
+
+	if(SQLITE_ROW == dba.step_select())
+	{
+		texture_file_name = dba.getColumnString(0);
+		textureWidth = dba.getColumnInt(1);
+		textureHeight = dba.getColumnInt(2);
+	}
+
+}
+void Map::initTexture(std::string& texture_file_name)
+{
+	
+	GLubyte* texture = new GLubyte[textureWidth * textureHeight * 3];
+	
 	//テクスチャファイルのファイルポインタ
 	std::FILE* fp;
-	//テクスチャファイル名
-	//const char texture1[]="/home/daisuke/programs/ATFViewer/res/el_v2_0600_090-180_00-90.raw";
-	const char texture1[]="/home/daisuke/programs/ATFViewer/res/JP-ENR-6.1-en-JP-1_test_2048.raw";
 	//テクスチャファイルの読み込み
-	if ((fp = std::fopen(texture1, "rb")) != NULL)
+	if ((fp = std::fopen(texture_file_name.c_str(), "rb")) != NULL)
 	{
 		//std::fread(texture, sizeof(texture),1,fp);
-		std::fread(texture, sizeof(GLubyte) * TEXWIDTH * TEXHEIGHT * 3,1,fp);
+		std::fread(texture, sizeof(GLubyte) * textureWidth * textureHeight * 3,1,fp);
 		std::fclose(fp);
 	}
 	else
 	{
 		printf("error.\n");
-		std::perror(texture1);
+		std::perror(texture_file_name.c_str());
 	}
 	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
 	//テクスチャの割り当て
-	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, TEXWIDTH, TEXHEIGHT, GL_RGB , GL_UNSIGNED_BYTE, texture);
+	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, textureWidth, textureHeight, GL_RGB , GL_UNSIGNED_BYTE, texture);
 	//テクスチャを拡大・縮小するときの保管方法を設定 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
 	
 	
-	std::free(texture);
-	/*
-	//動的に確保した配列の開放
-	for (int  i = 0; i < TEXWIDTH; i++)
-	{
-		for (int j = 0; j < TEXHEIGHT; j++)
-		{
-			delete[] texture[i][j];
-			texture[i][j] = NULL;
-		}
-		delete[] texture[i];
-		texture[i] = NULL;
-	}
 	delete[] texture;
-	texture = NULL;
-	*/
 }
+
+void Map::getVertex(DBAccessor& dba,std::string& map_id)
+{
+	//クエリの作成
+	std::stringstream sql("");
+	sql << "select vertexIndex, longitudeDMS, latitudeDMS, u, v from MapVertex where mapId='";
+	sql << map_id;
+	sql << "' order by vertexIndex;";
+
+	dba.setQuery(sql.str());
+	
+	//mapVertexの内容を全て削除する
+	mapVertex.clear();
+
+	//インデックスのチェック用
+	int vindex = 0;
+	
+	while(SQLITE_ROW == dba.step_select())
+	{
+		//vertexIndexのチェック
+		int vertex_index = dba.getColumnInt(0);
+		if(vindex != vertex_index)
+		{
+			std::cout<<"error on Map::getVertex()"<<std::endl;
+			return;
+		}
+		vindex++;
+		//MapVertexの格納
+		MapVertex mv;
+		mv.longitude = Util::getLongitudeFromDMS(dba.getColumnString(1));
+		mv.latitude = Util::getLatitudeFromDMS(dba.getColumnString(2));
+		mv.u = ((double)(dba.getColumnInt(3)))/((double)(textureWidth));
+		mv.v =((double)(dba.getColumnInt(4)))/((double)(textureHeight));
+		mapVertex.push_back(mv);
+	}
+}
+void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)
+{
+	
+	//クエリの作成
+	std::stringstream sql("");
+	sql << "select triangleStripIndex, vertexIndexIndex, vertexIndex from MapVertexIndex where mapId='";
+	sql << map_id;
+	sql << "' order by triangleStripIndex, vertexIndexIndex;";
+	
+	dba.setQuery(sql.str());
+	
+	//mapVertexIndexの内容を全て削除する
+	mapVertexIndex.clear();
+	
+	//インデックスのチェック用
+	int tsindex = -1;
+	int viindex = 0;
+	while(SQLITE_ROW == dba.step_select())
+	{
+		//triangleStripIndexのチェック
+		int triangle_strip_index = dba.getColumnInt(0);
+		if(triangle_strip_index == tsindex + 1)
+		{
+			tsindex++;
+			mapVertexIndex.push_back(std::vector<MapVertexIndex>());
+			viindex = 0;
+		}
+		//vertexIndexIndexのチェック
+		int vertex_index_index = dba.getColumnInt(1);
+		if(viindex != vertex_index_index)
+		{
+			std::cout<<"error on Map::getVertexIndex()"<<std::endl;
+			return;
+		}
+		viindex++;
+		//MapVertexIndexの格納
+		MapVertexIndex mvi;
+		mvi.vertexIndex = dba.getColumnInt(2);
+		mapVertexIndex[tsindex].push_back(mvi);
+	}
+}
+
 void Map::display(void)
 {
 	//モデリング変換行列の設定
@@ -96,17 +194,8 @@ void Map::display(void)
 	//世界地図を描く
 	glColor3d(1.0,1.0,1.0);
 	glEnable(GL_TEXTURE_2D);
-	glBegin(GL_TRIANGLES);
 	/*
-	glNormal3d(0.0,0.0,1.0);
-	glTexCoord2d(0.0,0.0);glVertex3d( 90.0,90.0,0.0);//-180.0, 90.0,0.0);
-	glTexCoord2d(0.0,1.0);glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
-	glTexCoord2d(1.0,0.0);glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
-	glNormal3d(0.0,0.0,1.0);
-	glTexCoord2d(0.0,1.0);glVertex3d( 90.0, 0.0,0.0);//-180.0,-90.0,0.0);
-	glTexCoord2d(1.0,1.0);glVertex3d(180.0, 0.0,0.0);// 180.0,-90.0,0.0);
-	glTexCoord2d(1.0,0.0);glVertex3d(180.0,90.0,0.0);// 180.0, 90.0,0.0);
-	*/
+	glBegin(GL_TRIANGLES);
 	GLdouble tex_coord[][2]={
 								{ 72.2/1024.0,  71.2/1024.0},
 								{991.4/1024.0,  22.0/1024.0},
@@ -128,13 +217,41 @@ void Map::display(void)
 	glTexCoord2d(tex_coord[2][0],tex_coord[2][1]);glVertex3d(ver_coord[2][0],ver_coord[2][1],ver_coord[2][2]);
 	glTexCoord2d(tex_coord[3][0],tex_coord[3][1]);glVertex3d(ver_coord[3][0],ver_coord[3][1],ver_coord[3][2]);
 	glEnd();
+	*/
+	int imax = mapVertexIndex.size();
+	for(int i = 0; i < imax; i++)
+	{
+		glBegin(GL_TRIANGLE_STRIP);
+		int jmax = mapVertexIndex[i].size();
+		for (int j = 0; j < jmax; j++)
+		{
+			int vi = mapVertexIndex[i][j].vertexIndex;
+			glTexCoord2d(mapVertex[vi].u, mapVertex[vi].v);
+			glVertex3d(mapVertex[vi].longitude, mapVertex[vi].latitude, 0.0);
+		}
+		glEnd();
+	}
+	
+	
 	glDisable(GL_TEXTURE_2D);
 
 	//罫線を描画する
 	glBegin(GL_LINES);
 	glColor3d(1.0,0.0,0.0);
-	glVertex3d(140.0,30.0,10.0);
-	glVertex3d(140.0,50.0,10.0);
+	glVertex3d(137.0,34.0,10.0);glVertex3d(145.0,34.0,10.0);
+	glVertex3d(137.0,35.0,10.0);glVertex3d(145.0,35.0,10.0);
+	glVertex3d(137.0,36.0,10.0);glVertex3d(145.0,36.0,10.0);
+	glVertex3d(137.0,37.0,10.0);glVertex3d(145.0,37.0,10.0);
+	glVertex3d(137.0,38.0,10.0);glVertex3d(145.0,38.0,10.0);
+	glVertex3d(137.0,39.0,10.0);glVertex3d(145.0,39.0,10.0);
+	
+	glVertex3d(138.0,33.0,10.0);glVertex3d(138.0,39.0,10.0);
+	glVertex3d(139.0,33.0,10.0);glVertex3d(139.0,39.0,10.0);
+	glVertex3d(140.0,33.0,10.0);glVertex3d(140.0,39.0,10.0);
+	glVertex3d(141.0,33.0,10.0);glVertex3d(141.0,39.0,10.0);
+	glVertex3d(142.0,33.0,10.0);glVertex3d(142.0,39.0,10.0);
+	glVertex3d(143.0,33.0,10.0);glVertex3d(143.0,39.0,10.0);
+	glVertex3d(144.0,33.0,10.0);glVertex3d(144.0,39.0,10.0);
 	glEnd();
 }
 

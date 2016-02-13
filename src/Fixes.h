@@ -25,6 +25,7 @@
 
 #include <GL/glut.h>
 
+#include "Util.h"
 #include "DBAccessor.h"
 
 class Fixes
@@ -36,8 +37,6 @@ private:
 	std::vector<double> longitude;
 	//緯度
 	std::vector<double> latitude;
-	double getLongitudeFromDMS(std::string long_dms);
-	double getLatitudeFromDMS(std::string lat_dms);
 public:
 	Fixes()
 	{
