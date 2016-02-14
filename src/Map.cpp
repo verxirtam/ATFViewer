@@ -19,7 +19,7 @@
 
 void Map::init(DBAccessor& dba)
 {
-	std::string map_id("test_2048");
+	std::string map_id("bm_200406");
 	std::string texture_file_name;
 
 	getSettings(dba,map_id,texture_file_name);
