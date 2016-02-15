@@ -87,7 +87,7 @@ private:
 	void initScene(void);
 	void initPathPoint(DBAccessor& dba);
 	void drawPath(PathPoint& p);
-	PathPoint getNowPoint(PathPoint& from, PathPoint& to);
+	PathPoint getNowPoint(PathPoint& from, PathPoint& to, double time);
 	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない
 	ATFViewerMain(const ATFViewerMain& a);
 	ATFViewerMain& operator=(const ATFViewerMain& a);

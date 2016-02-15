@@ -26,20 +26,21 @@ void ATFViewerMain::drawPath(PathPoint& p)
 	double c=((double)p.altitude)/40000.0;
 	double alpha = 1.0 - (((double)(now - p.time)) / 600.0);
 	c=c*c;
-	glColor4d(c, 0.5, 1.0 - c, alpha * (1.0 - c));
+	//glColor4d(c, 0.5, 1.0 - c, alpha * (1.0 - c));
+	glColor4d(c, 0.5, 1.0 - c, alpha * 0.5);
 	glVertex3d(p.longitude, p.latitude, p.altitude);
-	glColor4d(c,0.5,1.0-c,alpha * 0.1);
+	glColor4d(c, 0.5, 1.0 - c, alpha * 0.1);
 	glVertex3d(p.longitude, p.latitude, 0.0);
 }
-PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to)
+PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to, double time)
 {
 	PathPoint ret(0.0, 0.0, 0, 0);
-	double ratio_from = 1.0 - ((double)(now - from.time))/((double)(to.time - from.time));
+	double ratio_from = 1.0 - ((double)(time - from.time))/((double)(to.time - from.time));
 	double ratio_to = 1.0 - ratio_from;
 	ret.longitude = ratio_from * from.longitude + ratio_to * to.longitude;
 	ret.latitude = ratio_from * from.latitude + ratio_to * to.latitude;
 	ret.altitude =(int)( ratio_from * ((double)from.altitude) + ratio_to * ((double)to.altitude));
-	ret.time = now;
+	ret.time = time;
 	return ret;
 }
 
@@ -183,11 +184,13 @@ void ATFViewerMain::display(void)
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].size();
 		int imin = paths_first_index[n];
+		///////////////////////////////////////////////////
+		/*
 		for (int i = imin; i < path_size-1; i++)
 		{
 			if(paths[n][i].time > now)
 			{
-				PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i]);
+				PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
 				drawPath(now_point);
 				break;
 			}
@@ -203,6 +206,47 @@ void ATFViewerMain::display(void)
 				}
 			}
 		}
+		*/
+		////////////////////////////////////////////////////
+		int i = 0;
+		long long past_time = now - 600;
+		//past_timeより前の軌道は描かない
+		for (i = imin; i < path_size; i++)
+		{
+			if( past_time <= paths[n][i].time )
+			{
+				break;
+			}
+		}
+		if (i == path_size)
+		{
+			//描画する軌道なし
+		}
+		else
+		{
+			//past_timeの直前のインデックスを保存
+			paths_first_index[n] = i - 1;
+			//past_timeの軌道を描画
+			PathPoint past_point = getNowPoint(paths[n][i-1],paths[n][i], past_time);
+			drawPath(past_point);
+			//past_time以降の軌道を描画
+			for (; i < path_size; i++)
+			{
+				if(paths[n][i].time > now)
+				{
+					//nowの直後の点が現れたらnowの点として内分点を描画する
+					PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
+					drawPath(now_point);
+					break;
+				}
+				else
+				{
+					//軌道を描画する
+					drawPath(paths[n][i]);
+				}
+			}
+		}
+		////////////////////////////////////////////////////
 		glEnd();
 	}
 	//アルファブレンド無効化
