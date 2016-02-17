@@ -73,6 +73,8 @@ void ATFViewerMain::initPathPoint(DBAccessor& dba)
 			n++;
 			paths.push_back(vector<PathPoint>());
 			paths_first_index.push_back(0);
+			past_time_index.push_back(0);
+			now_index.push_back(0);
 			old_id = id;
 		}
 		paths[n].push_back(PathPoint(lo,la,a,t));
@@ -113,7 +115,9 @@ void ATFViewerMain::display(void)
 		int nmax = paths_first_index.size();
 		for(int n = 0; n < nmax; n++)
 		{
-			paths_first_index[n]=0;
+			paths_first_index[n] = 0;
+			past_time_index[n] = 0;
+			now_index[n] = 0;
 		}
 	}
 	
@@ -172,6 +176,8 @@ void ATFViewerMain::display(void)
 	glEnable(GL_BLEND);
 	//アルファブレンドの方法を指定
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//描画を始める時刻
+	long long past_time = now - 600;
 	//航空機毎に軌道を描画する
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
@@ -183,33 +189,10 @@ void ATFViewerMain::display(void)
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].size();
-		int imin = paths_first_index[n];
-		///////////////////////////////////////////////////
+		///////////////////////////////////////////////////////////////////////
 		/*
-		for (int i = imin; i < path_size-1; i++)
-		{
-			if(paths[n][i].time > now)
-			{
-				PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
-				drawPath(now_point);
-				break;
-			}
-			else
-			{
-				if(paths[n][i].time >= (now - 600) )
-				{
-					drawPath(paths[n][i]);
-				}
-				else
-				{
-					paths_first_index[n]=i;
-				}
-			}
-		}
-		*/
-		////////////////////////////////////////////////////
+		int imin = paths_first_index[n];
 		int i = 0;
-		long long past_time = now - 600;
 		//past_timeより前の軌道は描かない
 		for (i = imin; i < path_size; i++)
 		{
@@ -246,7 +229,62 @@ void ATFViewerMain::display(void)
 				}
 			}
 		}
-		////////////////////////////////////////////////////
+		*/
+		/////////////////////////////////////////////////////////////////////////////
+		//past_time_indexを更新する
+		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
+		for(int i = past_time_index[n]; i < path_size; i++)
+		{
+			if(past_time < paths[n][i].time)
+			{
+				past_time_index[n] = i;
+				break;
+			}
+		}
+		//past_timeが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
+		if(paths[n][path_size-1].time <= past_time)
+		{
+			past_time_index[n] = path_size;
+		}
+		//now_indexを更新する
+		//now_index[n] = Min{ i | now < paths[n][i].time}
+		for(int i = now_index[n]; i < path_size; i++)
+		{
+			if(now < paths[n][i].time)
+			{
+				now_index[n] = i;
+				break;
+			}
+		}
+		//nowが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
+		if(paths[n][path_size-1].time <= now)
+		{
+			now_index[n] = path_size;
+		}
+		//past_pointを描画する
+		//past_time_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
+		if((past_time_index[n] != 0) && (past_time_index[n] != path_size))
+		{
+			int i = past_time_index[n];
+			PathPoint past_point = getNowPoint(paths[n][i-1],paths[n][i], past_time);
+			drawPath(past_point);
+		}
+		//past_time_index <= i < now_indexとなるiのpath[n][i]を描画する
+		//path_sizeに達したら描画を終了する
+		for(int i = past_time_index[n]; i < now_index[n]; i++)
+		{
+			//軌道を描画する
+			drawPath(paths[n][i]);
+		}
+		//now_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
+		//now_pointを描画する
+		if((now_index[n] != 0) && (now_index[n] != path_size))
+		{
+			int i = now_index[n];
+			PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
+			drawPath(now_point);
+		}
+		/////////////////////////////////////////////////////////////////////////////
 		glEnd();
 	}
 	//アルファブレンド無効化

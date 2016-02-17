@@ -60,6 +60,8 @@ private:
 	GLdouble camera_target[3];
 	std::vector<std::vector<PathPoint> > paths;
 	std::vector<int> paths_first_index;
+	std::vector<int> past_time_index;
+	std::vector<int> now_index;
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
@@ -73,6 +75,8 @@ private:
 		camera_phi(60.0*PI/180.0),
 		paths(),
 		paths_first_index(),
+		past_time_index(),
+		now_index(),
 		now(1453260000),
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
