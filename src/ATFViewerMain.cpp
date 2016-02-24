@@ -189,48 +189,6 @@ void ATFViewerMain::display(void)
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].size();
-		///////////////////////////////////////////////////////////////////////
-		/*
-		int imin = paths_first_index[n];
-		int i = 0;
-		//past_timeより前の軌道は描かない
-		for (i = imin; i < path_size; i++)
-		{
-			if( past_time <= paths[n][i].time )
-			{
-				break;
-			}
-		}
-		if (i == path_size)
-		{
-			//描画する軌道なし
-		}
-		else
-		{
-			//past_timeの直前のインデックスを保存
-			paths_first_index[n] = i - 1;
-			//past_timeの軌道を描画
-			PathPoint past_point = getNowPoint(paths[n][i-1],paths[n][i], past_time);
-			drawPath(past_point);
-			//past_time以降の軌道を描画
-			for (; i < path_size; i++)
-			{
-				if(paths[n][i].time > now)
-				{
-					//nowの直後の点が現れたらnowの点として内分点を描画する
-					PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
-					drawPath(now_point);
-					break;
-				}
-				else
-				{
-					//軌道を描画する
-					drawPath(paths[n][i]);
-				}
-			}
-		}
-		*/
-		/////////////////////////////////////////////////////////////////////////////
 		//past_time_indexを更新する
 		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
 		for(int i = past_time_index[n]; i < path_size; i++)

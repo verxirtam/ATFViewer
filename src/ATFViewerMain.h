@@ -77,7 +77,7 @@ private:
 		paths_first_index(),
 		past_time_index(),
 		now_index(),
-		now(1453260000),
+		now(1456153155),//1453260000),
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
 		map(),

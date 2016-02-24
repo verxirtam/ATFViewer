@@ -89,7 +89,7 @@ public:
 			*/
 			glBegin(GL_LINES);
 			glVertex3d(longitude[n],latitude[n],    0.0);
-			glVertex3d(longitude[n],latitude[n],50000.0);
+			glVertex3d(longitude[n],latitude[n],12500.0);
 			glEnd();
 		}
 	}
