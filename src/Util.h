@@ -17,6 +17,9 @@
  */
 #ifndef UTIL_H_
 #define UTIL_H_
+
+#include <sstream>
+
 class Util
 {
 public:

@@ -32,6 +32,7 @@
 #include "DBAccessor.h"
 #include "Map.h"
 #include "Fixes.h"
+#include "Sectors.h"
 
 struct PathPoint
 {
@@ -67,6 +68,7 @@ private:
 	const time_t timeMax;
 	Map map;
 	Fixes fixes;
+	Sectors sectors;
 	//初期化
 	ATFViewerMain():
 		PI(3.14159265358979),
@@ -81,7 +83,8 @@ private:
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
 		map(),
-		fixes()
+		fixes(),
+		sectors()
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;

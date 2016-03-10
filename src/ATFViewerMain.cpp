@@ -167,6 +167,9 @@ void ATFViewerMain::display(void)
 	//フィックスを描画する
 	fixes.display();
 
+	//セクタを描画する
+	sectors.display();
+
 	//航空機の軌道っぽいものを描く
 	//隠面消去を無効にする
 	//アルファブレンドで奥の透明オブジェクトが描画されないことがあるため
