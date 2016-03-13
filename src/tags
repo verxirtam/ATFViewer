@@ -68,6 +68,7 @@ getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAcce
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
+getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d)$/;"	f	class:Sectors
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
 getLongitudeFromDMS	Util.h	/^	static double getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Util
@@ -82,9 +83,11 @@ includesMinimumAltitude	Sectors.h	/^	bool includesMinimumAltitude;$/;"	m	struct:
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
+init	Sectors.h	/^	void init(DBAccessor& dba)$/;"	f	class:Sectors
 initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(DBAccessor& dba)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
+insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
@@ -113,6 +116,7 @@ resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:
 scale	Map.h	/^	GLdouble scale;$/;"	m	class:Map
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
 sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
+sectors	ATFViewerMain.h	/^	Sectors sectors;$/;"	m	class:ATFViewerMain
 setCenterOffsetLat	Map.h	/^	void setCenterOffsetLat(GLdouble c_lat)$/;"	f	class:Map
 setCenterOffsetLong	Map.h	/^	void setCenterOffsetLong(GLdouble c_long)$/;"	f	class:Map
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor

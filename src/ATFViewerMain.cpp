@@ -97,6 +97,9 @@ void ATFViewerMain::initScene(void)
 	//フィックスの初期化
 	fixes.init(dba);
 	
+	//セクターの初期化
+	sectors.init(dba);
+	
 	//マップの初期化
 	map.init(dba);
 	

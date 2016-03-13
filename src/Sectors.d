@@ -1,1 +1,1 @@
-Sectors.o: Sectors.cpp Sectors.h Util.h
+Sectors.o: Sectors.cpp Sectors.h DBAccessor.h Util.h

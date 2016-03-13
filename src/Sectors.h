@@ -21,9 +21,11 @@
 
 #include <vector>
 #include <string>
+#include <cmath>
 
 #include <GL/glut.h>
 
+#include "DBAccessor.h"
 #include "Util.h"
 
 struct LongLat
@@ -39,6 +41,8 @@ struct SubSector
 	int maximumAltitude;
 	bool includesMaximumAltitude;
 	std::vector<int> longLatIndex;
+	//縁取り用の頂点
+	std::vector<int> insideLongLatIndex;
 };
 
 struct Sector
@@ -52,9 +56,13 @@ class Sectors
 private:
 	std::vector<Sector> sector;
 	std::vector<LongLat> longLat;
+	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
 
 public:
 	Sectors():sector(),longLat()
+	{
+	}
+	void init(DBAccessor& dba)
 	{
 		/////////////////////////////
 		SubSector ss;
@@ -99,6 +107,21 @@ public:
 			ll.latitude = Util::getLatitudeFromDMS(lat_dms[i]);
 			longLat.push_back(ll);
 			ss.longLatIndex.push_back(longLat.size()-1);
+		}
+		int imax = ss.longLatIndex.size();
+		std::cout << "imax = " << imax << std::endl;
+		for(int i = 0; i < imax; i++)
+		{
+			int j = (i - 1 + imax) % imax;
+			int k = (i    ) % imax;
+			int l = (i + 1) % imax;
+			std::cout << "(j,k,l)=(" << j << "," << k << "," << l << ")" << std::endl;
+			LongLat llj = longLat[ss.longLatIndex[j]];
+			LongLat llk = longLat[ss.longLatIndex[k]];
+			LongLat lll = longLat[ss.longLatIndex[l]];
+			ll = getInsideLongLat(llj,llk,lll,0.05);
+			longLat.push_back(ll);
+			ss.insideLongLatIndex.push_back(longLat.size()-1);
 		}
 		Sector s;
 		s.sectorName=std::string("S01");
