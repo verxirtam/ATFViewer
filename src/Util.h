@@ -72,6 +72,14 @@ public:
 		
 		return sign * ( degree + min / 60.0 + sec / 3600.0 );
 	}
+	static int getFeetFromFL(std::string fl)
+	{
+		std::stringstream ss("");
+		ss << fl[2] << fl[3] << fl[4];
+		int feet;
+		ss >> feet;
+		return feet * 100;
+	}
 };
 
 #endif

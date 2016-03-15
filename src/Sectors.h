@@ -48,6 +48,9 @@ struct SubSector
 struct Sector
 {
 	std::string sectorName;
+	std::string caption;
+	std::string unitProvidingService;
+	int subSectorCount;
 	std::vector<SubSector> subSector;
 };
 
@@ -57,14 +60,47 @@ private:
 	std::vector<Sector> sector;
 	std::vector<LongLat> longLat;
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
-
+	void getSectors(DBAccessor& dba);
+	void getSubSectors(DBAccessor& dba, Sector& s);
+	void getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index);
 public:
 	Sectors():sector(),longLat()
 	{
 	}
 	void init(DBAccessor& dba)
 	{
+		getSectors(dba);
+		
 		/////////////////////////////
+		int imax = sector.size();
+		std::cout << "sector.size() = " << imax << std::endl;
+		for(int i = 0; i < imax; i++)
+		{
+			std::cout << "sector[" << i << "]" << std::endl;
+			std::cout << "\t" << "sectorName  = " << sector[i].sectorName << std::endl;
+			std::cout << "\t" << "caption = " << sector[i].caption << std::endl;
+			std::cout << "\t" << "unitProvidingService = " << sector[i].unitProvidingService << std::endl;
+			std::cout << "\t" << "subSectorCount = " << sector[i].subSectorCount << std::endl;
+			int jmax = sector[i].subSector.size();
+			for(int j = 0; j < jmax; j++)
+			{
+				SubSector& ss = sector[i].subSector[j];
+				std::cout << "\t" << "subSector[" << j << "]" << std::endl;
+				std::cout << "\t\t" << "minimumAltitude = " << ss.minimumAltitude << std::endl;
+				std::cout << "\t\t" << "includesMinimumAltitude = " << ss.includesMinimumAltitude << std::endl;
+				std::cout << "\t\t" << "maximumAltitude = " << ss.maximumAltitude << std::endl;
+				std::cout << "\t\t" << "includesMaximumAltitude = " << ss.includesMaximumAltitude << std::endl;
+				int kmax = ss.longLatIndex.size();
+				std::cout << "\t\t" << "longLatIndex.size() = " << kmax << std::endl;
+				for(int k = 0; k < kmax; k++)
+				{
+					LongLat ll = longLat[ss.longLatIndex[k]];
+					std::cout << ll.longitude << ", " << ll.latitude << std::endl;
+				}
+			}
+		}
+		/////////////////////////////
+		/*
 		SubSector ss;
 		ss.minimumAltitude=24000;
 		ss.includesMinimumAltitude=false;
@@ -127,6 +163,7 @@ public:
 		s.sectorName=std::string("S01");
 		s.subSector.push_back(ss);
 		sector.push_back(s);
+		*/
 		/////////////////////////////
 	}
 	void display(void);

@@ -238,7 +238,7 @@ void Map::display(void)
 
 	//罫線を描画する
 	glBegin(GL_LINES);
-	glColor3d(1.0,0.0,0.0);
+	glColor3d(0.0,1.0,0.0);
 	glVertex3d(137.0,34.0,10.0);glVertex3d(145.0,34.0,10.0);
 	glVertex3d(137.0,35.0,10.0);glVertex3d(145.0,35.0,10.0);
 	glVertex3d(137.0,36.0,10.0);glVertex3d(145.0,36.0,10.0);
