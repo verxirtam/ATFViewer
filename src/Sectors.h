@@ -19,20 +19,17 @@
 #ifndef Sectors_H
 #define Sectors_H
 
+#include <algorithm>
 #include <vector>
 #include <string>
 #include <cmath>
 
 #include <GL/glut.h>
 
+#include "GCS.h"
 #include "DBAccessor.h"
 #include "Util.h"
 
-struct LongLat
-{
-	double longitude;
-	double latitude;
-};
 
 struct SubSector
 {
@@ -72,6 +69,7 @@ public:
 		getSectors(dba);
 		
 		/////////////////////////////
+		return;
 		int imax = sector.size();
 		std::cout << "sector.size() = " << imax << std::endl;
 		for(int i = 0; i < imax; i++)
@@ -95,7 +93,7 @@ public:
 				for(int k = 0; k < kmax; k++)
 				{
 					LongLat ll = longLat[ss.longLatIndex[k]];
-					std::cout << ll.longitude << ", " << ll.latitude << std::endl;
+					std::cout << "\t\t\t"<< ll.longitude << ", " << ll.latitude << std::endl;
 				}
 			}
 		}

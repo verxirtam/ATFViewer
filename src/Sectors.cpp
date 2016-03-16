@@ -134,6 +134,10 @@ void Sectors::getSubSectors(DBAccessor& dba, Sector& s)
 		ss.includesMinimumAltitude = ( dba.getColumnInt(2) == 0 ) ? false : true;
 		ss.maximumAltitude = Util::getFeetFromFL(dba.getColumnString(3));
 		ss.includesMaximumAltitude = ( dba.getColumnInt(4) == 0 ) ? false : true;
+		if(ss.minimumAltitude < 1000)
+		{
+			ss.minimumAltitude = 1000;
+		}
 		if(ss.maximumAltitude >= 50000)
 		{
 			ss.maximumAltitude = 50000;
@@ -190,14 +194,36 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 		ss.longLatIndex.push_back(longLat.size()-1);
 	}
 	
+	//頂点配列が左回りかどうかを判定する
+	if(isClockwise(ss.longLatIndex, longLat))
+	{
+		std::cout << "右回りなので逆順に変更する" << std::endl;
+		int imax = ss.longLatIndex.size();
+		for(int i = 0; i < imax; i++)
+		{
+			std::cout << ss.longLatIndex[i] << ", ";
+			std::cout << longLat[ss.longLatIndex[i]].longitude << ", ";
+			std::cout << longLat[ss.longLatIndex[i]].latitude << std::endl;
+		}
+		//右回りの場合はインデックス配列を逆順に変更する
+		std::reverse(ss.longLatIndex.begin(),ss.longLatIndex.end());
+		//順序変更後の列の表示
+		std::cout << "逆順に変更後" << std::endl;
+		for(int i = 0; i < imax; i++)
+		{
+			std::cout << ss.longLatIndex[i] << ", ";
+			std::cout << longLat[ss.longLatIndex[i]].longitude << ", ";
+			std::cout << longLat[ss.longLatIndex[i]].latitude << std::endl;
+		}
+	}
+	
+	
 	int imax = ss.longLatIndex.size();
-	std::cout << "imax = " << imax << std::endl;
 	for(int i = 0; i < imax; i++)
 	{
 		int j = (i - 1 + imax) % imax;
 		int k = (i    ) % imax;
 		int l = (i + 1) % imax;
-		std::cout << "(j,k,l)=(" << j << "," << k << "," << l << ")" << std::endl;
 		LongLat llj = longLat[ss.longLatIndex[j]];
 		LongLat llk = longLat[ss.longLatIndex[k]];
 		LongLat lll = longLat[ss.longLatIndex[l]];
@@ -212,6 +238,25 @@ void Sectors::display(void)
 	int imax = sector.size();
 	for(int i = 0; i < imax; i++)
 	{
+		//色の設定
+		switch (sector[i].sectorName[0])
+		{
+		case 'S':
+			glColor3d(1.0,0.0,0.0);
+			break;
+		case 'T':
+			glColor3d(1.0,1.0,0.0);
+			break;
+		case 'F':
+			glColor3d(0.0,1.0,0.0);
+			break;
+		case 'N':
+			glColor3d(0.0,1.0,1.0);
+			break;
+		case 'A':
+			glColor3d(0.0,0.0,1.0);
+			break;
+		}
 		int jmax = sector[i].subSector.size();
 		for(int j = 0; j < jmax; j++)
 		{
@@ -228,9 +273,9 @@ void Sectors::displaySubSector(SubSector& ss)
 		return;
 	}
 	
+	
 	//下底
 	glBegin(GL_LINE_STRIP);
-	glColor3d(1.0,0.0,0.0);
 	for(int k = 0;k < kmax; k++)
 	{
 		LongLat& ll = longLat[ss.longLatIndex[k]];
@@ -241,7 +286,6 @@ void Sectors::displaySubSector(SubSector& ss)
 	glEnd();
 	//下底の内側
 	glBegin(GL_LINE_STRIP);
-	glColor3d(1.0,0.0,0.0);
 	for(int k = 0;k < kmax; k++)
 	{
 		LongLat& ll = longLat[ss.insideLongLatIndex[k]];
@@ -253,7 +297,6 @@ void Sectors::displaySubSector(SubSector& ss)
 	
 	//上底
 	glBegin(GL_LINE_STRIP);
-	glColor3d(1.0,0.0,0.0);
 	for(int k = 0;k < kmax; k++)
 	{
 		LongLat& ll = longLat[ss.longLatIndex[k]];
@@ -264,7 +307,6 @@ void Sectors::displaySubSector(SubSector& ss)
 	
 	//上底の内側
 	glBegin(GL_LINE_STRIP);
-	glColor3d(1.0,0.0,0.0);
 	for(int k = 0;k < kmax; k++)
 	{
 		LongLat& ll = longLat[ss.insideLongLatIndex[k]];

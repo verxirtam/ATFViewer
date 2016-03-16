@@ -15,7 +15,8 @@ DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
 FIXES_H_	Fixes.h	20;"	d
 Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
-LongLat	Sectors.h	/^struct LongLat$/;"	s
+GCS_H_	GCS.h	21;"	d
+LongLat	GCS.h	/^struct LongLat$/;"	s
 MAP_H_	Map.h	21;"	d
 Map	Map.h	/^	Map():$/;"	f	class:Map
 Map	Map.h	/^class Map$/;"	c
@@ -69,6 +70,7 @@ getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAcce
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
+getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
 getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double distance)$/;"	f	class:Sectors
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
@@ -77,8 +79,8 @@ getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& 
 getScale	Map.h	/^	GLdouble getScale(void)$/;"	f	class:Map
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
 getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:Map
-getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, std::string& sector_name, int subsector_index)$/;"	f	class:Sectors
-getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, std::string& sector_name)$/;"	f	class:Sectors
+getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:Sectors
+getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:Sectors
 getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
@@ -92,17 +94,19 @@ initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(DBAccessor& 
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
+isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
+isClockwise	GCS.h	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
+latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
 latitude	Map.h	/^	double latitude;$/;"	m	struct:MapVertex
-latitude	Sectors.h	/^	double latitude;$/;"	m	struct:LongLat
 longLat	Sectors.h	/^	std::vector<LongLat> longLat;$/;"	m	class:Sectors
 longLatIndex	Sectors.h	/^	std::vector<int> longLatIndex;$/;"	m	struct:SubSector
 longitude	ATFViewerMain.h	/^	double longitude;$/;"	m	struct:PathPoint
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
+longitude	GCS.h	/^	double longitude;$/;"	m	struct:LongLat
 longitude	Map.h	/^	double longitude;$/;"	m	struct:MapVertex
-longitude	Sectors.h	/^	double longitude;$/;"	m	struct:LongLat
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 map	ATFViewerMain.h	/^	Map map;$/;"	m	class:ATFViewerMain
 mapVertex	Map.h	/^	std::vector<MapVertex> mapVertex;$/;"	m	class:Map
