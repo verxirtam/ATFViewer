@@ -7,6 +7,8 @@
 ATFViewerMain	ATFViewerMain.h	/^	ATFViewerMain():$/;"	f	class:ATFViewerMain
 ATFViewerMain	ATFViewerMain.h	/^class ATFViewerMain$/;"	c
 ATFViewerMain_H	ATFViewerMain.h	22;"	d
+BitmapString	BitmapString.h	/^class BitmapString$/;"	c
+BitmapString_H	BitmapString.h	20;"	d
 CXXFLAGS	makefile	/^CXXFLAGS := -g -O0 -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
@@ -61,6 +63,9 @@ display	Map.cpp	/^void Map::display(void)$/;"	f	class:Map
 display	Sectors.cpp	/^void Sectors::display(void)$/;"	f	class:Sectors
 displaySubSector	Sectors.cpp	/^void Sectors::displaySubSector(SubSector& ss)$/;"	f	class:Sectors
 drawPath	ATFViewerMain.cpp	/^void ATFViewerMain::drawPath(PathPoint& p)$/;"	f	class:ATFViewerMain
+drawString	BitmapString.h	/^	static void drawString(const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
+drawString	BitmapString.h	/^	static void drawString(double x, double y, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
+drawString	BitmapString.h	/^	static void drawString(double x, double y, double z, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
 fixes	ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
@@ -95,7 +100,6 @@ initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:AT
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
-isClockwise	GCS.h	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes

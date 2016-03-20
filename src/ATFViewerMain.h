@@ -26,10 +26,12 @@
 #include <vector>
 #include <cstdio>
 #include <cmath>
+#include <ctime>
 
 #include <GL/glut.h>
 
 #include "DBAccessor.h"
+#include "BitmapString.h"
 #include "Map.h"
 #include "Fixes.h"
 #include "Sectors.h"
@@ -55,6 +57,8 @@ class ATFViewerMain
 {
 private:
 	const double PI;
+	int windowWidth;
+	int windowHeight;
 	GLdouble camera_r;
 	GLdouble camera_theta;
 	GLdouble camera_phi;
@@ -72,8 +76,10 @@ private:
 	//初期化
 	ATFViewerMain():
 		PI(3.14159265358979),
+		windowWidth(100),
+		windowHeight(100),
 		camera_r(30.0),
-		camera_theta(300.0*PI/180.0),
+		camera_theta(270.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
 		paths(),
 		paths_first_index(),

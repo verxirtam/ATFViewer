@@ -124,10 +124,44 @@ void ATFViewerMain::display(void)
 		}
 	}
 	
+	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
+	//ウィンドウ座標系上での描画
+	/////////////////////////////////////
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	glOrtho(0.0,((double)windowWidth),0.0,((double)windowHeight),-1.0,1.0);
+	glMatrixMode(GL_MODELVIEW);
+	glLoadIdentity();
+
+	//時刻を表示する
+	glColor3d(1.0,1.0,1.0);
+	BitmapString::drawString(0.0, (double)windowHeight-10.0,::asctime(::localtime(&now)));
+	
+	glColor3d(0.0,0.0,0.0);
+	BitmapString::drawString(0.0, (double)windowHeight-20.0,::asctime(::localtime(&now)));
+	
+	
+	//ワールド座標系上での描画
+	//////////////////////////////////////
+	//変換行列の初期化
+	//透視変換行列の設定
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(30.0, ((double)windowWidth)/(double)windowHeight, 1.0, 1000.0);
+
+	//モデルビュー変換行列の設定
+	//モデリング変換（モデル- -> ワールド）、
+	//ビューイング変換(ワールド -> カメラ)
+	//を行うための設定
+	glMatrixMode(GL_MODELVIEW);
 	//モデルビュー変換行列の初期化
 	glLoadIdentity();
+	
+	//時刻を表示する
+	glColor3d(1.0,1.0,1.0);
+	BitmapString::drawString(0.0, 0.1,::asctime(::localtime(&now)));
 	
 	//ビュー変換行列の設定
 	//カメラの位置、向きの設定
@@ -139,10 +173,6 @@ void ATFViewerMain::display(void)
 			camera_target[0],camera_target[1],camera_target[2],//視点の位置
 			0.0,   0.0,  1.0 //カメラから見た垂直方向
 			);
-	
-	//光源の設定
-	//const static GLfloat light0pos[] = { 0.0, 0.0, 100.0, 1.0 };
-	//glLightfv(GL_LIGHT0, GL_POSITION, light0pos);
 	
 	
 	//クリッピング平面を設定
@@ -275,18 +305,8 @@ void ATFViewerMain::resize(int w, int h)
 	//下記はウィンドウの全範囲をビューポートに設定している
 	glViewport(0, 0, w, h);
 
-	//変換行列の初期化
-	//透視変換行列の設定
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(30.0, ((double)w)/(double)h, 1.0, 1000.0);
-
-	//モデルビュー変換行列の設定
-	//モデリング変換（モデル- -> ワールド）、
-	//ビューイング変換(ワールド -> カメラ)
-	//を行うための設定
-	glMatrixMode(GL_MODELVIEW);
-
+	windowWidth = w;
+	windowHeight = h;
 }
 
 void ATFViewerMain::keyboard(unsigned char key, int x, int y)
@@ -325,7 +345,7 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		break;
 	case 'i':
 		camera_phi+=5.0*PI/180.0;
-		camera_phi = (camera_phi >80.0*PI/180.0) ? 80.0*PI/180.0 : camera_phi;
+		camera_phi = (camera_phi > 90.0*PI/180.0) ? 90.0*PI/180.0 : camera_phi;
 		display();
 		break;
 	case 'k':
@@ -344,6 +364,7 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		display();
 		break;
 	case 't':
+		std::cout<<::asctime(::localtime(&now))<<std::endl;
 		static bool animation_enable = true;
 		if(animation_enable)
 		{
