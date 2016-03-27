@@ -32,10 +32,12 @@
 
 #include "DBAccessor.h"
 #include "BitmapString.h"
+#include "Paths.h"
 #include "MapTransform.h"
 #include "Map.h"
 #include "Fixes.h"
 #include "Sectors.h"
+
 
 #define GLUT_JOYSTICK_BUTTON_E  0x10    /*  5 */
 #define GLUT_JOYSTICK_BUTTON_F  0x20    /*  6 */
@@ -44,22 +46,6 @@
 #define GLUT_JOYSTICK_BUTTON_I  0x100   /*  9 */
 #define GLUT_JOYSTICK_BUTTON_J  0x200   /*  10 */
 
-
-
-struct PathPoint
-{
-	double longitude;
-	double latitude;
-	int altitude;
-	time_t time;
-	PathPoint(double lo,double la, int a, long long t)
-	{
-		longitude=lo;
-		latitude=la;
-		altitude=a;
-		time=t;
-	}
-};
 
 
 
@@ -82,10 +68,7 @@ private:
 	GLdouble camera_theta;
 	GLdouble camera_phi;
 	GLdouble camera_target[3];
-	std::vector<std::vector<PathPoint> > paths;
-	std::vector<int> paths_first_index;
-	std::vector<int> past_time_index;
-	std::vector<int> now_index;
+	Paths paths;
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
@@ -105,9 +88,9 @@ private:
 		camera_theta(270.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
 		paths(),
-		paths_first_index(),
-		past_time_index(),
-		now_index(),
+		//paths_first_index(),
+		//past_time_index(),
+		//now_index(),
 		now(1456153155),//1453260000),
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
@@ -125,9 +108,9 @@ private:
 	}
 	//シーンの初期化
 	void initScene(void);
-	void initPathPoint(DBAccessor& dba);
-	void drawPath(PathPoint& p);
-	PathPoint getNowPoint(PathPoint& from, PathPoint& to, double time);
+	//void initPathPoint(DBAccessor& dba);
+	//void drawPath(PathPoint& p);
+	//PathPoint getNowPoint(PathPoint& from, PathPoint& to, double time);
 	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない
 	ATFViewerMain(const ATFViewerMain& a);
 	ATFViewerMain& operator=(const ATFViewerMain& a);

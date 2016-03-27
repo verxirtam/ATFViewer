@@ -18,6 +18,12 @@ FIXES_H_	Fixes.h	20;"	d
 Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
+GLUT_JOYSTICK_BUTTON_E	ATFViewerMain.h	42;"	d
+GLUT_JOYSTICK_BUTTON_F	ATFViewerMain.h	43;"	d
+GLUT_JOYSTICK_BUTTON_G	ATFViewerMain.h	44;"	d
+GLUT_JOYSTICK_BUTTON_H	ATFViewerMain.h	45;"	d
+GLUT_JOYSTICK_BUTTON_I	ATFViewerMain.h	46;"	d
+GLUT_JOYSTICK_BUTTON_J	ATFViewerMain.h	47;"	d
 LongLat	GCS.h	/^struct LongLat$/;"	s
 MAP_H_	Map.h	21;"	d
 Map	Map.h	/^	Map(const std::string& map_id):$/;"	f	class:Map
@@ -29,8 +35,10 @@ MapVertex	Map.h	/^struct MapVertex$/;"	s
 MapVertexIndex	Map.h	/^struct MapVertexIndex$/;"	s
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
-PathPoint	ATFViewerMain.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
-PathPoint	ATFViewerMain.h	/^struct PathPoint$/;"	s
+PathPoint	Paths.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
+PathPoint	Paths.h	/^struct PathPoint$/;"	s
+Paths	Paths.h	/^class Paths$/;"	c
+Paths_H	Paths.h	20;"	d
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 Sector	Sectors.h	/^struct Sector$/;"	s
 Sectors	Sectors.h	/^	Sectors():sector(),longLat(),displayAll(true),displaySectorIndex(0)$/;"	f	class:Sectors
@@ -45,7 +53,7 @@ _idle	ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
 _joystick	ATFViewerMain.h	/^	static void _joystick(unsigned int buttonMask, int x, int y, int z)$/;"	f	class:ATFViewerMain
 _keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
-altitude	ATFViewerMain.h	/^	int altitude;$/;"	m	struct:PathPoint
+altitude	Paths.h	/^	int altitude;$/;"	m	struct:PathPoint
 begin	DBAccessor.h	/^	void begin()$/;"	f	class:DBAccessor
 bindDouble	DBAccessor.h	/^	void bindDouble(int i, double d)$/;"	f	class:DBAccessor
 bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
@@ -59,17 +67,23 @@ caption	Sectors.h	/^	std::string caption;$/;"	m	struct:Sector
 centerOffsetLat	MapTransform.h	/^	double centerOffsetLat;$/;"	m	class:MapTransform
 centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTransform
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
+currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
+disp_X	ATFViewerMain.h	/^	int disp_X;$/;"	m	class:ATFViewerMain
+disp_Y	ATFViewerMain.h	/^	int disp_Y;$/;"	m	class:ATFViewerMain
+disp_Z	ATFViewerMain.h	/^	int disp_Z;$/;"	m	class:ATFViewerMain
+disp_buttonMask	ATFViewerMain.h	/^	unsigned int disp_buttonMask;$/;"	m	class:ATFViewerMain
 display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
 display	Fixes.h	/^	void display()$/;"	f	class:Fixes
 display	Map.cpp	/^void Map::display(void)$/;"	f	class:Map
+display	Paths.cpp	/^void Paths::display(time_t now)$/;"	f	class:Paths
 display	Sectors.cpp	/^void Sectors::display(void)$/;"	f	class:Sectors
 displayAll	Sectors.h	/^	bool displayAll;$/;"	m	class:Sectors
 displaySector	Sectors.cpp	/^void Sectors::displaySector(Sector& sector)$/;"	f	class:Sectors
 displaySectorIndex	Sectors.h	/^	unsigned int displaySectorIndex;$/;"	m	class:Sectors
 displaySubSector	Sectors.cpp	/^void Sectors::displaySubSector(const std::string& sector_name, SubSector& ss)$/;"	f	class:Sectors
-drawPath	ATFViewerMain.cpp	/^void ATFViewerMain::drawPath(PathPoint& p)$/;"	f	class:ATFViewerMain
+drawPath	Paths.cpp	/^void Paths::drawPath(PathPoint& p, time_t now)$/;"	f	class:Paths
 drawString	BitmapString.h	/^	static void drawString(const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 drawString	BitmapString.h	/^	static void drawString(double x, double y, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 drawString	BitmapString.h	/^	static void drawString(double x, double y, double z, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
@@ -87,7 +101,7 @@ getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, Lo
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
 getLongitudeFromDMS	Util.h	/^	static double getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Util
-getNowPoint	ATFViewerMain.cpp	/^PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to, double time)$/;"	f	class:ATFViewerMain
+getNowPoint	Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
 getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:Map
@@ -102,23 +116,23 @@ init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
 init	Sectors.h	/^	void init(DBAccessor& dba)$/;"	f	class:Sectors
-initPathPoint	ATFViewerMain.cpp	/^void ATFViewerMain::initPathPoint(DBAccessor& dba)$/;"	f	class:ATFViewerMain
+initPathPoint	Paths.cpp	/^void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)$/;"	f	class:Paths
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 joystick	ATFViewerMain.cpp	/^void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)$/;"	f	class:ATFViewerMain
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
-latitude	ATFViewerMain.h	/^	double latitude;$/;"	m	struct:PathPoint
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
 latitude	Map.h	/^	double latitude;$/;"	m	struct:MapVertex
+latitude	Paths.h	/^	double latitude;$/;"	m	struct:PathPoint
 longLat	Sectors.h	/^	std::vector<LongLat> longLat;$/;"	m	class:Sectors
 longLatIndex	Sectors.h	/^	std::vector<int> longLatIndex;$/;"	m	struct:SubSector
-longitude	ATFViewerMain.h	/^	double longitude;$/;"	m	struct:PathPoint
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
 longitude	GCS.h	/^	double longitude;$/;"	m	struct:LongLat
 longitude	Map.h	/^	double longitude;$/;"	m	struct:MapVertex
+longitude	Paths.h	/^	double longitude;$/;"	m	struct:PathPoint
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
@@ -129,12 +143,13 @@ maximumAltitude	Sectors.h	/^	int maximumAltitude;$/;"	m	struct:SubSector
 minimumAltitude	Sectors.h	/^	int minimumAltitude;$/;"	m	struct:SubSector
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
-now_index	ATFViewerMain.h	/^	std::vector<int> now_index;$/;"	m	class:ATFViewerMain
-past_time_index	ATFViewerMain.h	/^	std::vector<int> past_time_index;$/;"	m	class:ATFViewerMain
-paths	ATFViewerMain.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:ATFViewerMain
-paths_first_index	ATFViewerMain.h	/^	std::vector<int> paths_first_index;$/;"	m	class:ATFViewerMain
+now_index	Paths.h	/^	std::vector<int> now_index;$/;"	m	class:Paths
+past_time_index	Paths.h	/^	std::vector<int> past_time_index;$/;"	m	class:Paths
+paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
+paths	Paths.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:Paths
 pollingInterval	ATFViewerMain.h	/^	const int pollingInterval;$/;"	m	class:ATFViewerMain
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
+resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
@@ -154,7 +169,8 @@ switchDisplaySector	Sectors.h	/^	void switchDisplaySector()$/;"	f	class:Sectors
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
 textureWidth	Map.h	/^	int textureWidth;$/;"	m	class:Map
-time	ATFViewerMain.h	/^	time_t time;$/;"	m	struct:PathPoint
+time	Paths.h	/^	time_t time;$/;"	m	struct:PathPoint
+timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
 u	Map.h	/^	double u;$/;"	m	struct:MapVertex

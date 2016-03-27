@@ -19,81 +19,20 @@
 
 using namespace std;
 
-void ATFViewerMain::drawPath(PathPoint& p)
-{
-	//航空機の高度に応じて色を設定する
-	//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
-	double c=((double)p.altitude)/40000.0;
-	double alpha = 1.0 - (((double)(now - p.time)) / 600.0);
-	c=c*c;
-	//glColor4d(c, 0.5, 1.0 - c, alpha * (1.0 - c));
-	glColor4d(c, 0.5, 1.0 - c, alpha * 0.5);
-	glVertex3d(p.longitude, p.latitude, p.altitude);
-	glColor4d(c, 0.5, 1.0 - c, alpha * 0.1);
-	glVertex3d(p.longitude, p.latitude, 0.0);
-}
-PathPoint ATFViewerMain::getNowPoint(PathPoint& from, PathPoint& to, double time)
-{
-	PathPoint ret(0.0, 0.0, 0, 0);
-	double ratio_from = 1.0 - ((double)(time - from.time))/((double)(to.time - from.time));
-	double ratio_to = 1.0 - ratio_from;
-	ret.longitude = ratio_from * from.longitude + ratio_to * to.longitude;
-	ret.latitude = ratio_from * from.latitude + ratio_to * to.latitude;
-	ret.altitude =(int)( ratio_from * ((double)from.altitude) + ratio_to * ((double)to.altitude));
-	ret.time = time;
-	return ret;
-}
-
-void ATFViewerMain::initPathPoint(DBAccessor& dba)
-{
-	
-	//軌道を取得する
-	std::stringstream sql("");
-	sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
-	sql<<timeMin<<" and time<";
-	sql<<timeMax<<" order by id,time;";
-	dba.setQuery(sql.str());
-	cout<<"setQuery() after, step_select() before"<<endl;
-	
-	//パスのインデックス
-	int n=-1;
-	//直前に読み込んだid
-	//id毎にvectorに格納するため
-	std::string old_id("");
-	
-	while(SQLITE_ROW == dba.step_select())
-	{
-		std::string id(dba.getColumnString(0));
-		double lo=dba.getColumnDouble(1);
-		double la=dba.getColumnDouble(2);
-		int a=dba.getColumnInt(3);
-		long long t=dba.getColumnLongLong(4);
-		if(id != old_id)
-		{
-			n++;
-			paths.push_back(vector<PathPoint>());
-			paths_first_index.push_back(0);
-			past_time_index.push_back(0);
-			now_index.push_back(0);
-			old_id = id;
-		}
-		paths[n].push_back(PathPoint(lo,la,a,t));
-	}
-	cout<<"initPathPoint() end"<<endl;
-}
-
 
 void ATFViewerMain::initScene(void)
 {
+	//DBへの接続
 	cout<<"dba() before"<<endl;
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
 	cout<<"dba() after, setQuery() before"<<endl;
 	
 	
-	initPathPoint(dba);
-	
 	glClearColor(0.0, 0.0, 0.0, 1.0);
-
+	
+	//軌道の初期化
+	paths.initPathPoint(dba, timeMin, timeMax);
+	
 	//フィックスの初期化
 	fixes.init(dba);
 	
@@ -119,13 +58,7 @@ void ATFViewerMain::display(void)
 	if (now > timeMax)
 	{
 		now = timeMin;
-		int nmax = paths_first_index.size();
-		for(int n = 0; n < nmax; n++)
-		{
-			paths_first_index[n] = 0;
-			past_time_index[n] = 0;
-			now_index[n] = 0;
-		}
+		paths.resetTime();
 	}
 	
 	
@@ -228,89 +161,9 @@ void ATFViewerMain::display(void)
 	//セクタを描画する
 	sectors.display();
 
-	//航空機の軌道っぽいものを描く
-	//隠面消去を無効にする
-	//アルファブレンドで奥の透明オブジェクトが描画されないことがあるため
-	//また、軌道の手前に描かれるオブジェクトがないため最後に描画すれば前後関係は崩れない
-	glDisable(GL_DEPTH_TEST);
-	//アルファブレンド有効化
-	glEnable(GL_BLEND);
-	//アルファブレンドの方法を指定
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	//描画を始める時刻
-	long long past_time = now - 600;
-	//航空機毎に軌道を描画する
-	for (unsigned int n = 0; n < paths.size(); n++)
-	{
-		//未来の軌道は描かない
-		if (paths[n][0].time > now )
-		{
-			continue;
-		}
-		glBegin(GL_TRIANGLE_STRIP);
-		//航空機の軌道に垂線をおろした帯状の図形を描画する
-		int path_size=paths[n].size();
-		//past_time_indexを更新する
-		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
-		for(int i = past_time_index[n]; i < path_size; i++)
-		{
-			if(past_time < paths[n][i].time)
-			{
-				past_time_index[n] = i;
-				break;
-			}
-		}
-		//past_timeが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
-		if(paths[n][path_size-1].time <= past_time)
-		{
-			past_time_index[n] = path_size;
-		}
-		//now_indexを更新する
-		//now_index[n] = Min{ i | now < paths[n][i].time}
-		for(int i = now_index[n]; i < path_size; i++)
-		{
-			if(now < paths[n][i].time)
-			{
-				now_index[n] = i;
-				break;
-			}
-		}
-		//nowが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
-		if(paths[n][path_size-1].time <= now)
-		{
-			now_index[n] = path_size;
-		}
-		//past_pointを描画する
-		//past_time_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
-		if((past_time_index[n] != 0) && (past_time_index[n] != path_size))
-		{
-			int i = past_time_index[n];
-			PathPoint past_point = getNowPoint(paths[n][i-1],paths[n][i], past_time);
-			drawPath(past_point);
-		}
-		//past_time_index <= i < now_indexとなるiのpath[n][i]を描画する
-		//path_sizeに達したら描画を終了する
-		for(int i = past_time_index[n]; i < now_index[n]; i++)
-		{
-			//軌道を描画する
-			drawPath(paths[n][i]);
-		}
-		//now_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
-		//now_pointを描画する
-		if((now_index[n] != 0) && (now_index[n] != path_size))
-		{
-			int i = now_index[n];
-			PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
-			drawPath(now_point);
-		}
-		/////////////////////////////////////////////////////////////////////////////
-		glEnd();
-	}
-	//アルファブレンド無効化
-	glDisable(GL_BLEND);
-	//デプスバッファ有効化
-	glEnable(GL_DEPTH_TEST);
-	//航空機の軌道の描画完了
+
+	//航空機の軌道を描画する
+	paths.display(now);
 
 	//クリッピング平面の無効化
 	glDisable(GL_CLIP_PLANE0);
@@ -323,6 +176,7 @@ void ATFViewerMain::display(void)
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
 }
+
 
 void ATFViewerMain::resize(int w, int h)
 {
