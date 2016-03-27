@@ -101,8 +101,12 @@ void ATFViewerMain::initScene(void)
 	sectors.init(dba);
 	
 	//マップの初期化
-	map.init(dba);
-	
+	int imax = map.size();
+	for(int i=0;i < imax; i++)
+	{
+		map[i].init(dba);
+	}
+
 	//デプスバッファを使用する
 	glEnable(GL_DEPTH_TEST);
 }
@@ -111,7 +115,7 @@ void ATFViewerMain::initScene(void)
 void ATFViewerMain::display(void)
 {
 	//時刻の更新
-	now+=20;
+	now += currentTimeInterval;
 	if (now > timeMax)
 	{
 		now = timeMin;
@@ -141,6 +145,18 @@ void ATFViewerMain::display(void)
 	
 	glColor3d(0.0,0.0,0.0);
 	BitmapString::drawString(0.0, (double)windowHeight-20.0,::asctime(::localtime(&now)));
+	
+	//ジョイスティックの状況を表示する
+	std::stringstream jss;
+	jss << "Joystick: ";
+	jss << "X = " << disp_X << ",\t";
+	jss << "Y = " << disp_Y << ",\t";
+	jss << "Z = " << disp_Z << ",\t";
+	jss << "buttonMask = " << disp_buttonMask;
+	glColor3d(1.0,1.0,1.0);
+	BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
+	glColor3d(0.0,0.0,0.0);
+	BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
 	
 	
 	//ワールド座標系上での描画
@@ -193,9 +209,18 @@ void ATFViewerMain::display(void)
 	glEnable(GL_CLIP_PLANE2);
 	glEnable(GL_CLIP_PLANE3);
 	
-	//マップの描画
-	map.display();
+	
+	//マップの座標変換を行う
+	mapTransform.setTransform();
+	
 	//以下はmap座標系（緯度経度座標系）
+
+	//マップの描画
+	int imax = map.size();
+	for(int i = 0; i < imax; i++)
+	{
+		map[i].display();
+	}
 
 	//フィックスを描画する
 	fixes.display();
@@ -315,31 +340,31 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 	{
 	case 'f':
 		//center_offset_long += 1.0 / scale;
-		map.setCenterOffsetLong(map.getCenterOffsetLong() + 1.0 / map.getScale());
+		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() + 1.0 / mapTransform.getScale());
 		display();
 		break;
 	case 's':
 		//center_offset_long -= 1.0 / scale;
-		map.setCenterOffsetLong(map.getCenterOffsetLong() - 1.0 / map.getScale());
+		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() - 1.0 / mapTransform.getScale());
 		display();
 		break;
 	case 'e':
 		//center_offset_lat += 1.0 / scale;
-		map.setCenterOffsetLat(map.getCenterOffsetLat() + 1.0 / map.getScale());
+		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() + 1.0 / mapTransform.getScale());
 		display();
 		break;
 	case 'd':
 		//center_offset_lat -= 1.0 / scale;
-		map.setCenterOffsetLat(map.getCenterOffsetLat() - 1.0 / map.getScale());
+		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() - 1.0 / mapTransform.getScale());
 		display();
 		break;
 	case 'l':
-		camera_theta+=10.0*PI/180.0;
+		camera_theta+=2.5*PI/180.0;
 		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
 		display();
 		break;
 	case 'j':
-		camera_theta-=10.0*PI/180.0;
+		camera_theta-=2.5*PI/180.0;
 		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
 		display();
 		break;
@@ -355,12 +380,12 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		break;
 	case 'b':
 		//scale*=0.875;
-		map.setScale(map.getScale()*0.875);
+		mapTransform.setScale(mapTransform.getScale()*0.875);
 		display();
 		break;
 	case ' ':
 		//scale/=0.875;
-		map.setScale(map.getScale()/0.875);
+		mapTransform.setScale(mapTransform.getScale()/0.875);
 		display();
 		break;
 	case 't':
@@ -370,16 +395,106 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 		{
 			glutIdleFunc(ATFViewerMain::_idle);
 			animation_enable = false;
+			currentTimeInterval = 0;
 		}
 		else
 		{
 			glutIdleFunc(NULL);
 			animation_enable = true;
+			currentTimeInterval = timeInterval;
 		}
+		break;
+	case 'y':
+		//表示するセクタを切り替える
+		sectors.switchDisplaySector();
 		break;
 	}
 }
 
 
+//ジョイスティックイベントの検出のための関数
+void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)
+{
+	disp_buttonMask = buttonMask;
+	disp_X = x;
+	disp_Y = y;
+	disp_Z = z;
+
+	//ポーリング間隔に応じた倍率
+	double pr = ((double)(pollingInterval)) / 100.0;
+	
+	//Yボタンでモード切り替え
+	enum control_mode
+	{
+		target_state,
+		camera_state
+	};
+	static control_mode mode=target_state;
+	
+	//Yボタン（GLUT_JOYSTICK_BUTTON_D）の直前の状態
+	static bool previous_button_d_on = false;
+	//Yボタンの現在の状態
+	bool now_button_d_on = (buttonMask & GLUT_JOYSTICK_BUTTON_D) ? true : false;
+	//Yボタン押下でモード切り替え
+	//直前と比較してfalseからtrueに変化したかを判定
+	if((!previous_button_d_on) && now_button_d_on)
+	{
+		if(mode == target_state)
+		{
+			mode = camera_state;
+		}
+		else if(mode == camera_state)
+		{
+			mode = target_state;
+		}
+	}
+	//Yボタンの状態の保存
+	previous_button_d_on = now_button_d_on;
+	//各軸の傾きに応じた割合
+	//X軸
+	double xd = 0.0;
+	if(x >= 100)
+	{
+		xd = ((double)(x - 100)) / 900.0 * pr;
+	}
+	else if(x < -100)
+	{
+		xd = ((double)(x + 100)) / 900.0 * pr;
+	}
+	//Y軸
+	double yd = 0.0;
+	if(y >= 100)
+	{
+		yd = ((double)(y - 100)) / 900.0 * pr;
+	}
+	else if(y < -100)
+	{
+		yd = ((double)(y + 100)) / 900.0 * pr;
+	}
+	//視点の位置の移動
+	if(mode == target_state)
+	{
+		//x:視点の位置(経度方向)の移動
+		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() + xd / mapTransform.getScale());
+		
+		//y:視点の位置(緯度方向)の移動
+		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() - yd / mapTransform.getScale());
+	}
+	//カメラの移動
+	if(mode == camera_state)
+	{
+		//x:カメラを左右に移動
+		camera_theta += 2.5 * PI / 180.0 * xd;
+		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
+		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
+		
+		//y:カメラを上下に移動
+		camera_phi -= 5.0 * PI / 180.0 * yd;
+		camera_phi = (camera_phi > 90.0*PI/180.0) ? 90.0*PI/180.0 : camera_phi;
+		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
+		
+	}
+	display();
+}
 
 

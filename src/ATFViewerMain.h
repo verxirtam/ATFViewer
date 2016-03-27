@@ -32,9 +32,19 @@
 
 #include "DBAccessor.h"
 #include "BitmapString.h"
+#include "MapTransform.h"
 #include "Map.h"
 #include "Fixes.h"
 #include "Sectors.h"
+
+#define GLUT_JOYSTICK_BUTTON_E  0x10    /*  5 */
+#define GLUT_JOYSTICK_BUTTON_F  0x20    /*  6 */
+#define GLUT_JOYSTICK_BUTTON_G  0x40    /*  7 */
+#define GLUT_JOYSTICK_BUTTON_H  0x80    /*  8 */
+#define GLUT_JOYSTICK_BUTTON_I  0x100   /*  9 */
+#define GLUT_JOYSTICK_BUTTON_J  0x200   /*  10 */
+
+
 
 struct PathPoint
 {
@@ -59,6 +69,15 @@ private:
 	const double PI;
 	int windowWidth;
 	int windowHeight;
+	const int pollingInterval;
+	const int timeInterval;
+	int currentTimeInterval;
+	//デバッグ用 ここから
+	unsigned int disp_buttonMask;
+	int disp_X;
+	int disp_Y;
+	int disp_Z;
+	//デバッグ用 ここまで
 	GLdouble camera_r;
 	GLdouble camera_theta;
 	GLdouble camera_phi;
@@ -70,7 +89,8 @@ private:
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
-	Map map;
+	MapTransform mapTransform;
+	std::vector<Map> map;
 	Fixes fixes;
 	Sectors sectors;
 	//初期化
@@ -78,6 +98,9 @@ private:
 		PI(3.14159265358979),
 		windowWidth(100),
 		windowHeight(100),
+		pollingInterval(10),
+		timeInterval(20),
+		currentTimeInterval(timeInterval),
 		camera_r(30.0),
 		camera_theta(270.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
@@ -88,6 +111,7 @@ private:
 		now(1456153155),//1453260000),
 		timeMin(now),
 		timeMax(now+60*60*24),//1453300000),
+		mapTransform(),
 		map(),
 		fixes(),
 		sectors()
@@ -95,6 +119,9 @@ private:
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;
 		camera_target[2]=0.0;
+		//map.push_back(Map("bm_200406"));
+		map.push_back(Map("ENRC1_20160204"));
+		map.push_back(Map("ENRC2_20160204"));
 	}
 	//シーンの初期化
 	void initScene(void);
@@ -119,6 +146,11 @@ private:
 	{
 		ATFViewerMain::getInstance().keyboard(key,x,y);
 	}
+	//ジョイスティックイベントの検出のための関数
+	static void _joystick(unsigned int buttonMask, int x, int y, int z)
+	{
+		ATFViewerMain::getInstance().joystick(buttonMask, x, y, z);
+	}
 	static void _idle(void)
 	{
 		ATFViewerMain::getInstance().idle();
@@ -129,6 +161,8 @@ private:
 	void resize(int w, int h);
 	//キーボード入力時に実行される関数
 	void keyboard(unsigned char key, int x, int y);
+	//ジョイスティックイベントの検出のための関数
+	void joystick(unsigned int buttonMask, int x, int y, int z);
 	void idle(void)
 	{
 		glutPostRedisplay();
@@ -156,6 +190,8 @@ public:
 		glutReshapeFunc(ATFViewerMain::_resize);
 		//キーボード入力時に実行される関数の設定
 		glutKeyboardFunc(ATFViewerMain::_keyboard);
+		//ジョイスティックイベントの検出のための関数
+		glutJoystickFunc(ATFViewerMain::_joystick, pollingInterval);
 		//アイドル時に実行される関数の設定
 		glutIdleFunc(ATFViewerMain::_idle);
 		//シーンの初期化

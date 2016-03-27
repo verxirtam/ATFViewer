@@ -227,7 +227,7 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 		LongLat llj = longLat[ss.longLatIndex[j]];
 		LongLat llk = longLat[ss.longLatIndex[k]];
 		LongLat lll = longLat[ss.longLatIndex[l]];
-		LongLat ll = getInsideLongLat(llj,llk,lll,0.05);
+		LongLat ll = getInsideLongLat(llj,llk,lll,0.025);
 		longLat.push_back(ll);
 		ss.insideLongLatIndex.push_back(longLat.size()-1);
 	}
@@ -235,37 +235,49 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 
 void Sectors::display(void)
 {
-	int imax = sector.size();
-	for(int i = 0; i < imax; i++)
+	if(displayAll)
 	{
-		//色の設定
-		switch (sector[i].sectorName[0])
+		int imax = sector.size();
+		for(int i = 0; i < imax; i++)
 		{
-		case 'S':
-			glColor3d(1.0,0.0,0.0);
-			break;
-		case 'T':
-			glColor3d(1.0,1.0,0.0);
-			break;
-		case 'F':
-			glColor3d(0.0,1.0,0.0);
-			break;
-		case 'N':
-			glColor3d(0.0,1.0,1.0);
-			break;
-		case 'A':
-			glColor3d(0.0,0.0,1.0);
-			break;
+			displaySector(sector[i]);
 		}
-		int jmax = sector[i].subSector.size();
-		for(int j = 0; j < jmax; j++)
-		{
-			Sectors::displaySubSector(sector[i].subSector[j]);
-		}
+	}
+	else
+	{
+		displaySector(sector[displaySectorIndex]);
 	}
 }
 
-void Sectors::displaySubSector(SubSector& ss)
+void Sectors::displaySector(Sector& sector)
+{
+	//色の設定
+	switch (sector.sectorName[0])
+	{
+	case 'S':
+		glColor3d(1.0,0.0,0.0);
+		break;
+	case 'T':
+		glColor3d(0.75,0.75,0.0);
+		break;
+	case 'F':
+		glColor3d(0.0,1.0,0.0);
+		break;
+	case 'N':
+		glColor3d(0.0,1.0,1.0);
+		break;
+	case 'A':
+		glColor3d(0.0,0.0,1.0);
+		break;
+	}
+	int jmax = sector.subSector.size();
+	for(int j = 0; j < jmax; j++)
+	{
+		Sectors::displaySubSector(sector.sectorName + std::string(" ") + sector.caption ,sector.subSector[j]);
+	}
+}
+
+void Sectors::displaySubSector(const std::string& sector_name, SubSector& ss)
 {
 	int kmax = ss.longLatIndex.size();
 	if(kmax == 0)
@@ -325,6 +337,8 @@ void Sectors::displaySubSector(SubSector& ss)
 	}
 	glEnd();
 	
+	//セクタ名の表示
+	BitmapString::drawString(lli0.longitude, lli0.latitude, ((double)ss.maximumAltitude)+1000.0,sector_name.c_str());
 }
 
 

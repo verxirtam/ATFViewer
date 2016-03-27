@@ -47,18 +47,15 @@ struct MapVertexIndex
 class Map
 {
 private:
-	GLdouble centerOffsetLong;
-	GLdouble centerOffsetLat;
-	GLdouble scale;
+	std::string mapId;
+	GLuint textureName[1];
 	int textureWidth;
 	int textureHeight;
 	std::vector<MapVertex> mapVertex;
 	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
 public:
-	Map():
-		centerOffsetLong(0.0),
-		centerOffsetLat(0.0),
-		scale(1.0),
+	Map(const std::string& map_id):
+		mapId(map_id),
 		mapVertex(),
 		mapVertexIndex()
 	{
@@ -69,32 +66,6 @@ public:
 	void getVertex(DBAccessor& dba,std::string& map_id);
 	void getVertexIndex(DBAccessor& dba,std::string& map_id);
 	void display(void);
-	void setCenterOffsetLong(GLdouble c_long)
-	{
-		centerOffsetLong = (c_long < -180.0)?(-180.0):
-					((c_long > 180.0)?180.0:c_long);
-	}
-	GLdouble getCenterOffsetLong(void)
-	{
-		return centerOffsetLong;
-	}
-	void setCenterOffsetLat(GLdouble c_lat)
-	{
-		centerOffsetLat = (c_lat < -90.0)?(-90.0):
-					((c_lat > 90.0)?90.0:c_lat);
-	}
-	GLdouble getCenterOffsetLat(void)
-	{
-		return centerOffsetLat;
-	}
-	void setScale(GLdouble s)
-	{
-		scale = (s > 0.0) ? s : 1.0;
-	}
-	GLdouble getScale(void)
-	{
-		return scale;
-	}
 };
 
 

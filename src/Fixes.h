@@ -93,7 +93,7 @@ public:
 			glVertex3d(longitude[n],latitude[n],12500.0);
 			glEnd();
 			
-			BitmapString::drawString(longitude[n], latitude[n], 15000.0,name[n].c_str());
+			//BitmapString::drawString(longitude[n], latitude[n], 15000.0,name[n].c_str());
 		}
 	}
 };
