@@ -80,6 +80,26 @@ void ATFViewerMain::display(void)
 	BitmapString::drawString(0.0, (double)windowHeight-20.0,::asctime(::localtime(&now)));
 	
 	//ジョイスティックの状況を表示する
+	if(joystick.isEnable())
+	{
+		//joystick.readJoystickEvent();
+		std::stringstream jss;
+		jss << "Joystick: ";
+		jss << "Axis[0] = " << joystick.getAxisState(0);
+		jss << "Axis[1] = " << joystick.getAxisState(1);
+		jss << "Axis[2] = " << joystick.getAxisState(2);
+		jss << "Axis[3] = " << joystick.getAxisState(3);
+		jss << "Axis[4] = " << joystick.getAxisState(4);
+		jss << "Axis[5] = " << joystick.getAxisState(5);
+		glColor3d(1.0,1.0,1.0);
+		BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
+		glColor3d(0.0,0.0,0.0);
+		BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
+	}
+	
+	
+	
+	/*
 	std::stringstream jss;
 	jss << "Joystick: ";
 	jss << "X = " << disp_X << ",\t";
@@ -90,7 +110,7 @@ void ATFViewerMain::display(void)
 	BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
 	glColor3d(0.0,0.0,0.0);
 	BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
-	
+	*/
 	
 	//ワールド座標系上での描画
 	//////////////////////////////////////
@@ -267,6 +287,20 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 
 
 //ジョイスティックイベントの検出のための関数
+
+void ATFViewerMain::joystickTimer(int value)
+{
+	//ジョイスティックの状況を表示する
+	if(joystick.isEnable())
+	{
+		joystick.readJoystickEvent();
+	}
+	
+	//タイマー関数の設定
+	glutTimerFunc(pollingInterval, ATFViewerMain::_joystickTimer, joystickTimerId);
+	
+}
+/*
 void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)
 {
 	disp_buttonMask = buttonMask;
@@ -350,5 +384,5 @@ void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)
 	}
 	display();
 }
-
+*/
 

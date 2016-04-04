@@ -37,7 +37,7 @@
 #include "Map.h"
 #include "Fixes.h"
 #include "Sectors.h"
-
+#include "Joystick.h"
 
 #define GLUT_JOYSTICK_BUTTON_E  0x10    /*  5 */
 #define GLUT_JOYSTICK_BUTTON_F  0x20    /*  6 */
@@ -55,7 +55,9 @@ private:
 	const double PI;
 	int windowWidth;
 	int windowHeight;
-	const int pollingInterval;
+	const unsigned int pollingInterval;
+	Joystick joystick;
+	const int joystickTimerId;
 	const int timeInterval;
 	int currentTimeInterval;
 	//デバッグ用 ここから
@@ -82,6 +84,8 @@ private:
 		windowWidth(100),
 		windowHeight(100),
 		pollingInterval(10),
+		joystick(),
+		joystickTimerId(1),
 		timeInterval(20),
 		currentTimeInterval(timeInterval),
 		camera_r(30.0),
@@ -130,9 +134,9 @@ private:
 		ATFViewerMain::getInstance().keyboard(key,x,y);
 	}
 	//ジョイスティックイベントの検出のための関数
-	static void _joystick(unsigned int buttonMask, int x, int y, int z)
+	static void _joystickTimer(int value)
 	{
-		ATFViewerMain::getInstance().joystick(buttonMask, x, y, z);
+		ATFViewerMain::getInstance().joystickTimer(value);
 	}
 	static void _idle(void)
 	{
@@ -144,8 +148,8 @@ private:
 	void resize(int w, int h);
 	//キーボード入力時に実行される関数
 	void keyboard(unsigned char key, int x, int y);
-	//ジョイスティックイベントの検出のための関数
-	void joystick(unsigned int buttonMask, int x, int y, int z);
+	//ジョイスティックイベントの検出のためのタイマー関数
+	void joystickTimer(int value);
 	void idle(void)
 	{
 		glutPostRedisplay();
@@ -174,7 +178,7 @@ public:
 		//キーボード入力時に実行される関数の設定
 		glutKeyboardFunc(ATFViewerMain::_keyboard);
 		//ジョイスティックイベントの検出のための関数
-		glutJoystickFunc(ATFViewerMain::_joystick, pollingInterval);
+		glutTimerFunc(pollingInterval, ATFViewerMain::_joystickTimer, joystickTimerId);
 		//アイドル時に実行される関数の設定
 		glutIdleFunc(ATFViewerMain::_idle);
 		//シーンの初期化

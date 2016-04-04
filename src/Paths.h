@@ -35,12 +35,14 @@ struct PathPoint
 	double latitude;
 	int altitude;
 	time_t time;
-	PathPoint(double lo,double la, int a, long long t)
+	std::string arrival;
+	PathPoint(double lo,double la, int a, long long t, const std::string ar)
 	{
-		longitude=lo;
-		latitude=la;
-		altitude=a;
-		time=t;
+		longitude = lo;
+		latitude = la;
+		altitude = a;
+		time = t;
+		arrival = ar;
 	}
 };
 
@@ -50,7 +52,11 @@ private:
 	std::vector<std::vector<PathPoint> > paths;
 	std::vector<int> past_time_index;
 	std::vector<int> now_index;
+	const unsigned int drawTimeWidth;
 public:
+	Paths():drawTimeWidth(600)
+	{
+	}
 	void initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max);
 	void drawPath(PathPoint& p, time_t now);
 	PathPoint getNowPoint(PathPoint& from, PathPoint& to, time_t time);

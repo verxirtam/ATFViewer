@@ -22,20 +22,51 @@ using namespace std;
 
 void Paths::drawPath(PathPoint& p, time_t now)
 {
+	/*
 	//航空機の高度に応じて色を設定する
 	//帯の地面に接する箇所はアルファを0にする（完全に透明にする）
 	double c=((double)p.altitude)/40000.0;
-	double alpha = 1.0 - (((double)(now - p.time)) / 600.0);
+	double alpha = 1.0 - (((double)(now - p.time)) / ((double)drawTimeWidth));
 	c=c*c;
 	//glColor4d(c, 0.5, 1.0 - c, alpha * (1.0 - c));
 	glColor4d(c, 0.5, 1.0 - c, alpha * 0.5);
 	glVertex3d(p.longitude, p.latitude, p.altitude);
 	glColor4d(c, 0.5, 1.0 - c, alpha * 0.1);
 	glVertex3d(p.longitude, p.latitude, 0.0);
+	*/
+	
+	//目的空港の文字列に応じて配色する
+	double alpha = 1.0 - (((double)(now - p.time)) / ((double)drawTimeWidth));
+	
+	int a0 = p.arrival[0] - 65;
+	int a1 = p.arrival[1] - 65;
+	int a2 = p.arrival[2] - 65;
+	int h = a2 * 29 * 29 + a1 * 29 + a0;
+
+	double r = ((double)(h % 251)) / 251.0;
+	double g = ((double)((h * h) % 251)) / 251.0;
+	double b = ((double)((h * h * h) % 251)) / 251.0;
+	
+	
+	/*
+	int r=0, g=0, b=0;
+	if(p.arrival=="HND")
+	{
+
+	}
+	else
+	{
+		r = ((double)p.altitude)/40000.0;
+	}
+	*/
+	glColor4d(r, g, b, alpha * 0.75);
+	glVertex3d(p.longitude, p.latitude, p.altitude);
+	glColor4d(r, g, b, alpha * 0.1);
+	glVertex3d(p.longitude, p.latitude, 0.0);
 }
 PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)
 {
-	PathPoint ret(0.0, 0.0, 0, 0);
+	PathPoint ret(0.0, 0.0, 0, 0, from.arrival);
 	double ratio_from = 1.0 - ((double)(time - from.time))/((double)(to.time - from.time));
 	double ratio_to = 1.0 - ratio_from;
 	ret.longitude = ratio_from * from.longitude + ratio_to * to.longitude;
@@ -50,7 +81,8 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 	
 	//軌道を取得する
 	std::stringstream sql("");
-	sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
+	//sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
+	sql<<"select id,longitude,latitude,altitude,time,arrival from TrackData where time>=";
 	sql<<time_min<<" and time<";
 	sql<<time_max<<" order by id,time;";
 	dba.setQuery(sql.str());
@@ -69,6 +101,7 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 		double la=dba.getColumnDouble(2);
 		int a=dba.getColumnInt(3);
 		long long t=dba.getColumnLongLong(4);
+		std::string ar(dba.getColumnString(5));
 		if(id != old_id)
 		{
 			n++;
@@ -77,7 +110,7 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 			now_index.push_back(0);
 			old_id = id;
 		}
-		paths[n].push_back(PathPoint(lo,la,a,t));
+		paths[n].push_back(PathPoint(lo,la,a,t,ar));
 	}
 	cout<<"initPathPoint() end"<<endl;
 }
@@ -104,7 +137,7 @@ void Paths::display(time_t now)
 	//アルファブレンドの方法を指定
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	//描画を始める時刻
-	time_t past_time = now - 600;
+	time_t past_time = now - drawTimeWidth;
 	//航空機毎に軌道を描画する
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{

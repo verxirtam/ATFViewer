@@ -7,14 +7,20 @@
 ATFViewerMain	ATFViewerMain.h	/^	ATFViewerMain():$/;"	f	class:ATFViewerMain
 ATFViewerMain	ATFViewerMain.h	/^class ATFViewerMain$/;"	c
 ATFViewerMain_H	ATFViewerMain.h	22;"	d
+Axis	Joystick.h	/^	std::vector<int> Axis;$/;"	m	class:Joystick
+AxisCount	Joystick.h	/^	int AxisCount;$/;"	m	class:Joystick
 BitmapString	BitmapString.h	/^class BitmapString$/;"	c
 BitmapString_H	BitmapString.h	20;"	d
+Button	Joystick.h	/^	std::vector<bool> Button;$/;"	m	class:Joystick
+ButtonCount	Joystick.h	/^	int ButtonCount;$/;"	m	class:Joystick
 CXXFLAGS	makefile	/^CXXFLAGS := -g -O0 -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d)$/;"	m
+Device	Joystick.h	/^	const char* Device;$/;"	m	class:Joystick
 FIXES_H_	Fixes.h	20;"	d
+File	Joystick.h	/^	int File;$/;"	m	class:Joystick
 Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
@@ -24,6 +30,9 @@ GLUT_JOYSTICK_BUTTON_G	ATFViewerMain.h	44;"	d
 GLUT_JOYSTICK_BUTTON_H	ATFViewerMain.h	45;"	d
 GLUT_JOYSTICK_BUTTON_I	ATFViewerMain.h	46;"	d
 GLUT_JOYSTICK_BUTTON_J	ATFViewerMain.h	47;"	d
+Joystick	Joystick.h	/^	Joystick():$/;"	f	class:Joystick
+Joystick	Joystick.h	/^class Joystick$/;"	c
+Joystick_H_	Joystick.h	20;"	d
 LongLat	GCS.h	/^struct LongLat$/;"	s
 MAP_H_	Map.h	21;"	d
 Map	Map.h	/^	Map(const std::string& map_id):$/;"	f	class:Map
@@ -35,8 +44,9 @@ MapVertex	Map.h	/^struct MapVertex$/;"	s
 MapVertexIndex	Map.h	/^struct MapVertexIndex$/;"	s
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
-PathPoint	Paths.h	/^	PathPoint(double lo,double la, int a, long long t)$/;"	f	struct:PathPoint
+PathPoint	Paths.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
 PathPoint	Paths.h	/^struct PathPoint$/;"	s
+Paths	Paths.h	/^	Paths():drawTimeWidth(600)$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
 Paths_H	Paths.h	20;"	d
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
@@ -50,10 +60,11 @@ UTIL_H_	Util.h	19;"	d
 Util	Util.h	/^class Util$/;"	c
 _display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
 _idle	ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
-_joystick	ATFViewerMain.h	/^	static void _joystick(unsigned int buttonMask, int x, int y, int z)$/;"	f	class:ATFViewerMain
+_joystickTimer	ATFViewerMain.h	/^	static void _joystickTimer(int value)$/;"	f	class:ATFViewerMain
 _keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
 altitude	Paths.h	/^	int altitude;$/;"	m	struct:PathPoint
+arrival	Paths.h	/^	std::string arrival;$/;"	m	struct:PathPoint
 begin	DBAccessor.h	/^	void begin()$/;"	f	class:DBAccessor
 bindDouble	DBAccessor.h	/^	void bindDouble(int i, double d)$/;"	f	class:DBAccessor
 bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
@@ -87,9 +98,12 @@ drawPath	Paths.cpp	/^void Paths::drawPath(PathPoint& p, time_t now)$/;"	f	class:
 drawString	BitmapString.h	/^	static void drawString(const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 drawString	BitmapString.h	/^	static void drawString(double x, double y, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 drawString	BitmapString.h	/^	static void drawString(double x, double y, double z, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
+drawTimeWidth	Paths.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:Paths
 execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
 fixes	ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
+getAxisState	Joystick.h	/^	int getAxisState(int i)$/;"	f	class:Joystick
+getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
@@ -121,7 +135,10 @@ initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:AT
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
-joystick	ATFViewerMain.cpp	/^void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)$/;"	f	class:ATFViewerMain
+isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
+joystick	ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
+joystickTimer	ATFViewerMain.cpp	/^void ATFViewerMain::joystickTimer(int value)$/;"	f	class:ATFViewerMain
+joystickTimerId	ATFViewerMain.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMain
 keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
@@ -148,6 +165,7 @@ past_time_index	Paths.h	/^	std::vector<int> past_time_index;$/;"	m	class:Paths
 paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
 paths	Paths.h	/^	std::vector<std::vector<PathPoint> > paths;$/;"	m	class:Paths
 pollingInterval	ATFViewerMain.h	/^	const int pollingInterval;$/;"	m	class:ATFViewerMain
+readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
