@@ -83,7 +83,7 @@ private:
 		PI(3.14159265358979),
 		windowWidth(100),
 		windowHeight(100),
-		pollingInterval(10),
+		pollingInterval(20),
 		joystick(),
 		joystickTimerId(1),
 		timeInterval(20),

@@ -25,6 +25,29 @@
 #include <sys/ioctl.h>
 #include <linux/joystick.h>
 
+enum KeyCode_F310
+{
+	Axis_LeftStick_LeftRight = 0,
+	Axis_LeftStick_UpDown = 1,
+	Axis_LeftTrigger_OffOn = 2,
+	Axis_RightStick_LeftRight = 3,
+	Axis_RightStick_UpDown = 4,
+	Axis_RightTrigger_OffOn = 5,
+	Button_A = 0,
+	Button_B = 1,
+	Button_X = 2,
+	Button_Y = 3,
+	Button_LB = 4,
+	Button_RB = 5,
+	Button_BACK = 6,
+	Button_START = 7,
+	Button_Logicool = 8,
+	Button_LeftStick_Push = 9,
+	Button_RightStick_Push = 10
+};
+
+
+
 class Joystick
 {
 private:

@@ -85,12 +85,16 @@ void ATFViewerMain::display(void)
 		//joystick.readJoystickEvent();
 		std::stringstream jss;
 		jss << "Joystick: ";
-		jss << "Axis[0] = " << joystick.getAxisState(0);
-		jss << "Axis[1] = " << joystick.getAxisState(1);
-		jss << "Axis[2] = " << joystick.getAxisState(2);
-		jss << "Axis[3] = " << joystick.getAxisState(3);
-		jss << "Axis[4] = " << joystick.getAxisState(4);
-		jss << "Axis[5] = " << joystick.getAxisState(5);
+		for(int i = 0; i < 6; i++)
+		{
+			jss << "Axis[" << i << "] = " << joystick.getAxisState(i);
+		}
+		for(int i = 0; i < 16; i++)
+		{
+			jss << "Button[" << i << "] = " << joystick.getButtonState(i);
+		}
+		
+		
 		glColor3d(1.0,1.0,1.0);
 		BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
 		glColor3d(0.0,0.0,0.0);
@@ -99,18 +103,6 @@ void ATFViewerMain::display(void)
 	
 	
 	
-	/*
-	std::stringstream jss;
-	jss << "Joystick: ";
-	jss << "X = " << disp_X << ",\t";
-	jss << "Y = " << disp_Y << ",\t";
-	jss << "Z = " << disp_Z << ",\t";
-	jss << "buttonMask = " << disp_buttonMask;
-	glColor3d(1.0,1.0,1.0);
-	BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
-	glColor3d(0.0,0.0,0.0);
-	BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
-	*/
 	
 	//ワールド座標系上での描画
 	//////////////////////////////////////
@@ -290,77 +282,67 @@ void ATFViewerMain::keyboard(unsigned char key, int x, int y)
 
 void ATFViewerMain::joystickTimer(int value)
 {
-	//ジョイスティックの状況を表示する
+	//ジョイスティックの状況を取得する
 	if(joystick.isEnable())
 	{
 		joystick.readJoystickEvent();
 	}
 	
-	//タイマー関数の設定
-	glutTimerFunc(pollingInterval, ATFViewerMain::_joystickTimer, joystickTimerId);
-	
-}
-/*
-void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)
-{
-	disp_buttonMask = buttonMask;
-	disp_X = x;
-	disp_Y = y;
-	disp_Z = z;
-
 	//ポーリング間隔に応じた倍率
 	double pr = ((double)(pollingInterval)) / 100.0;
 	
-	//Yボタンでモード切り替え
-	enum control_mode
-	{
-		target_state,
-		camera_state
-	};
-	static control_mode mode=target_state;
 	
-	//Yボタン（GLUT_JOYSTICK_BUTTON_D）の直前の状態
-	static bool previous_button_d_on = false;
-	//Yボタンの現在の状態
-	bool now_button_d_on = (buttonMask & GLUT_JOYSTICK_BUTTON_D) ? true : false;
-	//Yボタン押下でモード切り替え
-	//直前と比較してfalseからtrueに変化したかを判定
-	if((!previous_button_d_on) && now_button_d_on)
-	{
-		if(mode == target_state)
-		{
-			mode = camera_state;
-		}
-		else if(mode == camera_state)
-		{
-			mode = target_state;
-		}
-	}
-	//Yボタンの状態の保存
-	previous_button_d_on = now_button_d_on;
 	//各軸の傾きに応じた割合
-	//X軸
+	const int baffer = 3000;
+	const double max = 32767.0 - ((double)baffer);
+	//X軸:左スティック左右
 	double xd = 0.0;
-	if(x >= 100)
+	int x = joystick.getAxisState(Axis_LeftStick_LeftRight);
+	if(x >= baffer)
 	{
-		xd = ((double)(x - 100)) / 900.0 * pr;
+		xd = ((double)(x - baffer)) / max * pr;
 	}
-	else if(x < -100)
+	else if(x < -baffer)
 	{
-		xd = ((double)(x + 100)) / 900.0 * pr;
+		xd = ((double)(x + baffer)) / max * pr;
 	}
-	//Y軸
+	//Y軸:左スティック上下
 	double yd = 0.0;
-	if(y >= 100)
+	int y = joystick.getAxisState(Axis_LeftStick_UpDown);
+	if(y >= baffer)
 	{
-		yd = ((double)(y - 100)) / 900.0 * pr;
+		yd = ((double)(y - baffer)) / max * pr;
 	}
-	else if(y < -100)
+	else if(y < -baffer)
 	{
-		yd = ((double)(y + 100)) / 900.0 * pr;
+		yd = ((double)(y + baffer)) / max * pr;
 	}
+	
+	//U軸:右スティック左右
+	double ud = 0.0;
+	int u = joystick.getAxisState(Axis_RightStick_LeftRight);
+	if(u >= baffer)
+	{
+		ud = ((double)(u - baffer)) / max * pr;
+	}
+	else if(u < -baffer)
+	{
+		ud = ((double)(u + baffer)) / max * pr;
+	}
+	//V軸:右スティック上下
+	double vd = 0.0;
+	int v = joystick.getAxisState(Axis_RightStick_UpDown);
+	if(v >= baffer)
+	{
+		vd = ((double)(v - baffer)) / max * pr;
+	}
+	else if(v < -baffer)
+	{
+		vd = ((double)(v + baffer)) / max * pr;
+	}
+	
 	//視点の位置の移動
-	if(mode == target_state)
+	if(true)
 	{
 		//x:視点の位置(経度方向)の移動
 		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() + xd / mapTransform.getScale());
@@ -369,20 +351,22 @@ void ATFViewerMain::joystick(unsigned int buttonMask, int x, int y, int z)
 		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() - yd / mapTransform.getScale());
 	}
 	//カメラの移動
-	if(mode == camera_state)
+	if(true)
 	{
 		//x:カメラを左右に移動
-		camera_theta += 2.5 * PI / 180.0 * xd;
+		camera_theta += 2.5 * PI / 180.0 * ud;
 		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
 		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
 		
 		//y:カメラを上下に移動
-		camera_phi -= 5.0 * PI / 180.0 * yd;
+		camera_phi -= 5.0 * PI / 180.0 * vd;
 		camera_phi = (camera_phi > 90.0*PI/180.0) ? 90.0*PI/180.0 : camera_phi;
 		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
 		
 	}
 	display();
+	
+	//タイマー関数の設定
+	glutTimerFunc(pollingInterval, ATFViewerMain::_joystickTimer, joystickTimerId);
 }
-*/
 
