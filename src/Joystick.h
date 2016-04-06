@@ -105,7 +105,14 @@ public:
 		js_event event;
 		
 		//イベントの読み取り
-		read(File, &event, sizeof(js_event));
+		int ret = read(File, &event, sizeof(js_event));
+		
+		//読み取りできなかった場合は終了
+		if(ret != sizeof(js_event))
+		{
+			return;
+		}
+		
 		//発生したイベントの状態を取得する
 		switch(event.type & (~JS_EVENT_INIT))
 		{
