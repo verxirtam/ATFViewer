@@ -13,6 +13,11 @@
 #2個上のフォルダ名と同一
 TARGET := $(shell basename `dirname \`pwd\``)
 
+#テスト用のターゲット
+#テストを実行する
+TESTTARGET := unittest
+
+
 #g++のコンパイルのフラグ
 #CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
 #デバッグ用のオプション
@@ -26,6 +31,12 @@ SRCS := $(shell ls *.cpp)
 #.cppを.oに置換している
 OBJS := $(SRCS:.cpp=.o)
 
+#ターゲット用のオブジェクトファイル
+OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))
+
+#テスト用のオブジェクトファイル
+OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))
+
 #依存関係ファイル
 DEPS := $(SRCS:.cpp=.d)
 
@@ -35,11 +46,15 @@ DEPS := $(SRCS:.cpp=.d)
 #全てコンパイルする
 #先頭に書いたコマンドはmakeコマンドでオプション無しで実行される
 .PHONY: all
-all: $(TARGET)
+all: $(TARGET) $(TESTTARGET)
 
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
+
+.PHONY: test
+test: $(TESTTARGET)
+	./$(TESTTARGET)
 
 #実行ファイルの作成
 #オプションは最後に指定する
@@ -48,7 +63,11 @@ run: $(TARGET)
 #$@ : ターゲット名
 #$< : 最初の依存ファイル名(":"の右側の最初(一番左)の項目)
 #$^ : 依存ファイル全体
-$(TARGET): $(OBJS)
+$(TARGET): $(OBJSTARGET)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
+
+#テスト用の実行ファイルを作成
+$(TESTTARGET): $(OBJSTEST)
 	$(CXX) -o $@ $^ $(CXXFLAGS)
 
 #オブジェクトファイルの作成

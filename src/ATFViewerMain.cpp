@@ -336,7 +336,7 @@ void ATFViewerMain::joystickTimer(int value)
 		
 		//カメラの移動
 		//x:カメラを左右に移動
-		camera_theta += 2.5 * PI / 180.0 * ud;
+		camera_theta += 5.0 * PI / 180.0 * ud;
 		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
 		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
 		
