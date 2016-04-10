@@ -22,10 +22,10 @@ void Fixes::init(DBAccessor& dba)
 {
 	//Fixを取得するクエリを作成
 	std::string sql("select fixName,longitudeDMS,latitudeDMS from Fix;");
-	//クエリを実行
+	//クエリを登録
 	dba.setQuery(sql);
 
-	//クエリの結果を取得
+	//クエリの実行して結果を1行ずつ取得
 	while(SQLITE_ROW == dba.step_select())
 	{
 		//Fix名

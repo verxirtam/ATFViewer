@@ -52,9 +52,11 @@ all: $(TARGET) $(TESTTARGET)
 run: $(TARGET)
 	./$(TARGET)
 
+#テストの実行ファイルを実行する
+#ログと標準出力両方に出力する
 .PHONY: test
 test: $(TESTTARGET)
-	./$(TESTTARGET)
+	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
 
 #実行ファイルの作成
 #オプションは最後に指定する

@@ -1,1 +1,1 @@
-unittest.o: unittest.cpp
+unittest.o: unittest.cpp DBAccessor.h
