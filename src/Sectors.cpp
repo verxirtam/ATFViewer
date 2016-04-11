@@ -164,7 +164,7 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 	sql << "order by VertexIndex";
 	sql << ";";
 
-	std::cout << sql.str() << std::endl;
+	//std::cout << sql.str() << std::endl;
 	
 	dba.setQuery(sql.str());
 	
@@ -197,6 +197,7 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 	//頂点配列が左回りかどうかを判定する
 	if(isClockwise(ss.longLatIndex, longLat))
 	{
+		/*
 		std::cout << "右回りなので逆順に変更する" << std::endl;
 		int imax = ss.longLatIndex.size();
 		for(int i = 0; i < imax; i++)
@@ -205,9 +206,11 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 			std::cout << longLat[ss.longLatIndex[i]].longitude << ", ";
 			std::cout << longLat[ss.longLatIndex[i]].latitude << std::endl;
 		}
+		*/
 		//右回りの場合はインデックス配列を逆順に変更する
 		std::reverse(ss.longLatIndex.begin(),ss.longLatIndex.end());
 		//順序変更後の列の表示
+		/*
 		std::cout << "逆順に変更後" << std::endl;
 		for(int i = 0; i < imax; i++)
 		{
@@ -215,6 +218,7 @@ void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index
 			std::cout << longLat[ss.longLatIndex[i]].longitude << ", ";
 			std::cout << longLat[ss.longLatIndex[i]].latitude << std::endl;
 		}
+		*/
 	}
 	
 	

@@ -22,32 +22,42 @@ using namespace std;
 
 void ATFViewerMain::initScene(void)
 {
+	cout<<"initScene() start"<<endl;
+	
 	//DBへの接続
-	cout<<"dba() before"<<endl;
 	DBAccessor dba(std::string("../../db/ATFViewer.db"));
-	cout<<"dba() after, setQuery() before"<<endl;
 	
 	
 	glClearColor(0.0, 0.0, 0.0, 1.0);
 	
+	cout<<"\tpaths.initPathPoint() start"<<endl;
 	//軌道の初期化
 	paths.initPathPoint(dba, timeMin, timeMax);
+	cout<<"\tpaths.initPathPoint() end"<<endl;
 	
+	cout<<"\tfixes.init() start"<<endl;
 	//フィックスの初期化
 	fixes.init(dba);
+	cout<<"\tfixes.init() end"<<endl;
 	
+	cout<<"\tsectors.init() start"<<endl;
 	//セクターの初期化
 	sectors.init(dba);
+	cout<<"\tsectors.init() end"<<endl;
 	
+	cout<<"\tmap[].init() start"<<endl;
 	//マップの初期化
 	int imax = map.size();
 	for(int i=0;i < imax; i++)
 	{
 		map[i].init(dba);
 	}
+	cout<<"\tmap[].init() end"<<endl;
 
 	//デプスバッファを使用する
 	glEnable(GL_DEPTH_TEST);
+	
+	cout<<"initScene() end"<<endl;
 }
 
 

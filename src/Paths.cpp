@@ -86,7 +86,7 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 	sql<<time_min<<" and time<";
 	sql<<time_max<<" order by id,time;";
 	dba.setQuery(sql.str());
-	cout<<"setQuery() after, step_select() before"<<endl;
+	//cout<<"setQuery() after, step_select() before"<<endl;
 	
 	//パスのインデックス
 	int n=-1;
@@ -112,7 +112,7 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 		}
 		paths[n].push_back(PathPoint(lo,la,a,t,ar));
 	}
-	cout<<"initPathPoint() end"<<endl;
+	//cout<<"initPathPoint() end"<<endl;
 }
 
 void Paths::resetTime(void)

@@ -26,8 +26,11 @@ void Map::init(DBAccessor& dba)
 	getVertex(dba,mapId);
 	getVertexIndex(dba,mapId);
 	
+	/*
+	//Vertexの内容を標準出力に表示する
 	std::cout<<"mapVertex"<<std::endl;
 	int imax = mapVertex.size();
+	
 	for(int i = 0; i < imax; i++)
 	{
 		std::cout << i << ", ";
@@ -37,6 +40,7 @@ void Map::init(DBAccessor& dba)
 		std::cout << mapVertex[i].v;
 		std::cout<<std::endl;
 	}
+	
 	std::cout<<std::endl;
 	std::cout<<"mapVertexIndex"<<std::endl;
 	imax = mapVertexIndex.size();
@@ -50,6 +54,7 @@ void Map::init(DBAccessor& dba)
 		}
 		std::cout << std::endl;
 	}
+	*/
 }
 
 void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)
