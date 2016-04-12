@@ -303,7 +303,8 @@ void ATFViewerMain::joystickTimer(int value)
 	
 	//各軸の傾きに応じた割合
 	const int baffer = 3000;
-	const double max = 32767.0 - ((double)baffer);
+	const double max = 32767.0;
+	const int maxint = 32767;
 	
 	//ジョイスティックの操作が行われたかを表す
 	bool occurred = false;
@@ -334,6 +335,25 @@ void ATFViewerMain::joystickTimer(int value)
 		occurred = true;
 	}
 	
+	
+	//マップの拡大縮小率
+	double rd = 1.0;
+	
+	//左トリガー
+	int p = joystick.getAxisState(Axis_LeftTrigger_OffOn);
+	
+	//右トリガー
+	int q = joystick.getAxisState(Axis_RightTrigger_OffOn);
+	if((p >= - maxint + baffer) || (q >= - maxint + baffer))
+	{
+		double pd = ((double)(p + maxint)) / (2 * max) * pr;
+		double qd = ((double)(q + maxint)) / (2 * max) * pr;
+		rd = 1.0 - 0.125 * (pd - qd);
+		
+		occurred = true;
+	}
+	
+	
 	//ジョイスティック操作が行われた時の処理
 	if(occurred)
 	{
@@ -355,6 +375,8 @@ void ATFViewerMain::joystickTimer(int value)
 		camera_phi = (camera_phi > 90.0*PI/180.0) ? 90.0*PI/180.0 : camera_phi;
 		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
 		
+		//マップの拡大縮小
+		mapTransform.setScale(mapTransform.getScale() * rd);
 	}
 	//タイマー関数の設定
 	glutTimerFunc(pollingInterval, ATFViewerMain::_joystickTimer, joystickTimerId);
