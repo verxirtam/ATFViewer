@@ -23,6 +23,7 @@
 #include <ctime>
 #include <vector>
 #include <sstream>
+#include <algorithm>
 
 #include <GL/glut.h>
 
@@ -52,14 +53,20 @@ struct Path
 	std::vector<PathPoint> pathPoint;
 	int past_time_index;
 	int now_index;
+	bool operator==(const std::string& s)
+	{
+		return this->id == s;
+	}
+	bool operator!=(const std::string& s)
+	{
+		return !((*this)==s);
+	}
 };
 
 class Paths
 {
 private:
-	std::vector<std::vector<PathPoint> > paths;
-	std::vector<int> past_time_index;
-	std::vector<int> now_index;
+	std::vector<Path> paths;
 	const unsigned int drawTimeWidth;
 public:
 	Paths():drawTimeWidth(600)

@@ -88,40 +88,54 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 	dba.setQuery(sql.str());
 	//cout<<"setQuery() after, step_select() before"<<endl;
 	
-	//パスのインデックス
-	int n=-1;
 	//直前に読み込んだid
 	//id毎にvectorに格納するため
 	std::string old_id("");
 	
+	std::vector<Path>::iterator i = paths.begin();
+	
 	while(SQLITE_ROW == dba.step_select())
 	{
+		//クエリの結果を取得
 		std::string id(dba.getColumnString(0));
 		double lo=dba.getColumnDouble(1);
 		double la=dba.getColumnDouble(2);
 		int a=dba.getColumnInt(3);
 		long long t=dba.getColumnLongLong(4);
 		std::string ar(dba.getColumnString(5));
+		
+		//取得したidとi->idを照合
 		if(id != old_id)
 		{
-			n++;
-			paths.push_back(vector<PathPoint>());
-			past_time_index.push_back(0);
-			now_index.push_back(0);
+			//idが一致するpathを検索
+			i = std::find(paths.begin(),paths.end(),id);
+			//検索で見つからなかった場合は新規追加
+			if(i == paths.end())
+			{
+				//末尾に追加
+				paths.push_back(Path());
+				//最後の要素を指定
+				i = paths.end();
+				i--;
+				//追加した要素を初期化
+				i->id = id;
+				i->past_time_index = 0;
+				i->now_index = 0;
+			}
 			old_id = id;
 		}
-		paths[n].push_back(PathPoint(lo,la,a,t,ar));
+		i->pathPoint.push_back(PathPoint(lo,la,a,t,ar));
 	}
 	//cout<<"initPathPoint() end"<<endl;
 }
 
 void Paths::resetTime(void)
 {
-	int nmax = now_index.size();
+	int nmax = paths.size();
 	for(int n = 0; n < nmax; n++)
 	{
-		past_time_index[n] = 0;
-		now_index[n] = 0;
+		paths[n].past_time_index = 0;
+		paths[n].now_index = 0;
 	}
 }
 
@@ -142,64 +156,64 @@ void Paths::display(time_t now)
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
 		//未来の軌道は描かない
-		if (paths[n][0].time > now )
+		if (paths[n].pathPoint[0].time > now )
 		{
 			continue;
 		}
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
-		int path_size=paths[n].size();
+		int path_size=paths[n].pathPoint.size();
 		//past_time_indexを更新する
 		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
-		for(int i = past_time_index[n]; i < path_size; i++)
+		for(int i = paths[n].past_time_index; i < path_size; i++)
 		{
-			if(past_time < paths[n][i].time)
+			if(past_time < paths[n].pathPoint[i].time)
 			{
-				past_time_index[n] = i;
+				paths[n].past_time_index = i;
 				break;
 			}
 		}
 		//past_timeが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
-		if(paths[n][path_size-1].time <= past_time)
+		if(paths[n].pathPoint[path_size-1].time <= past_time)
 		{
-			past_time_index[n] = path_size;
+			paths[n].past_time_index = path_size;
 		}
 		//now_indexを更新する
 		//now_index[n] = Min{ i | now < paths[n][i].time}
-		for(int i = now_index[n]; i < path_size; i++)
+		for(int i = paths[n].now_index; i < path_size; i++)
 		{
-			if(now < paths[n][i].time)
+			if(now < paths[n].pathPoint[i].time)
 			{
-				now_index[n] = i;
+				paths[n].now_index = i;
 				break;
 			}
 		}
 		//nowが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
-		if(paths[n][path_size-1].time <= now)
+		if(paths[n].pathPoint[path_size-1].time <= now)
 		{
-			now_index[n] = path_size;
+			paths[n].now_index = path_size;
 		}
 		//past_pointを描画する
 		//past_time_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
-		if((past_time_index[n] != 0) && (past_time_index[n] != path_size))
+		if((paths[n].past_time_index != 0) && (paths[n].past_time_index != path_size))
 		{
-			int i = past_time_index[n];
-			PathPoint past_point = getNowPoint(paths[n][i-1],paths[n][i], past_time);
+			int i = paths[n].past_time_index;
+			PathPoint past_point = getNowPoint(paths[n].pathPoint[i-1],paths[n].pathPoint[i], past_time);
 			drawPath(past_point,now);
 		}
 		//past_time_index <= i < now_indexとなるiのpath[n][i]を描画する
 		//path_sizeに達したら描画を終了する
-		for(int i = past_time_index[n]; i < now_index[n]; i++)
+		for(int i = paths[n].past_time_index; i < paths[n].now_index; i++)
 		{
 			//軌道を描画する
-			drawPath(paths[n][i],now);
+			drawPath(paths[n].pathPoint[i],now);
 		}
 		//now_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
 		//now_pointを描画する
-		if((now_index[n] != 0) && (now_index[n] != path_size))
+		if((paths[n].now_index != 0) && (paths[n].now_index != path_size))
 		{
-			int i = now_index[n];
-			PathPoint now_point = getNowPoint(paths[n][i-1],paths[n][i],now);
+			int i = paths[n].now_index;
+			PathPoint now_point = getNowPoint(paths[n].pathPoint[i-1],paths[n].pathPoint[i],now);
 			drawPath(now_point,now);
 		}
 		/////////////////////////////////////////////////////////////////////////////
