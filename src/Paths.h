@@ -46,6 +46,14 @@ struct PathPoint
 	}
 };
 
+struct Path
+{
+	std::string id;
+	std::vector<PathPoint> pathPoint;
+	int past_time_index;
+	int now_index;
+};
+
 class Paths
 {
 private:

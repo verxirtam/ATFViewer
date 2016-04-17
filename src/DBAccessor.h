@@ -66,7 +66,7 @@ public:
 	{
 		sqlite3_bind_int(stmt, i, d);
 	}
-	void bindLong(int i, long long d)
+	void bindLongLong(int i, long long d)
 	{
 		sqlite3_bind_int64(stmt, i, d);
 	}

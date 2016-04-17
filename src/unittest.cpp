@@ -123,8 +123,11 @@ void getAllTrackDataReserve(void)
 string nowstring()
 {
 	time_t test_start = time(NULL);
-	string ret(::ctime(&test_start));
-	replace(ret.begin(), ret.end(), '\n', '\0');
+	
+	char time_str[32];
+	//YYYY/MM/DD hh:mm:ss
+	strftime(time_str, 31, "%Y/%m/%d %H:%M:%S", localtime(&test_start));
+	std::string ret(time_str);
 	return ret;
 }
 
@@ -141,8 +144,54 @@ void selectTrackDataWithTime()
 	stringstream query("");
 	query << "select id, time from TrackData where time >= ";
 	query << now;
-	query << " and time <";
+	query << " and time < ";
 	query << now + 60 * 60 * 24;
+	query << ";";
+	dba.setQuery(query.str());
+
+	vector<id_time> r;
+	
+	//クエリの実行して結果を1行ずつ取得
+	while(SQLITE_ROW == dba.step_select())
+	{
+		id_time it={dba.getColumnString(0), dba.getColumnLongLong(1)};
+		
+		//vectorに追加
+		r.push_back(it);
+	}
+	//時間計測
+	clock_t end = clock();
+	cout << "実行したクエリ：" << query.str() << endl;
+	cout << "取得行数：" << r.size() << endl;
+
+	cout << "経過時間 = " << (double)(end - start) / CLOCKS_PER_SEC << "sec." << endl;
+	cout << endl;
+}
+
+
+
+void selectTrackDataWithDate()
+{
+	cout << "日付指定でのトラックデータ取得" << endl;
+	
+	//時間計測
+	clock_t start = clock();
+	
+	DBAccessor dba("../../db/TrackData/TrackData_20160214.db");
+	std::tm now_tm;
+	now_tm.tm_year = 2016 - 1900;
+	now_tm.tm_mon  =  2 - 1;
+	now_tm.tm_mday = 13;
+	now_tm.tm_hour = 32;
+	now_tm.tm_min  =  0;
+	now_tm.tm_sec  =  0;
+
+	time_t now = mktime(&now_tm);
+	stringstream query("");
+	query << "select id, time from TrackData where time >= ";
+	query << now;
+	query << " and time < ";
+	query << now + 60 * 60 * 2;
 	query << ";";
 	dba.setQuery(query.str());
 
@@ -169,11 +218,13 @@ int main(int argc, char const* argv[])
 {
 	cout << nowstring() << " log: test start." << endl;
 	
-	getAllTrackData();
+	//getAllTrackData();
 	
-	getAllTrackDataReserve();
+	//getAllTrackDataReserve();
 	
-	selectTrackDataWithTime();
+	//selectTrackDataWithTime();
+	
+	selectTrackDataWithDate();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;
