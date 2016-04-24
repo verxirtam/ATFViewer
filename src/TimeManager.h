@@ -27,18 +27,18 @@ public:
 	//引数の時刻の日付(00:00:00)をtime_t型で返却する
 	static time_t today(time_t t)
 	{
-		tm t_tm localtime(t);
-		t_tm.hour = 0;
-		t_tm.min = 0;
-		t_tm.sec = 0;
-		return mktime(&t_tm);
+		tm* t_tm = localtime(&t);
+		t_tm->tm_hour = 0;
+		t_tm->tm_min = 0;
+		t_tm->tm_sec = 0;
+		return mktime(t_tm);
 	}
 	//引数の時刻の24時間後の日時をtime_t型で返却する
 	static time_t nextDayTime(time_t t)
 	{
-		tm t_tm localtime(t);
-		t_tm.mday += 1;
-		return mktime(&t_tm);
+		tm* t_tm = localtime(&t);
+		t_tm->tm_mday += 1;
+		return mktime(t_tm);
 	}
 };
 

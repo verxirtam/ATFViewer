@@ -23,6 +23,7 @@
 #include <algorithm>
 
 #include "DBAccessor.h"
+#include "TrackDataManager.h"
 
 using namespace std;
 
@@ -126,7 +127,7 @@ string nowstring()
 	
 	char time_str[32];
 	//YYYY/MM/DD hh:mm:ss
-	strftime(time_str, 31, "%Y/%m/%d %H:%M:%S", localtime(&test_start));
+	strftime(time_str, 31, "%Y%m%d%H%M%S", localtime(&test_start));
 	std::string ret(time_str);
 	return ret;
 }
@@ -214,6 +215,57 @@ void selectTrackDataWithDate()
 	cout << endl;
 }
 
+bool comp_path_time(const Path& p0, const Path& p1)
+{
+	return (p0.pathPoint.begin()->time) < (p1.pathPoint.begin()->time);
+}
+
+bool comp_path(const Path& p0, const Path& p1)
+{
+	return p0.id < p1.id;
+}
+
+void testTrackDataManager()
+{
+	cout << "testTrackDataManager()" << endl;
+	
+	TrackDataManager tdm;
+	std::vector<Path> p;
+	tm start_tm;
+	start_tm.tm_year = 2016 - 1900;
+	start_tm.tm_mon  =  4 - 1;
+	start_tm.tm_mday = 13;
+	start_tm.tm_hour = 22;
+	start_tm.tm_min  =  0;
+	start_tm.tm_sec  =  0;
+	tm end_tm = start_tm;
+	end_tm.tm_hour += 4;
+	time_t start = mktime(&start_tm);
+	time_t end   = mktime(  &end_tm);
+	tdm.getTrackDataFromDB(p,start,end);
+	cout << "取得件数:" << p.size() << endl;
+	//時刻のチェック
+	cout << "時刻のチェック" << endl;
+	std::sort(p.begin(),p.end(),comp_path_time);
+	cout << "最初のpathの開始時刻:" << ctime(&(p. begin()->pathPoint.begin()->time)) << endl;
+	cout << "最後のpathの開始時刻:" << ctime(&(p.rbegin()->pathPoint.begin()->time)) << endl;
+	//重複チェック
+	cout << "重複チェック" << endl;
+	std::sort(p.begin(),p.end(),comp_path);
+	bool success = true;
+	std::string id("XXXXXXXXXXXXXXXXXXX");
+	for(std::vector<Path>::iterator i = p.begin(); i != p.end(); i++)
+	{
+		if(id==i->id)
+		{
+			success = false;
+			cout << "failure:" << id << "!=" << i->id << endl;
+		}
+		id = i->id;
+	}
+	cout << (success?"成功":"失敗") << endl;
+}
+
 int main(int argc, char const* argv[])
 {
 	cout << nowstring() << " log: test start." << endl;
@@ -224,7 +276,9 @@ int main(int argc, char const* argv[])
 	
 	//selectTrackDataWithTime();
 	
-	selectTrackDataWithDate();
+	//selectTrackDataWithDate();
+	
+	testTrackDataManager();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;

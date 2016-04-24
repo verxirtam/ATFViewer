@@ -78,7 +78,10 @@ PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)
 
 void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 {
+	TrackDataManager tdm;
+	tdm.getTrackDataFromDB(paths,time_min,time_max);
 	
+	/*
 	//軌道を取得する
 	std::stringstream sql("");
 	//sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
@@ -127,6 +130,7 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 		i->pathPoint.push_back(PathPoint(lo,la,a,t,ar));
 	}
 	//cout<<"initPathPoint() end"<<endl;
+	*/
 }
 
 void Paths::resetTime(void)
