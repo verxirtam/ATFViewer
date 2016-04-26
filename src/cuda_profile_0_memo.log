@@ -1,0 +1,23 @@
+# CUDA_PROFILE_LOG_VERSION 2.0
+# CUDA_DEVICE 0 GeForce GTX 260
+# CUDA_CONTEXT 1
+# TIMESTAMPFACTOR 144890a90b1ca906
+method,gputime,cputime,occupancy
+
+# ダミー
+method=[ _Z5dummyv ] gputime=[ 588.000 ] cputime=[ 23.905 ] occupancy=[ 1.000 ] 
+
+
+# getIndex_01Simple()
+method=[ memcpyHtoD ] gputime=[ 73337.312 ] cputime=[ 74466.734 ] 
+method=[ memcpyHtoD ] gputime=[ 4.352 ] cputime=[ 6.568 ] 
+method=[ _Z17getIndex_01SimplePfPi ] gputime=[ 8657126.000 ] cputime=[ 8.301 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 4.000 ] cputime=[ 8657118.000 ] 
+
+
+
+# getIndex_02Coalesing()
+method=[ memcpyHtoD ] gputime=[ 104242.211 ] cputime=[ 105113.664 ] 
+method=[ memcpyHtoD ] gputime=[ 4.352 ] cputime=[ 5.727 ] 
+method=[ _Z20getIndex_02CoalesingPfPi ] gputime=[ 8683151.000 ] cputime=[ 8.323 ] occupancy=[ 1.000 ] 
+method=[ memcpyDtoH ] gputime=[ 4.000 ] cputime=[ 8683145.000 ] 

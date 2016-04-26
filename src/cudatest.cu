@@ -54,6 +54,12 @@ __global__ void dummy(void)
 }
 
 
+//比較用の何もしないカーネル関数
+//データ転送のみ実施
+__global__ void getIndex_00DoNothing(float* w, int* r)
+{
+	//何もしない
+}
 //floor(w[i])の個数を集計する
 //メモリアクセスの工夫はしない
 __global__ void getIndex_01Simple(float* w, int* r)
@@ -64,7 +70,7 @@ __global__ void getIndex_01Simple(float* w, int* r)
 	int j_start = (int)floorf(w[i_start]);
 	int j_end   = (int)floorf(w[i_end  ]);
 	
-	countCrossing(r, j_start, j_end);
+	//countCrossing(r, j_start, j_end);
 }
 
 __global__ void getIndex_02Coalesing(float* w, int* r)
@@ -89,6 +95,15 @@ __global__ void getIndex_02Coalesing(float* w, int* r)
 	w_s[p        ] = w[offset + p        ];
 	w_s[p +     L] = w[offset + p +     L];
 	w_s[p + 2 * L] = w[offset + p + 2 * L];
+	
+	//ブロック内のスレッドについて同期する
+	//上記のシェアードメモリへのコピーが
+	//ブロック内の全てのスレッドで完了するまで待機する
+	//ブロック内で起動するスレッドがワープのサイズ（GTX260なら32）
+	//を超えるとスレッドが同期して実行されることが保証されなくなる
+	//逆に言うと同じワープ内のスレッドは常に同期されているので、
+	//工夫すれば__syncthreads()を使用した明示的な同期を不要に出来る可能性がある
+	__syncthreads();
 	
 	//スレッドが参照するシェアードメモリのインデックス
 	//32bit*3おきなのでバンクコンフリクトは起きない
@@ -141,8 +156,8 @@ public:
 
 int main(int argc, char const* argv[])
 {
-	dim3 blocks(2,2,1);
-	dim3 threads(33,1,1);
+	dim3 blocks(128,64,1);
+	dim3 threads(512,1,1);
 	//dim3 blocks(512,N/512/512,1);
 	//dim3 threads(512,1,1);
 	
@@ -152,6 +167,7 @@ int main(int argc, char const* argv[])
 	
 	
 	HostDeviceSeq<float> w(3 * N);
+	HostDeviceSeq<int> r00(RSIZE);
 	HostDeviceSeq<int> r01(RSIZE);
 	HostDeviceSeq<int> r02(RSIZE);
 	
@@ -168,6 +184,7 @@ int main(int argc, char const* argv[])
 	
 	for(int i = 0;i < RSIZE; i++)
 	{
+		r00[i] = 0;
 		r01[i] = 0;
 		r02[i] = 0;
 	}
@@ -175,17 +192,26 @@ int main(int argc, char const* argv[])
 	
 	
 	//ダミーのカーネル関数
-	dummy<<< blocks, threads >>>();
+	dummy<<< 1, 1 >>>();
+	
+	//デバイスへのデータのコピー
+	clock_t start_cpy = clock();
+	w.memcpyHostToDevice();
+	clock_t end_cpy = clock();
+	
+	clock_t start00 = clock();
+	r01.memcpyHostToDevice();
+	getIndex_00DoNothing<<< blocks, threads >>>(w.getDeviceAddress(), r00.getDeviceAddress());
+	r01.memcpyDeviceToHost();
+	clock_t end00 = clock();
 	
 	clock_t start01 = clock();
-	w.memcpyHostToDevice();
 	r01.memcpyHostToDevice();
 	getIndex_01Simple<<< blocks, threads >>>(w.getDeviceAddress(), r01.getDeviceAddress());
 	r01.memcpyDeviceToHost();
 	clock_t end01 = clock();
 	
 	clock_t start02 = clock();
-	w.memcpyHostToDevice();
 	r02.memcpyHostToDevice();
 	int size = 3 * threads.x * sizeof(float);
 	getIndex_02Coalesing<<< blocks, threads, size >>>(w.getDeviceAddress(), r02.getDeviceAddress());
@@ -202,13 +228,21 @@ int main(int argc, char const* argv[])
 		}
 		cout << endl;
 	}
-	cout << "r:\t";
+	cout << "r01:\t";
 	for(int i = 0;i < RSIZE; i++)
 	{
 		cout << r01[i] << "\t";
 	}
 	cout << endl;
+	cout << "r02:\t";
+	for(int i = 0;i < RSIZE; i++)
+	{
+		cout << r02[i] << "\t";
+	}
+	cout << endl;
 	
+	cout << "w.memcpyHostToDevice()経過時間 = " << (double)(end_cpy - start_cpy) / CLOCKS_PER_SEC << "sec." << endl;
+	cout << "getIndex_00DoNothing()経過時間 = " << (double)(end00 - start00) / CLOCKS_PER_SEC << "sec." << endl;
 	cout << "getIndex_01Simple()経過時間 = " << (double)(end01 - start01) / CLOCKS_PER_SEC << "sec." << endl;
 	cout << "getIndex_02Coalesing()経過時間 = " << (double)(end02 - start02) / CLOCKS_PER_SEC << "sec." << endl;
 	
