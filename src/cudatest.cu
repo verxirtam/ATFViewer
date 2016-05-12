@@ -164,7 +164,13 @@ __global__ void getIndex_02Coalesing(float* w, int* r_t, int _2_B, int* r)
 	return;
 }
 
-__global__ void getIndex_02Coalesing_02Accumulate(float* w, int* r_t, int _2_B, int* r)
+
+//r_t	集計する値の格納された配列
+//    	大きさRSIZEのベクトルが_2_B個格納されている
+//_2_B	ベクトルの個数(COUNTPERBLOCKで割り切れること)
+//r   	集計結果を格納するベクトル（大きさRSIZE * _2_B / COUNTPERBLOCK）
+template <typename COUNTPERBLOCK>//ブロックあたりのベクトルの個数
+__global__ void getIndex_02Coalesing_02Accumulate(int* r_t, r_t_copy, int _2_B, int* r)
 {
 	//スレッドインデックス、ブロックインデックスの読み替え
 	//（可読性のため）
@@ -177,24 +183,33 @@ __global__ void getIndex_02Coalesing_02Accumulate(float* w, int* r_t, int _2_B, 
 	int b = x + y * M;//ブロックの通し番号
 	int t = p + b * L;//スレッドの通し番号
 	
-	//他のブロックの結果を利用するので、ここでカーネルを分ける必要がある
 	
 	
-	//グローバルメモリにテンポラリ領域を設けて集計を行う
-	for(int s = _2_B; s > 1; s >>= 1)
-	{
-		//後半の値を前半の値に加える
-		addResult(r_t, s, t);
-		//加算を実行中に
-		//次のステップの集計が始まらないように同期する
-		__syncthreads();
-	}
-	//テンポラリ領域から結果格納用の領域にコピー
-	if(p < RSIZE)
-	{
-		r[p] = r_t[p];
-	}
+	int block_size = COUNTPERBLOCK * RSIZE;
+	//所属するブロックのシェアードメモリ
+	int r_t_b[COUNTPERBLOCK * RSIZE];
 
+	
+	//生成するブロック数
+	int block_count = _2_B / COUNTPERBLOCK;
+	
+	//当該ブロックがアクセスする開始インデックス
+	int start_index = b * block_size;
+
+	//結果の格納先の開始インデックス
+	int result_start_index = b * RSIZE;
+	
+	//ブロック内での集計を行う
+	//r_t + start_index: 開始インデックス
+	//r + result_start_index: 結果の格納先の開始アドレス
+	//COUNTPERBLOCK: ブロック内のベクトルの個数
+	//r_t_b: ブロック内で使用するシェアードメモリ（サイズ：COUNTPERBLOCK * RSIZE）
+	getIndex_02Coalesing_02Accumulate_01ReduceAtBlock(r_t + start_index, r + result_start_index, COUNTPERBLOCK, r_t_b);
+	
+	//ブロック間の同期がいるためここでカーネルを終了する
+	
+	//このカーネルが終了した時点で各ブロックの集計が完了しr[]に格納されている
+	//結果はblock_count個のベクトルなので、この関数をblock_count==1になるまで繰り返して集計結果を得る
 }
 
 template <typename T>
