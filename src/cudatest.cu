@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <cmath>
 
 #include <cuda.h>
 
@@ -26,6 +27,7 @@ using namespace std;
 
 #define MIN (0)
 #define MAX (20)
+#define RSIZE (20)
 
 __device__ void countCrossing(int* r, int j_start, int j_end)
 {
@@ -70,19 +72,30 @@ __global__ void getIndex_01Simple(float* w, int* r)
 	int j_start = (int)floorf(w[i_start]);
 	int j_end   = (int)floorf(w[i_end  ]);
 	
-	//countCrossing(r, j_start, j_end);
+	countCrossing(r, j_start, j_end);
 }
 
-__global__ void getIndex_02Coalesing(float* w, int* r)
+__device__ void addResult(int* r_t, int s, int t)
+{
+	int s2 = (s >> 1);
+	if(t < RSIZE * s2)
+	{
+		r_t[t] += r_t[t + RSIZE * s2];
+	}
+}
+
+__global__ void getIndex_02Coalesing(float* w, int* r_t, int _2_B, int* r)
 {
 	//スレッドインデックス、ブロックインデックスの読み替え
 	//（可読性のため）
-	int p = threadIdx.x;
-	int x = blockIdx.x;
-	int y = blockIdx.y;
-	int L = blockDim.x;
-	int M = gridDim.x;
+	int p = threadIdx.x;//ブロック内のスレッドのインデックス
+	int x = blockIdx.x;//ブロックのインデックスのx成分
+	int y = blockIdx.y;//ブロックのインデックスのy成分
+	int L = blockDim.x;//ブロック1つあたりのx方向のスレッド数
+	int M = gridDim.x;//x方向のブロック数
 	
+	int b = x + y * M;//ブロックの通し番号
+	int t = p + b * L;//スレッドの通し番号
 	
 	//シェアードメモリ
 	//グローバル変数のアクセス用
@@ -114,7 +127,74 @@ __global__ void getIndex_02Coalesing(float* w, int* r)
 	int j_start = (int)floorf(w_s[i_s_start]);
 	int j_end   = (int)floorf(w_s[i_s_end  ]);
 	
-	countCrossing(r, j_start, j_end);
+	
+	//shared memory r_s alloc
+	__shared__ int r_s[RSIZE];
+	
+	//copy global memory r to shared memory r_s
+	//RSIZE <= L であることを前提にする
+	//一部だけコピー
+	if(p < RSIZE)
+	{
+		r_s[p] = r[p];
+	}
+	//シェアードメモリのコピー中に
+	//別のワープのスレッドが集計を始めないように同期する
+	__syncthreads();
+
+	//シェアードメモリr_sを使用して集計
+	//集計時にブロック内でしか衝突は起きない
+	countCrossing(r_s, j_start, j_end);
+	
+	//集計が終わる前にグローバルメモリr_tへのコピーが
+	//始まらないように同期する
+	__syncthreads();
+	
+	//copy shared memory r_s to global memory r
+	//シェアードメモリから集計用のグローバルメモリr_tへコピー
+	if(p < RSIZE)
+	{
+		r_t[p + b * RSIZE] = r_s[p];
+	}
+	//グローバルメモリr_tへのコピーが終わる前に
+	//集計が始まらないようにブロック間で同期する
+	//そのために一旦カーネルを終了する
+	
+	
+	return;
+}
+
+__global__ void getIndex_02Coalesing_02Accumulate(float* w, int* r_t, int _2_B, int* r)
+{
+	//スレッドインデックス、ブロックインデックスの読み替え
+	//（可読性のため）
+	int p = threadIdx.x;//ブロック内のスレッドのインデックス
+	int x = blockIdx.x;//ブロックのインデックスのx成分
+	int y = blockIdx.y;//ブロックのインデックスのy成分
+	int L = blockDim.x;//ブロック1つあたりのx方向のスレッド数
+	int M = gridDim.x;//x方向のブロック数
+	
+	int b = x + y * M;//ブロックの通し番号
+	int t = p + b * L;//スレッドの通し番号
+	
+	//他のブロックの結果を利用するので、ここでカーネルを分ける必要がある
+	
+	
+	//グローバルメモリにテンポラリ領域を設けて集計を行う
+	for(int s = _2_B; s > 1; s >>= 1)
+	{
+		//後半の値を前半の値に加える
+		addResult(r_t, s, t);
+		//加算を実行中に
+		//次のステップの集計が始まらないように同期する
+		__syncthreads();
+	}
+	//テンポラリ領域から結果格納用の領域にコピー
+	if(p < RSIZE)
+	{
+		r[p] = r_t[p];
+	}
+
 }
 
 template <typename T>
@@ -156,14 +236,15 @@ public:
 
 int main(int argc, char const* argv[])
 {
-	dim3 blocks(128,64,1);
+	dim3 blocks(8,2,1);
+	//dim3 blocks(128,64,1);
 	dim3 threads(512,1,1);
 	//dim3 blocks(512,N/512/512,1);
 	//dim3 threads(512,1,1);
 	
 	const int N = threads.x * blocks.x * blocks.y;
 	//const int N = 512 * 512 * 32;
-	const int RSIZE = MAX - MIN;
+	//const int RSIZE = MAX - MIN;
 	
 	
 	HostDeviceSeq<float> w(3 * N);
@@ -171,6 +252,10 @@ int main(int argc, char const* argv[])
 	HostDeviceSeq<int> r01(RSIZE);
 	HostDeviceSeq<int> r02(RSIZE);
 	
+	int B = (int)ceil(log(blocks.x * blocks.y)/log(2.0f));
+	int _2_B = (1 << B);//2^B
+	int r_t_size = RSIZE * (_2_B);//RSIZE * 2^B
+	HostDeviceSeq<int> r_t(r_t_size);
 	
 	
 	srand((unsigned int)time(NULL));
@@ -189,6 +274,14 @@ int main(int argc, char const* argv[])
 		r02[i] = 0;
 	}
 
+	for(int i = 0; i < r_t_size; i++)
+	{
+		r_t[i]=0;
+	}
+	
+	
+	
+	
 	
 	
 	//ダミーのカーネル関数
@@ -213,10 +306,13 @@ int main(int argc, char const* argv[])
 	
 	clock_t start02 = clock();
 	r02.memcpyHostToDevice();
+	r_t.memcpyHostToDevice();
 	int size = 3 * threads.x * sizeof(float);
-	getIndex_02Coalesing<<< blocks, threads, size >>>(w.getDeviceAddress(), r02.getDeviceAddress());
+	getIndex_02Coalesing<<< blocks, threads, size >>>(w.getDeviceAddress(), r_t.getDeviceAddress(), _2_B, r02.getDeviceAddress());
 	r02.memcpyDeviceToHost();
 	clock_t end02 = clock();
+	
+	
 	
 	cout << "N = " << N << endl;
 	if(false)
@@ -243,7 +339,7 @@ int main(int argc, char const* argv[])
 	
 	cout << "w.memcpyHostToDevice()経過時間 = " << (double)(end_cpy - start_cpy) / CLOCKS_PER_SEC << "sec." << endl;
 	cout << "getIndex_00DoNothing()経過時間 = " << (double)(end00 - start00) / CLOCKS_PER_SEC << "sec." << endl;
-	cout << "getIndex_01Simple()経過時間 = " << (double)(end01 - start01) / CLOCKS_PER_SEC << "sec." << endl;
+	cout << "getIndex_01Simple()経過時間    = " << (double)(end01 - start01) / CLOCKS_PER_SEC << "sec." << endl;
 	cout << "getIndex_02Coalesing()経過時間 = " << (double)(end02 - start02) / CLOCKS_PER_SEC << "sec." << endl;
 	
 	bool result = true;
@@ -263,6 +359,24 @@ int main(int argc, char const* argv[])
 		cout << "getIndex_02Coalesing()の結果が不正です" << endl;
 	}
 	
+	//テンポラリ領域の内容の確認
+	if(true)
+	{
+		r_t.memcpyDeviceToHost();
+		cout << "r_t_size : " << r_t_size << endl;
+		cout << "r_t[] : " << endl;
+		for(int i = 0; i < _2_B; i++)
+		{
+			cout << "\t";
+			for(int j = 0; j < RSIZE; j++)
+			{
+				int index = j + i * RSIZE;
+				cout << r_t[index] << "\t";
+			}
+			cout << endl;
+		}
+		cout << endl;
+	}
 	return 0;
 }
 

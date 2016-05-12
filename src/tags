@@ -58,9 +58,10 @@ OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o)$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTEST	makefile	/^OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))$/;"	m
 PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
-Path	Paths.h	/^struct Path$/;"	s
-PathPoint	Paths.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
-PathPoint	Paths.h	/^struct PathPoint$/;"	s
+Path	Path.h	/^struct Path$/;"	s
+PathPoint	Path.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
+PathPoint	Path.h	/^struct PathPoint$/;"	s
+Path_H	Path.h	19;"	d
 Paths	Paths.h	/^	Paths():drawTimeWidth(600)$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
 Paths_H	Paths.h	20;"	d
@@ -84,8 +85,8 @@ _joystickTimer	ATFViewerMain.h	/^	static void _joystickTimer(int value)$/;"	f	cl
 _keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
 addTrackData	unittest.cpp	/^void addTrackData(vector<id_time>& r, DBAccessor& dba)$/;"	f
-altitude	Paths.h	/^	int altitude;$/;"	m	struct:PathPoint
-arrival	Paths.h	/^	std::string arrival;$/;"	m	struct:PathPoint
+altitude	Path.h	/^	int altitude;$/;"	m	struct:PathPoint
+arrival	Path.h	/^	std::string arrival;$/;"	m	struct:PathPoint
 begin	DBAccessor.h	/^	void begin()$/;"	f	class:DBAccessor
 bindDouble	DBAccessor.h	/^	void bindDouble(int i, double d)$/;"	f	class:DBAccessor
 bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
@@ -150,7 +151,7 @@ getTrackDataFromDB	TrackDataManager.h	/^	void getTrackDataFromDB(std::vector<Pat
 getTrackDataFromDBWithDay	TrackDataManager.h	/^	void getTrackDataFromDBWithDay(std::vector<Path>& paths,$/;"	f	class:TrackDataManager
 getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
-id	Paths.h	/^	std::string id;$/;"	m	struct:Path
+id	Path.h	/^	std::string id;$/;"	m	struct:Path
 id	unittest.cpp	/^	string id;$/;"	m	struct:id_time	file:
 id_time	unittest.cpp	/^struct id_time$/;"	s	file:
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
@@ -173,13 +174,13 @@ keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
 latitude	Map.h	/^	double latitude;$/;"	m	struct:MapVertex
-latitude	Paths.h	/^	double latitude;$/;"	m	struct:PathPoint
+latitude	Path.h	/^	double latitude;$/;"	m	struct:PathPoint
 longLat	Sectors.h	/^	std::vector<LongLat> longLat;$/;"	m	class:Sectors
 longLatIndex	Sectors.h	/^	std::vector<int> longLatIndex;$/;"	m	struct:SubSector
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
 longitude	GCS.h	/^	double longitude;$/;"	m	struct:LongLat
 longitude	Map.h	/^	double longitude;$/;"	m	struct:MapVertex
-longitude	Paths.h	/^	double longitude;$/;"	m	struct:PathPoint
+longitude	Path.h	/^	double longitude;$/;"	m	struct:PathPoint
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
@@ -192,12 +193,12 @@ minimumAltitude	Sectors.h	/^	int minimumAltitude;$/;"	m	struct:SubSector
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 nextDayTime	TimeManager.h	/^	static time_t nextDayTime(time_t t)$/;"	f	class:TimeManager
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
-now_index	Paths.h	/^	int now_index;$/;"	m	struct:Path
+now_index	Path.h	/^	int now_index;$/;"	m	struct:Path
 nowstring	unittest.cpp	/^string nowstring()$/;"	f
-operator !=	Paths.h	/^	bool operator!=(const std::string& s)$/;"	f	struct:Path
-operator ==	Paths.h	/^	bool operator==(const std::string& s)$/;"	f	struct:Path
-past_time_index	Paths.h	/^	int past_time_index;$/;"	m	struct:Path
-pathPoint	Paths.h	/^	std::vector<PathPoint> pathPoint;$/;"	m	struct:Path
+operator !=	Path.h	/^	bool operator!=(const std::string& s)$/;"	f	struct:Path
+operator ==	Path.h	/^	bool operator==(const std::string& s)$/;"	f	struct:Path
+past_time_index	Path.h	/^	int past_time_index;$/;"	m	struct:Path
+pathPoint	Path.h	/^	std::vector<PathPoint> pathPoint;$/;"	m	struct:Path
 paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
 paths	Paths.h	/^	std::vector<Path> paths;$/;"	m	class:Paths
 pollingInterval	ATFViewerMain.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMain
@@ -226,7 +227,7 @@ testTrackDataManager	unittest.cpp	/^void testTrackDataManager()$/;"	f
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
 textureWidth	Map.h	/^	int textureWidth;$/;"	m	class:Map
-time	Paths.h	/^	time_t time;$/;"	m	struct:PathPoint
+time	Path.h	/^	time_t time;$/;"	m	struct:PathPoint
 time	unittest.cpp	/^	long long time;$/;"	m	struct:id_time	file:
 timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
