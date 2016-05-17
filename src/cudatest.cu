@@ -164,17 +164,74 @@ __global__ void getIndex_02Coalesing(float* w, int* r_t, int _2_B, int* r)
 	return;
 }
 
-
-//r_t	集計する値の格納された配列
-//    	大きさRSIZEのベクトルが_2_B個格納されている
-//_2_B	ベクトルの個数(COUNTPERBLOCKで割り切れること)
-//r   	集計結果を格納するベクトル（大きさRSIZE * _2_B / COUNTPERBLOCK）
-template <typename COUNTPERBLOCK>//ブロックあたりのベクトルの個数
-__global__ void getIndex_02Coalesing_02Accumulate(int* r_t, r_t_copy, int _2_B, int* r)
+//ブロック内での集計を行う
+//data: 開始アドレス
+//result: 結果の格納先の開始アドレス
+//COUNT: ブロック内のベクトルの個数
+template <int COUNT>
+getIndex_02Coalesing_02Accumulate_01ReduceAtBlock(int* data, int* result)
 {
 	//スレッドインデックス、ブロックインデックスの読み替え
 	//（可読性のため）
 	int p = threadIdx.x;//ブロック内のスレッドのインデックス
+	int q = threadIdx.y;//ブロック内のスレッドのインデックス(スレッド数RSIZE)
+	int x = blockIdx.x;//ブロックのインデックスのx成分
+	int y = blockIdx.y;//ブロックのインデックスのy成分
+	int L = blockDim.x;//ブロック1つあたりのx方向のスレッド数
+	int M = gridDim.x;//x方向のブロック数
+	
+	int b = x + y * M;//ブロックの通し番号
+	int t = p + b * L;//スレッドの通し番号
+	
+	//シェアードメモリの確保
+	__shared__ int r_b[COUNT * RSIZE];
+	
+	//グローバルメモリからシェアードメモリへのコピー
+	for(int i = 0; i < COUNT / L; i++)
+	{
+		r_b[q + p * RSIZE + i * L] = data[q + p * RSIZE + i * L];
+	}
+	
+	__syncthreads();
+	
+	for(int length = COUNT >> 1; length >= 1; length >> 1)
+	{
+		if(length >= L)
+		{
+			for(int i = 0; i < length  / L; i++)
+			{
+				int index = q + p * RSIZE + i * L;
+				r_b[index] += r_b[index + length * RSIZE];
+			}
+		}
+		else
+		{
+			if(p < length)
+			{
+				int index = q + p * RSIZE;
+				r_b[index] += r_b[index + length * RSIZE];
+			}
+		}
+		__syncthreads();
+	}
+	
+	//結果の格納
+	if(p == 0)
+	{
+		result[p] = r_b[p];
+	}
+}
+
+//r_t	集計する値の格納された配列
+//    	大きさRSIZEのベクトルが_2_B個格納されている
+//r   	集計結果を格納するベクトル（大きさRSIZE * _2_B / COUNTPERBLOCK）
+template <int COUNTPERBLOCK>//ブロックあたりのベクトルの個数
+__global__ void getIndex_02Coalesing_02Accumulate(int* r_t, int* r)
+{
+	//スレッドインデックス、ブロックインデックスの読み替え
+	//（可読性のため）
+	int p = threadIdx.x;//ブロック内のスレッドのインデックス
+	int q = threadIdx.y;//ブロック内のスレッドのインデックス(スレッド数RSIZE)
 	int x = blockIdx.x;//ブロックのインデックスのx成分
 	int y = blockIdx.y;//ブロックのインデックスのy成分
 	int L = blockDim.x;//ブロック1つあたりのx方向のスレッド数
@@ -185,13 +242,8 @@ __global__ void getIndex_02Coalesing_02Accumulate(int* r_t, r_t_copy, int _2_B, 
 	
 	
 	
+	//ブロックあたりのデータの総数
 	int block_size = COUNTPERBLOCK * RSIZE;
-	//所属するブロックのシェアードメモリ
-	int r_t_b[COUNTPERBLOCK * RSIZE];
-
-	
-	//生成するブロック数
-	int block_count = _2_B / COUNTPERBLOCK;
 	
 	//当該ブロックがアクセスする開始インデックス
 	int start_index = b * block_size;
@@ -200,11 +252,10 @@ __global__ void getIndex_02Coalesing_02Accumulate(int* r_t, r_t_copy, int _2_B, 
 	int result_start_index = b * RSIZE;
 	
 	//ブロック内での集計を行う
-	//r_t + start_index: 開始インデックス
+	//r_t + start_index: 開始アドレス
 	//r + result_start_index: 結果の格納先の開始アドレス
 	//COUNTPERBLOCK: ブロック内のベクトルの個数
-	//r_t_b: ブロック内で使用するシェアードメモリ（サイズ：COUNTPERBLOCK * RSIZE）
-	getIndex_02Coalesing_02Accumulate_01ReduceAtBlock(r_t + start_index, r + result_start_index, COUNTPERBLOCK, r_t_b);
+	getIndex_02Coalesing_02Accumulate_01ReduceAtBlock<COUNTPERBLOCK>(r_t + start_index, r + result_start_index);
 	
 	//ブロック間の同期がいるためここでカーネルを終了する
 	
@@ -271,6 +322,7 @@ int main(int argc, char const* argv[])
 	int _2_B = (1 << B);//2^B
 	int r_t_size = RSIZE * (_2_B);//RSIZE * 2^B
 	HostDeviceSeq<int> r_t(r_t_size);
+	HostDeviceSeq<int> r_t2(r_t_size / _2_B);
 	
 	
 	srand((unsigned int)time(NULL));
@@ -292,6 +344,10 @@ int main(int argc, char const* argv[])
 	for(int i = 0; i < r_t_size; i++)
 	{
 		r_t[i]=0;
+	}
+	for(int i = 0; i < r_t_size / _2_B; i++)
+	{
+		r_t2[i]=0;
 	}
 	
 	
@@ -324,6 +380,10 @@ int main(int argc, char const* argv[])
 	r_t.memcpyHostToDevice();
 	int size = 3 * threads.x * sizeof(float);
 	getIndex_02Coalesing<<< blocks, threads, size >>>(w.getDeviceAddress(), r_t.getDeviceAddress(), _2_B, r02.getDeviceAddress());
+	dim3 blocks2(_2_B,1,1);
+	dim3 threads2(threads.x,RSIZE,1);
+	getIndex_02Coalesing_02Accumulate<512><<<blocks2,threads2>>>(r_t, r_t2);
+	
 	r02.memcpyDeviceToHost();
 	clock_t end02 = clock();
 	

@@ -1,0 +1,12 @@
+
+
+//*.cuをコンパイルした*.oを含むリンク
+//ncccでコンパイルしている
+//-I/usr/local/cuda/includeを入れている
+nvcc -g -O0 -Xcompiler -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include -I/usr/local/cuda/include -o unittest ATFViewerMain.o Fixes.o GCS.o Map.o Paths.o Sectors.o unittest.o cudatestfunc.o
+
+//*.cuのコンパイル
+nvcc -lcuda -lcudart -O3 -Xcompiler -Wall -arch=compute_13 -code=sm_13,compute_13 -c cudatestfunc.cu
+
+
+

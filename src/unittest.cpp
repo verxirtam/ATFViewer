@@ -25,6 +25,8 @@
 #include "DBAccessor.h"
 #include "TrackDataManager.h"
 
+#include "cudatestfunc.h"
+
 using namespace std;
 
 
@@ -266,6 +268,28 @@ void testTrackDataManager()
 	cout << (success?"成功":"失敗") << endl;
 }
 
+
+void cudatestfunctest()
+{
+	float a[10] = {0.0f, 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f};
+	int n = 10;
+	
+	for(int i = 0; i < n; i++)
+	{
+		cout << a[i];
+	}
+	cout << endl;
+	
+	cudatestfunc(a, n);
+	
+	for(int i = 0; i < n; i++)
+	{
+		cout << a[i];
+	}
+	cout << endl;
+}
+
+
 int main(int argc, char const* argv[])
 {
 	cout << nowstring() << " log: test start." << endl;
@@ -278,7 +302,9 @@ int main(int argc, char const* argv[])
 	
 	//selectTrackDataWithDate();
 	
-	testTrackDataManager();
+	//testTrackDataManager();
+	
+	cudatestfunctest();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;
