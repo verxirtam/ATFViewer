@@ -17,19 +17,35 @@ TARGET := $(shell basename `dirname \`pwd\``)
 #テストを実行する
 TESTTARGET := unittest
 
+#NVCC、g++共通のフラグ（デバッグ出力、最適化レベル）:デバッグ用
+COMMON_FLAGS := -g -O0
 
 #g++のコンパイルのフラグ
-#CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
-#デバッグ用のオプション
-CXXFLAGS := -g -O0 -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
+CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
+
+#CUDA関連の設定
+
+#CUDAコンパイラ
+NVCC := nvcc
+
+#CUDAコンパイルオプション
+NVCC_FLAGS :=  -Xcompiler -Wall -arch=compute_13 -code=sm_13,compute_13
+
+#CUDAリンクオプション
+NVCC_LINKS := -lcuda -lcudart
+
 
 #ソースファイル
 #フォルダ直下の.cppファイル
 SRCS := $(shell ls *.cpp)
 
+#CUDAソース
+#フォルダ直下の.cuファイル
+CUDA_SRCS := $(shell ls *.cu)
+
 #オブジェクトファイル
-#.cppを.oに置換している
-OBJS := $(SRCS:.cpp=.o)
+#.cpp or .cuを.oに置換している
+OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)
 
 #ターゲット用のオブジェクトファイル
 OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))
@@ -38,7 +54,7 @@ OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))
 OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))
 
 #依存関係ファイル
-DEPS := $(SRCS:.cpp=.d)
+DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
 
 #コマンド
 ###################################################
@@ -66,22 +82,26 @@ test: $(TESTTARGET)
 #$< : 最初の依存ファイル名(":"の右側の最初(一番左)の項目)
 #$^ : 依存ファイル全体
 $(TARGET): $(OBJSTARGET)
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
 
 #テスト用の実行ファイルを作成
 $(TESTTARGET): $(OBJSTEST)
-	$(CXX) -o $@ $^ $(CXXFLAGS)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
 
 #オブジェクトファイルの作成
 #"-MMD"オプションによって依存関係ファイル(*.d)も同時に作成する
 %.o: %.cpp
-	$(CXX) -c -MMD $< $(CXXFLAGS)
+	$(CXX) -c -MMD $< $(COMMON_FLAGS) $(CXXFLAGS)
+
+%.o: %.cu
+	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) -c $<
+	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) -M $< > $*.d
 
 #実行ファイル・中間ファイルの削除
 #".PHONY"はターゲットではなくコマンドであることを明示するためのコマンド
 .PHONY: clean
 clean:
-	$(RM) $(TARGET) $(OBJS) $(DEPS)
+	$(RM) $(TARGET) $(TESTTARGET) $(OBJS) $(DEPS)
 
 #依存関係ファイルをインクルードする
 #先頭に”-”を書いているので依存関係ファイルがなくてもエラーとならない
