@@ -40,7 +40,7 @@ void cudatestfunc(float* h_a, int n)
 	cudaMemcpy(h_a, d_a, n * sizeof(float), cudaMemcpyDeviceToHost);
 	cudaFree(d_a);
 }
-
+/*
 __host__ __device__ int getIndex(float x, float interval)
 {
 	return (int)floorf(x / interval);
@@ -226,6 +226,7 @@ __host__ __device__ void countCrossing
 	while(!equals(p_i, to_i));//toのセルに到達したら終了
 }
 
+ */
 
 template <int D, int DI>//次元,交点を求める方向
 float*  getCrossingPoint
@@ -239,9 +240,9 @@ float*  getCrossingPoint
 	//交点の線分のパラメータ
 	float s = (x - start[DI]) / (end[DI] - start[DI]);
 	//交点の算出
-	for(int i = 0; i < D; i++)
+	for(int d = 0; d < D; d++)
 	{
-		cross[i] = (end[i] - start[i]) * s + start[i];
+		cross[d] = (end[d] - start[d]) * s + start[d];
 	}
 	//DI成分については誤差が出ないようにもともと求めていたxを使用する
 	cross[DI] = DI;
@@ -255,8 +256,9 @@ void countCrossingByDirection
 		const float* const start,		//線分の始点
 		const float* const end,			//線分の終点
 		const float* const interval,	//区間の幅
-		float* const  counter,		//区間の通過回数のカウンタ
-		const int* const startindex		//カウンタのインデックスの開始番号
+		float* const  counter,			//区間の通過回数のカウンタ
+		const int* const startindex,	//カウンタのインデックスの開始番号
+		const int* const indexcount		//インデックスの個数
 	)
 {
 	int ns = 0;//始点のセルのインデックス
@@ -295,13 +297,26 @@ void countCrossingByDirection
 		//交点を算出する
 		getCrossingPoint(start,end,p,cross);
 		
-		int crossindex[D];
+		int cellindex[D];
 		//TODO 加算するカウンタのインデックスを算出する
-		for(int i = 0; i < D; i++)
+		for(int d = 0; d < D; d++)
 		{
-			crossindex[i] = floorf( cross[i] / interval[i] );
+			cellindex[d] = floorf( cross[d] / interval[d] ) - startindex[d];
 		}
+		//第DI成分は交点ではなく指定のインデックスを使用する
+		cellindex[DI] = i - startindex[DI];
+		int ci = 0;
+		for(int d = D; d >= 0; d--)
+		{
+			ci *= indexcount[d];
+			ci += cellindex[d];
+		}
+		//1セルあたりのカウンタの個数+パディング(バンクコンフリクト対策)を乗じる
+		ci *= 2 * D + 1;
+		//セル中のカウンタのインデックスを加算する
+		ci += DI + counterindex;
 		//TODO カウンタをインクリメントする
+		counter[ci]++;
 	}
 }
 
@@ -316,7 +331,7 @@ void countCrossingTemp
 		const int* const startindex		//カウンタのインデックスの開始番号
 	)
 {
-	//再帰呼出しを行いDI=0〜DI-2ほうこうについて実行する
+	//再帰呼出しを行いDI=0〜DI-2方向について実行する
 	countCrossingTemp<D,DI-1>(start,end,interval,counter,startindex);
 	//DI-1方向について平面との交点を求める
 	countCrossingByDirection<D, DI-1>(start,end,interval,counter,startindex);
