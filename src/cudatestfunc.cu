@@ -186,6 +186,12 @@ __host__ __device__ void countCrossing
 				//この方向には進まないので別の方向をチェック
 				continue;
 			}
+			//toの位置に達していたらこれ以上は進まないので別の方向をチェック
+			if(p_i[i] == to_i[i])
+			{
+				//この方向には進まないので別の方向をチェック
+				continue;
+			}
 			//i方向と垂直な平面との交点を求める
 			float cross[4];
 			getCrossPoint(from, to, p_i, interval, direction_i, i, cross);
@@ -218,4 +224,127 @@ __host__ __device__ void countCrossing
 		p_i[3] = next_i[3];
 	}
 	while(!equals(p_i, to_i));//toのセルに到達したら終了
+}
+
+
+template <int D, int DI>//次元,交点を求める方向
+float*  getCrossingPoint
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		float x,			//交点を求める平面の座標
+		float* const cross		//交点の出力先
+	)
+{
+	//交点の線分のパラメータ
+	float s = (x - start[DI]) / (end[DI] - start[DI]);
+	//交点の算出
+	for(int i = 0; i < D; i++)
+	{
+		cross[i] = (end[i] - start[i]) * s + start[i];
+	}
+	//DI成分については誤差が出ないようにもともと求めていたxを使用する
+	cross[DI] = DI;
+	//交点を返却
+	return cross;
+}
+
+template <int D, int DI>//次元,交点を求める方向
+void countCrossingByDirection
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		float* const  counter,		//区間の通過回数のカウンタ
+		const int* const startindex		//カウンタのインデックスの開始番号
+	)
+{
+	int ns = 0;//始点のセルのインデックス
+	int ne = 0;//終点のセルのインデックス
+	int is = 0;//ループのインデックスの開始番号
+	int ie = 0;//ループのインデックスの終了番号
+	int ioffset = 0;//ループのインデックスと交点のインデックスの差
+	int counterindex = 0;//インクリメントするカウンタのインデックス
+	
+	//始点の座標が終点の座標以下の場合
+	if(start[DI] <= end[DI])
+	{
+		ns = - floorf( - start[DI] / interval[DI] ) - 1;
+		ne = - floorf( -   end[DI] / interval[DI] ) - 1;
+		is = ns + 1;
+		ie = ne + 1;
+		ioffset = 0;
+		counterindex = 0;
+	}
+	//始点の座標が終点の座標より大きい場合
+	else
+	{
+		ns = floorf( start[DI] / interval[DI] );
+		ne = floorf(   end[DI] / interval[DI] );
+		is = ne;
+		ie = ns;
+		ioffset = 1;
+		counterindex =1;
+	}
+	for(int i = is; i < ie; i++)
+	{
+		//第DI座標が(i+ioffset)*interval[DI]の点を求める
+		float p = (i+ioffset)*interval[DI];
+		float cross[D];
+		
+		//交点を算出する
+		getCrossingPoint(start,end,p,cross);
+		
+		int crossindex[D];
+		//TODO 加算するカウンタのインデックスを算出する
+		for(int i = 0; i < D; i++)
+		{
+			crossindex[i] = floorf( cross[i] / interval[i] );
+		}
+		//TODO カウンタをインクリメントする
+	}
+}
+
+//DI = 0〜D-1 についてcountCrossing()を実行するためにテンプレートの再帰を使用する
+template <int D, int DI>//次元,交点を求める方向
+void countCrossingTemp
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		float* const counter,		//区間の通過回数のカウンタ
+		const int* const startindex		//カウンタのインデックスの開始番号
+	)
+{
+	//再帰呼出しを行いDI=0〜DI-2ほうこうについて実行する
+	countCrossingTemp<D,DI-1>(start,end,interval,counter,startindex);
+	//DI-1方向について平面との交点を求める
+	countCrossingByDirection<D, DI-1>(start,end,interval,counter,startindex);
+}
+
+//テンプレートの再帰がループにならずに終了するようにテンプレートの特殊化を行う
+template <int D>
+void countCrossingTemp<D,1>
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		float* const counter,		//区間の通過回数のカウンタ
+		const int* const startindex		//カウンタのインデックスの開始番号
+	)
+{
+	countCrossingByDirection<D,0>(start,end,interval,counter,startindex);
+}
+
+template <int D>//次元
+void countCrossing
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		float* const counter,		//区間の通過回数のカウンタ
+		const int* const startindex		//カウンタのインデックスの開始番号
+	)
+{
+		countCrossingTemp<D,D>(start,end,interval,counter,startindex);
 }
