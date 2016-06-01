@@ -289,6 +289,21 @@ void cudatestfunctest()
 	cout << endl;
 }
 
+void countCrossingTest()
+{
+	float start[1]={0.5f};
+	float end[1]={1.5f};
+	float interval[1]={1.0f};
+	int startindex[1]={0};
+	int indexcount[1]={2};
+	float counter[6]={0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
+	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < 6; i++)
+	{
+		cout << counter[i] << '\t';
+	}
+	cout << endl;
+}
 
 int main(int argc, char const* argv[])
 {
@@ -304,7 +319,9 @@ int main(int argc, char const* argv[])
 	
 	//testTrackDataManager();
 	
-	cudatestfunctest();
+	//cudatestfunctest();
+	
+	countCrossingTest();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;
