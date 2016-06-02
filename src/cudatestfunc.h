@@ -38,12 +38,11 @@ float*  getCrossingPoint
 	//交点の線分のパラメータ
 	float s = (x - start[DI]) / (end[DI] - start[DI]);
 	//交点の算出
+	//DI成分については誤差が出ないようにもともと求めていたxを使用する
 	for(int d = 0; d < D; d++)
 	{
-		cross[d] = (end[d] - start[d]) * s + start[d];
+		cross[d] = ( d == DI ) ? x : (end[d] - start[d]) * s + start[d];
 	}
-	//DI成分については誤差が出ないようにもともと求めていたxを使用する
-	cross[DI] = DI;
 	//交点を返却
 	return cross;
 }
@@ -58,7 +57,7 @@ int getTotalCellIndex
 	)
 {
 	int ci = 0;
-	for(int d = D; d >= 0; d--)
+	for(int d = D - 1; d >= 0; d--)
 	{
 		ci *= indexcount[d];
 		ci += cellindex[d] - startindex[d];
@@ -121,14 +120,28 @@ void countCrossingByDirection
 		{
 			cellindex[d] = ( d == DI ) ? ( i ) : ( std::floor( cross[d] / interval[d] ) );
 		}
-		//セルの通し番号
-		int ci = getTotalCellIndex<D>(cellindex,startindex,indexcount);
-		//1セルあたりのカウンタの個数+パディング(バンクコンフリクト対策)を乗じる
-		ci *= 2 * D + 1;
-		//セル中のカウンタのインデックスを加算する
-		ci += DI + counteroffset;
-		//カウンタをインクリメントする
-		counter[ci]++;
+		//セルのインデックスがカウンタの範囲を超えていたら
+		//カウンタのインクリメントを行わない
+		bool out_of_range = false;
+		for(int d = 0; d < D; d++)
+		{
+			if((cellindex[d] < startindex[d]) || (startindex[d] + indexcount[d] <= cellindex[d]))
+			{
+				out_of_range = true;
+				break;
+			}
+		}
+		if(!out_of_range)
+		{
+			//セルの通し番号
+			int ci = getTotalCellIndex<D>(cellindex,startindex,indexcount);
+			//1セルあたりのカウンタの個数を乗じる
+			ci *= 2 * D;
+			//セル中のカウンタのインデックスを加算する
+			ci += DI + counteroffset;
+			//カウンタをインクリメントする
+			counter[ci]++;
+		}
 	}
 }
 

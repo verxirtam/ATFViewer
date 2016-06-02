@@ -289,21 +289,144 @@ void cudatestfunctest()
 	cout << endl;
 }
 
-void countCrossingTest()
+void countCrossingTest_01Simple()
 {
 	float start[1]={0.5f};
 	float end[1]={1.5f};
 	float interval[1]={1.0f};
 	int startindex[1]={0};
 	int indexcount[1]={2};
-	float counter[6]={0.0f,0.0f,0.0f,0.0f,0.0f,0.0f};
+	float counter[4]={0.0f,0.0f,0.0f,0.0f};
+	
+	float cross[1];
+	getCrossingPoint<1, 0>(start, end, 1.0f, cross);
+	cout << "cross[0] = " << cross[0] << endl;
+	
+	int cellindex[1] = {1};
+	int ci = getTotalCellIndex<1>(cellindex, startindex, indexcount);
+	cout << "getTotalCellIndex<1>({1}, {0}, {2}) = 1 :  " << ci << endl;
+	
+	cellindex[0] = 0;
+	ci = getTotalCellIndex<1>(cellindex, startindex, indexcount);
+	cout << "getTotalCellIndex<1>({0}, {0}, {2}) = 0 :  " << ci << endl;
+	
+	cout << "countCrossingByDirection<1,0>(start, end, interval, startindex, indexcount, counter) :" << endl;
+	countCrossingByDirection<1,0>(start, end, interval, startindex, indexcount, counter);
+	for (int i = 0; i < 4; i++)
+	{
+		cout << counter[i] << '\t';
+	}
+	cout << endl;
+	
+	
+	cout << "countCrossing<1>(start,end,interval,startindex,indexcount,counter) :" << endl;
 	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < 4; i++)
+	{
+		cout << counter[i] << '\t';
+	}
+	cout << endl;
+	
+}
+
+void countCrossingTest_02D1Long()
+{
+	const int D = 1;
+	const int L = 10;
+	const int CL = L * D * 2;
+	float start[D] = {7.5f};
+	float end[D] = {9.5f};
+	float interval[D] = {1.0f};
+	int startindex[D] = {5};
+	int indexcount[D] = {L};
+	float counter[CL];
+	for (int i = 0; i < CL; i++)
+	{
+		counter[i]=0.0f;
+	}
+	cout << "start : " << start[0] << endl;
+	cout << "  end : " << end[0] << endl;
+	
+	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < L; i++)
+	{
+		int ci = i + startindex[0];
+		cout << ci << '\t';
+		cout << ci << '\t';
+	}
+	cout << endl;
+	for (int i = 0; i < L; i++)
+	{
+		cout << 0 << '\t';
+		cout << 1 << '\t';
+	}
+	cout << endl;
+	for (int i = 0; i < L; i++)
+	{
+		cout << "--------";
+		cout << "--------";
+	}
+	cout << endl;
+	
+	
+	
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << '\t';
+	}
+	cout << endl;
+	
+	start[0] = 11.5;
+	end[0] = 14.0;
+	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << '\t';
+	}
+	cout << endl;
+	
+	start[0] = 7.5;
+	end[0] = 6.0;
+	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << '\t';
 	}
 	cout << endl;
 }
+
+
+void countCrossingTest_03D2Simple()
+{
+	const int D = 2;
+	const int L = 2;
+	const int CL = L * L * D * 2;
+	float start[D] = {2.5f, 3.5f};
+	float end[D] = {3.25f, 4.75f};
+	float interval[D] = {1.0f};
+	int startindex[D] = {2,3};
+	int indexcount[D] = {L,L};
+	float counter[CL];
+	for (int i = 0; i < CL; i++)
+	{
+		counter[i]=0.0f;
+	}
+	
+	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
+	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
+	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << '\t';
+		/*
+		if(counter[i] == 1)
+		{
+			cout << i << endl;
+		}*/
+	}
+	
+}
+
 
 int main(int argc, char const* argv[])
 {
@@ -321,7 +444,9 @@ int main(int argc, char const* argv[])
 	
 	//cudatestfunctest();
 	
-	countCrossingTest();
+	countCrossingTest_01Simple();
+	countCrossingTest_02D1Long();
+	countCrossingTest_03D2Simple();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;
