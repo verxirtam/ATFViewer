@@ -84,6 +84,20 @@ void countCrossingByDirection
 	int ioffset = 0;//ループのインデックスと交点のインデックスの差
 	int counteroffset = 0;//インクリメントするカウンタのインデックス
 	
+	//startかendに負の座標があれば終了する
+	bool run = true;
+	for(int d = 0; d < D; d++)
+	{
+		if((start[d] < 0.0f) || (end[d] < 0.0f) )
+		{
+			run = false;
+		}
+	}
+	if(!run)
+	{
+		return;
+	}
+	
 	//始点の座標が終点の座標以下の場合
 	if(start[DI] <= end[DI])
 	{
@@ -138,7 +152,7 @@ void countCrossingByDirection
 			//1セルあたりのカウンタの個数を乗じる
 			ci *= 2 * D;
 			//セル中のカウンタのインデックスを加算する
-			ci += DI + counteroffset;
+			ci += 2 * DI + counteroffset;
 			//カウンタをインクリメントする
 			counter[ci]++;
 		}
@@ -195,11 +209,31 @@ void countCrossing
 		float* const counter		//区間の通過回数のカウンタ
 	)
 {
-		countCrossingTemp<D,D>::imple(start,end,interval,startindex,indexcount,counter);
+	countCrossingTemp<D,D>::imple(start,end,interval,startindex,indexcount,counter);
 }
 
 
 
+template <int D>//次元
+void countCrossingSequence
+	(
+		const float* const vertex,		//頂点の列
+		int vertexequencecount,			//頂点の列の長さ
+		const float* const interval,	//区間の幅
+		const int* const startindex,		//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		float* const counter		//区間の通過回数のカウンタ
+	)
+{
+	int linecount = vertexequencecount / D;
+	for(int i = 0; i < linecount; i++)
+	{
+		int v = i * D;
+		const float* const start = &(vertex[v]);
+		const float* const  end = &(vertex[v + D]);
+		countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	}
+}
 
 
 #endif

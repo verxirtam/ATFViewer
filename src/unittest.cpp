@@ -291,6 +291,8 @@ void cudatestfunctest()
 
 void countCrossingTest_01Simple()
 {
+	cout << "countCrossingTest_01Simple()" << endl;
+	
 	float start[1]={0.5f};
 	float end[1]={1.5f};
 	float interval[1]={1.0f};
@@ -331,6 +333,9 @@ void countCrossingTest_01Simple()
 
 void countCrossingTest_02D1Long()
 {
+	
+	cout << "countCrossingTest_02D1Long()" << endl;
+	
 	const int D = 1;
 	const int L = 10;
 	const int CL = L * D * 2;
@@ -398,14 +403,17 @@ void countCrossingTest_02D1Long()
 
 void countCrossingTest_03D2Simple()
 {
+	cout << "countCrossingTest_03D2Simple()" << endl;
+	
 	const int D = 2;
-	const int L = 2;
-	const int CL = L * L * D * 2;
-	float start[D] = {2.5f, 3.5f};
-	float end[D] = {3.25f, 4.75f};
-	float interval[D] = {1.0f};
-	int startindex[D] = {2,3};
-	int indexcount[D] = {L,L};
+	const int L0 = 2;
+	const int L1 = 4;
+	const int CL = L0 * L1 * D * 2;
+	float start[D] = {2.25f, 3.125f};
+	float end[D] = {2.75f, 3.375f};
+	float interval[D] = {1.0f, 0.5f};
+	int startindex[D] = {2,6};
+	int indexcount[D] = {L0,L1};
 	float counter[CL];
 	for (int i = 0; i < CL; i++)
 	{
@@ -417,16 +425,106 @@ void countCrossingTest_03D2Simple()
 	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
-		cout << counter[i] << '\t';
-		/*
-		if(counter[i] == 1)
-		{
-			cout << i << endl;
-		}*/
+		cout << counter[i] << ' ';
 	}
+	cout << endl;
 	
+	start[0] = 2.5f;  start[1] = 3.5f;
+	  end[0] = 3.25f;   end[1] = 4.75f;
+	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
+	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
+	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << ' ';
+	}
+	cout << endl;
+	
+	start[0] = 2.0f;  start[1] = 4.75f;
+	  end[0] = 4.0f;    end[1] = 3.25f;
+	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
+	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
+	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << ' ';
+	}
+	cout << endl;
+	
+	start[0] = 4.25f;  start[1] = 4.0f;
+	  end[0] = 3.5f;    end[1] = 5.25f;
+	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
+	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
+	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << ' ';
+	}
+	cout << endl;
+	
+	start[0] = 4.25f;  start[1] = 5.5f;
+	  end[0] = 3.5f;    end[1] = 5.25f;
+	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
+	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
+	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << ' ';
+	}
+	cout << endl;
 }
 
+void countCrossingTest_04D2Seqence()
+{
+	
+	cout << "countCrossingTest_04D2Seqence()" << endl;
+	
+	const int D = 2;
+	const int L0 = 2;
+	const int L1 = 4;
+	const int VC = 10;
+	const int CL = L0 * L1 * D * 2;
+	float vertex[D * VC] = 
+		{
+			 2.5f,  3.25f,
+			 3.5f,  3.25f,
+			 3.5f,  3.75f,
+			 2.75f, 4.25f,
+			 2.5f,  4.75f,
+			 3.0f,  5.25f,
+			 3.5f,  4.75f,
+			 3.5f,  4.25f,
+			 2.5f,  3.75f,
+			-1.0f, -1.0f
+		};
+	float interval[D] = {1.0f, 0.5f};
+	int startindex[D] = {2,6};
+	int indexcount[D] = {L0,L1};
+	float counter[CL];
+	for (int i = 0; i < CL; i++)
+	{
+		counter[i]=0.0f;
+	}
+	
+	countCrossingSequence<D>(vertex,D * VC,interval,startindex,indexcount,counter);
+	
+	for(int i = 0; i < VC; i++)
+	{
+		for(int d = 0; d < D; d++)
+		{
+			int vi = d + i * D;
+			cout << vertex[vi] << ", ";
+		}
+		cout << endl;
+	}
+	
+	
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter[i] << ' ';
+	}
+	cout << endl;
+}
 
 int main(int argc, char const* argv[])
 {
@@ -447,6 +545,7 @@ int main(int argc, char const* argv[])
 	countCrossingTest_01Simple();
 	countCrossingTest_02D1Long();
 	countCrossingTest_03D2Simple();
+	countCrossingTest_04D2Seqence();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;

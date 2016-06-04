@@ -109,9 +109,13 @@ comp_path	unittest.cpp	/^bool comp_path(const Path& p0, const Path& p1)$/;"	f
 comp_path_time	unittest.cpp	/^bool comp_path_time(const Path& p0, const Path& p1)$/;"	f
 countCrossing	cudatestfunc.h	/^void countCrossing$/;"	f
 countCrossingByDirection	cudatestfunc.h	/^void countCrossingByDirection$/;"	f
+countCrossingSequence	cudatestfunc.h	/^void countCrossingSequence$/;"	f
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp$/;"	s
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp<D, 1>$/;"	s
-countCrossingTest	unittest.cpp	/^void countCrossingTest()$/;"	f
+countCrossingTest_01Simple	unittest.cpp	/^void countCrossingTest_01Simple()$/;"	f
+countCrossingTest_02D1Long	unittest.cpp	/^void countCrossingTest_02D1Long()$/;"	f
+countCrossingTest_03D2Simple	unittest.cpp	/^void countCrossingTest_03D2Simple()$/;"	f
+countCrossingTest_04D2Seqence	unittest.cpp	/^void countCrossingTest_04D2Seqence()$/;"	f
 cudatestfunc_H_	cudatestfunc.h	20;"	d
 cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
 currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
