@@ -27,6 +27,8 @@
 
 #include "cudatestfunc.h"
 
+#include "CountCrossing.h"
+
 using namespace std;
 
 
@@ -288,7 +290,7 @@ void cudatestfunctest()
 	}
 	cout << endl;
 }
-
+/*
 void countCrossingTest_01Simple()
 {
 	cout << "countCrossingTest_01Simple()" << endl;
@@ -331,6 +333,7 @@ void countCrossingTest_01Simple()
 	
 }
 
+
 void countCrossingTest_02D1Long()
 {
 	
@@ -352,7 +355,7 @@ void countCrossingTest_02D1Long()
 	cout << "start : " << start[0] << endl;
 	cout << "  end : " << end[0] << endl;
 	
-	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	CountCrossing::countCrossing<1>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < L; i++)
 	{
 		int ci = i + startindex[0];
@@ -473,7 +476,7 @@ void countCrossingTest_03D2Simple()
 	}
 	cout << endl;
 }
-
+*/
 void countCrossingTest_04D2Seqence()
 {
 	
@@ -506,7 +509,7 @@ void countCrossingTest_04D2Seqence()
 		counter[i]=0.0f;
 	}
 	
-	countCrossingSequence<D>(vertex,D * VC,interval,startindex,indexcount,counter);
+	CountCrossing::countCrossingSequenceHost(D,vertex,D * VC,interval,startindex,indexcount,counter);
 	
 	for(int i = 0; i < VC; i++)
 	{
@@ -526,6 +529,45 @@ void countCrossingTest_04D2Seqence()
 	cout << endl;
 }
 
+void countCrossingTest_05Class()
+{
+	cout << "countCrossingTest_05Class()" << endl;
+	
+	CountCrossing cc;
+	cc.run();
+	vector<float> c = cc.getCounter();
+	int imax = cc.getIndexCount(0);
+	int jmax = cc.getIndexCount(1);
+	int kmax = cc.getIndexCount(2);
+	int lmax = cc.getIndexCount(3);
+	for(int d = 0; d < 4; d++)
+	{
+		for(int s = 0; s < 2; s++)
+		{
+			for(int l = 0; l < lmax; l++)
+			{
+				for(int k = 0; k < kmax; k++)
+				{
+					for(int j = 0; j < jmax; j++)
+					{
+						for(int i = 0; i < imax; i++)
+						{
+							cout << cc.getCounterValue(d,s,i,j,k,l) << ", ";
+						}
+						cout << endl;
+					}
+					cout << endl;
+				}
+				cout << endl;
+			}
+			cout << endl << endl;
+		}
+		cout << endl << endl;
+	}
+	cout << endl << endl;
+}
+
+
 int main(int argc, char const* argv[])
 {
 	cout << nowstring() << " log: test start." << endl;
@@ -542,10 +584,11 @@ int main(int argc, char const* argv[])
 	
 	//cudatestfunctest();
 	
-	countCrossingTest_01Simple();
-	countCrossingTest_02D1Long();
-	countCrossingTest_03D2Simple();
+	//countCrossingTest_01Simple();
+	//countCrossingTest_02D1Long();
+	//countCrossingTest_03D2Simple();
 	countCrossingTest_04D2Seqence();
+	countCrossingTest_05Class();
 	
 	cout << nowstring() << " log: test end." << endl;
 	cout << endl;

@@ -33,6 +33,10 @@ Button_Y	Joystick.h	/^	Button_Y = 3,$/;"	e	enum:KeyCode_F310
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
+CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
+CountCrossing	CountCrossing.h	/^class CountCrossing$/;"	c
+CountCrossing_H_	CountCrossing.h	21;"	d
+CountCrossing_host_H_	CountCrossing_cuda.h	21;"	d
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
@@ -107,15 +111,19 @@ centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTrans
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 comp_path	unittest.cpp	/^bool comp_path(const Path& p0, const Path& p1)$/;"	f
 comp_path_time	unittest.cpp	/^bool comp_path_time(const Path& p0, const Path& p1)$/;"	f
+countCrossing	CountCrossing_cuda.h	/^void countCrossing$/;"	f
 countCrossing	cudatestfunc.h	/^void countCrossing$/;"	f
+countCrossingByDirection	CountCrossing_cuda.h	/^void countCrossingByDirection$/;"	f
 countCrossingByDirection	cudatestfunc.h	/^void countCrossingByDirection$/;"	f
 countCrossingSequence	cudatestfunc.h	/^void countCrossingSequence$/;"	f
+countCrossingSequenceHostImple	CountCrossing_cuda.h	/^void countCrossingSequenceHostImple$/;"	f
+countCrossingTemp	CountCrossing_cuda.h	/^struct countCrossingTemp$/;"	s
+countCrossingTemp	CountCrossing_cuda.h	/^struct countCrossingTemp<D, 1>$/;"	s
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp$/;"	s
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp<D, 1>$/;"	s
-countCrossingTest_01Simple	unittest.cpp	/^void countCrossingTest_01Simple()$/;"	f
-countCrossingTest_02D1Long	unittest.cpp	/^void countCrossingTest_02D1Long()$/;"	f
-countCrossingTest_03D2Simple	unittest.cpp	/^void countCrossingTest_03D2Simple()$/;"	f
 countCrossingTest_04D2Seqence	unittest.cpp	/^void countCrossingTest_04D2Seqence()$/;"	f
+countCrossingTest_05Class	unittest.cpp	/^void countCrossingTest_05Class()$/;"	f
+counter	CountCrossing.h	/^	std::vector<float> counter;$/;"	m	class:CountCrossing
 cudatestfunc_H_	cudatestfunc.h	20;"	d
 cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
 currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
@@ -152,8 +160,12 @@ getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAcce
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
+getCounter	CountCrossing.h	/^	const std::vector<float>& getCounter()$/;"	f	class:CountCrossing
+getCounterValue	CountCrossing.h	/^	float getCounterValue(int d, int s, int cx, int cy, int cz, int ct)$/;"	f	class:CountCrossing
+getCrossingPoint	CountCrossing_cuda.h	/^float*  getCrossingPoint$/;"	f
 getCrossingPoint	cudatestfunc.h	/^float*  getCrossingPoint$/;"	f
 getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
+getIndexCount	CountCrossing.h	/^	int getIndexCount(int i)$/;"	f	class:CountCrossing
 getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double distance)$/;"	f	class:Sectors
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
@@ -164,6 +176,7 @@ getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:S
 getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:Map
 getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:Sectors
 getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:Sectors
+getTotalCellIndex	CountCrossing_cuda.h	/^int getTotalCellIndex$/;"	f
 getTotalCellIndex	cudatestfunc.h	/^int getTotalCellIndex$/;"	f
 getTrackDataFromDB	TrackDataManager.h	/^	void getTrackDataFromDB(std::vector<Path>& p,$/;"	f	class:TrackDataManager
 getTrackDataFromDBWithDay	TrackDataManager.h	/^	void getTrackDataFromDBWithDay(std::vector<Path>& paths,$/;"	f	class:TrackDataManager
@@ -173,9 +186,11 @@ id	Path.h	/^	std::string id;$/;"	m	struct:Path
 id	unittest.cpp	/^	string id;$/;"	m	struct:id_time	file:
 id_time	unittest.cpp	/^struct id_time$/;"	s	file:
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
+imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingTemp
 imple	cudatestfunc.h	/^	static void imple$/;"	f	struct:countCrossingTemp
 includesMaximumAltitude	Sectors.h	/^	bool includesMaximumAltitude;$/;"	m	struct:SubSector
 includesMinimumAltitude	Sectors.h	/^	bool includesMinimumAltitude;$/;"	m	struct:SubSector
+indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
@@ -184,6 +199,7 @@ initPathPoint	Paths.cpp	/^void Paths::initPathPoint(DBAccessor& dba, time_t time
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
+interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
 joystick	ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
@@ -225,6 +241,7 @@ readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
+run	CountCrossing.h	/^	void run(void)$/;"	f	class:CountCrossing
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
 sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
@@ -236,6 +253,7 @@ setCenterOffsetLong	MapTransform.h	/^	void setCenterOffsetLong(GLdouble c_long)$
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
 setScale	MapTransform.h	/^	void setScale(GLdouble s)$/;"	f	class:MapTransform
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
+startIndex	CountCrossing.h	/^	std::vector<int> startIndex;$/;"	m	class:CountCrossing
 step	DBAccessor.h	/^	void step()$/;"	f	class:DBAccessor
 step_select	DBAccessor.h	/^	int step_select()$/;"	f	class:DBAccessor
 stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
@@ -255,6 +273,7 @@ today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
 u	Map.h	/^	double u;$/;"	m	struct:MapVertex
 unitProvidingService	Sectors.h	/^	std::string unitProvidingService;$/;"	m	struct:Sector
 v	Map.h	/^	double v;$/;"	m	struct:MapVertex
+vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertexIndex	Map.h	/^	int vertexIndex;$/;"	m	struct:MapVertexIndex
 windowHeight	ATFViewerMain.h	/^	int windowHeight;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain
