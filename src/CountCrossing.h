@@ -35,11 +35,11 @@ private:
 public:
 	static void countCrossingSequenceHost
 		(
-			int dimension,				//次元
-			const float* const vertex,		//頂点の列
-			int vertexequencecount,			//頂点の列の長さ
+			int dimension,			//次元
+			const float* const vertex,	//頂点の列
+			int vertexequencecount,		//頂点の列の長さ
 			const float* const interval,	//区間の幅
-			const int* const startindex,		//カウンタのインデックスの開始番号
+			const int* const startindex,	//カウンタのインデックスの開始番号
 			const int* const indexcount,	//インデックスの個数
 			float* const counter		//区間の通過回数のカウンタ
 		);
@@ -70,44 +70,7 @@ public:
 		int counter_size = indexCount[0] * indexCount[1] * indexCount[2] * indexCount[3] * 4 * 2;
 		counter = std::vector<float>(counter_size, 0.0f);
 	}
-	void run(void)
-	{
-		TrackDataManager tdm;
-		std::vector<Path> path;
-		time_t start = 1456801200;
-		time_t end = start + 60 * 60 * 2;
-		
-		tdm.getTrackDataFromDB(path, start, end);
-		
-		int imax = path.size();
-		for(int i = 0;i < imax; i++)
-		{
-			int jmax = path[i].pathPoint.size();
-			for(int j = 0; j < jmax; j++)
-			{
-				vertex.push_back(path[i].pathPoint[j].longitude);
-				vertex.push_back(path[i].pathPoint[j].latitude);
-				vertex.push_back(path[i].pathPoint[j].altitude);
-				time_t t = path[i].pathPoint[j].time;
-				float time = (float)(t - start);
-				vertex.push_back(time);
-			}
-			vertex.push_back(-1.0f);
-			vertex.push_back(-1.0f);
-			vertex.push_back(-1.0f);
-			vertex.push_back(-1.0f);
-		}
-		countCrossingSequenceHost
-			(
-				4,
-				vertex.data(),
-				vertex.size(),
-				interval.data(),
-				startIndex.data(),
-				indexCount.data(),
-				counter.data()
-			);
-	}
+	void run(void);
 	const std::vector<float>& getCounter()
 	{
 		return counter;
@@ -124,9 +87,6 @@ public:
 		return counter[i];
 	}
 };
-
-
-
 
 
 #endif

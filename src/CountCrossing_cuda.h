@@ -227,7 +227,7 @@ void countCrossingSequenceHostImple
 		float* const counter		//区間の通過回数のカウンタ
 	)
 {
-	int linecount = vertexequencecount / D;
+	int linecount = vertexequencecount / D - 1;
 	for(int i = 0; i < linecount; i++)
 	{
 		int v = i * D;

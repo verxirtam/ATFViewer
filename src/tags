@@ -82,6 +82,7 @@ Sectors_H	Sectors.h	20;"	d
 SubSector	Sectors.h	/^struct SubSector$/;"	s
 TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
 TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
+TestCountCrossing	TestCountCrossing.h	/^class TestCountCrossing$/;"	c
 TimeManager	TimeManager.h	/^class TimeManager$/;"	c
 TimeManager_H_	TimeManager.h	19;"	d
 TrackDataManager	TrackDataManager.h	/^class TrackDataManager$/;"	c
@@ -241,7 +242,6 @@ readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
-run	CountCrossing.h	/^	void run(void)$/;"	f	class:CountCrossing
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
 sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
