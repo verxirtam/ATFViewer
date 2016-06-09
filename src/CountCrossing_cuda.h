@@ -65,6 +65,130 @@ int getTotalCellIndex
 	return ci;
 }
 
+
+
+//startかendに負の座標があるかを判定する
+template <int D>//次元
+__host__ __device__
+bool hasNegativeElement
+	(
+		const float* const start,		//線分の始点
+		const float* const end			//線分の終点
+	)
+{
+	bool ret = false;
+	for(int d = 0; d < D; d++)
+	{
+		if((start[d] < 0.0f) || (end[d] < 0.0f) )
+		{
+			ret = true;
+		}
+	}
+	return ret;
+}
+
+//交点を求めるループのパラメーターを設定する
+template <int DI>//次元,交点を求める方向
+__host__ __device__
+void setCountCrossingLoopParameters
+	(
+		const float* const start,//始点
+		const float* const end,//終点
+		const float* const interval,//区間の幅
+		int* const ns,//始点のセルのインデックス
+		int* const ne,//終点のセルのインデックス
+		int* const is,//ループのインデックスの開始番号
+		int* const ie,//ループのインデックスの終了番号
+		int* const ioffset,//ループのインデックスと交点のインデックスの差
+		int* const counteroffset//インクリメントするカウンタのインデックス
+	)
+{
+	//始点の座標が終点の座標以下の場合
+	if(start[DI] <= end[DI])
+	{
+		*ns = - floorf( - start[DI] / interval[DI] ) - 1;
+		*ne = - floorf( -   end[DI] / interval[DI] ) - 1;
+		*is = *ns + 1;
+		*ie = *ne + 1;
+		*ioffset = 0;
+		*counteroffset = 0;
+	}
+	//始点の座標が終点の座標より大きい場合
+	else
+	{
+		*ns = floorf( start[DI] / interval[DI] );
+		*ne = floorf(   end[DI] / interval[DI] );
+		*is = *ne;
+		*ie = *ns;
+		*ioffset = 1;
+		*counteroffset =1;
+	}
+	
+}
+
+template <int D>
+__host__ __device__
+bool isCellIndexOutOfRange
+	(
+		const int* const cellindex,		//セルのインデックス
+		const int* const startindex,	//カウンタのインデックスの開始番号
+		const int* const indexcount		//インデックスの個数
+	)
+{
+	//セルのインデックスがカウンタの範囲を超えていたら
+	//カウンタのインクリメントを行わない
+	bool ret = false;
+	for(int d = 0; d < D; d++)
+	{
+		if((cellindex[d] < startindex[d]) || (startindex[d] + indexcount[d] <= cellindex[d]))
+		{
+			ret = true;
+			break;
+		}
+	}
+	return ret;
+}
+
+template <int D, int DI>
+__host__ __device__
+void getCellIndexFromPoint
+	(
+		const float* const point,		//セルインデックスを求める点
+		const float* const interval,	//区間の幅
+		int cellindex_di,				//DI方向のセルインデックス
+		int* const cellindex			//セルインデックス
+	)
+{
+		//加算するカウンタのセルのインデックスを算出する
+		//第DI成分は交点ではなく指定のインデックスを使用する
+		for(int d = 0; d < D; d++)
+		{
+			cellindex[d] = ( d == DI ) ? ( cellindex_di ) : ( std::floor( point[d] / interval[d] ) );
+		}
+	
+}
+
+//セルのインデックスを取得する
+template <int D, int DI>//次元,交点を求める方向
+__host__ __device__
+int getCounterIndex
+	(
+		const int* const cellindex,		//セルインデックス
+		const int* const startindex,	//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		int counteroffset				//カウンタのセル中のオフセット
+	)
+{
+	//セルの通し番号
+	int ci = getTotalCellIndex<D>(cellindex,startindex,indexcount);
+	//1セルあたりのカウンタの個数を乗じる
+	ci *= 2 * D;
+	//セル中のカウンタのインデックスを加算する
+	ci += 2 * DI + counteroffset;
+	return ci;
+}
+
+
 template <int D, int DI>//次元,交点を求める方向
 __host__ __device__
 void countCrossingByDirection
@@ -85,39 +209,14 @@ void countCrossingByDirection
 	int counteroffset = 0;//インクリメントするカウンタのインデックス
 	
 	//startかendに負の座標があれば終了する
-	bool run = true;
-	for(int d = 0; d < D; d++)
-	{
-		if((start[d] < 0.0f) || (end[d] < 0.0f) )
-		{
-			run = false;
-		}
-	}
-	if(!run)
+	if(hasNegativeElement<D>(start,end))
 	{
 		return;
 	}
 	
-	//始点の座標が終点の座標以下の場合
-	if(start[DI] <= end[DI])
-	{
-		ns = - std::floor( - start[DI] / interval[DI] ) - 1;
-		ne = - std::floor( -   end[DI] / interval[DI] ) - 1;
-		is = ns + 1;
-		ie = ne + 1;
-		ioffset = 0;
-		counteroffset = 0;
-	}
-	//始点の座標が終点の座標より大きい場合
-	else
-	{
-		ns = std::floor( start[DI] / interval[DI] );
-		ne = std::floor(   end[DI] / interval[DI] );
-		is = ne;
-		ie = ns;
-		ioffset = 1;
-		counteroffset =1;
-	}
+	//交点を求めるループのパラメーターを設定する
+	setCountCrossingLoopParameters<DI>(start,end,interval,&ns,&ne,&is,&ie,&ioffset,&counteroffset);
+	
 	for(int i = is; i < ie; i++)
 	{
 		//第DI座標が(i+ioffset)*interval[DI]の点を求める
@@ -127,35 +226,26 @@ void countCrossingByDirection
 		//交点を算出する
 		getCrossingPoint<D,DI>(start,end,p,cross);
 		
+		//交点のセルインデックス
 		int cellindex[D];
+		
 		//加算するカウンタのセルのインデックスを算出する
 		//第DI成分は交点ではなく指定のインデックスを使用する
-		for(int d = 0; d < D; d++)
-		{
-			cellindex[d] = ( d == DI ) ? ( i ) : ( std::floor( cross[d] / interval[d] ) );
-		}
+		getCellIndexFromPoint<D,DI>(cross, interval, i, cellindex);
+		
 		//セルのインデックスがカウンタの範囲を超えていたら
 		//カウンタのインクリメントを行わない
-		bool out_of_range = false;
-		for(int d = 0; d < D; d++)
+		if(isCellIndexOutOfRange<D>(cellindex, startindex, indexcount))
 		{
-			if((cellindex[d] < startindex[d]) || (startindex[d] + indexcount[d] <= cellindex[d]))
-			{
-				out_of_range = true;
-				break;
-			}
+			continue;
 		}
-		if(!out_of_range)
-		{
-			//セルの通し番号
-			int ci = getTotalCellIndex<D>(cellindex,startindex,indexcount);
-			//1セルあたりのカウンタの個数を乗じる
-			ci *= 2 * D;
-			//セル中のカウンタのインデックスを加算する
-			ci += 2 * DI + counteroffset;
-			//カウンタをインクリメントする
-			counter[ci]++;
-		}
+		
+		//カウンタのインデックスを取得する
+		int ci = getCounterIndex<D,DI>(cellindex,startindex,indexcount,counteroffset);
+		
+		//カウンタをインクリメントする
+		counter[ci]++;
+		
 	}
 }
 
