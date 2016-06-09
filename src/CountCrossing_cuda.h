@@ -168,7 +168,7 @@ void getCellIndexFromPoint
 	
 }
 
-//セルのインデックスを取得する
+//カウンタのインデックスを取得する
 template <int D, int DI>//次元,交点を求める方向
 __host__ __device__
 int getCounterIndex
