@@ -48,12 +48,12 @@ void CountCrossing::countCrossingSequenceHost
 	}
 }
 
-void CountCrossing::run(void)
+void CountCrossing::init(void)
 {
 	TrackDataManager tdm;
 	std::vector<Path> path;
 	time_t start = 1456801200;
-	time_t end = start + 60 * 60 * 2;
+	time_t end = start + 60 * 60 * 1;
 	
 	tdm.getTrackDataFromDB(path, start, end);
 	
@@ -69,12 +69,23 @@ void CountCrossing::run(void)
 			time_t t = path[i].pathPoint[j].time;
 			float time = (float)(t - start);
 			vertex.push_back(time);
+			//パディング
+			vertex.push_back(0.0f);
 		}
 		vertex.push_back(-1.0f);
 		vertex.push_back(-1.0f);
 		vertex.push_back(-1.0f);
 		vertex.push_back(-1.0f);
+		vertex.push_back(-1.0f);
 	}
+
+}
+
+void CountCrossing::runOnHost(void)
+{
+	int counter_size = indexCount[0] * indexCount[1] * indexCount[2] * indexCount[3] * 4 * 2;
+	counter = std::vector<float>(counter_size, 0.0f);
+	
 	CountCrossing::countCrossingSequenceHost
 		(
 			4,
@@ -87,5 +98,20 @@ void CountCrossing::run(void)
 		);
 }
 
-
+void CountCrossing::runOnDevice(void)
+{
+	int counter_size = indexCount[0] * indexCount[1] * indexCount[2] * indexCount[3] * 4 * 2;
+	counter_device = std::vector<float>(counter_size, 0.0f);
+	
+	CountCrossing::countCrossingSequenceHost
+		(
+			4,
+			vertex.data(),
+			vertex.size(),
+			interval.data(),
+			startIndex.data(),
+			indexCount.data(),
+			counter_device.data()
+		);
+}
 

@@ -301,18 +301,18 @@ bool countCrossingTest_04D2Seqence()
 	const int L1 = 4;
 	const int VC = 10;
 	const int CL = L0 * L1 * D * 2;
-	float vertex[D * VC] = 
+	float vertex[(D + 1) * VC] =
 		{
-			 2.5f,  3.25f,
-			 3.5f,  3.25f,
-			 3.5f,  3.75f,
-			 2.75f, 4.25f,
-			 2.5f,  4.75f,
-			 3.0f,  5.25f,
-			 3.5f,  4.75f,
-			 3.5f,  4.25f,
-			 2.5f,  3.75f,
-			-1.0f, -1.0f
+			 2.5f,  3.25f, 0.0f,
+			 3.5f,  3.25f, 0.0f,
+			 3.5f,  3.75f, 0.0f,
+			 2.75f, 4.25f, 0.0f,
+			 2.5f,  4.75f, 0.0f,
+			 3.0f,  5.25f, 0.0f,
+			 3.5f,  4.75f, 0.0f,
+			 3.5f,  4.25f, 0.0f,
+			 2.5f,  3.75f, 0.0f,
+			-1.0f, -1.0f,  0.0f
 		};
 	float interval[D] = {1.0f, 0.5f};
 	int startindex[D] = {2,6};
@@ -324,7 +324,7 @@ bool countCrossingTest_04D2Seqence()
 	}
 	float result[CL] = {0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,2,0,0,0,0,1,1,0,0,1,0,0,0,0,1};
 	
-	CountCrossing::countCrossingSequenceHost(D, vertex,D * VC,interval,startindex,indexcount,counter);
+	CountCrossing::countCrossingSequenceHost(D, vertex, (D + 1) * VC, interval, startindex, indexcount, counter);
 	
 	for(int i = 0; i < VC; i++)
 	{
@@ -349,13 +349,34 @@ bool countCrossingTest_04D2Seqence()
 	return ret;
 }
 
-void countCrossingTest_05Class()
+bool countCrossingTest_05Class()
 {
 	cout << "countCrossingTest_05Class()" << endl;
 	
 	CountCrossing cc;
-	cc.run();
-	vector<float> c = cc.getCounter();
+	cc.init();
+	cc.runOnHost();
+	
+	cc.runOnDevice();
+	
+	const vector<float> ch = cc.getCounter();
+	const vector<float> cd = cc.getCounterDevice();
+	
+	if(ch.size() != cd.size())
+	{
+		return false;
+	}
+	int cmax = ch.size();
+	for(int i = 0; i < cmax; i++)
+	{
+		if(ch[i] != cd[i])
+		{
+			return false;
+		}
+	}
+	
+	return true;
+	/*
 	int imax = cc.getIndexCount(0);
 	int jmax = cc.getIndexCount(1);
 	int kmax = cc.getIndexCount(2);
@@ -385,6 +406,7 @@ void countCrossingTest_05Class()
 		cout << endl << endl;
 	}
 	cout << endl << endl;
+	*/
 }
 
 
@@ -392,6 +414,7 @@ void test(bool test_result, bool& ret)
 {
 	if(!test_result)
 	{
+		cout << "this test failed." << endl;
 		ret = false;
 	}
 }
@@ -418,7 +441,7 @@ int main(int argc, char const* argv[])
 	test(countCrossingTest_02D1Long(), ret);
 	test(countCrossingTest_03D2Simple(), ret);
 	test(countCrossingTest_04D2Seqence(), ret);
-	//countCrossingTest_05Class();
+	test(countCrossingTest_05Class(), ret);
 	
 	if(ret)
 	{

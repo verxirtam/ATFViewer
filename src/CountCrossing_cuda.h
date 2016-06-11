@@ -190,8 +190,8 @@ int getCounterIndex
 
 
 template <int D, int DI>//次元,交点を求める方向
-__host__ __device__
-void countCrossingByDirection
+__host__
+void countCrossingByDirectionHost
 	(
 		const float* const start,		//線分の始点
 		const float* const end,			//線分の終点
@@ -251,9 +251,9 @@ void countCrossingByDirection
 
 //DI = 0〜D-1 についてcountCrossing()を実行するためにテンプレートの再帰を使用する
 template <int D, int DI>//次元,交点を求める方向
-struct countCrossingTemp
+struct countCrossingHostTemp
 {
-	__host__ __device__
+	__host__
 	static void imple
 		(
 			const float* const start,		//線分の始点
@@ -265,17 +265,17 @@ struct countCrossingTemp
 		)
 	{
 		//再帰呼出しを行いDI=0〜DI-2方向について実行する
-		countCrossingTemp<D,DI-1>::imple(start,end,interval,startindex,indexcount,counter);
+		countCrossingHostTemp<D,DI-1>::imple(start,end,interval,startindex,indexcount,counter);
 		//DI-1方向について平面との交点を求める
-		countCrossingByDirection<D, DI-1>(start,end,interval,startindex,indexcount,counter);
+		countCrossingByDirectionHost<D, DI-1>(start,end,interval,startindex,indexcount,counter);
 	}
 };
 
 //テンプレートの再帰がループにならずに終了するようにテンプレートの特殊化を行う
 template <int D>
-struct countCrossingTemp<D, 1>
+struct countCrossingHostTemp<D, 1>
 {
-	__host__ __device__
+	__host__
 	static void imple
 		(
 			const float* const start,		//線分の始点
@@ -286,13 +286,13 @@ struct countCrossingTemp<D, 1>
 			float* const counter		//区間の通過回数のカウンタ
 		)
 	{
-		countCrossingByDirection<D,0>(start,end,interval,startindex,indexcount,counter);
+		countCrossingByDirectionHost<D,0>(start,end,interval,startindex,indexcount,counter);
 	}
 };
 
 template <int D>//次元
-__host__ __device__
-void countCrossing
+__host__
+void countCrossingHost
 	(
 		const float* const start,		//線分の始点
 		const float* const end,			//線分の終点
@@ -302,7 +302,7 @@ void countCrossing
 		float* const counter		//区間の通過回数のカウンタ
 	)
 {
-	countCrossingTemp<D,D>::imple(start,end,interval,startindex,indexcount,counter);
+	countCrossingHostTemp<D,D>::imple(start,end,interval,startindex,indexcount,counter);
 }
 
 template <int D>//次元
@@ -317,16 +317,44 @@ void countCrossingSequenceHostImple
 		float* const counter		//区間の通過回数のカウンタ
 	)
 {
-	int linecount = vertexequencecount / D - 1;
+	//バンクコンフリクト対策のパディング
+	//Dが偶数->1
+	//Dが機数->0
+	int padding = (D + 1) & 1;
+	int Dp = D + padding;
+	int linecount = vertexequencecount / Dp - 1;
 	for(int i = 0; i < linecount; i++)
 	{
-		int v = i * D;
+		int v = i * Dp;
 		const float* const start = &(vertex[v]);
-		const float* const  end = &(vertex[v + D]);
-		countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+		const float* const  end = &(vertex[v + Dp]);
+		countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	}
 }
 
 
+template <int D, int LC>//次元, ブロックあたりの線分の個数
+__global__
+void countCrossingSequenceDeviceImple
+	(
+		const float* const vertex,		//頂点の列
+		int vertexequencecount,			//頂点の列の長さ
+		const float* const interval,	//区間の幅
+		const int* const startindex,		//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		float* const counter		//区間の通過回数のカウンタ
+	)
+{
+	//生成すべきブロック数
+	int blockcount = ;
+	//デバイスメモリを確保
+	float* vertex_d;
+	
+	//デバイスへのメモリのコピー
+	//カーネルの起動パラメータの設定
+	
+	//カーネルの起動
+	//カーネルの結果をデバイスからコピー
+}
 
 #endif

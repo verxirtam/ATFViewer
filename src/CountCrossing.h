@@ -30,7 +30,7 @@ private:
 	std::vector<int> startIndex;
 	std::vector<int> indexCount;
 	std::vector<float> counter;
-
+	std::vector<float> counter_device;
 	
 public:
 	static void countCrossingSequenceHost
@@ -65,15 +65,21 @@ public:
 		indexCount.push_back(60);
 		indexCount.push_back(50);
 		indexCount.push_back( 1);
-		indexCount.push_back( 2);
+		indexCount.push_back( 1);
 		
 		int counter_size = indexCount[0] * indexCount[1] * indexCount[2] * indexCount[3] * 4 * 2;
 		counter = std::vector<float>(counter_size, 0.0f);
 	}
-	void run(void);
+	void init(void);
+	void runOnHost(void);
+	void runOnDevice(void);
 	const std::vector<float>& getCounter()
 	{
 		return counter;
+	}
+	const std::vector<float>& getCounterDevice()
+	{
+		return counter_device;
 	}
 	int getIndexCount(int i)
 	{

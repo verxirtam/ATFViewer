@@ -65,7 +65,7 @@ bool countCrossingTest_01Simple()
 	}
 	
 	cout << "countCrossingByDirection<1,0>(start, end, interval, startindex, indexcount, counter) :" << endl;
-	countCrossingByDirection<1,0>(start, end, interval, startindex, indexcount, counter);
+	countCrossingByDirectionHost<1,0>(start, end, interval, startindex, indexcount, counter);
 	for (int i = 0; i < 4; i++)
 	{
 		cout << counter[i] << '\t';
@@ -78,7 +78,7 @@ bool countCrossingTest_01Simple()
 	
 	
 	cout << "countCrossing<1>(start,end,interval,startindex,indexcount,counter) :" << endl;
-	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<1>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < 4; i++)
 	{
 		cout << counter[i] << '\t';
@@ -123,7 +123,7 @@ bool countCrossingTest_02D1Long()
 	cout << "start : " << start[0] << endl;
 	cout << "  end : " << end[0] << endl;
 	
-	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<1>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < L; i++)
 	{
 		int ci = i + startindex[0];
@@ -158,7 +158,7 @@ bool countCrossingTest_02D1Long()
 	
 	start[0] = 11.5;
 	end[0] = 14.0;
-	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<1>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << '\t';
@@ -171,7 +171,7 @@ bool countCrossingTest_02D1Long()
 	
 	start[0] = 7.5;
 	end[0] = 6.0;
-	countCrossing<1>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<1>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << '\t';
@@ -193,8 +193,8 @@ bool countCrossingTest_03D2Simple()
 	const int L0 = 2;
 	const int L1 = 4;
 	const int CL = L0 * L1 * D * 2;
-	float start[D] = {2.25f, 3.125f};
-	float end[D] = {2.75f, 3.375f};
+	float start[D + 1] = {2.25f, 3.125f, 0.0f};
+	float end[D + 1] = {2.75f, 3.375f, 0.0f};
 	float interval[D] = {1.0f, 0.5f};
 	int startindex[D] = {2,6};
 	int indexcount[D] = {L0,L1};
@@ -218,7 +218,7 @@ bool countCrossingTest_03D2Simple()
 	
 	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
 	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
-	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << ' ';
@@ -237,7 +237,7 @@ bool countCrossingTest_03D2Simple()
 	  end[0] = 3.25f;   end[1] = 4.75f;
 	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
 	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
-	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << ' ';
@@ -256,7 +256,7 @@ bool countCrossingTest_03D2Simple()
 	  end[0] = 4.0f;    end[1] = 3.25f;
 	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
 	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
-	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << ' ';
@@ -275,7 +275,7 @@ bool countCrossingTest_03D2Simple()
 	  end[0] = 3.5f;    end[1] = 5.25f;
 	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
 	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
-	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << ' ';
@@ -294,7 +294,7 @@ bool countCrossingTest_03D2Simple()
 	  end[0] = 3.5f;    end[1] = 5.25f;
 	cout << "start:(" << start[0] << ", " << start[1] << ")" << endl;
 	cout << "  end:(" <<   end[0] << ", " <<   end[1] << ")" << endl;
-	countCrossing<D>(start,end,interval,startindex,indexcount,counter);
+	countCrossingHost<D>(start,end,interval,startindex,indexcount,counter);
 	for (int i = 0; i < CL; i++)
 	{
 		cout << counter[i] << ' ';

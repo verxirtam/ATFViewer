@@ -112,17 +112,17 @@ centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTrans
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 comp_path	unittest.cpp	/^bool comp_path(const Path& p0, const Path& p1)$/;"	f
 comp_path_time	unittest.cpp	/^bool comp_path_time(const Path& p0, const Path& p1)$/;"	f
-countCrossing	CountCrossing_cuda.h	/^void countCrossing$/;"	f
 countCrossing	cudatestfunc.h	/^void countCrossing$/;"	f
-countCrossingByDirection	CountCrossing_cuda.h	/^void countCrossingByDirection$/;"	f
 countCrossingByDirection	cudatestfunc.h	/^void countCrossingByDirection$/;"	f
+countCrossingByDirectionHost	CountCrossing_cuda.h	/^void countCrossingByDirectionHost$/;"	f
+countCrossingHost	CountCrossing_cuda.h	/^void countCrossingHost$/;"	f
+countCrossingHostTemp	CountCrossing_cuda.h	/^struct countCrossingHostTemp$/;"	s
+countCrossingHostTemp	CountCrossing_cuda.h	/^struct countCrossingHostTemp<D, 1>$/;"	s
 countCrossingSequence	cudatestfunc.h	/^void countCrossingSequence$/;"	f
 countCrossingSequenceHostImple	CountCrossing_cuda.h	/^void countCrossingSequenceHostImple$/;"	f
-countCrossingTemp	CountCrossing_cuda.h	/^struct countCrossingTemp$/;"	s
-countCrossingTemp	CountCrossing_cuda.h	/^struct countCrossingTemp<D, 1>$/;"	s
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp$/;"	s
 countCrossingTemp	cudatestfunc.h	/^struct countCrossingTemp<D, 1>$/;"	s
-countCrossingTest_04D2Seqence	unittest.cpp	/^void countCrossingTest_04D2Seqence()$/;"	f
+countCrossingTest_04D2Seqence	unittest.cpp	/^bool countCrossingTest_04D2Seqence()$/;"	f
 countCrossingTest_05Class	unittest.cpp	/^void countCrossingTest_05Class()$/;"	f
 counter	CountCrossing.h	/^	std::vector<float> counter;$/;"	m	class:CountCrossing
 cudatestfunc_H_	cudatestfunc.h	20;"	d
@@ -155,6 +155,7 @@ getAllTrackData	unittest.cpp	/^void getAllTrackData(void)$/;"	f
 getAllTrackDataReserve	unittest.cpp	/^void getAllTrackDataReserve(void)$/;"	f
 getAxisState	Joystick.h	/^	int getAxisState(int i)$/;"	f	class:Joystick
 getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
+getCellIndexFromPoint	CountCrossing_cuda.h	/^void getCellIndexFromPoint$/;"	f
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
@@ -162,6 +163,7 @@ getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
 getColumnLongLong	DBAccessor.h	/^	long long getColumnLongLong(int i)$/;"	f	class:DBAccessor
 getColumnString	DBAccessor.h	/^	std::string getColumnString(int i)$/;"	f	class:DBAccessor
 getCounter	CountCrossing.h	/^	const std::vector<float>& getCounter()$/;"	f	class:CountCrossing
+getCounterIndex	CountCrossing_cuda.h	/^int getCounterIndex$/;"	f
 getCounterValue	CountCrossing.h	/^	float getCounterValue(int d, int s, int cx, int cy, int cz, int ct)$/;"	f	class:CountCrossing
 getCrossingPoint	CountCrossing_cuda.h	/^float*  getCrossingPoint$/;"	f
 getCrossingPoint	cudatestfunc.h	/^float*  getCrossingPoint$/;"	f
@@ -183,11 +185,12 @@ getTrackDataFromDB	TrackDataManager.h	/^	void getTrackDataFromDB(std::vector<Pat
 getTrackDataFromDBWithDay	TrackDataManager.h	/^	void getTrackDataFromDBWithDay(std::vector<Path>& paths,$/;"	f	class:TrackDataManager
 getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
+hasNegativeElement	CountCrossing_cuda.h	/^bool hasNegativeElement$/;"	f
 id	Path.h	/^	std::string id;$/;"	m	struct:Path
 id	unittest.cpp	/^	string id;$/;"	m	struct:id_time	file:
 id_time	unittest.cpp	/^struct id_time$/;"	s	file:
 idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
-imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingTemp
+imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingHostTemp
 imple	cudatestfunc.h	/^	static void imple$/;"	f	struct:countCrossingTemp
 includesMaximumAltitude	Sectors.h	/^	bool includesMaximumAltitude;$/;"	m	struct:SubSector
 includesMinimumAltitude	Sectors.h	/^	bool includesMinimumAltitude;$/;"	m	struct:SubSector
@@ -201,6 +204,7 @@ initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:AT
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
+isCellIndexOutOfRange	CountCrossing_cuda.h	/^bool isCellIndexOutOfRange$/;"	f
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
 joystick	ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
@@ -250,6 +254,7 @@ selectTrackDataWithDate	unittest.cpp	/^void selectTrackDataWithDate()$/;"	f
 selectTrackDataWithTime	unittest.cpp	/^void selectTrackDataWithTime()$/;"	f
 setCenterOffsetLat	MapTransform.h	/^	void setCenterOffsetLat(GLdouble c_lat)$/;"	f	class:MapTransform
 setCenterOffsetLong	MapTransform.h	/^	void setCenterOffsetLong(GLdouble c_long)$/;"	f	class:MapTransform
+setCountCrossingLoopParameters	CountCrossing_cuda.h	/^void setCountCrossingLoopParameters$/;"	f
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
 setScale	MapTransform.h	/^	void setScale(GLdouble s)$/;"	f	class:MapTransform
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
@@ -260,6 +265,7 @@ stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
 subSector	Sectors.h	/^	std::vector<SubSector> subSector;$/;"	m	struct:Sector
 subSectorCount	Sectors.h	/^	int subSectorCount;$/;"	m	struct:Sector
 switchDisplaySector	Sectors.h	/^	void switchDisplaySector()$/;"	f	class:Sectors
+test	unittest.cpp	/^void test(bool test_result, bool& ret)$/;"	f
 testTrackDataManager	unittest.cpp	/^void testTrackDataManager()$/;"	f
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
