@@ -43,6 +43,16 @@ public:
 			const int* const indexcount,	//インデックスの個数
 			float* const counter		//区間の通過回数のカウンタ
 		);
+	static void countCrossingSequenceDevice
+		(
+			int dimension,			//次元
+			const float* const vertex,	//頂点の列
+			int vertexequencecount,		//頂点の列の長さ
+			const float* const interval,	//区間の幅
+			const int* const startindex,	//カウンタのインデックスの開始番号
+			const int* const indexcount,	//インデックスの個数
+			float* const counter		//区間の通過回数のカウンタ
+		);
 	
 public:
 	CountCrossing():

@@ -158,4 +158,11 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/bits/ostream.tcc \
     /usr/include/c++/4.8/istream \
     /usr/include/c++/4.8/bits/istream.tcc \
-    CountCrossing_cuda.h
+    CountCrossing_cuda.h \
+    /usr/include/c++/4.8/vector \
+    /usr/include/c++/4.8/bits/stl_construct.h \
+    /usr/include/c++/4.8/ext/alloc_traits.h \
+    /usr/include/c++/4.8/bits/stl_uninitialized.h \
+    /usr/include/c++/4.8/bits/stl_vector.h \
+    /usr/include/c++/4.8/bits/stl_bvector.h \
+    /usr/include/c++/4.8/bits/vector.tcc

@@ -20,6 +20,10 @@
 #ifndef CountCrossing_host_H_
 #define CountCrossing_host_H_
 
+#include <vector>
+#include <cuda_runtime.h>
+
+
 //////////////////////////////////////////////////////////////////////////////////////
 // テンプレート関数の実体定義
 //////////////////////////////////////////////////////////////////////////////////////
@@ -333,8 +337,269 @@ void countCrossingSequenceHostImple
 }
 
 
+
+template <typename T>
+class DeviceSeqConst
+{
+private:
+	int count;
+	const T* const host;
+	T* device;
+public:
+	DeviceSeqConst(const T* const h, int c):count(c),host(h),device(NULL)
+	{
+		cudaMalloc((void**)&device, count * sizeof(T));
+	}
+	~DeviceSeqConst()
+	{
+		cudaFree(device);
+	}
+	void memcpyHostToDevice(void)
+	{
+		cudaMemcpy(device, host, count * sizeof(T), cudaMemcpyHostToDevice);
+	}
+	int getCount()
+	{
+		return count;
+	}
+	T* getDeviceAddress()
+	{
+		return device;
+	}
+};
+
+template <typename T>
+class DeviceSeq
+{
+private:
+	DeviceSeqConst<T> dsc;
+	T* const host;
+public:
+	DeviceSeq(T* const h, int c):dsc(h,c),host(h)
+	{
+	}
+	~DeviceSeq()
+	{
+		
+	}
+	void memcpyHostToDevice(void)
+	{
+		dsc.memcpyHostToDevice();
+	}
+	void memcpyDeviceToHost(void)
+	{
+		cudaMemcpy(host, dsc.getDeviceAddress(), dsc.getCount() * sizeof(T), cudaMemcpyDeviceToHost);
+	}
+	T* getDeviceAddress()
+	{
+		return dsc.getDeviceAddress();
+	}
+
+};
+////////////////////////////////////////////////
+
+__device__ 
+inline void atomicFloatAdd(float *address, float val)
+{
+	int i_val = __float_as_int(val);
+	int tmp0 = 0;
+	int tmp1;
+	while( (tmp1 = atomicCAS((int *)address, tmp0, i_val)) != tmp0)
+	{
+		tmp0 = tmp1;
+		i_val = __float_as_int(val + __int_as_float(tmp1));
+	}
+}
+
+
+template <int D, int DI>//次元,交点を求める方向
+__device__
+void countCrossingByDirectionDevice
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		const int* const startindex,	//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		float* const  counter			//区間の通過回数のカウンタ
+	)
+{
+	int ns = 0;//始点のセルのインデックス
+	int ne = 0;//終点のセルのインデックス
+	int is = 0;//ループのインデックスの開始番号
+	int ie = 0;//ループのインデックスの終了番号
+	int ioffset = 0;//ループのインデックスと交点のインデックスの差
+	int counteroffset = 0;//インクリメントするカウンタのインデックス
+	
+	//startかendに負の座標があれば終了する
+	if(hasNegativeElement<D>(start,end))
+	{
+		return;
+	}
+	
+	//交点を求めるループのパラメーターを設定する
+	setCountCrossingLoopParameters<DI>(start,end,interval,&ns,&ne,&is,&ie,&ioffset,&counteroffset);
+	
+	for(int i = is; i < ie; i++)
+	{
+		//第DI座標が(i+ioffset)*interval[DI]の点を求める
+		float p = (i+ioffset)*interval[DI];
+		float cross[D];
+		
+		//交点を算出する
+		getCrossingPoint<D,DI>(start,end,p,cross);
+		
+		//交点のセルインデックス
+		int cellindex[D];
+		
+		//加算するカウンタのセルのインデックスを算出する
+		//第DI成分は交点ではなく指定のインデックスを使用する
+		getCellIndexFromPoint<D,DI>(cross, interval, i, cellindex);
+		
+		//セルのインデックスがカウンタの範囲を超えていたら
+		//カウンタのインクリメントを行わない
+		if(isCellIndexOutOfRange<D>(cellindex, startindex, indexcount))
+		{
+			continue;
+		}
+		
+		//カウンタのインデックスを取得する
+		int ci = getCounterIndex<D,DI>(cellindex,startindex,indexcount,counteroffset);
+		
+		//カウンタをインクリメントする
+		//グローバルメモリへの加算
+		atomicFloatAdd(&(counter[ci]),1.0f);
+	}
+}
+
+////////////////////////////////////////////////
+
+//DI = 0〜D-1 についてcountCrossing()を実行するためにテンプレートの再帰を使用する
+template <int D, int DI>//次元,交点を求める方向
+struct countCrossingDeviceTemp
+{
+	__device__
+	static void imple
+		(
+			const float* const start,		//線分の始点
+			const float* const end,			//線分の終点
+			const float* const interval,	//区間の幅
+			const int* const startindex,		//カウンタのインデックスの開始番号
+			const int* const indexcount,	//インデックスの個数
+			float* const counter		//区間の通過回数のカウンタ
+		)
+	{
+		//再帰呼出しを行いDI=0〜DI-2方向について実行する
+		countCrossingDeviceTemp<D,DI-1>::imple(start,end,interval,startindex,indexcount,counter);
+		//DI-1方向について平面との交点を求める
+		countCrossingByDirectionDevice<D, DI-1>(start,end,interval,startindex,indexcount,counter);
+	}
+};
+
+//テンプレートの再帰がループにならずに終了するようにテンプレートの特殊化を行う
+template <int D>
+struct countCrossingDeviceTemp<D, 1>
+{
+	__device__
+	static void imple
+		(
+			const float* const start,		//線分の始点
+			const float* const end,			//線分の終点
+			const float* const interval,	//区間の幅
+			const int* const startindex,		//カウンタのインデックスの開始番号
+			const int* const indexcount,	//インデックスの個数
+			float* const counter		//区間の通過回数のカウンタ
+		)
+	{
+		countCrossingByDirectionDevice<D,0>(start,end,interval,startindex,indexcount,counter);
+	}
+};
+
+template <int D>//次元
+__device__
+void countCrossingDevice
+	(
+		const float* const start,		//線分の始点
+		const float* const end,			//線分の終点
+		const float* const interval,	//区間の幅
+		const int* const startindex,		//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		float* const counter		//区間の通過回数のカウンタ
+	)
+{
+	countCrossingDeviceTemp<D,D>::imple(start,end,interval,startindex,indexcount,counter);
+}
+
+
 template <int D, int LC>//次元, ブロックあたりの線分の個数
 __global__
+void countCrossingSequenceDeviceKernel
+	(
+		const float* const vertex,		//頂点の列
+		int vertexequencecount,			//頂点の列の長さ
+		const float* const interval,	//区間の幅
+		const int* const startindex,		//カウンタのインデックスの開始番号
+		const int* const indexcount,	//インデックスの個数
+		float* const counter		//区間の通過回数のカウンタ
+	)
+{
+	//ブロックインデックス、スレッドインデックスの読み替え
+	int tx = threadIdx.x;
+	//int txsize = blockDim.x;//==LC
+	int bx = blockIdx.x;
+	//int bxsize = gridDim.x;
+	
+	//バンクコンフリクト対策のパディング
+	const int padding = (D + 1) & 1;
+	const int Dp = D + padding;
+	
+	//シェアードメモリの定義
+	__shared__ float vertex_s[(LC +1) * Dp];
+	__shared__ float interval_s[D];
+	__shared__ int startindex_s[D];
+	__shared__ int indexcount_s[D];
+
+	//シェアードメモリへのコピー
+	//vertex->vertex_sのコピー
+	int vertex_start = bx * LC * Dp;//開始のインデックス
+	for(int i = 0; i < Dp; i++)
+	{
+		int v = LC * i + tx;
+		vertex_s[v] = vertex[vertex_start + v];
+	}
+	if(tx < Dp)
+	{
+		int v = LC * Dp + tx;
+		vertex_s[v] = vertex[vertex_start + v];
+	}
+	//残りのシェアードメモリのコピー
+	if(tx < D)
+	{
+		interval_s[tx]   = interval[tx];
+		startindex_s[tx] = startindex[tx];
+		indexcount_s[tx] = indexcount[tx];
+	}
+	//シェアードメモリへのコピーが完了するまで待機
+	__syncthreads();
+	
+	//線分の始点、終点を定める
+	float* start = &vertex_s[ tx      * Dp];
+	float* end   = &vertex_s[(tx + 1) * Dp];
+	
+	//交点の集計処理の実行
+	countCrossingDevice<D>
+		(
+			start,
+			end,
+			interval_s,
+			startindex_s,
+			indexcount_s,
+			counter
+		);
+
+}
+template <int D, int LC>//次元, ブロックあたりの線分の個数
+__host__
 void countCrossingSequenceDeviceImple
 	(
 		const float* const vertex,		//頂点の列
@@ -345,16 +610,59 @@ void countCrossingSequenceDeviceImple
 		float* const counter		//区間の通過回数のカウンタ
 	)
 {
-	//生成すべきブロック数
-	int blockcount = ;
-	//デバイスメモリを確保
-	float* vertex_d;
+	//バンクコンフリクト対策のパディング
+	//Dが偶数->1
+	//Dが機数->0
+	int padding = (D + 1) & 1;
+	int Dp = D + padding;
 	
-	//デバイスへのメモリのコピー
-	//カーネルの起動パラメータの設定
+	//生成するブロック数
+	int blockpadding = ((vertexequencecount - Dp) % (LC * Dp) == 0 ) ? 0 : 1;
+	int blockcount = (vertexequencecount - Dp) / (LC * Dp) + blockpadding;
+	//デバイスメモリを確保
+	//頂点配列
+	float* vertex_d;
+	int vertex_d_count = (blockcount * LC + 1) * Dp;
+	cudaMalloc((void**)&vertex_d, vertex_d_count * sizeof(float));
+	cudaMemcpy(vertex_d, vertex, vertexequencecount * sizeof(float), cudaMemcpyHostToDevice);
+	std::vector<float> vertex_rem(vertex_d_count - vertexequencecount,-1.0f);
+	cudaMemcpy(vertex_d + vertexequencecount, vertex_rem.data(), vertex_rem.size() * sizeof(float), cudaMemcpyHostToDevice);
+	//区間の幅
+	DeviceSeqConst<float> interval_d(interval,D);
+	interval_d.memcpyHostToDevice();
+	//カウンタのインデックスの開始番号
+	DeviceSeqConst<int> startindex_d(startindex, D);
+	startindex_d.memcpyHostToDevice();
+	//インデックスの個数
+	DeviceSeqConst<int> indexcount_d(indexcount, D);
+	indexcount_d.memcpyHostToDevice();
+	//区間の通過回数のカウンタ
+	int countercount = 1;
+	for(int d = 0; d < D; d++)
+	{
+		countercount *= indexcount[d];
+	}
+	DeviceSeq<float> counter_d(counter, countercount);
+	counter_d.memcpyHostToDevice();
+
+
 	
 	//カーネルの起動
+	countCrossingSequenceDeviceKernel<D,LC><<<blockcount, LC>>>
+		(
+			vertex_d,
+			vertex_d_count,
+			interval_d.getDeviceAddress(),
+			startindex_d.getDeviceAddress(),
+			indexcount_d.getDeviceAddress(),
+			counter_d.getDeviceAddress()
+		);
+	
 	//カーネルの結果をデバイスからコピー
+	counter_d.memcpyDeviceToHost();
+
+	//デバイスメモリの開放
+	cudaFree(vertex_d);
 }
 
 #endif

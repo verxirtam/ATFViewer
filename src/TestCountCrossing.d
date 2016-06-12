@@ -91,4 +91,27 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/surface_indirect_functions.h \
     /usr/local/cuda-6.5/bin/../targets/x86_64-linux/include/device_launch_parameters.h \
     TestCountCrossing.h \
-    CountCrossing_cuda.h
+    CountCrossing_cuda.h \
+    /usr/include/c++/4.8/vector \
+    /usr/include/c++/4.8/bits/stl_algobase.h \
+    /usr/include/c++/4.8/bits/functexcept.h \
+    /usr/include/c++/4.8/bits/exception_defines.h \
+    /usr/include/c++/4.8/ext/numeric_traits.h \
+    /usr/include/c++/4.8/bits/stl_pair.h \
+    /usr/include/c++/4.8/bits/move.h \
+    /usr/include/c++/4.8/bits/concept_check.h \
+    /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
+    /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
+    /usr/include/c++/4.8/debug/debug.h \
+    /usr/include/c++/4.8/bits/stl_iterator.h \
+    /usr/include/c++/4.8/bits/allocator.h \
+    /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++allocator.h \
+    /usr/include/c++/4.8/ext/new_allocator.h \
+    /usr/include/c++/4.8/bits/memoryfwd.h \
+    /usr/include/c++/4.8/bits/stl_construct.h \
+    /usr/include/c++/4.8/ext/alloc_traits.h \
+    /usr/include/c++/4.8/bits/stl_uninitialized.h \
+    /usr/include/c++/4.8/bits/stl_vector.h \
+    /usr/include/c++/4.8/bits/stl_bvector.h \
+    /usr/include/c++/4.8/bits/range_access.h \
+    /usr/include/c++/4.8/bits/vector.tcc
