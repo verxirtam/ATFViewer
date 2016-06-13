@@ -638,10 +638,13 @@ void countCrossingSequenceDeviceImple
 	indexcount_d.memcpyHostToDevice();
 	//区間の通過回数のカウンタ
 	int countercount = 1;
+	//セル数
 	for(int d = 0; d < D; d++)
 	{
 		countercount *= indexcount[d];
 	}
+	//セルあたりのカウンタ数
+	countercount *= 2 * D;
 	DeviceSeq<float> counter_d(counter, countercount);
 	counter_d.memcpyHostToDevice();
 

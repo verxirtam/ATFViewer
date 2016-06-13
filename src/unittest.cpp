@@ -318,9 +318,11 @@ bool countCrossingTest_04D2Seqence()
 	int startindex[D] = {2,6};
 	int indexcount[D] = {L0,L1};
 	float counter[CL];
+	float counter_d[CL];
 	for (int i = 0; i < CL; i++)
 	{
 		counter[i]=0.0f;
+		counter_d[i]=0.0f;
 	}
 	float result[CL] = {0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,1,0,2,0,0,0,0,1,1,0,0,1,0,0,0,0,1};
 	
@@ -328,9 +330,9 @@ bool countCrossingTest_04D2Seqence()
 	
 	for(int i = 0; i < VC; i++)
 	{
-		for(int d = 0; d < D; d++)
+		for(int d = 0; d < D + 1; d++)
 		{
-			int vi = d + i * D;
+			int vi = d + i * (D + 1);
 			cout << vertex[vi] << ", ";
 		}
 		cout << endl;
@@ -346,6 +348,19 @@ bool countCrossingTest_04D2Seqence()
 		}
 	}
 	cout << endl;
+	
+	CountCrossing::countCrossingSequenceDevice(D, vertex, (D + 1) * VC, interval, startindex, indexcount, counter_d);
+	
+	for (int i = 0; i < CL; i++)
+	{
+		cout << counter_d[i] << ' ';
+		if(counter_d[i] != result[i])
+		{
+			ret = false;
+		}
+	}
+	cout << endl;
+	
 	return ret;
 }
 
@@ -355,9 +370,14 @@ bool countCrossingTest_05Class()
 	
 	CountCrossing cc;
 	cc.init();
+	time_t start_host = clock();
 	cc.runOnHost();
+	time_t end_host = clock();
 	
+	
+	time_t start_device = clock();
 	cc.runOnDevice();
+	time_t end_device = clock();
 	
 	const vector<float> ch = cc.getCounter();
 	const vector<float> cd = cc.getCounterDevice();
@@ -374,6 +394,10 @@ bool countCrossingTest_05Class()
 			return false;
 		}
 	}
+	
+	
+	cout << "経過時間(host  ) = " << (double)(end_host   - start_host  ) / CLOCKS_PER_SEC << "sec." << endl;
+	cout << "経過時間(device) = " << (double)(end_device - start_device) / CLOCKS_PER_SEC << "sec." << endl;
 	
 	return true;
 	/*
