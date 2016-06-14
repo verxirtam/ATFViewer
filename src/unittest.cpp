@@ -432,7 +432,105 @@ bool countCrossingTest_05Class()
 	cout << endl << endl;
 	*/
 }
+struct EstimateSpecResult
+{
+	int vertexCount;
+	double initTime;
+	double hostTime;
+	double deviceTime;
+	int counterCount;
+	bool success;
+};
 
+void EstimateSpec(int hours, EstimateSpecResult& esr)
+{
+	CountCrossing cc;
+	cc.setStart(2016,3,20,12        ,0,0);
+	cc.setEnd  (2016,3,20,12 + hours,0,0);
+	
+	
+	time_t start_init = clock();
+	cc.init();
+	time_t end_init = clock();
+	
+	
+	esr.vertexCount = cc.getVertexCount();
+	
+	
+	
+	
+	time_t start_host = clock();
+	cc.runOnHost();
+	time_t end_host = clock();
+	
+	time_t start_device = clock();
+	cc.runOnDevice();
+	time_t end_device = clock();
+	
+	esr.initTime   = (double)(end_init   - start_init  ) / CLOCKS_PER_SEC;
+	esr.hostTime   = (double)(end_host   - start_host  ) / CLOCKS_PER_SEC;
+	esr.deviceTime = (double)(end_device - start_device) / CLOCKS_PER_SEC;
+	
+	const vector<float>& ch = cc.getCounter();
+	const vector<float>& cd = cc.getCounterDevice();
+	
+	esr.counterCount = ch.size();
+	
+	esr.success = true;
+	if(ch.size() != cd.size())
+	{
+		esr.success = false;
+	}
+	int cmax = ch.size();
+	for(int i = 0; i < cmax; i++)
+	{
+		if(ch[i] != cd[i])
+		{
+			esr.success = false;
+		}
+	}
+}
+
+bool countCrossingTest_06D4EstimateSpec()
+{
+	cout << "countCrossingTest_06D4EstimateSpec()" << endl;
+	
+	bool ret = true;
+	int N = 10;
+	int time[10] = {1,2,3,4,5,6,7,8,9,10};
+	
+	cout << "No" << '\t';
+	cout << "時間幅" << '\t';
+	cout << "頂点配列のサイズ（パディング含む）" << '\t';
+	cout << "経過時間(init)" << '\t';
+	cout << "経過時間(host)" << '\t';
+	cout << "経過時間(device)" << '\t';
+	cout << "カウンタのサイズ" << '\t';
+	cout << "成否";
+	cout << endl;
+	
+	for(int n = 0; n < N; n++)
+	{
+		EstimateSpecResult esr;
+		EstimateSpec(time[n], esr);
+		cout << n << '\t';
+		cout << time[n] << '\t';
+		cout << esr.vertexCount << '\t';
+		cout << esr.initTime << '\t';
+		cout << esr.hostTime << '\t';
+		cout << esr.deviceTime << '\t';
+		cout << esr.counterCount << '\t';
+		cout << esr.success;
+		cout << endl;
+		
+		if(esr.success == false)
+		{
+			ret = false;
+		}
+	}
+	
+	return ret;
+}
 
 void test(bool test_result, bool& ret)
 {
@@ -466,6 +564,7 @@ int main(int argc, char const* argv[])
 	test(countCrossingTest_03D2Simple(), ret);
 	test(countCrossingTest_04D2Seqence(), ret);
 	test(countCrossingTest_05Class(), ret);
+	test(countCrossingTest_06D4EstimateSpec(), ret);
 	
 	if(ret)
 	{

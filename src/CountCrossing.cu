@@ -79,10 +79,9 @@ void CountCrossing::init(void)
 {
 	TrackDataManager tdm;
 	std::vector<Path> path;
-	time_t start = 1456801200;
-	time_t end = start + 60 * 60 * 1;
 	
-	tdm.getTrackDataFromDB(path, start, end);
+	//TrackDataを取得する(前後10分のバッファを設けておく)
+	tdm.getTrackDataFromDB(path, start - 600, end + 600);
 	
 	int imax = path.size();
 	for(int i = 0;i < imax; i++)
@@ -105,7 +104,8 @@ void CountCrossing::init(void)
 		vertex.push_back(-1.0f);
 		vertex.push_back(-1.0f);
 	}
-
+	//時刻について、カウンタの個数を設定する
+	indexCount[3]=(end -start)/((int)(interval[3]));
 }
 
 void CountCrossing::runOnHost(void)

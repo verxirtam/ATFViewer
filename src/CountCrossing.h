@@ -25,6 +25,8 @@
 class CountCrossing
 {
 private:
+	time_t start;
+	time_t end;
 	std::vector<float> vertex;
 	std::vector<float> interval;
 	std::vector<int> startIndex;
@@ -53,9 +55,22 @@ public:
 			const int* const indexcount,	//インデックスの個数
 			float* const counter		//区間の通過回数のカウンタ
 		);
-	
+	time_t mktimeFromInt(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)
+	{
+		std::tm time_tm;
+		time_tm.tm_year = year - 1900;
+		time_tm.tm_mon  = month - 1;
+		time_tm.tm_mday = day;
+		time_tm.tm_hour = hour;
+		time_tm.tm_min  = min;
+		time_tm.tm_sec  = sec;
+		
+		return  mktime(&time_tm);
+	}
 public:
 	CountCrossing():
+		start(1456801200),
+		end(start + 60 * 60 * 1),
 		vertex(),
 		interval(),
 		startIndex(),
@@ -83,6 +98,34 @@ public:
 	void init(void);
 	void runOnHost(void);
 	void runOnDevice(void);
+	void setStart(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)
+	{
+		start = mktimeFromInt(year, month, day, hour, min, sec);
+	}
+	void setStart(time_t s)
+	{
+		start = s;
+	}
+	time_t getStart()
+	{
+		return start;
+	}
+	void setEnd(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)
+	{
+		end = mktimeFromInt(year, month, day, hour, min, sec);
+	}
+	void setEnd(time_t e)
+	{
+		end = e;
+	}
+	time_t getEnd()
+	{
+		return end;
+	}
+	int getVertexCount()
+	{
+		return vertex.size();
+	}
 	const std::vector<float>& getCounter()
 	{
 		return counter;
