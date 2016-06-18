@@ -547,7 +547,7 @@ int main(int argc, char const* argv[])
 	
 	bool ret = true;
 	
-	//getAllTrackData();
+	getAllTrackData();
 	
 	//getAllTrackDataReserve();
 	
