@@ -1,0 +1,4 @@
+dstatのコマンド
+時刻とIOを消費しているプロセスを表示
+dstat -t --top-io -al
+

@@ -595,6 +595,22 @@ bool countCrossingTest_06D4EstimateSpec()
 	return ret;
 }
 
+bool openMPTest()
+{
+	#pragma omp parallel
+	{
+		#pragma omp critical
+		{
+			cout << "this is openmp test." << endl;
+		}
+	}
+	
+	return true;
+}
+
+
+
+
 void test(bool test_result, bool& ret)
 {
 	if(!test_result)
@@ -630,6 +646,9 @@ int main(int argc, char const* argv[])
 	test(countCrossingTest_05Class(), ret);
 	test(countCrossingTest_06D4EstimateSpec(), ret);
 	*/
+	
+	test(openMPTest(), ret);
+	
 	if(ret)
 	{
 		cout << "tests succeeded." << endl;

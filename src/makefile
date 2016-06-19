@@ -22,6 +22,7 @@ COMMON_FLAGS := -pg -O0
 
 #g++のコンパイルのフラグ
 CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
+CXXONLYFLAGS :=  -fopenmp
 
 #CUDA関連の設定
 
@@ -29,7 +30,7 @@ CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr
 NVCC := nvcc
 
 #CUDAコンパイルオプション
-NVCC_FLAGS :=  -Xcompiler -Wall -arch=compute_13 -code=sm_13,compute_13
+NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13
 
 #CUDAリンクオプション
 NVCC_LINKS := -lcuda -lcudart
@@ -92,7 +93,7 @@ $(TESTTARGET): $(OBJSTEST)
 #オブジェクトファイルの作成
 #"-MMD"オプションによって依存関係ファイル(*.d)も同時に作成する
 %.o: %.cpp
-	$(CXX) -c -MMD $< $(COMMON_FLAGS) $(CXXFLAGS)
+	$(CXX) -c -MMD $< $(COMMON_FLAGS) $(CXXONLYFLAGS) $(CXXFLAGS)
 
 %.o: %.cu
 	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) -c $<
