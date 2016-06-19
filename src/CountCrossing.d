@@ -116,6 +116,12 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/c++/4.8/bits/stl_bvector.h \
     /usr/include/c++/4.8/bits/range_access.h \
     /usr/include/c++/4.8/bits/vector.tcc \
+    /usr/include/c++/4.8/map \
+    /usr/include/c++/4.8/bits/stl_tree.h \
+    /usr/include/c++/4.8/bits/stl_function.h \
+    /usr/include/c++/4.8/backward/binders.h \
+    /usr/include/c++/4.8/bits/stl_map.h \
+    /usr/include/c++/4.8/bits/stl_multimap.h \
     /usr/include/c++/4.8/sstream \
     /usr/include/c++/4.8/istream \
     /usr/include/c++/4.8/ios \
@@ -148,8 +154,6 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/c++/4.8/string \
     /usr/include/c++/4.8/bits/ostream_insert.h \
     /usr/include/c++/4.8/bits/cxxabi_forced.h \
-    /usr/include/c++/4.8/bits/stl_function.h \
-    /usr/include/c++/4.8/backward/binders.h \
     /usr/include/c++/4.8/bits/basic_string.h \
     /usr/include/c++/4.8/bits/basic_string.tcc \
     /usr/include/c++/4.8/bits/locale_classes.tcc \

@@ -20,6 +20,7 @@
 
 #include <ctime>
 #include <vector>
+#include <map>
 #include <sstream>
 #include <algorithm>
 
@@ -30,6 +31,37 @@
 class TrackDataManager
 {
 private:
+	void makeDBFileName(time_t day, std::string& dbfilenamestr)
+	{
+		//日付に対応するTrackDataのファイル名を生成
+		char day_str[32];
+		strftime(day_str, 31, "%Y%m%d", localtime(&day));
+		std::stringstream dbfilename("");
+		dbfilename << "../../db/TrackData/TrackData_";
+		dbfilename << day_str;
+		dbfilename << ".db";
+		dbfilenamestr =  dbfilename.str();
+	}
+	void setQuery(DBAccessor& dba, time_t start, time_t end)
+	{
+		//クエリを実行
+		std::stringstream query("");
+		query << "select id,longitude,latitude,altitude,time,arrival from TrackData where time >= ";
+		query << start << " and time < ";
+		query << end << " order by id,time;";
+		dba.setQuery(query.str());
+	}
+
+	void getColumn(DBAccessor& dba, std::string& id, double& lo, double& la, int& a, long long& t, std::string& ar)
+	{
+		id = dba.getColumnString(0);
+		lo = dba.getColumnDouble(1);
+		la = dba.getColumnDouble(2);
+		a = dba.getColumnInt(3);
+		t = dba.getColumnLongLong(4);
+		ar = dba.getColumnString(5);
+	}
+
 	void getTrackDataFromDBWithDay(std::vector<Path>& paths,
 			time_t start,
 			time_t end,
@@ -91,7 +123,79 @@ private:
 		}
 
 	}
-	
+	void getTrackDataFromDBToMapWithDay
+		(
+			std::map<std::string, Path>& paths,
+			time_t start,
+			time_t end,
+			time_t day
+		)
+	{
+		//DBのファイル名
+		std::string dbfilename;
+		//dayに従ってアクセスするDBのファイル名を設定する
+		makeDBFileName(day, dbfilename);
+		//DBに接続
+		DBAccessor dba(dbfilename);
+		//クエリを実行
+		setQuery(dba, start, end);
+		
+		//pathの追加先を指すイテレータ
+		std::map<std::string, Path>::iterator i = paths.end();
+		
+		//クエリの結果の取得
+		while(SQLITE_ROW == dba.step_select())
+		{
+			//1レコード分のカラムデータ
+			std::string id;
+			double lo;
+			double la;
+			int a;
+			long long t;
+			std::string ar;
+			
+			//カラムの取得
+			getColumn(dba, id, lo, la, a, t, ar);
+			
+			//map::find()が要るかどうかを示す
+			bool need_find = false;
+			//iがend()を示すときはfind()を実行する
+			if(i == paths.end())
+			{
+				need_find = true;
+			}
+			else
+			{
+				//iが異なるidの要素を指している場合はfind()を実行する
+				if(i->first != id)
+				{
+					need_find = true;
+				}
+			}
+			if(need_find)
+			{
+				//idを検索
+				i = paths.find(id);
+				//見つからなければ初期化したPathを追加
+				if(i == paths.end())
+				{
+					//追加された要素を指すイテレータと追加の成否のペア
+					std::pair<std::map<std::string, Path>::iterator, bool> ins;
+					//要素の追加
+					ins = paths.insert(std::make_pair(id, Path()));
+					//findで見つからないことはわかっているので追加に成功した前提で継続
+					//Pathの初期化
+					ins.first->second.id = id;
+					ins.first->second.past_time_index = 0;
+					ins.first->second.now_index = 0;
+					//iに追加したデータを指すように設定する
+					i = ins.first;
+				}
+			}
+			//取得したデータの追加
+			i->second.pathPoint.push_back(PathPoint(lo,la,a,t,ar));
+		}
+	}
 public:
 	void getTrackDataFromDB(std::vector<Path>& p,
 			time_t start,
@@ -103,6 +207,16 @@ public:
 		for(time_t d = start_day; d < end; d = TimeManager::nextDayTime(d))
 		{
 			getTrackDataFromDBWithDay(p, start, end, d);
+		}
+	}
+	void getTrackDataFromDBToMap(std::map<std::string, Path>& p, time_t start,time_t end)
+	{
+		//開始日を求める
+		time_t start_day = TimeManager::today(start);
+		//日付：開始日から終了日までループ
+		for(time_t d = start_day; d < end; d = TimeManager::nextDayTime(d))
+		{
+			getTrackDataFromDBToMapWithDay(p, start, end, d);
 		}
 	}
 };

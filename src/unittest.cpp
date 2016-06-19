@@ -20,6 +20,7 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <map>
 #include <algorithm>
 
 #include "DBAccessor.h"
@@ -229,7 +230,7 @@ bool comp_path(const Path& p0, const Path& p1)
 	return p0.id < p1.id;
 }
 
-void testTrackDataManager()
+bool testTrackDataManager()
 {
 	cout << "testTrackDataManager()" << endl;
 	
@@ -246,7 +247,13 @@ void testTrackDataManager()
 	end_tm.tm_hour += 4;
 	time_t start = mktime(&start_tm);
 	time_t end   = mktime(  &end_tm);
+	
+	time_t start_time = clock();
 	tdm.getTrackDataFromDB(p,start,end);
+	time_t end_time = clock();
+	
+	cout << "経過時間 = " << (double)(end_time - start_time) / CLOCKS_PER_SEC << "sec." << endl;
+	
 	cout << "取得件数:" << p.size() << endl;
 	//時刻のチェック
 	cout << "時刻のチェック" << endl;
@@ -267,7 +274,63 @@ void testTrackDataManager()
 		}
 		id = i->id;
 	}
+	
+	//map版との比較
+	std::map<std::string, Path> mp;
+	time_t start_map_time = clock();
+	tdm.getTrackDataFromDBToMap(mp, start, end);
+	time_t end_map_time = clock();
+	cout << "経過時間 = " << (double)(end_map_time - start_map_time) / CLOCKS_PER_SEC << "sec." << endl;
+	cout << "p.size() = " << p.size() << ", mp.size() = " << mp.size() << endl;
+	if(p.size() != mp.size())
+	{
+		success = false;
+	}
+	for(unsigned int i = 0; i < p.size(); i++)
+	{
+		std::map<std::string, Path>::iterator mi;
+		mi = mp.find(p[i].id);
+		if(mi == mp.end())
+		{
+			success = false;
+		}
+		else
+		{
+			Path& mpp = mi->second;
+			if(mpp.id != p[i].id)
+			{
+				success = false;
+			}
+			if(mpp.past_time_index != p[i].past_time_index)
+			{
+				success = false;
+			}
+			if(mpp.now_index != p[i].now_index)
+			{
+				success = false;
+			}
+			if(mpp.pathPoint.size() != p[i].pathPoint.size())
+			{
+				success = false;
+			}
+			else
+			{
+				for(unsigned int j = 0; j < p[i].pathPoint.size(); j++)
+				{
+					if(mpp.pathPoint[j] != p[i].pathPoint[j])
+					{
+						success = false;
+						continue;
+					}
+				}
+			}
+		}
+	}
+	
+	
+	
 	cout << (success?"成功":"失敗") << endl;
+	return success;
 }
 
 
@@ -547,7 +610,7 @@ int main(int argc, char const* argv[])
 	
 	bool ret = true;
 	
-	getAllTrackData();
+	//getAllTrackData();
 	
 	//getAllTrackDataReserve();
 	
@@ -555,17 +618,18 @@ int main(int argc, char const* argv[])
 	
 	//selectTrackDataWithDate();
 	
-	//testTrackDataManager();
+	test(testTrackDataManager(), ret);
 	
 	//cudatestfunctest();
 	
+	/*
 	test(countCrossingTest_01Simple(), ret);
 	test(countCrossingTest_02D1Long(), ret);
 	test(countCrossingTest_03D2Simple(), ret);
 	test(countCrossingTest_04D2Seqence(), ret);
 	test(countCrossingTest_05Class(), ret);
 	test(countCrossingTest_06D4EstimateSpec(), ret);
-	
+	*/
 	if(ret)
 	{
 		cout << "tests succeeded." << endl;

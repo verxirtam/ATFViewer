@@ -37,6 +37,34 @@ struct PathPoint
 		time = t;
 		arrival = ar;
 	}
+	bool operator ==(const PathPoint& p)
+	{
+		if(this->longitude != p.longitude)
+		{
+			return false;
+		}
+		if(this->latitude != p.latitude)
+		{
+			return false;
+		}
+		if(this->altitude != p.altitude)
+		{
+			return false;
+		}
+		if(this->time != p.time)
+		{
+			return false;
+		}
+		if(this->arrival != p.arrival)
+		{
+			return false;
+		}
+		return true;
+	}
+	bool operator !=(const PathPoint& p)
+	{
+		return !((*this) == p);
+	}
 };
 
 struct Path

@@ -73,6 +73,7 @@ run: $(TARGET)
 .PHONY: test
 test: $(TESTTARGET)
 	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
+	gprof $(TESTTARGET) | ./gprof2dot.py | dot -Tpng -o output.png
 
 #実行ファイルの作成
 #オプションは最後に指定する
