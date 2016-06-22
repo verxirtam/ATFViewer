@@ -1,0 +1,1000 @@
+経過時間 = 5.29318sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.27439sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.49732sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+成功
+成功
+tests succeeded.
+20160623001028 log: test end.
+
+20160623002005 log: test start.
+testTrackDataManager()
+経過時間 = 2.30229sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 1.56757sec.
+p.size() = 3728, mp.size() = 3728
+成功
+thread数:8
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()this is openmp test.
+
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()this is openmp test.
+
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()this is openmp test.
+
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 12.3227sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.3744sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.5206sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.6121sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.6476sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.7243sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.7376sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.7401sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 4.12462sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 4.86282sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.30698sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.40179sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.6534sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.66325sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.6328sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.71052sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+成功
+成功
+tests succeeded.
+20160623002036 log: test end.
+
+20160623002709 log: test start.
+testTrackDataManager()
+経過時間 = 2.44938sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 1.68945sec.
+p.size() = 3728, mp.size() = 3728
+成功
+thread数:1
+this is openmp test.
+testTrackDataManager()
+経過時間 = 2.46285sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 1.67743sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+thread数:2
+this is openmp test.
+this is openmp test.
+testTrackDataManager()testTrackDataManager()
+
+経過時間 = 4.99343sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 5.12782sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.18806sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 2.26535sec.
+p.size() = 3728, mp.size() = 3728
+
+
+
+成功
+thread数:3
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.testTrackDataManager()
+
+testTrackDataManager()
+経過時間 = 6.5359sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 6.68991sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 6.6938sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.49688sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 2.89907sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 2.83705sec.
+p.size() = 3728, mp.size() = 3728
+
+
+
+成功
+成功
+thread数:4
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 6.89435sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 7.01787sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 7.5775sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.30062sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.43033sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+経過時間 = 2.45471sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.37042sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.14985sec.
+p.size() = 3728, mp.size() = 3728
+成功
+thread数:5
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()this is openmp test.
+
+testTrackDataManager()
+経過時間 = 6.32683sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.15657sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.52606sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.5819sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.77831sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 3.08157sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+経過時間 = 2.69036sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 2.73736sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.67492sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.63655sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+thread数:6
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+testTrackDataManager()
+経過時間 = 8.03259sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 9.58727sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 9.68857sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.0194sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.0663sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.373sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 3.17443sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+経過時間 = 3.11394sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.00689sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.2006sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.9917sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.85535sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+thread数:7
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.testTrackDataManager()
+testTrackDataManager()
+
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 9.39505sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 9.7788sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.4511sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.9458sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.1213sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.3686sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.37sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 3.30847sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+経過時間 = 3.98199sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.55825sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.62889sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.93644sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.98677sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 4.11432sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+thread数:8
+this is openmp test.
+this is openmp test.testTrackDataManager()
+testTrackDataManager()
+
+this is openmp test.
+this is openmp test.
+testTrackDataManager()
+this is openmp test.testTrackDataManager()
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 10.6793sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.5108sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.2341sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.3434sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.4127sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.4939sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.5539sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.6046sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 4.65239sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 4.09976sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+経過時間 = 4.19422sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 4.90897sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 4.91031sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.13153sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.12048sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.05668sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+成功
+成功
+tests succeeded.
+20160623002925 log: test end.
+
+20160623003123 log: test start.
+testTrackDataManager()
+経過時間 = 2.2732sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 1.61117sec.
+p.size() = 3728, mp.size() = 3728
+成功
+thread数:1
+this is openmp test.
+testTrackDataManager()
+経過時間 = 2.27168sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 1.59851sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+thread数:2
+this is openmp test.
+this is openmp test.
+testTrackDataManager()
+testTrackDataManager()
+経過時間 = 4.89503sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 5.13796sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.03059sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 2.22899sec.
+p.size() = 3728, mp.size() = 3728
+成功
+
+
+
+thread数:3
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.
+testTrackDataManager()
+testTrackDataManager()
+経過時間 = 4.03437sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 6.74664sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 6.81948sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.34846sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.01585sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.05468sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+thread数:4
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.testTrackDataManager()
+
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 6.23517sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 6.26857sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.35242sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.37949sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 2.74407sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 2.78842sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+経過時間 = 2.69884sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 2.75791sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+thread数:5
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.testTrackDataManager()
+testTrackDataManager()
+
+経過時間 = 7.9797sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.13364sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.62057sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.73414sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.90613sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 3.19955sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.69261sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.37992sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+経過時間 = 3.9482sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.90379sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+thread数:6
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 8.19336sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 8.89529sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 9.30909sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 9.85389sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.4544sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.7544sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 3.04036sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 2.96123sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.55522sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 4.0988sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+成功
+経過時間 = 3.45983sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 3.42707sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+thread数:7
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+this is openmp test.
+testTrackDataManager()
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 9.22041sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.2418sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 10.9893sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.0195sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.1131sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.3789sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 11.4321sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 4.11981sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.50864sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.46091sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 3.96396sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 4.11376sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+経過時間 = 4.05839sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 4.10688sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+
+
+
+thread数:8
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+this is openmp test.
+testTrackDataManager()
+経過時間 = 10.4471sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.1282sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.1757sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.3176sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.3517sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.4563sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.466sec.
+取得件数:3728
+時刻のチェック
+経過時間 = 12.5373sec.
+取得件数:3728
+時刻のチェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+最初のpathの開始時刻:20160413220001
+最後のpathの開始時刻:20160414015956
+重複チェック
+経過時間 = 4.76247sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 4.08539sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.33055sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.34893sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.3528sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.42544sec.
+p.size() = 3728, mp.size() = 3728
+経過時間 = 5.43892sec.
+p.size() = 3728, mp.size() = 3728
+成功
+経過時間 = 5.48528sec.
+p.size() = 3728, mp.size() = 3728
+成功
+成功
+成功
+成功
+成功
+
+
+
+tests succeeded.
+20160623003338 log: test end.
+

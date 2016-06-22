@@ -23,6 +23,8 @@
 #include <map>
 #include <algorithm>
 
+#include <omp.h>
+
 #include "DBAccessor.h"
 #include "TrackDataManager.h"
 
@@ -126,8 +128,20 @@ void getAllTrackDataReserve(void)
 	cout << endl;
 }
 
+string timestring(time_t t)
+{
+	char time_str[32];
+	//YYYY/MM/DD hh:mm:ss
+	strftime(time_str, 31, "%Y%m%d%H%M%S", localtime(&t));
+	std::string ret(time_str);
+	return ret;
+}
+
+
 string nowstring()
 {
+	return timestring(time(NULL));
+	/*
 	time_t test_start = time(NULL);
 	
 	char time_str[32];
@@ -135,6 +149,7 @@ string nowstring()
 	strftime(time_str, 31, "%Y%m%d%H%M%S", localtime(&test_start));
 	std::string ret(time_str);
 	return ret;
+	*/
 }
 
 
@@ -248,20 +263,26 @@ bool testTrackDataManager()
 	time_t start = mktime(&start_tm);
 	time_t end   = mktime(  &end_tm);
 	
-	time_t start_time = clock();
+	double start_time = omp_get_wtime();
 	tdm.getTrackDataFromDB(p,start,end);
-	time_t end_time = clock();
+	double end_time = omp_get_wtime();
 	
-	cout << "経過時間 = " << (double)(end_time - start_time) / CLOCKS_PER_SEC << "sec." << endl;
+	#pragma omp critical
+	{
+		cout << "経過時間 = " << (end_time - start_time) << "sec." << endl;
+		cout << "取得件数:" << p.size() << endl;
+		//時刻のチェック
+		cout << "時刻のチェック" << endl;
+	}
+		std::sort(p.begin(),p.end(),comp_path_time);
+	#pragma omp critical
+	{
+		cout << "最初のpathの開始時刻:" << timestring(p. begin()->pathPoint.begin()->time) << endl;
+		cout << "最後のpathの開始時刻:" << timestring(p.rbegin()->pathPoint.begin()->time) << endl;
 	
-	cout << "取得件数:" << p.size() << endl;
-	//時刻のチェック
-	cout << "時刻のチェック" << endl;
-	std::sort(p.begin(),p.end(),comp_path_time);
-	cout << "最初のpathの開始時刻:" << ctime(&(p. begin()->pathPoint.begin()->time)) << endl;
-	cout << "最後のpathの開始時刻:" << ctime(&(p.rbegin()->pathPoint.begin()->time)) << endl;
-	//重複チェック
-	cout << "重複チェック" << endl;
+		//重複チェック
+		cout << "重複チェック" << endl;
+	}
 	std::sort(p.begin(),p.end(),comp_path);
 	bool success = true;
 	std::string id("XXXXXXXXXXXXXXXXXXX");
@@ -277,11 +298,14 @@ bool testTrackDataManager()
 	
 	//map版との比較
 	std::map<std::string, Path> mp;
-	time_t start_map_time = clock();
+	double start_map_time = omp_get_wtime();
 	tdm.getTrackDataFromDBToMap(mp, start, end);
-	time_t end_map_time = clock();
-	cout << "経過時間 = " << (double)(end_map_time - start_map_time) / CLOCKS_PER_SEC << "sec." << endl;
-	cout << "p.size() = " << p.size() << ", mp.size() = " << mp.size() << endl;
+	double end_map_time = omp_get_wtime();
+	#pragma omp critical
+	{
+		cout << "経過時間 = " << (end_map_time - start_map_time) << "sec." << endl;
+		cout << "p.size() = " << p.size() << ", mp.size() = " << mp.size() << endl;
+	}
 	if(p.size() != mp.size())
 	{
 		success = false;
@@ -329,7 +353,10 @@ bool testTrackDataManager()
 	
 	
 	
-	cout << (success?"成功":"失敗") << endl;
+	#pragma omp critical
+	{
+		cout << (success?"成功":"失敗") << endl;
+	}
 	return success;
 }
 
@@ -597,14 +624,28 @@ bool countCrossingTest_06D4EstimateSpec()
 
 bool openMPTest()
 {
-	#pragma omp parallel
+	for(int i = 0; i < 8; i++)
 	{
-		#pragma omp critical
+		omp_set_num_threads(i+1);
+		
+		#pragma omp parallel
 		{
-			cout << "this is openmp test." << endl;
+			#pragma omp single
+			{
+				cout << "thread数:" << omp_get_num_threads() << endl;
+			}
+			#pragma omp critical
+			{
+				cout << "this is openmp test." << endl;
+			}
+			testTrackDataManager();
+			#pragma omp barrier
+			#pragma omp single
+			{
+				cout << endl << endl << endl;
+			}
 		}
 	}
-	
 	return true;
 }
 
