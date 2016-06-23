@@ -247,8 +247,10 @@ bool comp_path(const Path& p0, const Path& p1)
 
 bool testTrackDataManager()
 {
-	cout << "testTrackDataManager()" << endl;
-	
+	#pragma omp critical
+	{
+		cout << "testTrackDataManager()" << endl;
+	}
 	TrackDataManager tdm;
 	std::vector<Path> p;
 	tm start_tm;
@@ -269,6 +271,7 @@ bool testTrackDataManager()
 	
 	#pragma omp critical
 	{
+		cout << "vector版" << endl;
 		cout << "経過時間 = " << (end_time - start_time) << "sec." << endl;
 		cout << "取得件数:" << p.size() << endl;
 		//時刻のチェック
@@ -303,6 +306,7 @@ bool testTrackDataManager()
 	double end_map_time = omp_get_wtime();
 	#pragma omp critical
 	{
+		cout << "map版" << endl;
 		cout << "経過時間 = " << (end_map_time - start_map_time) << "sec." << endl;
 		cout << "p.size() = " << p.size() << ", mp.size() = " << mp.size() << endl;
 	}
@@ -624,6 +628,7 @@ bool countCrossingTest_06D4EstimateSpec()
 
 bool openMPTest()
 {
+	/*
 	for(int i = 0; i < 8; i++)
 	{
 		omp_set_num_threads(i+1);
@@ -646,6 +651,34 @@ bool openMPTest()
 			}
 		}
 	}
+	*/
+	vector<map<string,Path> > p;
+	TrackDataManager tdm;
+	
+	tm start_tm;
+	start_tm.tm_year = 2016 - 1900;
+	start_tm.tm_mon  =  4 - 1;
+	start_tm.tm_mday = 13;
+	start_tm.tm_hour = 22;
+	start_tm.tm_min  =  0;
+	start_tm.tm_sec  =  0;
+	tm end_tm = start_tm;
+	end_tm.tm_hour += 4;
+	time_t start = mktime(&start_tm);
+	time_t end   = mktime(  &end_tm);
+	
+	tdm.getTrackDataFromDBToMapParallel(p, start, end);
+	
+	int total_size = 0;
+	cout << "p.size() = " << p.size() << endl;
+	for(unsigned int i = 0;i < p.size(); i++)
+	{
+		total_size += p[i].size();
+		cout << "p[" << i << "].size() = " << p[i].size() << endl;
+	}
+	
+	cout << "total_size = " << total_size;
+	
 	return true;
 }
 

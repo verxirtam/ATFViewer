@@ -42,13 +42,18 @@ private:
 		dbfilename << ".db";
 		dbfilenamestr =  dbfilename.str();
 	}
-	void setQuery(DBAccessor& dba, time_t start, time_t end)
+	void setQuery(DBAccessor& dba, time_t start, time_t end, char n = ' ')
 	{
 		//クエリを実行
 		std::stringstream query("");
 		query << "select id,longitude,latitude,altitude,time,arrival from TrackData where time >= ";
 		query << start << " and time < ";
-		query << end << " order by id,time;";
+		query << end;
+		if(n != ' ')
+		{
+			query << "and substr(id,-1,1) = '" << n << "'";
+		}
+		query << " order by id,time;";
 		dba.setQuery(query.str());
 	}
 
@@ -128,7 +133,8 @@ private:
 			std::map<std::string, Path>& paths,
 			time_t start,
 			time_t end,
-			time_t day
+			time_t day,
+			char n = ' '
 		)
 	{
 		//DBのファイル名
@@ -138,7 +144,7 @@ private:
 		//DBに接続
 		DBAccessor dba(dbfilename);
 		//クエリを実行
-		setQuery(dba, start, end);
+		setQuery(dba, start, end, n);
 		
 		//pathの追加先を指すイテレータ
 		std::map<std::string, Path>::iterator i = paths.end();
@@ -219,6 +225,35 @@ public:
 			getTrackDataFromDBToMapWithDay(p, start, end, d);
 		}
 	}
+	//OpenMPで並列化したgetTrackDataFromDBToMap()
+	//mapからなるvectorに結果を格納する。vectorの要素が各スレッドに割り当てられる
+	void getTrackDataFromDBToMapParallel(std::vector<std::map<std::string, Path> >& p, time_t start,time_t end)
+	{
+		//開始日を求める
+		time_t start_day = TimeManager::today(start);
+		
+		const int N = 16;
+		char id_last_char[N] = {'0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f'};
+		
+		//結果格納用のコンテナのクリア
+		p.clear();
+		//コンテナの各要素の初期化
+		for(int i = 0; i < N; i++)
+		{
+			p.push_back(std::map<std::string, Path>());
+		}
+		//これ以降が並列化
+		#pragma omp parallel for
+		for(int i = 0; i < N; i++)
+		{
+			//日付：開始日から終了日までループ
+			for(time_t d = start_day; d < end; d = TimeManager::nextDayTime(d))
+			{
+				getTrackDataFromDBToMapWithDay(p[i], start, end, d,id_last_char[i]);
+			}
+		}
+	}
+	
 };
 
 
