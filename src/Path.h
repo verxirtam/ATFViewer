@@ -37,7 +37,7 @@ struct PathPoint
 		time = t;
 		arrival = ar;
 	}
-	bool operator ==(const PathPoint& p)
+	bool operator ==(const PathPoint& p) const
 	{
 		if(this->longitude != p.longitude)
 		{
@@ -61,7 +61,7 @@ struct PathPoint
 		}
 		return true;
 	}
-	bool operator !=(const PathPoint& p)
+	bool operator !=(const PathPoint& p) const
 	{
 		return !((*this) == p);
 	}

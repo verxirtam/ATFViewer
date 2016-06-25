@@ -51,7 +51,8 @@ private:
 		query << end;
 		if(n != ' ')
 		{
-			query << "and substr(id,-1,1) = '" << n << "'";
+			query << " and substr(id,-1,1) = '" << n << "'";
+			//std::cout << query.str() << std::endl;//TODO test
 		}
 		query << " order by id,time;";
 		dba.setQuery(query.str());
@@ -246,6 +247,7 @@ public:
 		#pragma omp parallel for
 		for(int i = 0; i < N; i++)
 		{
+			std::cout << "id_last_char[i] = " << id_last_char[i] << std::endl;
 			//日付：開始日から終了日までループ
 			for(time_t d = start_day; d < end; d = TimeManager::nextDayTime(d))
 			{

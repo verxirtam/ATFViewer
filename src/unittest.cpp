@@ -245,14 +245,8 @@ bool comp_path(const Path& p0, const Path& p1)
 	return p0.id < p1.id;
 }
 
-bool testTrackDataManager()
+void setStartEndTime(time_t& start, time_t& end)
 {
-	#pragma omp critical
-	{
-		cout << "testTrackDataManager()" << endl;
-	}
-	TrackDataManager tdm;
-	std::vector<Path> p;
 	tm start_tm;
 	start_tm.tm_year = 2016 - 1900;
 	start_tm.tm_mon  =  4 - 1;
@@ -262,17 +256,54 @@ bool testTrackDataManager()
 	start_tm.tm_sec  =  0;
 	tm end_tm = start_tm;
 	end_tm.tm_hour += 4;
-	time_t start = mktime(&start_tm);
-	time_t end   = mktime(  &end_tm);
+	start = mktime(&start_tm);
+	end   = mktime(  &end_tm);
+}
+
+class Timer
+{
+private:
+	double startTime;
+	double endTime;
+public:
+	Timer():startTime(0.0),endTime(0.0)
+	{
+	}
+	void start()
+	{
+		startTime = omp_get_wtime();
+	}
+	void end()
+	{
+		endTime = omp_get_wtime();
+	}
+	double getTime()
+	{
+		return endTime - startTime;
+	}
+};
+
+bool testTrackDataManager()
+{
+	#pragma omp critical
+	{
+		cout << "testTrackDataManager()" << endl;
+	}
+	TrackDataManager tdm;
+	std::vector<Path> p;
+	time_t start;
+	time_t end;
+	setStartEndTime(start, end);
 	
-	double start_time = omp_get_wtime();
+	Timer timer;
+	timer.start();//double start_time = omp_get_wtime();
 	tdm.getTrackDataFromDB(p,start,end);
-	double end_time = omp_get_wtime();
+	timer.end();//double end_time = omp_get_wtime();
 	
 	#pragma omp critical
 	{
 		cout << "vector版" << endl;
-		cout << "経過時間 = " << (end_time - start_time) << "sec." << endl;
+		cout << "経過時間 = " << timer.getTime() << "sec." << endl;
 		cout << "取得件数:" << p.size() << endl;
 		//時刻のチェック
 		cout << "時刻のチェック" << endl;
@@ -301,13 +332,14 @@ bool testTrackDataManager()
 	
 	//map版との比較
 	std::map<std::string, Path> mp;
-	double start_map_time = omp_get_wtime();
+	Timer timer_map;
+	timer_map.start();//double start_map_time = omp_get_wtime();
 	tdm.getTrackDataFromDBToMap(mp, start, end);
-	double end_map_time = omp_get_wtime();
+	timer_map.end();//double end_map_time = omp_get_wtime();
 	#pragma omp critical
 	{
 		cout << "map版" << endl;
-		cout << "経過時間 = " << (end_map_time - start_map_time) << "sec." << endl;
+		cout << "経過時間 = " << timer_map.getTime() << "sec." << endl;
 		cout << "p.size() = " << p.size() << ", mp.size() = " << mp.size() << endl;
 	}
 	if(p.size() != mp.size())
@@ -628,7 +660,9 @@ bool countCrossingTest_06D4EstimateSpec()
 
 bool openMPTest()
 {
-	/*
+	
+	bool ret = true;
+	
 	for(int i = 0; i < 8; i++)
 	{
 		omp_set_num_threads(i+1);
@@ -643,7 +677,15 @@ bool openMPTest()
 			{
 				cout << "this is openmp test." << endl;
 			}
-			testTrackDataManager();
+			bool ret_private = testTrackDataManager();
+			#pragma omp critical
+			{
+				if(!ret_private)
+				{
+					cout << "test failed. thread index = " << i << endl;
+					ret = ret_private;
+				}
+			}
 			#pragma omp barrier
 			#pragma omp single
 			{
@@ -651,35 +693,87 @@ bool openMPTest()
 			}
 		}
 	}
-	*/
-	vector<map<string,Path> > p;
+	return ret;
+}
+
+bool MapParallelTest()
+{
+	bool ret = true;
+	
+	time_t start;
+	time_t end;
+	setStartEndTime(start, end);
+	end += 24 * 60 * 60;
 	TrackDataManager tdm;
 	
-	tm start_tm;
-	start_tm.tm_year = 2016 - 1900;
-	start_tm.tm_mon  =  4 - 1;
-	start_tm.tm_mday = 13;
-	start_tm.tm_hour = 22;
-	start_tm.tm_min  =  0;
-	start_tm.tm_sec  =  0;
-	tm end_tm = start_tm;
-	end_tm.tm_hour += 4;
-	time_t start = mktime(&start_tm);
-	time_t end   = mktime(  &end_tm);
 	
-	tdm.getTrackDataFromDBToMapParallel(p, start, end);
+	Timer timer_v;
+	vector<Path> p;
 	
-	int total_size = 0;
+	timer_v.start();
+	tdm.getTrackDataFromDB(p, start, end);
+	timer_v.end();
+	
+	cout << "timer_v.getTime() = " << timer_v.getTime() << endl;
+	
 	cout << "p.size() = " << p.size() << endl;
-	for(unsigned int i = 0;i < p.size(); i++)
+	
+	
+	Timer timer_mp;
+	vector<map<string,Path> > p_mp;
+	
+	timer_mp.start();
+	tdm.getTrackDataFromDBToMapParallel(p_mp, start, end);
+	timer_mp.end();
+	
+	cout << "timer_mp.getTime() = " << timer_mp.getTime() << endl;
+	unsigned int total_size = 0;
+	cout << "p_mp.size() = " << p_mp.size() << endl;
+	for(unsigned int i = 0;i < p_mp.size(); i++)
 	{
-		total_size += p[i].size();
-		cout << "p[" << i << "].size() = " << p[i].size() << endl;
+		total_size += p_mp[i].size();
+		cout << "p_mp[" << i << "].size() = " << p_mp[i].size() << endl;
 	}
 	
-	cout << "total_size = " << total_size;
+	cout << "total_size = " << total_size << endl;
 	
-	return true;
+	
+	//pとmpが同じ内容かの確認
+	if(p.size() != total_size)
+	{
+		return false;
+	}
+	int p_size = p.size();
+	int p_mp_size = p_mp.size();
+	for(int i = 0; i < p_size; i++)
+	{
+		bool found = false;
+		for(int j = 0; j < p_mp_size; j++)
+		{
+			map<string,Path>::iterator it;
+			it = p_mp[j].find(p[i].id);
+			if(it != p_mp[j].end())
+			{
+				if(found)
+				{
+					ret = false;
+					continue;
+				}
+				found = true;
+				vector<PathPoint>& pp_p = p[i].pathPoint;
+				vector<PathPoint>& pp_mp =  it->second.pathPoint;
+				if(pp_p != pp_mp)
+				{
+					ret = false;
+				}
+			}
+		}
+	}
+	
+	
+	
+	
+	return ret;
 }
 
 
@@ -708,7 +802,7 @@ int main(int argc, char const* argv[])
 	
 	//selectTrackDataWithDate();
 	
-	test(testTrackDataManager(), ret);
+	//test(testTrackDataManager(), ret);
 	
 	//cudatestfunctest();
 	
@@ -721,7 +815,9 @@ int main(int argc, char const* argv[])
 	test(countCrossingTest_06D4EstimateSpec(), ret);
 	*/
 	
-	test(openMPTest(), ret);
+	//test(openMPTest(), ret);
+	
+	test(MapParallelTest(), ret);
 	
 	if(ret)
 	{
