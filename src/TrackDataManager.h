@@ -247,7 +247,10 @@ public:
 		#pragma omp parallel for
 		for(int i = 0; i < N; i++)
 		{
-			std::cout << "id_last_char[i] = " << id_last_char[i] << std::endl;
+			#pragma omp critical
+			{
+				std::cout << "id_last_char[i] = " << id_last_char[i] << std::endl;
+			}
 			//日付：開始日から終了日までループ
 			for(time_t d = start_day; d < end; d = TimeManager::nextDayTime(d))
 			{
@@ -255,7 +258,36 @@ public:
 			}
 		}
 	}
-	
+	void getTrackDataFromDBParallel
+		(
+			std::vector<Path>& p,
+			time_t start,
+			time_t end
+		)
+	{
+		std::vector<std::map<std::string, Path> > mp;
+		getTrackDataFromDBToMapParallel(mp, start, end);
+		
+		//pの領域確保
+		int mp_totalsize = 0;
+		int mp_size = mp.size();
+		for(int i = 0; i < mp_size; i++)
+		{
+			mp_totalsize += mp[i].size();
+		}
+		p.reserve(mp_totalsize);
+		
+		//mpからpへコピー
+		for(int i = 0; i < mp_size; i++)
+		{
+			std::map<std::string, Path>::iterator j;
+			
+			for(j = mp[i].begin(); j != mp[i].end(); j++)
+			{
+				p.push_back(j->second);
+			}
+		}
+	}
 };
 
 

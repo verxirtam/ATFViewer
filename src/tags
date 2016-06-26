@@ -77,6 +77,8 @@ MAP_H_	Map.h	21;"	d
 MULTIPLICATION_SIGN	gprof2dot.py	/^MULTIPLICATION_SIGN = unichr(0xd7)$/;"	v
 Map	Map.h	/^	Map(const std::string& map_id):$/;"	f	class:Map
 Map	Map.h	/^class Map$/;"	c
+MapParallelTest	unittest.cpp	/^bool MapParallelTest()$/;"	f
+MapParallelTest2	unittest.cpp	/^bool MapParallelTest2()$/;"	f
 MapTransform	MapTransform.h	/^	MapTransform():$/;"	f	class:MapTransform
 MapTransform	MapTransform.h	/^class MapTransform$/;"	c
 MapTransform_H	MapTransform.h	19;"	d
@@ -130,6 +132,8 @@ TestCountCrossing	TestCountCrossing.h	/^class TestCountCrossing$/;"	c
 Theme	gprof2dot.py	/^class Theme:$/;"	c
 TimeManager	TimeManager.h	/^class TimeManager$/;"	c
 TimeManager_H_	TimeManager.h	19;"	d
+Timer	unittest.cpp	/^	Timer():startTime(0.0),endTime(0.0)$/;"	f	class:Timer
+Timer	unittest.cpp	/^class Timer$/;"	c	file:
 TrackDataManager	TrackDataManager.h	/^class TrackDataManager$/;"	c
 TrackDataManager_H_	TrackDataManager.h	19;"	d
 UTIL_H_	Util.h	19;"	d
@@ -334,6 +338,8 @@ edge_penwidth	gprof2dot.py	/^    def edge_penwidth(self, weight):$/;"	m	class:Th
 element_end	gprof2dot.py	/^    def element_end(self, name):$/;"	m	class:XmlParser
 element_start	gprof2dot.py	/^    def element_start(self, name):$/;"	m	class:XmlParser
 end	CountCrossing.h	/^	time_t end;$/;"	m	class:CountCrossing
+end	unittest.cpp	/^	void end()$/;"	f	class:Timer
+endTime	unittest.cpp	/^	double endTime;$/;"	m	class:Timer	file:
 end_graph	gprof2dot.py	/^    def end_graph(self):$/;"	m	class:DotWriter
 eof	gprof2dot.py	/^    def eof(self):$/;"	m	class:LineParser
 escape	gprof2dot.py	/^    def escape(self, s):$/;"	m	class:DotWriter
@@ -385,9 +391,11 @@ getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id,
 getStart	CountCrossing.h	/^	time_t getStart()$/;"	f	class:CountCrossing
 getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:Sectors
 getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:Sectors
+getTime	unittest.cpp	/^	double getTime()$/;"	f	class:Timer
 getTotalCellIndex	CountCrossing_cuda.h	/^int getTotalCellIndex$/;"	f
 getTotalCellIndex	cudatestfunc.h	/^int getTotalCellIndex$/;"	f
 getTrackDataFromDB	TrackDataManager.h	/^	void getTrackDataFromDB(std::vector<Path>& p,$/;"	f	class:TrackDataManager
+getTrackDataFromDBParallel	TrackDataManager.h	/^	void getTrackDataFromDBParallel$/;"	f	class:TrackDataManager
 getTrackDataFromDBToMap	TrackDataManager.h	/^	void getTrackDataFromDBToMap(std::map<std::string, Path>& p, time_t start,time_t end)$/;"	f	class:TrackDataManager
 getTrackDataFromDBToMapParallel	TrackDataManager.h	/^	void getTrackDataFromDBToMapParallel(std::vector<std::map<std::string, Path> >& p, time_t start,time_t end)$/;"	f	class:TrackDataManager
 getTrackDataFromDBToMapWithDay	TrackDataManager.h	/^	void getTrackDataFromDBToMapWithDay$/;"	f	class:TrackDataManager
@@ -506,10 +514,12 @@ nowstring	unittest.cpp	/^string nowstring()$/;"	f
 null	gprof2dot.py	/^    def null(self):$/;"	m	class:Event
 openEntry	gprof2dot.py	/^    def openEntry(self, name):$/;"	m	class:SleepyParser
 openMPTest	unittest.cpp	/^bool openMPTest()$/;"	f
-operator !=	Path.h	/^	bool operator !=(const PathPoint& p)$/;"	f	struct:PathPoint
-operator !=	Path.h	/^	bool operator!=(const std::string& s)$/;"	f	struct:Path
-operator ==	Path.h	/^	bool operator ==(const PathPoint& p)$/;"	f	struct:PathPoint
-operator ==	Path.h	/^	bool operator==(const std::string& s)$/;"	f	struct:Path
+operator !=	Path.h	/^	bool operator !=(const Path& p) const$/;"	f	struct:Path
+operator !=	Path.h	/^	bool operator !=(const PathPoint& p) const$/;"	f	struct:PathPoint
+operator !=	Path.h	/^	bool operator !=(const std::string& s) const$/;"	f	struct:Path
+operator ==	Path.h	/^	bool operator ==(const Path& p) const$/;"	f	struct:Path
+operator ==	Path.h	/^	bool operator ==(const PathPoint& p) const$/;"	f	struct:PathPoint
+operator ==	Path.h	/^	bool operator ==(const std::string& s) const$/;"	f	struct:Path
 parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:AXEParser
 parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:CallgrindParser
 parse	gprof2dot.py	/^    def parse(self):$/;"	m	class:GprofParser
@@ -599,13 +609,16 @@ setQuery	TrackDataManager.h	/^	void setQuery(DBAccessor& dba, time_t start, time
 setScale	MapTransform.h	/^	void setScale(GLdouble s)$/;"	f	class:MapTransform
 setStart	CountCrossing.h	/^	void setStart(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 setStart	CountCrossing.h	/^	void setStart(time_t s)$/;"	f	class:CountCrossing
+setStartEndTime	unittest.cpp	/^void setStartEndTime(time_t& start, time_t& end)$/;"	f
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
 show_edge_events	gprof2dot.py	/^    show_edge_events = [TOTAL_TIME_RATIO, CALLS]$/;"	v	class:DotWriter
 show_function_events	gprof2dot.py	/^    show_function_events = [TOTAL_TIME_RATIO, TIME_RATIO]$/;"	v	class:DotWriter
 skip_separator	gprof2dot.py	/^    def skip_separator(self):$/;"	m	class:OprofileParser
 sorted_iteritems	gprof2dot.py	/^def sorted_iteritems(d):$/;"	f
 start	CountCrossing.h	/^	time_t start;$/;"	m	class:CountCrossing
+start	unittest.cpp	/^	void start()$/;"	f	class:Timer
 startIndex	CountCrossing.h	/^	std::vector<int> startIndex;$/;"	m	class:CountCrossing
+startTime	unittest.cpp	/^	double startTime;$/;"	m	class:Timer	file:
 stdinInput	gprof2dot.py	/^    stdinInput = False$/;"	v	class:PstatsParser
 stdinInput	gprof2dot.py	/^    stdinInput = False$/;"	v	class:SleepyParser
 stdinInput	gprof2dot.py	/^    stdinInput = True$/;"	v	class:Parser

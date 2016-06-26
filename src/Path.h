@@ -73,13 +73,24 @@ struct Path
 	std::vector<PathPoint> pathPoint;
 	int past_time_index;
 	int now_index;
-	bool operator==(const std::string& s)
+	bool operator ==(const std::string& s) const
 	{
 		return this->id == s;
 	}
-	bool operator!=(const std::string& s)
+	bool operator !=(const std::string& s) const
 	{
 		return !((*this)==s);
+	}
+	bool operator ==(const Path& p) const
+	{
+		return (this->id == p.id)
+			&& (this->pathPoint == p.pathPoint)
+			&& (this->past_time_index == p.past_time_index)
+			&& (this->now_index == p.now_index);
+	}
+	bool operator !=(const Path& p) const
+	{
+		return !((*this)==p);
 	}
 };
 

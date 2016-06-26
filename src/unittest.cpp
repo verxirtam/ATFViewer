@@ -703,7 +703,7 @@ bool MapParallelTest()
 	time_t start;
 	time_t end;
 	setStartEndTime(start, end);
-	end += 24 * 60 * 60;
+	end += 6 * 60 * 60;
 	TrackDataManager tdm;
 	
 	
@@ -777,6 +777,63 @@ bool MapParallelTest()
 }
 
 
+bool MapParallelTest2()
+{
+	cout << "MapParallelTest2()" << endl;
+	
+	
+	bool ret = true;
+	
+	time_t start;
+	time_t end;
+	setStartEndTime(start, end);
+	end += 48 * 60 * 60;
+	TrackDataManager tdm;
+	
+	std::vector<Path> p[2];
+	Timer timer[2];
+	
+	timer[0].start();
+	tdm.getTrackDataFromDB(p[0], start, end);
+	timer[0].end();
+	
+	timer[1].start();
+	tdm.getTrackDataFromDBParallel(p[1], start, end);
+	timer[1].end();
+	
+	cout << "tdm.getTrackDataFromDB() time: "         << timer[0].getTime() << endl;
+	cout << "tdm.getTrackDataFromDBParallel() time: " << timer[1].getTime() << endl;
+	
+	//順番が異なっているのでソートする
+	std::sort(p[0].begin(), p[0].end(), comp_path);
+	std::sort(p[1].begin(), p[1].end(), comp_path);
+	
+	//比較
+	if(p[0] != p[1])
+	{
+		ret = false;
+		if(p[0].size() != p[1].size())
+		{
+			cout << "p[0].size() = " << p[0].size() << endl;
+			cout << "p[1].size() = " << p[1].size() << endl;
+		}
+		int p_size = p[0].size();
+		for(int i = 0; i < p_size; i++)
+		{
+			if(p[0][i] != p[1][i])
+			{
+				cout << "p[0][" << i << "] != p[1][" << i << "]" << endl;
+				cout << "p[0][" << i << "].id = " << p[0][i].id << endl;
+				cout << "p[1][" << i << "].id = " << p[1][i].id << endl;
+				cout << "p[0][" << i << "].past_time_index = " << p[0][i].past_time_index << endl;
+				cout << "p[1][" << i << "].past_time_index = " << p[1][i].past_time_index << endl;
+				cout << "p[0][" << i << "].now_index = " << p[0][i].now_index << endl;
+				cout << "p[1][" << i << "].now_index = " << p[1][i].now_index << endl;
+			}
+		}
+	}
+	return ret;
+}
 
 
 void test(bool test_result, bool& ret)
@@ -818,6 +875,7 @@ int main(int argc, char const* argv[])
 	//test(openMPTest(), ret);
 	
 	test(MapParallelTest(), ret);
+	test(MapParallelTest2(), ret);
 	
 	if(ret)
 	{
