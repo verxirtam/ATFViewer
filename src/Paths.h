@@ -38,6 +38,7 @@ private:
 	const unsigned int drawTimeWidth;
 	void updatePastTimeIndex(Path& p, time_t past_time);
 	void updateNowIndex(Path& p, time_t now);
+	void drawPathLine(Path& p, time_t past_time, time_t now);
 public:
 	Paths():drawTimeWidth(600)
 	{
@@ -46,7 +47,7 @@ public:
 	void drawPath(PathPoint& p, time_t now);
 	PathPoint getNowPoint(PathPoint& from, PathPoint& to, time_t time);
 	void resetTime(void);
-	void display(time_t now);
+	int display(time_t now);
 };
 
 

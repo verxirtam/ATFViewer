@@ -80,57 +80,6 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 {
 	TrackDataManager tdm;
 	tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
-	
-	/*
-	//軌道を取得する
-	std::stringstream sql("");
-	//sql<<"select id,longitude,latitude,altitude,time from TrackData where time>=";
-	sql<<"select id,longitude,latitude,altitude,time,arrival from TrackData where time>=";
-	sql<<time_min<<" and time<";
-	sql<<time_max<<" order by id,time;";
-	dba.setQuery(sql.str());
-	//cout<<"setQuery() after, step_select() before"<<endl;
-	
-	//直前に読み込んだid
-	//id毎にvectorに格納するため
-	std::string old_id("");
-	
-	std::vector<Path>::iterator i = paths.begin();
-	
-	while(SQLITE_ROW == dba.step_select())
-	{
-		//クエリの結果を取得
-		std::string id(dba.getColumnString(0));
-		double lo=dba.getColumnDouble(1);
-		double la=dba.getColumnDouble(2);
-		int a=dba.getColumnInt(3);
-		long long t=dba.getColumnLongLong(4);
-		std::string ar(dba.getColumnString(5));
-		
-		//取得したidとi->idを照合
-		if(id != old_id)
-		{
-			//idが一致するpathを検索
-			i = std::find(paths.begin(),paths.end(),id);
-			//検索で見つからなかった場合は新規追加
-			if(i == paths.end())
-			{
-				//末尾に追加
-				paths.push_back(Path());
-				//最後の要素を指定
-				i = paths.end();
-				i--;
-				//追加した要素を初期化
-				i->id = id;
-				i->past_time_index = 0;
-				i->now_index = 0;
-			}
-			old_id = id;
-		}
-		i->pathPoint.push_back(PathPoint(lo,la,a,t,ar));
-	}
-	//cout<<"initPathPoint() end"<<endl;
-	*/
 }
 
 void Paths::resetTime(void)
@@ -184,7 +133,37 @@ void Paths::updateNowIndex(Path& p, time_t now)
 	}
 }
 
-void Paths::display(time_t now)
+void Paths::drawPathLine(Path& p, time_t past_time, time_t now)
+{
+	int path_size = p.pathPoint.size();
+	//past_pointを描画する
+	glBegin(GL_TRIANGLE_STRIP);
+	//past_time_indexがpの両端のときは対象外の時刻なので描画しない
+	if((p.past_time_index != 0) && (p.past_time_index != path_size))
+	{
+		int i = p.past_time_index;
+		PathPoint past_point = getNowPoint(p.pathPoint[i-1], p.pathPoint[i], past_time);
+		drawPath(past_point,now);
+	}
+	//past_time_index <= i < now_indexとなるiのpath[n][i]を描画する
+	//path_sizeに達したら描画を終了する
+	for(int i = p.past_time_index; i < p.now_index; i++)
+	{
+		//軌道を描画する
+		drawPath(p.pathPoint[i],now);
+	}
+	//now_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
+	//now_pointを描画する
+	if((p.now_index != 0) && (p.now_index != path_size))
+	{
+		int i = p.now_index;
+		PathPoint now_point = getNowPoint(p.pathPoint[i-1],p.pathPoint[i],now);
+		drawPath(now_point,now);
+	}
+	glEnd();
+}
+
+int Paths::display(time_t now)
 {
 	//航空機の軌道っぽいものを描く
 	//隠面消去を無効にする
@@ -197,88 +176,44 @@ void Paths::display(time_t now)
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	//描画を始める時刻
 	time_t past_time = now - drawTimeWidth;
+	
+	//描画した航空機数
+	int ret = 0;
+	
 	//航空機毎に軌道を描画する
 	for (unsigned int n = 0; n < paths.size(); n++)
 	{
-		//未来の軌道は描かない
-		if (paths[n].pathPoint[0].time > now )
-		{
-			continue;
-		}
+		Path& p = paths[n];
+		
 		//past_timeより過去の軌道は描かない
-		if (paths[n].pathPoint.rbegin()->time < past_time )
+		if (p.pathPoint.rbegin()->time < past_time )
 		{
 			continue;
 		}
-		glBegin(GL_TRIANGLE_STRIP);
-		//航空機の軌道に垂線をおろした帯状の図形を描画する
-		int path_size=paths[n].pathPoint.size();
+		
+		//未来の軌道は描かない
+		if (p.pathPoint[0].time > now )
+		{
+			continue;
+		}
+		
 		//past_time_indexを更新する
-		this->updatePastTimeIndex(paths[n], past_time);
-		/*
-		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
-		for(int i = paths[n].past_time_index; i < path_size; i++)
-		{
-			if(past_time < paths[n].pathPoint[i].time)
-			{
-				paths[n].past_time_index = i;
-				break;
-			}
-		}
-		//past_timeが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
-		if(paths[n].pathPoint[path_size-1].time <= past_time)
-		{
-			paths[n].past_time_index = path_size;
-		}
-		*/
+		this->updatePastTimeIndex(p, past_time);
+		
 		//now_indexを更新する
-		this->updateNowIndex(paths[n], now);
-		/*
-		//now_index[n] = Min{ i | now < paths[n][i].time}
-		for(int i = paths[n].now_index; i < path_size; i++)
-		{
-			if(now < paths[n].pathPoint[i].time)
-			{
-				paths[n].now_index = i;
-				break;
-			}
-		}
-		//nowが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
-		if(paths[n].pathPoint[path_size-1].time <= now)
-		{
-			paths[n].now_index = path_size;
-		}
-		*/
-		//past_pointを描画する
-		//past_time_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
-		if((paths[n].past_time_index != 0) && (paths[n].past_time_index != path_size))
-		{
-			int i = paths[n].past_time_index;
-			PathPoint past_point = getNowPoint(paths[n].pathPoint[i-1],paths[n].pathPoint[i], past_time);
-			drawPath(past_point,now);
-		}
-		//past_time_index <= i < now_indexとなるiのpath[n][i]を描画する
-		//path_sizeに達したら描画を終了する
-		for(int i = paths[n].past_time_index; i < paths[n].now_index; i++)
-		{
-			//軌道を描画する
-			drawPath(paths[n].pathPoint[i],now);
-		}
-		//now_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
-		//now_pointを描画する
-		if((paths[n].now_index != 0) && (paths[n].now_index != path_size))
-		{
-			int i = paths[n].now_index;
-			PathPoint now_point = getNowPoint(paths[n].pathPoint[i-1],paths[n].pathPoint[i],now);
-			drawPath(now_point,now);
-		}
-		/////////////////////////////////////////////////////////////////////////////
-		glEnd();
+		this->updateNowIndex(p, now);
+		
+		//航空機の軌道に垂線をおろした帯状の図形を描画する
+		this->drawPathLine(p, past_time, now);
+		
+		//描画した機数をカウント
+		ret++;
 	}
 	//アルファブレンド無効化
 	glDisable(GL_BLEND);
 	//デプスバッファ有効化
 	glEnable(GL_DEPTH_TEST);
 	//航空機の軌道の描画完了
-
+	
+	return ret;
 }

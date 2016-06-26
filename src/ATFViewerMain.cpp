@@ -72,6 +72,8 @@ void ATFViewerMain::display(void)
 	}
 	
 	
+	static int account = 0;
+	
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
 	//ウィンドウ座標系上での描画
@@ -111,7 +113,13 @@ void ATFViewerMain::display(void)
 		BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
 	}
 	
-	
+	//描画対象の航空機数を表示する
+	std::stringstream accountstr;
+	accountstr << "AC Count = " << account;
+	glColor3d(1.0,1.0,1.0);
+	BitmapString::drawString(0.0, (double)windowHeight-50.0, accountstr.str().c_str());
+	glColor3d(0.0,0.0,0.0);
+	BitmapString::drawString(0.0, (double)windowHeight-60.0, accountstr.str().c_str());
 	
 	
 	//ワールド座標系上での描画
@@ -129,10 +137,6 @@ void ATFViewerMain::display(void)
 	glMatrixMode(GL_MODELVIEW);
 	//モデルビュー変換行列の初期化
 	glLoadIdentity();
-	
-	//時刻を表示する
-	glColor3d(1.0,1.0,1.0);
-	BitmapString::drawString(0.0, 0.1,::asctime(::localtime(&now)));
 	
 	//ビュー変換行列の設定
 	//カメラの位置、向きの設定
@@ -185,7 +189,7 @@ void ATFViewerMain::display(void)
 
 
 	//航空機の軌道を描画する
-	paths.display(now);
+	account = paths.display(now);
 
 	//クリッピング平面の無効化
 	glDisable(GL_CLIP_PLANE0);
