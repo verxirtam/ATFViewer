@@ -79,7 +79,7 @@ PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)
 void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 {
 	TrackDataManager tdm;
-	tdm.getTrackDataFromDB(paths,time_min,time_max);
+	tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
 	
 	/*
 	//軌道を取得する
@@ -143,6 +143,47 @@ void Paths::resetTime(void)
 	}
 }
 
+void Paths::updatePastTimeIndex(Path& p, time_t past_time)
+{
+	int path_size = p.pathPoint.size();
+	//past_time_indexを更新する
+	//past_time_index = Min{ i | past_time < p[i].time}
+	for(int i = p.past_time_index; i < path_size; i++)
+	{
+		if(past_time < p.pathPoint[i].time)
+		{
+			p.past_time_index = i;
+			break;
+		}
+	}
+	//past_timeが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
+	if(p.pathPoint[path_size-1].time <= past_time)
+	{
+		p.past_time_index = path_size;
+	}
+}
+
+void Paths::updateNowIndex(Path& p, time_t now)
+{
+	int path_size = p.pathPoint.size();
+	
+	//now_indexを更新する
+	//now_index[n] = Min{ i | now < paths[n][i].time}
+	for(int i = p.now_index; i < path_size; i++)
+	{
+		if(now < p.pathPoint[i].time)
+		{
+			p.now_index = i;
+			break;
+		}
+	}
+	//nowが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
+	if(p.pathPoint[path_size-1].time <= now)
+	{
+		p.now_index = path_size;
+	}
+}
+
 void Paths::display(time_t now)
 {
 	//航空機の軌道っぽいものを描く
@@ -164,10 +205,17 @@ void Paths::display(time_t now)
 		{
 			continue;
 		}
+		//past_timeより過去の軌道は描かない
+		if (paths[n].pathPoint.rbegin()->time < past_time )
+		{
+			continue;
+		}
 		glBegin(GL_TRIANGLE_STRIP);
 		//航空機の軌道に垂線をおろした帯状の図形を描画する
 		int path_size=paths[n].pathPoint.size();
 		//past_time_indexを更新する
+		this->updatePastTimeIndex(paths[n], past_time);
+		/*
 		//past_time_index[n] = Min{ i | past_time < paths[n][i].time}
 		for(int i = paths[n].past_time_index; i < path_size; i++)
 		{
@@ -177,12 +225,15 @@ void Paths::display(time_t now)
 				break;
 			}
 		}
-		//past_timeが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
+		//past_timeが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
 		if(paths[n].pathPoint[path_size-1].time <= past_time)
 		{
 			paths[n].past_time_index = path_size;
 		}
+		*/
 		//now_indexを更新する
+		this->updateNowIndex(paths[n], now);
+		/*
 		//now_index[n] = Min{ i | now < paths[n][i].time}
 		for(int i = paths[n].now_index; i < path_size; i++)
 		{
@@ -192,11 +243,12 @@ void Paths::display(time_t now)
 				break;
 			}
 		}
-		//nowが軌道のどの時刻よりも大きい場合はpath_size - 1を設定する
+		//nowが軌道のどの時刻よりも大きい場合はpath_sizeを設定する
 		if(paths[n].pathPoint[path_size-1].time <= now)
 		{
 			paths[n].now_index = path_size;
 		}
+		*/
 		//past_pointを描画する
 		//past_time_indexがpaths[n]の両端のときは対象外の時刻なので描画しない
 		if((paths[n].past_time_index != 0) && (paths[n].past_time_index != path_size))

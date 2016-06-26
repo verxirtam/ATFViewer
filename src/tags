@@ -654,6 +654,8 @@ translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:GprofParser
 u	Map.h	/^	double u;$/;"	m	struct:MapVertex
 unichr	gprof2dot.py	/^    unichr = chr # No unichr in Python 3$/;"	v
 unitProvidingService	Sectors.h	/^	std::string unitProvidingService;$/;"	m	struct:Sector
+updateNowIndex	Paths.cpp	/^void Paths::updateNowIndex(Path& p, time_t now_time)$/;"	f	class:Paths
+updatePastTimeIndex	Paths.cpp	/^void Paths::updatePastTimeIndex(Path& p, time_t past_time)$/;"	f	class:Paths
 update_subentries_dict	gprof2dot.py	/^    def update_subentries_dict(self, totals, partials):$/;"	m	class:OprofileParser
 v	Map.h	/^	double v;$/;"	m	struct:MapVertex
 validate	gprof2dot.py	/^    def validate(self):$/;"	m	class:Profile

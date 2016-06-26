@@ -36,6 +36,8 @@ class Paths
 private:
 	std::vector<Path> paths;
 	const unsigned int drawTimeWidth;
+	void updatePastTimeIndex(Path& p, time_t past_time);
+	void updateNowIndex(Path& p, time_t now);
 public:
 	Paths():drawTimeWidth(600)
 	{
