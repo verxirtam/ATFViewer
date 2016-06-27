@@ -25,6 +25,8 @@
 
 #include <omp.h>
 
+#include <pthread.h>
+
 #include "DBAccessor.h"
 #include "TrackDataManager.h"
 
@@ -835,6 +837,59 @@ bool MapParallelTest2()
 	return ret;
 }
 
+typedef void (*myfunc)(void);
+
+//template <typename F>
+class TestThread
+{
+private:
+	pthread_t thread;
+	myfunc f;
+	static void* _f(void* arg)
+	{
+		TestThread* t = (TestThread*)arg;
+		(t->f)();
+		return NULL;
+	}
+	/*
+	void f()
+	{
+		cout << "This is test thread." << endl;
+	}
+	*/
+public:
+	TestThread(myfunc func)
+	{
+		f = func;
+	}
+	void run()
+	{
+		pthread_create(&thread, NULL, _f, (void*)this);
+	}
+};
+
+void testThreadFunc()
+{
+	cout << "This is test thread." << endl;
+}
+
+bool testPThread()
+{
+	bool ret = true;
+	
+	
+	TestThread t(testThreadFunc);
+	t.run();
+	
+	
+	return ret;
+}
+
+
+
+
+
+
 
 void test(bool test_result, bool& ret)
 {
@@ -874,8 +929,10 @@ int main(int argc, char const* argv[])
 	
 	//test(openMPTest(), ret);
 	
-	test(MapParallelTest(), ret);
-	test(MapParallelTest2(), ret);
+	//test(MapParallelTest(), ret);
+	//test(MapParallelTest2(), ret);
+	
+	test(testPThread(), ret);
 	
 	if(ret)
 	{

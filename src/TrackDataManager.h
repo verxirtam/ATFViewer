@@ -52,7 +52,6 @@ private:
 		if(n != ' ')
 		{
 			query << " and substr(id,-1,1) = '" << n << "'";
-			//std::cout << query.str() << std::endl;//TODO test
 		}
 		query << " order by id,time;";
 		dba.setQuery(query.str());
