@@ -839,16 +839,16 @@ bool MapParallelTest2()
 
 typedef void (*myfunc)(void);
 
-//template <typename F>
+template <typename F>
 class TestThread
 {
 private:
 	pthread_t thread;
-	myfunc f;
+	F f;
 	static void* _f(void* arg)
 	{
 		TestThread* t = (TestThread*)arg;
-		(t->f)();
+		t->f();
 		return NULL;
 	}
 	/*
@@ -858,7 +858,7 @@ private:
 	}
 	*/
 public:
-	TestThread(myfunc func)
+	TestThread(F func)
 	{
 		f = func;
 	}
@@ -866,20 +866,90 @@ public:
 	{
 		pthread_create(&thread, NULL, _f, (void*)this);
 	}
+	void join()
+	{
+		pthread_join(thread,NULL);
+	}
 };
 
-void testThreadFunc()
+struct TestThreadFunc
 {
-	cout << "This is test thread." << endl;
-}
+	void operator ()()
+	{
+		cout << "This is test thread." << endl;
+	}
+};
+
+template <typename F, typename T>
+class TestThread_MemFunc
+{
+private:
+	pthread_t thread;
+	F f;
+	T* const t;
+	static void* _f(void* arg)
+	{
+		TestThread_MemFunc* tt = (TestThread_MemFunc*)arg;
+		((tt->t)->*(tt->f))();
+		return NULL;
+	}
+	/*
+	void f()
+	{
+		cout << "This is test thread." << endl;
+	}
+	*/
+public:
+	TestThread_MemFunc(F func, T* const ins):f(func),t(ins)
+	{
+	}
+	void run()
+	{
+		pthread_create(&thread, NULL, _f, (void*)this);
+	}
+	void join()
+	{
+		pthread_join(thread,NULL);
+	}
+};
+
+class TestUseThread
+{
+private:
+	typedef void (TestUseThread::*functype)();
+	TestThread_MemFunc<functype,TestUseThread> t;
+	void function1()
+	{
+		cout << "This is function1." << endl;
+	}
+public:
+	TestUseThread():t(&TestUseThread::function1, this)
+	{
+		
+	}
+	~TestUseThread()
+	{
+		this->t.join();
+	}
+	void exec()
+	{
+		this->t.run();
+	}
+};
 
 bool testPThread()
 {
 	bool ret = true;
 	
-	
-	TestThread t(testThreadFunc);
+	TestThreadFunc f;
+	TestThread<TestThreadFunc> t(f);
 	t.run();
+	
+	t.join();
+	
+	
+	TestUseThread tut;
+	tut.exec();
 	
 	
 	return ret;
