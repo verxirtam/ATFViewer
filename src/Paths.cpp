@@ -20,6 +20,48 @@
 
 using namespace std;
 
+
+void Paths::makeTimeSeparation()
+{
+	
+	this->timeSeparation.clear();
+	
+	time_t time_width = this->timeMax - this->timeMin;
+	//timeWidth未満の場合は区間は1つのみ
+	if(time_width <= timeWidth)
+	{
+		timeSeparation.push_back(this->timeMin);
+		timeSeparation.push_back(this->timeMax);
+		return;
+	}
+	//timeWidth間隔に時刻を設定する
+	//最後の区間は手前の区間と一緒にする
+	time_t t = this->timeMin;
+	for(;t < this->timeMax - timeWidth; t += timeWidth)
+	{
+		timeSeparation.push_back(t);
+	}
+	timeSeparation.push_back(this->timeMax);
+	
+	this->currentTimeSeparationIndex = 0;
+}
+
+void Paths::makePathsBuffer(std::vector<Path>& p, int time_separation_index)
+{
+	p.clear();
+	time_t time_start = timeSeparation[time_separation_index    ] - this->drawTimeWidth;
+	time_t time_end   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
+	
+	TrackDataManager tdm;
+	tdm.getTrackDataFromDBParallel(p, time_start, time_end);
+	
+}
+
+void Paths::runMakePathsBuffer(std::vector<Path>& p, int time_separation_index)
+{
+	auto _f = [&]{this->makePathsBuffer(p, time_separation_index);};
+	futureMakeBuffer = std::async(std::launch::async, _f);
+}
 void Paths::drawPath(PathPoint& p, time_t now)
 {
 	/*

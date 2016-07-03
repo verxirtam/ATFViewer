@@ -24,6 +24,7 @@
 #include <vector>
 #include <sstream>
 #include <algorithm>
+#include <future>
 
 #include <GL/glut.h>
 
@@ -34,13 +35,25 @@
 class Paths
 {
 private:
+	time_t timeWidth;
+	time_t timeMin;
+	time_t timeMax;
+	std::vector<time_t> timeSeparation;
+	time_t currentTimeSeparationIndex;
+	std::vector<Path>* currentPaths;
+	std::vector<Path>* bufferPaths;
 	std::vector<Path> paths;
+	std::vector<Path> pathsBuffer;
 	const unsigned int drawTimeWidth;
+	std::future<void> futureMakeBuffer;
+	void makeTimeSeparation();
+	void makePathsBuffer(std::vector<Path>& p, int time_separation_index);
+	void runMakePathsBuffer(std::vector<Path>& p, int time_separation_index);
 	void updatePastTimeIndex(Path& p, time_t past_time);
 	void updateNowIndex(Path& p, time_t now);
 	void drawPathLine(Path& p, time_t past_time, time_t now);
 public:
-	Paths():drawTimeWidth(600)
+	Paths():timeWidth(2 * 60 * 60), drawTimeWidth(600)
 	{
 	}
 	void initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max);
@@ -49,7 +62,6 @@ public:
 	void resetTime(void);
 	int display(time_t now);
 };
-
 
 
 

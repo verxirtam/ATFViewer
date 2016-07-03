@@ -36,7 +36,7 @@ CALLS	gprof2dot.py	/^CALLS = Event("Calls", 0, add, times)$/;"	v
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
-CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp$/;"	m
+CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
 Call	gprof2dot.py	/^class Call(Object):$/;"	c
 CallgrindParser	gprof2dot.py	/^class CallgrindParser(LineParser):$/;"	c
 CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
@@ -103,7 +103,7 @@ Path	Path.h	/^struct Path$/;"	s
 PathPoint	Path.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
 PathPoint	Path.h	/^struct PathPoint$/;"	s
 Path_H	Path.h	19;"	d
-Paths	Paths.h	/^	Paths():drawTimeWidth(600)$/;"	f	class:Paths
+Paths	Paths.h	/^	Paths():minTimeWidth(2 * 60 * 60), drawTimeWidth(600)$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
 Paths_H	Paths.h	20;"	d
 PerfParser	gprof2dot.py	/^class PerfParser(LineParser):$/;"	c
@@ -129,6 +129,13 @@ TOTAL_SAMPLES	gprof2dot.py	/^TOTAL_SAMPLES = Event("Samples", 0, add, times)$/;"
 TOTAL_TIME	gprof2dot.py	/^TOTAL_TIME = Event("Total time", 0.0, fail)$/;"	v
 TOTAL_TIME_RATIO	gprof2dot.py	/^TOTAL_TIME_RATIO = Event("Total time ratio", 0.0, fail, percentage)$/;"	v
 TestCountCrossing	TestCountCrossing.h	/^class TestCountCrossing$/;"	c
+TestThread	unittest.cpp	/^	TestThread(F func)$/;"	f	class:TestThread
+TestThread	unittest.cpp	/^class TestThread$/;"	c	file:
+TestThreadFunc	unittest.cpp	/^struct TestThreadFunc$/;"	s	file:
+TestThread_MemFunc	unittest.cpp	/^	TestThread_MemFunc(F func, T* const ins):f(func),t(ins)$/;"	f	class:TestThread_MemFunc
+TestThread_MemFunc	unittest.cpp	/^class TestThread_MemFunc$/;"	c	file:
+TestUseThread	unittest.cpp	/^	TestUseThread():t(&TestUseThread::function1, this)$/;"	f	class:TestUseThread
+TestUseThread	unittest.cpp	/^class TestUseThread$/;"	c	file:
 Theme	gprof2dot.py	/^class Theme:$/;"	c
 TimeManager	TimeManager.h	/^class TimeManager$/;"	c
 TimeManager_H_	TimeManager.h	19;"	d
@@ -213,6 +220,8 @@ _cost_re	gprof2dot.py	/^    _cost_re = re.compile(r'^' + $/;"	v	class:CallgrindP
 _detail_keys	gprof2dot.py	/^    _detail_keys = set(('cmd', 'pid', 'thread', 'part'))$/;"	v	class:CallgrindParser
 _display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
 _dump_events	gprof2dot.py	/^    def _dump_events(self, events):$/;"	m	class:Profile
+_f	unittest.cpp	/^	static void* _f(void* arg)$/;"	f	class:TestThread	file:
+_f	unittest.cpp	/^	static void* _f(void* arg)$/;"	f	class:TestThread_MemFunc	file:
 _fields_re	gprof2dot.py	/^    _fields_re = {$/;"	v	class:OprofileParser
 _float_re	gprof2dot.py	/^    _float_re = re.compile(r'^\\d+\\.\\d+$')$/;"	v	class:AXEParser
 _float_re	gprof2dot.py	/^    _float_re = re.compile(r'^\\d+\\.\\d+$')$/;"	v	class:GprofParser
@@ -305,7 +314,9 @@ counterCount	unittest.cpp	/^	int counterCount;$/;"	m	struct:EstimateSpecResult	f
 counter_device	CountCrossing.h	/^	std::vector<float> counter_device;$/;"	m	class:CountCrossing
 cudatestfunc_H_	cudatestfunc.h	20;"	d
 cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
+currentPaths	Paths.h	/^	std::vector<Path>* currentPaths;$/;"	m	class:Paths
 currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
+currentTimeSeparationIndex	Paths.h	/^	time_t currentTimeSeparationIndex;$/;"	m	class:Paths
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
 device	CountCrossing_cuda.h	/^	T* device;$/;"	m	class:DeviceSeqConst
@@ -317,7 +328,7 @@ disp_buttonMask	ATFViewerMain.h	/^	unsigned int disp_buttonMask;$/;"	m	class:ATF
 display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
 display	Fixes.h	/^	void display()$/;"	f	class:Fixes
 display	Map.cpp	/^void Map::display(void)$/;"	f	class:Map
-display	Paths.cpp	/^void Paths::display(time_t now)$/;"	f	class:Paths
+display	Paths.cpp	/^int Paths::display(time_t now)$/;"	f	class:Paths
 display	Sectors.cpp	/^void Sectors::display(void)$/;"	f	class:Sectors
 displayAll	Sectors.h	/^	bool displayAll;$/;"	m	class:Sectors
 displaySector	Sectors.cpp	/^void Sectors::displaySector(Sector& sector)$/;"	f	class:Sectors
@@ -344,8 +355,11 @@ endTime	unittest.cpp	/^	double endTime;$/;"	m	class:Timer	file:
 end_graph	gprof2dot.py	/^    def end_graph(self):$/;"	m	class:DotWriter
 eof	gprof2dot.py	/^    def eof(self):$/;"	m	class:LineParser
 escape	gprof2dot.py	/^    def escape(self, s):$/;"	m	class:DotWriter
+exec	unittest.cpp	/^	void exec()$/;"	f	class:TestUseThread
 execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
+f	unittest.cpp	/^	F f;$/;"	m	class:TestThread	file:
+f	unittest.cpp	/^	F f;$/;"	m	class:TestThread_MemFunc	file:
 fail	gprof2dot.py	/^def fail(a, b):$/;"	f
 find_cycles	gprof2dot.py	/^    def find_cycles(self):$/;"	m	class:Profile
 finish_character_data	gprof2dot.py	/^    def finish_character_data(self):$/;"	m	class:XmlTokenizer
@@ -355,6 +369,8 @@ fontcolor	gprof2dot.py	/^    fontcolor = "black",$/;"	v
 fontsize	gprof2dot.py	/^    def fontsize(self, weight):$/;"	m	class:Theme
 format	gprof2dot.py	/^    def format(self, val):$/;"	m	class:Event
 formats	gprof2dot.py	/^formats = {$/;"	v
+function1	unittest.cpp	/^	void function1()$/;"	f	class:TestUseThread	file:
+functype	unittest.cpp	/^	typedef void (TestUseThread::*functype)();$/;"	t	class:TestUseThread	file:
 gamma	gprof2dot.py	/^    gamma = 1.0$/;"	v
 getAllTrackData	unittest.cpp	/^void getAllTrackData(void)$/;"	f
 getAllTrackDataReserve	unittest.cpp	/^void getAllTrackDataReserve(void)$/;"	f
@@ -448,6 +464,8 @@ interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossi
 isCellIndexOutOfRange	CountCrossing_cuda.h	/^bool isCellIndexOutOfRange$/;"	f
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
+join	unittest.cpp	/^	void join()$/;"	f	class:TestThread
+join	unittest.cpp	/^	void join()$/;"	f	class:TestThread_MemFunc
 joystick	ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
 joystickTimer	ATFViewerMain.cpp	/^void ATFViewerMain::joystickTimer(int value)$/;"	f	class:ATFViewerMain
 joystickTimerId	ATFViewerMain.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMain
@@ -467,6 +485,7 @@ main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 main	gprof2dot.py	/^def main():$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 makeDBFileName	TrackDataManager.h	/^	void makeDBFileName(time_t day, std::string& dbfilenamestr)$/;"	f	class:TrackDataManager
+makeTimeSeparation	Paths.cpp	/^void Paths::makeTimeSeparation()$/;"	f	class:Paths
 make_function	gprof2dot.py	/^    def make_function(self, module, filename, name):$/;"	m	class:CallgrindParser
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
@@ -488,6 +507,7 @@ maxpenwidth	gprof2dot.py	/^    maxpenwidth = 8.0,$/;"	v
 memcpyDeviceToHost	CountCrossing_cuda.h	/^	void memcpyDeviceToHost(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeqConst
+minTimeWidth	Paths.h	/^	time_t minTimeWidth;$/;"	m	class:Paths
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.0), # black$/;"	v
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.85), # light gray$/;"	v
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 1.0, 0.90), # pink$/;"	v
@@ -499,6 +519,7 @@ minpenwidth	gprof2dot.py	/^    minpenwidth = 0.1,$/;"	v
 mktimeFromInt	CountCrossing.h	/^	time_t mktimeFromInt(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 multipleInput	gprof2dot.py	/^    multipleInput = False$/;"	v	class:Parser
 multipleInput	gprof2dot.py	/^    multipleInput = True$/;"	v	class:PstatsParser
+myfunc	unittest.cpp	/^typedef void (*myfunc)(void);$/;"	t	file:
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 naturalJoin	gprof2dot.py	/^def naturalJoin(values):$/;"	f
 next	gprof2dot.py	/^    def next(self):$/;"	m	class:XmlTokenizer
@@ -518,6 +539,7 @@ openMPTest	unittest.cpp	/^bool openMPTest()$/;"	f
 operator !=	Path.h	/^	bool operator !=(const Path& p) const$/;"	f	struct:Path
 operator !=	Path.h	/^	bool operator !=(const PathPoint& p) const$/;"	f	struct:PathPoint
 operator !=	Path.h	/^	bool operator !=(const std::string& s) const$/;"	f	struct:Path
+operator ()	unittest.cpp	/^	void operator ()()$/;"	f	struct:TestThreadFunc
 operator ==	Path.h	/^	bool operator ==(const Path& p) const$/;"	f	struct:Path
 operator ==	Path.h	/^	bool operator ==(const PathPoint& p) const$/;"	f	struct:PathPoint
 operator ==	Path.h	/^	bool operator ==(const std::string& s) const$/;"	f	struct:Path
@@ -578,6 +600,7 @@ past_time_index	Path.h	/^	int past_time_index;$/;"	m	struct:Path
 pathPoint	Path.h	/^	std::vector<PathPoint> pathPoint;$/;"	m	struct:Path
 paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
 paths	Paths.h	/^	std::vector<Path> paths;$/;"	m	class:Paths
+pathsBuffer	Paths.h	/^	std::vector<Path> pathsBuffer;$/;"	m	class:Paths
 percentage	gprof2dot.py	/^def percentage(p):$/;"	f
 pollingInterval	ATFViewerMain.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMain
 pos	gprof2dot.py	/^    def pos(self):$/;"	m	class:XmlTokenizer
@@ -594,6 +617,8 @@ readline	gprof2dot.py	/^    def readline(self):$/;"	m	class:PerfParser
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
+run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
+run	unittest.cpp	/^	void run()$/;"	f	class:TestThread_MemFunc
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
 sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
@@ -632,17 +657,25 @@ subSector	Sectors.h	/^	std::vector<SubSector> subSector;$/;"	m	struct:Sector
 subSectorCount	Sectors.h	/^	int subSectorCount;$/;"	m	struct:Sector
 success	unittest.cpp	/^	bool success;$/;"	m	struct:EstimateSpecResult	file:
 switchDisplaySector	Sectors.h	/^	void switchDisplaySector()$/;"	f	class:Sectors
+t	unittest.cpp	/^	T* const t;$/;"	m	class:TestThread_MemFunc	file:
+t	unittest.cpp	/^	TestThread_MemFunc<functype,TestUseThread> t;$/;"	m	class:TestUseThread	file:
 test	unittest.cpp	/^void test(bool test_result, bool& ret)$/;"	f
+testPThread	unittest.cpp	/^bool testPThread()$/;"	f
 testTrackDataManager	unittest.cpp	/^bool testTrackDataManager()$/;"	f
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
 textureWidth	Map.h	/^	int textureWidth;$/;"	m	class:Map
 themes	gprof2dot.py	/^themes = {$/;"	v
+thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread	file:
+thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread_MemFunc	file:
 time	Path.h	/^	time_t time;$/;"	m	struct:PathPoint
 time	unittest.cpp	/^	long long time;$/;"	m	struct:id_time	file:
 timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
+timeSeparation	Paths.h	/^	std::vector<time_t> timeSeparation;$/;"	m	class:Paths
+time_max	Paths.h	/^	time_t time_max;$/;"	m	class:Paths
+time_min	Paths.h	/^	time_t time_min;$/;"	m	class:Paths
 times	gprof2dot.py	/^def times(x):$/;"	f
 timestring	unittest.cpp	/^string timestring(time_t t)$/;"	f
 today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
@@ -672,3 +705,4 @@ xrange	gprof2dot.py	/^    xrange = range # No xrange in Python 3$/;"	v
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor
 ~DeviceSeq	CountCrossing_cuda.h	/^	~DeviceSeq()$/;"	f	class:DeviceSeq
 ~DeviceSeqConst	CountCrossing_cuda.h	/^	~DeviceSeqConst()$/;"	f	class:DeviceSeqConst
+~TestUseThread	unittest.cpp	/^	~TestUseThread()$/;"	f	class:TestUseThread
