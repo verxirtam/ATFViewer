@@ -84,11 +84,10 @@ void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
 
 void Paths::resetTime(void)
 {
-	int nmax = paths.size();
-	for(int n = 0; n < nmax; n++)
+	for(auto&& p: paths)
 	{
-		paths[n].past_time_index = 0;
-		paths[n].now_index = 0;
+		p.past_time_index = 0;
+		p.now_index = 0;
 	}
 }
 

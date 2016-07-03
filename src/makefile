@@ -22,7 +22,7 @@ COMMON_FLAGS := -pg -O0
 
 #g++のコンパイルのフラグ
 CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include
-CXXONLYFLAGS :=  -fopenmp
+CXXONLYFLAGS :=  -fopenmp -std=c++11
 
 #CUDA関連の設定
 
