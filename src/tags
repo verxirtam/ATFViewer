@@ -33,7 +33,7 @@ Button_START	Joystick.h	/^	Button_START = 7,$/;"	e	enum:KeyCode_F310
 Button_X	Joystick.h	/^	Button_X = 2,$/;"	e	enum:KeyCode_F310
 Button_Y	Joystick.h	/^	Button_Y = 3,$/;"	e	enum:KeyCode_F310
 CALLS	gprof2dot.py	/^CALLS = Event("Calls", 0, add, times)$/;"	v
-COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -O0$/;"	m
+COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLU -lGL -I\/usr\/include$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11$/;"	m
@@ -103,10 +103,11 @@ Path	Path.h	/^struct Path$/;"	s
 PathPoint	Path.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
 PathPoint	Path.h	/^struct PathPoint$/;"	s
 Path_H	Path.h	19;"	d
-Paths	Paths.h	/^	Paths():minTimeWidth(2 * 60 * 60), drawTimeWidth(600)$/;"	f	class:Paths
+Paths	Paths.h	/^	Paths():currentPaths(&paths), bufferPaths(&pathsBuffer), drawTimeWidth(600)$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
 Paths_H	Paths.h	20;"	d
 PerfParser	gprof2dot.py	/^class PerfParser(LineParser):$/;"	c
+Position	TimeSeparation.h	/^	enum Position$/;"	g	class:TimeSeparation
 Profile	gprof2dot.py	/^class Profile(Object):$/;"	c
 PstatsParser	gprof2dot.py	/^class PstatsParser:$/;"	c
 SAMPLES	gprof2dot.py	/^SAMPLES = Event("Samples", 0, add, times)$/;"	v
@@ -139,6 +140,8 @@ TestUseThread	unittest.cpp	/^class TestUseThread$/;"	c	file:
 Theme	gprof2dot.py	/^class Theme:$/;"	c
 TimeManager	TimeManager.h	/^class TimeManager$/;"	c
 TimeManager_H_	TimeManager.h	19;"	d
+TimeSeparation	TimeSeparation.h	/^	TimeSeparation(time_t _min = 0, time_t _max = 10, time_t _width = 100):min(_min), max(_max), width(_width), timeSequence()$/;"	f	class:TimeSeparation
+TimeSeparation	TimeSeparation.h	/^class TimeSeparation$/;"	c
 Timer	unittest.cpp	/^	Timer():startTime(0.0),endTime(0.0)$/;"	f	class:Timer
 Timer	unittest.cpp	/^class Timer$/;"	c	file:
 TrackDataManager	TrackDataManager.h	/^class TrackDataManager$/;"	c
@@ -265,6 +268,7 @@ bindDouble	DBAccessor.h	/^	void bindDouble(int i, double d)$/;"	f	class:DBAccess
 bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
 bindLongLong	DBAccessor.h	/^	void bindLongLong(int i, long long d)$/;"	f	class:DBAccessor
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
+bufferPaths	Paths.h	/^	std::vector<Path>* bufferPaths;$/;"	m	class:Paths
 build_profile	gprof2dot.py	/^    def build_profile(self, objects, nodes):$/;"	m	class:SysprofParser
 call_ratios	gprof2dot.py	/^    def call_ratios(self, event):$/;"	m	class:Profile
 call_re	gprof2dot.py	/^    call_re = re.compile(r'^\\s+(?P<address>[0-9a-fA-F]+)\\s+(?P<symbol>.*)\\s+\\((?P<module>[^)]*)\\)$')$/;"	v	class:PerfParser
@@ -314,9 +318,10 @@ counterCount	unittest.cpp	/^	int counterCount;$/;"	m	struct:EstimateSpecResult	f
 counter_device	CountCrossing.h	/^	std::vector<float> counter_device;$/;"	m	class:CountCrossing
 cudatestfunc_H_	cudatestfunc.h	20;"	d
 cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
+current	TimeSeparation.h	/^		current,$/;"	e	enum:TimeSeparation::Position
+currentIndex	TimeSeparation.h	/^	unsigned int currentIndex;$/;"	m	class:TimeSeparation
 currentPaths	Paths.h	/^	std::vector<Path>* currentPaths;$/;"	m	class:Paths
 currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
-currentTimeSeparationIndex	Paths.h	/^	time_t currentTimeSeparationIndex;$/;"	m	class:Paths
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
 device	CountCrossing_cuda.h	/^	T* device;$/;"	m	class:DeviceSeqConst
@@ -371,6 +376,7 @@ format	gprof2dot.py	/^    def format(self, val):$/;"	m	class:Event
 formats	gprof2dot.py	/^formats = {$/;"	v
 function1	unittest.cpp	/^	void function1()$/;"	f	class:TestUseThread	file:
 functype	unittest.cpp	/^	typedef void (TestUseThread::*functype)();$/;"	t	class:TestUseThread	file:
+futureMakeBuffer	Paths.h	/^	std::future<void> futureMakeBuffer;$/;"	m	class:Paths
 gamma	gprof2dot.py	/^    gamma = 1.0$/;"	v
 getAllTrackData	unittest.cpp	/^void getAllTrackData(void)$/;"	f
 getAllTrackDataReserve	unittest.cpp	/^void getAllTrackDataReserve(void)$/;"	f
@@ -399,8 +405,11 @@ getFunctionId	gprof2dot.py	/^    def getFunctionId(self, funcName):$/;"	m	class:
 getIndexCount	CountCrossing.h	/^	int getIndexCount(int i)$/;"	f	class:CountCrossing
 getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double distance)$/;"	f	class:Sectors
 getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
+getIntervalStatus	TimeSeparation.h	/^	void getIntervalStatus(Position p,time_t& start, time_t& end)$/;"	f	class:TimeSeparation
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
 getLongitudeFromDMS	Util.h	/^	static double getLongitudeFromDMS(std::string long_dms)$/;"	f	class:Util
+getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex()$/;"	f	class:TimeSeparation
+getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex(unsigned int i)$/;"	f	class:TimeSeparation
 getNowPoint	Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
@@ -447,6 +456,9 @@ idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingDeviceTemp
 imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingHostTemp
 imple	cudatestfunc.h	/^	static void imple$/;"	f	struct:countCrossingTemp
+inCurrentInterval	TimeSeparation.h	/^	bool inCurrentInterval(time_t t)$/;"	f	class:TimeSeparation
+inNextInterval	TimeSeparation.h	/^	bool inNextInterval(time_t t)$/;"	f	class:TimeSeparation
+inTheInterval	TimeSeparation.h	/^	bool inTheInterval(unsigned int i, time_t t)$/;"	f	class:TimeSeparation
 includesMaximumAltitude	Sectors.h	/^	bool includesMaximumAltitude;$/;"	m	struct:SubSector
 includesMinimumAltitude	Sectors.h	/^	bool includesMinimumAltitude;$/;"	m	struct:SubSector
 indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
@@ -454,10 +466,11 @@ init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
 init	Sectors.h	/^	void init(DBAccessor& dba)$/;"	f	class:Sectors
-initPathPoint	Paths.cpp	/^void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)$/;"	f	class:Paths
+initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:Paths
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
+initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 integrate	gprof2dot.py	/^    def integrate(self, outevent, inevent):$/;"	m	class:Profile
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
@@ -485,7 +498,7 @@ main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
 main	gprof2dot.py	/^def main():$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 makeDBFileName	TrackDataManager.h	/^	void makeDBFileName(time_t day, std::string& dbfilenamestr)$/;"	f	class:TrackDataManager
-makeTimeSeparation	Paths.cpp	/^void Paths::makeTimeSeparation()$/;"	f	class:Paths
+makePathsBuffer	Paths.cpp	/^void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
 make_function	gprof2dot.py	/^    def make_function(self, module, filename, name):$/;"	m	class:CallgrindParser
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
@@ -498,6 +511,7 @@ match_header	gprof2dot.py	/^    def match_header(self):$/;"	m	class:OprofilePars
 match_primary	gprof2dot.py	/^    def match_primary(self):$/;"	m	class:OprofileParser
 match_secondary	gprof2dot.py	/^    def match_secondary(self):$/;"	m	class:OprofileParser
 match_separator	gprof2dot.py	/^    def match_separator(self):$/;"	m	class:OprofileParser
+max	TimeSeparation.h	/^	time_t max;$/;"	m	class:TimeSeparation
 maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 0.0, 0.0), # black$/;"	v
 maxcolor	gprof2dot.py	/^    maxcolor = (0.0, 1.0, 0.5), # satured red$/;"	v
 maxfontsize	gprof2dot.py	/^    maxfontsize = 24.0,$/;"	v
@@ -507,7 +521,7 @@ maxpenwidth	gprof2dot.py	/^    maxpenwidth = 8.0,$/;"	v
 memcpyDeviceToHost	CountCrossing_cuda.h	/^	void memcpyDeviceToHost(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeqConst
-minTimeWidth	Paths.h	/^	time_t minTimeWidth;$/;"	m	class:Paths
+min	TimeSeparation.h	/^	time_t min;$/;"	m	class:TimeSeparation
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.0), # black$/;"	v
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 0.0, 0.85), # light gray$/;"	v
 mincolor	gprof2dot.py	/^    mincolor = (0.0, 1.0, 0.90), # pink$/;"	v
@@ -522,6 +536,7 @@ multipleInput	gprof2dot.py	/^    multipleInput = True$/;"	v	class:PstatsParser
 myfunc	unittest.cpp	/^typedef void (*myfunc)(void);$/;"	t	file:
 name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 naturalJoin	gprof2dot.py	/^def naturalJoin(values):$/;"	f
+next	TimeSeparation.h	/^		next$/;"	e	enum:TimeSeparation::Position
 next	gprof2dot.py	/^    def next(self):$/;"	m	class:XmlTokenizer
 nextDayTime	TimeManager.h	/^	static time_t nextDayTime(time_t t)$/;"	f	class:TimeManager
 node	gprof2dot.py	/^    def node(self, node, **attrs):$/;"	m	class:DotWriter
@@ -619,6 +634,7 @@ resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread_MemFunc
+runMakePathsBuffer	Paths.cpp	/^void Paths::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
 sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
@@ -630,6 +646,7 @@ setCenterOffsetLong	MapTransform.h	/^	void setCenterOffsetLong(GLdouble c_long)$
 setCountCrossingLoopParameters	CountCrossing_cuda.h	/^void setCountCrossingLoopParameters$/;"	f
 setEnd	CountCrossing.h	/^	void setEnd(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 setEnd	CountCrossing.h	/^	void setEnd(time_t e)$/;"	f	class:CountCrossing
+setNextInterval	TimeSeparation.h	/^	void setNextInterval()$/;"	f	class:TimeSeparation
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
 setQuery	TrackDataManager.h	/^	void setQuery(DBAccessor& dba, time_t start, time_t end, char n = ' ')$/;"	f	class:TrackDataManager
 setScale	MapTransform.h	/^	void setScale(GLdouble s)$/;"	f	class:MapTransform
@@ -673,9 +690,8 @@ time	unittest.cpp	/^	long long time;$/;"	m	struct:id_time	file:
 timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
-timeSeparation	Paths.h	/^	std::vector<time_t> timeSeparation;$/;"	m	class:Paths
-time_max	Paths.h	/^	time_t time_max;$/;"	m	class:Paths
-time_min	Paths.h	/^	time_t time_min;$/;"	m	class:Paths
+timeSeparation	Paths.h	/^	TimeSeparation timeSeparation;$/;"	m	class:Paths
+timeSequence	TimeSeparation.h	/^	std::vector< time_t > timeSequence;$/;"	m	class:TimeSeparation
 times	gprof2dot.py	/^def times(x):$/;"	f
 timestring	unittest.cpp	/^string timestring(time_t t)$/;"	f
 today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
@@ -696,6 +712,7 @@ validate	gprof2dot.py	/^    def validate(self):$/;"	m	class:Profile
 vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	file:
 vertexIndex	Map.h	/^	int vertexIndex;$/;"	m	struct:MapVertexIndex
+width	TimeSeparation.h	/^	time_t width;$/;"	m	class:TimeSeparation
 windowHeight	ATFViewerMain.h	/^	int windowHeight;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain
 wrap	gprof2dot.py	/^    wrap = False$/;"	v	class:DotWriter

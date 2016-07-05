@@ -31,32 +31,29 @@
 #include "DBAccessor.h"
 #include "TrackDataManager.h"
 #include "Path.h"
+#include "TimeSeparation.h"
+
 
 class Paths
 {
 private:
-	time_t timeWidth;
-	time_t timeMin;
-	time_t timeMax;
-	std::vector<time_t> timeSeparation;
-	time_t currentTimeSeparationIndex;
-	std::vector<Path>* currentPaths;
-	std::vector<Path>* bufferPaths;
+	TimeSeparation timeSeparation;
 	std::vector<Path> paths;
 	std::vector<Path> pathsBuffer;
+	std::vector<Path>* currentPaths;
+	std::vector<Path>* bufferPaths;
 	const unsigned int drawTimeWidth;
 	std::future<void> futureMakeBuffer;
-	void makeTimeSeparation();
-	void makePathsBuffer(std::vector<Path>& p, int time_separation_index);
-	void runMakePathsBuffer(std::vector<Path>& p, int time_separation_index);
+	void makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position);
+	void runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position);
 	void updatePastTimeIndex(Path& p, time_t past_time);
 	void updateNowIndex(Path& p, time_t now);
 	void drawPathLine(Path& p, time_t past_time, time_t now);
 public:
-	Paths():timeWidth(2 * 60 * 60), drawTimeWidth(600)
+	Paths():paths(), pathsBuffer(), currentPaths(&paths), bufferPaths(&pathsBuffer), drawTimeWidth(600)
 	{
 	}
-	void initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max);
+	void initPathPoint(time_t time_min, time_t time_max);
 	void drawPath(PathPoint& p, time_t now);
 	PathPoint getNowPoint(PathPoint& from, PathPoint& to, time_t time);
 	void resetTime(void);

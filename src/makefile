@@ -18,7 +18,7 @@ TARGET := $(shell basename `dirname \`pwd\``)
 TESTTARGET := unittest
 
 #NVCC、g++共通のフラグ（デバッグ出力、最適化レベル）:デバッグ用
-COMMON_FLAGS := -pg -O0
+COMMON_FLAGS := -pg -g -O0
 
 #g++のコンパイルのフラグ
 CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLU -lGL -I/usr/include

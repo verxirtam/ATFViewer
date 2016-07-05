@@ -21,46 +21,49 @@
 using namespace std;
 
 
-void Paths::makeTimeSeparation()
+void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)
 {
+	cout << "Paths::makePathsBuffer() start." << endl;
 	
-	this->timeSeparation.clear();
-	
-	time_t time_width = this->timeMax - this->timeMin;
-	//timeWidth未満の場合は区間は1つのみ
-	if(time_width <= timeWidth)
-	{
-		timeSeparation.push_back(this->timeMin);
-		timeSeparation.push_back(this->timeMax);
-		return;
-	}
-	//timeWidth間隔に時刻を設定する
-	//最後の区間は手前の区間と一緒にする
-	time_t t = this->timeMin;
-	for(;t < this->timeMax - timeWidth; t += timeWidth)
-	{
-		timeSeparation.push_back(t);
-	}
-	timeSeparation.push_back(this->timeMax);
-	
-	this->currentTimeSeparationIndex = 0;
-}
-
-void Paths::makePathsBuffer(std::vector<Path>& p, int time_separation_index)
-{
+	//古いデータを削除する
 	p.clear();
-	time_t time_start = timeSeparation[time_separation_index    ] - this->drawTimeWidth;
-	time_t time_end   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
+	//DBから取得する開始時刻・終了時刻
+	time_t time_start;// = this->timeSeparation - this->drawTimeWidth;
+	time_t time_end;//   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
 	
+	//時間の区間の開始・終了時刻を取得する
+	this->timeSeparation.getIntervalStatus(position, time_start, time_end);
+	
+	//前後にバッファを持たせる(過去分の起動も表示するため)
+	time_start -= drawTimeWidth;
+	time_end += drawTimeWidth;
+	
+	
+	cout << "Paths::makePathsBuffer(): ";
+	cout << "time_start = " << time_start;
+	cout << ", time_end = " << time_end << endl;
+	
+	
+	//トラックデータの取得
 	TrackDataManager tdm;
 	tdm.getTrackDataFromDBParallel(p, time_start, time_end);
 	
+	cout << "Paths::makePathsBuffer() end." << endl;
 }
 
-void Paths::runMakePathsBuffer(std::vector<Path>& p, int time_separation_index)
+void Paths::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)
 {
-	auto _f = [&]{this->makePathsBuffer(p, time_separation_index);};
+	cout << "Paths::runMakePathsBuffer() start." << endl;
+	
+	//スレッドで実行するラムダ式
+	//this : メンバ変数を実行するのでコピーキャプチャする
+	//p : 書き換えるので参照キャプチャする
+	//position : 1次変数なのでコピーキャプチャする
+	auto _f = [this,&p,position]{this->makePathsBuffer(p, position);};
+	//スレッド起動
 	futureMakeBuffer = std::async(std::launch::async, _f);
+	
+	cout << "Paths::runMakePathsBuffer() end." << endl;
 }
 void Paths::drawPath(PathPoint& p, time_t now)
 {
@@ -80,11 +83,18 @@ void Paths::drawPath(PathPoint& p, time_t now)
 	//目的空港の文字列に応じて配色する
 	double alpha = 1.0 - (((double)(now - p.time)) / ((double)drawTimeWidth));
 	
-	int a0 = p.arrival[0] - 65;
-	int a1 = p.arrival[1] - 65;
-	int a2 = p.arrival[2] - 65;
-	int h = a2 * 29 * 29 + a1 * 29 + a0;
-
+	int h;
+	if(p.arrival.size() != 3)
+	{
+		h = 0;
+	}
+	else
+	{
+		int a0 = p.arrival[0] - 65;
+		int a1 = p.arrival[1] - 65;
+		int a2 = p.arrival[2] - 65;
+		h = a2 * 29 * 29 + a1 * 29 + a0;
+	}
 	double r = ((double)(h % 251)) / 251.0;
 	double g = ((double)((h * h) % 251)) / 251.0;
 	double b = ((double)((h * h * h) % 251)) / 251.0;
@@ -118,15 +128,27 @@ PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)
 	return ret;
 }
 
-void Paths::initPathPoint(DBAccessor& dba, time_t time_min, time_t time_max)
+void Paths::initPathPoint(time_t time_min, time_t time_max)
 {
-	TrackDataManager tdm;
-	tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
+	//timeSeparationの初期化
+	this->timeSeparation = TimeSeparation(time_min, time_max, 2 * 60 * 60);
+	
+	
+	//バッファの取得を別スレッドで実行
+	//メインスレッドと合わせて同時取得する
+	this->runMakePathsBuffer(*bufferPaths, TimeSeparation::Position::next);
+	//メインスレッドで直近で使用するトラックデータを取得
+	this->makePathsBuffer(*currentPaths, TimeSeparation::Position::current);
+	
+	
+	
+	//TrackDataManager tdm;
+	//tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
 }
 
 void Paths::resetTime(void)
 {
-	for(auto&& p: paths)
+	for(auto&& p: *currentPaths)
 	{
 		p.past_time_index = 0;
 		p.now_index = 0;
@@ -206,6 +228,32 @@ void Paths::drawPathLine(Path& p, time_t past_time, time_t now)
 
 int Paths::display(time_t now)
 {
+	
+	if(timeSeparation.inNextInterval(now))
+	{
+		//別スレッドでのデータ取得の完了を待つ
+		futureMakeBuffer.wait();
+		cout << "futureMakeBuffer.wait() finish." << endl;
+		
+		cout << "(*currentPaths).size() = " << (*currentPaths).size() << endl;
+		cout << " (*bufferPaths).size() = " <<  (*bufferPaths).size() << endl;
+		
+		//バッファの入れ替え
+		vector<Path>* dummy = bufferPaths;
+		bufferPaths = currentPaths;
+		currentPaths = dummy;
+		
+		//now_indexとpast_time_indexの初期化
+		this->resetTime();
+		//区間を1つ進める
+		timeSeparation.setNextInterval();
+		
+		//別スレッドで次の区間のトラックデータ取得開始
+		this->runMakePathsBuffer(*bufferPaths, TimeSeparation::Position::next);
+		
+	}
+	
+	
 	//航空機の軌道っぽいものを描く
 	//隠面消去を無効にする
 	//アルファブレンドで奥の透明オブジェクトが描画されないことがあるため
@@ -222,9 +270,8 @@ int Paths::display(time_t now)
 	int ret = 0;
 	
 	//航空機毎に軌道を描画する
-	for (unsigned int n = 0; n < paths.size(); n++)
+	for (auto&& p: *currentPaths)
 	{
-		Path& p = paths[n];
 		
 		//past_timeより過去の軌道は描かない
 		if (p.pathPoint.rbegin()->time < past_time )

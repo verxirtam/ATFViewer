@@ -32,7 +32,7 @@ void ATFViewerMain::initScene(void)
 	
 	cout<<"\tpaths.initPathPoint() start"<<endl;
 	//軌道の初期化
-	paths.initPathPoint(dba, timeMin, timeMax);
+	paths.initPathPoint(timeMin, timeMax);
 	cout<<"\tpaths.initPathPoint() end"<<endl;
 	
 	cout<<"\tfixes.init() start"<<endl;
