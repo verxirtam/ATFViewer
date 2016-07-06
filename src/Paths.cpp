@@ -46,7 +46,7 @@ void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position posit
 	
 	//トラックデータの取得
 	TrackDataManager tdm;
-	tdm.getTrackDataFromDBParallel(p, time_start, time_end);
+	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 4);
 	
 	cout << "Paths::makePathsBuffer() end." << endl;
 }

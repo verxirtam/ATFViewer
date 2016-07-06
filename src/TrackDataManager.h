@@ -24,6 +24,8 @@
 #include <sstream>
 #include <algorithm>
 
+#include <omp.h>
+
 #include "DBAccessor.h"
 #include "Path.h"
 #include "TimeManager.h"
@@ -227,7 +229,7 @@ public:
 	}
 	//OpenMPで並列化したgetTrackDataFromDBToMap()
 	//mapからなるvectorに結果を格納する。vectorの要素が各スレッドに割り当てられる
-	void getTrackDataFromDBToMapParallel(std::vector<std::map<std::string, Path> >& p, time_t start,time_t end)
+	void getTrackDataFromDBToMapParallel(std::vector<std::map<std::string, Path> >& p, time_t start, time_t end, int thread_count = 0)
 	{
 		//開始日を求める
 		time_t start_day = TimeManager::today(start);
@@ -241,6 +243,16 @@ public:
 		for(int i = 0; i < N; i++)
 		{
 			p.push_back(std::map<std::string, Path>());
+		}
+		
+		//起動するスレッド数の設定
+		if(thread_count <= 0)
+		{
+			omp_set_num_threads(omp_get_max_threads());
+		}
+		else
+		{
+			omp_set_num_threads(thread_count);
 		}
 		//これ以降が並列化
 		#pragma omp parallel for
@@ -261,11 +273,12 @@ public:
 		(
 			std::vector<Path>& p,
 			time_t start,
-			time_t end
+			time_t end,
+			int thread_count = 0
 		)
 	{
 		std::vector<std::map<std::string, Path> > mp;
-		getTrackDataFromDBToMapParallel(mp, start, end);
+		getTrackDataFromDBToMapParallel(mp, start, end, thread_count);
 		
 		//pの領域確保
 		int mp_totalsize = 0;

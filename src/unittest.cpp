@@ -800,7 +800,7 @@ bool MapParallelTest2()
 	timer[0].end();
 	
 	timer[1].start();
-	tdm.getTrackDataFromDBParallel(p[1], start, end);
+	tdm.getTrackDataFromDBParallel(p[1], start, end, 6);
 	timer[1].end();
 	
 	cout << "tdm.getTrackDataFromDB() time: "         << timer[0].getTime() << endl;
@@ -999,8 +999,8 @@ int main(int argc, char const* argv[])
 	
 	//test(openMPTest(), ret);
 	
-	//test(MapParallelTest(), ret);
-	//test(MapParallelTest2(), ret);
+	test(MapParallelTest(), ret);
+	test(MapParallelTest2(), ret);
 	
 	test(testPThread(), ret);
 	

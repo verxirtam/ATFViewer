@@ -179,6 +179,7 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/c++/4.8/bits/algorithmfwd.h \
     /usr/include/c++/4.8/bits/stl_heap.h \
     /usr/include/c++/4.8/bits/stl_tempbuf.h \
+    /usr/lib/gcc/x86_64-linux-gnu/4.8/include/omp.h \
     DBAccessor.h \
     /usr/include/c++/4.8/iostream \
     /usr/include/sqlite3.h \
