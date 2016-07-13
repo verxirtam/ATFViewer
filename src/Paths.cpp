@@ -28,8 +28,8 @@ void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position posit
 	//古いデータを削除する
 	p.clear();
 	//DBから取得する開始時刻・終了時刻
-	time_t time_start;// = this->timeSeparation - this->drawTimeWidth;
-	time_t time_end;//   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
+	time_t time_start = 0;// = this->timeSeparation - this->drawTimeWidth;
+	time_t time_end = 0;//   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
 	
 	//時間の区間の開始・終了時刻を取得する
 	this->timeSeparation.getIntervalStatus(position, time_start, time_end);
@@ -46,7 +46,7 @@ void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position posit
 	
 	//トラックデータの取得
 	TrackDataManager tdm;
-	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 4);
+	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 6);
 	
 	cout << "Paths::makePathsBuffer() end." << endl;
 }

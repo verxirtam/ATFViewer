@@ -54,6 +54,10 @@ void ATFViewerMain::initScene(void)
 	}
 	cout<<"\tmap[].init() end"<<endl;
 
+	
+	//テスト用VBOの初期化
+	tv.init();
+	
 	//デプスバッファを使用する
 	glEnable(GL_DEPTH_TEST);
 	
@@ -182,14 +186,16 @@ void ATFViewerMain::display(void)
 	}
 
 	//フィックスを描画する
-	fixes.display();
+	//fixes.display();
 
 	//セクタを描画する
-	sectors.display();
-
+	//sectors.display();
+	
+	//TestVBOの描画
+	tv.display();
 
 	//航空機の軌道を描画する
-	account = paths.display(now);
+	//account = paths.display(now);
 
 	//クリッピング平面の無効化
 	glDisable(GL_CLIP_PLANE0);

@@ -28,7 +28,8 @@
 #include <cmath>
 #include <ctime>
 
-#include <GL/glut.h>
+
+#include "OpenGLHeaders.h"
 
 #include "DBAccessor.h"
 #include "BitmapString.h"
@@ -38,7 +39,7 @@
 #include "Fixes.h"
 #include "Sectors.h"
 #include "Joystick.h"
-
+#include "TestVBO.h"
 
 class ATFViewerMain
 {
@@ -56,6 +57,7 @@ private:
 	int disp_X;
 	int disp_Y;
 	int disp_Z;
+	TestVBO tv;
 	//デバッグ用 ここまで
 	GLdouble camera_r;
 	GLdouble camera_theta;
@@ -79,6 +81,7 @@ private:
 		joystickTimerId(1),
 		timeInterval(20),//5),
 		currentTimeInterval(timeInterval),
+		tv(),
 		camera_r(30.0),
 		camera_theta(270.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
@@ -155,14 +158,23 @@ public:
 	}
 	void init(void)
 	{
+		std::cout << "ATFViewerMain::init()" << std::endl;
+		
 		int argc=0;
 		char* argv[]={};
 		//GLUTの初期化
 		glutInit(&argc,argv);
+		std::cout << "glutInit(&argc,argv) end." << std::endl;
 		//ディスプレイモードの設定
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 		//ウィンドウの生成
 		glutCreateWindow("ATFViewer");
+		GLenum err;
+		err = glewInit();
+		if(err != GLEW_OK)
+		{
+			std::cout << "error at glewInit()." << std::endl;
+		}
 		//画面更新関数の設定
 		glutDisplayFunc(ATFViewerMain::_display);
 		//画面リサイズ時に実行される関数の設定

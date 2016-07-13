@@ -254,6 +254,7 @@ public:
 		{
 			omp_set_num_threads(thread_count);
 		}
+		std::cout << "pragma omp parallel for start." << std::endl;
 		//これ以降が並列化
 		#pragma omp parallel for
 		for(int i = 0; i < N; i++)
@@ -268,6 +269,7 @@ public:
 				getTrackDataFromDBToMapWithDay(p[i], start, end, d,id_last_char[i]);
 			}
 		}
+		std::cout << "pragma omp parallel for end." << std::endl;
 	}
 	void getTrackDataFromDBParallel
 		(
@@ -277,9 +279,14 @@ public:
 			int thread_count = 0
 		)
 	{
-		std::vector<std::map<std::string, Path> > mp;
-		getTrackDataFromDBToMapParallel(mp, start, end, thread_count);
+		std::cout << "getTrackDataFromDBParallel() start." << std::endl;
 		
+		std::vector<std::map<std::string, Path> > mp;
+		std::cout << "getTrackDataFromDBToMapParallel() start." << std::endl;
+		getTrackDataFromDBToMapParallel(mp, start, end, thread_count);
+		std::cout << "getTrackDataFromDBToMapParallel() end." << std::endl;
+		
+		std::cout << "reserve p start." << std::endl;
 		//pの領域確保
 		int mp_totalsize = 0;
 		int mp_size = mp.size();
@@ -288,7 +295,9 @@ public:
 			mp_totalsize += mp[i].size();
 		}
 		p.reserve(mp_totalsize);
+		std::cout << "reserve p end." << std::endl;
 		
+		std::cout << "copy mp to p start." << std::endl;
 		//mpからpへコピー
 		for(int i = 0; i < mp_size; i++)
 		{
@@ -299,6 +308,8 @@ public:
 				p.push_back(j->second);
 			}
 		}
+		std::cout << "copy mp to p end." << std::endl;
+		std::cout << "getTrackDataFromDBParallel() end." << std::endl;
 	}
 };
 

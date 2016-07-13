@@ -1,0 +1,10 @@
+スレッド数=１
+バックバッファの準備待ちが発生
+
+スレッド数=2
+若干のもたつきが見られる
+一瞬待ちが発生した
+
+スレッド数=4
+Paths::makePathsBuffer()実行中にもたつきがあるように見える。
+getTrackDataFromDBToMapParallel()実行中がもたつく。
