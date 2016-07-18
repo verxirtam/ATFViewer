@@ -26,7 +26,7 @@
 #include <sstream>
 #include <vector>
 
-#include <GL/glut.h>
+#include "OpenGLHeaders.h"
 
 #include "Util.h"
 #include "DBAccessor.h"
