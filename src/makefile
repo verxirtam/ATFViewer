@@ -31,7 +31,8 @@ CXXONLYFLAGS :=  -fopenmp -std=c++11
 NVCC := nvcc
 
 #CUDAコンパイルオプション
-NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13
+NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp
+#NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13
 
 #CUDAリンクオプション
 NVCC_LINKS := -lcuda -lcudart
