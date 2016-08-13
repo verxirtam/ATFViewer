@@ -195,7 +195,7 @@ void ATFViewerMain::display(void)
 	tv.display();
 
 	//航空機の軌道を描画する
-	//account = paths.display(now);
+	account = paths.display(now);
 
 	//クリッピング平面の無効化
 	glDisable(GL_CLIP_PLANE0);

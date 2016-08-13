@@ -61,16 +61,16 @@ void CountCrossing::countCrossingSequenceDevice
 	switch(dimension)
 	{
 	case 1:
-		countCrossingSequenceDeviceImple<1,512>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
+		countCrossingSequenceDeviceImple<1,1024>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
 		break;
 	case 2:
-		countCrossingSequenceDeviceImple<2,512>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
+		countCrossingSequenceDeviceImple<2,1024>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
 		break;
 	case 3:
-		countCrossingSequenceDeviceImple<3,512>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
+		countCrossingSequenceDeviceImple<3,1024>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
 		break;
 	case 4:
-		countCrossingSequenceDeviceImple<4,512>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
+		countCrossingSequenceDeviceImple<4,1024>(vertex,vertexequencecount,interval,startindex,indexcount,counter);
 		break;
 	}
 }

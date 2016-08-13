@@ -17,6 +17,10 @@ TARGET := $(shell basename `dirname \`pwd\``)
 #テストを実行する
 TESTTARGET := unittest
 
+#テスト用のターゲット
+#画面表示を伴うテストを行う
+GLTESTTARGET := glunittest
+
 #NVCC、g++共通のフラグ（デバッグ出力、最適化レベル）:デバッグ用
 COMMON_FLAGS := -pg -g -O0
 #COMMON_FLAGS := 
@@ -51,10 +55,13 @@ CUDA_SRCS := $(shell ls *.cu)
 OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)
 
 #ターゲット用のオブジェクトファイル
-OBJSTARGET := $(filter-out $(TESTTARGET).o, $(OBJS))
+OBJSTARGET := $(filter-out $(TESTTARGET).o $(GLTESTTARGET).o, $(OBJS))
 
 #テスト用のオブジェクトファイル
-OBJSTEST := $(filter-out $(TARGET).o, $(OBJS))
+OBJSTEST := $(filter-out $(TARGET).o $(GLTESTTARGET).o, $(OBJS))
+
+#テスト用のオブジェクトファイル
+OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))
 
 #依存関係ファイル
 DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
@@ -65,7 +72,7 @@ DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
 #全てコンパイルする
 #先頭に書いたコマンドはmakeコマンドでオプション無しで実行される
 .PHONY: all
-all: $(TARGET) $(TESTTARGET)
+all: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 
 .PHONY: run
 run: $(TARGET)
@@ -78,6 +85,13 @@ run: $(TARGET)
 test: $(TESTTARGET)
 	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
 	gprof $(TESTTARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
+
+#画面テストの実行ファイルを実行する
+#ログと標準出力両方に出力する
+.PHONY: test
+gltest: $(GLTESTTARGET)
+	./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
+	gprof $(GLTESTTARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 
 #実行ファイルの作成
 #オプションは最後に指定する
@@ -93,6 +107,10 @@ $(TARGET): $(OBJSTARGET)
 $(TESTTARGET): $(OBJSTEST)
 	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
 
+#画面テスト用の実行ファイルを作成
+$(GLTESTTARGET): $(OBJSGLTEST)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
+
 #オブジェクトファイルの作成
 #"-MMD"オプションによって依存関係ファイル(*.d)も同時に作成する
 %.o: %.cpp
@@ -106,7 +124,7 @@ $(TESTTARGET): $(OBJSTEST)
 #".PHONY"はターゲットではなくコマンドであることを明示するためのコマンド
 .PHONY: clean
 clean:
-	$(RM) $(TARGET) $(TESTTARGET) $(OBJS) $(DEPS)
+	$(RM) $(TARGET) $(TESTTARGET) $(GLTESTTARGET) $(OBJS) $(DEPS)
 
 #依存関係ファイルをインクルードする
 #先頭に”-”を書いているので依存関係ファイルがなくてもエラーとならない
