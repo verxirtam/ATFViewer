@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  Map.h
+ *       Filename:  MapVAO.h
  *
  *    Description:  マップを描画する
  *
@@ -32,32 +32,20 @@
 #include "DBAccessor.h"
 
 #include "TextureShaderProgram.h"
-
-struct MapVertex
-{
-	double longitude;
-	double latitude;
-	double u;
-	double v;
-};
-
-struct MapVertexIndex
-{
-	int vertexIndex;
-};
+#include "Texture2D.h"
 
 
 
 
-class Map
+class MapVAO
 {
 private:
 	struct MapVertex
 	{
-		double longitude;
-		double latitude;
-		double u;
-		double v;
+		float longitude;
+		float latitude;
+		float u;
+		float v;
 	};
 	
 	struct MapVertexIndex
@@ -65,23 +53,28 @@ private:
 		int vertexIndex;
 	};
 	std::string mapId;
-	GLuint textureName[1];
 	int textureWidth;
 	int textureHeight;
+	Texture2D texture;
 	std::vector<MapVertex> mapVertex;
 	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
+	TextureShaderProgram::vaoType vao;
+	void getSettings(DBAccessor& dba, std::string& map_id, std::string& texture_file_name);
+	void getVertex(DBAccessor& dba,std::string& map_id);
+	void getVertexIndex(DBAccessor& dba,std::string& map_id);
+	void initVAO(void);
 public:
-	Map(const std::string& map_id):
+	MapVAO(const std::string& map_id,TextureShaderProgram& s):
 		mapId(map_id),
+		textureWidth(0),
+		textureHeight(0),
+		texture(GL_TEXTURE0),
 		mapVertex(),
-		mapVertexIndex()
+		mapVertexIndex(),
+		vao(s,texture)
 	{
 	}
 	void init(DBAccessor& dba);
-	void getSettings(DBAccessor& dba, std::string& map_id, std::string& texture_file_name);
-	void initTexture(std::string& texture_file_name);
-	void getVertex(DBAccessor& dba,std::string& map_id);
-	void getVertexIndex(DBAccessor& dba,std::string& map_id);
 	void display(void);
 };
 

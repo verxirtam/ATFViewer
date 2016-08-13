@@ -15,20 +15,17 @@
  *
  * =====================================================================================
  */
-#include "Map.h"
+#include "MapVAO.h"
 
-void Map::init(DBAccessor& dba)
+void MapVAO::init(DBAccessor& dba)
 {
 	std::string texture_file_name;
 
 	getSettings(dba,mapId,texture_file_name);
-	initTexture(texture_file_name);
+	texture.init(texture_file_name, textureWidth, textureHeight);
 	getVertex(dba,mapId);
 	getVertexIndex(dba,mapId);
-	
-	
-	
-	
+	initVAO();
 	/*
 	//Vertexの内容を標準出力に表示する
 	std::cout<<"mapVertex"<<std::endl;
@@ -60,7 +57,7 @@ void Map::init(DBAccessor& dba)
 	*/
 }
 
-void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)
+void MapVAO::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)
 {
 	std::stringstream sql("");
 	sql << "select textureFileName, width, height from Map where mapId='";
@@ -77,47 +74,8 @@ void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_
 	}
 
 }
-void Map::initTexture(std::string& texture_file_name)
-{
-	
-	GLubyte* texture = new GLubyte[textureWidth * textureHeight * 3];
-	
-	//テクスチャファイルのファイルポインタ
-	std::FILE* fp;
-	//テクスチャファイルの読み込み
-	if ((fp = std::fopen(texture_file_name.c_str(), "rb")) != NULL)
-	{
-		//std::fread(texture, sizeof(texture),1,fp);
-		std::fread(texture, sizeof(GLubyte) * textureWidth * textureHeight * 3,1,fp);
-		std::fclose(fp);
-	}
-	else
-	{
-		printf("error.\n");
-		std::perror(texture_file_name.c_str());
-	}
-	//テクスチャ名の取得
-	glGenTextures(1, textureName);
-	
-	//画像データの格納方式を指定する(1画素が何バイト単位かを指定)
-	glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
 
-	//設定するテクスチャの指定
-	glBindTexture(GL_TEXTURE_2D, textureName[0]);
-	
-	//テクスチャの割り当て
-	gluBuild2DMipmaps(GL_TEXTURE_2D, GL_RGB, textureWidth, textureHeight, GL_RGB , GL_UNSIGNED_BYTE, texture);
-	//テクスチャを拡大・縮小するときの保管方法を設定 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	
-	//無名テクスチャに指定し直す
-	glBindTexture(GL_TEXTURE_2D, 0);
-	
-	delete[] texture;
-}
-
-void Map::getVertex(DBAccessor& dba,std::string& map_id)
+void MapVAO::getVertex(DBAccessor& dba,std::string& map_id)
 {
 	//クエリの作成
 	std::stringstream sql("");
@@ -139,7 +97,7 @@ void Map::getVertex(DBAccessor& dba,std::string& map_id)
 		int vertex_index = dba.getColumnInt(0);
 		if(vindex != vertex_index)
 		{
-			std::cout<<"error on Map::getVertex()"<<std::endl;
+			std::cout<<"error on MapVAO::getVertex()"<<std::endl;
 			return;
 		}
 		vindex++;
@@ -147,12 +105,12 @@ void Map::getVertex(DBAccessor& dba,std::string& map_id)
 		MapVertex mv;
 		mv.longitude = Util::getLongitudeFromDMS(dba.getColumnString(1));
 		mv.latitude = Util::getLatitudeFromDMS(dba.getColumnString(2));
-		mv.u = ((double)(dba.getColumnInt(3)))/((double)(textureWidth));
-		mv.v =((double)(dba.getColumnInt(4)))/((double)(textureHeight));
+		mv.u =((float)(dba.getColumnInt(3)))/((float)(textureWidth));
+		mv.v =((float)(dba.getColumnInt(4)))/((float)(textureHeight));
 		mapVertex.push_back(mv);
 	}
 }
-void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)
+void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id)
 {
 	
 	//クエリの作成
@@ -183,7 +141,7 @@ void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)
 		int vertex_index_index = dba.getColumnInt(1);
 		if(viindex != vertex_index_index)
 		{
-			std::cout<<"error on Map::getVertexIndex()"<<std::endl;
+			std::cout<<"error on MapVAO::getVertexIndex()"<<std::endl;
 			return;
 		}
 		viindex++;
@@ -194,53 +152,57 @@ void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)
 	}
 }
 
-void Map::display(void)
+void MapVAO::initVAO(void)
 {
-	//緯度経度座標系での描画
 	
-	//世界地図を描く
-	glColor3d(1.0,1.0,1.0);
-	//設定するテクスチャの指定
-	glBindTexture(GL_TEXTURE_2D, textureName[0]);
-	//テクスチャマップを有効にする
-	glEnable(GL_TEXTURE_2D);
+	std::vector<float> p;
+	std::vector<float> t;
 	
-	int imax = mapVertexIndex.size();
+	std::vector<unsigned int> e;
+	
+	int imax = mapVertex.size();
 	for(int i = 0; i < imax; i++)
 	{
-		glBegin(GL_TRIANGLE_STRIP);
-		int jmax = mapVertexIndex[i].size();
-		for (int j = 0; j < jmax; j++)
-		{
-			int vi = mapVertexIndex[i][j].vertexIndex;
-			glTexCoord2d(mapVertex[vi].u, mapVertex[vi].v);
-			glVertex3d(mapVertex[vi].longitude, mapVertex[vi].latitude, 0.0);
-		}
-		glEnd();
+		p.push_back((float)mapVertex[i].longitude);
+		p.push_back((float)mapVertex[i].latitude);
+		p.push_back(0.0f);
+		
+		t.push_back((float)mapVertex[i].u);
+		t.push_back((float)mapVertex[i].v);
 	}
 	
-	//テクスチャマップを無効にする
-	glDisable(GL_TEXTURE_2D);
-	//無名テクスチャに指定し直す
-	glBindTexture(GL_TEXTURE_2D, 0);
-
-	//罫線を描画する
-	glBegin(GL_LINES);
-	glColor3d(0.0,1.0,0.0);
-	glVertex3d(137.0,34.0,10.0);glVertex3d(145.0,34.0,10.0);
-	glVertex3d(137.0,35.0,10.0);glVertex3d(145.0,35.0,10.0);
-	glVertex3d(137.0,36.0,10.0);glVertex3d(145.0,36.0,10.0);
-	glVertex3d(137.0,37.0,10.0);glVertex3d(145.0,37.0,10.0);
-	glVertex3d(137.0,38.0,10.0);glVertex3d(145.0,38.0,10.0);
-	glVertex3d(137.0,39.0,10.0);glVertex3d(145.0,39.0,10.0);
+	imax = mapVertexIndex.size();
+	for(int i = 0; i < imax; i++)
+	{
+		int jmax = mapVertexIndex[i].size();
+		if(( 0 < i ) && ( 0 < jmax ))
+		{
+			e.push_back(mapVertexIndex[i][0].vertexIndex);
+		}
+		for (int j = 0; j < jmax; j++)
+		{
+			e.push_back(mapVertexIndex[i][j].vertexIndex);
+		}
+		if((i < imax - 1) && ( 0 < jmax ))
+		{
+			e.push_back(mapVertexIndex[i][jmax -1].vertexIndex);
+		}
+	}
 	
-	glVertex3d(138.0,33.0,10.0);glVertex3d(138.0,39.0,10.0);
-	glVertex3d(139.0,33.0,10.0);glVertex3d(139.0,39.0,10.0);
-	glVertex3d(140.0,33.0,10.0);glVertex3d(140.0,39.0,10.0);
-	glVertex3d(141.0,33.0,10.0);glVertex3d(141.0,39.0,10.0);
-	glVertex3d(142.0,33.0,10.0);glVertex3d(142.0,39.0,10.0);
-	glVertex3d(143.0,33.0,10.0);glVertex3d(143.0,39.0,10.0);
-	glVertex3d(144.0,33.0,10.0);glVertex3d(144.0,39.0,10.0);
-	glEnd();
+	std::cout << "p.size() = " << p.size() << std::endl;
+	std::cout << "t.size() = " << t.size() << std::endl;
+	std::cout << "e.size() = " << e.size() << std::endl;
+	
+	//imax = p.size();
+	//for(int i = 0; i < imax; i++)
+	//{
+	//	std::cout << p[i] << "\t";
+	//}
+	
+	this->vao.init(p,t,e,GL_TRIANGLE_STRIP);
+}
+void MapVAO::display(void)
+{
+	this->vao.display();
 }
 
