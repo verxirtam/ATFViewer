@@ -52,25 +52,25 @@ private:
 	{
 		int vertexIndex;
 	};
+	struct InitMapSetting
+	{
+		std::string textureFileName;
+		int textureWidth;
+		int textureHeight;
+		std::vector<MapVertex> mapVertex;
+		std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
+	};
 	std::string mapId;
-	int textureWidth;
-	int textureHeight;
 	Texture2D texture;
-	std::vector<MapVertex> mapVertex;
-	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
 	TextureShaderProgram::vaoType vao;
-	void getSettings(DBAccessor& dba, std::string& map_id, std::string& texture_file_name);
-	void getVertex(DBAccessor& dba,std::string& map_id);
-	void getVertexIndex(DBAccessor& dba,std::string& map_id);
-	void initVAO(void);
+	void getSettings(DBAccessor& dba, std::string& map_id, InitMapSetting& ims);
+	void getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);
+	void getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);
+	void initVAO(InitMapSetting& ims);
 public:
 	MapVAO(const std::string& map_id,TextureShaderProgram& s):
 		mapId(map_id),
-		textureWidth(0),
-		textureHeight(0),
 		texture(GL_TEXTURE0),
-		mapVertex(),
-		mapVertexIndex(),
 		vao(s,texture)
 	{
 	}

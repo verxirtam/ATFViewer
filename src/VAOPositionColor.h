@@ -50,6 +50,11 @@ public:
 	{
 		glGenVertexArrays(1, &handle);
 	}
+	~VAOPositionColorBase()
+	{
+		glDeleteVertexArrays(1, &handle);
+	}
+	
 	void bind()
 	{
 		glBindVertexArray(handle);

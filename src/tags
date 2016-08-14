@@ -72,6 +72,7 @@ GLTESTTARGET	makefile	/^GLTESTTARGET := glunittest$/;"	m
 GRAY_COLORMAP	gprof2dot.py	/^GRAY_COLORMAP = Theme($/;"	v
 GprofParser	gprof2dot.py	/^class GprofParser(Parser):$/;"	c
 HProfParser	gprof2dot.py	/^class HProfParser(LineParser):$/;"	c
+InitMapSetting	MapVAO.h	/^	struct InitMapSetting$/;"	s	class:MapVAO
 Joystick	Joystick.h	/^	Joystick():$/;"	f	class:Joystick
 Joystick	Joystick.h	/^class Joystick$/;"	c
 Joystick_H_	Joystick.h	20;"	d
@@ -84,21 +85,19 @@ MAP_H_	MapVAO.h	21;"	d
 MULTIPLICATION_SIGN	gprof2dot.py	/^MULTIPLICATION_SIGN = unichr(0xd7)$/;"	v
 Map	Map.h	/^	Map(const std::string& map_id):$/;"	f	class:Map
 Map	Map.h	/^class Map$/;"	c
-Map	MapVAO.h	/^	Map(const std::string& map_id):$/;"	f	class:MapVAO
 MapParallelTest	unittest.cpp	/^bool MapParallelTest()$/;"	f
 MapParallelTest2	unittest.cpp	/^bool MapParallelTest2()$/;"	f
 MapTransform	MapTransform.h	/^	MapTransform():$/;"	f	class:MapTransform
 MapTransform	MapTransform.h	/^class MapTransform$/;"	c
 MapTransform_H	MapTransform.h	19;"	d
+MapVAO	MapVAO.h	/^	MapVAO(const std::string& map_id,TextureShaderProgram& s):$/;"	f	class:MapVAO
 MapVAO	MapVAO.h	/^class MapVAO$/;"	c
 MapVertex	Map.h	/^	struct MapVertex$/;"	s	class:Map
 MapVertex	Map.h	/^struct MapVertex$/;"	s
 MapVertex	MapVAO.h	/^	struct MapVertex$/;"	s	class:MapVAO
-MapVertex	MapVAO.h	/^struct MapVertex$/;"	s
 MapVertexIndex	Map.h	/^	struct MapVertexIndex$/;"	s	class:Map
 MapVertexIndex	Map.h	/^struct MapVertexIndex$/;"	s
 MapVertexIndex	MapVAO.h	/^	struct MapVertexIndex$/;"	s	class:MapVAO
-MapVertexIndex	MapVAO.h	/^struct MapVertexIndex$/;"	s
 NVCC	makefile	/^NVCC := nvcc$/;"	m
 NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
@@ -598,7 +597,7 @@ getPositionDevicePointer	VAOPositionColor.h	/^	float* getPositionDevicePointer()
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
 getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:Map
-getSettings	MapVAO.cpp	/^void MapVAO::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:MapVAO
+getSettings	MapVAO.cpp	/^void MapVAO::getSettings(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 getStart	CountCrossing.h	/^	time_t getStart()$/;"	f	class:CountCrossing
 getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:Sectors
 getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:Sectors
@@ -612,12 +611,12 @@ getTrackDataFromDBToMapParallel	TrackDataManager.h	/^	void getTrackDataFromDBToM
 getTrackDataFromDBToMapWithDay	TrackDataManager.h	/^	void getTrackDataFromDBToMapWithDay$/;"	f	class:TrackDataManager
 getTrackDataFromDBWithDay	TrackDataManager.h	/^	void getTrackDataFromDBWithDay(std::vector<Path>& paths,$/;"	f	class:TrackDataManager
 getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
-getVertex	MapVAO.cpp	/^void MapVAO::getVertex(DBAccessor& dba,std::string& map_id)$/;"	f	class:MapVAO
+getVertex	MapVAO.cpp	/^void MapVAO::getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 getVertexCount	CountCrossing.h	/^	int getVertexCount()$/;"	f	class:CountCrossing
 getVertexCount	VAOPositionColor.h	/^	int getVertexCount()$/;"	f	class:VAOPositionColorBase
 getVertexCount	VAOPositionColor.h	/^	int getVertexCount()$/;"	f	class:VAOPositionColorDynamic
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
-getVertexIndex	MapVAO.cpp	/^void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:MapVAO
+getVertexIndex	MapVAO.cpp	/^void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 get_call	gprof2dot.py	/^    def get_call(self, callee_id):$/;"	m	class:Function
 get_callee	gprof2dot.py	/^    def get_callee(self):$/;"	m	class:CallgrindParser
 get_function	gprof2dot.py	/^    def get_function(self):$/;"	m	class:CallgrindParser
@@ -680,9 +679,9 @@ initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initScene	glunittest.cpp	/^void initScene(void)$/;"	f
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
-initTexture	MapVAO.cpp	/^void MapVAO::initTexture(std::string& texture_file_name)$/;"	f	class:MapVAO
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
 initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
+initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
 insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
 integrate	gprof2dot.py	/^    def integrate(self, outevent, inevent):$/;"	m	class:Profile
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
@@ -699,8 +698,7 @@ latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
 latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
 latitude	Map.h	/^		double latitude;$/;"	m	struct:Map::MapVertex
 latitude	Map.h	/^	double latitude;$/;"	m	struct:MapVertex
-latitude	MapVAO.h	/^		double latitude;$/;"	m	struct:MapVAO::MapVertex
-latitude	MapVAO.h	/^	double latitude;$/;"	m	struct:MapVertex
+latitude	MapVAO.h	/^		float latitude;$/;"	m	struct:MapVAO::MapVertex
 latitude	Path.h	/^	double latitude;$/;"	m	struct:PathPoint
 link	ShaderProgram.h	/^	void link()$/;"	f	class:ShaderProgram
 location	UniformVariable.h	/^	GLuint location;$/;"	m	class:UniformVariable
@@ -710,8 +708,7 @@ longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
 longitude	GCS.h	/^	double longitude;$/;"	m	struct:LongLat
 longitude	Map.h	/^		double longitude;$/;"	m	struct:Map::MapVertex
 longitude	Map.h	/^	double longitude;$/;"	m	struct:MapVertex
-longitude	MapVAO.h	/^		double longitude;$/;"	m	struct:MapVAO::MapVertex
-longitude	MapVAO.h	/^	double longitude;$/;"	m	struct:MapVertex
+longitude	MapVAO.h	/^		float longitude;$/;"	m	struct:MapVAO::MapVertex
 longitude	Path.h	/^	double longitude;$/;"	m	struct:PathPoint
 lookahead	gprof2dot.py	/^    def lookahead(self):$/;"	m	class:LineParser
 main	ATFViewer.cpp	/^int main(int argc, char const* argv[])$/;"	f
@@ -724,13 +721,14 @@ make_function	gprof2dot.py	/^    def make_function(self, module, filename, name)
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 map	VAOPositionColor.h	/^	void map()$/;"	f	class:VAOPositionColorDynamic
 map	VBO.h	/^	void map()$/;"	f	class:VBODynamicBase
+map	glunittest.cpp	/^MapVAO* map;$/;"	v
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
-mapId	MapVAO.h	/^	std::string mapId;$/;"	m	class:MapVAO
+mapId	MapVAO.h	/^	std::string mapId;$/;"	m	class:MapVAO	typeref:struct:MapVAO::InitMapSetting
 mapTransform	ATFViewerMain.h	/^	MapTransform mapTransform;$/;"	m	class:ATFViewerMain
 mapVertex	Map.h	/^	std::vector<MapVertex> mapVertex;$/;"	m	class:Map
-mapVertex	MapVAO.h	/^	std::vector<MapVertex> mapVertex;$/;"	m	class:MapVAO
+mapVertex	MapVAO.h	/^		std::vector<MapVertex> mapVertex;$/;"	m	struct:MapVAO::InitMapSetting
 mapVertexIndex	Map.h	/^	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	class:Map
-mapVertexIndex	MapVAO.h	/^	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	class:MapVAO
+mapVertexIndex	MapVAO.h	/^		std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	struct:MapVAO::InitMapSetting
 match_element_end	gprof2dot.py	/^    def match_element_end(self, name):$/;"	m	class:XmlParser
 match_element_start	gprof2dot.py	/^    def match_element_start(self, name):$/;"	m	class:XmlParser
 match_header	gprof2dot.py	/^    def match_header(self):$/;"	m	class:OprofileParser
@@ -934,11 +932,12 @@ texture	MapVAO.h	/^	Texture2D texture;$/;"	m	class:MapVAO
 texture	VAOPositionTexture.h	/^	Texture2D& texture;$/;"	m	class:VAOPositionTexture
 textureCoord	VAOPositionTexture.h	/^	VBOStatic textureCoord;$/;"	m	class:VAOPositionTexture
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
-textureHeight	MapVAO.h	/^	int textureHeight;$/;"	m	class:MapVAO
+textureHeight	MapVAO.h	/^		int textureHeight;$/;"	m	struct:MapVAO::InitMapSetting
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
 textureSampler	TextureShaderProgram.h	/^	UniformVariable<int> textureSampler;$/;"	m	class:TextureShaderProgram
 textureWidth	Map.h	/^	int textureWidth;$/;"	m	class:Map
-textureWidth	MapVAO.h	/^	int textureWidth;$/;"	m	class:MapVAO
+textureWidth	MapVAO.h	/^		int textureWidth;$/;"	m	struct:MapVAO::InitMapSetting
+texture_file_name	MapVAO.h	/^		std::string texture_file_name;$/;"	m	struct:MapVAO::InitMapSetting
 themes	gprof2dot.py	/^themes = {$/;"	v
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread	file:
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread_MemFunc	file:
@@ -958,13 +957,13 @@ trace_id_re	gprof2dot.py	/^    trace_id_re = re.compile(r'^TRACE (\\d+):$')$/;"	
 trace_re	gprof2dot.py	/^    trace_re = re.compile(r'\\t(.*)\\((.*):(.*)\\)')$/;"	v	class:HProfParser
 translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:AXEParser
 translate	gprof2dot.py	/^    def translate(self, mo):$/;"	m	class:GprofParser
+tsp	glunittest.cpp	/^TextureShaderProgram* tsp;$/;"	v
 tv	ATFViewerMain.h	/^	TestVBO tv;$/;"	m	class:ATFViewerMain
 type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
 type	VBO.h	/^	const GLenum type;$/;"	m	class:VBOBase
 u	Map.h	/^		double u;$/;"	m	struct:Map::MapVertex
 u	Map.h	/^	double u;$/;"	m	struct:MapVertex
-u	MapVAO.h	/^		double u;$/;"	m	struct:MapVAO::MapVertex
-u	MapVAO.h	/^	double u;$/;"	m	struct:MapVertex
+u	MapVAO.h	/^		float u;$/;"	m	struct:MapVAO::MapVertex
 unbind	Texture2D.h	/^	void unbind()$/;"	f	class:Texture2D
 unbind	VAOPositionColor.h	/^	void unbind()$/;"	f	class:VAOPositionColorBase
 unbind	VAOPositionColor.h	/^	void unbind()$/;"	f	class:VAOPositionColorDynamic
@@ -990,9 +989,9 @@ use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
 use	TextureShaderProgram.h	/^	void use()$/;"	f	class:TextureShaderProgram
 v	Map.h	/^		double v;$/;"	m	struct:Map::MapVertex
 v	Map.h	/^	double v;$/;"	m	struct:MapVertex
-v	MapVAO.h	/^		double v;$/;"	m	struct:MapVAO::MapVertex
-v	MapVAO.h	/^	double v;$/;"	m	struct:MapVertex
+v	MapVAO.h	/^		float v;$/;"	m	struct:MapVAO::MapVertex
 validate	gprof2dot.py	/^    def validate(self):$/;"	m	class:Profile
+vao	MapVAO.h	/^	TextureShaderProgram::vaoType vao;$/;"	m	class:MapVAO
 vao	TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
 vaoType	BasicShaderProgram.h	/^	typedef VAOPositionColor<BasicShaderProgram> vaoType;$/;"	t	class:BasicShaderProgram
 vaoType	TextureShaderProgram.h	/^	typedef VAOPositionTexture<TextureShaderProgram> vaoType;$/;"	t	class:TextureShaderProgram
@@ -1007,7 +1006,6 @@ vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	fil
 vertexIndex	Map.h	/^		int vertexIndex;$/;"	m	struct:Map::MapVertexIndex
 vertexIndex	Map.h	/^	int vertexIndex;$/;"	m	struct:MapVertexIndex
 vertexIndex	MapVAO.h	/^		int vertexIndex;$/;"	m	struct:MapVAO::MapVertexIndex
-vertexIndex	MapVAO.h	/^	int vertexIndex;$/;"	m	struct:MapVertexIndex
 width	TimeSeparation.h	/^	time_t width;$/;"	m	class:TimeSeparation
 windowHeight	ATFViewerMain.h	/^	int windowHeight;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain

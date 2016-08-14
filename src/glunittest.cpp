@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 	cudaSetDevice(0);
 	
 	tsp = new TextureShaderProgram();
-	map = new MapVAO("ENRC2_20160204",*tsp);
+	map = new MapVAO("ENRC1_20160204",*tsp);
 	
 	
 	//デプスバッファを有効にする
@@ -140,6 +140,7 @@ int main(int argc, char** argv)
 	glutMainLoop();
 	
 	delete tsp;
+	delete map;
 	
 	return 0;
 }

@@ -33,19 +33,6 @@
 
 #include "TextureShaderProgram.h"
 
-struct MapVertex
-{
-	double longitude;
-	double latitude;
-	double u;
-	double v;
-};
-
-struct MapVertexIndex
-{
-	int vertexIndex;
-};
-
 
 
 

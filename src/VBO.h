@@ -40,6 +40,10 @@ public:
 	{
 		glGenBuffers(1, &handle);
 	}
+	~VBOBase()
+	{
+		glDeleteBuffers(1, &handle);
+	}
 	void bind()
 	{
 		glBindBuffer(type, handle);

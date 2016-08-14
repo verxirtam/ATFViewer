@@ -15,8 +15,8 @@
  *
  * =====================================================================================
  */
-#ifndef MapTransform_H
-#define MapTransform_H
+
+#pragma once
 
 class MapTransform
 {
@@ -83,4 +83,3 @@ public:
 
 
 
-#endif
