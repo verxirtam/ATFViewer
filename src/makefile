@@ -93,6 +93,16 @@ gltest: $(GLTESTTARGET)
 	./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
 	gprof $(GLTESTTARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 
+
+.PHONY: doc
+doc: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
+	(cd ..; doxygen;)
+	(cd ../docs; git add .;)
+	(cd ../docs; git commit -m "update docs.";)
+	(cd ../docs; git push origin gh-pages;)
+	(cd ..; git add docs/;)
+	(cd ..; git commit -m "update docs.";)
+
 #実行ファイルの作成
 #オプションは最後に指定する
 #先頭に書くとコンパイルが通らない

@@ -49,7 +49,7 @@ private:
 	GLdouble camera_theta;
 	GLdouble camera_phi;
 	GLdouble camera_target[3];
-	Paths paths;
+	//Paths paths;
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
@@ -65,15 +65,15 @@ private:
 		joystickTimerId(1),
 		timeInterval(20),//5),
 		currentTimeInterval(timeInterval),
-		tv(),
+		//tv(),
 		camera_r(30.0),
 		camera_theta(270.0*PI/180.0),
 		camera_phi(60.0*PI/180.0),
-		paths(),
+		//paths(),
 		now(1460635200),//1460631600),//1456153155),
 		timeMin(now),
 		timeMax(now+60*60*24*3),//1453300000),
-		mapTransform(),
+		mapTransform()
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;
