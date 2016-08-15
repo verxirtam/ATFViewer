@@ -11,7 +11,7 @@ var searchData=
   ['node_5ffontsize',['node_fontsize',['../classgprof2dot_1_1Theme.html#ad15ea533bc231d2373d77627c6e863ae',1,'gprof2dot::Theme']]],
   ['node_5fstyle',['node_style',['../classgprof2dot_1_1Theme.html#a99f4d3c4f8cc2cfeff5617cf986a1646',1,'gprof2dot::Theme']]],
   ['nodestyle',['nodestyle',['../classgprof2dot_1_1Theme.html#a528def4dd855d5c0253d5333eecbc5dd',1,'gprof2dot::Theme']]],
-  ['now',['now',['../classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731',1,'ATFViewerMain::now()'],['../classATFViewerMainGLSL.html#af6f049a640082feae20c2283b145f4a8',1,'ATFViewerMainGLSL::now()']]],
+  ['now',['now',['../classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731',1,'ATFViewerMain']]],
   ['now_5findex',['now_index',['../structPath.html#a0569ee34ab09d49f039e38b897e216d4',1,'Path']]],
   ['nowstring',['nowstring',['../unittest_8cpp.html#a481f4aa4a5535fb839f361261341dc7d',1,'unittest.cpp']]],
   ['null',['null',['../classgprof2dot_1_1Event.html#a9d6a25b6da7106062ff4805b37ea8ade',1,'gprof2dot::Event']]],

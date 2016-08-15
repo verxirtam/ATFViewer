@@ -1,14 +1,12 @@
 <map id="src/OpenGLHeaders.h" name="src/OpenGLHeaders.h">
 <area shape="rect" id="node2" href="$ATFViewerMain_8h.html" title="src/ATFViewerMain.h" alt="" coords="123,155,271,181"/>
-<area shape="rect" id="node5" href="$Map_8h.html" title="src/Map.h" alt="" coords="148,80,227,107"/>
-<area shape="rect" id="node7" href="$TestVBO_8h.html" title="src/TestVBO.h" alt="" coords="303,80,412,107"/>
-<area shape="rect" id="node9" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="443,80,624,107"/>
-<area shape="rect" id="node11" href="$MapVAO_8h.html" title="src/MapVAO.h" alt="" coords="669,80,776,107"/>
+<area shape="rect" id="node5" href="$Map_8h.html" title="src/Map.h" alt="" coords="113,80,192,107"/>
+<area shape="rect" id="node7" href="$TestVBO_8h.html" title="src/TestVBO.h" alt="" coords="268,80,377,107"/>
+<area shape="rect" id="node9" href="$MapVAO_8h.html" title="src/MapVAO.h" alt="" coords="450,80,557,107"/>
 <area shape="rect" id="node3" href="$ATFViewer_8cpp.html" title="src/ATFViewer.cpp" alt="" coords="43,229,177,256"/>
 <area shape="rect" id="node4" href="$ATFViewerMain_8cpp.html" title="src/ATFViewerMain.cpp" alt="" coords="203,229,365,256"/>
 <area shape="rect" id="node6" href="$Map_8cpp.html" title="src/Map.cpp" alt="" coords="5,155,99,181"/>
 <area shape="rect" id="node8" href="$TestVBO_8cpp.html" title="src/TestVBO.cpp" alt="" coords="296,155,419,181"/>
-<area shape="rect" id="node10" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="443,155,637,181"/>
-<area shape="rect" id="node12" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="661,155,784,181"/>
-<area shape="rect" id="node13" href="$MapVAO_8cpp.html" title="src/MapVAO.cpp" alt="" coords="808,155,931,181"/>
+<area shape="rect" id="node10" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="589,155,712,181"/>
+<area shape="rect" id="node11" href="$MapVAO_8cpp.html" title="src/MapVAO.cpp" alt="" coords="443,155,565,181"/>
 </map>

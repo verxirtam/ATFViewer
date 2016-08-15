@@ -5,7 +5,7 @@ var searchData=
   ['scale',['scale',['../classMapTransform.html#a7e415efea56466628adf1a9efaf9bc27',1,'MapTransform']]],
   ['sector',['Sector',['../structSector.html',1,'Sector'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()']]],
   ['sectorname',['sectorName',['../structSector.html#a4a3675a8a3b7b5ef0bd26d20255ac872',1,'Sector']]],
-  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()']]],
+  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()']]],
   ['sectors_2ecpp',['Sectors.cpp',['../Sectors_8cpp.html',1,'']]],
   ['sectors_2eh',['Sectors.h',['../Sectors_8h.html',1,'']]],
   ['selecttrackdatawithdate',['selectTrackDataWithDate',['../unittest_8cpp.html#a77bcc0c7a7d4e51b4071af9ec97485da',1,'unittest.cpp']]],

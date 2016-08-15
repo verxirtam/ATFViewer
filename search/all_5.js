@@ -21,7 +21,7 @@ var searchData=
   ['event',['Event',['../classgprof2dot_1_1Event.html',1,'gprof2dot']]],
   ['events',['events',['../classgprof2dot_1_1Object.html#a8ff35ac56b5c5822e08d5bbff8eb9d4d',1,'gprof2dot::Object']]],
   ['exec',['exec',['../classTestUseThread.html#a3a5f6a168776912f0cc18ef30f4aae33',1,'TestUseThread']]],
-  ['execmainloop',['execMainLoop',['../classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613',1,'ATFViewerMain::execMainLoop()'],['../classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4',1,'ATFViewerMainGLSL::execMainLoop()']]],
+  ['execmainloop',['execMainLoop',['../classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613',1,'ATFViewerMain']]],
   ['execquery',['execQuery',['../classDBAccessor.html#ad860f85d65b770fb0b752690fcdb701e',1,'DBAccessor']]],
   ['expected',['expected',['../classgprof2dot_1_1XmlTokenMismatch.html#a6c30f0bb3abc56c2fc149fc2f4d4ffc7',1,'gprof2dot::XmlTokenMismatch']]]
 ];

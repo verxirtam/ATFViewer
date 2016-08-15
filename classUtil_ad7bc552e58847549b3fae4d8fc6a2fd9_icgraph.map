@@ -2,17 +2,15 @@
 <area shape="rect" id="node2" href="$classFixes.html#af99a3e573fb81a1f56ece865547aead4" title="Fixes::init" alt="" coords="286,5,365,32"/>
 <area shape="rect" id="node3" href="$classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605" title="Map::getVertex" alt="" coords="270,56,381,83"/>
 <area shape="rect" id="node5" href="$classMapVAO.html#ac96adf7bed01e8171d2a1f88ae776a42" title="MapVAO::getVertex" alt="" coords="256,107,395,133"/>
-<area shape="rect" id="node14" href="$classSectors.html#add79067cdfce4d1c130573c10d8f63e5" title="Sectors::getSubSectorVertex" alt="" coords="229,187,421,213"/>
+<area shape="rect" id="node12" href="$classSectors.html#add79067cdfce4d1c130573c10d8f63e5" title="Sectors::getSubSectorVertex" alt="" coords="229,157,421,184"/>
 <area shape="rect" id="node4" href="$classMap.html#a91d61b621031d5e4d4e2f5e3f17b7c54" title="Map::init" alt="" coords="515,56,587,83"/>
 <area shape="rect" id="node6" href="$classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="501,107,601,133"/>
-<area shape="rect" id="node7" href="$classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee" title="ATFViewerMain::initScene" alt="" coords="681,40,858,67"/>
-<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3" title="ATFViewerMainGLSL::\linitScene" alt="" coords="691,91,847,133"/>
-<area shape="rect" id="node12" href="$glunittest_8cpp.html#a2608babebb1b2b1775a8afdc42533307" title="initScene" alt="" coords="731,157,807,184"/>
-<area shape="rect" id="node8" href="$classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d" title="ATFViewerMain::init" alt="" coords="923,40,1063,67"/>
-<area shape="rect" id="node9" href="$ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1128,40,1179,67"/>
-<area shape="rect" id="node11" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="907,99,1080,125"/>
-<area shape="rect" id="node13" href="$glunittest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="968,157,1019,184"/>
-<area shape="rect" id="node15" href="$classSectors.html#a9dcf49007516497795626f31f9aedaf3" title="Sectors::getSubSectors" alt="" coords="470,201,631,228"/>
-<area shape="rect" id="node16" href="$classSectors.html#a52d9a18428fe02a9cb0e0526633bc689" title="Sectors::getSectors" alt="" coords="700,208,839,235"/>
-<area shape="rect" id="node17" href="$classSectors.html#a87a41b37859120d3372c72d08e33e066" title="Sectors::init" alt="" coords="947,208,1039,235"/>
+<area shape="rect" id="node7" href="$classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee" title="ATFViewerMain::initScene" alt="" coords="681,56,858,83"/>
+<area shape="rect" id="node10" href="$glunittest_8cpp.html#a2608babebb1b2b1775a8afdc42533307" title="initScene" alt="" coords="731,107,807,133"/>
+<area shape="rect" id="node8" href="$classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d" title="ATFViewerMain::init" alt="" coords="907,56,1047,83"/>
+<area shape="rect" id="node9" href="$ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1096,56,1147,83"/>
+<area shape="rect" id="node11" href="$glunittest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="952,107,1003,133"/>
+<area shape="rect" id="node13" href="$classSectors.html#a9dcf49007516497795626f31f9aedaf3" title="Sectors::getSubSectors" alt="" coords="470,157,631,184"/>
+<area shape="rect" id="node14" href="$classSectors.html#a52d9a18428fe02a9cb0e0526633bc689" title="Sectors::getSectors" alt="" coords="700,157,839,184"/>
+<area shape="rect" id="node15" href="$classSectors.html#a87a41b37859120d3372c72d08e33e066" title="Sectors::init" alt="" coords="931,157,1023,184"/>
 </map>
