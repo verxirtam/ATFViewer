@@ -1,0 +1,5 @@
+<map id="TrackDataManager::getTrackDataFromDB" name="TrackDataManager::getTrackDataFromDB">
+<area shape="rect" id="node2" href="$classTimeManager.html#a9f072b3f3ef9c04c7025274d16e5b57b" title="TimeManager::today" alt="" coords="271,5,412,32"/>
+<area shape="rect" id="node3" href="$classTimeManager.html#abb3908d94bde3f881b929de9838b1394" title="TimeManager::nextDayTime" alt="" coords="248,56,435,83"/>
+<area shape="rect" id="node4" href="$classTrackDataManager.html#a5b71eff33191fe6c5d4b89e8c1ad30cc" title="TrackDataManager::getTrack\lDataFromDBWithDay" alt="" coords="245,107,437,149"/>
+</map>

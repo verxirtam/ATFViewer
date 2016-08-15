@@ -1,0 +1,6 @@
+<map id="TrackDataManager::getColumn" name="TrackDataManager::getColumn">
+<area shape="rect" id="node2" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="270,5,471,32"/>
+<area shape="rect" id="node3" href="$classDBAccessor.html#a38433ea833d261853dd986b0c135a780" title="DBAccessor::getColumnDouble" alt="" coords="267,56,475,83"/>
+<area shape="rect" id="node4" href="$classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186" title="DBAccessor::getColumnInt" alt="" coords="279,107,462,133"/>
+<area shape="rect" id="node5" href="$classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91" title="DBAccessor::getColumnLongLong" alt="" coords="259,157,482,184"/>
+</map>

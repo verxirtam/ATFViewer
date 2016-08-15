@@ -1,0 +1,10 @@
+<map id="TrackDataManager::getTrackDataFromDBToMapWithDay" name="TrackDataManager::getTrackDataFromDBToMapWithDay">
+<area shape="rect" id="node2" href="$classTrackDataManager.html#aac87f46737bdfb8cced8ecf2671caed1" title="TrackDataManager::getTrack\lDataFromDBToMap" alt="" coords="245,5,437,46"/>
+<area shape="rect" id="node5" href="$classTrackDataManager.html#a500d68843465bcc7c1049ef04bf19bf2" title="TrackDataManager::getTrack\lDataFromDBToMapParallel" alt="" coords="245,70,437,111"/>
+<area shape="rect" id="node3" href="$unittest_8cpp.html#addeee553c86de04880ca837d0a8d96bc" title="testTrackDataManager" alt="" coords="504,12,659,39"/>
+<area shape="rect" id="node4" href="$unittest_8cpp.html#a100493261f4a369ebb8363eccc379460" title="openMPTest" alt="" coords="760,12,856,39"/>
+<area shape="rect" id="node6" href="$classTrackDataManager.html#a56f66ea6cd01a3549c7ac94d9c171e24" title="TrackDataManager::getTrack\lDataFromDBParallel" alt="" coords="485,66,677,107"/>
+<area shape="rect" id="node9" href="$unittest_8cpp.html#a5754709b09eeab56ca7cadde72313b67" title="MapParallelTest" alt="" coords="523,132,639,159"/>
+<area shape="rect" id="node7" href="$classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea" title="Paths::makePathsBuffer" alt="" coords="725,69,891,96"/>
+<area shape="rect" id="node8" href="$unittest_8cpp.html#ad6e370b2f22266ecc1f505dc68c33fe1" title="MapParallelTest2" alt="" coords="747,120,869,147"/>
+</map>

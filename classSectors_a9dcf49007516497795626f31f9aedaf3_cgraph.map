@@ -1,0 +1,12 @@
+<map id="Sectors::getSubSectors" name="Sectors::getSubSectors">
+<area shape="rect" id="node2" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="479,5,636,32"/>
+<area shape="rect" id="node3" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="472,56,643,83"/>
+<area shape="rect" id="node4" href="$classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186" title="DBAccessor::getColumnInt" alt="" coords="466,107,649,133"/>
+<area shape="rect" id="node5" href="$classUtil.html#acaa1d88cb27062e845911bbf23e662b8" title="Util::getFeetFromFL" alt="" coords="243,259,381,285"/>
+<area shape="rect" id="node6" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="457,360,658,387"/>
+<area shape="rect" id="node7" href="$classSectors.html#add79067cdfce4d1c130573c10d8f63e5" title="Sectors::getSubSectorVertex" alt="" coords="216,157,408,184"/>
+<area shape="rect" id="node8" href="$classUtil.html#a10d9205506a75853dce601c2e598af15" title="Util::getLongitudeFromDMS" alt="" coords="465,157,649,184"/>
+<area shape="rect" id="node9" href="$classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9" title="Util::getLatitudeFromDMS" alt="" coords="470,208,645,235"/>
+<area shape="rect" id="node10" href="$GCS_8cpp.html#a5e3926922f33fbdc026f5f9d185c6274" title="isClockwise" alt="" coords="511,259,604,285"/>
+<area shape="rect" id="node11" href="$classSectors.html#ab714ebf9e19b34c5a5b27c1037bc4f0a" title="Sectors::getInsideLongLat" alt="" coords="470,309,645,336"/>
+</map>

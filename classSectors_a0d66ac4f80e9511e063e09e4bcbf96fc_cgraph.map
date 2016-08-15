@@ -1,0 +1,5 @@
+<map id="Sectors::display" name="Sectors::display">
+<area shape="rect" id="node2" href="$classSectors.html#a0f88054f6c71c3e8e5b5f886408efd98" title="Sectors::displaySector" alt="" coords="171,5,325,32"/>
+<area shape="rect" id="node3" href="$classSectors.html#a14cadd4935c07a1938dd8a27a8d9d21b" title="Sectors::displaySubSector" alt="" coords="374,5,551,32"/>
+<area shape="rect" id="node4" href="$classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4" title="BitmapString::drawString" alt="" coords="601,5,767,32"/>
+</map>

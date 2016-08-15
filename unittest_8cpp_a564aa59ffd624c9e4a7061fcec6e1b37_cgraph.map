@@ -1,0 +1,6 @@
+<map id="addTrackData" name="addTrackData">
+<area shape="rect" id="node2" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="191,5,348,32"/>
+<area shape="rect" id="node3" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="184,56,355,83"/>
+<area shape="rect" id="node4" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="169,107,370,133"/>
+<area shape="rect" id="node5" href="$classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91" title="DBAccessor::getColumnLongLong" alt="" coords="158,157,381,184"/>
+</map>
