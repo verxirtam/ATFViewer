@@ -66,6 +66,9 @@ OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))
 #依存関係ファイル
 DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
 
+#gprof2dot.pyのパス
+GPROF2DOT := ~/tools/gprof2dot/gprof2dot.py
+
 #コマンド
 ###################################################
 
@@ -77,21 +80,21 @@ all: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
-	gprof $(TARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(TARGET).png
+	gprof $(TARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TARGET).png
 
 #テストの実行ファイルを実行する
 #ログと標準出力両方に出力する
 .PHONY: test
 test: $(TESTTARGET)
 	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
-	gprof $(TESTTARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
+	gprof $(TESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
 
 #画面テストの実行ファイルを実行する
 #ログと標準出力両方に出力する
-.PHONY: test
+.PHONY: gltest
 gltest: $(GLTESTTARGET)
 	./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
-	gprof $(GLTESTTARGET) | ./gprof2dot.py | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
+	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 
 
 .PHONY: doc

@@ -40,3 +40,16 @@ e.size() = 143
 p.size() = 267
 t.size() = 178
 e.size() = 193
+p.size() = 267
+t.size() = 178
+e.size() = 193
+freeglut (./glunittest):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow
+freeglut (./glunittest):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow
+freeglut (./glunittest):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow
+freeglut (./glunittest):  ERROR:  Internal error <FBConfig with necessary capabilities not found> in function fgOpenWindow
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 267
+t.size() = 178
+e.size() = 193
