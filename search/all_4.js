@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['database',['database',['../classgprof2dot_1_1SleepyParser.html#a6b61795458e157a559fa4290a8d115df',1,'gprof2dot::SleepyParser']]],
   ['db',['db',['../classDBAccessor.html#abc3886f57179e2ffac2ef6c1b9e3624e',1,'DBAccessor']]],
   ['dbaccessor',['DBAccessor',['../classDBAccessor.html',1,'DBAccessor'],['../classDBAccessor.html#a406ac80e9d2c41d64044af128eb527b1',1,'DBAccessor::DBAccessor()']]],
   ['dbaccessor_2eh',['DBAccessor.h',['../DBAccessor_8h.html',1,'']]],
   ['dbfilename',['dbFileName',['../classDBAccessor.html#a97fbea92467989b7554f215a8a58721f',1,'DBAccessor']]],
   ['def_5flock',['DEF_LOCK',['../Lock_8h.html#af24acb7ebc10be717308d4280fde5157',1,'Lock.h']]],
-  ['device',['Device',['../classJoystick.html#a2565b364cf49bc3b5f12f550c7250007',1,'Joystick::Device()'],['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()']]],
+  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#a2565b364cf49bc3b5f12f550c7250007',1,'Joystick::Device()']]],
   ['deviceseq',['DeviceSeq',['../classDeviceSeq.html',1,'DeviceSeq&lt; T &gt;'],['../classDeviceSeq.html#a6b861c73f3444b2908cf398779ad1f12',1,'DeviceSeq::DeviceSeq()']]],
   ['deviceseqconst',['DeviceSeqConst',['../classDeviceSeqConst.html',1,'DeviceSeqConst&lt; T &gt;'],['../classDeviceSeqConst.html#ac31372480a548a38bb3548aa1d4432a8',1,'DeviceSeqConst::DeviceSeqConst()']]],
   ['devicetime',['deviceTime',['../structEstimateSpecResult.html#ab1476644dae43209665b41324a6d7a40',1,'EstimateSpecResult']]],
@@ -19,11 +18,9 @@ var searchData=
   ['displaysector',['displaySector',['../classSectors.html#a0f88054f6c71c3e8e5b5f886408efd98',1,'Sectors']]],
   ['displaysectorindex',['displaySectorIndex',['../classSectors.html#a10cde6423124558f9f977da431ee7b19',1,'Sectors']]],
   ['displaysubsector',['displaySubSector',['../classSectors.html#a14cadd4935c07a1938dd8a27a8d9d21b',1,'Sectors']]],
-  ['dotwriter',['DotWriter',['../classgprof2dot_1_1DotWriter.html',1,'gprof2dot']]],
   ['drawpath',['drawPath',['../classPaths.html#ae106f351fe902cc69616e85573587107',1,'Paths']]],
   ['drawpathline',['drawPathLine',['../classPaths.html#a74ee48d529066437d733a1ffd1b1a558',1,'Paths']]],
   ['drawstring',['drawString',['../classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4',1,'BitmapString::drawString(const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#a1db57dc50aacb075e48480a3b9b0ee76',1,'BitmapString::drawString(double x, double y, double z, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#aa1baf22fecc374ee4926b2b1693c233d',1,'BitmapString::drawString(double x, double y, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)']]],
   ['drawtimewidth',['drawTimeWidth',['../classPaths.html#a83cacb496526d6b75ffa3e20f6de6996',1,'Paths']]],
-  ['dsc',['dsc',['../classDeviceSeq.html#a7f8a12b7c9fc24496117d42f638810f0',1,'DeviceSeq']]],
-  ['dump',['dump',['../classgprof2dot_1_1Profile.html#af360593d861dca8d0bebec5e7c8bc2a9',1,'gprof2dot::Profile']]]
+  ['dsc',['dsc',['../classDeviceSeq.html#a7f8a12b7c9fc24496117d42f638810f0',1,'DeviceSeq']]]
 ];

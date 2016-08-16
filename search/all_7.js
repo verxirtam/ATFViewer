@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['gamma',['gamma',['../classgprof2dot_1_1Theme.html#a0f21bc993bcda596a4d016e54a945116',1,'gprof2dot::Theme']]],
   ['gcs_2ecpp',['GCS.cpp',['../GCS_8cpp.html',1,'']]],
   ['gcs_2eh',['GCS.h',['../GCS_8h.html',1,'']]],
-  ['get_5fcall',['get_call',['../classgprof2dot_1_1Function.html#adc4eb96ba770c2f6fa818511cd4144dd',1,'gprof2dot::Function']]],
-  ['get_5fcallee',['get_callee',['../classgprof2dot_1_1CallgrindParser.html#a17b9ca84ed7c8b25a43b6f2683f608c5',1,'gprof2dot::CallgrindParser']]],
-  ['get_5ffunction',['get_function',['../classgprof2dot_1_1CallgrindParser.html#a4395b79a43ef6d76659db8be35821b39',1,'gprof2dot.CallgrindParser.get_function()'],['../classgprof2dot_1_1XPerfParser.html#a2ce5276c971b4c2cc18941971f068f3d',1,'gprof2dot.XPerfParser.get_function()'],['../classgprof2dot_1_1PstatsParser.html#a5df92aeaa06b3555425f2ad144512292',1,'gprof2dot.PstatsParser.get_function()']]],
-  ['get_5ffunction_5fname',['get_function_name',['../classgprof2dot_1_1PstatsParser.html#afb3689bdc04301ffdf588e544a1f549f',1,'gprof2dot::PstatsParser']]],
   ['getalltrackdata',['getAllTrackData',['../unittest_8cpp.html#ac4b4752f159fba76aaabdfa7d59312df',1,'unittest.cpp']]],
   ['getalltrackdatareserve',['getAllTrackDataReserve',['../unittest_8cpp.html#a932c33c004d7784a63a52dfe4fd27a61',1,'unittest.cpp']]],
   ['getaxisstate',['getAxisState',['../classJoystick.html#a628852a6c5aa6888b99733dbf99356e9',1,'Joystick']]],
@@ -33,7 +28,6 @@ var searchData=
   ['getelementdevicepointer',['getElementDevicePointer',['../classVAOPositionColorDynamic.html#ad9d25dddce39bf6fd5155735dcaad194',1,'VAOPositionColorDynamic']]],
   ['getend',['getEnd',['../classCountCrossing.html#a487a0f4ab71bf2bdf925c1fb74d4343f',1,'CountCrossing']]],
   ['getfeetfromfl',['getFeetFromFL',['../classUtil.html#acaa1d88cb27062e845911bbf23e662b8',1,'Util']]],
-  ['getfunctionid',['getFunctionId',['../classgprof2dot_1_1Profile.html#aa76e78032f711b4b1301d32fda0fc51a',1,'gprof2dot::Profile']]],
   ['gethandle',['getHandle',['../classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa',1,'Shader::getHandle()'],['../classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce',1,'ShaderProgram::getHandle()'],['../classVBOBase.html#af048b39cc0ade92245b77762aa5168b0',1,'VBOBase::getHandle()']]],
   ['getindexcount',['getIndexCount',['../classCountCrossing.html#a12155503120c8cc4ebe57a450c256996',1,'CountCrossing']]],
   ['getinsidelonglat',['getInsideLongLat',['../classSectors.html#ab714ebf9e19b34c5a5b27c1037bc4f0a',1,'Sectors']]],
@@ -63,14 +57,5 @@ var searchData=
   ['getvertexcount',['getVertexCount',['../classCountCrossing.html#afa2c871d5fd5e0f6d7fd65ebd71b1783',1,'CountCrossing::getVertexCount()'],['../classVAOPositionColorBase.html#afd2586d8d9436f3e63ab6263e699fdc3',1,'VAOPositionColorBase::getVertexCount()'],['../classVAOPositionColorDynamic.html#a94c57e5cccf7fcd8d5671e624d3b6953',1,'VAOPositionColorDynamic::getVertexCount()']]],
   ['getvertexindex',['getVertexIndex',['../classMap.html#a03d6b0e3e5a2d224b20089a9143952d6',1,'Map::getVertexIndex()'],['../classMapVAO.html#a496bd14ddc781b42cc78f5bca8405b07',1,'MapVAO::getVertexIndex()']]],
   ['glm_5fforce_5fradians',['GLM_FORCE_RADIANS',['../glunittest_8cpp.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;glunittest.cpp'],['../UniformVariable_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;UniformVariable.h']]],
-  ['glunittest_2ecpp',['glunittest.cpp',['../glunittest_8cpp.html',1,'']]],
-  ['gprof2dot',['gprof2dot',['../namespacegprof2dot.html',1,'']]],
-  ['gprof2dot_2epy',['gprof2dot.py',['../gprof2dot_8py.html',1,'']]],
-  ['gprofparser',['GprofParser',['../classgprof2dot_1_1GprofParser.html',1,'gprof2dot']]],
-  ['graph',['graph',['../classgprof2dot_1_1DotWriter.html#a59cc16acfab6d9b560b5df93c822ccb2',1,'gprof2dot::DotWriter']]],
-  ['graph_5fbgcolor',['graph_bgcolor',['../classgprof2dot_1_1Theme.html#a21f9d0256a90922f1d2482689fdf7120',1,'gprof2dot::Theme']]],
-  ['graph_5ffontcolor',['graph_fontcolor',['../classgprof2dot_1_1Theme.html#a06d7f574f19ebbc776c261149c9550e9',1,'gprof2dot::Theme']]],
-  ['graph_5ffontname',['graph_fontname',['../classgprof2dot_1_1Theme.html#a0acd94f2ffb45163833e6c439aeab90d',1,'gprof2dot::Theme']]],
-  ['graph_5ffontsize',['graph_fontsize',['../classgprof2dot_1_1Theme.html#abd3baf2435880e137c8a780d8d4d5cd5',1,'gprof2dot::Theme']]],
-  ['gray_5fcolormap',['GRAY_COLORMAP',['../namespacegprof2dot.html#af0ab22cad2ce3a66549e5f97db5060bf',1,'gprof2dot']]]
+  ['glunittest_2ecpp',['glunittest.cpp',['../glunittest_8cpp.html',1,'']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lineparser',['LineParser',['../classgprof2dot_1_1LineParser.html',1,'gprof2dot']]],
-  ['longlat',['LongLat',['../structLongLat.html',1,'']]]
+  ['path',['Path',['../structPath.html',1,'']]],
+  ['pathpoint',['PathPoint',['../structPathPoint.html',1,'']]],
+  ['paths',['Paths',['../classPaths.html',1,'']]]
 ];

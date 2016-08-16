@@ -19,11 +19,8 @@ var searchData=
   ['settransform',['setTransform',['../classMapTransform.html#a29bf172c11837bdcfebc3451dd2a5b94',1,'MapTransform']]],
   ['shader',['Shader',['../classShader.html#ae30904a9535a6c10d6b529ab0afb90de',1,'Shader::Shader(const Shader &amp;s)'],['../classShader.html#a4b14a70ec867a612e5de662e7bda9ae3',1,'Shader::Shader(Shader &amp;&amp;s)'],['../classShader.html#a7215ca80ea962ac48f52d785cd48bc75',1,'Shader::Shader(GLenum t, const char *path)'],['../classShader.html#a41b8977b99243af9bf974b480b95725a',1,'Shader::Shader(GLenum t, const std::string &amp;path)']]],
   ['shaderprogram',['ShaderProgram',['../classShaderProgram.html#ab042a25a24432ecad95fe7044eb9974a',1,'ShaderProgram::ShaderProgram(const ShaderProgram &amp;s)'],['../classShaderProgram.html#a01b912cf407323950781cd69d4675ab6',1,'ShaderProgram::ShaderProgram(ShaderProgram &amp;&amp;s)'],['../classShaderProgram.html#add585b75cb78f4afa865ea7b27c9651e',1,'ShaderProgram::ShaderProgram()']]],
-  ['skip_5fseparator',['skip_separator',['../classgprof2dot_1_1OprofileParser.html#a89c4755af4275bc9643295e5d9b36f32',1,'gprof2dot::OprofileParser']]],
-  ['sorted_5fiteritems',['sorted_iteritems',['../namespacegprof2dot.html#a46332489b24781ec0db02c3093f3d319',1,'gprof2dot']]],
   ['start',['start',['../classTimer.html#a3a8b5272198d029779dc9302a54305a8',1,'Timer']]],
   ['step',['step',['../classDBAccessor.html#a560b6ead9df1ab797b81579b1d1509f2',1,'DBAccessor']]],
   ['step_5fselect',['step_select',['../classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0',1,'DBAccessor']]],
-  ['stripped_5fname',['stripped_name',['../classgprof2dot_1_1Function.html#a9ed65caa1a42ecd08dc036b7d5433619',1,'gprof2dot::Function']]],
   ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors']]]
 ];

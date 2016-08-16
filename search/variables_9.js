@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['id',['id',['../classgprof2dot_1_1Function.html#a2891b66b354b379368f1a140623ab269',1,'gprof2dot.Function.id()'],['../structPath.html#ac72808ea86a05b209d0e19642192b428',1,'Path::id()'],['../structid__time.html#a3e81694afa791a42931e6d581bdabfdf',1,'id_time::id()']]],
-  ['includesmaximumaltitude',['includesMaximumAltitude',['../structSubSector.html#af09aa552e5896d9c0673dfc5d06113fd',1,'SubSector']]],
-  ['includesminimumaltitude',['includesMinimumAltitude',['../structSubSector.html#a55e78706e2a95221365f17f394e854fa',1,'SubSector']]],
-  ['index',['index',['../classgprof2dot_1_1XmlTokenizer.html#a40bdeb62b8b2666ca7f856d3a3614d52',1,'gprof2dot::XmlTokenizer']]],
-  ['indexcount',['indexCount',['../classCountCrossing.html#aae55ba17f4bf00771b5a07451a728fc2',1,'CountCrossing']]],
-  ['inittime',['initTime',['../structEstimateSpecResult.html#a51f12a5a711a8195d08e599d35fd3fed',1,'EstimateSpecResult']]],
-  ['insidelonglatindex',['insideLongLatIndex',['../structSubSector.html#a4c7f88ef44e44117f836f02a1f9ae757',1,'SubSector']]],
-  ['interval',['interval',['../classCountCrossing.html#a705dfc8ad8d13cf266793627091c5b45',1,'CountCrossing']]]
+  ['latitude',['latitude',['../classFixes.html#a8d5d3a2fed097eff2db988cd0a5577ae',1,'Fixes::latitude()'],['../structLongLat.html#a3cc48b6324ea600ab8d08d22e5849ddf',1,'LongLat::latitude()'],['../structMap_1_1MapVertex.html#a8a2430b8cf941c0f63a01cc4ba671ad8',1,'Map::MapVertex::latitude()'],['../structMapVAO_1_1MapVertex.html#a6ddf6dd7750659bef4ecfde63ff37969',1,'MapVAO::MapVertex::latitude()'],['../structPathPoint.html#ac41b3aea81ef9131ef505f7492b3359e',1,'PathPoint::latitude()']]],
+  ['location',['location',['../classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad',1,'UniformVariable']]],
+  ['longitude',['longitude',['../classFixes.html#a39706041a866d19f27d1a5e8f3191cf4',1,'Fixes::longitude()'],['../structLongLat.html#ab20f8fa14d3652bfadd1328ee5ead72f',1,'LongLat::longitude()'],['../structMap_1_1MapVertex.html#a34c6c2e4f393b5f3d069283684921978',1,'Map::MapVertex::longitude()'],['../structMapVAO_1_1MapVertex.html#a23a02b98d978c2c39d6534c302275d16',1,'MapVAO::MapVertex::longitude()'],['../structPathPoint.html#ab1de18d033ab7398aff6454e8e1e339a',1,'PathPoint::longitude()']]],
+  ['longlat',['longLat',['../classSectors.html#a34fb4c6d7ff28da726bc2ac3f57f5813',1,'Sectors']]],
+  ['longlatindex',['longLatIndex',['../structSubSector.html#a9cf8a185c4cb30d45dc73b1c7247f5c3',1,'SubSector']]]
 ];

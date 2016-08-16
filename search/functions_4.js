@@ -8,6 +8,5 @@ var searchData=
   ['displaysubsector',['displaySubSector',['../classSectors.html#a14cadd4935c07a1938dd8a27a8d9d21b',1,'Sectors']]],
   ['drawpath',['drawPath',['../classPaths.html#ae106f351fe902cc69616e85573587107',1,'Paths']]],
   ['drawpathline',['drawPathLine',['../classPaths.html#a74ee48d529066437d733a1ffd1b1a558',1,'Paths']]],
-  ['drawstring',['drawString',['../classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4',1,'BitmapString::drawString(const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#a1db57dc50aacb075e48480a3b9b0ee76',1,'BitmapString::drawString(double x, double y, double z, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#aa1baf22fecc374ee4926b2b1693c233d',1,'BitmapString::drawString(double x, double y, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)']]],
-  ['dump',['dump',['../classgprof2dot_1_1Profile.html#af360593d861dca8d0bebec5e7c8bc2a9',1,'gprof2dot::Profile']]]
+  ['drawstring',['drawString',['../classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4',1,'BitmapString::drawString(const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#a1db57dc50aacb075e48480a3b9b0ee76',1,'BitmapString::drawString(double x, double y, double z, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#aa1baf22fecc374ee4926b2b1693c233d',1,'BitmapString::drawString(double x, double y, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)']]]
 ];
