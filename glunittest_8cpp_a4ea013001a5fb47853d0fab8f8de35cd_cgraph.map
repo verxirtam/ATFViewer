@@ -1,5 +1,5 @@
 <map id="display" name="display">
-<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して " alt="" coords="142,60,218,87"/>
+<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して シェーダプログラムに設定する " alt="" coords="142,60,218,87"/>
 <area shape="rect" id="node7" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="118,115,242,141"/>
 <area shape="rect" id="node3" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="291,49,447,90"/>
 <area shape="rect" id="node4" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="503,5,644,32"/>

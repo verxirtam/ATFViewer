@@ -13,7 +13,7 @@
 <area shape="rect" id="node9" href="$classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22" title="ATFViewerMain::resize" alt="" coords="449,132,607,159"/>
 <area shape="rect" id="node11" href="$classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87" title="ATFViewerMain::keyboard" alt="" coords="440,284,616,311"/>
 <area shape="rect" id="node12" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="731,81,794,108"/>
-<area shape="rect" id="node13" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して " alt="" coords="959,113,1035,140"/>
+<area shape="rect" id="node13" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して シェーダプログラムに設定する " alt="" coords="959,113,1035,140"/>
 <area shape="rect" id="node14" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="1147,110,1303,151"/>
 <area shape="rect" id="node15" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="1359,67,1500,93"/>
 <area shape="rect" id="node16" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="1359,117,1500,144"/>

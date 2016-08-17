@@ -1,7 +1,7 @@
 <map id="ATFViewerMain::keyboard" name="ATFViewerMain::keyboard">
 <area shape="rect" id="node2" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="274,117,337,144"/>
 <area shape="rect" id="node10" href="$classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9" title="ATFViewerMain::_idle" alt="" coords="230,168,381,195"/>
-<area shape="rect" id="node3" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して " alt="" coords="487,60,563,87"/>
+<area shape="rect" id="node3" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して シェーダプログラムに設定する " alt="" coords="487,60,563,87"/>
 <area shape="rect" id="node8" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="463,117,587,144"/>
 <area shape="rect" id="node4" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="670,49,826,90"/>
 <area shape="rect" id="node5" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="881,5,1023,32"/>
