@@ -33,15 +33,6 @@ private:
 	GLuint handle;
 	GLenum type;
 	std::string sourcePath;//コンストラクタでコンパイルすればメンバとしては不要？
-	void init()
-	{
-		//シェーダオブジェクトを生成する
-		handle = glCreateShader(type);
-		if(handle == 0)
-		{
-			std::cout << "error at Shader()." << std::endl;
-		}
-	}
 	std::string readShaderFile(const std::string& filename)
 	{
 		std::ifstream f(filename);
@@ -75,16 +66,28 @@ public:
 	//->作るには、typeとsourcePathを後から設定可能にする必要あり
 	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)
 	{
-		this->init();
 	}
 	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)
 	{
-		this->init();
 	}
 	~Shader()
 	{
 		//シェーダオブジェクトを削除する
 		glDeleteShader(handle);
+	}
+	void init()
+	{
+		//2重に生成しないように
+		//シェーダオブジェクトを削除する
+		//handle==0の時は無視される
+		glDeleteShader(handle);
+		
+		//シェーダオブジェクトを生成する
+		handle = glCreateShader(type);
+		if(handle == 0)
+		{
+			std::cout << "error at Shader()." << std::endl;
+		}
 	}
 	void compile()
 	{

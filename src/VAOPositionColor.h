@@ -23,14 +23,14 @@
 
 #include "Lock.h"
 #include "VBO.h"
-
+#include "VAOBase.h"
 
 
 template <typename S, typename VBOClass, typename VBOElementClass>
 class VAOPositionColorBase
 {
 private:
-	GLuint handle;
+	VAOBase base;
 	VBOClass position;
 	VBOClass color;
 	VBOElementClass element;
@@ -40,7 +40,7 @@ private:
 public:
 	VAOPositionColorBase(S& s)
 		:
-			handle(0),
+			base(),
 			position(),
 			color(),
 			element(),
@@ -48,20 +48,18 @@ public:
 			vertexCount(0),
 			shaderProgram(s)
 	{
-		glGenVertexArrays(1, &handle);
 	}
 	~VAOPositionColorBase()
 	{
-		glDeleteVertexArrays(1, &handle);
 	}
 	
 	void bind()
 	{
-		glBindVertexArray(handle);
+		base.bind();
 	}
 	void unbind()
 	{
-		glBindVertexArray(0);
+		base.unbind();
 	}
 	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
 	void display(void)
@@ -105,6 +103,8 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 		GLenum m
 	)
 {
+	base.init();
+	
 	//引数をバッファに格納
 	position.init(p);
 	color.init(c);

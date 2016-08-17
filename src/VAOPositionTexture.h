@@ -24,13 +24,13 @@
 #include "Lock.h"
 #include "VBO.h"
 #include "Texture2D.h"
-
+#include "VAOBase.h"
 
 template <typename S>
 class VAOPositionTexture
 {
 private:
-	GLuint handle;
+	VAOBase base;
 	VBOStatic position;
 	VBOStatic textureCoord;
 	VBOElementStatic element;
@@ -40,7 +40,7 @@ private:
 	Texture2D& texture;
 public:
 	VAOPositionTexture(S& s, Texture2D& t):
-		handle(0),
+		base(),
 		position(),
 		textureCoord(),
 		element(),
@@ -49,15 +49,17 @@ public:
 		shaderProgram(s),
 		texture(t)
 	{
-		glGenVertexArrays(1, &handle);
+	}
+	~VAOPositionTexture()
+	{
 	}
 	void bind()
 	{
-		glBindVertexArray(handle);
+		base.bind();
 	}
 	void unbind()
 	{
-		glBindVertexArray(0);
+		base.unbind();
 	}
 	void init
 		(
@@ -94,6 +96,8 @@ void VAOPositionTexture<S>::init
 		GLenum m
 	)
 {
+	base.init();
+	
 	//引数をバッファに格納
 	position.init(p);
 	textureCoord.init(t);

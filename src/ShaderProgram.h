@@ -42,16 +42,24 @@ private:
 public:
 	ShaderProgram():handle(0)
 	{
-		handle = glCreateProgram();
-		if(handle == 0)
-		{
-			std::cout << "error at glCreateProgram()." << std::endl;
-		}
 	}
 	~ShaderProgram()
 	{
 		glDeleteProgram(handle);
 	}
+	void init()
+	{
+		//Proguramオブジェクトの開放
+		glDeleteProgram(handle);
+		//Proguramオブジェクトの生成
+		handle = glCreateProgram();
+		if(handle == 0)
+		{
+			std::cout << "error at glCreateProgram()." << std::endl;
+		}
+		
+	}
+	
 	void attach(const Shader& s)
 	{
 		glAttachShader(handle, s.getHandle());

@@ -1,4 +1,5 @@
-Map.o: Map.cpp Map.h OpenGLHeaders.h Util.h DBAccessor.h \
+ATFViewerMainGLSL.o: ATFViewerMainGLSL.cpp ATFViewerMainGLSL.h \
+ OpenGLHeaders.h DBAccessor.h MapTransform.h Joystick.h MapVAO.h Util.h \
  TextureShaderProgram.h Shader.h ShaderProgram.h UniformVariable.h \
  VAOPositionTexture.h Lock.h VBO.h \
  /usr/local/cuda-7.5/include/cuda_runtime.h \

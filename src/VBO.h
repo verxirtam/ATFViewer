@@ -38,7 +38,6 @@ private:
 public:
 	VBOBase(GLenum t, GLenum u):handle(0),type(t),usage(u)
 	{
-		glGenBuffers(1, &handle);
 	}
 	~VBOBase()
 	{
@@ -54,8 +53,17 @@ public:
 	}
 	void init(const std::vector<V>& v)
 	{
+		//handle!=0の時のためにdeleteしておく
+		//handleが0の時は無視される
+		glDeleteBuffers(1, &handle);
+		//バッファオブジェクトの確保
+		glGenBuffers(1, &handle);
+		
+		//バッファのバインド
 		Bind<VBOBase<V> > b(*this);
+		//バッファのサイズ
 		GLsizeiptr size = v.size() * sizeof(V);
+		//バッファにデータを格納(GPUへ転送)
 		glBufferData(type, size, v.data(), usage);
 	}
 	GLuint getHandle()

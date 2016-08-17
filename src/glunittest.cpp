@@ -15,6 +15,9 @@
  *
  * =====================================================================================
  */
+
+/*
+
 #include <GL/glew.h>
 #include <GL/glut.h>
 
@@ -29,8 +32,8 @@
 #include "TextureShaderProgram.h"
 #include "MapVAO.h"
 
-TextureShaderProgram* tsp;
-MapVAO* map;
+TextureShaderProgram tsp;
+MapVAO map("ENRC1_20160204",tsp);
 
 
 glm::mat4 projection;
@@ -40,6 +43,10 @@ void idle(void)
 	glutPostRedisplay();
 }
 
+/// @brief 画面のリサイズ時に実行する処理
+///
+/// @param w 画面の幅(ピクセル)
+/// @param h 画面の高さ(ピクセル)
 void resize(int w, int h)
 {
 	//ウィンドウのどの範囲をビューポートにするかを設定する
@@ -50,6 +57,7 @@ void resize(int w, int h)
 	projection = glm::perspective( 3.141592f * 30.0f / 180.0f, static_cast<float>(w) / static_cast<float>(h), 1.0f, 1000.f);
 }
 
+/// @brief モデルビュープロジェクション行列を設定してシェーダプログラムに設定する
 void setMatrix(void)
 {
 	//回転する角度
@@ -74,8 +82,9 @@ void setMatrix(void)
 	
 	
 	
-	tsp->setMVPMatrix(mvp);
+	tsp.setMVPMatrix(mvp);
 }
+/// @brief 画面への描画を行う
 void display(void)
 {
 	//フレームバッファ、深度バッファをクリアする
@@ -83,12 +92,13 @@ void display(void)
 	
 	setMatrix();
 	
-	map->display();
+	map.display();
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
 }
 
+/// @brief OpenGLのコールバック関数の設定を行う
 void initCallbacks(void)
 {
 	//画面更新関数の設定
@@ -98,12 +108,20 @@ void initCallbacks(void)
 	//画面リサイズ時に実行される関数の設定
 	glutReshapeFunc(resize);
 }
+
+
+/// @brief シーンに描画するオブジェクトを初期化する
+/// 
+/// 下記の初期化を行う
+/// - シェーダプログラム
+/// - マップ
+/// - その他描画対象
 void initScene(void)
 {
-	tsp->init();
+	tsp.init();
 	
 	DBAccessor dba("../../db/ATFViewer.db");
-	map->init(dba);
+	map.init(dba);
 }
 
 int main(int argc, char** argv)
@@ -127,8 +145,6 @@ int main(int argc, char** argv)
 	//cudaを使用するデバイスを指定する
 	cudaSetDevice(0);
 	
-	tsp = new TextureShaderProgram();
-	map = new MapVAO("ENRC1_20160204",*tsp);
 	
 	
 	//デプスバッファを有効にする
@@ -139,8 +155,22 @@ int main(int argc, char** argv)
 	//メインループ
 	glutMainLoop();
 	
-	delete tsp;
-	delete map;
+	
+	return 0;
+}
+*/
+
+
+
+#include "./ATFViewerMainGLSL.h"
+
+int main(void)
+{
+	ATFViewerMainGLSL& a(ATFViewerMainGLSL::getInstance());
+	
+	a.init();
+	
+	a.execMainLoop();
 	
 	return 0;
 }

@@ -33,6 +33,7 @@
 #include "DBAccessor.h"
 #include "MapTransform.h"
 #include "Joystick.h"
+#include "MapVAO.h"
 
 class ATFViewerMainGLSL
 {
@@ -54,7 +55,9 @@ private:
 	const time_t timeMin;
 	const time_t timeMax;
 	MapTransform mapTransform;
-	
+	TextureShaderProgram textureShaderProgram;
+	MapVAO map;
+	MapVAO map2;
 	//初期化
 	ATFViewerMainGLSL():
 		PI(3.14159265358979),
@@ -73,7 +76,10 @@ private:
 		now(1460635200),//1460631600),//1456153155),
 		timeMin(now),
 		timeMax(now+60*60*24*3),//1453300000),
-		mapTransform()
+		mapTransform(),
+		textureShaderProgram(),
+		map("ENRC1_20160204",textureShaderProgram),
+		map2("ENRC2_20160204",textureShaderProgram)
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;
@@ -123,6 +129,21 @@ private:
 	{
 		glutPostRedisplay();
 	}
+	void initCallbacks()
+	{
+		//画面更新関数の設定
+		glutDisplayFunc(ATFViewerMainGLSL::_display);
+		//画面リサイズ時に実行される関数の設定
+		glutReshapeFunc(ATFViewerMainGLSL::_resize);
+		//キーボード入力時に実行される関数の設定
+		glutKeyboardFunc(ATFViewerMainGLSL::_keyboard);
+		//ジョイスティックイベントの検出のための関数
+		glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
+		//アイドル時に実行される関数の設定
+		glutIdleFunc(ATFViewerMainGLSL::_idle);
+		
+	}
+	void setMatrix(void);
 public:
 	//インスタンスの取得
 	inline static ATFViewerMainGLSL& getInstance()
@@ -141,24 +162,23 @@ public:
 		std::cout << "glutInit(&argc,argv) end." << std::endl;
 		//ディスプレイモードの設定
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
+		
 		//ウィンドウの生成
 		glutCreateWindow("ATFViewer");
+		
 		GLenum err;
 		err = glewInit();
 		if(err != GLEW_OK)
 		{
 			std::cout << "error at glewInit()." << std::endl;
 		}
-		//画面更新関数の設定
-		glutDisplayFunc(ATFViewerMainGLSL::_display);
-		//画面リサイズ時に実行される関数の設定
-		glutReshapeFunc(ATFViewerMainGLSL::_resize);
-		//キーボード入力時に実行される関数の設定
-		glutKeyboardFunc(ATFViewerMainGLSL::_keyboard);
-		//ジョイスティックイベントの検出のための関数
-		glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
-		//アイドル時に実行される関数の設定
-		glutIdleFunc(ATFViewerMainGLSL::_idle);
+		
+		//デプスバッファを使用する
+		glEnable(GL_DEPTH_TEST);
+		
+		//コールバック関数の設定
+		this->initCallbacks();
+		
 		//シーンの初期化
 		this->initScene();
 	}

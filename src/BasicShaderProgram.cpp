@@ -21,9 +21,13 @@
 
 void BasicShaderProgram::init(void)
 {
+	vertShader.init();
+	fragShader.init();
+	
 	vertShader.compile();
 	fragShader.compile();
 	
+	shaderProgram.init();
 	shaderProgram.attach(fragShader);
 	shaderProgram.attach(vertShader);
 	shaderProgram.link();

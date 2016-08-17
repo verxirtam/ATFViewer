@@ -39,13 +39,10 @@ private:
 public:
 	Texture2D(GLenum u):name(0), unit(u), target(GL_TEXTURE_2D)
 	{
-		
-		//テクスチャユニットの選択
-		Active<Texture2D> a(*this);
-		
-		//テクスチャの生成
-		glGenTextures(1, &name);
-		
+	}
+	~Texture2D()
+	{
+		glDeleteTextures(1, &name);
 	}
 	void active()
 	{

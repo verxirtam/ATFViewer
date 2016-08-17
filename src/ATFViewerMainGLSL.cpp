@@ -24,187 +24,55 @@ void ATFViewerMainGLSL::initScene(void)
 {
 	cout<<"initScene() start"<<endl;
 	
-	//DBへの接続
-	DBAccessor dba(std::string("../../db/ATFViewer.db"));
+	textureShaderProgram.init();
 	
-	
-	glClearColor(0.0, 0.0, 0.0, 1.0);
-	
-	cout<<"\tpaths.initPathPoint() start"<<endl;
-	//軌道の初期化
-	//paths.initPathPoint(timeMin, timeMax);
-	cout<<"\tpaths.initPathPoint() end"<<endl;
-	
-	cout<<"\tfixes.init() start"<<endl;
-	//フィックスの初期化
-	fixes.init(dba);
-	cout<<"\tfixes.init() end"<<endl;
-	
-	cout<<"\tsectors.init() start"<<endl;
-	//セクターの初期化
-	sectors.init(dba);
-	cout<<"\tsectors.init() end"<<endl;
-	
-	cout<<"\tmap[].init() start"<<endl;
-	//マップの初期化
-	int imax = map.size();
-	for(int i=0;i < imax; i++)
-	{
-		map[i].init(dba);
-	}
-	cout<<"\tmap[].init() end"<<endl;
-
-	
-	//テスト用VBOの初期化
-	tv.init();
-	
-	//デプスバッファを使用する
-	glEnable(GL_DEPTH_TEST);
+	DBAccessor dba("../../db/ATFViewer.db");
+	map.init(dba);
+	map2.init(dba);
 	
 	cout<<"initScene() end"<<endl;
 }
 
+void ATFViewerMainGLSL::setMatrix(void)
+{
+	glm::mat4 projection = glm::perspective
+		(
+			3.141592f * 30.0f / 180.0f,
+			static_cast<float>(windowWidth) / static_cast<float>(windowHeight),
+			1.0f,
+			1000.f
+		);
+	
+	glm::vec3 camera_state
+		(
+			camera_target[0] + camera_r * cos(camera_phi) * cos(camera_theta),
+			camera_target[1] + camera_r * cos(camera_phi) * sin(camera_theta),
+			camera_target[2] + camera_r * sin(camera_phi)
+		);
+	glm::mat4 view = glm::lookAt
+		(
+			camera_state,//カメラの位置
+			glm::vec3(camera_target[0], camera_target[1],  camera_target[2]),//視点の位置
+			glm::vec3(  0.0f,  0.0f,  1.0f) //カメラの上方向の向き
+		);
+	glm::mat4 model(1.0);
+	mapTransform.setTransform(model);
+	
+	glm::mat4 mvp(projection * view * model);
+	
+	textureShaderProgram.setMVPMatrix(mvp);
+}
 
 void ATFViewerMainGLSL::display(void)
 {
-	//時刻の更新
-	now += currentTimeInterval;
-	if (now > timeMax)
-	{
-		now = timeMin;
-		paths.resetTime();
-	}
-	
-	
-	static int account = 0;
-	
+	//フレームバッファ、深度バッファをクリアする
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
-	//ウィンドウ座標系上での描画
-	/////////////////////////////////////
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho(0.0,((double)windowWidth),0.0,((double)windowHeight),-1.0,1.0);
-	glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
+	setMatrix();
+	
+	map.display();
+	map2.display();
 
-	//時刻を表示する
-	glColor3d(1.0,1.0,1.0);
-	BitmapString::drawString(0.0, (double)windowHeight-10.0,::asctime(::localtime(&now)));
-	
-	glColor3d(0.0,0.0,0.0);
-	BitmapString::drawString(0.0, (double)windowHeight-20.0,::asctime(::localtime(&now)));
-	
-	//ジョイスティックの状況を表示する
-	if(joystick.isEnable())
-	{
-		//joystick.readJoystickEvent();
-		std::stringstream jss;
-		jss << "Joystick: ";
-		for(int i = 0; i < 6; i++)
-		{
-			jss << "Axis[" << i << "] = " << joystick.getAxisState(i);
-		}
-		for(int i = 0; i < 16; i++)
-		{
-			jss << "Button[" << i << "] = " << joystick.getButtonState(i);
-		}
-		
-		
-		glColor3d(1.0,1.0,1.0);
-		BitmapString::drawString(0.0, (double)windowHeight-30.0, jss.str().c_str());
-		glColor3d(0.0,0.0,0.0);
-		BitmapString::drawString(0.0, (double)windowHeight-40.0, jss.str().c_str());
-	}
-	
-	//描画対象の航空機数を表示する
-	std::stringstream accountstr;
-	accountstr << "AC Count = " << account;
-	glColor3d(1.0,1.0,1.0);
-	BitmapString::drawString(0.0, (double)windowHeight-50.0, accountstr.str().c_str());
-	glColor3d(0.0,0.0,0.0);
-	BitmapString::drawString(0.0, (double)windowHeight-60.0, accountstr.str().c_str());
-	
-	
-	//ワールド座標系上での描画
-	//////////////////////////////////////
-	//変換行列の初期化
-	//透視変換行列の設定
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	gluPerspective(30.0, ((double)windowWidth)/(double)windowHeight, 1.0, 1000.0);
-
-	//モデルビュー変換行列の設定
-	//モデリング変換（モデル- -> ワールド）、
-	//ビューイング変換(ワールド -> カメラ)
-	//を行うための設定
-	glMatrixMode(GL_MODELVIEW);
-	//モデルビュー変換行列の初期化
-	glLoadIdentity();
-	
-	//ビュー変換行列の設定
-	//カメラの位置、向きの設定
-	double cx=camera_target[0] + camera_r * cos(camera_phi) * cos(camera_theta);
-	double cy=camera_target[1] + camera_r * cos(camera_phi) * sin(camera_theta);
-	double cz=camera_target[2] + camera_r * sin(camera_phi);
-	gluLookAt(
-			cx,cy,cz,//カメラの位置
-			camera_target[0],camera_target[1],camera_target[2],//視点の位置
-			0.0,   0.0,  1.0 //カメラから見た垂直方向
-			);
-	
-	
-	//クリッピング平面を設定
-	double cp[][4]=
-		{
-			{-1.0, 0.0, 0.0, 20.0},
-			{ 1.0, 0.0, 0.0, 20.0},
-			{ 0.0,-1.0, 0.0, 20.0},
-			{ 0.0, 1.0, 0.0, 20.0}
-		};
-	glClipPlane(GL_CLIP_PLANE0,cp[0]);
-	glClipPlane(GL_CLIP_PLANE1,cp[1]);
-	glClipPlane(GL_CLIP_PLANE2,cp[2]);
-	glClipPlane(GL_CLIP_PLANE3,cp[3]);
-	//クリッピング平面の設定
-	glEnable(GL_CLIP_PLANE0);
-	glEnable(GL_CLIP_PLANE1);
-	glEnable(GL_CLIP_PLANE2);
-	glEnable(GL_CLIP_PLANE3);
-	
-	
-	//マップの座標変換を行う
-	mapTransform.setTransform();
-	
-	//以下はmap座標系（緯度経度座標系）
-
-	//マップの描画
-	int imax = map.size();
-	for(int i = 0; i < imax; i++)
-	{
-		map[i].display();
-	}
-
-	//フィックスを描画する
-	//fixes.display();
-
-	//セクタを描画する
-	//sectors.display();
-	
-	//TestVBOの描画
-	tv.display();
-
-	//航空機の軌道を描画する
-	account = paths.display(now);
-
-	//クリッピング平面の無効化
-	glDisable(GL_CLIP_PLANE0);
-	glDisable(GL_CLIP_PLANE1);
-	glDisable(GL_CLIP_PLANE2);
-	glDisable(GL_CLIP_PLANE3);
-	
-	//オブジェクト描画コマンドを発行する
-	//glFlush();
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
 }
@@ -292,7 +160,7 @@ void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)
 		break;
 	case 'y':
 		//表示するセクタを切り替える
-		sectors.switchDisplaySector();
+		//sectors.switchDisplaySector();
 		break;
 	}
 }

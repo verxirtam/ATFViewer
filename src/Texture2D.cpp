@@ -20,6 +20,16 @@
 
 void Texture2D::init(const std::string& filepath, int width, int height)
 {
+	//テクスチャユニットの選択
+	Active<Texture2D> a(*this);
+	
+	//テクスチャの開放
+	//テクスチャを生成済みの時のために実施
+	glDeleteTextures(1, &name);
+	
+	//テクスチャの生成
+	glGenTextures(1, &name);
+	
 	//テクスチャデータの格納先
 	std::vector<GLubyte> texture(width * height * 3, 0);
 	
@@ -37,8 +47,6 @@ void Texture2D::init(const std::string& filepath, int width, int height)
 		std::perror(filepath.c_str());
 	}
 	
-	//テクスチャユニットの選択
-	Active<Texture2D> a(*this);
 	//テスクチャの選択
 	Bind<Texture2D> b(*this);
 	
