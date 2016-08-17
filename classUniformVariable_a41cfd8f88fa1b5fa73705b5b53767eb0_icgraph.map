@@ -4,7 +4,7 @@
 <area shape="rect" id="node6" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="195,135,351,177"/>
 <area shape="rect" id="node4" href="$glunittest_8cpp.html#a2608babebb1b2b1775a8afdc42533307" title="initScene" alt="" coords="526,77,602,104"/>
 <area shape="rect" id="node5" href="$glunittest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="941,103,992,129"/>
-<area shape="rect" id="node7" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="setMatrix" alt="" coords="401,143,477,169"/>
+<area shape="rect" id="node7" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して " alt="" coords="401,143,477,169"/>
 <area shape="rect" id="node8" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="533,143,595,169"/>
 <area shape="rect" id="node9" href="$classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87" title="ATFViewerMain::keyboard" alt="" coords="651,179,827,205"/>
 <area shape="rect" id="node13" href="$glunittest_8cpp.html#a8f6340a493ee12aec2b6e78b4ee187a4" title="initCallbacks" alt="" coords="690,128,787,155"/>

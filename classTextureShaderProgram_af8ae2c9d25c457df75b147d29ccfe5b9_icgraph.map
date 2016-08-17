@@ -1,5 +1,5 @@
 <map id="TextureShaderProgram::setMVPMatrix" name="TextureShaderProgram::setMVPMatrix">
-<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="setMatrix" alt="" coords="211,31,287,57"/>
+<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して " alt="" coords="211,31,287,57"/>
 <area shape="rect" id="node3" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="337,31,399,57"/>
 <area shape="rect" id="node4" href="$classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87" title="ATFViewerMain::keyboard" alt="" coords="448,5,624,32"/>
 <area shape="rect" id="node8" href="$glunittest_8cpp.html#a8f6340a493ee12aec2b6e78b4ee187a4" title="initCallbacks" alt="" coords="487,56,585,83"/>
