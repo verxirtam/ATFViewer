@@ -1,8 +1,8 @@
 <map id="TextureShaderProgram::setMVPMatrix" name="TextureShaderProgram::setMVPMatrix">
-<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定して シェーダプログラムに設定する " alt="" coords="211,31,287,57"/>
-<area shape="rect" id="node3" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="337,31,399,57"/>
+<area shape="rect" id="node2" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="モデルビュープロジェクション行列を設定してシェーダプログラムに設定する " alt="" coords="211,31,287,57"/>
+<area shape="rect" id="node3" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="画面への描画を行う " alt="" coords="337,31,399,57"/>
 <area shape="rect" id="node4" href="$classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87" title="ATFViewerMain::keyboard" alt="" coords="448,5,624,32"/>
-<area shape="rect" id="node8" href="$glunittest_8cpp.html#a8f6340a493ee12aec2b6e78b4ee187a4" title="initCallbacks" alt="" coords="487,56,585,83"/>
+<area shape="rect" id="node8" href="$glunittest_8cpp.html#a8f6340a493ee12aec2b6e78b4ee187a4" title="OpenGLのコールバック関数の設定を行う " alt="" coords="487,56,585,83"/>
 <area shape="rect" id="node5" href="$classATFViewerMain.html#a920b69897d6afe04b708f271427523d9" title="ATFViewerMain::_keyboard" alt="" coords="673,5,855,32"/>
 <area shape="rect" id="node6" href="$classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d" title="ATFViewerMain::init" alt="" coords="905,5,1045,32"/>
 <area shape="rect" id="node7" href="$ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1093,5,1144,32"/>
