@@ -1,7 +1,8 @@
 <map id="VAOPositionColorDynamic&lt; S &gt;" name="VAOPositionColorDynamic&lt; S &gt;">
-<area shape="rect" id="node2" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBODynamicBase,\l VBODynamicBase \&gt;" alt="" coords="1037,61,1203,117"/>
-<area shape="rect" id="node3" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="619,9,819,50"/>
-<area shape="rect" id="node4" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,16,456,43"/>
-<area shape="rect" id="node5" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,16,119,43"/>
-<area shape="rect" id="node7" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBOClass, VBOElementClass \&gt;" alt="" coords="597,153,840,194"/>
+<area shape="rect" id="node2" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBODynamicBase,\l VBODynamicBase \&gt;" alt="" coords="1037,112,1203,168"/>
+<area shape="rect" id="node3" href="$classVAOBase.html" title="VAOBase" alt="" coords="325,104,405,131"/>
+<area shape="rect" id="node8" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBOClass, VBOElementClass \&gt;" alt="" coords="597,227,840,269"/>
+<area shape="rect" id="node4" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="619,19,819,61"/>
+<area shape="rect" id="node5" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,27,456,53"/>
+<area shape="rect" id="node6" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,27,119,53"/>
 </map>
