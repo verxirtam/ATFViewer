@@ -1,13 +1,5 @@
 <map id="ATFViewerMainGLSL::keyboard" name="ATFViewerMainGLSL::keyboard">
-<area shape="rect" id="node2" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="display" alt="" coords="258,117,321,144"/>
-<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#a4313ffe3e31d245f5e3eb8d7ab8b441c" title="ATFViewerMainGLSL::\l_idle" alt="" coords="211,169,367,210"/>
-<area shape="rect" id="node3" href="$glunittest_8cpp.html#a3519e9cfcb872933e4833cb18b7eb80d" title="setMatrix" alt="" coords="466,60,542,87"/>
-<area shape="rect" id="node8" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="442,117,566,144"/>
-<area shape="rect" id="node4" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="641,49,797,90"/>
-<area shape="rect" id="node5" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="852,5,993,32"/>
-<area shape="rect" id="node6" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="852,56,993,83"/>
-<area shape="rect" id="node7" href="$classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328" title="ShaderProgram::unuse" alt="" coords="845,107,1000,133"/>
-<area shape="rect" id="node9" href="$classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453" title="VAOPositionTexture\l::display" alt="" coords="648,114,789,155"/>
-<area shape="rect" id="node11" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="426,169,582,210"/>
-<area shape="rect" id="node12" href="$classATFViewerMainGLSL.html#a8a73e9e8bdf1066a4830012491e78bbe" title="ATFViewerMainGLSL::idle" alt="" coords="416,235,592,261"/>
+<area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#a4313ffe3e31d245f5e3eb8d7ab8b441c" title="ATFViewerMainGLSL::\l_idle" alt="" coords="211,34,367,75"/>
+<area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="426,5,582,46"/>
+<area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#a8a73e9e8bdf1066a4830012491e78bbe" title="ATFViewerMainGLSL::idle" alt="" coords="416,71,592,97"/>
 </map>

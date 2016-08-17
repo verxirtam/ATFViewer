@@ -1,12 +1,3 @@
 <map id="VAOPositionTexture::display" name="VAOPositionTexture::display">
-<area shape="rect" id="node2" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="195,31,319,57"/>
-<area shape="rect" id="node3" href="$classATFViewerMain.html#ab184eda281eead567d265b12432ef775" title="ATFViewerMain::display" alt="" coords="369,5,533,32"/>
-<area shape="rect" id="node7" href="$glunittest_8cpp.html#a4ea013001a5fb47853d0fab8f8de35cd" title="画面への描画を行う " alt="" coords="419,56,482,83"/>
-<area shape="rect" id="node4" href="$classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb" title="ATFViewerMain::_display" alt="" coords="812,5,983,32"/>
-<area shape="rect" id="node5" href="$classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d" title="ATFViewerMain::init" alt="" coords="1038,31,1178,57"/>
-<area shape="rect" id="node6" href="$ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1227,31,1277,57"/>
-<area shape="rect" id="node8" href="$classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87" title="ATFViewerMain::keyboard" alt="" coords="581,56,757,83"/>
-<area shape="rect" id="node10" href="$glunittest_8cpp.html#a8f6340a493ee12aec2b6e78b4ee187a4" title="OpenGLのコールバック関数の設定を行う " alt="" coords="621,107,718,133"/>
-<area shape="rect" id="node9" href="$classATFViewerMain.html#a920b69897d6afe04b708f271427523d9" title="ATFViewerMain::_keyboard" alt="" coords="806,56,989,83"/>
-<area shape="rect" id="node11" href="$glunittest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="872,107,923,133"/>
+<area shape="rect" id="node2" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="195,12,319,39"/>
 </map>

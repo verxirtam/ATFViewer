@@ -1,8 +1,3 @@
 <map id="MapVAO::getVertexIndex" name="MapVAO::getVertexIndex">
-<area shape="rect" id="node2" href="$classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="225,31,325,57"/>
-<area shape="rect" id="node3" href="$classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee" title="ATFViewerMain::initScene" alt="" coords="374,5,551,32"/>
-<area shape="rect" id="node6" href="$glunittest_8cpp.html#a2608babebb1b2b1775a8afdc42533307" title="シーンに描画するオブジェクトを初期化する " alt="" coords="425,56,501,83"/>
-<area shape="rect" id="node4" href="$classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d" title="ATFViewerMain::init" alt="" coords="601,5,741,32"/>
-<area shape="rect" id="node5" href="$ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="789,5,840,32"/>
-<area shape="rect" id="node7" href="$glunittest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="645,56,696,83"/>
+<area shape="rect" id="node2" href="$classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="225,5,325,32"/>
 </map>

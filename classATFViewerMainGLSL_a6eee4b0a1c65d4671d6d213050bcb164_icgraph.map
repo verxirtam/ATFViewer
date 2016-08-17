@@ -1,4 +1,6 @@
 <map id="ATFViewerMainGLSL::resize" name="ATFViewerMainGLSL::resize">
 <area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#af26e811d9fd9d9513456eee26839c089" title="ATFViewerMainGLSL::\l_resize" alt="" coords="211,5,367,46"/>
-<area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="416,12,589,39"/>
+<area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="417,5,573,46"/>
+<area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="621,12,795,39"/>
+<area shape="rect" id="node5" href="$glunittest_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="843,12,893,39"/>
 </map>

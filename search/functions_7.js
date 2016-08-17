@@ -29,7 +29,7 @@ var searchData=
   ['gethandle',['getHandle',['../classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa',1,'Shader::getHandle()'],['../classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce',1,'ShaderProgram::getHandle()'],['../classVBOBase.html#af048b39cc0ade92245b77762aa5168b0',1,'VBOBase::getHandle()']]],
   ['getindexcount',['getIndexCount',['../classCountCrossing.html#a12155503120c8cc4ebe57a450c256996',1,'CountCrossing']]],
   ['getinsidelonglat',['getInsideLongLat',['../classSectors.html#ab714ebf9e19b34c5a5b27c1037bc4f0a',1,'Sectors']]],
-  ['getinstance',['getInstance',['../classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f',1,'ATFViewerMain']]],
+  ['getinstance',['getInstance',['../classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f',1,'ATFViewerMain::getInstance()'],['../classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f',1,'ATFViewerMainGLSL::getInstance()']]],
   ['getintervalstatus',['getIntervalStatus',['../classTimeSeparation.html#a2db4c33ca4c17566c94086e409083933',1,'TimeSeparation']]],
   ['getlatitudefromdms',['getLatitudeFromDMS',['../classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9',1,'Util']]],
   ['getlongitudefromdms',['getLongitudeFromDMS',['../classUtil.html#a10d9205506a75853dce601c2e598af15',1,'Util']]],

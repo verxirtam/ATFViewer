@@ -31,7 +31,7 @@ var searchData=
   ['gethandle',['getHandle',['../classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa',1,'Shader::getHandle()'],['../classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce',1,'ShaderProgram::getHandle()'],['../classVBOBase.html#af048b39cc0ade92245b77762aa5168b0',1,'VBOBase::getHandle()']]],
   ['getindexcount',['getIndexCount',['../classCountCrossing.html#a12155503120c8cc4ebe57a450c256996',1,'CountCrossing']]],
   ['getinsidelonglat',['getInsideLongLat',['../classSectors.html#ab714ebf9e19b34c5a5b27c1037bc4f0a',1,'Sectors']]],
-  ['getinstance',['getInstance',['../classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f',1,'ATFViewerMain']]],
+  ['getinstance',['getInstance',['../classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f',1,'ATFViewerMain::getInstance()'],['../classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f',1,'ATFViewerMainGLSL::getInstance()']]],
   ['getintervalstatus',['getIntervalStatus',['../classTimeSeparation.html#a2db4c33ca4c17566c94086e409083933',1,'TimeSeparation']]],
   ['getlatitudefromdms',['getLatitudeFromDMS',['../classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9',1,'Util']]],
   ['getlongitudefromdms',['getLongitudeFromDMS',['../classUtil.html#a10d9205506a75853dce601c2e598af15',1,'Util']]],
@@ -56,6 +56,6 @@ var searchData=
   ['getvertex',['getVertex',['../classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605',1,'Map::getVertex()'],['../classMapVAO.html#ac96adf7bed01e8171d2a1f88ae776a42',1,'MapVAO::getVertex()']]],
   ['getvertexcount',['getVertexCount',['../classCountCrossing.html#afa2c871d5fd5e0f6d7fd65ebd71b1783',1,'CountCrossing::getVertexCount()'],['../classVAOPositionColorBase.html#afd2586d8d9436f3e63ab6263e699fdc3',1,'VAOPositionColorBase::getVertexCount()'],['../classVAOPositionColorDynamic.html#a94c57e5cccf7fcd8d5671e624d3b6953',1,'VAOPositionColorDynamic::getVertexCount()']]],
   ['getvertexindex',['getVertexIndex',['../classMap.html#a03d6b0e3e5a2d224b20089a9143952d6',1,'Map::getVertexIndex()'],['../classMapVAO.html#a496bd14ddc781b42cc78f5bca8405b07',1,'MapVAO::getVertexIndex()']]],
-  ['glm_5fforce_5fradians',['GLM_FORCE_RADIANS',['../glunittest_8cpp.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;glunittest.cpp'],['../UniformVariable_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;UniformVariable.h']]],
+  ['glm_5fforce_5fradians',['GLM_FORCE_RADIANS',['../MapTransform_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;MapTransform.h'],['../UniformVariable_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;UniformVariable.h']]],
   ['glunittest_2ecpp',['glunittest.cpp',['../glunittest_8cpp.html',1,'']]]
 ];

@@ -1,4 +1,6 @@
 <map id="ATFViewerMainGLSL::_joystickTimer" name="ATFViewerMainGLSL::_joystickTimer">
-<area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#aa5b3f1b6fd3782099ddaf5f391b66904" title="ATFViewerMainGLSL::\ljoystickTimer" alt="" coords="219,5,375,46"/>
-<area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="211,71,384,97"/>
+<area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#aa5b3f1b6fd3782099ddaf5f391b66904" title="ATFViewerMainGLSL::\ljoystickTimer" alt="" coords="211,5,367,46"/>
+<area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="211,70,367,111"/>
+<area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="416,77,589,104"/>
+<area shape="rect" id="node5" href="$glunittest_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe" title="main" alt="" coords="637,77,688,104"/>
 </map>

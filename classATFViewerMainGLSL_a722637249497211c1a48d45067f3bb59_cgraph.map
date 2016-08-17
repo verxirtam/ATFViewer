@@ -1,7 +1,4 @@
 <map id="ATFViewerMainGLSL::_display" name="ATFViewerMainGLSL::_display">
 <area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="211,5,367,46"/>
 <area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a76ea0afe86000b55c48d35d5227e123e" title="ATFViewerMainGLSL::\ldisplay" alt="" coords="211,70,367,111"/>
-<area shape="rect" id="node4" href="$classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4" title="BitmapString::drawString" alt="" coords="417,52,583,79"/>
-<area shape="rect" id="node5" href="$classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d" title="MapVAO::display" alt="" coords="438,103,562,129"/>
-<area shape="rect" id="node6" href="$classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453" title="VAOPositionTexture\l::display" alt="" coords="632,95,773,137"/>
 </map>

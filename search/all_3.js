@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['camera_5fphi',['camera_phi',['../classATFViewerMain.html#a05cd405c71a8c711412607cad4a7a12e',1,'ATFViewerMain']]],
-  ['camera_5fr',['camera_r',['../classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6',1,'ATFViewerMain']]],
-  ['camera_5ftarget',['camera_target',['../classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7',1,'ATFViewerMain']]],
-  ['camera_5ftheta',['camera_theta',['../classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495',1,'ATFViewerMain']]],
+  ['camera_5fphi',['camera_phi',['../classATFViewerMain.html#a05cd405c71a8c711412607cad4a7a12e',1,'ATFViewerMain::camera_phi()'],['../classATFViewerMainGLSL.html#a7cc8998d3358d2a2a7aa08f22be1e888',1,'ATFViewerMainGLSL::camera_phi()']]],
+  ['camera_5fr',['camera_r',['../classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6',1,'ATFViewerMain::camera_r()'],['../classATFViewerMainGLSL.html#a2e7c051cb605d0d8c1fcb646ba7a3aab',1,'ATFViewerMainGLSL::camera_r()']]],
+  ['camera_5ftarget',['camera_target',['../classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7',1,'ATFViewerMain::camera_target()'],['../classATFViewerMainGLSL.html#af7bb217d9a9bdfdfcaeda86c20cf69b6',1,'ATFViewerMainGLSL::camera_target()']]],
+  ['camera_5ftheta',['camera_theta',['../classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495',1,'ATFViewerMain::camera_theta()'],['../classATFViewerMainGLSL.html#acb9d1bf8ffdf253a78af821531cdea44',1,'ATFViewerMainGLSL::camera_theta()']]],
   ['caption',['caption',['../structSector.html#af10ebc87b47d3278f892ac96fe488f6a',1,'Sector']]],
   ['centeroffsetlat',['centerOffsetLat',['../classMapTransform.html#af126c2e6aa122d6c013fed26599cd669',1,'MapTransform']]],
   ['centeroffsetlong',['centerOffsetLong',['../classMapTransform.html#a782e3c3b12869b3410ef243d6568e87a',1,'MapTransform']]],
@@ -48,5 +48,5 @@ var searchData=
   ['current',['current',['../classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5ba4c41bf2196765fbd58eb7aefd076c193',1,'TimeSeparation']]],
   ['currentindex',['currentIndex',['../classTimeSeparation.html#ac3871743288997dc6d67e533f43caf15',1,'TimeSeparation']]],
   ['currentpaths',['currentPaths',['../classPaths.html#a80fe5288e26b74fe3a1568392d4828f0',1,'Paths']]],
-  ['currenttimeinterval',['currentTimeInterval',['../classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e',1,'ATFViewerMain']]]
+  ['currenttimeinterval',['currentTimeInterval',['../classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e',1,'ATFViewerMain::currentTimeInterval()'],['../classATFViewerMainGLSL.html#ae8ca6d01660bd6a97db130eeb4efbc13',1,'ATFViewerMainGLSL::currentTimeInterval()']]]
 ];
