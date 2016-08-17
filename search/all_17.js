@@ -7,6 +7,7 @@ var searchData=
   ['_7eshaderprogram',['~ShaderProgram',['../classShaderProgram.html#a2d2eadcfc48cc2e2ddb82aba70553a9f',1,'ShaderProgram']]],
   ['_7etestusethread',['~TestUseThread',['../classTestUseThread.html#a512b9b882f57be4ae6500a4d022bfae4',1,'TestUseThread']]],
   ['_7etestvbo',['~TestVBO',['../classTestVBO.html#afa66d401c6f1bd76a5ed154751d703c1',1,'TestVBO']]],
+  ['_7etexture2d',['~Texture2D',['../classTexture2D.html#a84210f27b55799a096b8abc36380a077',1,'Texture2D']]],
   ['_7evaobase',['~VAOBase',['../classVAOBase.html#a6d0bd290978a5cda52bb1eb71a7e5c3d',1,'VAOBase']]],
   ['_7evaopositioncolorbase',['~VAOPositionColorBase',['../classVAOPositionColorBase.html#a8aa63dc9bcfc7e45b5c8a02fb7ad1feb',1,'VAOPositionColorBase']]],
   ['_7evaopositiontexture',['~VAOPositionTexture',['../classVAOPositionTexture.html#a916f06f20ca160f3024d8379e4b19311',1,'VAOPositionTexture']]],
