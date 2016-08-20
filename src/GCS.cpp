@@ -20,7 +20,7 @@
 
 
 //頂点配列が右回り(時計回り)かどうかを判定する
-bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)
+bool isClockwise(const std::vector<unsigned int>& longLatIndex, const std::vector<LongLat>& longLat)
 {
 	//頂点列の作る多角形の面積の2倍
 	double s = 0.0;

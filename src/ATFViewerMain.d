@@ -19,4 +19,4 @@ ATFViewerMain.o: ATFViewerMain.cpp ATFViewerMain.h OpenGLHeaders.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h Texture2D.h VAOBase.h \
- Fixes.h Sectors.h GCS.h Joystick.h TestVBO.h
+ Fixes.h Sectors.h GCS.h LongLat.h Joystick.h TestVBO.h

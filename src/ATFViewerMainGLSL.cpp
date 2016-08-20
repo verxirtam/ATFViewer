@@ -25,11 +25,13 @@ void ATFViewerMainGLSL::initScene(void)
 	cout<<"initScene() start"<<endl;
 	
 	textureShaderProgram.init();
+	basicShaderProgram.init();
 	
 	DBAccessor dba("../../db/ATFViewer.db");
 	map.init(dba);
 	map2.init(dba);
-	
+	sector.init(dba);
+
 	cout<<"initScene() end"<<endl;
 }
 
@@ -61,6 +63,7 @@ void ATFViewerMainGLSL::setMatrix(void)
 	glm::mat4 mvp(projection * view * model);
 	
 	textureShaderProgram.setMVPMatrix(mvp);
+	basicShaderProgram.setMVPMatrix(mvp);
 }
 
 void ATFViewerMainGLSL::display(void)
@@ -72,7 +75,8 @@ void ATFViewerMainGLSL::display(void)
 	
 	map.display();
 	map2.display();
-
+	sector.display();
+	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();
 }

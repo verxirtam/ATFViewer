@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  Sectors.h
+ *       Filename:  SectorsVAO.h
  *
  *    Description:  セクタを描画する
  *
@@ -24,17 +24,19 @@
 #include <string>
 #include <cmath>
 
-#include <GL/glut.h>
+#include "OpenGLHeaders.h"
 
-#include "BitmapString.h"
+
 #include "GCS.h"
 #include "DBAccessor.h"
 #include "Util.h"
 
+#include "BasicShaderProgram.h"
 
-class Sectors
+class SectorsVAO
 {
 private:
+	//クラス内クラス・構造体
 	struct SubSector
 	{
 		int minimumAltitude;
@@ -53,25 +55,56 @@ private:
 		int subSectorCount;
 		std::vector<SubSector> subSector;
 	};
-	std::vector<Sector> sector;
-	std::vector<LongLat> longLat;
+	/**
+	 * @brief VAOに設定するための情報を格納する
+	 */
+	struct InitSectorsSettings
+	{
+		std::vector<Sector> sector;
+		std::vector<LongLat> longLat;
+		std::vector<glm::vec3> position;/**< 位置 */
+		std::vector<glm::vec3> color;/**< 頂点色*/
+		std::vector<unsigned int> element;/**< インデックス配列  */
+	};
+	//データメンバ
+	//std::vector<Sector> sector;
+	//std::vector<LongLat> longLat;
 	bool displayAll;
 	unsigned int displaySectorIndex;
+	BasicShaderProgram::vaoType vao;
+	//メンバ関数
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
 	void getSectors(DBAccessor& dba);
 	void getSubSectors(DBAccessor& dba, Sector& s);
 	void getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index);
-	void displaySector(Sector& ss);
-	void displaySubSector(const std::string& sector_name, SubSector& ss);
+	void initSector(Sector& ss, InitSectorsSettings& iss);
+	void initSubSector(const std::string& sector_name, SubSector& ss, const glm::vec3& color, InitSectorsSettings& iss);
+	void addPositionColorIndex
+		(
+			const std::vector<unsigned int>& index,
+			float altitude,
+			const glm::vec3& color,
+			InitSectorsSettings& iss,
+			std::vector<unsigned int>& target_index
+		);
+	void setElement(const std::vector<unsigned int>& index, InitSectorsSettings& iss);
+	void initVAO(void);
 public:
-	Sectors():sector(),longLat(),displayAll(true),displaySectorIndex(0)
+	SectorsVAO(BasicShaderProgram& b)
+		:
+			displayAll(true),
+			displaySectorIndex(0),
+			vao(b)
 	{
 	}
 	void init(DBAccessor& dba)
 	{
 		getSectors(dba);
 		
-		/////////////////////////////
+		initVAO();
+		
+		//デバッグ用の出力//////////////////////
+		/*
 		return;
 		int imax = sector.size();
 		std::cout << "sector.size() = " << imax << std::endl;
@@ -100,10 +133,10 @@ public:
 				}
 			}
 		}
+		*/
 		/////////////////////////////
 	}
-	void display(void);
-
+	/*
 	void switchDisplaySector()
 	{
 		if(displayAll)
@@ -114,13 +147,16 @@ public:
 		else
 		{
 			displaySectorIndex++;
-			if(displaySectorIndex>=sector.size())
+			if(displaySectorIndex >= sector.size())
 			{
 				displayAll = true;
 				displaySectorIndex = 0;
 			}
 		}
-
+	}*/
+	void display()
+	{
+		vao.display();
 	}
 };
 

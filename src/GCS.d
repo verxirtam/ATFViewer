@@ -1,1 +1,1 @@
-GCS.o: GCS.cpp GCS.h
+GCS.o: GCS.cpp GCS.h LongLat.h

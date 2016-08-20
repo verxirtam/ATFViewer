@@ -22,14 +22,9 @@
 
 #include <vector>
 
-struct LongLat
-{
-	double longitude;
-	double latitude;
-};
-
+#include "LongLat.h"
 
 //頂点配列が右回り(時計回り)かどうかを判定する
-bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat);
+bool isClockwise(const std::vector<unsigned int>& longLatIndex, const std::vector<LongLat>& longLat);
 
 #endif

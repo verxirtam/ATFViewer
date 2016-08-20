@@ -34,6 +34,7 @@
 #include "MapTransform.h"
 #include "Joystick.h"
 #include "MapVAO.h"
+#include "SectorsVAO.h"
 
 class ATFViewerMainGLSL
 {
@@ -56,8 +57,10 @@ private:
 	const time_t timeMax;
 	MapTransform mapTransform;
 	TextureShaderProgram textureShaderProgram;
+	BasicShaderProgram basicShaderProgram;
 	MapVAO map;
 	MapVAO map2;
+	SectorsVAO sector;
 	//初期化
 	ATFViewerMainGLSL():
 		PI(3.14159265358979),
@@ -78,8 +81,10 @@ private:
 		timeMax(now+60*60*24*3),//1453300000),
 		mapTransform(),
 		textureShaderProgram(),
+		basicShaderProgram(),
 		map("ENRC1_20160204",textureShaderProgram),
-		map2("ENRC2_20160204",textureShaderProgram)
+		map2("ENRC2_20160204",textureShaderProgram),
+		sector(basicShaderProgram)
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;

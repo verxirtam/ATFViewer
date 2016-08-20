@@ -4,8 +4,11 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ATFViewerMain	ATFViewerMain.h	/^	ATFViewerMain():$/;"	f	class:ATFViewerMain
+ATFViewerMain	ATFViewerMain.h	/^class ATFViewerMain$/;"	c
 ATFViewerMainGLSL	ATFViewerMainGLSL.h	/^	ATFViewerMainGLSL():$/;"	f	class:ATFViewerMainGLSL
 ATFViewerMainGLSL	ATFViewerMainGLSL.h	/^class ATFViewerMainGLSL$/;"	c
+ATFViewerMain_H	ATFViewerMain.h	22;"	d
 Axis	Joystick.h	/^	std::vector<int> Axis;$/;"	m	class:Joystick
 AxisCount	Joystick.h	/^	int AxisCount;$/;"	m	class:Joystick
 Axis_LeftStick_LeftRight	Joystick.h	/^	Axis_LeftStick_LeftRight = 0,$/;"	e	enum:KeyCode_F310
@@ -56,15 +59,18 @@ File	Joystick.h	/^	int File;$/;"	m	class:Joystick
 Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
+GLM_FORCE_RADIANS	MapTransform.h	21;"	d
+GLM_FORCE_RADIANS	OpenGLHeaders.h	24;"	d
 GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
 GLTESTTARGET	makefile	/^GLTESTTARGET := glunittest$/;"	m
 GPROF2DOT	makefile	/^GPROF2DOT := ~\/tools\/gprof2dot\/gprof2dot.py$/;"	m
 InitMapSetting	MapVAO.h	/^	struct InitMapSetting$/;"	s	class:MapVAO
+InitSectorsSettings	SectorsVAO.h	/^	struct InitSectorsSettings$/;"	s	class:SectorsVAO
 Joystick	Joystick.h	/^	Joystick():$/;"	f	class:Joystick
 Joystick	Joystick.h	/^class Joystick$/;"	c
 Joystick_H_	Joystick.h	20;"	d
 KeyCode_F310	Joystick.h	/^enum KeyCode_F310$/;"	g
-LongLat	GCS.h	/^struct LongLat$/;"	s
+LongLatBase	LongLat.h	/^struct LongLatBase$/;"	s
 MAP_H_	Map.h	21;"	d
 MAP_H_	MapVAO.h	21;"	d
 Map	Map.h	/^	Map(const std::string& map_id):$/;"	f	class:Map
@@ -86,6 +92,7 @@ OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSGLTEST	makefile	/^OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o $(GLTESTTARGET).o, $(OBJS))$/;"	m
 OBJSTEST	makefile	/^OBJSTEST := $(filter-out $(TARGET).o $(GLTESTTARGET).o, $(OBJS))$/;"	m
+PI	ATFViewerMain.h	/^	const double PI;$/;"	m	class:ATFViewerMain
 PI	ATFViewerMainGLSL.h	/^	const double PI;$/;"	m	class:ATFViewerMainGLSL
 Path	Path.h	/^struct Path$/;"	s
 PathPoint	Path.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
@@ -96,16 +103,21 @@ Paths	Paths.h	/^class Paths$/;"	c
 Paths_H	Paths.h	20;"	d
 Position	TimeSeparation.h	/^	enum Position$/;"	g	class:TimeSeparation
 SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
-Sector	Sectors.h	/^struct Sector$/;"	s
+Sector	Sectors.h	/^	struct Sector$/;"	s	class:Sectors
+Sector	SectorsVAO.h	/^	struct Sector$/;"	s	class:SectorsVAO
 Sectors	Sectors.h	/^	Sectors():sector(),longLat(),displayAll(true),displaySectorIndex(0)$/;"	f	class:Sectors
 Sectors	Sectors.h	/^class Sectors$/;"	c
+SectorsVAO	SectorsVAO.h	/^	SectorsVAO(BasicShaderProgram& b)$/;"	f	class:SectorsVAO
+SectorsVAO	SectorsVAO.h	/^class SectorsVAO$/;"	c
 Sectors_H	Sectors.h	20;"	d
+Sectors_H	SectorsVAO.h	20;"	d
 Shader	Shader.h	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^class Shader$/;"	c
 ShaderProgram	ShaderProgram.h	/^	ShaderProgram():handle(0)$/;"	f	class:ShaderProgram
 ShaderProgram	ShaderProgram.h	/^class ShaderProgram$/;"	c
-SubSector	Sectors.h	/^struct SubSector$/;"	s
+SubSector	Sectors.h	/^	struct SubSector$/;"	s	class:Sectors
+SubSector	SectorsVAO.h	/^	struct SubSector$/;"	s	class:SectorsVAO
 TARGET	makefile	/^TARGET := $(shell basename `dirname \\`pwd\\``)$/;"	m
 TESTTARGET	makefile	/^TESTTARGET := unittest$/;"	m
 TestCountCrossing	TestCountCrossing.h	/^class TestCountCrossing$/;"	c
@@ -254,14 +266,20 @@ _ZTVSt16_Sp_counted_baseILN9__gnu_cxx12_Lock_policyE2EE	Paths.s	/^_ZTVSt16_Sp_co
 _ZTVSt23_Sp_counted_ptr_inplaceINSt13__future_base15_Deferred_stateISt12_Bind_simpleIFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS5_EEN14TimeSeparation8PositionEEUlvE_vEEvEESaISE_ELN9__gnu_cxx12_Lock_policyE2EE	Paths.s	/^_ZTVSt23_Sp_counted_ptr_inplaceINSt13__future_base15_Deferred_stateISt12_Bind_simpleIFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS5_EEN14TimeSeparation8PositionEEUlvE_vEEvEESaISE_ELN9__gnu_cxx12_Lock_policyE2EE:$/;"	l
 _ZTVSt23_Sp_counted_ptr_inplaceINSt13__future_base17_Async_state_implISt12_Bind_simpleIFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS5_EEN14TimeSeparation8PositionEEUlvE_vEEvEESaISE_ELN9__gnu_cxx12_Lock_policyE2EE	Paths.s	/^_ZTVSt23_Sp_counted_ptr_inplaceINSt13__future_base17_Async_state_implISt12_Bind_simpleIFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS5_EEN14TimeSeparation8PositionEEUlvE_vEEvEESaISE_ELN9__gnu_cxx12_Lock_policyE2EE:$/;"	l
 _ZTVSt23_Sp_counted_ptr_inplaceINSt6thread5_ImplISt12_Bind_simpleIFZNSt13__future_base17_Async_state_implIS2_IFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS7_EEN14TimeSeparation8PositionEEUlvE_vEEvEC1EOSF_EUlvE_vEEEESaISL_ELN9__gnu_cxx12_Lock_policyE2EE	Paths.s	/^_ZTVSt23_Sp_counted_ptr_inplaceINSt6thread5_ImplISt12_Bind_simpleIFZNSt13__future_base17_Async_state_implIS2_IFZN5Paths18runMakePathsBufferERSt6vectorI4PathSaIS7_EEN14TimeSeparation8PositionEEUlvE_vEEvEC1EOSF_EUlvE_vEEEESaISL_ELN9__gnu_cxx12_Lock_policyE2EE:$/;"	l
+_display	ATFViewerMain.h	/^	static void _display(void)$/;"	f	class:ATFViewerMain
 _display	ATFViewerMainGLSL.h	/^	static void _display(void)$/;"	f	class:ATFViewerMainGLSL
 _f	unittest.cpp	/^	static void* _f(void* arg)$/;"	f	class:TestThread	file:
 _f	unittest.cpp	/^	static void* _f(void* arg)$/;"	f	class:TestThread_MemFunc	file:
+_idle	ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
 _idle	ATFViewerMainGLSL.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMainGLSL
+_joystickTimer	ATFViewerMain.h	/^	static void _joystickTimer(int value)$/;"	f	class:ATFViewerMain
 _joystickTimer	ATFViewerMainGLSL.h	/^	static void _joystickTimer(int value)$/;"	f	class:ATFViewerMainGLSL
+_keyboard	ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _keyboard	ATFViewerMainGLSL.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMainGLSL
+_resize	ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMainGLSL.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMainGLSL
 active	Texture2D.h	/^	void active()$/;"	f	class:Texture2D
+addPositionColorIndex	SectorsVAO.cpp	/^void SectorsVAO::addPositionColorIndex$/;"	f	class:SectorsVAO
 addTrackData	unittest.cpp	/^void addTrackData(vector<id_time>& r, DBAccessor& dba)$/;"	f
 altitude	Path.h	/^	int altitude;$/;"	m	struct:PathPoint
 arrival	Path.h	/^	std::string arrival;$/;"	m	struct:PathPoint
@@ -288,13 +306,19 @@ bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
 bindLongLong	DBAccessor.h	/^	void bindLongLong(int i, long long d)$/;"	f	class:DBAccessor
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
 bufferPaths	Paths.h	/^	std::vector<Path>* bufferPaths;$/;"	m	class:Paths
+camera_phi	ATFViewerMain.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMain
 camera_phi	ATFViewerMainGLSL.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMainGLSL
+camera_r	ATFViewerMain.h	/^	GLdouble camera_r;$/;"	m	class:ATFViewerMain
 camera_r	ATFViewerMainGLSL.h	/^	GLdouble camera_r;$/;"	m	class:ATFViewerMainGLSL
+camera_target	ATFViewerMain.h	/^	GLdouble camera_target[3];$/;"	m	class:ATFViewerMain
 camera_target	ATFViewerMainGLSL.h	/^	GLdouble camera_target[3];$/;"	m	class:ATFViewerMainGLSL
+camera_theta	ATFViewerMain.h	/^	GLdouble camera_theta;$/;"	m	class:ATFViewerMain
 camera_theta	ATFViewerMainGLSL.h	/^	GLdouble camera_theta;$/;"	m	class:ATFViewerMainGLSL
-caption	Sectors.h	/^	std::string caption;$/;"	m	struct:Sector
+caption	Sectors.h	/^		std::string caption;$/;"	m	struct:Sectors::Sector
+caption	SectorsVAO.h	/^		std::string caption;$/;"	m	struct:SectorsVAO::Sector
 centerOffsetLat	MapTransform.h	/^	double centerOffsetLat;$/;"	m	class:MapTransform
 centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTransform
+color	SectorsVAO.h	/^		std::vector<glm::vec3> color;\/**< 頂点色*\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 color	VAOPositionColor.h	/^	VBOClass color;$/;"	m	class:VAOPositionColorBase
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 comp_path	unittest.cpp	/^bool comp_path(const Path& p0, const Path& p1)$/;"	f
@@ -328,25 +352,34 @@ cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
 current	TimeSeparation.h	/^		current = 0,$/;"	e	enum:TimeSeparation::Position
 currentIndex	TimeSeparation.h	/^	unsigned int currentIndex;$/;"	m	class:TimeSeparation
 currentPaths	Paths.h	/^	std::vector<Path>* currentPaths;$/;"	m	class:Paths
+currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
 currentTimeInterval	ATFViewerMainGLSL.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMainGLSL
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
 dbFileName	DBAccessor.h	/^	std::string dbFileName;$/;"	m	class:DBAccessor
 device	CountCrossing_cuda.h	/^	T* device;$/;"	m	class:DeviceSeqConst
 device	VBO.h	/^	ElementType* device;$/;"	m	class:VBODynamicBase
 deviceTime	unittest.cpp	/^	double deviceTime;$/;"	m	struct:EstimateSpecResult	file:
+disp_X	ATFViewerMain.h	/^	int disp_X;$/;"	m	class:ATFViewerMain
+disp_Y	ATFViewerMain.h	/^	int disp_Y;$/;"	m	class:ATFViewerMain
+disp_Z	ATFViewerMain.h	/^	int disp_Z;$/;"	m	class:ATFViewerMain
+disp_buttonMask	ATFViewerMain.h	/^	unsigned int disp_buttonMask;$/;"	m	class:ATFViewerMain
+display	ATFViewerMain.cpp	/^void ATFViewerMain::display(void)$/;"	f	class:ATFViewerMain
 display	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::display(void)$/;"	f	class:ATFViewerMainGLSL
 display	Fixes.h	/^	void display()$/;"	f	class:Fixes
 display	Map.cpp	/^void Map::display(void)$/;"	f	class:Map
 display	MapVAO.cpp	/^void MapVAO::display(void)$/;"	f	class:MapVAO
 display	Paths.cpp	/^int Paths::display(time_t now)$/;"	f	class:Paths
 display	Sectors.cpp	/^void Sectors::display(void)$/;"	f	class:Sectors
+display	SectorsVAO.h	/^	void display()$/;"	f	class:SectorsVAO
 display	TestVBO.cpp	/^void TestVBO::display()$/;"	f	class:TestVBO
 display	VAOPositionColor.h	/^	void display()$/;"	f	class:VAOPositionColorDynamic
 display	VAOPositionColor.h	/^	void display(void)$/;"	f	class:VAOPositionColorBase
 display	VAOPositionTexture.h	/^	void display(void)$/;"	f	class:VAOPositionTexture
 displayAll	Sectors.h	/^	bool displayAll;$/;"	m	class:Sectors
+displayAll	SectorsVAO.h	/^	bool displayAll;$/;"	m	class:SectorsVAO
 displaySector	Sectors.cpp	/^void Sectors::displaySector(Sector& sector)$/;"	f	class:Sectors
 displaySectorIndex	Sectors.h	/^	unsigned int displaySectorIndex;$/;"	m	class:Sectors
+displaySectorIndex	SectorsVAO.h	/^	unsigned int displaySectorIndex;$/;"	m	class:SectorsVAO
 displaySubSector	Sectors.cpp	/^void Sectors::displaySubSector(const std::string& sector_name, SubSector& ss)$/;"	f	class:Sectors
 drawPath	Paths.cpp	/^void Paths::drawPath(PathPoint& p, time_t now)$/;"	f	class:Paths
 drawPathLine	Paths.cpp	/^void Paths::drawPathLine(Path& p, time_t past_time, time_t now)$/;"	f	class:Paths
@@ -355,16 +388,19 @@ drawString	BitmapString.h	/^	static void drawString(double x, double y, const ch
 drawString	BitmapString.h	/^	static void drawString(double x, double y, double z, const char* str, void* font = GLUT_BITMAP_TIMES_ROMAN_10)$/;"	f	class:BitmapString
 drawTimeWidth	Paths.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:Paths
 dsc	CountCrossing_cuda.h	/^	DeviceSeqConst<T> dsc;$/;"	m	class:DeviceSeq
+element	SectorsVAO.h	/^		std::vector<unsigned int> element;\/**< インデックス配列  *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 element	VAOPositionColor.h	/^	VBOElementClass element;$/;"	m	class:VAOPositionColorBase
 element	VAOPositionTexture.h	/^	VBOElementStatic element;$/;"	m	class:VAOPositionTexture
 end	CountCrossing.h	/^	time_t end;$/;"	m	class:CountCrossing
 end	unittest.cpp	/^	void end()$/;"	f	class:Timer
 endTime	unittest.cpp	/^	double endTime;$/;"	m	class:Timer	file:
 exec	unittest.cpp	/^	void exec()$/;"	f	class:TestUseThread
+execMainLoop	ATFViewerMain.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMain
 execMainLoop	ATFViewerMainGLSL.h	/^	void execMainLoop(void)$/;"	f	class:ATFViewerMainGLSL
 execQuery	DBAccessor.h	/^	std::string execQuery(const std::string& query)$/;"	f	class:DBAccessor
 f	unittest.cpp	/^	F f;$/;"	m	class:TestThread	file:
 f	unittest.cpp	/^	F f;$/;"	m	class:TestThread_MemFunc	file:
+fixes	ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
 fragShader	BasicShaderProgram.h	/^	Shader fragShader;$/;"	m	class:BasicShaderProgram
 fragShader	TextureShaderProgram.h	/^	Shader fragShader;$/;"	m	class:TextureShaderProgram
 function1	unittest.cpp	/^	void function1()$/;"	f	class:TestUseThread	file:
@@ -403,6 +439,8 @@ getHandle	ShaderProgram.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
 getHandle	VBO.h	/^	GLuint getHandle()$/;"	f	class:VBOBase
 getIndexCount	CountCrossing.h	/^	int getIndexCount(int i)$/;"	f	class:CountCrossing
 getInsideLongLat	Sectors.cpp	/^LongLat Sectors::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double distance)$/;"	f	class:Sectors
+getInsideLongLat	SectorsVAO.cpp	/^LongLat SectorsVAO::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double distance)$/;"	f	class:SectorsVAO
+getInstance	ATFViewerMain.h	/^	inline static ATFViewerMain& getInstance()$/;"	f	class:ATFViewerMain
 getInstance	ATFViewerMainGLSL.h	/^	inline static ATFViewerMainGLSL& getInstance()$/;"	f	class:ATFViewerMainGLSL
 getIntervalStatus	TimeSeparation.h	/^	void getIntervalStatus(Position p,time_t& start, time_t& end)$/;"	f	class:TimeSeparation
 getLatitudeFromDMS	Util.h	/^	static double getLatitudeFromDMS(std::string lat_dms)$/;"	f	class:Util
@@ -414,11 +452,14 @@ getPosition	VAOPositionColor.h	/^	VBOClass& getPosition()$/;"	f	class:VAOPositio
 getPositionDevicePointer	VAOPositionColor.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionColorDynamic
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
+getSectors	SectorsVAO.cpp	/^void SectorsVAO::getSectors(DBAccessor& dba)$/;"	f	class:SectorsVAO
 getSettings	Map.cpp	/^void Map::getSettings(DBAccessor& dba,std::string& map_id, std::string& texture_file_name)$/;"	f	class:Map
 getSettings	MapVAO.cpp	/^void MapVAO::getSettings(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 getStart	CountCrossing.h	/^	time_t getStart()$/;"	f	class:CountCrossing
 getSubSectorVertex	Sectors.cpp	/^void Sectors::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:Sectors
+getSubSectorVertex	SectorsVAO.cpp	/^void SectorsVAO::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)$/;"	f	class:SectorsVAO
 getSubSectors	Sectors.cpp	/^void Sectors::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:Sectors
+getSubSectors	SectorsVAO.cpp	/^void SectorsVAO::getSubSectors(DBAccessor& dba, Sector& s)$/;"	f	class:SectorsVAO
 getTime	unittest.cpp	/^	double getTime()$/;"	f	class:Timer
 getTotalCellIndex	CountCrossing_cuda.h	/^int getTotalCellIndex$/;"	f
 getTotalCellIndex	cudatestfunc.h	/^int getTotalCellIndex$/;"	f
@@ -446,6 +487,7 @@ hostTime	unittest.cpp	/^	double hostTime;$/;"	m	struct:EstimateSpecResult	file:
 id	Path.h	/^	std::string id;$/;"	m	struct:Path
 id	unittest.cpp	/^	string id;$/;"	m	struct:id_time	file:
 id_time	unittest.cpp	/^struct id_time$/;"	s	file:
+idle	ATFViewerMain.h	/^	void idle(void)$/;"	f	class:ATFViewerMain
 idle	ATFViewerMainGLSL.h	/^	void idle(void)$/;"	f	class:ATFViewerMainGLSL
 imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingDeviceTemp
 imple	CountCrossing_cuda.h	/^	static void imple$/;"	f	struct:countCrossingHostTemp
@@ -454,15 +496,19 @@ inCurrentInterval	TimeSeparation.h	/^	bool inCurrentInterval(time_t t)$/;"	f	cla
 inNextInterval	TimeSeparation.h	/^	bool inNextInterval(time_t t)$/;"	f	class:TimeSeparation
 inTheInterval	TimeSeparation.h	/^	bool inTheInterval(unsigned int i, time_t t)$/;"	f	class:TimeSeparation
 inactive	Texture2D.h	/^	void inactive()$/;"	f	class:Texture2D
-includesMaximumAltitude	Sectors.h	/^	bool includesMaximumAltitude;$/;"	m	struct:SubSector
-includesMinimumAltitude	Sectors.h	/^	bool includesMinimumAltitude;$/;"	m	struct:SubSector
+includesMaximumAltitude	Sectors.h	/^		bool includesMaximumAltitude;$/;"	m	struct:Sectors::SubSector
+includesMaximumAltitude	SectorsVAO.h	/^		bool includesMaximumAltitude;$/;"	m	struct:SectorsVAO::SubSector
+includesMinimumAltitude	Sectors.h	/^		bool includesMinimumAltitude;$/;"	m	struct:Sectors::SubSector
+includesMinimumAltitude	SectorsVAO.h	/^		bool includesMinimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
+init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMainGLSL.h	/^	void init(void)$/;"	f	class:ATFViewerMainGLSL
 init	BasicShaderProgram.cpp	/^void BasicShaderProgram::init(void)$/;"	f	class:BasicShaderProgram
 init	Fixes.cpp	/^void Fixes::init(DBAccessor& dba)$/;"	f	class:Fixes
 init	Map.cpp	/^void Map::init(DBAccessor& dba)$/;"	f	class:Map
 init	MapVAO.cpp	/^void MapVAO::init(DBAccessor& dba)$/;"	f	class:MapVAO
 init	Sectors.h	/^	void init(DBAccessor& dba)$/;"	f	class:Sectors
+init	SectorsVAO.h	/^	void init(DBAccessor& dba)$/;"	f	class:SectorsVAO
 init	Shader.h	/^	void init()$/;"	f	class:Shader
 init	ShaderProgram.h	/^	void init()$/;"	f	class:ShaderProgram
 init	TestVBO.cpp	/^void TestVBO::init()$/;"	f	class:TestVBO
@@ -478,33 +524,44 @@ init	VBO.h	/^	void init(const std::vector<float>& v)$/;"	f	class:VBOStatic
 init	VBO.h	/^	void init(const std::vector<unsigned int>& v)$/;"	f	class:VBOElementStatic
 initCallbacks	ATFViewerMainGLSL.h	/^	void initCallbacks()$/;"	f	class:ATFViewerMainGLSL
 initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:Paths
+initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::initScene(void)$/;"	f	class:ATFViewerMainGLSL
+initSector	SectorsVAO.cpp	/^void SectorsVAO::initSector(Sector& sector, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
+initSubSector	SectorsVAO.cpp	/^void SectorsVAO::initSubSector(const std::string& sector_name, SubSector& ss, const glm::vec3& color, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	f	class:Map
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
 initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
 initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
-insideLongLatIndex	Sectors.h	/^	std::vector<int> insideLongLatIndex;$/;"	m	struct:SubSector
+initVAO	SectorsVAO.cpp	/^void SectorsVAO::initVAO(void)$/;"	f	class:SectorsVAO
+insideLongLatIndex	Sectors.h	/^		std::vector<int> insideLongLatIndex;$/;"	m	struct:Sectors::SubSector
+insideLongLatIndex	SectorsVAO.h	/^		std::vector<int> insideLongLatIndex;$/;"	m	struct:SectorsVAO::SubSector
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
 isCellIndexOutOfRange	CountCrossing_cuda.h	/^bool isCellIndexOutOfRange$/;"	f
 isClockwise	GCS.cpp	/^bool isClockwise(std::vector<int>& longLatIndex, std::vector<LongLat>& longLat)$/;"	f
 isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
 join	unittest.cpp	/^	void join()$/;"	f	class:TestThread
 join	unittest.cpp	/^	void join()$/;"	f	class:TestThread_MemFunc
+joystick	ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
 joystick	ATFViewerMainGLSL.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMainGLSL
+joystickTimer	ATFViewerMain.cpp	/^void ATFViewerMain::joystickTimer(int value)$/;"	f	class:ATFViewerMain
 joystickTimer	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::joystickTimer(int value)$/;"	f	class:ATFViewerMainGLSL
+joystickTimerId	ATFViewerMain.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMain
 joystickTimerId	ATFViewerMainGLSL.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMainGLSL
+keyboard	ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 keyboard	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMainGLSL
 latitude	Fixes.h	/^	std::vector<double> latitude;$/;"	m	class:Fixes
-latitude	GCS.h	/^	double latitude;$/;"	m	struct:LongLat
+latitude	LongLat.h	/^	T latitude; \/\/\/< 緯度$/;"	m	struct:LongLatBase
 latitude	Map.h	/^		double latitude;$/;"	m	struct:Map::MapVertex
 latitude	MapVAO.h	/^		float latitude;$/;"	m	struct:MapVAO::MapVertex
 latitude	Path.h	/^	double latitude;$/;"	m	struct:PathPoint
 link	ShaderProgram.h	/^	void link()$/;"	f	class:ShaderProgram
 location	UniformVariable.h	/^	GLuint location;$/;"	m	class:UniformVariable
 longLat	Sectors.h	/^	std::vector<LongLat> longLat;$/;"	m	class:Sectors
-longLatIndex	Sectors.h	/^	std::vector<int> longLatIndex;$/;"	m	struct:SubSector
+longLat	SectorsVAO.h	/^	std::vector<LongLat> longLat;$/;"	m	class:SectorsVAO
+longLatIndex	Sectors.h	/^		std::vector<int> longLatIndex;$/;"	m	struct:Sectors::SubSector
+longLatIndex	SectorsVAO.h	/^		std::vector<int> longLatIndex;$/;"	m	struct:SectorsVAO::SubSector
 longitude	Fixes.h	/^	std::vector<double> longitude;$/;"	m	class:Fixes
-longitude	GCS.h	/^	double longitude;$/;"	m	struct:LongLat
+longitude	LongLat.h	/^	T longitude;\/\/\/< 経度$/;"	m	struct:LongLatBase
 longitude	Map.h	/^		double longitude;$/;"	m	struct:Map::MapVertex
 longitude	MapVAO.h	/^		float longitude;$/;"	m	struct:MapVAO::MapVertex
 longitude	Path.h	/^	double longitude;$/;"	m	struct:PathPoint
@@ -513,22 +570,28 @@ main	glunittest.cpp	/^int main(void)$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 makeDBFileName	TrackDataManager.h	/^	void makeDBFileName(time_t day, std::string& dbfilenamestr)$/;"	f	class:TrackDataManager
 makePathsBuffer	Paths.cpp	/^void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
+map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
+map	ATFViewerMainGLSL.h	/^	MapVAO map;$/;"	m	class:ATFViewerMainGLSL
 map	VAOPositionColor.h	/^	void map()$/;"	f	class:VAOPositionColorDynamic
 map	VBO.h	/^	void map()$/;"	f	class:VBODynamicBase
+map2	ATFViewerMainGLSL.h	/^	MapVAO map2;$/;"	m	class:ATFViewerMainGLSL
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
 mapId	MapVAO.h	/^	std::string mapId;$/;"	m	class:MapVAO
+mapTransform	ATFViewerMain.h	/^	MapTransform mapTransform;$/;"	m	class:ATFViewerMain
 mapTransform	ATFViewerMainGLSL.h	/^	MapTransform mapTransform;$/;"	m	class:ATFViewerMainGLSL
 mapVertex	Map.h	/^	std::vector<MapVertex> mapVertex;$/;"	m	class:Map
 mapVertex	MapVAO.h	/^		std::vector<MapVertex> mapVertex;$/;"	m	struct:MapVAO::InitMapSetting
 mapVertexIndex	Map.h	/^	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	class:Map
 mapVertexIndex	MapVAO.h	/^		std::vector<std::vector<MapVertexIndex> > mapVertexIndex;$/;"	m	struct:MapVAO::InitMapSetting
 max	TimeSeparation.h	/^	time_t max;$/;"	m	class:TimeSeparation
-maximumAltitude	Sectors.h	/^	int maximumAltitude;$/;"	m	struct:SubSector
+maximumAltitude	Sectors.h	/^		int maximumAltitude;$/;"	m	struct:Sectors::SubSector
+maximumAltitude	SectorsVAO.h	/^		int maximumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 memcpyDeviceToHost	CountCrossing_cuda.h	/^	void memcpyDeviceToHost(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeq
 memcpyHostToDevice	CountCrossing_cuda.h	/^	void memcpyHostToDevice(void)$/;"	f	class:DeviceSeqConst
 min	TimeSeparation.h	/^	time_t min;$/;"	m	class:TimeSeparation
-minimumAltitude	Sectors.h	/^	int minimumAltitude;$/;"	m	struct:SubSector
+minimumAltitude	Sectors.h	/^		int minimumAltitude;$/;"	m	struct:Sectors::SubSector
+minimumAltitude	SectorsVAO.h	/^		int minimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 mktimeFromInt	CountCrossing.h	/^	time_t mktimeFromInt(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 mode	VAOPositionColor.h	/^	GLenum mode;$/;"	m	class:VAOPositionColorBase
 mode	VAOPositionTexture.h	/^	GLenum mode;$/;"	m	class:VAOPositionTexture
@@ -539,6 +602,7 @@ name	Fixes.h	/^	std::vector<std::string> name;$/;"	m	class:Fixes
 name	Texture2D.h	/^	GLuint name;$/;"	m	class:Texture2D
 next	TimeSeparation.h	/^		next = 1$/;"	e	enum:TimeSeparation::Position
 nextDayTime	TimeManager.h	/^	static time_t nextDayTime(time_t t)$/;"	f	class:TimeManager
+now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
 now	ATFViewerMainGLSL.h	/^	time_t now;$/;"	m	class:ATFViewerMainGLSL
 now_index	Path.h	/^	int now_index;$/;"	m	struct:Path
 nowstring	unittest.cpp	/^string nowstring()$/;"	f
@@ -552,15 +616,19 @@ operator ==	Path.h	/^	bool operator ==(const PathPoint& p) const$/;"	f	struct:Pa
 operator ==	Path.h	/^	bool operator ==(const std::string& s) const$/;"	f	struct:Path
 past_time_index	Path.h	/^	int past_time_index;$/;"	m	struct:Path
 pathPoint	Path.h	/^	std::vector<PathPoint> pathPoint;$/;"	m	struct:Path
+paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
 paths	Paths.h	/^	std::vector<Path> paths;$/;"	m	class:Paths
 pathsBuffer	Paths.h	/^	std::vector<Path> pathsBuffer;$/;"	m	class:Paths
+pollingInterval	ATFViewerMain.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMain
 pollingInterval	ATFViewerMainGLSL.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMainGLSL
+position	SectorsVAO.h	/^		std::vector<glm::vec3> position;\/**< 位置 *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 position	VAOPositionColor.h	/^	VBOClass position;$/;"	m	class:VAOPositionColorBase
 position	VAOPositionTexture.h	/^	VBOStatic position;$/;"	m	class:VAOPositionTexture
 readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
+resize	ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
 resize	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::resize(int w, int h)$/;"	f	class:ATFViewerMainGLSL
 resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBODynamicBase
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
@@ -568,7 +636,10 @@ run	unittest.cpp	/^	void run()$/;"	f	class:TestThread_MemFunc
 runMakePathsBuffer	Paths.cpp	/^void Paths::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
 sector	Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
-sectorName	Sectors.h	/^	std::string sectorName;$/;"	m	struct:Sector
+sector	SectorsVAO.h	/^	std::vector<Sector> sector;$/;"	m	class:SectorsVAO
+sectorName	Sectors.h	/^		std::string sectorName;$/;"	m	struct:Sectors::Sector
+sectorName	SectorsVAO.h	/^		std::string sectorName;$/;"	m	struct:SectorsVAO::Sector
+sectors	ATFViewerMain.h	/^	Sectors sectors;$/;"	m	class:ATFViewerMain
 selectTrackDataWithDate	unittest.cpp	/^void selectTrackDataWithDate()$/;"	f
 selectTrackDataWithTime	unittest.cpp	/^void selectTrackDataWithTime()$/;"	f
 set	UniformVariable.cpp	/^void UniformVariable<glm::mat4>::set(const glm::mat4& m)$/;"	f	class:UniformVariable
@@ -577,12 +648,14 @@ set	UniformVariable.cpp	/^void UniformVariable<int>::set(const int& i)$/;"	f	cla
 setCenterOffsetLat	MapTransform.h	/^	void setCenterOffsetLat(GLdouble c_lat)$/;"	f	class:MapTransform
 setCenterOffsetLong	MapTransform.h	/^	void setCenterOffsetLong(GLdouble c_long)$/;"	f	class:MapTransform
 setCountCrossingLoopParameters	CountCrossing_cuda.h	/^void setCountCrossingLoopParameters$/;"	f
+setElement	SectorsVAO.cpp	/^void SectorsVAO::setElement(const std::vector<unsigned int>& index, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 setEnd	CountCrossing.h	/^	void setEnd(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 setEnd	CountCrossing.h	/^	void setEnd(time_t e)$/;"	f	class:CountCrossing
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
 setMVPMatrix	BasicShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:BasicShaderProgram
 setMVPMatrix	TextureShaderProgram.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:TextureShaderProgram
+setMatrix	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::setMatrix(void)$/;"	f	class:ATFViewerMainGLSL
 setNextInterval	TimeSeparation.h	/^	void setNextInterval()$/;"	f	class:TimeSeparation
 setQuery	DBAccessor.h	/^	void setQuery(const std::string& sql)$/;"	f	class:DBAccessor
 setQuery	TrackDataManager.h	/^	void setQuery(DBAccessor& dba, time_t start, time_t end, char n = ' ')$/;"	f	class:TrackDataManager
@@ -591,6 +664,7 @@ setStart	CountCrossing.h	/^	void setStart(int year,int month,int day,int hour = 
 setStart	CountCrossing.h	/^	void setStart(time_t s)$/;"	f	class:CountCrossing
 setStartEndTime	unittest.cpp	/^void setStartEndTime(time_t& start, time_t& end)$/;"	f
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
+setTransform	MapTransform.h	/^	void setTransform(glm::mat4& m)$/;"	f	class:MapTransform
 shaderProgram	BasicShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:BasicShaderProgram
 shaderProgram	TextureShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TextureShaderProgram
 shaderProgram	VAOPositionColor.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionColorBase
@@ -603,10 +677,13 @@ startTime	unittest.cpp	/^	double startTime;$/;"	m	class:Timer	file:
 step	DBAccessor.h	/^	void step()$/;"	f	class:DBAccessor
 step_select	DBAccessor.h	/^	int step_select()$/;"	f	class:DBAccessor
 stmt	DBAccessor.h	/^	sqlite3_stmt* stmt;$/;"	m	class:DBAccessor
-subSector	Sectors.h	/^	std::vector<SubSector> subSector;$/;"	m	struct:Sector
-subSectorCount	Sectors.h	/^	int subSectorCount;$/;"	m	struct:Sector
+subSector	Sectors.h	/^		std::vector<SubSector> subSector;$/;"	m	struct:Sectors::Sector
+subSector	SectorsVAO.h	/^		std::vector<SubSector> subSector;$/;"	m	struct:SectorsVAO::Sector
+subSectorCount	Sectors.h	/^		int subSectorCount;$/;"	m	struct:Sectors::Sector
+subSectorCount	SectorsVAO.h	/^		int subSectorCount;$/;"	m	struct:SectorsVAO::Sector
 success	unittest.cpp	/^	bool success;$/;"	m	struct:EstimateSpecResult	file:
 switchDisplaySector	Sectors.h	/^	void switchDisplaySector()$/;"	f	class:Sectors
+switchDisplaySector	SectorsVAO.h	/^	void switchDisplaySector()$/;"	f	class:SectorsVAO
 t	unittest.cpp	/^	T* const t;$/;"	m	class:TestThread_MemFunc	file:
 t	unittest.cpp	/^	TestThread_MemFunc<functype,TestUseThread> t;$/;"	m	class:TestUseThread	file:
 target	Texture2D.h	/^	const GLenum target;$/;"	m	class:Texture2D
@@ -621,19 +698,24 @@ textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureHeight	MapVAO.h	/^		int textureHeight;$/;"	m	struct:MapVAO::InitMapSetting
 textureName	Map.h	/^	GLuint textureName[1];$/;"	m	class:Map
 textureSampler	TextureShaderProgram.h	/^	UniformVariable<int> textureSampler;$/;"	m	class:TextureShaderProgram
+textureShaderProgram	ATFViewerMainGLSL.h	/^	TextureShaderProgram textureShaderProgram;$/;"	m	class:ATFViewerMainGLSL
 textureWidth	Map.h	/^	int textureWidth;$/;"	m	class:Map
 textureWidth	MapVAO.h	/^		int textureWidth;$/;"	m	struct:MapVAO::InitMapSetting
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread	file:
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread_MemFunc	file:
 time	Path.h	/^	time_t time;$/;"	m	struct:PathPoint
 time	unittest.cpp	/^	long long time;$/;"	m	struct:id_time	file:
+timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeInterval	ATFViewerMainGLSL.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMainGLSL
+timeMax	ATFViewerMain.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMain
 timeMax	ATFViewerMainGLSL.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMainGLSL
+timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMainGLSL.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMainGLSL
 timeSeparation	Paths.h	/^	TimeSeparation timeSeparation;$/;"	m	class:Paths
 timeSequence	TimeSeparation.h	/^	std::vector< time_t > timeSequence;$/;"	m	class:TimeSeparation
 timestring	unittest.cpp	/^string timestring(time_t t)$/;"	f
 today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
+tv	ATFViewerMain.h	/^	TestVBO tv;$/;"	m	class:ATFViewerMain
 type	Shader.h	/^	GLenum type;$/;"	m	class:Shader
 type	VBO.h	/^	const GLenum type;$/;"	m	class:VBOBase
 u	Map.h	/^		double u;$/;"	m	struct:Map::MapVertex
@@ -648,7 +730,8 @@ unbind	VBO.h	/^	void unbind()$/;"	f	class:VBODynamicBase
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOElementStatic
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOStatic
 unit	Texture2D.h	/^	const GLenum unit;$/;"	m	class:Texture2D
-unitProvidingService	Sectors.h	/^	std::string unitProvidingService;$/;"	m	struct:Sector
+unitProvidingService	Sectors.h	/^		std::string unitProvidingService;$/;"	m	struct:Sectors::Sector
+unitProvidingService	SectorsVAO.h	/^		std::string unitProvidingService;$/;"	m	struct:SectorsVAO::Sector
 unmap	VAOPositionColor.h	/^	void unmap()$/;"	f	class:VAOPositionColorDynamic
 unmap	VBO.h	/^	void unmap()$/;"	f	class:VBODynamicBase
 unuse	BasicShaderProgram.h	/^	void unuse()$/;"	f	class:BasicShaderProgram
@@ -663,6 +746,7 @@ use	TextureShaderProgram.h	/^	void use()$/;"	f	class:TextureShaderProgram
 v	Map.h	/^		double v;$/;"	m	struct:Map::MapVertex
 v	MapVAO.h	/^		float v;$/;"	m	struct:MapVAO::MapVertex
 vao	MapVAO.h	/^	TextureShaderProgram::vaoType vao;$/;"	m	class:MapVAO
+vao	SectorsVAO.h	/^	BasicShaderProgram::vaoType vao;$/;"	m	class:SectorsVAO
 vao	TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
 vaoType	BasicShaderProgram.h	/^	typedef VAOPositionColor<BasicShaderProgram> vaoType;$/;"	t	class:BasicShaderProgram
 vaoType	TextureShaderProgram.h	/^	typedef VAOPositionTexture<TextureShaderProgram> vaoType;$/;"	t	class:TextureShaderProgram
@@ -677,7 +761,9 @@ vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	fil
 vertexIndex	Map.h	/^		int vertexIndex;$/;"	m	struct:Map::MapVertexIndex
 vertexIndex	MapVAO.h	/^		int vertexIndex;$/;"	m	struct:MapVAO::MapVertexIndex
 width	TimeSeparation.h	/^	time_t width;$/;"	m	class:TimeSeparation
+windowHeight	ATFViewerMain.h	/^	int windowHeight;$/;"	m	class:ATFViewerMain
 windowHeight	ATFViewerMainGLSL.h	/^	int windowHeight;$/;"	m	class:ATFViewerMainGLSL
+windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMainGLSL.h	/^	int windowWidth;$/;"	m	class:ATFViewerMainGLSL
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor
 ~DeviceSeq	CountCrossing_cuda.h	/^	~DeviceSeq()$/;"	f	class:DeviceSeq
