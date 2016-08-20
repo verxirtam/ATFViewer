@@ -1,9 +1,10 @@
 <map id="src/OpenGLHeaders.h" name="src/OpenGLHeaders.h">
 <area shape="rect" id="node2" href="$ATFViewerMain_8h.html" title="src/ATFViewerMain.h" alt="" coords="138,155,285,181"/>
-<area shape="rect" id="node5" href="$Map_8h.html" title="src/Map.h" alt="" coords="159,80,237,107"/>
-<area shape="rect" id="node7" href="$TestVBO_8h.html" title="src/TestVBO.h" alt="" coords="313,80,423,107"/>
+<area shape="rect" id="node5" href="$Map_8h.html" title="src/Map.h" alt="" coords="163,80,241,107"/>
+<area shape="rect" id="node7" href="$TestVBO_8h.html" title="src/TestVBO.h" alt="" coords="317,80,427,107"/>
 <area shape="rect" id="node9" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="457,155,639,181"/>
-<area shape="rect" id="node12" href="$MapVAO_8h.html" title="src/MapVAO.h" alt="" coords="498,80,605,107"/>
+<area shape="rect" id="node12" href="$MapVAO_8h.html" title="src/MapVAO.h" alt="" coords="502,80,609,107"/>
+<area shape="rect" id="node14" href="$SectorsVAO_8h.html" title="src/SectorsVAO.h" alt="" coords="725,80,853,107"/>
 <area shape="rect" id="node3" href="$ATFViewer_8cpp.html" title="src/ATFViewer.cpp" alt="" coords="5,229,139,256"/>
 <area shape="rect" id="node4" href="$ATFViewerMain_8cpp.html" title="src/ATFViewerMain.cpp" alt="" coords="164,229,327,256"/>
 <area shape="rect" id="node6" href="$Map_8cpp.html" title="src/Map.cpp" alt="" coords="19,155,113,181"/>
@@ -11,4 +12,5 @@
 <area shape="rect" id="node10" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="384,229,579,256"/>
 <area shape="rect" id="node11" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="603,229,725,256"/>
 <area shape="rect" id="node13" href="$MapVAO_8cpp.html" title="src/MapVAO.cpp" alt="" coords="663,155,785,181"/>
+<area shape="rect" id="node15" href="$SectorsVAO_8cpp.html" title="src/SectorsVAO.cpp" alt="" coords="810,155,952,181"/>
 </map>

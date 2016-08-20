@@ -8,7 +8,7 @@ var searchData=
   ['uniformvariable_3c_20glm_3a_3amat4_20_3e',['UniformVariable&lt; glm::mat4 &gt;',['../classUniformVariable.html',1,'']]],
   ['uniformvariable_3c_20int_20_3e',['UniformVariable&lt; int &gt;',['../classUniformVariable.html',1,'']]],
   ['unit',['unit',['../classTexture2D.html#a41bae7a9e3360ae84b1f1277b2bd8c0e',1,'Texture2D']]],
-  ['unitprovidingservice',['unitProvidingService',['../structSector.html#a04e517dd031b27cfd853d34531a1c23c',1,'Sector']]],
+  ['unitprovidingservice',['unitProvidingService',['../structSectors_1_1Sector.html#ad081186cd304b3a0fef442b781dee56d',1,'Sectors::Sector::unitProvidingService()'],['../structSectorsVAO_1_1Sector.html#a0e10bb0ff92168d9cef05443cc138abc',1,'SectorsVAO::Sector::unitProvidingService()']]],
   ['unittest_2ecpp',['unittest.cpp',['../unittest_8cpp.html',1,'']]],
   ['unittest_5fcuda_2eh',['unittest_cuda.h',['../unittest__cuda_8h.html',1,'']]],
   ['unmap',['unmap',['../classVAOPositionColorDynamic.html#a4f19a903fdef6504799a3c75e2ebd006',1,'VAOPositionColorDynamic::unmap()'],['../classVBODynamicBase.html#a111ad734d29840678cb5db5828301c92',1,'VBODynamicBase::unmap()']]],

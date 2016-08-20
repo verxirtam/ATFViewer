@@ -7,9 +7,9 @@ var searchData=
   ['mapvertex',['mapVertex',['../classMap.html#ae4b471decb6208c1fdacedcc4479a9b0',1,'Map::mapVertex()'],['../structMapVAO_1_1InitMapSetting.html#ace33dd2fc209af6c91d094b800ef74f6',1,'MapVAO::InitMapSetting::mapVertex()']]],
   ['mapvertexindex',['mapVertexIndex',['../classMap.html#ad12eb44382682a7888d151684d23d2ed',1,'Map::mapVertexIndex()'],['../structMapVAO_1_1InitMapSetting.html#a1115e312a13fc6f02bc1ff05a8f4c5b0',1,'MapVAO::InitMapSetting::mapVertexIndex()']]],
   ['max',['max',['../classTimeSeparation.html#ac6ce41177bff325b43f9d3c4f46bca51',1,'TimeSeparation']]],
-  ['maximumaltitude',['maximumAltitude',['../structSubSector.html#af3ef768523ec27b7574bdbde79887794',1,'SubSector']]],
+  ['maximumaltitude',['maximumAltitude',['../structSectors_1_1SubSector.html#a5050c8adfb7d91f9ee9b2483e706643b',1,'Sectors::SubSector::maximumAltitude()'],['../structSectorsVAO_1_1SubSector.html#a2cb2c1b89e6283bc03bb2aa3e0605afa',1,'SectorsVAO::SubSector::maximumAltitude()']]],
   ['min',['min',['../classTimeSeparation.html#a695a687d64eb2824aa301c34808e21f2',1,'TimeSeparation']]],
-  ['minimumaltitude',['minimumAltitude',['../structSubSector.html#afb2cd43c786256d867d5349eb44b6888',1,'SubSector']]],
+  ['minimumaltitude',['minimumAltitude',['../structSectors_1_1SubSector.html#a11a3143c1264c7d0e41093d97734291a',1,'Sectors::SubSector::minimumAltitude()'],['../structSectorsVAO_1_1SubSector.html#a0985f20bbac7797dc1947468656ae5e5',1,'SectorsVAO::SubSector::minimumAltitude()']]],
   ['mode',['mode',['../classVAOPositionColorBase.html#a9620f450fcf92c069e0d033db67a1007',1,'VAOPositionColorBase::mode()'],['../classVAOPositionTexture.html#a92cfb0e27555d9e61dfaacdf456299d4',1,'VAOPositionTexture::mode()']]],
   ['mvpmatrix',['mvpMatrix',['../classBasicShaderProgram.html#aaca2404bc4055253f7aa7b76736c1830',1,'BasicShaderProgram::mvpMatrix()'],['../classTextureShaderProgram.html#a0cd44edb3535248ad1b54a757d6ef7b9',1,'TextureShaderProgram::mvpMatrix()']]]
 ];

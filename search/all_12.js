@@ -1,11 +1,16 @@
 var searchData=
 [
   ['scale',['scale',['../classMapTransform.html#a7e415efea56466628adf1a9efaf9bc27',1,'MapTransform']]],
-  ['sector',['Sector',['../structSector.html',1,'Sector'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()']]],
-  ['sectorname',['sectorName',['../structSector.html#a4a3675a8a3b7b5ef0bd26d20255ac872',1,'Sector']]],
+  ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
+  ['sector',['sector',['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../classSectorsVAO.html#a2ba3f5699a67148e1aba0465f665d5ea',1,'SectorsVAO::sector()']]],
+  ['sector',['Sector',['../structSectorsVAO_1_1Sector.html',1,'SectorsVAO']]],
+  ['sectorname',['sectorName',['../structSectors_1_1Sector.html#a88e0d06536b63918754b12cb1056021a',1,'Sectors::Sector::sectorName()'],['../structSectorsVAO_1_1Sector.html#a60e7a3309e186cd43ccae4825662e699',1,'SectorsVAO::Sector::sectorName()']]],
   ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()']]],
   ['sectors_2ecpp',['Sectors.cpp',['../Sectors_8cpp.html',1,'']]],
   ['sectors_2eh',['Sectors.h',['../Sectors_8h.html',1,'']]],
+  ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html',1,'SectorsVAO'],['../classSectorsVAO.html#a21995fcac89c43ae8ee2483ce81ab7ef',1,'SectorsVAO::SectorsVAO()']]],
+  ['sectorsvao_2ecpp',['SectorsVAO.cpp',['../SectorsVAO_8cpp.html',1,'']]],
+  ['sectorsvao_2eh',['SectorsVAO.h',['../SectorsVAO_8h.html',1,'']]],
   ['selecttrackdatawithdate',['selectTrackDataWithDate',['../unittest_8cpp.html#a77bcc0c7a7d4e51b4071af9ec97485da',1,'unittest.cpp']]],
   ['selecttrackdatawithtime',['selectTrackDataWithTime',['../unittest_8cpp.html#a9899eac06ae699371a00b527e4024e26',1,'unittest.cpp']]],
   ['set',['set',['../classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0',1,'UniformVariable::set(const T &amp;t)'],['../classUniformVariable.html#a49fcad48f29dee49e6860e69585c9929',1,'UniformVariable::set(const glm::vec3 &amp;v)'],['../classUniformVariable.html#a49fcad48f29dee49e6860e69585c9929',1,'UniformVariable::set(const glm::vec3 &amp;v)']]],
@@ -33,8 +38,10 @@ var searchData=
   ['step',['step',['../classDBAccessor.html#a560b6ead9df1ab797b81579b1d1509f2',1,'DBAccessor']]],
   ['step_5fselect',['step_select',['../classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0',1,'DBAccessor']]],
   ['stmt',['stmt',['../classDBAccessor.html#a9ed244611d27eb29856bfe2169249a88',1,'DBAccessor']]],
-  ['subsector',['SubSector',['../structSubSector.html',1,'SubSector'],['../structSector.html#ad296224df4245b12546a61e65886c189',1,'Sector::subSector()']]],
-  ['subsectorcount',['subSectorCount',['../structSector.html#a831c57910b7bcc7307e8cde6c2fe8f57',1,'Sector']]],
+  ['subsector',['subSector',['../structSectors_1_1Sector.html#a8ccdb98261a5fc8be67ec0577f388ffa',1,'Sectors::Sector::subSector()'],['../structSectorsVAO_1_1Sector.html#a41dbc859f3a72e1b9b4f14bfac5061ff',1,'SectorsVAO::Sector::subSector()']]],
+  ['subsector',['SubSector',['../structSectors_1_1SubSector.html',1,'Sectors']]],
+  ['subsector',['SubSector',['../structSectorsVAO_1_1SubSector.html',1,'SectorsVAO']]],
+  ['subsectorcount',['subSectorCount',['../structSectors_1_1Sector.html#a2e2eb3ecddfc3a5599a0823a07e0abc6',1,'Sectors::Sector::subSectorCount()'],['../structSectorsVAO_1_1Sector.html#a22b6c5f385b02b7ca7d315bfa6b8a559',1,'SectorsVAO::Sector::subSectorCount()']]],
   ['success',['success',['../structEstimateSpecResult.html#af2a41f7accc6fb0f11ede26cfd52f082',1,'EstimateSpecResult']]],
-  ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors']]]
+  ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors::switchDisplaySector()'],['../classSectorsVAO.html#a138524810b3e90bdcf801ce8c3991015',1,'SectorsVAO::switchDisplaySector()']]]
 ];

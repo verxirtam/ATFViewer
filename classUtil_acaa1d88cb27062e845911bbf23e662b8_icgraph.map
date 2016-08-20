@@ -1,5 +1,8 @@
 <map id="Util::getFeetFromFL" name="Util::getFeetFromFL">
-<area shape="rect" id="node2" href="$classSectors.html#a9dcf49007516497795626f31f9aedaf3" title="Sectors::getSubSectors" alt="" coords="193,5,354,32"/>
-<area shape="rect" id="node3" href="$classSectors.html#a52d9a18428fe02a9cb0e0526633bc689" title="Sectors::getSectors" alt="" coords="403,5,541,32"/>
-<area shape="rect" id="node4" href="$classSectors.html#a87a41b37859120d3372c72d08e33e066" title="Sectors::init" alt="" coords="590,5,682,32"/>
+<area shape="rect" id="node2" href="$classSectors.html#a9dcf49007516497795626f31f9aedaf3" title="Sectors::getSubSectors" alt="" coords="206,5,367,32"/>
+<area shape="rect" id="node5" href="$classSectorsVAO.html#a573ad650de7d44d1de840850aab4c4fd" title="SectorsVAO::getSubSectors" alt="" coords="192,56,381,83"/>
+<area shape="rect" id="node3" href="$classSectors.html#a52d9a18428fe02a9cb0e0526633bc689" title="Sectors::getSectors" alt="" coords="444,5,583,32"/>
+<area shape="rect" id="node4" href="$classSectors.html#a87a41b37859120d3372c72d08e33e066" title="Sectors::init" alt="" coords="659,5,751,32"/>
+<area shape="rect" id="node6" href="$classSectorsVAO.html#a521c8134d969e40af7ee85dfbb0c4dd8" title="SectorsVAO::getSectors" alt="" coords="430,56,597,83"/>
+<area shape="rect" id="node7" href="$classSectorsVAO.html#a63c7e1cd1a30591c54daee297df807e2" title="SectorsVAO::init" alt="" coords="645,56,765,83"/>
 </map>

@@ -4,7 +4,7 @@ var searchData=
   ['camera_5fr',['camera_r',['../classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6',1,'ATFViewerMain::camera_r()'],['../classATFViewerMainGLSL.html#a2e7c051cb605d0d8c1fcb646ba7a3aab',1,'ATFViewerMainGLSL::camera_r()']]],
   ['camera_5ftarget',['camera_target',['../classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7',1,'ATFViewerMain::camera_target()'],['../classATFViewerMainGLSL.html#af7bb217d9a9bdfdfcaeda86c20cf69b6',1,'ATFViewerMainGLSL::camera_target()']]],
   ['camera_5ftheta',['camera_theta',['../classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495',1,'ATFViewerMain::camera_theta()'],['../classATFViewerMainGLSL.html#acb9d1bf8ffdf253a78af821531cdea44',1,'ATFViewerMainGLSL::camera_theta()']]],
-  ['caption',['caption',['../structSector.html#af10ebc87b47d3278f892ac96fe488f6a',1,'Sector']]],
+  ['caption',['caption',['../structSectors_1_1Sector.html#a3db329d9d52f7bb8f19f62958e6457d2',1,'Sectors::Sector::caption()'],['../structSectorsVAO_1_1Sector.html#a115ecea44097fbd9d0e09ba753d1ffe0',1,'SectorsVAO::Sector::caption()']]],
   ['centeroffsetlat',['centerOffsetLat',['../classMapTransform.html#af126c2e6aa122d6c013fed26599cd669',1,'MapTransform']]],
   ['centeroffsetlong',['centerOffsetLong',['../classMapTransform.html#a782e3c3b12869b3410ef243d6568e87a',1,'MapTransform']]],
   ['color',['color',['../classVAOPositionColorBase.html#a933a8937940b52bc42c0c28cd53ca88f',1,'VAOPositionColorBase']]],
