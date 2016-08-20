@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['longlat',['LongLat',['../structLongLat.html',1,'']]]
+  ['longlatbase',['LongLatBase',['../structLongLatBase.html',1,'']]]
 ];
