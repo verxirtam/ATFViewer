@@ -2,13 +2,13 @@ var searchData=
 [
   ['scale',['scale',['../classMapTransform.html#a7e415efea56466628adf1a9efaf9bc27',1,'MapTransform']]],
   ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
-  ['sector',['sector',['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../classSectorsVAO.html#a2ba3f5699a67148e1aba0465f665d5ea',1,'SectorsVAO::sector()']]],
+  ['sector',['sector',['../classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207',1,'ATFViewerMainGLSL::sector()'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()']]],
   ['sector',['Sector',['../structSectorsVAO_1_1Sector.html',1,'SectorsVAO']]],
   ['sectorname',['sectorName',['../structSectors_1_1Sector.html#a88e0d06536b63918754b12cb1056021a',1,'Sectors::Sector::sectorName()'],['../structSectorsVAO_1_1Sector.html#a60e7a3309e186cd43ccae4825662e699',1,'SectorsVAO::Sector::sectorName()']]],
-  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()']]],
+  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()']]],
   ['sectors_2ecpp',['Sectors.cpp',['../Sectors_8cpp.html',1,'']]],
   ['sectors_2eh',['Sectors.h',['../Sectors_8h.html',1,'']]],
-  ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html',1,'SectorsVAO'],['../classSectorsVAO.html#a21995fcac89c43ae8ee2483ce81ab7ef',1,'SectorsVAO::SectorsVAO()']]],
+  ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html',1,'SectorsVAO'],['../classSectorsVAO.html#a2a78d8f388b3474c3b3d38bb5164dfc7',1,'SectorsVAO::SectorsVAO()']]],
   ['sectorsvao_2ecpp',['SectorsVAO.cpp',['../SectorsVAO_8cpp.html',1,'']]],
   ['sectorsvao_2eh',['SectorsVAO.h',['../SectorsVAO_8h.html',1,'']]],
   ['selecttrackdatawithdate',['selectTrackDataWithDate',['../unittest_8cpp.html#a77bcc0c7a7d4e51b4071af9ec97485da',1,'unittest.cpp']]],
@@ -17,6 +17,7 @@ var searchData=
   ['setcenteroffsetlat',['setCenterOffsetLat',['../classMapTransform.html#a904979a9bb6922833b6b2502f890cac6',1,'MapTransform']]],
   ['setcenteroffsetlong',['setCenterOffsetLong',['../classMapTransform.html#ad7bff51b5d5949236aab92870d8d8602',1,'MapTransform']]],
   ['setcountcrossingloopparameters',['setCountCrossingLoopParameters',['../CountCrossing__cuda_8h.html#a2640f4ecc00d18e9a35964d3bb0c5bf8',1,'CountCrossing_cuda.h']]],
+  ['setelement',['setElement',['../classSectorsVAO.html#a259cf9b2c0408a54833abcb4ef601332',1,'SectorsVAO']]],
   ['setend',['setEnd',['../classCountCrossing.html#a90b424b135d125b80841f5d2d28d8a1a',1,'CountCrossing::setEnd(int year, int month, int day, int hour=0, int min=0, int sec=0)'],['../classCountCrossing.html#a259a99337b11b4d5a0d30140a0d75cc8',1,'CountCrossing::setEnd(time_t e)']]],
   ['setlocation',['setLocation',['../classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6',1,'UniformVariable::setLocation(GLuint program_handle, const char *name)'],['../classUniformVariable.html#a09aee0411f8316a185f31d80561f35f3',1,'UniformVariable::setLocation(GLuint program_handle, const std::string &amp;name)']]],
   ['setmatrix',['setMatrix',['../classATFViewerMainGLSL.html#a8c3b8794faffce40b6dd260c2ffb2c9e',1,'ATFViewerMainGLSL']]],
@@ -38,10 +39,10 @@ var searchData=
   ['step',['step',['../classDBAccessor.html#a560b6ead9df1ab797b81579b1d1509f2',1,'DBAccessor']]],
   ['step_5fselect',['step_select',['../classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0',1,'DBAccessor']]],
   ['stmt',['stmt',['../classDBAccessor.html#a9ed244611d27eb29856bfe2169249a88',1,'DBAccessor']]],
-  ['subsector',['subSector',['../structSectors_1_1Sector.html#a8ccdb98261a5fc8be67ec0577f388ffa',1,'Sectors::Sector::subSector()'],['../structSectorsVAO_1_1Sector.html#a41dbc859f3a72e1b9b4f14bfac5061ff',1,'SectorsVAO::Sector::subSector()']]],
   ['subsector',['SubSector',['../structSectors_1_1SubSector.html',1,'Sectors']]],
   ['subsector',['SubSector',['../structSectorsVAO_1_1SubSector.html',1,'SectorsVAO']]],
+  ['subsector',['subSector',['../structSectors_1_1Sector.html#a8ccdb98261a5fc8be67ec0577f388ffa',1,'Sectors::Sector::subSector()'],['../structSectorsVAO_1_1Sector.html#a41dbc859f3a72e1b9b4f14bfac5061ff',1,'SectorsVAO::Sector::subSector()']]],
   ['subsectorcount',['subSectorCount',['../structSectors_1_1Sector.html#a2e2eb3ecddfc3a5599a0823a07e0abc6',1,'Sectors::Sector::subSectorCount()'],['../structSectorsVAO_1_1Sector.html#a22b6c5f385b02b7ca7d315bfa6b8a559',1,'SectorsVAO::Sector::subSectorCount()']]],
   ['success',['success',['../structEstimateSpecResult.html#af2a41f7accc6fb0f11ede26cfd52f082',1,'EstimateSpecResult']]],
-  ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors::switchDisplaySector()'],['../classSectorsVAO.html#a138524810b3e90bdcf801ce8c3991015',1,'SectorsVAO::switchDisplaySector()']]]
+  ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors']]]
 ];

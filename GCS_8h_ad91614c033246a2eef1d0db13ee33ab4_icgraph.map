@@ -1,0 +1,10 @@
+<map id="isClockwise" name="isClockwise">
+<area shape="rect" id="node2" href="$classSectors.html#add79067cdfce4d1c130573c10d8f63e5" title="Sectors::getSubSectorVertex" alt="" coords="147,5,339,32"/>
+<area shape="rect" id="node6" href="$classSectorsVAO.html#aa65011e70ece9282a948018522f18a99" title="SectorsVAO::getSubSector\lVertex" alt="" coords="151,57,334,98"/>
+<area shape="rect" id="node3" href="$classSectors.html#a9dcf49007516497795626f31f9aedaf3" title="Sectors::getSubSectors" alt="" coords="401,5,562,32"/>
+<area shape="rect" id="node4" href="$classSectors.html#a52d9a18428fe02a9cb0e0526633bc689" title="Sectors::getSectors" alt="" coords="639,5,777,32"/>
+<area shape="rect" id="node5" href="$classSectors.html#a87a41b37859120d3372c72d08e33e066" title="Sectors::init" alt="" coords="854,5,946,32"/>
+<area shape="rect" id="node7" href="$classSectorsVAO.html#aef4998cc9559ecd960de18c77f133369" title="SectorsVAO::getSubSectors" alt="" coords="387,64,576,91"/>
+<area shape="rect" id="node8" href="$classSectorsVAO.html#abda9921abe4299f9636d8663fadf6b2c" title="SectorsVAO::getSectors" alt="" coords="625,64,791,91"/>
+<area shape="rect" id="node9" href="$classSectorsVAO.html#a63c7e1cd1a30591c54daee297df807e2" title="SectorsVAO::init" alt="" coords="840,64,960,91"/>
+</map>

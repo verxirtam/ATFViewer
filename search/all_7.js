@@ -40,11 +40,11 @@ var searchData=
   ['getposition',['getPosition',['../classVAOPositionColorBase.html#a3b79a10c7b127e6ef0893a961ee05cc5',1,'VAOPositionColorBase']]],
   ['getpositiondevicepointer',['getPositionDevicePointer',['../classVAOPositionColorDynamic.html#a08d58545e8c04dbf8a7006d71f004ee5',1,'VAOPositionColorDynamic']]],
   ['getscale',['getScale',['../classMapTransform.html#ae43e1b4e508797b3da75073bb0e851fd',1,'MapTransform']]],
-  ['getsectors',['getSectors',['../classSectors.html#a52d9a18428fe02a9cb0e0526633bc689',1,'Sectors::getSectors()'],['../classSectorsVAO.html#a521c8134d969e40af7ee85dfbb0c4dd8',1,'SectorsVAO::getSectors()']]],
+  ['getsectors',['getSectors',['../classSectors.html#a52d9a18428fe02a9cb0e0526633bc689',1,'Sectors::getSectors()'],['../classSectorsVAO.html#abda9921abe4299f9636d8663fadf6b2c',1,'SectorsVAO::getSectors()']]],
   ['getsettings',['getSettings',['../classMap.html#ae87977da0d0baddf7628a1ad76e71558',1,'Map::getSettings()'],['../classMapVAO.html#ac234ab5128055905b778458e8504ab28',1,'MapVAO::getSettings()']]],
   ['getstart',['getStart',['../classCountCrossing.html#a330df00f52f07ebcffd2e7a46e94df20',1,'CountCrossing']]],
-  ['getsubsectors',['getSubSectors',['../classSectors.html#a9dcf49007516497795626f31f9aedaf3',1,'Sectors::getSubSectors()'],['../classSectorsVAO.html#a573ad650de7d44d1de840850aab4c4fd',1,'SectorsVAO::getSubSectors()']]],
-  ['getsubsectorvertex',['getSubSectorVertex',['../classSectors.html#add79067cdfce4d1c130573c10d8f63e5',1,'Sectors::getSubSectorVertex()'],['../classSectorsVAO.html#a2dac1463cc26c5a30be60c123d798676',1,'SectorsVAO::getSubSectorVertex()']]],
+  ['getsubsectors',['getSubSectors',['../classSectors.html#a9dcf49007516497795626f31f9aedaf3',1,'Sectors::getSubSectors()'],['../classSectorsVAO.html#aef4998cc9559ecd960de18c77f133369',1,'SectorsVAO::getSubSectors()']]],
+  ['getsubsectorvertex',['getSubSectorVertex',['../classSectors.html#add79067cdfce4d1c130573c10d8f63e5',1,'Sectors::getSubSectorVertex()'],['../classSectorsVAO.html#aa65011e70ece9282a948018522f18a99',1,'SectorsVAO::getSubSectorVertex()']]],
   ['gettime',['getTime',['../classTimer.html#a490604efc23a4ff9bef8d1f9f418ecb2',1,'Timer']]],
   ['gettotalcellindex',['getTotalCellIndex',['../CountCrossing__cuda_8h.html#a3ca951bcee0d1f377757090e1036f5ad',1,'getTotalCellIndex(const int *const cellindex, const int *const startindex, const int *const indexcount):&#160;CountCrossing_cuda.h'],['../cudatestfunc_8h.html#a8c29f73603fc16e153410fd6dbac8f68',1,'getTotalCellIndex(const int *const cellindex, const int *const startindex, const int *const indexcount):&#160;cudatestfunc.h']]],
   ['gettrackdatafromdb',['getTrackDataFromDB',['../classTrackDataManager.html#a0ba42f71eb64dc74ee01d9bc5edcb026',1,'TrackDataManager']]],
@@ -56,6 +56,6 @@ var searchData=
   ['getvertex',['getVertex',['../classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605',1,'Map::getVertex()'],['../classMapVAO.html#ac96adf7bed01e8171d2a1f88ae776a42',1,'MapVAO::getVertex()']]],
   ['getvertexcount',['getVertexCount',['../classCountCrossing.html#afa2c871d5fd5e0f6d7fd65ebd71b1783',1,'CountCrossing::getVertexCount()'],['../classVAOPositionColorBase.html#afd2586d8d9436f3e63ab6263e699fdc3',1,'VAOPositionColorBase::getVertexCount()'],['../classVAOPositionColorDynamic.html#a94c57e5cccf7fcd8d5671e624d3b6953',1,'VAOPositionColorDynamic::getVertexCount()']]],
   ['getvertexindex',['getVertexIndex',['../classMap.html#a03d6b0e3e5a2d224b20089a9143952d6',1,'Map::getVertexIndex()'],['../classMapVAO.html#a496bd14ddc781b42cc78f5bca8405b07',1,'MapVAO::getVertexIndex()']]],
-  ['glm_5fforce_5fradians',['GLM_FORCE_RADIANS',['../MapTransform_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;MapTransform.h'],['../UniformVariable_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;UniformVariable.h']]],
+  ['glm_5fforce_5fradians',['GLM_FORCE_RADIANS',['../MapTransform_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;MapTransform.h'],['../OpenGLHeaders_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;OpenGLHeaders.h'],['../UniformVariable_8h.html#a816ab7d5c2ce1f0a01216042837beb93',1,'GLM_FORCE_RADIANS():&#160;UniformVariable.h']]],
   ['glunittest_2ecpp',['glunittest.cpp',['../glunittest_8cpp.html',1,'']]]
 ];

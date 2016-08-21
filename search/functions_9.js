@@ -8,12 +8,14 @@ var searchData=
   ['initcallbacks',['initCallbacks',['../classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f',1,'ATFViewerMainGLSL']]],
   ['initpathpoint',['initPathPoint',['../classPaths.html#afc0b94c5ac017343b5a17b2a70f61d11',1,'Paths']]],
   ['initscene',['initScene',['../classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee',1,'ATFViewerMain::initScene()'],['../classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3',1,'ATFViewerMainGLSL::initScene()']]],
+  ['initsector',['initSector',['../classSectorsVAO.html#a3e0ffd3c743121abe61b603d1a16923d',1,'SectorsVAO']]],
+  ['initsubsector',['initSubSector',['../classSectorsVAO.html#ab386302dda5eaba7493888586c76e763',1,'SectorsVAO']]],
   ['inittexture',['initTexture',['../classMap.html#a91aba0cb987d4c16705d9b39cd214534',1,'Map']]],
   ['inittimesequence',['initTimeSequence',['../classTimeSeparation.html#a4f6a78f39cc429147e9a581f0dd9978d',1,'TimeSeparation']]],
-  ['initvao',['initVAO',['../classMapVAO.html#adc5caefb25c393c27b62cda53b3ce5bc',1,'MapVAO']]],
+  ['initvao',['initVAO',['../classMapVAO.html#adc5caefb25c393c27b62cda53b3ce5bc',1,'MapVAO::initVAO()'],['../classSectorsVAO.html#ad08bf05e726561423fbbf4411d2a2fce',1,'SectorsVAO::initVAO()']]],
   ['innextinterval',['inNextInterval',['../classTimeSeparation.html#a441f2e870f47872bd1494aede072be76',1,'TimeSeparation']]],
   ['intheinterval',['inTheInterval',['../classTimeSeparation.html#abd785a933157b153b65b537dd9b40b64',1,'TimeSeparation']]],
   ['iscellindexoutofrange',['isCellIndexOutOfRange',['../CountCrossing__cuda_8h.html#a9be63a281e7db869f040abd6e9f51bb6',1,'CountCrossing_cuda.h']]],
-  ['isclockwise',['isClockwise',['../GCS_8cpp.html#a5e3926922f33fbdc026f5f9d185c6274',1,'isClockwise(std::vector&lt; int &gt; &amp;longLatIndex, std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp'],['../GCS_8h.html#a5e3926922f33fbdc026f5f9d185c6274',1,'isClockwise(std::vector&lt; int &gt; &amp;longLatIndex, std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp']]],
+  ['isclockwise',['isClockwise',['../GCS_8cpp.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp'],['../GCS_8h.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp']]],
   ['isenable',['isEnable',['../classJoystick.html#a0b8fca02b81b41f2473f55476e571564',1,'Joystick']]]
 ];

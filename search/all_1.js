@@ -1,6 +1,7 @@
 var searchData=
 [
   ['active',['active',['../classTexture2D.html#a3088c1b128931c77df5958d9fc96873e',1,'Texture2D']]],
+  ['addpositioncolorindex',['addPositionColorIndex',['../classSectorsVAO.html#a12d8d37941b76d243c30da27aacb7728',1,'SectorsVAO']]],
   ['addtrackdata',['addTrackData',['../unittest_8cpp.html#a564aa59ffd624c9e4a7061fcec6e1b37',1,'unittest.cpp']]],
   ['altitude',['altitude',['../structPathPoint.html#ac5568527a5e92b54238ef3dd1f9f9011',1,'PathPoint']]],
   ['arrival',['arrival',['../structPathPoint.html#a49e6cf1d7f10e79e9b10997ed1af3ada',1,'PathPoint']]],
