@@ -147,25 +147,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classMap.html#ae4b471decb6208c1fdacedcc4479a9b0">   58</a></span>&#160;    std::vector&lt;MapVertex&gt; <a class="code" href="classMap.html#ae4b471decb6208c1fdacedcc4479a9b0">mapVertex</a>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classMap.html#ad12eb44382682a7888d151684d23d2ed">   59</a></span>&#160;    std::vector&lt;std::vector&lt;MapVertexIndex&gt; &gt; <a class="code" href="classMap.html#ad12eb44382682a7888d151684d23d2ed">mapVertexIndex</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classMap.html#a34217da79ef827eb2c60e45cb54dfa37">   61</a></span>&#160;    <a class="code" href="classMap.html#a34217da79ef827eb2c60e45cb54dfa37">Map</a>(<span class="keyword">const</span> std::string&amp; map_id):</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classMap.html#aee409605f319e406b263774cfde34aa3">mapId</a>(map_id),</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classMap.html#ae4b471decb6208c1fdacedcc4479a9b0">mapVertex</a>(),</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classMap.html#ad12eb44382682a7888d151684d23d2ed">mapVertexIndex</a>()</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a91d61b621031d5e4d4e2f5e3f17b7c54">init</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#ae87977da0d0baddf7628a1ad76e71558">getSettings</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba, std::string&amp; map_id, std::string&amp; texture_file_name);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a91aba0cb987d4c16705d9b39cd214534">initTexture</a>(std::string&amp; texture_file_name);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605">getVertex</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba,std::string&amp; map_id);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a03d6b0e3e5a2d224b20089a9143952d6">getVertexIndex</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba,std::string&amp; map_id);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#aba8bab272a45054368279643d75fa3ba">display</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classMap.html#a34217da79ef827eb2c60e45cb54dfa37">   61</a></span>&#160;    <a class="code" href="classMap.html#a34217da79ef827eb2c60e45cb54dfa37">Map</a>(<span class="keyword">const</span> std::string&amp; map_id)</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        :</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <a class="code" href="classMap.html#aee409605f319e406b263774cfde34aa3">mapId</a>(map_id),</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="classMap.html#a589b107d647e7653b39d98731a7b1a57">textureName</a>{0},</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="classMap.html#a1b387fe6ffac367b266d4bc405e4a8f5">textureWidth</a>(0),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classMap.html#a3f318bf407e76559857e67db9dff5422">textureHeight</a>(0),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classMap.html#ae4b471decb6208c1fdacedcc4479a9b0">mapVertex</a>(),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classMap.html#ad12eb44382682a7888d151684d23d2ed">mapVertexIndex</a>()</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a91d61b621031d5e4d4e2f5e3f17b7c54">init</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#ae87977da0d0baddf7628a1ad76e71558">getSettings</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba, std::string&amp; map_id, std::string&amp; texture_file_name);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a91aba0cb987d4c16705d9b39cd214534">initTexture</a>(std::string&amp; texture_file_name);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605">getVertex</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba,std::string&amp; map_id);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#a03d6b0e3e5a2d224b20089a9143952d6">getVertexIndex</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba,std::string&amp; map_id);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMap.html#aba8bab272a45054368279643d75fa3ba">display</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classMap_html_aee409605f319e406b263774cfde34aa3"><div class="ttname"><a href="classMap.html#aee409605f319e406b263774cfde34aa3">Map::mapId</a></div><div class="ttdeci">std::string mapId</div><div class="ttdef"><b>Definition:</b> Map.h:54</div></div>
 <div class="ttc" id="classMap_html_a1b387fe6ffac367b266d4bc405e4a8f5"><div class="ttname"><a href="classMap.html#a1b387fe6ffac367b266d4bc405e4a8f5">Map::textureWidth</a></div><div class="ttdeci">int textureWidth</div><div class="ttdef"><b>Definition:</b> Map.h:56</div></div>
 <div class="ttc" id="classMap_html_a91aba0cb987d4c16705d9b39cd214534"><div class="ttname"><a href="classMap.html#a91aba0cb987d4c16705d9b39cd214534">Map::initTexture</a></div><div class="ttdeci">void initTexture(std::string &amp;texture_file_name)</div><div class="ttdef"><b>Definition:</b> Map.cpp:80</div></div>
@@ -195,7 +199,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 21 2016 14:52:48 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 21 2016 18:14:55 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

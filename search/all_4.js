@@ -1,11 +1,11 @@
 var searchData=
 [
   ['db',['db',['../classDBAccessor.html#abc3886f57179e2ffac2ef6c1b9e3624e',1,'DBAccessor']]],
-  ['dbaccessor',['DBAccessor',['../classDBAccessor.html',1,'DBAccessor'],['../classDBAccessor.html#a406ac80e9d2c41d64044af128eb527b1',1,'DBAccessor::DBAccessor()']]],
+  ['dbaccessor',['DBAccessor',['../classDBAccessor.html',1,'DBAccessor'],['../classDBAccessor.html#a1a3a6782ae62b9679401f4a03b5543bf',1,'DBAccessor::DBAccessor(const DBAccessor &amp;)=delete'],['../classDBAccessor.html#a7fe93eb8d58db58cfd3dd6fdd135500c',1,'DBAccessor::DBAccessor(DBAccessor &amp;&amp;)=delete'],['../classDBAccessor.html#a406ac80e9d2c41d64044af128eb527b1',1,'DBAccessor::DBAccessor(const std::string &amp;dbfilename)']]],
   ['dbaccessor_2eh',['DBAccessor.h',['../DBAccessor_8h.html',1,'']]],
   ['dbfilename',['dbFileName',['../classDBAccessor.html#a97fbea92467989b7554f215a8a58721f',1,'DBAccessor']]],
   ['def_5flock',['DEF_LOCK',['../Lock_8h.html#af24acb7ebc10be717308d4280fde5157',1,'Lock.h']]],
-  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#a2565b364cf49bc3b5f12f550c7250007',1,'Joystick::Device()']]],
+  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#af8e1eb269c975cde1ae5d25e355ee785',1,'Joystick::Device()']]],
   ['deviceseq',['DeviceSeq',['../classDeviceSeq.html',1,'DeviceSeq&lt; T &gt;'],['../classDeviceSeq.html#a6b861c73f3444b2908cf398779ad1f12',1,'DeviceSeq::DeviceSeq()']]],
   ['deviceseqconst',['DeviceSeqConst',['../classDeviceSeqConst.html',1,'DeviceSeqConst&lt; T &gt;'],['../classDeviceSeqConst.html#ac31372480a548a38bb3548aa1d4432a8',1,'DeviceSeqConst::DeviceSeqConst()']]],
   ['devicetime',['deviceTime',['../structEstimateSpecResult.html#ab1476644dae43209665b41324a6d7a40',1,'EstimateSpecResult']]],

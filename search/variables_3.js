@@ -2,7 +2,7 @@ var searchData=
 [
   ['db',['db',['../classDBAccessor.html#abc3886f57179e2ffac2ef6c1b9e3624e',1,'DBAccessor']]],
   ['dbfilename',['dbFileName',['../classDBAccessor.html#a97fbea92467989b7554f215a8a58721f',1,'DBAccessor']]],
-  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#a2565b364cf49bc3b5f12f550c7250007',1,'Joystick::Device()']]],
+  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#af8e1eb269c975cde1ae5d25e355ee785',1,'Joystick::Device()']]],
   ['devicetime',['deviceTime',['../structEstimateSpecResult.html#ab1476644dae43209665b41324a6d7a40',1,'EstimateSpecResult']]],
   ['disp_5fbuttonmask',['disp_buttonMask',['../classATFViewerMain.html#aa47b28079204629245f529b6dc8b8157',1,'ATFViewerMain']]],
   ['disp_5fx',['disp_X',['../classATFViewerMain.html#a4efd595a62e856940fab49811bc224a7',1,'ATFViewerMain']]],

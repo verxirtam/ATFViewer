@@ -170,174 +170,178 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">joystickTimerId</a>(1),</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300">timeInterval</a>(20),<span class="comment">//5),</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e">currentTimeInterval</a>(<a class="code" href="classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300">timeInterval</a>),</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classATFViewerMain.html#a4a6edae32ce1bac1c0b2c3686e844a9c">tv</a>(),</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6">camera_r</a>(30.0),</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495">camera_theta</a>(270.0*<a class="code" href="classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58">PI</a>/180.0),</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classATFViewerMain.html#a05cd405c71a8c711412607cad4a7a12e">camera_phi</a>(60.0*<a class="code" href="classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58">PI</a>/180.0),</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classATFViewerMain.html#aa44905fd4137395157f5461275c36d2a">paths</a>(),</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">//paths_first_index(),</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">//past_time_index(),</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//now_index(),</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>(1460635200),<span class="comment">//1460631600),//1456153155),</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//now(1453260000),</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classATFViewerMain.html#a65b49cc536b04ab0a9b9b2f611e7f0ce">timeMin</a>(<a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>),</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classATFViewerMain.html#a5df45cfbbcf82201aaefadc346d78e53">timeMax</a>(<a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>+60*60*24*3),<span class="comment">//1453300000),</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classATFViewerMain.html#ad42ba6e8cd4bd0fd3dbf355fc349e50f">mapTransform</a>(),</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>(),</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classATFViewerMain.html#aa542b5775ea28d3b6c627326005ff785">fixes</a>(),</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb">sectors</a>()</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[0]=0.0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[1]=0.0;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[2]=0.0;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//map.push_back(Map(&quot;bm_200406&quot;));</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>.push_back(<a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;ENRC1_20160204&quot;</span>));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>.push_back(<a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;ENRC2_20160204&quot;</span>));</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    }</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//シーンの初期化</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee">initScene</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//void initPathPoint(DBAccessor&amp; dba);</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//void drawPath(PathPoint&amp; p);</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//PathPoint getNowPoint(PathPoint&amp; from, PathPoint&amp; to, double time);</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="classATFViewerMain.html#ae9cd25e403dc2c417f4b7af45b950490">ATFViewerMain</a>(<span class="keyword">const</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; a);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; <a class="code" href="classATFViewerMain.html#abf2770544030662bde6c16f843c879e1">operator=</a>(<span class="keyword">const</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; a);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//画面更新用の関数</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">  117</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">_display</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">display</a>();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">//画面のリサイズ時に実行される関数</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">  122</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">_resize</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22">resize</a>(w,h);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">//キーボード入力時に実行される関数</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">  127</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">_keyboard</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">keyboard</a>(key,x,y);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">//ジョイスティックイベントの検出のための関数</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">  132</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">_joystickTimer</a>(<span class="keywordtype">int</span> value)</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995">joystickTimer</a>(value);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">  136</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">_idle</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="classATFViewerMain.html#aa47b28079204629245f529b6dc8b8157">disp_buttonMask</a>(),</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classATFViewerMain.html#a4efd595a62e856940fab49811bc224a7">disp_X</a>(),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classATFViewerMain.html#abdc42e19e312160ff005c31256fb9d4e">disp_Y</a>(),</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="classATFViewerMain.html#a6912ae8748ea247eeda2063d97a08a65">disp_Z</a>(),</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="classATFViewerMain.html#a4a6edae32ce1bac1c0b2c3686e844a9c">tv</a>(),</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6">camera_r</a>(30.0),</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495">camera_theta</a>(270.0*<a class="code" href="classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58">PI</a>/180.0),</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="classATFViewerMain.html#a05cd405c71a8c711412607cad4a7a12e">camera_phi</a>(60.0*<a class="code" href="classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58">PI</a>/180.0),</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="classATFViewerMain.html#aa44905fd4137395157f5461275c36d2a">paths</a>(),</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="comment">//paths_first_index(),</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="comment">//past_time_index(),</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//now_index(),</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>(1460635200),<span class="comment">//1460631600),//1456153155),</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">//now(1453260000),</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classATFViewerMain.html#a65b49cc536b04ab0a9b9b2f611e7f0ce">timeMin</a>(<a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>),</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="classATFViewerMain.html#a5df45cfbbcf82201aaefadc346d78e53">timeMax</a>(<a class="code" href="classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731">now</a>+60*60*24*3),<span class="comment">//1453300000),</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classATFViewerMain.html#ad42ba6e8cd4bd0fd3dbf355fc349e50f">mapTransform</a>(),</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>(),</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="classATFViewerMain.html#aa542b5775ea28d3b6c627326005ff785">fixes</a>(),</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <a class="code" href="classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb">sectors</a>()</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[0]=0.0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[1]=0.0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">camera_target</a>[2]=0.0;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="comment">//map.push_back(Map(&quot;bm_200406&quot;));</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>.push_back(<a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;ENRC1_20160204&quot;</span>));</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">map</a>.push_back(<a class="code" href="classMap.html">Map</a>(<span class="stringliteral">&quot;ENRC2_20160204&quot;</span>));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">//シーンの初期化</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee">initScene</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">//void initPathPoint(DBAccessor&amp; dba);</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">//void drawPath(PathPoint&amp; p);</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">//PathPoint getNowPoint(PathPoint&amp; from, PathPoint&amp; to, double time);</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <a class="code" href="classATFViewerMain.html#ae9cd25e403dc2c417f4b7af45b950490">ATFViewerMain</a>(<span class="keyword">const</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; a);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; <a class="code" href="classATFViewerMain.html#abf2770544030662bde6c16f843c879e1">operator=</a>(<span class="keyword">const</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; a);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">//画面更新用の関数</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">  121</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">_display</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">display</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">//画面のリサイズ時に実行される関数</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">  126</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">_resize</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h)</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22">resize</a>(w,h);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">//キーボード入力時に実行される関数</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">  131</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">_keyboard</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">keyboard</a>(key,x,y);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">//ジョイスティックイベントの検出のための関数</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">  136</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">_joystickTimer</a>(<span class="keywordtype">int</span> value)</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">idle</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995">joystickTimer</a>(value);</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">//画面更新用の関数</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">display</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">//画面のリサイズ時に実行される関数</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22">resize</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//キーボード入力時に実行される関数</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">keyboard</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//ジョイスティックイベントの検出のためのタイマー関数</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995">joystickTimer</a>(<span class="keywordtype">int</span> value);</div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">  148</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">idle</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        glutPostRedisplay();</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">//インスタンスの取得</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">  154</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">getInstance</a>()</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keyword">static</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a> atfvm;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">return</span> atfvm;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    }</div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">  159</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ATFViewerMain::init()&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        </div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordtype">int</span> argc=0;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">char</span>* argv[]={};</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <span class="comment">//GLUTの初期化</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        glutInit(&amp;argc,argv);</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;glutInit(&amp;argc,argv) end.&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="comment">//ディスプレイモードの設定</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="comment">//ウィンドウの生成</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        glutCreateWindow(<span class="stringliteral">&quot;ATFViewer&quot;</span>);</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        GLenum err;</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        err = glewInit();</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">if</span>(err != GLEW_OK)</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        {</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glewInit().&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="comment">//画面更新関数の設定</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        glutDisplayFunc(<a class="code" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">ATFViewerMain::_display</a>);</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="comment">//画面リサイズ時に実行される関数の設定</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        glutReshapeFunc(<a class="code" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">ATFViewerMain::_resize</a>);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">//キーボード入力時に実行される関数の設定</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        glutKeyboardFunc(<a class="code" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">ATFViewerMain::_keyboard</a>);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">//ジョイスティックイベントの検出のための関数</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        glutTimerFunc(<a class="code" href="classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306">pollingInterval</a>, <a class="code" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">ATFViewerMain::_joystickTimer</a>, <a class="code" href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">joystickTimerId</a>);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">//アイドル時に実行される関数の設定</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        glutIdleFunc(<a class="code" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">ATFViewerMain::_idle</a>);</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">//シーンの初期化</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        this-&gt;<a class="code" href="classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee">initScene</a>();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
-<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">  191</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">execMainLoop</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        glutMainLoop();</div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">  140</a></span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">_idle</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    {</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a>().<a class="code" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">idle</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    }</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//画面更新用の関数</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">display</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">//画面のリサイズ時に実行される関数</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22">resize</a>(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">//キーボード入力時に実行される関数</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">keyboard</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> key, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">//ジョイスティックイベントの検出のためのタイマー関数</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995">joystickTimer</a>(<span class="keywordtype">int</span> value);</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">  152</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">idle</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    {</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        glutPostRedisplay();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">//インスタンスの取得</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">  158</a></span>&#160;    <span class="keyword">inline</span> <span class="keyword">static</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a>&amp; <a class="code" href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">getInstance</a>()</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keyword">static</span> <a class="code" href="classATFViewerMain.html">ATFViewerMain</a> atfvm;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> atfvm;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">  163</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    {</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;ATFViewerMain::init()&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordtype">int</span> argc=0;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordtype">char</span>* argv[]={};</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">//GLUTの初期化</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        glutInit(&amp;argc,argv);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;glutInit(&amp;argc,argv) end.&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">//ディスプレイモードの設定</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">//ウィンドウの生成</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        glutCreateWindow(<span class="stringliteral">&quot;ATFViewer&quot;</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        GLenum err;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        err = glewInit();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">if</span>(err != GLEW_OK)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        {</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glewInit().&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="comment">//画面更新関数の設定</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        glutDisplayFunc(<a class="code" href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">ATFViewerMain::_display</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">//画面リサイズ時に実行される関数の設定</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        glutReshapeFunc(<a class="code" href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">ATFViewerMain::_resize</a>);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">//キーボード入力時に実行される関数の設定</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        glutKeyboardFunc(<a class="code" href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">ATFViewerMain::_keyboard</a>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">//ジョイスティックイベントの検出のための関数</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        glutTimerFunc(<a class="code" href="classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306">pollingInterval</a>, <a class="code" href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">ATFViewerMain::_joystickTimer</a>, <a class="code" href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">joystickTimerId</a>);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//アイドル時に実行される関数の設定</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        glutIdleFunc(<a class="code" href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">ATFViewerMain::_idle</a>);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <span class="comment">//シーンの初期化</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        this-&gt;<a class="code" href="classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee">initScene</a>();</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;};</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">  195</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">execMainLoop</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    {</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        glutMainLoop();</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;};</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="Fixes_8h_html"><div class="ttname"><a href="Fixes_8h.html">Fixes.h</a></div></div>
-<div class="ttc" id="classATFViewerMain_html_a68f75b79d8196dd424dfdb38515d3ee9"><div class="ttname"><a href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">ATFViewerMain::_idle</a></div><div class="ttdeci">static void _idle(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:136</div></div>
+<div class="ttc" id="classATFViewerMain_html_a68f75b79d8196dd424dfdb38515d3ee9"><div class="ttname"><a href="classATFViewerMain.html#a68f75b79d8196dd424dfdb38515d3ee9">ATFViewerMain::_idle</a></div><div class="ttdeci">static void _idle(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:140</div></div>
 <div class="ttc" id="TestVBO_8h_html"><div class="ttname"><a href="TestVBO_8h.html">TestVBO.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_a65b49cc536b04ab0a9b9b2f611e7f0ce"><div class="ttname"><a href="classATFViewerMain.html#a65b49cc536b04ab0a9b9b2f611e7f0ce">ATFViewerMain::timeMin</a></div><div class="ttdeci">const time_t timeMin</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:68</div></div>
 <div class="ttc" id="classATFViewerMain_html_ae9cd25e403dc2c417f4b7af45b950490"><div class="ttname"><a href="classATFViewerMain.html#ae9cd25e403dc2c417f4b7af45b950490">ATFViewerMain::ATFViewerMain</a></div><div class="ttdeci">ATFViewerMain()</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:75</div></div>
 <div class="ttc" id="classATFViewerMain_html_a06f1a631c99e64b6d0bf00c0359e8995"><div class="ttname"><a href="classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995">ATFViewerMain::joystickTimer</a></div><div class="ttdeci">void joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:302</div></div>
 <div class="ttc" id="classATFViewerMain_html_ad42ba6e8cd4bd0fd3dbf355fc349e50f"><div class="ttname"><a href="classATFViewerMain.html#ad42ba6e8cd4bd0fd3dbf355fc349e50f">ATFViewerMain::mapTransform</a></div><div class="ttdeci">MapTransform mapTransform</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:70</div></div>
 <div class="ttc" id="classTestVBO_html"><div class="ttname"><a href="classTestVBO.html">TestVBO</a></div><div class="ttdef"><b>Definition:</b> TestVBO.h:8</div></div>
-<div class="ttc" id="classATFViewerMain_html_a0247f8b68f9f7833c2aba861a7ba1ffb"><div class="ttname"><a href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">ATFViewerMain::_display</a></div><div class="ttdeci">static void _display(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:117</div></div>
+<div class="ttc" id="classATFViewerMain_html_a0247f8b68f9f7833c2aba861a7ba1ffb"><div class="ttname"><a href="classATFViewerMain.html#a0247f8b68f9f7833c2aba861a7ba1ffb">ATFViewerMain::_display</a></div><div class="ttdeci">static void _display(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:121</div></div>
 <div class="ttc" id="classATFViewerMain_html_aa47b28079204629245f529b6dc8b8157"><div class="ttname"><a href="classATFViewerMain.html#aa47b28079204629245f529b6dc8b8157">ATFViewerMain::disp_buttonMask</a></div><div class="ttdeci">unsigned int disp_buttonMask</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:56</div></div>
 <div class="ttc" id="classSectors_html"><div class="ttname"><a href="classSectors.html">Sectors</a></div><div class="ttdef"><b>Definition:</b> Sectors.h:35</div></div>
-<div class="ttc" id="classATFViewerMain_html_a240fba96cb66a2dc494284b57351679d"><div class="ttname"><a href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">ATFViewerMain::init</a></div><div class="ttdeci">void init(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:159</div></div>
+<div class="ttc" id="classATFViewerMain_html_a240fba96cb66a2dc494284b57351679d"><div class="ttname"><a href="classATFViewerMain.html#a240fba96cb66a2dc494284b57351679d">ATFViewerMain::init</a></div><div class="ttdeci">void init(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:163</div></div>
 <div class="ttc" id="classATFViewerMain_html_a7a5a6cacb83ae27094474e3c55893d9b"><div class="ttname"><a href="classATFViewerMain.html#a7a5a6cacb83ae27094474e3c55893d9b">ATFViewerMain::joystick</a></div><div class="ttdeci">Joystick joystick</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:51</div></div>
 <div class="ttc" id="Map_8h_html"><div class="ttname"><a href="Map_8h.html">Map.h</a></div></div>
 <div class="ttc" id="Joystick_8h_html"><div class="ttname"><a href="Joystick_8h.html">Joystick.h</a></div></div>
 <div class="ttc" id="BitmapString_8h_html"><div class="ttname"><a href="BitmapString_8h.html">BitmapString.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_a4a6edae32ce1bac1c0b2c3686e844a9c"><div class="ttname"><a href="classATFViewerMain.html#a4a6edae32ce1bac1c0b2c3686e844a9c">ATFViewerMain::tv</a></div><div class="ttdeci">TestVBO tv</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:60</div></div>
-<div class="ttc" id="classATFViewerMain_html_aac0d487e5d8e92385170ce6782bf806f"><div class="ttname"><a href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a></div><div class="ttdeci">static ATFViewerMain &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:154</div></div>
+<div class="ttc" id="classATFViewerMain_html_aac0d487e5d8e92385170ce6782bf806f"><div class="ttname"><a href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a></div><div class="ttdeci">static ATFViewerMain &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:158</div></div>
 <div class="ttc" id="classATFViewerMain_html_ab184eda281eead567d265b12432ef775"><div class="ttname"><a href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">ATFViewerMain::display</a></div><div class="ttdeci">void display(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:68</div></div>
 <div class="ttc" id="classFixes_html"><div class="ttname"><a href="classFixes.html">Fixes</a></div><div class="ttdef"><b>Definition:</b> Fixes.h:32</div></div>
 <div class="ttc" id="classATFViewerMain_html_a2127af7a49dd571ec157ce90e5427b87"><div class="ttname"><a href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">ATFViewerMain::keyboard</a></div><div class="ttdeci">void keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:223</div></div>
-<div class="ttc" id="classATFViewerMain_html_abfbc080913278a32048901872f5623c0"><div class="ttname"><a href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">ATFViewerMain::_resize</a></div><div class="ttdeci">static void _resize(int w, int h)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:122</div></div>
-<div class="ttc" id="classATFViewerMain_html_a920b69897d6afe04b708f271427523d9"><div class="ttname"><a href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">ATFViewerMain::_keyboard</a></div><div class="ttdeci">static void _keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:127</div></div>
+<div class="ttc" id="classATFViewerMain_html_abfbc080913278a32048901872f5623c0"><div class="ttname"><a href="classATFViewerMain.html#abfbc080913278a32048901872f5623c0">ATFViewerMain::_resize</a></div><div class="ttdeci">static void _resize(int w, int h)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:126</div></div>
+<div class="ttc" id="classATFViewerMain_html_a920b69897d6afe04b708f271427523d9"><div class="ttname"><a href="classATFViewerMain.html#a920b69897d6afe04b708f271427523d9">ATFViewerMain::_keyboard</a></div><div class="ttdeci">static void _keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:131</div></div>
 <div class="ttc" id="classATFViewerMain_html_aa542b5775ea28d3b6c627326005ff785"><div class="ttname"><a href="classATFViewerMain.html#aa542b5775ea28d3b6c627326005ff785">ATFViewerMain::fixes</a></div><div class="ttdeci">Fixes fixes</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:72</div></div>
 <div class="ttc" id="Paths_8h_html"><div class="ttname"><a href="Paths_8h.html">Paths.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_abdc42e19e312160ff005c31256fb9d4e"><div class="ttname"><a href="classATFViewerMain.html#abdc42e19e312160ff005c31256fb9d4e">ATFViewerMain::disp_Y</a></div><div class="ttdeci">int disp_Y</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:58</div></div>
 <div class="ttc" id="classATFViewerMain_html_a715c8a0370fdac8957611d6920600628"><div class="ttname"><a href="classATFViewerMain.html#a715c8a0370fdac8957611d6920600628">ATFViewerMain::windowWidth</a></div><div class="ttdeci">int windowWidth</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:48</div></div>
 <div class="ttc" id="classATFViewerMain_html_a5ca52e99e4fb0f039077a9f9fc0b1b22"><div class="ttname"><a href="classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22">ATFViewerMain::resize</a></div><div class="ttdeci">void resize(int w, int h)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:213</div></div>
-<div class="ttc" id="classATFViewerMain_html_af2f292b9947d82bd594a579e537eb613"><div class="ttname"><a href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">ATFViewerMain::execMainLoop</a></div><div class="ttdeci">void execMainLoop(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:191</div></div>
+<div class="ttc" id="classATFViewerMain_html_af2f292b9947d82bd594a579e537eb613"><div class="ttname"><a href="classATFViewerMain.html#af2f292b9947d82bd594a579e537eb613">ATFViewerMain::execMainLoop</a></div><div class="ttdeci">void execMainLoop(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:195</div></div>
 <div class="ttc" id="classATFViewerMain_html"><div class="ttname"><a href="classATFViewerMain.html">ATFViewerMain</a></div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:44</div></div>
 <div class="ttc" id="classMapTransform_html"><div class="ttname"><a href="classMapTransform.html">MapTransform</a></div><div class="ttdef"><b>Definition:</b> MapTransform.h:27</div></div>
 <div class="ttc" id="classATFViewerMain_html_a70d1e0a883d6df415764f975080cd7eb"><div class="ttname"><a href="classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb">ATFViewerMain::sectors</a></div><div class="ttdeci">Sectors sectors</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:73</div></div>
 <div class="ttc" id="classATFViewerMain_html_a04c4babfa513c8e72bb8d6c3d11346b6"><div class="ttname"><a href="classATFViewerMain.html#a04c4babfa513c8e72bb8d6c3d11346b6">ATFViewerMain::camera_r</a></div><div class="ttdeci">GLdouble camera_r</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:62</div></div>
 <div class="ttc" id="classATFViewerMain_html_a5df45cfbbcf82201aaefadc346d78e53"><div class="ttname"><a href="classATFViewerMain.html#a5df45cfbbcf82201aaefadc346d78e53">ATFViewerMain::timeMax</a></div><div class="ttdeci">const time_t timeMax</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:69</div></div>
-<div class="ttc" id="classATFViewerMain_html_a027ca8aa954718e0f36e2f22b98a77c2"><div class="ttname"><a href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">ATFViewerMain::_joystickTimer</a></div><div class="ttdeci">static void _joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:132</div></div>
+<div class="ttc" id="classATFViewerMain_html_a027ca8aa954718e0f36e2f22b98a77c2"><div class="ttname"><a href="classATFViewerMain.html#a027ca8aa954718e0f36e2f22b98a77c2">ATFViewerMain::_joystickTimer</a></div><div class="ttdeci">static void _joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:136</div></div>
 <div class="ttc" id="classATFViewerMain_html_aa617a6b344671c09aab864a24fe57300"><div class="ttname"><a href="classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300">ATFViewerMain::timeInterval</a></div><div class="ttdeci">const int timeInterval</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:53</div></div>
 <div class="ttc" id="classATFViewerMain_html_ae1bc483dd72b11c3bef8925c58d0f495"><div class="ttname"><a href="classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495">ATFViewerMain::camera_theta</a></div><div class="ttdeci">GLdouble camera_theta</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:63</div></div>
 <div class="ttc" id="classATFViewerMain_html_add8058abe74c49efbcb473e2e83d3392"><div class="ttname"><a href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">ATFViewerMain::map</a></div><div class="ttdeci">std::vector&lt; Map &gt; map</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:71</div></div>
 <div class="ttc" id="classMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:39</div></div>
-<div class="ttc" id="classJoystick_html"><div class="ttname"><a href="classJoystick.html">Joystick</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:51</div></div>
+<div class="ttc" id="classJoystick_html"><div class="ttname"><a href="classJoystick.html">Joystick</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:52</div></div>
 <div class="ttc" id="DBAccessor_8h_html"><div class="ttname"><a href="DBAccessor_8h.html">DBAccessor.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_aa44905fd4137395157f5461275c36d2a"><div class="ttname"><a href="classATFViewerMain.html#aa44905fd4137395157f5461275c36d2a">ATFViewerMain::paths</a></div><div class="ttdeci">Paths paths</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:66</div></div>
 <div class="ttc" id="classPaths_html"><div class="ttname"><a href="classPaths.html">Paths</a></div><div class="ttdef"><b>Definition:</b> Paths.h:37</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_a1e3c0761f7545a4245222a44d1b2d306"><div class="ttname"><a href="classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306">ATFViewerMain::pollingInterval</a></div><div class="ttdeci">const unsigned int pollingInterval</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:50</div></div>
-<div class="ttc" id="classATFViewerMain_html_ad042fa287aa8bff635267c7a7babb603"><div class="ttname"><a href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">ATFViewerMain::idle</a></div><div class="ttdeci">void idle(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:148</div></div>
+<div class="ttc" id="classATFViewerMain_html_ad042fa287aa8bff635267c7a7babb603"><div class="ttname"><a href="classATFViewerMain.html#ad042fa287aa8bff635267c7a7babb603">ATFViewerMain::idle</a></div><div class="ttdeci">void idle(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:152</div></div>
 <div class="ttc" id="classATFViewerMain_html_af5114b8572bf6040348a85cb3f0ea7a7"><div class="ttname"><a href="classATFViewerMain.html#af5114b8572bf6040348a85cb3f0ea7a7">ATFViewerMain::camera_target</a></div><div class="ttdeci">GLdouble camera_target[3]</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:65</div></div>
 <div class="ttc" id="classATFViewerMain_html_aa7fa1e759a1a313885d56f714f156a8c"><div class="ttname"><a href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">ATFViewerMain::joystickTimerId</a></div><div class="ttdeci">const int joystickTimerId</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:52</div></div>
 <div class="ttc" id="Sectors_8h_html"><div class="ttname"><a href="Sectors_8h.html">Sectors.h</a></div></div>
@@ -354,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 21 2016 14:52:48 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 21 2016 18:14:55 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

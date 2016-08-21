@@ -133,39 +133,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69">   44</a></span>&#160;    std::vector&lt;Path&gt;* <a class="code" href="classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69">bufferPaths</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classPaths.html#a83cacb496526d6b75ffa3e20f6de6996">   45</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classPaths.html#a83cacb496526d6b75ffa3e20f6de6996">drawTimeWidth</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596">   46</a></span>&#160;    std::future&lt;void&gt; <a class="code" href="classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596">futureMakeBuffer</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea">makePathsBuffer</a>(std::vector&lt;Path&gt;&amp; p, <a class="code" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a7f965a67f5b02935e918f0e26c1febe5">runMakePathsBuffer</a>(std::vector&lt;Path&gt;&amp; p, <a class="code" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a45763fffde47980af820deacb1a785ed">updatePastTimeIndex</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t past_time);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a41f9539b83417c6855fca47c9d4b24e6">updateNowIndex</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t now);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a74ee48d529066437d733a1ffd1b1a558">drawPathLine</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t past_time, time_t now);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">   53</a></span>&#160;    <a class="code" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths</a>():<a class="code" href="classPaths.html#a4d8ae2b9a632183d51676fc91632f8e4">paths</a>(), <a class="code" href="classPaths.html#ae51f3b7a9c8ac8b2fd301a0214f0549c">pathsBuffer</a>(), <a class="code" href="classPaths.html#a80fe5288e26b74fe3a1568392d4828f0">currentPaths</a>(&amp;<a class="code" href="classPaths.html#a4d8ae2b9a632183d51676fc91632f8e4">paths</a>), <a class="code" href="classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69">bufferPaths</a>(&amp;<a class="code" href="classPaths.html#ae51f3b7a9c8ac8b2fd301a0214f0549c">pathsBuffer</a>), <a class="code" href="classPaths.html#a83cacb496526d6b75ffa3e20f6de6996">drawTimeWidth</a>(600)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#afc0b94c5ac017343b5a17b2a70f61d11">initPathPoint</a>(time_t time_min, time_t time_max);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#ae106f351fe902cc69616e85573587107">drawPath</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; p, time_t now);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="structPathPoint.html">PathPoint</a> <a class="code" href="classPaths.html#aed3b57fd4a182491c5332615a40ba3fe">getNowPoint</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; from, <a class="code" href="structPathPoint.html">PathPoint</a>&amp; to, time_t time);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#ace31a29293f673c3d1d4b6e8a82c1e85">resetTime</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPaths.html#a9dad8348e7647b5f4295d700c0e71387">display</a>(time_t now);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea">makePathsBuffer</a>(std::vector&lt;Path&gt;&amp; p, <a class="code" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a7f965a67f5b02935e918f0e26c1febe5">runMakePathsBuffer</a>(std::vector&lt;Path&gt;&amp; p, <a class="code" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a45763fffde47980af820deacb1a785ed">updatePastTimeIndex</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t past_time);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a41f9539b83417c6855fca47c9d4b24e6">updateNowIndex</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t now);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#a74ee48d529066437d733a1ffd1b1a558">drawPathLine</a>(<a class="code" href="structPath.html">Path</a>&amp; p, time_t past_time, time_t now);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//ポインタメンバを持っているが、コピー不要なので禁止する</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//コピーコンストラクタ</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths</a>(<span class="keyword">const</span> <a class="code" href="classPaths.html">Paths</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">//コピー代入演算子</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classPaths.html">Paths</a>&amp; <a class="code" href="classPaths.html#aab6302100a6b43928120ca5b0772a329">operator=</a>(<span class="keyword">const</span> <a class="code" href="classPaths.html">Paths</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">//ムーブコンストラクタ</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths</a>(<a class="code" href="classPaths.html">Paths</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">//ムーブ代入演算子</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classPaths.html">Paths</a>&amp; <a class="code" href="classPaths.html#aab6302100a6b43928120ca5b0772a329">operator=</a>(<a class="code" href="classPaths.html">Paths</a>&amp;&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">   63</a></span>&#160;    <a class="code" href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths</a>()</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        :</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            <a class="code" href="classPaths.html#a90d55274f1229ef63d8eb226370a2f2f">timeSeparation</a>(),</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            <a class="code" href="classPaths.html#a4d8ae2b9a632183d51676fc91632f8e4">paths</a>(),</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classPaths.html#ae51f3b7a9c8ac8b2fd301a0214f0549c">pathsBuffer</a>(),</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="classPaths.html#a80fe5288e26b74fe3a1568392d4828f0">currentPaths</a>(&amp;<a class="code" href="classPaths.html#a4d8ae2b9a632183d51676fc91632f8e4">paths</a>),</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69">bufferPaths</a>(&amp;<a class="code" href="classPaths.html#ae51f3b7a9c8ac8b2fd301a0214f0549c">pathsBuffer</a>),</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <a class="code" href="classPaths.html#a83cacb496526d6b75ffa3e20f6de6996">drawTimeWidth</a>(600),</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            <a class="code" href="classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596">futureMakeBuffer</a>()</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#afc0b94c5ac017343b5a17b2a70f61d11">initPathPoint</a>(time_t time_min, time_t time_max);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#ae106f351fe902cc69616e85573587107">drawPath</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; p, time_t now);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="structPathPoint.html">PathPoint</a> <a class="code" href="classPaths.html#aed3b57fd4a182491c5332615a40ba3fe">getNowPoint</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; from, <a class="code" href="structPathPoint.html">PathPoint</a>&amp; to, time_t time);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPaths.html#ace31a29293f673c3d1d4b6e8a82c1e85">resetTime</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPaths.html#a9dad8348e7647b5f4295d700c0e71387">display</a>(time_t now);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor"></span></div>
 <div class="ttc" id="classPaths_html_a74ee48d529066437d733a1ffd1b1a558"><div class="ttname"><a href="classPaths.html#a74ee48d529066437d733a1ffd1b1a558">Paths::drawPathLine</a></div><div class="ttdeci">void drawPathLine(Path &amp;p, time_t past_time, time_t now)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:199</div></div>
 <div class="ttc" id="classPaths_html_afc0b94c5ac017343b5a17b2a70f61d11"><div class="ttname"><a href="classPaths.html#afc0b94c5ac017343b5a17b2a70f61d11">Paths::initPathPoint</a></div><div class="ttdeci">void initPathPoint(time_t time_min, time_t time_max)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:131</div></div>
-<div class="ttc" id="classPaths_html_a6d135fd4b8af08a52627736ba5f705e1"><div class="ttname"><a href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths::Paths</a></div><div class="ttdeci">Paths()</div><div class="ttdef"><b>Definition:</b> Paths.h:53</div></div>
+<div class="ttc" id="classPaths_html_a6d135fd4b8af08a52627736ba5f705e1"><div class="ttname"><a href="classPaths.html#a6d135fd4b8af08a52627736ba5f705e1">Paths::Paths</a></div><div class="ttdeci">Paths()</div><div class="ttdef"><b>Definition:</b> Paths.h:63</div></div>
 <div class="ttc" id="TimeSeparation_8h_html"><div class="ttname"><a href="TimeSeparation_8h.html">TimeSeparation.h</a></div></div>
 <div class="ttc" id="TrackDataManager_8h_html"><div class="ttname"><a href="TrackDataManager_8h.html">TrackDataManager.h</a></div></div>
 <div class="ttc" id="classPaths_html_a7080fc5f2e09b7f653e4b1e60ce73596"><div class="ttname"><a href="classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596">Paths::futureMakeBuffer</a></div><div class="ttdeci">std::future&lt; void &gt; futureMakeBuffer</div><div class="ttdef"><b>Definition:</b> Paths.h:46</div></div>
 <div class="ttc" id="classPaths_html_aed3b57fd4a182491c5332615a40ba3fe"><div class="ttname"><a href="classPaths.html#aed3b57fd4a182491c5332615a40ba3fe">Paths::getNowPoint</a></div><div class="ttdeci">PathPoint getNowPoint(PathPoint &amp;from, PathPoint &amp;to, time_t time)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:119</div></div>
+<div class="ttc" id="classPaths_html_aab6302100a6b43928120ca5b0772a329"><div class="ttname"><a href="classPaths.html#aab6302100a6b43928120ca5b0772a329">Paths::operator=</a></div><div class="ttdeci">Paths &amp; operator=(const Paths &amp;)=delete</div></div>
 <div class="ttc" id="classPaths_html_a023a1e0b5c2787f2f578c6bdb01705ea"><div class="ttname"><a href="classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea">Paths::makePathsBuffer</a></div><div class="ttdeci">void makePathsBuffer(std::vector&lt; Path &gt; &amp;p, TimeSeparation::Position position)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:24</div></div>
 <div class="ttc" id="structPathPoint_html"><div class="ttname"><a href="structPathPoint.html">PathPoint</a></div><div class="ttdef"><b>Definition:</b> Path.h:25</div></div>
 <div class="ttc" id="classPaths_html_a45763fffde47980af820deacb1a785ed"><div class="ttname"><a href="classPaths.html#a45763fffde47980af820deacb1a785ed">Paths::updatePastTimeIndex</a></div><div class="ttdeci">void updatePastTimeIndex(Path &amp;p, time_t past_time)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:158</div></div>
@@ -185,11 +204,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classPaths_html_a9dad8348e7647b5f4295d700c0e71387"><div class="ttname"><a href="classPaths.html#a9dad8348e7647b5f4295d700c0e71387">Paths::display</a></div><div class="ttdeci">int display(time_t now)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:229</div></div>
 <div class="ttc" id="classPaths_html_a41f9539b83417c6855fca47c9d4b24e6"><div class="ttname"><a href="classPaths.html#a41f9539b83417c6855fca47c9d4b24e6">Paths::updateNowIndex</a></div><div class="ttdeci">void updateNowIndex(Path &amp;p, time_t now)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:178</div></div>
 <div class="ttc" id="classPaths_html_ae106f351fe902cc69616e85573587107"><div class="ttname"><a href="classPaths.html#ae106f351fe902cc69616e85573587107">Paths::drawPath</a></div><div class="ttdeci">void drawPath(PathPoint &amp;p, time_t now)</div><div class="ttdef"><b>Definition:</b> Paths.cpp:68</div></div>
-<div class="ttc" id="structPath_html"><div class="ttname"><a href="structPath.html">Path</a></div><div class="ttdef"><b>Definition:</b> Path.h:70</div></div>
+<div class="ttc" id="structPath_html"><div class="ttname"><a href="structPath.html">Path</a></div><div class="ttdef"><b>Definition:</b> Path.h:71</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 21 2016 14:52:48 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 21 2016 18:14:55 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

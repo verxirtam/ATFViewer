@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['sector',['Sector',['../structSectors_1_1Sector.html#a882f8b6ee0a970b4b83df7879fb25fc0',1,'Sectors::Sector::Sector()'],['../structSectorsVAO_1_1Sector.html#afdc83ccc450bc3e0100d0c7cbb431753',1,'SectorsVAO::Sector::Sector()']]],
   ['sectors',['Sectors',['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors']]],
   ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html#a2a78d8f388b3474c3b3d38bb5164dfc7',1,'SectorsVAO']]],
   ['selecttrackdatawithdate',['selectTrackDataWithDate',['../unittest_8cpp.html#a77bcc0c7a7d4e51b4071af9ec97485da',1,'unittest.cpp']]],
@@ -24,5 +25,6 @@ var searchData=
   ['start',['start',['../classTimer.html#a3a8b5272198d029779dc9302a54305a8',1,'Timer']]],
   ['step',['step',['../classDBAccessor.html#a560b6ead9df1ab797b81579b1d1509f2',1,'DBAccessor']]],
   ['step_5fselect',['step_select',['../classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0',1,'DBAccessor']]],
+  ['subsector',['SubSector',['../structSectors_1_1SubSector.html#ac43b60442423058e89d83f8661156418',1,'Sectors::SubSector::SubSector()'],['../structSectorsVAO_1_1SubSector.html#a5e54ad7ab195c42ed87a72ff1840d37d',1,'SectorsVAO::SubSector::SubSector()']]],
   ['switchdisplaysector',['switchDisplaySector',['../classSectors.html#a70a73dc433f94b9946c8dc2fc01e6bd9',1,'Sectors']]]
 ];
