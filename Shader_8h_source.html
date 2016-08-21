@@ -159,13 +159,13 @@ $(document).ready(function(){initNavTree('Shader_8h_source.html','');});
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//      （コピー元のShaderがデストラクタで破棄されないようにするため）</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//コピーコンストラクタ</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classShader.html#ae30904a9535a6c10d6b529ab0afb90de">Shader</a>(<span class="keyword">const</span> <a class="code" href="classShader.html">Shader</a>&amp; s);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classShader.html#a68f3f1fc7a5a8bdc67d6edfa1c702cf1">Shader</a>(<span class="keyword">const</span> <a class="code" href="classShader.html">Shader</a>&amp; s) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">//コピー代入演算子</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classShader.html">Shader</a>&amp; <a class="code" href="classShader.html#af99e0b94411049b29b31c69811bae9b1">operator=</a>(<span class="keyword">const</span> <a class="code" href="classShader.html">Shader</a>&amp; s);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classShader.html">Shader</a>&amp; <a class="code" href="classShader.html#af03eddae3a8716030933657b79ef4faa">operator=</a>(<span class="keyword">const</span> <a class="code" href="classShader.html">Shader</a>&amp; s) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//ムーブコンストラクタ</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classShader.html#ae30904a9535a6c10d6b529ab0afb90de">Shader</a>(<a class="code" href="classShader.html">Shader</a>&amp;&amp; s);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classShader.html#a68f3f1fc7a5a8bdc67d6edfa1c702cf1">Shader</a>(<a class="code" href="classShader.html">Shader</a>&amp;&amp; s) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">//ムーブ代入演算子</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classShader.html">Shader</a>&amp; <a class="code" href="classShader.html#af99e0b94411049b29b31c69811bae9b1">operator=</a>(<a class="code" href="classShader.html">Shader</a>&amp;&amp; s);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classShader.html">Shader</a>&amp; <a class="code" href="classShader.html#af03eddae3a8716030933657b79ef4faa">operator=</a>(<a class="code" href="classShader.html">Shader</a>&amp;&amp; s) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">//デフォルトコンストラクタを作る？</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//-&gt;作らないとstdコンテナに格納できない</span></div>
@@ -230,9 +230,7 @@ $(document).ready(function(){initNavTree('Shader_8h_source.html','');});
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    </div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;};</div>
-<div class="ttc" id="classShader_html_ae30904a9535a6c10d6b529ab0afb90de"><div class="ttname"><a href="classShader.html#ae30904a9535a6c10d6b529ab0afb90de">Shader::Shader</a></div><div class="ttdeci">Shader(const Shader &amp;s)</div></div>
 <div class="ttc" id="classShader_html_a99cd96b144222128bd9a9dc45cec3593"><div class="ttname"><a href="classShader.html#a99cd96b144222128bd9a9dc45cec3593">Shader::readShaderFile</a></div><div class="ttdeci">std::string readShaderFile(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> Shader.h:36</div></div>
-<div class="ttc" id="classShader_html_af99e0b94411049b29b31c69811bae9b1"><div class="ttname"><a href="classShader.html#af99e0b94411049b29b31c69811bae9b1">Shader::operator=</a></div><div class="ttdeci">Shader &amp; operator=(const Shader &amp;s)</div></div>
 <div class="ttc" id="classShader_html_a7215ca80ea962ac48f52d785cd48bc75"><div class="ttname"><a href="classShader.html#a7215ca80ea962ac48f52d785cd48bc75">Shader::Shader</a></div><div class="ttdeci">Shader(GLenum t, const char *path)</div><div class="ttdef"><b>Definition:</b> Shader.h:67</div></div>
 <div class="ttc" id="classShader_html"><div class="ttname"><a href="classShader.html">Shader</a></div><div class="ttdef"><b>Definition:</b> Shader.h:30</div></div>
 <div class="ttc" id="classShader_html_a5be69e48ac2436651ead777bf5fb5c9f"><div class="ttname"><a href="classShader.html#a5be69e48ac2436651ead777bf5fb5c9f">Shader::compile</a></div><div class="ttdeci">void compile()</div><div class="ttdef"><b>Definition:</b> Shader.h:92</div></div>
@@ -243,13 +241,15 @@ $(document).ready(function(){initNavTree('Shader_8h_source.html','');});
 <div class="ttc" id="classShader_html_a1bfc00b8e17549b41af544ef41c7d4aa"><div class="ttname"><a href="classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa">Shader::getHandle</a></div><div class="ttdeci">GLuint getHandle() const </div><div class="ttdef"><b>Definition:</b> Shader.h:121</div></div>
 <div class="ttc" id="classShader_html_add246d71b5fa4ab79f9a03fd48ea1971"><div class="ttname"><a href="classShader.html#add246d71b5fa4ab79f9a03fd48ea1971">Shader::type</a></div><div class="ttdeci">GLenum type</div><div class="ttdef"><b>Definition:</b> Shader.h:34</div></div>
 <div class="ttc" id="classShader_html_aff01df87e8a102f270b5b135a295e59d"><div class="ttname"><a href="classShader.html#aff01df87e8a102f270b5b135a295e59d">Shader::~Shader</a></div><div class="ttdeci">~Shader()</div><div class="ttdef"><b>Definition:</b> Shader.h:73</div></div>
+<div class="ttc" id="classShader_html_af03eddae3a8716030933657b79ef4faa"><div class="ttname"><a href="classShader.html#af03eddae3a8716030933657b79ef4faa">Shader::operator=</a></div><div class="ttdeci">Shader &amp; operator=(const Shader &amp;s)=delete</div></div>
+<div class="ttc" id="classShader_html_a68f3f1fc7a5a8bdc67d6edfa1c702cf1"><div class="ttname"><a href="classShader.html#a68f3f1fc7a5a8bdc67d6edfa1c702cf1">Shader::Shader</a></div><div class="ttdeci">Shader(const Shader &amp;s)=delete</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Shader_8h.html">Shader.h</a></li>
-    <li class="footer">Generated on Sun Aug 21 2016 18:42:52 for ATFViewer by
+    <li class="footer">Generated on Mon Aug 22 2016 02:26:52 for ATFViewer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -2,7 +2,7 @@ var searchData=
 [
   ['v',['v',['../structMap_1_1MapVertex.html#ae66e809e409d0651aab70bd6217d88c9',1,'Map::MapVertex::v()'],['../structMapVAO_1_1MapVertex.html#a7fd41c17e630e4d6268e045f2cea08b5',1,'MapVAO::MapVertex::v()']]],
   ['vao',['vao',['../classMapVAO.html#a555e725150a4f647cbe4828c9045da42',1,'MapVAO::vao()'],['../classSectorsVAO.html#ab4251a5614cb1ea2bee855d5abffbfba',1,'SectorsVAO::vao()'],['../classTestVBO.html#a0f595e8e0f3926bc530ef1a38f6021ef',1,'TestVBO::vao()']]],
-  ['vaobase',['VAOBase',['../classVAOBase.html',1,'VAOBase'],['../classVAOBase.html#a7e1ced335f50a5e03d7cba88ee7bd204',1,'VAOBase::VAOBase(const VAOBase &amp;v)'],['../classVAOBase.html#a72d81cf0db0df27e6871ab2ec575ecb6',1,'VAOBase::VAOBase(VAOBase &amp;&amp;v)'],['../classVAOBase.html#a3fecd76b0e150bbbea66eea7b3129207',1,'VAOBase::VAOBase()']]],
+  ['vaobase',['VAOBase',['../classVAOBase.html',1,'VAOBase'],['../classVAOBase.html#a39dffebf5293c232c64ecf9b0a075fe0',1,'VAOBase::VAOBase(const VAOBase &amp;v)=delete'],['../classVAOBase.html#aa01061a70c3dd4632f6b6bb7bb9210ef',1,'VAOBase::VAOBase(VAOBase &amp;&amp;v)=delete'],['../classVAOBase.html#a3fecd76b0e150bbbea66eea7b3129207',1,'VAOBase::VAOBase()']]],
   ['vaobase_2eh',['VAOBase.h',['../VAOBase_8h.html',1,'']]],
   ['vaopositioncolor',['VAOPositionColor',['../VAOPositionColor_8h.html#ad116a122f70d46c7264d8d2311be2b93',1,'VAOPositionColor.h']]],
   ['vaopositioncolor_2eh',['VAOPositionColor.h',['../VAOPositionColor_8h.html',1,'']]],
@@ -17,7 +17,7 @@ var searchData=
   ['vaotypedynamic',['vaoTypeDynamic',['../classBasicShaderProgram.html#a5d4962f3b83b25589bf3bc9de60f4df6',1,'BasicShaderProgram']]],
   ['vbo',['vbo',['../classTestVBO.html#aca6af5577996e9c861c861fe397fe5b4',1,'TestVBO']]],
   ['vbo_2eh',['VBO.h',['../VBO_8h.html',1,'']]],
-  ['vbobase',['VBOBase',['../classVBOBase.html',1,'VBOBase&lt; V &gt;'],['../classVBOBase.html#aa457ab74914f3945bb7685472fc706fb',1,'VBOBase::VBOBase()']]],
+  ['vbobase',['VBOBase',['../classVBOBase.html',1,'VBOBase&lt; V &gt;'],['../classVBOBase.html#aaf6ad7dd9c4143c420ea90a774ca03b6',1,'VBOBase::VBOBase(const VBOBase &amp;)=delete'],['../classVBOBase.html#a4bd85c601aa58ed0fb70eb7d222997e9',1,'VBOBase::VBOBase(VBOBase &amp;&amp;)=delete'],['../classVBOBase.html#aa457ab74914f3945bb7685472fc706fb',1,'VBOBase::VBOBase(GLenum t, GLenum u)']]],
   ['vbobase_3c_20elementtype_20_3e',['VBOBase&lt; ElementType &gt;',['../classVBOBase.html',1,'']]],
   ['vbobase_3c_20float_20_3e',['VBOBase&lt; float &gt;',['../classVBOBase.html',1,'']]],
   ['vbobase_3c_20unsigned_20int_20_3e',['VBOBase&lt; unsigned int &gt;',['../classVBOBase.html',1,'']]],
