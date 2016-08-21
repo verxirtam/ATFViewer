@@ -71,7 +71,7 @@ LongLat SectorsVAO::getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, doub
 	return ret;
 }
 
-void SectorsVAO::getSectors(DBAccessor& dba)
+void SectorsVAO::getSectors(DBAccessor& dba, InitSectorsSettings& iss)
 {
 	//クエリの作成
 	std::stringstream sql("");
@@ -80,7 +80,7 @@ void SectorsVAO::getSectors(DBAccessor& dba)
 	dba.setQuery(sql.str());
 
 	//格納前に初期化しておく
-	sector.clear();
+	iss.sector.clear();
 
 	//クエリの実行
 	while(SQLITE_ROW == dba.step_select())
@@ -92,17 +92,17 @@ void SectorsVAO::getSectors(DBAccessor& dba)
 		s.unitProvidingService = dba.getColumnString(2);
 		s.subSectorCount = dba.getColumnInt(3);
 		//sectorに格納
-		sector.push_back(s);
+		iss.sector.push_back(s);
 	}
 	//セクタ毎の情報の取得
-	int imax = sector.size();
+	int imax = iss.sector.size();
 	for(int i = 0; i < imax; i++)
 	{
 		//サブセクタの取得
-		getSubSectors(dba, sector[i]);
+		getSubSectors(dba, iss.sector[i], iss);
 	}
 }
-void SectorsVAO::getSubSectors(DBAccessor& dba, Sector& s)
+void SectorsVAO::getSubSectors(DBAccessor& dba, Sector& s, InitSectorsSettings& iss)
 {
 	//クエリの作成
 	std::stringstream sql("");
@@ -149,10 +149,10 @@ void SectorsVAO::getSubSectors(DBAccessor& dba, Sector& s)
 	for(int j = 0; j < jmax; j++)
 	{
 		//サブセクタの頂点配列の取得
-		getSubSectorVertex(dba, s, j);
+		getSubSectorVertex(dba, s, j, iss);
 	}
 }
-void SectorsVAO::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index)
+void SectorsVAO::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index, InitSectorsSettings& iss)
 {
 	//クエリの作成
 	std::stringstream sql("");
@@ -189,13 +189,13 @@ void SectorsVAO::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_in
 		ll.latitude  = Util::getLatitudeFromDMS( dba.getColumnString(2));
 		//TODO IsCircle, Center, Radiusの取得処理を記述する
 		//頂点配列に追加
-		longLat.push_back(ll);
+		iss.longLat.push_back(ll);
 		//追加した頂点のインデックスを保存する
-		ss.longLatIndex.push_back(longLat.size()-1);
+		ss.longLatIndex.push_back(iss.longLat.size()-1);
 	}
 	
 	//頂点配列が左回りかどうかを判定する
-	if(isClockwise(ss.longLatIndex, longLat))
+	if(isClockwise(ss.longLatIndex, iss.longLat))
 	{
 		//右回りの場合はインデックス配列を逆順に変更する
 		std::reverse(ss.longLatIndex.begin(),ss.longLatIndex.end());
@@ -208,30 +208,29 @@ void SectorsVAO::getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_in
 		int j = (i - 1 + imax) % imax;
 		int k = (i    ) % imax;
 		int l = (i + 1) % imax;
-		LongLat llj = longLat[ss.longLatIndex[j]];
-		LongLat llk = longLat[ss.longLatIndex[k]];
-		LongLat lll = longLat[ss.longLatIndex[l]];
+		LongLat llj = iss.longLat[ss.longLatIndex[j]];
+		LongLat llk = iss.longLat[ss.longLatIndex[k]];
+		LongLat lll = iss.longLat[ss.longLatIndex[l]];
 		LongLat ll = getInsideLongLat(llj,llk,lll,0.025);
-		longLat.push_back(ll);
-		ss.insideLongLatIndex.push_back(longLat.size()-1);
+		iss.longLat.push_back(ll);
+		ss.insideLongLatIndex.push_back(iss.longLat.size()-1);
 	}
 }
 
-void SectorsVAO::initVAO(void)
+void SectorsVAO::initVAO(InitSectorsSettings& iss)
 {
-	InitSectorsSettings iss;
 	
 	if(displayAll)
 	{
-		int imax = sector.size();
+		int imax = iss.sector.size();
 		for(int i = 0; i < imax; i++)
 		{
-			initSector(sector[i], iss);
+			initSector(iss.sector[i], iss);
 		}
 	}
 	else
 	{
-		initSector(sector[displaySectorIndex], iss);
+		initSector(iss.sector[displaySectorIndex], iss);
 	}
 	
 	//vao.init()向けにstd::vector<float>に詰め替える
@@ -306,7 +305,7 @@ void SectorsVAO::addPositionColorIndex
 	for(int k = 0;k < kmax; k++)
 	{
 		//経緯度を取得
-		LongLat& ll = longLat[index[k]];
+		LongLat& ll = iss.longLat[index[k]];
 		//positionに追加
 		iss.position.push_back(glm::vec3(ll.longitude, ll.latitude, altitude));
 		//colorに追加

@@ -67,16 +67,14 @@ private:
 		std::vector<unsigned int> element;/**< インデックス配列  */
 	};
 	//データメンバ
-	//std::vector<Sector> sector;
-	//std::vector<LongLat> longLat;
 	bool displayAll;
 	unsigned int displaySectorIndex;
 	BasicShaderProgram::vaoType vao;
 	//メンバ関数
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
-	void getSectors(DBAccessor& dba);
-	void getSubSectors(DBAccessor& dba, Sector& s);
-	void getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index);
+	void getSectors(DBAccessor& dba, InitSectorsSettings& iss);
+	void getSubSectors(DBAccessor& dba, Sector& s, InitSectorsSettings& iss);
+	void getSubSectorVertex(DBAccessor& dba, Sector& s, int subsector_index, InitSectorsSettings& iss);
 	void initSector(Sector& ss, InitSectorsSettings& iss);
 	void initSubSector(const std::string& sector_name, SubSector& ss, const glm::vec3& color, InitSectorsSettings& iss);
 	void addPositionColorIndex
@@ -88,7 +86,7 @@ private:
 			std::vector<unsigned int>& target_index
 		);
 	void setElement(const std::vector<unsigned int>& index, InitSectorsSettings& iss);
-	void initVAO(void);
+	void initVAO(InitSectorsSettings& iss);
 public:
 	SectorsVAO(BasicShaderProgram& b)
 		:
@@ -99,9 +97,11 @@ public:
 	}
 	void init(DBAccessor& dba)
 	{
-		getSectors(dba);
+		InitSectorsSettings iss;
 		
-		initVAO();
+		getSectors(dba, iss);
+		
+		initVAO(iss);
 		
 		//デバッグ用の出力//////////////////////
 		/*
