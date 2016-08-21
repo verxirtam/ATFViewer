@@ -75,7 +75,8 @@ public:
 		interval(),
 		startIndex(),
 		indexCount(),
-		counter()
+		counter(),
+		counter_device()
 	{
 		interval.push_back(1.0f);//1deg.
 		interval.push_back(1.0f);//1deg.

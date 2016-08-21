@@ -46,11 +46,24 @@ private:
 		float latitude;
 		float u;
 		float v;
+		MapVertex()
+			:
+				longitude(0.0f),
+				latitude(0.0f),
+				u(0.0f),
+				v(0.0f)
+		{
+		}
 	};
 	
 	struct MapVertexIndex
 	{
 		int vertexIndex;
+		MapVertexIndex()
+			:
+				vertexIndex(0)
+		{
+		}
 	};
 	struct InitMapSetting
 	{
@@ -59,6 +72,15 @@ private:
 		int textureHeight;
 		std::vector<MapVertex> mapVertex;
 		std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
+		InitMapSetting()
+			:
+				textureFileName(),
+				textureWidth(0),
+				textureHeight(0),
+				mapVertex(),
+				mapVertexIndex()
+		{
+		}
 	};
 	std::string mapId;
 	Texture2D texture;

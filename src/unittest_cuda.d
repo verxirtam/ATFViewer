@@ -44,6 +44,9 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
     /usr/include/c++/4.8/exception \
     /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+    /usr/include/c++/4.8/bits/exception_ptr.h \
+    /usr/include/c++/4.8/bits/exception_defines.h \
+    /usr/include/c++/4.8/bits/nested_exception.h \
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \
@@ -124,15 +127,18 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/bits/char_traits.h \
     /usr/include/c++/4.8/bits/stl_algobase.h \
     /usr/include/c++/4.8/bits/functexcept.h \
-    /usr/include/c++/4.8/bits/exception_defines.h \
     /usr/include/c++/4.8/ext/numeric_traits.h \
     /usr/include/c++/4.8/bits/stl_pair.h \
     /usr/include/c++/4.8/bits/move.h \
     /usr/include/c++/4.8/bits/concept_check.h \
+    /usr/include/c++/4.8/type_traits \
     /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
     /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
     /usr/include/c++/4.8/debug/debug.h \
     /usr/include/c++/4.8/bits/stl_iterator.h \
+    /usr/include/c++/4.8/cstdint \
+    /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stdint.h \
+    /usr/include/stdint.h \
     /usr/include/c++/4.8/bits/localefwd.h \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++locale.h \
     /usr/include/c++/4.8/clocale \
@@ -160,6 +166,18 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/backward/binders.h \
     /usr/include/c++/4.8/bits/range_access.h \
     /usr/include/c++/4.8/bits/basic_string.h \
+    /usr/include/c++/4.8/initializer_list \
+    /usr/include/c++/4.8/ext/string_conversions.h \
+    /usr/include/c++/4.8/cstdio \
+    /usr/include/c++/4.8/cerrno \
+    /usr/include/errno.h \
+    /usr/include/x86_64-linux-gnu/bits/errno.h \
+    /usr/include/linux/errno.h \
+    /usr/include/x86_64-linux-gnu/asm/errno.h \
+    /usr/include/asm-generic/errno.h \
+    /usr/include/asm-generic/errno-base.h \
+    /usr/include/c++/4.8/bits/functional_hash.h \
+    /usr/include/c++/4.8/bits/hash_bytes.h \
     /usr/include/c++/4.8/bits/basic_string.tcc \
     /usr/include/c++/4.8/bits/locale_classes.tcc \
     /usr/include/c++/4.8/streambuf \
@@ -180,6 +198,8 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/vector \
     /usr/include/c++/4.8/bits/stl_construct.h \
     /usr/include/c++/4.8/ext/alloc_traits.h \
+    /usr/include/c++/4.8/bits/alloc_traits.h \
+    /usr/include/c++/4.8/bits/ptr_traits.h \
     /usr/include/c++/4.8/bits/stl_uninitialized.h \
     /usr/include/c++/4.8/bits/stl_vector.h \
     /usr/include/c++/4.8/bits/stl_bvector.h \

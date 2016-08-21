@@ -44,6 +44,9 @@ cudatestfunc.o : cudatestfunc.cu \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
     /usr/include/c++/4.8/exception \
     /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+    /usr/include/c++/4.8/bits/exception_ptr.h \
+    /usr/include/c++/4.8/bits/exception_defines.h \
+    /usr/include/c++/4.8/bits/nested_exception.h \
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \

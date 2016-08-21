@@ -67,10 +67,15 @@ public:
 	};
 	//コンストラクタ
 	//デフォルト引数はデフォルトコンストラクタとするための仮の値で意味は無い
-	TimeSeparation(time_t _min = 0, time_t _max = 10, time_t _width = 100):min(_min), max(_max), width(_width), timeSequence()
+	TimeSeparation(time_t _min = 0, time_t _max = 10, time_t _width = 100)
+		:
+			min(_min),
+			max(_max),
+			width(_width),
+			timeSequence(),
+			currentIndex(0)
 	{
 		initTimeSequence();
-		currentIndex = 0;
 	}
 	//currentの区間に含まれているかを判定する
 	bool inCurrentInterval(time_t t)

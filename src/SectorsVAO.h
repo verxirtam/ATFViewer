@@ -46,6 +46,16 @@ private:
 		std::vector<unsigned int> longLatIndex;
 		//縁取り用の頂点
 		std::vector<unsigned int> insideLongLatIndex;
+		SubSector()
+			:
+				minimumAltitude(0),
+				includesMinimumAltitude(true),
+				maximumAltitude(50000),
+				includesMaximumAltitude(true),
+				longLatIndex(),
+				insideLongLatIndex()
+		{
+		}
 	};
 	struct Sector
 	{
@@ -54,6 +64,15 @@ private:
 		std::string unitProvidingService;
 		int subSectorCount;
 		std::vector<SubSector> subSector;
+		Sector()
+			:
+				sectorName(),
+				caption(),
+				unitProvidingService(),
+				subSectorCount(0),
+				subSector()
+		{
+		}
 	};
 	/**
 	 * @brief VAOに設定するための情報を格納する
@@ -65,6 +84,15 @@ private:
 		std::vector<glm::vec3> position;/**< 位置 */
 		std::vector<glm::vec3> color;/**< 頂点色*/
 		std::vector<unsigned int> element;/**< インデックス配列  */
+		InitSectorsSettings()
+			:
+				sector(),
+				longLat(),
+				position(),
+				color(),
+				element()
+		{
+		}
 	};
 	//データメンバ
 	bool displayAll;

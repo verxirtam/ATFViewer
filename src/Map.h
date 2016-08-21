@@ -58,10 +58,14 @@ private:
 	std::vector<MapVertex> mapVertex;
 	std::vector<std::vector<MapVertexIndex> > mapVertexIndex;
 public:
-	Map(const std::string& map_id):
-		mapId(map_id),
-		mapVertex(),
-		mapVertexIndex()
+	Map(const std::string& map_id)
+		:
+			mapId(map_id),
+			textureName{0},
+			textureWidth(0),
+			textureHeight(0),
+			mapVertex(),
+			mapVertexIndex()
 	{
 	}
 	void init(DBAccessor& dba);

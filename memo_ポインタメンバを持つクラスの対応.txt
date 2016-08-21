@@ -1,0 +1,18 @@
+
+//ポインタメンバを作成した時にオーバーライドすべき
+//自動生成される関数
+
+	//ポインタメンバを持つがコピー不要なので禁止する
+	//コピーコンストラクタ
+	AAA(const AAA&) = delete;
+	//コピー代入演算子
+	AAA& operator=(const AAA&) = delete;
+	//ムーブコンストラクタ
+	AAA(AAA&&) = delete;
+	//ムーブ代入演算子
+	AAA& operator=(AAA&&) = delete;
+
+
+
+
+

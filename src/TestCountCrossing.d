@@ -44,6 +44,9 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/cpu_defines.h \
     /usr/include/c++/4.8/exception \
     /usr/include/c++/4.8/bits/atomic_lockfree_defines.h \
+    /usr/include/c++/4.8/bits/exception_ptr.h \
+    /usr/include/c++/4.8/bits/exception_defines.h \
+    /usr/include/c++/4.8/bits/nested_exception.h \
     /usr/include/stdio.h \
     /usr/include/libio.h \
     /usr/include/_G_config.h \
@@ -116,11 +119,11 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/include/c++/4.8/vector \
     /usr/include/c++/4.8/bits/stl_algobase.h \
     /usr/include/c++/4.8/bits/functexcept.h \
-    /usr/include/c++/4.8/bits/exception_defines.h \
     /usr/include/c++/4.8/ext/numeric_traits.h \
     /usr/include/c++/4.8/bits/stl_pair.h \
     /usr/include/c++/4.8/bits/move.h \
     /usr/include/c++/4.8/bits/concept_check.h \
+    /usr/include/c++/4.8/type_traits \
     /usr/include/c++/4.8/bits/stl_iterator_base_types.h \
     /usr/include/c++/4.8/bits/stl_iterator_base_funcs.h \
     /usr/include/c++/4.8/debug/debug.h \
@@ -131,8 +134,13 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/include/c++/4.8/bits/memoryfwd.h \
     /usr/include/c++/4.8/bits/stl_construct.h \
     /usr/include/c++/4.8/ext/alloc_traits.h \
+    /usr/include/c++/4.8/bits/alloc_traits.h \
+    /usr/include/c++/4.8/bits/ptr_traits.h \
     /usr/include/c++/4.8/bits/stl_uninitialized.h \
     /usr/include/c++/4.8/bits/stl_vector.h \
+    /usr/include/c++/4.8/initializer_list \
     /usr/include/c++/4.8/bits/stl_bvector.h \
+    /usr/include/c++/4.8/bits/functional_hash.h \
+    /usr/include/c++/4.8/bits/hash_bytes.h \
     /usr/include/c++/4.8/bits/range_access.h \
     /usr/include/c++/4.8/bits/vector.tcc

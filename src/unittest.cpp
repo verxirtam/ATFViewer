@@ -859,8 +859,10 @@ private:
 	*/
 public:
 	TestThread(F func)
+		:
+			thread(),
+			f(func)
 	{
-		f = func;
 	}
 	void run()
 	{
@@ -900,7 +902,7 @@ private:
 	}
 	*/
 public:
-	TestThread_MemFunc(F func, T* const ins):f(func),t(ins)
+	TestThread_MemFunc(F func, T* const ins):thread(),f(func),t(ins)
 	{
 	}
 	void run()

@@ -19,6 +19,7 @@
 #ifndef Joystick_H_
 #define Joystick_H_
 
+#include <string>
 #include <vector>
 #include <fcntl.h>
 #include <unistd.h>
@@ -52,7 +53,7 @@ class Joystick
 {
 private:
 	//ジョイスティックのデバイスのパス
-	const char* Device;
+	const std::string Device;
 	//ファイルディスクリプタ
 	int File;
 	//軸の個数
@@ -72,7 +73,7 @@ public:
 		Axis(),
 		Button()
 	{
-		if((File = open(Device, O_RDONLY)) == -1)
+		if((File = open(Device.c_str(), O_RDONLY)) == -1)
 		{
 			AxisCount = 0;
 			ButtonCount = 0;

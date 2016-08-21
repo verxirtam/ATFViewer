@@ -44,6 +44,16 @@ private:
 		std::vector<unsigned int> longLatIndex;
 		//縁取り用の頂点
 		std::vector<unsigned int> insideLongLatIndex;
+		SubSector()
+			:
+				minimumAltitude(0),
+				includesMinimumAltitude(true),
+				maximumAltitude(50000),
+				includesMaximumAltitude(true),
+				longLatIndex(),
+				insideLongLatIndex()
+		{
+		}
 	};
 	struct Sector
 	{
@@ -52,6 +62,15 @@ private:
 		std::string unitProvidingService;
 		int subSectorCount;
 		std::vector<SubSector> subSector;
+		Sector()
+			:
+				sectorName(),
+				caption(),
+				unitProvidingService(),
+				subSectorCount(0),
+				subSector()
+		{
+		}
 	};
 	std::vector<Sector> sector;
 	std::vector<LongLat> longLat;

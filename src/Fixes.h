@@ -40,6 +40,10 @@ private:
 	std::vector<double> latitude;
 public:
 	Fixes()
+		:
+			name(),
+			longitude(),
+			latitude()
 	{
 		/*
 		name.push_back("haneda");

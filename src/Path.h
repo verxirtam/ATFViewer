@@ -30,12 +30,13 @@ struct PathPoint
 	time_t time;
 	std::string arrival;
 	PathPoint(double lo,double la, int a, long long t, const std::string ar)
+		:
+			longitude(lo),
+			latitude(la),
+			altitude(a),
+			time(t),
+			arrival(ar)
 	{
-		longitude = lo;
-		latitude = la;
-		altitude = a;
-		time = t;
-		arrival = ar;
 	}
 	bool operator ==(const PathPoint& p) const
 	{
@@ -73,6 +74,14 @@ struct Path
 	std::vector<PathPoint> pathPoint;
 	int past_time_index;
 	int now_index;
+	Path()
+		:
+			id(),
+			pathPoint(),
+			past_time_index(0),
+			now_index(0)
+	{
+	}
 	bool operator ==(const std::string& s) const
 	{
 		return this->id == s;

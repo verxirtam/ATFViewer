@@ -30,6 +30,12 @@ private:
 	std::string dbFileName;
 	sqlite3 *db;
 	sqlite3_stmt* stmt;
+	//ポインタメンバを持つがコピーは不要なので下記は禁止する
+	//(宣言のみして定義しない)
+	DBAccessor(const DBAccessor&) = delete;//コピーコンストラクタ
+	DBAccessor& operator=(const DBAccessor&) = delete;//コピー代入演算子
+	DBAccessor(DBAccessor&&) = delete;//ムーブコンストラクタ
+	DBAccessor& operator=(DBAccessor&&) = delete;//ムーブ代入演算子
 public:
 	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)
 	{
