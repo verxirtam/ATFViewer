@@ -8,6 +8,13 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+  $(window).load(resizeHeight);
+</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -63,6 +70,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('ATFViewerMainGLSL_8cpp.html','');});
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,11 +99,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ATFViewerMainGLSL.cpp File Reference</div>  </div>
@@ -96,11 +113,15 @@ Include dependency graph for ATFViewerMainGLSL.cpp:</div>
 <area shape="rect" id="node2" href="ATFViewerMainGLSL_8h.html" title="ATFViewerMainGLSL.h" alt="" coords="875,80,1033,107"/><area shape="rect" id="node9" href="OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="2215,304,2344,331"/><area shape="rect" id="node13" href="DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="456,229,563,256"/><area shape="rect" id="node16" href="MapTransform_8h.html" title="MapTransform.h" alt="" coords="1945,155,2061,181"/><area shape="rect" id="node19" href="Joystick_8h.html" title="Joystick.h" alt="" coords="181,379,263,405"/><area shape="rect" id="node24" href="MapVAO_8h.html" title="MapVAO.h" alt="" coords="577,155,663,181"/><area shape="rect" id="node40" href="SectorsVAO_8h.html" title="SectorsVAO.h" alt="" coords="1176,155,1283,181"/><area shape="rect" id="node26" href="Util_8h.html" title="Util.h" alt="" coords="763,229,816,256"/><area shape="rect" id="node27" href="TextureShaderProgram_8h.html" title="TextureShaderProgram.h" alt="" coords="1094,229,1260,256"/><area shape="rect" id="node38" href="Texture2D_8h.html" title="Texture2D.h" alt="" coords="1163,379,1257,405"/><area shape="rect" id="node28" href="Shader_8h.html" title="Shader.h" alt="" coords="1080,304,1153,331"/><area shape="rect" id="node31" href="ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="1509,304,1632,331"/><area shape="rect" id="node32" href="UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="1819,304,1945,331"/><area shape="rect" id="node33" href="VAOPositionTexture_8h.html" title="VAOPositionTexture.h" alt="" coords="1333,304,1485,331"/><area shape="rect" id="node34" href="Lock_8h.html" title="Lock.h" alt="" coords="1419,461,1480,488"/><area shape="rect" id="node35" href="VBO_8h.html" title="VBO.h" alt="" coords="1752,379,1813,405"/><area shape="rect" id="node39" href="VAOBase_8h.html" title="VAOBase.h" alt="" coords="1485,379,1576,405"/><area shape="rect" id="node42" href="GCS_8h.html" title="GCS.h" alt="" coords="1465,229,1527,256"/><area shape="rect" id="node44" href="BasicShaderProgram_8h.html" title="BasicShaderProgram.h" alt="" coords="1285,229,1440,256"/><area shape="rect" id="node43" href="LongLat_8h.html" title="LongLat.h" alt="" coords="1970,304,2048,331"/><area shape="rect" id="node45" href="VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="1656,304,1795,331"/></map>
 </div>
 </div></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 21 2016 18:14:55 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.6
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ATFViewerMainGLSL_8cpp.html">ATFViewerMainGLSL.cpp</a></li>
+    <li class="footer">Generated on Sun Aug 21 2016 18:42:52 for ATFViewer by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
+  </ul>
+</div>
 </body>
 </html>
