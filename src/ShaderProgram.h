@@ -32,13 +32,13 @@ private:
 	
 	//コピー・ムーブを禁止するため下記の宣言のみ行う
 	//コピーコンストラクタ
-	ShaderProgram(const ShaderProgram& s);
+	ShaderProgram(const ShaderProgram& s) = delete;
 	//コピー代入演算子
-	ShaderProgram& operator=(const ShaderProgram& s);
+	ShaderProgram& operator=(const ShaderProgram& s) = delete;
 	//ムーブコンストラクタ
-	ShaderProgram(ShaderProgram&& s);
+	ShaderProgram(ShaderProgram&& s) = delete;
 	//ムーブ代入演算子
-	ShaderProgram& operator=(ShaderProgram&& s);
+	ShaderProgram& operator=(ShaderProgram&& s) = delete;
 public:
 	ShaderProgram():handle(0)
 	{

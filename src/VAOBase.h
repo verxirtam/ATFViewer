@@ -25,10 +25,10 @@ private:
 	GLuint handle;
 	
 	//コピー・ムーブ禁止
-	VAOBase(const VAOBase& v);
-	VAOBase& operator=(const VAOBase& v);
-	VAOBase(VAOBase&& v);
-	VAOBase& operator=(VAOBase&& v);
+	VAOBase(const VAOBase& v) = delete;
+	VAOBase& operator=(const VAOBase& v) = delete;
+	VAOBase(VAOBase&& v) = delete;
+	VAOBase& operator=(VAOBase&& v) = delete;
 public:
 	VAOBase():handle(0)
 	{

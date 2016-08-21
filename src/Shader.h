@@ -53,13 +53,13 @@ private:
 	//		（コピー元のShaderがデストラクタで破棄されないようにするため）
 	//
 	//コピーコンストラクタ
-	Shader(const Shader& s);
+	Shader(const Shader& s) = delete;
 	//コピー代入演算子
-	Shader& operator=(const Shader& s);
+	Shader& operator=(const Shader& s) = delete;
 	//ムーブコンストラクタ
-	Shader(Shader&& s);
+	Shader(Shader&& s) = delete;
 	//ムーブ代入演算子
-	Shader& operator=(Shader&& s);
+	Shader& operator=(Shader&& s) = delete;
 public:
 	//デフォルトコンストラクタを作る？
 	//->作らないとstdコンテナに格納できない

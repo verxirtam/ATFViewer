@@ -35,6 +35,16 @@ private:
 	GLuint handle;
 	const GLenum type;
 	const GLenum usage;
+
+	//ポインタメンバを持つがコピー不要なので禁止する
+	//コピーコンストラクタ
+	VBOBase(const VBOBase&) = delete;
+	//コピー代入演算子
+	VBOBase& operator=(const VBOBase&) = delete;
+	//ムーブコンストラクタ
+	VBOBase(VBOBase&&) = delete;
+	//ムーブ代入演算子
+	VBOBase& operator=(VBOBase&&) = delete;
 public:
 	VBOBase(GLenum t, GLenum u):handle(0),type(t),usage(u)
 	{
