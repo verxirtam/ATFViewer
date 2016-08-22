@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"structMap_1_1MapVertexIndex.html#aae3f36199b6df0606c80e24ea5d8a540":[0,0,19,1,0],
 "structPath.html":[0,0,22],
 "structPath.html#a0569ee34ab09d49f039e38b897e216d4":[0,0,22,6],
 "structPath.html#a4aa71bf1a0de001e89492b34951d7dbb":[0,0,22,3],

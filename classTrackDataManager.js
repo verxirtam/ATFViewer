@@ -7,6 +7,7 @@ var classTrackDataManager =
     [ "getTrackDataFromDBToMapParallel", "classTrackDataManager.html#a500d68843465bcc7c1049ef04bf19bf2", null ],
     [ "getTrackDataFromDBToMapWithDay", "classTrackDataManager.html#aa5c348371ca52487a316c361f46fe1f6", null ],
     [ "getTrackDataFromDBWithDay", "classTrackDataManager.html#a5b71eff33191fe6c5d4b89e8c1ad30cc", null ],
+    [ "isExistDBFile", "classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63", null ],
     [ "makeDBFileName", "classTrackDataManager.html#ad3c11f99bbac64a794f14bd21333e044", null ],
     [ "setQuery", "classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758", null ]
 ];

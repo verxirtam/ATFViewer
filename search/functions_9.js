@@ -19,5 +19,6 @@ var searchData=
   ['intheinterval',['inTheInterval',['../classTimeSeparation.html#abd785a933157b153b65b537dd9b40b64',1,'TimeSeparation']]],
   ['iscellindexoutofrange',['isCellIndexOutOfRange',['../CountCrossing__cuda_8h.html#a9be63a281e7db869f040abd6e9f51bb6',1,'CountCrossing_cuda.h']]],
   ['isclockwise',['isClockwise',['../GCS_8cpp.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp'],['../GCS_8h.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp']]],
-  ['isenable',['isEnable',['../classJoystick.html#a0b8fca02b81b41f2473f55476e571564',1,'Joystick']]]
+  ['isenable',['isEnable',['../classJoystick.html#a0b8fca02b81b41f2473f55476e571564',1,'Joystick']]],
+  ['isexistdbfile',['isExistDBFile',['../classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63',1,'TrackDataManager']]]
 ];

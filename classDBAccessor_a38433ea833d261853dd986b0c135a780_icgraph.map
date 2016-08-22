@@ -2,11 +2,12 @@
 <area shape="rect" id="node2" href="$classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a" title="TrackDataManager::getColumn" alt="" coords="262,45,466,72"/>
 <area shape="rect" id="node3" href="$classTrackDataManager.html#aa5c348371ca52487a316c361f46fe1f6" title="TrackDataManager::getTrack\lDataFromDBToMapWithDay" alt="" coords="515,38,707,79"/>
 <area shape="rect" id="node4" href="$classTrackDataManager.html#aac87f46737bdfb8cced8ecf2671caed1" title="TrackDataManager::getTrack\lDataFromDBToMap" alt="" coords="755,5,947,46"/>
-<area shape="rect" id="node7" href="$classTrackDataManager.html#a500d68843465bcc7c1049ef04bf19bf2" title="TrackDataManager::getTrack\lDataFromDBToMapParallel" alt="" coords="755,70,947,111"/>
-<area shape="rect" id="node5" href="$unittest_8cpp.html#addeee553c86de04880ca837d0a8d96bc" title="testTrackDataManager" alt="" coords="1013,12,1168,39"/>
-<area shape="rect" id="node6" href="$unittest_8cpp.html#a100493261f4a369ebb8363eccc379460" title="openMPTest" alt="" coords="1269,12,1365,39"/>
-<area shape="rect" id="node8" href="$classTrackDataManager.html#a56f66ea6cd01a3549c7ac94d9c171e24" title="TrackDataManager::getTrack\lDataFromDBParallel" alt="" coords="995,66,1187,107"/>
-<area shape="rect" id="node11" href="$unittest_8cpp.html#a5754709b09eeab56ca7cadde72313b67" title="MapParallelTest" alt="" coords="1033,132,1149,159"/>
-<area shape="rect" id="node9" href="$classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea" title="Paths::makePathsBuffer" alt="" coords="1235,69,1400,96"/>
-<area shape="rect" id="node10" href="$unittest_8cpp.html#ad6e370b2f22266ecc1f505dc68c33fe1" title="MapParallelTest2" alt="" coords="1256,120,1379,147"/>
+<area shape="rect" id="node8" href="$classTrackDataManager.html#a500d68843465bcc7c1049ef04bf19bf2" title="TrackDataManager::getTrack\lDataFromDBToMapParallel" alt="" coords="755,71,947,113"/>
+<area shape="rect" id="node5" href="$unittest_8cpp.html#addeee553c86de04880ca837d0a8d96bc" title="testTrackDataManager" alt="" coords="1013,8,1168,35"/>
+<area shape="rect" id="node6" href="$unittest_8cpp.html#a100493261f4a369ebb8363eccc379460" title="openMPTest" alt="" coords="1269,5,1365,32"/>
+<area shape="rect" id="node7" href="$unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1448,107,1499,133"/>
+<area shape="rect" id="node9" href="$classTrackDataManager.html#a56f66ea6cd01a3549c7ac94d9c171e24" title="TrackDataManager::getTrack\lDataFromDBParallel" alt="" coords="995,71,1187,113"/>
+<area shape="rect" id="node12" href="$unittest_8cpp.html#a5754709b09eeab56ca7cadde72313b67" title="MapParallelTest" alt="" coords="1033,144,1149,171"/>
+<area shape="rect" id="node10" href="$classPaths.html#a023a1e0b5c2787f2f578c6bdb01705ea" title="Paths::makePathsBuffer" alt="" coords="1235,56,1400,83"/>
+<area shape="rect" id="node11" href="$unittest_8cpp.html#ad6e370b2f22266ecc1f505dc68c33fe1" title="MapParallelTest2" alt="" coords="1256,107,1379,133"/>
 </map>
