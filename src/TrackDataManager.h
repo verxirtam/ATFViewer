@@ -23,6 +23,7 @@
 #include <map>
 #include <sstream>
 #include <algorithm>
+#include <fstream>
 
 #include <omp.h>
 
@@ -68,21 +69,36 @@ private:
 		t = dba.getColumnLongLong(4);
 		ar = dba.getColumnString(5);
 	}
-
+	
+	bool isExistDBFile(const std::string& dbfilename)
+	{
+		//ファイルを読み込み専用でオープンして
+		//成功したかどうかで存在を判定する
+		std::ifstream ifs;
+		ifs.open(dbfilename);
+		bool ret = ifs.is_open();
+		ifs.close();
+		return ret;
+	}
+	
+	
+	
 	void getTrackDataFromDBWithDay(std::vector<Path>& paths,
 			time_t start,
 			time_t end,
 			time_t day)
 	{
 		//日付に対応するTrackDataのファイル名を生成
-		char day_str[32];
-		strftime(day_str, 31, "%Y%m%d", localtime(&day));
-		std::stringstream dbfilename("");
-		dbfilename << "../../db/TrackData/TrackData_";
-		dbfilename << day_str;
-		dbfilename << ".db";
+		std::string dbfilename;
+		makeDBFileName(day, dbfilename);
+		//ファイルが存在するかチェック
+		//存在しない場合は終了
+		if(!(isExistDBFile(dbfilename)))
+		{
+			return;
+		}
 		//ファイル名を指定してDBAccessorを生成
-		DBAccessor dba(dbfilename.str());
+		DBAccessor dba(dbfilename.c_str());
 		//クエリを実行
 		std::stringstream query("");
 		query << "select id,longitude,latitude,altitude,time,arrival from TrackData where time >= ";
@@ -143,6 +159,12 @@ private:
 		std::string dbfilename;
 		//dayに従ってアクセスするDBのファイル名を設定する
 		makeDBFileName(day, dbfilename);
+		//ファイルが存在するかチェック
+		//存在しない場合は終了
+		if(!(isExistDBFile(dbfilename)))
+		{
+			return;
+		}
 		//DBに接続
 		DBAccessor dba(dbfilename);
 		//クエリを実行

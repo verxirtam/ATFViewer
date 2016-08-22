@@ -972,6 +972,10 @@ void test(bool test_result, bool& ret)
 	}
 }
 
+
+
+
+
 int main(int argc, char const* argv[])
 {
 	cout << nowstring() << " log: test start." << endl;
@@ -999,13 +1003,13 @@ int main(int argc, char const* argv[])
 	test(countCrossingTest_06D4EstimateSpec(), ret);
 	
 	
-	//test(openMPTest(), ret);
-	/*
+	test(openMPTest(), ret);
+	
 	test(MapParallelTest(), ret);
 	test(MapParallelTest2(), ret);
 	
 	test(testPThread(), ret);
-	*/
+	
 	if(ret)
 	{
 		cout << "tests succeeded." << endl;

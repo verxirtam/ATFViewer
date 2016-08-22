@@ -239,6 +239,11 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/c++/4.8/bits/stl_numeric.h \
     /usr/include/c++/4.8/functional \
     /usr/include/c++/4.8/typeinfo \
+    /usr/include/c++/4.8/fstream \
+    /usr/include/c++/4.8/bits/codecvt.h \
+    /usr/include/x86_64-linux-gnu/c++/4.8/bits/basic_file.h \
+    /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
+    /usr/include/c++/4.8/bits/fstream.tcc \
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include/omp.h \
     DBAccessor.h \
     /usr/include/c++/4.8/iostream \
