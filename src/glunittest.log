@@ -331,3 +331,18 @@ iss.color.size() = 3144
 color_align.size() = 9432
 iss.element.size() = 7704
 initScene() end
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+initScene() end
