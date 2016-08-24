@@ -7,7 +7,7 @@ var searchData=
   ['caption',['caption',['../structSectors_1_1Sector.html#a3db329d9d52f7bb8f19f62958e6457d2',1,'Sectors::Sector::caption()'],['../structSectorsVAO_1_1Sector.html#a115ecea44097fbd9d0e09ba753d1ffe0',1,'SectorsVAO::Sector::caption()']]],
   ['centeroffsetlat',['centerOffsetLat',['../classMapTransform.html#af126c2e6aa122d6c013fed26599cd669',1,'MapTransform']]],
   ['centeroffsetlong',['centerOffsetLong',['../classMapTransform.html#a782e3c3b12869b3410ef243d6568e87a',1,'MapTransform']]],
-  ['color',['color',['../structSectorsVAO_1_1InitSectorsSettings.html#a7468dc834594112f612c6d63fa6e1f82',1,'SectorsVAO::InitSectorsSettings::color()'],['../classVAOPositionColorBase.html#a933a8937940b52bc42c0c28cd53ca88f',1,'VAOPositionColorBase::color()']]],
+  ['color',['color',['../structSectorsVAO_1_1InitSectorsSettings.html#a7468dc834594112f612c6d63fa6e1f82',1,'SectorsVAO::InitSectorsSettings']]],
   ['count',['count',['../classDeviceSeqConst.html#a636fb74813efc77fc3c310b51638487d',1,'DeviceSeqConst']]],
   ['counter',['counter',['../classCountCrossing.html#a45259e5f331c3e6b2e54bfd63b6b3253',1,'CountCrossing']]],
   ['counter_5fdevice',['counter_device',['../classCountCrossing.html#a4d29c41c92adff37cba7ab7fee502f49',1,'CountCrossing']]],

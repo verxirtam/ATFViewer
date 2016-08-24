@@ -1,5 +1,6 @@
 <map id="src/VAOPositionColor.h" name="src/VAOPositionColor.h">
-<area shape="rect" id="node4" href="$Lock_8h.html" title="Lock.h" alt="" coords="209,163,271,189"/>
-<area shape="rect" id="node5" href="$VBO_8h.html" title="VBO.h" alt="" coords="236,80,297,107"/>
-<area shape="rect" id="node9" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="321,80,412,107"/>
+<area shape="rect" id="node2" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="125,80,255,107"/>
+<area shape="rect" id="node7" href="$Lock_8h.html" title="Lock.h" alt="" coords="328,163,389,189"/>
+<area shape="rect" id="node8" href="$VBO_8h.html" title="VBO.h" alt="" coords="361,80,423,107"/>
+<area shape="rect" id="node12" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="545,80,636,107"/>
 </map>

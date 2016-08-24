@@ -7,7 +7,7 @@ var searchData=
   ['caption',['caption',['../structSectors_1_1Sector.html#a3db329d9d52f7bb8f19f62958e6457d2',1,'Sectors::Sector::caption()'],['../structSectorsVAO_1_1Sector.html#a115ecea44097fbd9d0e09ba753d1ffe0',1,'SectorsVAO::Sector::caption()']]],
   ['centeroffsetlat',['centerOffsetLat',['../classMapTransform.html#af126c2e6aa122d6c013fed26599cd669',1,'MapTransform']]],
   ['centeroffsetlong',['centerOffsetLong',['../classMapTransform.html#a782e3c3b12869b3410ef243d6568e87a',1,'MapTransform']]],
-  ['color',['color',['../structSectorsVAO_1_1InitSectorsSettings.html#a7468dc834594112f612c6d63fa6e1f82',1,'SectorsVAO::InitSectorsSettings::color()'],['../classVAOPositionColorBase.html#a933a8937940b52bc42c0c28cd53ca88f',1,'VAOPositionColorBase::color()']]],
+  ['color',['color',['../structSectorsVAO_1_1InitSectorsSettings.html#a7468dc834594112f612c6d63fa6e1f82',1,'SectorsVAO::InitSectorsSettings']]],
   ['commit',['commit',['../classDBAccessor.html#a341178e029df9f86a1ac31d0eb4863f7',1,'DBAccessor']]],
   ['comp_5fpath',['comp_path',['../unittest_8cpp.html#a9f00842c93beb1dfd57ec2244dcba1fb',1,'unittest.cpp']]],
   ['comp_5fpath_5ftime',['comp_path_time',['../unittest_8cpp.html#a834da6a7fc491546ff3b955b4adcce83',1,'unittest.cpp']]],

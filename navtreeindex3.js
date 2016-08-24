@@ -1,7 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"index.html":[],
-"pages.html":[],
 "structEstimateSpecResult.html":[0,0,14],
 "structEstimateSpecResult.html#a473f7f7bf855170fecd71b58e00b6257":[0,0,14,0],
 "structEstimateSpecResult.html#a51f12a5a711a8195d08e599d35fd3fed":[0,0,14,3],

@@ -7,5 +7,7 @@ var searchData=
   ['pathsbuffer',['pathsBuffer',['../classPaths.html#ae51f3b7a9c8ac8b2fd301a0214f0549c',1,'Paths::pathsBuffer()'],['../classPathsVAO.html#abac911fe87e4ee7ca7c5186c1c48d4ae',1,'PathsVAO::pathsBuffer()']]],
   ['pi',['PI',['../classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58',1,'ATFViewerMain::PI()'],['../classATFViewerMainGLSL.html#af604774acb7603fb81ed028c58d4f19b',1,'ATFViewerMainGLSL::PI()']]],
   ['pollinginterval',['pollingInterval',['../classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306',1,'ATFViewerMain::pollingInterval()'],['../classATFViewerMainGLSL.html#a087fb9110590f976c63b29bffa7b611f',1,'ATFViewerMainGLSL::pollingInterval()']]],
-  ['position',['position',['../structSectorsVAO_1_1InitSectorsSettings.html#a48d14af6f4065309c537a420daebee62',1,'SectorsVAO::InitSectorsSettings::position()'],['../classVAOPositionColorBase.html#a847382da85595ab594cd7ec369dff9a0',1,'VAOPositionColorBase::position()'],['../classVAOPositionTexture.html#a87e791154b37ade26bae89d29b1ce14b',1,'VAOPositionTexture::position()']]]
+  ['position',['position',['../structSectorsVAO_1_1InitSectorsSettings.html#a48d14af6f4065309c537a420daebee62',1,'SectorsVAO::InitSectorsSettings']]],
+  ['positioncolor',['positionColor',['../classVAOPositionColorBase.html#a94494fbc891ea85fed1cf4fc1aef8e9d',1,'VAOPositionColorBase']]],
+  ['positiontexture',['positionTexture',['../classVAOPositionTexture.html#adba4c156247afdcd92a93432e7e13321',1,'VAOPositionTexture']]]
 ];

@@ -8,6 +8,8 @@ var searchData=
   ['initcallbacks',['initCallbacks',['../classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f',1,'ATFViewerMainGLSL']]],
   ['initmapsetting',['InitMapSetting',['../structMapVAO_1_1InitMapSetting.html#a9e480765976b5dbc3734c0fce6e26ff4',1,'MapVAO::InitMapSetting']]],
   ['initpathpoint',['initPathPoint',['../classPaths.html#afc0b94c5ac017343b5a17b2a70f61d11',1,'Paths::initPathPoint()'],['../classPathsVAO.html#a5eb5283db2760fd9c0f5169a0e69c05d',1,'PathsVAO::initPathPoint()']]],
+  ['initpositioncolor',['initPositionColor',['../classVAOPositionColorBase.html#aa2c551878717296f2db888c2fba27aea',1,'VAOPositionColorBase']]],
+  ['initpositiontexture',['initPositionTexture',['../classVAOPositionTexture.html#a28aaaf7bbf3edfde87dda9026597f120',1,'VAOPositionTexture']]],
   ['initscene',['initScene',['../classATFViewerMain.html#a0a4cc4f451ae215df8a2248862f166ee',1,'ATFViewerMain::initScene()'],['../classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3',1,'ATFViewerMainGLSL::initScene()']]],
   ['initsector',['initSector',['../classSectorsVAO.html#a3e0ffd3c743121abe61b603d1a16923d',1,'SectorsVAO']]],
   ['initsectorssettings',['InitSectorsSettings',['../structSectorsVAO_1_1InitSectorsSettings.html#a8a13acc1faa7ea7dfc72c81d4cc94dbb',1,'SectorsVAO::InitSectorsSettings']]],

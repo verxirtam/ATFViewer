@@ -1,9 +1,10 @@
 <map id="src/BasicShaderProgram.h" name="src/BasicShaderProgram.h">
-<area shape="rect" id="node2" href="$Shader_8h.html" title="Shader.h" alt="" coords="187,155,260,181"/>
-<area shape="rect" id="node9" href="$ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="285,155,408,181"/>
-<area shape="rect" id="node10" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="649,155,775,181"/>
-<area shape="rect" id="node13" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="453,80,592,107"/>
-<area shape="rect" id="node14" href="$Lock_8h.html" title="Lock.h" alt="" coords="1245,237,1307,264"/>
-<area shape="rect" id="node15" href="$VBO_8h.html" title="VBO.h" alt="" coords="837,155,899,181"/>
-<area shape="rect" id="node19" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="533,155,624,181"/>
+<area shape="rect" id="node2" href="$Shader_8h.html" title="Shader.h" alt="" coords="208,155,281,181"/>
+<area shape="rect" id="node9" href="$ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="307,155,429,181"/>
+<area shape="rect" id="node10" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="609,155,735,181"/>
+<area shape="rect" id="node13" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="785,80,924,107"/>
+<area shape="rect" id="node14" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="453,155,583,181"/>
+<area shape="rect" id="node16" href="$Lock_8h.html" title="Lock.h" alt="" coords="1245,237,1307,264"/>
+<area shape="rect" id="node17" href="$VBO_8h.html" title="VBO.h" alt="" coords="875,155,936,181"/>
+<area shape="rect" id="node21" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="760,155,851,181"/>
 </map>
