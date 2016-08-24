@@ -13,6 +13,6 @@ var searchData=
   ['counter_5fdevice',['counter_device',['../classCountCrossing.html#a4d29c41c92adff37cba7ab7fee502f49',1,'CountCrossing']]],
   ['countercount',['counterCount',['../structEstimateSpecResult.html#a473f7f7bf855170fecd71b58e00b6257',1,'EstimateSpecResult']]],
   ['currentindex',['currentIndex',['../classTimeSeparation.html#ac3871743288997dc6d67e533f43caf15',1,'TimeSeparation']]],
-  ['currentpaths',['currentPaths',['../classPaths.html#a80fe5288e26b74fe3a1568392d4828f0',1,'Paths']]],
+  ['currentpaths',['currentPaths',['../classPaths.html#a80fe5288e26b74fe3a1568392d4828f0',1,'Paths::currentPaths()'],['../classPathsVAO.html#a743afb7e614e919570132ebf09aab618',1,'PathsVAO::currentPaths()']]],
   ['currenttimeinterval',['currentTimeInterval',['../classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e',1,'ATFViewerMain::currentTimeInterval()'],['../classATFViewerMainGLSL.html#ae8ca6d01660bd6a97db130eeb4efbc13',1,'ATFViewerMainGLSL::currentTimeInterval()']]]
 ];

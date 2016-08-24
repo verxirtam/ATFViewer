@@ -1,11 +1,11 @@
 var searchData=
 [
   ['scale',['scale',['../classMapTransform.html#a7e415efea56466628adf1a9efaf9bc27',1,'MapTransform']]],
-  ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
-  ['sector',['sector',['../classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207',1,'ATFViewerMainGLSL::sector()'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()'],['../structSectors_1_1Sector.html#a882f8b6ee0a970b4b83df7879fb25fc0',1,'Sectors::Sector::Sector()'],['../structSectorsVAO_1_1Sector.html#afdc83ccc450bc3e0100d0c7cbb431753',1,'SectorsVAO::Sector::Sector()']]],
   ['sector',['Sector',['../structSectorsVAO_1_1Sector.html',1,'SectorsVAO']]],
+  ['sector',['sector',['../classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207',1,'ATFViewerMainGLSL::sector()'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()'],['../structSectors_1_1Sector.html#a882f8b6ee0a970b4b83df7879fb25fc0',1,'Sectors::Sector::Sector()'],['../structSectorsVAO_1_1Sector.html#afdc83ccc450bc3e0100d0c7cbb431753',1,'SectorsVAO::Sector::Sector()']]],
+  ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
   ['sectorname',['sectorName',['../structSectors_1_1Sector.html#a88e0d06536b63918754b12cb1056021a',1,'Sectors::Sector::sectorName()'],['../structSectorsVAO_1_1Sector.html#a60e7a3309e186cd43ccae4825662e699',1,'SectorsVAO::Sector::sectorName()']]],
-  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()']]],
+  ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()']]],
   ['sectors_2ecpp',['Sectors.cpp',['../Sectors_8cpp.html',1,'']]],
   ['sectors_2eh',['Sectors.h',['../Sectors_8h.html',1,'']]],
   ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html',1,'SectorsVAO'],['../classSectorsVAO.html#a2a78d8f388b3474c3b3d38bb5164dfc7',1,'SectorsVAO::SectorsVAO()']]],

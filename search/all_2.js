@@ -12,7 +12,7 @@ var searchData=
   ['bindstring',['bindString',['../classDBAccessor.html#a0e6004da24d87ea701e5e9a6feb50ddd',1,'DBAccessor']]],
   ['bitmapstring',['BitmapString',['../classBitmapString.html',1,'']]],
   ['bitmapstring_2eh',['BitmapString.h',['../BitmapString_8h.html',1,'']]],
-  ['bufferpaths',['bufferPaths',['../classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69',1,'Paths']]],
+  ['bufferpaths',['bufferPaths',['../classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69',1,'Paths::bufferPaths()'],['../classPathsVAO.html#a36bee6b91996e4e1a45f3e063504a981',1,'PathsVAO::bufferPaths()']]],
   ['button',['Button',['../classJoystick.html#a96b69863a1ce0fb518ba3a61e01cfcdc',1,'Joystick']]],
   ['button_5fa',['Button_A',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deade8f6552ddb820f012fd5d1b3aee3cc4',1,'Joystick.h']]],
   ['button_5fb',['Button_B',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea7974c0212eb1f78b692bcf31ca259541',1,'Joystick.h']]],

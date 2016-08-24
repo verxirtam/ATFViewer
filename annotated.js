@@ -25,6 +25,7 @@ var annotated =
     [ "Path", "structPath.html", "structPath" ],
     [ "PathPoint", "structPathPoint.html", "structPathPoint" ],
     [ "Paths", "classPaths.html", "classPaths" ],
+    [ "PathsVAO", "classPathsVAO.html", "classPathsVAO" ],
     [ "Sectors", "classSectors.html", "classSectors" ],
     [ "SectorsVAO", "classSectorsVAO.html", "classSectorsVAO" ],
     [ "Shader", "classShader.html", "classShader" ],

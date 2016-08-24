@@ -34,7 +34,7 @@ var searchData=
   ['getlatitudefromdms',['getLatitudeFromDMS',['../classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9',1,'Util']]],
   ['getlongitudefromdms',['getLongitudeFromDMS',['../classUtil.html#a10d9205506a75853dce601c2e598af15',1,'Util']]],
   ['getnextindex',['getNextIndex',['../classTimeSeparation.html#ae4b4b0085a1fc3ffb2fb3c6eb72fcbd0',1,'TimeSeparation::getNextIndex()'],['../classTimeSeparation.html#a489187a0d4db89a423544ff45795bad3',1,'TimeSeparation::getNextIndex(unsigned int i)']]],
-  ['getnowpoint',['getNowPoint',['../classPaths.html#aed3b57fd4a182491c5332615a40ba3fe',1,'Paths']]],
+  ['getnowpoint',['getNowPoint',['../classPaths.html#aed3b57fd4a182491c5332615a40ba3fe',1,'Paths::getNowPoint()'],['../classPathsVAO.html#af3a5ae2ced85d2ef17e3a10a8c7bdbed',1,'PathsVAO::getNowPoint()']]],
   ['getposition',['getPosition',['../classVAOPositionColorBase.html#a3b79a10c7b127e6ef0893a961ee05cc5',1,'VAOPositionColorBase']]],
   ['getpositiondevicepointer',['getPositionDevicePointer',['../classVAOPositionColorDynamic.html#a08d58545e8c04dbf8a7006d71f004ee5',1,'VAOPositionColorDynamic']]],
   ['getscale',['getScale',['../classMapTransform.html#ae43e1b4e508797b3da75073bb0e851fd',1,'MapTransform']]],

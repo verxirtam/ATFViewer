@@ -4,5 +4,5 @@ var searchData=
   ['file',['File',['../classJoystick.html#aef2671619e06708addc025c6c9f9a7cd',1,'Joystick']]],
   ['fixes',['fixes',['../classATFViewerMain.html#aa542b5775ea28d3b6c627326005ff785',1,'ATFViewerMain']]],
   ['fragshader',['fragShader',['../classBasicShaderProgram.html#a34017539e54afcb7fa29b69dcc296648',1,'BasicShaderProgram::fragShader()'],['../classTextureShaderProgram.html#a5a2b7b5e498f584b212655f0b1a2fea0',1,'TextureShaderProgram::fragShader()']]],
-  ['futuremakebuffer',['futureMakeBuffer',['../classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596',1,'Paths']]]
+  ['futuremakebuffer',['futureMakeBuffer',['../classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596',1,'Paths::futureMakeBuffer()'],['../classPathsVAO.html#abc46cd23ef8b8d44f6895a82f83a2e89',1,'PathsVAO::futureMakeBuffer()']]]
 ];

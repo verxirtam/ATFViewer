@@ -8,5 +8,5 @@ var searchData=
   ['fragshader',['fragShader',['../classBasicShaderProgram.html#a34017539e54afcb7fa29b69dcc296648',1,'BasicShaderProgram::fragShader()'],['../classTextureShaderProgram.html#a5a2b7b5e498f584b212655f0b1a2fea0',1,'TextureShaderProgram::fragShader()']]],
   ['function1',['function1',['../classTestUseThread.html#a19919fd7508c850a8a2e258ca60a80e4',1,'TestUseThread']]],
   ['functype',['functype',['../classTestUseThread.html#a32263d059785f108a7ca7eeb0f25d203',1,'TestUseThread']]],
-  ['futuremakebuffer',['futureMakeBuffer',['../classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596',1,'Paths']]]
+  ['futuremakebuffer',['futureMakeBuffer',['../classPaths.html#a7080fc5f2e09b7f653e4b1e60ce73596',1,'Paths::futureMakeBuffer()'],['../classPathsVAO.html#abc46cd23ef8b8d44f6895a82f83a2e89',1,'PathsVAO::futureMakeBuffer()']]]
 ];

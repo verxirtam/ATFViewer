@@ -15,7 +15,7 @@ var searchData=
   ['timeinterval',['timeInterval',['../classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300',1,'ATFViewerMain::timeInterval()'],['../classATFViewerMainGLSL.html#ac9a72f18d74c12d037911195e63cf958',1,'ATFViewerMainGLSL::timeInterval()']]],
   ['timemax',['timeMax',['../classATFViewerMain.html#a5df45cfbbcf82201aaefadc346d78e53',1,'ATFViewerMain::timeMax()'],['../classATFViewerMainGLSL.html#a19d80a4043bbc65e3b70e9643d2bc54e',1,'ATFViewerMainGLSL::timeMax()']]],
   ['timemin',['timeMin',['../classATFViewerMain.html#a65b49cc536b04ab0a9b9b2f611e7f0ce',1,'ATFViewerMain::timeMin()'],['../classATFViewerMainGLSL.html#ac27aabcba69e3b49e322d9798215a273',1,'ATFViewerMainGLSL::timeMin()']]],
-  ['timeseparation',['timeSeparation',['../classPaths.html#a90d55274f1229ef63d8eb226370a2f2f',1,'Paths']]],
+  ['timeseparation',['timeSeparation',['../classPaths.html#a90d55274f1229ef63d8eb226370a2f2f',1,'Paths::timeSeparation()'],['../classPathsVAO.html#ab11972a82a5c3a481b2c0547aaf86181',1,'PathsVAO::timeSeparation()']]],
   ['timesequence',['timeSequence',['../classTimeSeparation.html#aadac7a283950700f8ca87f69566466eb',1,'TimeSeparation']]],
   ['tv',['tv',['../classATFViewerMain.html#a4a6edae32ce1bac1c0b2c3686e844a9c',1,'ATFViewerMain']]],
   ['type',['type',['../classShader.html#add246d71b5fa4ab79f9a03fd48ea1971',1,'Shader::type()'],['../classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13',1,'VBOBase::type()']]]

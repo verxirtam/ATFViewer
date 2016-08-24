@@ -57,6 +57,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Paths.h", "Paths_8h.html", [
       [ "Paths", "classPaths.html", "classPaths" ]
     ] ],
+    [ "PathsVAO.cpp", "PathsVAO_8cpp.html", null ],
+    [ "PathsVAO.h", "PathsVAO_8h.html", [
+      [ "PathsVAO", "classPathsVAO.html", "classPathsVAO" ]
+    ] ],
     [ "Sectors.cpp", "Sectors_8cpp.html", null ],
     [ "Sectors.h", "Sectors_8h.html", [
       [ "Sectors", "classSectors.html", "classSectors" ],

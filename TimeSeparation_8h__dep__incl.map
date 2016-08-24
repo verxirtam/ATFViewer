@@ -1,7 +1,12 @@
 <map id="src/TimeSeparation.h" name="src/TimeSeparation.h">
-<area shape="rect" id="node2" href="$Paths_8h.html" title="src/Paths.h" alt="" coords="189,80,277,107"/>
-<area shape="rect" id="node3" href="$ATFViewerMain_8h.html" title="src/ATFViewerMain.h" alt="" coords="85,155,232,181"/>
-<area shape="rect" id="node6" href="$Paths_8cpp.html" title="src/Paths.cpp" alt="" coords="257,155,359,181"/>
+<area shape="rect" id="node2" href="$Paths_8h.html" title="src/Paths.h" alt="" coords="321,80,409,107"/>
+<area shape="rect" id="node7" href="$PathsVAO_8h.html" title="src/PathsVAO.h" alt="" coords="473,80,589,107"/>
+<area shape="rect" id="node3" href="$ATFViewerMain_8h.html" title="src/ATFViewerMain.h" alt="" coords="142,155,289,181"/>
+<area shape="rect" id="node6" href="$Paths_8cpp.html" title="src/Paths.cpp" alt="" coords="314,155,416,181"/>
 <area shape="rect" id="node4" href="$ATFViewer_8cpp.html" title="src/ATFViewer.cpp" alt="" coords="5,229,139,256"/>
 <area shape="rect" id="node5" href="$ATFViewerMain_8cpp.html" title="src/ATFViewerMain.cpp" alt="" coords="164,229,327,256"/>
+<area shape="rect" id="node8" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="441,155,623,181"/>
+<area shape="rect" id="node11" href="$PathsVAO_8cpp.html" title="src/PathsVAO.cpp" alt="" coords="647,155,776,181"/>
+<area shape="rect" id="node9" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="407,229,601,256"/>
+<area shape="rect" id="node10" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="625,229,748,256"/>
 </map>

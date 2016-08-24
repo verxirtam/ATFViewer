@@ -25,6 +25,7 @@ var classATFViewerMainGLSL =
     [ "map2", "classATFViewerMainGLSL.html#a7df57b2d9af43e912c423162a83a1760", null ],
     [ "mapTransform", "classATFViewerMainGLSL.html#a5a1b117e416efef43d4394c69a5004d6", null ],
     [ "now", "classATFViewerMainGLSL.html#af6f049a640082feae20c2283b145f4a8", null ],
+    [ "path", "classATFViewerMainGLSL.html#ade969d0f06a7bbff1fa2b7021bef781a", null ],
     [ "PI", "classATFViewerMainGLSL.html#af604774acb7603fb81ed028c58d4f19b", null ],
     [ "pollingInterval", "classATFViewerMainGLSL.html#a087fb9110590f976c63b29bffa7b611f", null ],
     [ "sector", "classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207", null ],
