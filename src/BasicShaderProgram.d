@@ -1,6 +1,6 @@
 BasicShaderProgram.o: BasicShaderProgram.cpp BasicShaderProgram.h \
- Shader.h ShaderProgram.h UniformVariable.h VAOPositionColor.h Lock.h \
- VBO.h /usr/local/cuda-7.5/include/cuda_runtime.h \
+ Shader.h ShaderProgram.h UniformVariable.h VAOPositionColor.h \
+ OpenGLHeaders.h Lock.h VBO.h /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
  /usr/local/cuda-7.5/include/builtin_types.h \
  /usr/local/cuda-7.5/include/device_types.h \

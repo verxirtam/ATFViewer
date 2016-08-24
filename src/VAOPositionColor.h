@@ -18,8 +18,9 @@
 
 #pragma once
 
-#include <GL/glew.h>
-#include <GL/glut.h>
+#include "OpenGLHeaders.h"
+
+#include <algorithm>
 
 #include "Lock.h"
 #include "VBO.h"
@@ -31,18 +32,17 @@ class VAOPositionColorBase
 {
 private:
 	VAOBase base;
-	VBOClass position;
-	VBOClass color;
+	VBOClass positionColor;
 	VBOElementClass element;
 	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
+	void initPositionColor(const std::vector<float>& p, const std::vector<float>& c);
 public:
 	VAOPositionColorBase(S& s)
 		:
 			base(),
-			position(),
-			color(),
+			positionColor(),
 			element(),
 			mode(0),
 			vertexCount(0),
@@ -78,14 +78,6 @@ public:
 	{
 		return vertexCount;
 	}
-	VBOClass& getPosition()
-	{
-		return position;
-	}
-	VBOClass& getColor()
-	{
-		return color;
-	}
 	VBOElementClass& getElement()
 	{
 		return element;
@@ -93,6 +85,31 @@ public:
 };
 
 
+template <typename S, typename VBOClass, typename VBOElementClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initPositionColor
+	(
+		const std::vector<float>& p,
+		const std::vector<float>& c
+	)
+{
+	//初期化用のvector
+	std::vector<float> pc;
+	//頂点数
+	unsigned int imax = std::min(p.size(), c.size()) / 3;
+	//初期化用のvectorに詰め替える
+	for(unsigned int i = 0; i < imax; i++)
+	{
+		unsigned int i3 = i * 3;
+		pc.push_back(p[i3    ]);
+		pc.push_back(p[i3 + 1]);
+		pc.push_back(p[i3 + 2]);
+		pc.push_back(c[i3    ]);
+		pc.push_back(c[i3 + 1]);
+		pc.push_back(c[i3 + 2]);
+	}
+	//初期化
+	positionColor.init(pc);
+}
 
 template <typename S, typename VBOClass, typename VBOElementClass>
 void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
@@ -106,8 +123,7 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 	base.init();
 	
 	//引数をバッファに格納
-	position.init(p);
-	color.init(c);
+	initPositionColor(p,c);
 	element.init(e);
 	
 	//modeの設定
@@ -119,35 +135,30 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 	//自身のVAOをバインド
 	Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
 	
-	//positionの設定
+	//positionColorの初期化
 	{
 		//頂点配列をバインド
-		Bind<VBOClass> bp(position);
-		
+		Bind<VBOClass> bp(positionColor);
+		//point部分の設定
 		glVertexAttribPointer
 			(
 				0,		//設定するバーテックスシェーダの引数のインデックスを指定する
 				3,		//1頂点あたりの要素数(ここでは3次元座標なので3)
 				GL_FLOAT,	//要素の型
 				GL_FALSE,	//正規化の要否 位置座標なのでFalse
-				0,		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
+				6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+				(GLfloat*)0	//頂点データの開始アドレスから指定するデータの位置までの間隔
 			);
 		glEnableVertexAttribArray(0);
-	}
-	//colorの設定
-	{
-		//頂点色の配列をバインド
-		Bind<VBOClass> bc(color);
-		
+		//color部分の設定
 		glVertexAttribPointer
 			(
 				1,		//設定するバーテックスシェーダの引数のインデックスを指定する
-				3,		//1頂点あたりの要素数(ここでは3次元座標なので3)
+				3,		//1頂点あたりの要素数(ここではrgbなので3)
 				GL_FLOAT,	//要素の型
 				GL_FALSE,	//正規化の要否 位置座標なのでFalse
-				0,		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLubyte*)NULL	//頂点データの開始アドレスから指定するデータの位置までの間隔
+				6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+				(GLfloat*)0 + 3	//頂点データの開始アドレスから指定するデータの位置までの間隔
 			);
 		glEnableVertexAttribArray(1);
 	}
