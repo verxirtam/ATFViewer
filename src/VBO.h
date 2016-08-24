@@ -157,6 +157,15 @@ private:
 	VBOBase<ElementType> base;
 	cudaGraphicsResource* resource;
 	ElementType* device;
+	//ポインタメンバを持つがコピー不要なので禁止する
+	//コピーコンストラクタ
+	VBODynamicBase(const VBODynamicBase&) = delete;
+	//コピー代入演算子
+	VBODynamicBase& operator=(const VBODynamicBase&) = delete;
+	//ムーブコンストラクタ
+	VBODynamicBase(VBODynamicBase&&) = delete;
+	//ムーブ代入演算子
+	VBODynamicBase& operator=(VBODynamicBase&&) = delete;
 public:
 	VBODynamicBase():base(VboType, GL_DYNAMIC_DRAW),resource(nullptr), device(nullptr)
 	{

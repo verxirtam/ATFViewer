@@ -31,6 +31,7 @@ void ATFViewerMainGLSL::initScene(void)
 	map.init(dba);
 	map2.init(dba);
 	sector.init(dba);
+	path.initPathPoint(this->timeMin, this->timeMax);
 
 	cout<<"initScene() end"<<endl;
 }
@@ -76,6 +77,7 @@ void ATFViewerMainGLSL::display(void)
 	map.display();
 	map2.display();
 	sector.display();
+	path.display(0);
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();

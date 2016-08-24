@@ -35,6 +35,7 @@
 #include "Joystick.h"
 #include "MapVAO.h"
 #include "SectorsVAO.h"
+#include "PathsVAO.h"
 
 class ATFViewerMainGLSL
 {
@@ -61,6 +62,7 @@ private:
 	MapVAO map;
 	MapVAO map2;
 	SectorsVAO sector;
+	PathsVAO path;
 	//初期化
 	ATFViewerMainGLSL():
 		PI(3.14159265358979),
@@ -84,7 +86,8 @@ private:
 		basicShaderProgram(),
 		map("ENRC1_20160204",textureShaderProgram),
 		map2("ENRC2_20160204",textureShaderProgram),
-		sector(basicShaderProgram)
+		sector(basicShaderProgram),
+		path(basicShaderProgram)
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;
