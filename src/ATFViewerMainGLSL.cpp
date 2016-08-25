@@ -69,6 +69,14 @@ void ATFViewerMainGLSL::setMatrix(void)
 
 void ATFViewerMainGLSL::display(void)
 {
+	//時刻の更新
+	now += currentTimeInterval;
+	if (now > timeMax)
+	{
+		now = timeMin;
+		path.resetTime();
+	}
+	
 	//フレームバッファ、深度バッファをクリアする
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	
@@ -77,7 +85,7 @@ void ATFViewerMainGLSL::display(void)
 	map.display();
 	map2.display();
 	sector.display();
-	path.display(0);
+	path.display(now);
 	
 	//描画対象のバッファを入れ替える
 	glutSwapBuffers();

@@ -39,10 +39,10 @@ private:
 	using vaoType = BasicShaderProgram::vaoTypeDynamic;
 	
 	TimeSeparation timeSeparation;
-	std::vector<Path> paths;
+	//std::vector<Path> paths;
 	std::vector<Path> pathsBuffer;
-	std::vector<Path>* currentPaths;
-	std::vector<Path>* bufferPaths;
+	//std::vector<Path>* currentPaths;
+	//std::vector<Path>* bufferPaths;
 	const unsigned int drawTimeWidth;
 	std::future<void> futureMakeBuffer;
 	vaoType vao;
@@ -66,10 +66,10 @@ public:
 	PathsVAO(BasicShaderProgram& bsp)
 		:
 			timeSeparation(),
-			paths(),
+			//paths(),
 			pathsBuffer(),
-			currentPaths(&paths),
-			bufferPaths(&pathsBuffer),
+			//currentPaths(&paths),
+			//bufferPaths(&pathsBuffer),
 			drawTimeWidth(600),
 			futureMakeBuffer(),
 			vao(bsp)

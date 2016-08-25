@@ -136,11 +136,14 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 	
 	//バッファの取得を別スレッドで実行
 	//メインスレッドと合わせて同時取得する
-	this->runMakePathsBuffer(*bufferPaths, TimeSeparation::Position::next);
-	//メインスレッドで直近で使用するトラックデータを取得
-	this->makePathsBuffer(*currentPaths, TimeSeparation::Position::current);
+	this->runMakePathsBuffer(pathsBuffer, TimeSeparation::Position::next);
 	
-	initVAO(*currentPaths, vao);
+	//トラックデータ格納用のvector
+	std::vector<Path> paths;
+	//メインスレッドで直近で使用するトラックデータを取得
+	this->makePathsBuffer(paths, TimeSeparation::Position::current);
+	
+	initVAO(paths, vao);
 	
 	//TrackDataManager tdm;
 	//tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
@@ -230,11 +233,13 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 
 void PathsVAO::resetTime(void)
 {
+	/*
 	for(auto&& p: *currentPaths)
 	{
 		p.past_time_index = 0;
 		p.now_index = 0;
 	}
+	*/
 }
 
 void PathsVAO::updatePastTimeIndex(Path& p, time_t past_time)
@@ -311,23 +316,23 @@ void PathsVAO::drawPathLine(Path& p, time_t past_time, time_t now)
 int PathsVAO::display(time_t now)
 {
 	
-	vao.display();
-	
-	return 0;
-	
 	if(timeSeparation.inNextInterval(now))
 	{
 		//別スレッドでのデータ取得の完了を待つ
 		futureMakeBuffer.wait();
 		cout << "futureMakeBuffer.wait() finish." << endl;
 		
-		cout << "(*currentPaths).size() = " << (*currentPaths).size() << endl;
-		cout << " (*bufferPaths).size() = " <<  (*bufferPaths).size() << endl;
+		//cout << "(*currentPaths).size() = " << (*currentPaths).size() << endl;
+		cout << " pathsBuffer.size() = " <<  pathsBuffer.size() << endl;
 		
 		//バッファの入れ替え
-		vector<Path>* dummy = bufferPaths;
-		bufferPaths = currentPaths;
-		currentPaths = dummy;
+		//vector<Path>* dummy = bufferPaths;
+		//bufferPaths = currentPaths;
+		//currentPaths = dummy;
+		
+		//VAOの初期化 -> makePathsBuffer()に取り込む予定
+		this->initVAO(pathsBuffer,vao);
+		
 		
 		//now_indexとpast_time_indexの初期化
 		this->resetTime();
@@ -335,11 +340,15 @@ int PathsVAO::display(time_t now)
 		timeSeparation.setNextInterval();
 		
 		//別スレッドで次の区間のトラックデータ取得開始
-		this->runMakePathsBuffer(*bufferPaths, TimeSeparation::Position::next);
+		this->runMakePathsBuffer(pathsBuffer, TimeSeparation::Position::next);
 		
 	}
 	
+	vao.display();
 	
+	return 0;
+	
+	/*
 	//航空機の軌道っぽいものを描く
 	//隠面消去を無効にする
 	//アルファブレンドで奥の透明オブジェクトが描画されないことがあるため
@@ -390,4 +399,5 @@ int PathsVAO::display(time_t now)
 	//航空機の軌道の描画完了
 	
 	return ret;
+	*/
 }
