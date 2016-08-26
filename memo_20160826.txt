@@ -1,0 +1,9 @@
+メンバ変数のpathsを削除して初期化の時のみ使用する
+クラス内クラスInitPathsSettingsを作成して初期化の時のみ使用する変数を集約する
+VAOを２重化して切り替え可能にする
+Paths専用のVAO（VAOPaths)を作成する
+	時刻・透明度の情報も持たせるため
+	VAOPathsに持たせる機能
+		VAOの管理
+		nowに応じてVAOの更新(cudaで)
+		
