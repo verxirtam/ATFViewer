@@ -105,7 +105,7 @@ PathPoint	Path.h	/^struct PathPoint$/;"	s
 Path_H	Path.h	19;"	d
 Paths	Paths.h	/^	Paths()$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
-PathsVAO	PathsVAO.h	/^	PathsVAO()$/;"	f	class:PathsVAO
+PathsVAO	PathsVAO.h	/^	PathsVAO(BasicShaderProgram& bsp)$/;"	f	class:PathsVAO
 PathsVAO	PathsVAO.h	/^class PathsVAO$/;"	c
 Paths_H	Paths.h	20;"	d
 Position	TimeSeparation.h	/^	enum Position$/;"	g	class:TimeSeparation
@@ -318,7 +318,6 @@ bindInt	DBAccessor.h	/^	void bindInt(int i, int d)$/;"	f	class:DBAccessor
 bindLongLong	DBAccessor.h	/^	void bindLongLong(int i, long long d)$/;"	f	class:DBAccessor
 bindString	DBAccessor.h	/^	void bindString(int i, const std::string& s)$/;"	f	class:DBAccessor
 bufferPaths	Paths.h	/^	std::vector<Path>* bufferPaths;$/;"	m	class:Paths
-bufferPaths	PathsVAO.h	/^	std::vector<Path>* bufferPaths;$/;"	m	class:PathsVAO
 camera_phi	ATFViewerMain.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMain
 camera_phi	ATFViewerMainGLSL.h	/^	GLdouble camera_phi;$/;"	m	class:ATFViewerMainGLSL
 camera_r	ATFViewerMain.h	/^	GLdouble camera_r;$/;"	m	class:ATFViewerMain
@@ -332,7 +331,6 @@ caption	SectorsVAO.h	/^		std::string caption;$/;"	m	struct:SectorsVAO::Sector
 centerOffsetLat	MapTransform.h	/^	double centerOffsetLat;$/;"	m	class:MapTransform
 centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTransform
 color	SectorsVAO.h	/^		std::vector<glm::vec3> color;\/**< 頂点色*\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
-color	VAOPositionColor.h	/^	VBOClass color;$/;"	m	class:VAOPositionColorBase
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
 comp_path	unittest.cpp	/^bool comp_path(const Path& p0, const Path& p1)$/;"	f
 comp_path_time	unittest.cpp	/^bool comp_path_time(const Path& p0, const Path& p1)$/;"	f
@@ -365,7 +363,6 @@ cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
 current	TimeSeparation.h	/^		current = 0,$/;"	e	enum:TimeSeparation::Position
 currentIndex	TimeSeparation.h	/^	unsigned int currentIndex;$/;"	m	class:TimeSeparation
 currentPaths	Paths.h	/^	std::vector<Path>* currentPaths;$/;"	m	class:Paths
-currentPaths	PathsVAO.h	/^	std::vector<Path>* currentPaths;$/;"	m	class:PathsVAO
 currentTimeInterval	ATFViewerMain.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMain
 currentTimeInterval	ATFViewerMainGLSL.h	/^	int currentTimeInterval;$/;"	m	class:ATFViewerMainGLSL
 db	DBAccessor.h	/^	sqlite3 *db;$/;"	m	class:DBAccessor
@@ -432,7 +429,6 @@ getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
 getCellIndexFromPoint	CountCrossing_cuda.h	/^void getCellIndexFromPoint$/;"	f
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
-getColor	VAOPositionColor.h	/^	VBOClass& getColor()$/;"	f	class:VAOPositionColorBase
 getColorDevicePointer	VAOPositionColor.h	/^	float* getColorDevicePointer()$/;"	f	class:VAOPositionColorDynamic
 getColumn	TrackDataManager.h	/^	void getColumn(DBAccessor& dba, std::string& id, double& lo, double& la, int& a, long long& t, std::string& ar)$/;"	f	class:TrackDataManager
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
@@ -468,7 +464,6 @@ getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex()$/;"	f	class:TimeSep
 getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex(unsigned int i)$/;"	f	class:TimeSeparation
 getNowPoint	Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
 getNowPoint	PathsVAO.cpp	/^PathPoint PathsVAO::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:PathsVAO
-getPosition	VAOPositionColor.h	/^	VBOClass& getPosition()$/;"	f	class:VAOPositionColorBase
 getPositionDevicePointer	VAOPositionColor.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionColorDynamic
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
@@ -545,6 +540,8 @@ init	VBO.h	/^	void init(const std::vector<unsigned int>& v)$/;"	f	class:VBOEleme
 initCallbacks	ATFViewerMainGLSL.h	/^	void initCallbacks()$/;"	f	class:ATFViewerMainGLSL
 initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:Paths
 initPathPoint	PathsVAO.cpp	/^void PathsVAO::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:PathsVAO
+initPositionColor	VAOPositionColor.h	/^void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initPositionColor$/;"	f	class:VAOPositionColorBase
+initPositionTexture	VAOPositionTexture.h	/^void VAOPositionTexture<S>::initPositionTexture$/;"	f	class:VAOPositionTexture
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::initScene(void)$/;"	f	class:ATFViewerMainGLSL
 initSector	SectorsVAO.cpp	/^void SectorsVAO::initSector(Sector& sector, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
@@ -553,6 +550,7 @@ initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
 initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
 initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
+initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)$/;"	f	class:PathsVAO
 initVAO	SectorsVAO.cpp	/^void SectorsVAO::initVAO(InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 insideLongLatIndex	Sectors.h	/^		std::vector<unsigned int> insideLongLatIndex;$/;"	m	struct:Sectors::SubSector
 insideLongLatIndex	SectorsVAO.h	/^		std::vector<unsigned int> insideLongLatIndex;$/;"	m	struct:SectorsVAO::SubSector
@@ -592,7 +590,7 @@ main	glunittest.cpp	/^int main(void)$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 makeDBFileName	TrackDataManager.h	/^	void makeDBFileName(time_t day, std::string& dbfilenamestr)$/;"	f	class:TrackDataManager
 makePathsBuffer	Paths.cpp	/^void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
-makePathsBuffer	PathsVAO.cpp	/^void PathsVAO::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:PathsVAO
+makePathsBuffer	PathsVAO.cpp	/^void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)$/;"	f	class:PathsVAO
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 map	ATFViewerMainGLSL.h	/^	MapVAO map;$/;"	m	class:ATFViewerMainGLSL
 map	VAOPositionColor.h	/^	void map()$/;"	f	class:VAOPositionColorDynamic
@@ -639,17 +637,16 @@ operator ==	Path.h	/^	bool operator ==(const Path& p) const$/;"	f	struct:Path
 operator ==	Path.h	/^	bool operator ==(const PathPoint& p) const$/;"	f	struct:PathPoint
 operator ==	Path.h	/^	bool operator ==(const std::string& s) const$/;"	f	struct:Path
 past_time_index	Path.h	/^	int past_time_index;$/;"	m	struct:Path
+path	ATFViewerMainGLSL.h	/^	PathsVAO path;$/;"	m	class:ATFViewerMainGLSL
 pathPoint	Path.h	/^	std::vector<PathPoint> pathPoint;$/;"	m	struct:Path
 paths	ATFViewerMain.h	/^	Paths paths;$/;"	m	class:ATFViewerMain
 paths	Paths.h	/^	std::vector<Path> paths;$/;"	m	class:Paths
-paths	PathsVAO.h	/^	std::vector<Path> paths;$/;"	m	class:PathsVAO
 pathsBuffer	Paths.h	/^	std::vector<Path> pathsBuffer;$/;"	m	class:Paths
-pathsBuffer	PathsVAO.h	/^	std::vector<Path> pathsBuffer;$/;"	m	class:PathsVAO
 pollingInterval	ATFViewerMain.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMain
 pollingInterval	ATFViewerMainGLSL.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMainGLSL
 position	SectorsVAO.h	/^		std::vector<glm::vec3> position;\/**< 位置 *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
-position	VAOPositionColor.h	/^	VBOClass position;$/;"	m	class:VAOPositionColorBase
-position	VAOPositionTexture.h	/^	VBOStatic position;$/;"	m	class:VAOPositionTexture
+positionColor	VAOPositionColor.h	/^	VBOClass positionColor;$/;"	m	class:VAOPositionColorBase
+positionTexture	VAOPositionTexture.h	/^	VBOStatic positionTexture;$/;"	m	class:VAOPositionTexture
 readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
@@ -661,7 +658,7 @@ resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBODynamicBase
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread_MemFunc
 runMakePathsBuffer	Paths.cpp	/^void Paths::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
-runMakePathsBuffer	PathsVAO.cpp	/^void PathsVAO::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:PathsVAO
+runMakePathsBuffer	PathsVAO.cpp	/^void PathsVAO::runMakePathsBuffer(vaoType* v, TimeSeparation::Position position)$/;"	f	class:PathsVAO
 s	Shader.h	/^	Shader& operator=(Shader&& s) = delete;$/;"	m	class:Shader
 s	Shader.h	/^	Shader& operator=(const Shader& s) = delete;$/;"	m	class:Shader
 s	Shader.h	/^	Shader(Shader&& s) = delete;$/;"	m	class:Shader
@@ -728,7 +725,6 @@ testPThread	unittest.cpp	/^bool testPThread()$/;"	f
 testTrackDataManager	unittest.cpp	/^bool testTrackDataManager()$/;"	f
 texture	MapVAO.h	/^	Texture2D texture;$/;"	m	class:MapVAO
 texture	VAOPositionTexture.h	/^	Texture2D& texture;$/;"	m	class:VAOPositionTexture
-textureCoord	VAOPositionTexture.h	/^	VBOStatic textureCoord;$/;"	m	class:VAOPositionTexture
 textureFileName	MapVAO.h	/^		std::string textureFileName;$/;"	m	struct:MapVAO::InitMapSetting
 textureHeight	Map.h	/^	int textureHeight;$/;"	m	class:Map
 textureHeight	MapVAO.h	/^		int textureHeight;$/;"	m	struct:MapVAO::InitMapSetting
@@ -748,7 +744,6 @@ timeMax	ATFViewerMainGLSL.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMainGL
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMainGLSL.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMainGLSL
 timeSeparation	Paths.h	/^	TimeSeparation timeSeparation;$/;"	m	class:Paths
-timeSeparation	PathsVAO.h	/^	TimeSeparation timeSeparation;$/;"	m	class:PathsVAO
 timeSequence	TimeSeparation.h	/^	std::vector< time_t > timeSequence;$/;"	m	class:TimeSeparation
 timestring	unittest.cpp	/^string timestring(time_t t)$/;"	f
 today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
@@ -791,6 +786,10 @@ v	VAOBase.h	/^	VAOBase(const VAOBase& v) = delete;$/;"	m	class:VAOBase
 vao	MapVAO.h	/^	TextureShaderProgram::vaoType vao;$/;"	m	class:MapVAO
 vao	SectorsVAO.h	/^	BasicShaderProgram::vaoType vao;$/;"	m	class:SectorsVAO
 vao	TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
+vao0	PathsVAO.h	/^	vaoType vao0;$/;"	m	class:PathsVAO
+vao1	PathsVAO.h	/^	vaoType vao1;$/;"	m	class:PathsVAO
+vaoBuffer	PathsVAO.h	/^	vaoType* vaoBuffer;$/;"	m	class:PathsVAO
+vaoCurrent	PathsVAO.h	/^	vaoType* vaoCurrent;$/;"	m	class:PathsVAO
 vaoType	BasicShaderProgram.h	/^	typedef VAOPositionColor<BasicShaderProgram> vaoType;$/;"	t	class:BasicShaderProgram
 vaoType	TextureShaderProgram.h	/^	typedef VAOPositionTexture<TextureShaderProgram> vaoType;$/;"	t	class:TextureShaderProgram
 vaoTypeDynamic	BasicShaderProgram.h	/^	typedef VAOPositionColorDynamic<BasicShaderProgram> vaoTypeDynamic;$/;"	t	class:BasicShaderProgram

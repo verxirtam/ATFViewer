@@ -40,15 +40,18 @@ private:
 	
 	TimeSeparation timeSeparation;
 	//std::vector<Path> paths;
-	std::vector<Path> pathsBuffer;
+	//std::vector<Path> pathsBuffer;
 	//std::vector<Path>* currentPaths;
 	//std::vector<Path>* bufferPaths;
 	const unsigned int drawTimeWidth;
 	std::future<void> futureMakeBuffer;
-	vaoType vao;
+	vaoType vao0;
+	vaoType vao1;
+	vaoType* vaoCurrent;
+	vaoType* vaoBuffer;
 	
-	void makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position);
-	void runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position);
+	void makePathsBuffer(vaoType& v, TimeSeparation::Position position);
+	void runMakePathsBuffer(vaoType& v, TimeSeparation::Position position);
 	void updatePastTimeIndex(Path& p, time_t past_time);
 	void updateNowIndex(Path& p, time_t now);
 	void drawPathLine(Path& p, time_t past_time, time_t now);
@@ -66,13 +69,13 @@ public:
 	PathsVAO(BasicShaderProgram& bsp)
 		:
 			timeSeparation(),
-			//paths(),
-			pathsBuffer(),
-			//currentPaths(&paths),
-			//bufferPaths(&pathsBuffer),
+			//pathsBuffer(),
 			drawTimeWidth(600),
 			futureMakeBuffer(),
-			vao(bsp)
+			vao0(bsp),
+			vao1(bsp),
+			vaoCurrent(&vao0),
+			vaoBuffer( &vao1)
 	{
 	}
 	void initPathPoint(time_t time_min, time_t time_max);

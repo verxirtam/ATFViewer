@@ -21,12 +21,13 @@
 using namespace std;
 
 
-void PathsVAO::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)
+void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)
 {
 	cout << "PathsVAO::makePathsBuffer() start." << endl;
 	
 	//古いデータを削除する
-	p.clear();
+	//p.clear();
+	
 	//DBから取得する開始時刻・終了時刻
 	time_t time_start = 0;// = this->timeSeparation - this->drawTimeWidth;
 	time_t time_end = 0;//   = timeSeparation[time_separation_index + 1] + this->drawTimeWidth;
@@ -43,23 +44,28 @@ void PathsVAO::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position po
 	cout << "time_start = " << time_start;
 	cout << ", time_end = " << time_end << endl;
 	
+	//トラックデータの格納先
+	std::vector<Path> p;
 	
 	//トラックデータの取得
 	TrackDataManager tdm;
 	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 6);
 	
+	//トラックデータのVAOへの設定
+	this->initVAO(p, v);
+	
 	cout << "PathsVAO::makePathsBuffer() end." << endl;
 }
 
-void PathsVAO::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)
+void PathsVAO::runMakePathsBuffer(vaoType& v, TimeSeparation::Position position)
 {
 	cout << "PathsVAO::runMakePathsBuffer() start." << endl;
 	
 	//スレッドで実行するラムダ式
 	//this : メンバ変数を実行するのでコピーキャプチャする
-	//p : 書き換えるので参照キャプチャする
+	//v : 書き換えるので参照キャプチャする
 	//position : 1次変数なのでコピーキャプチャする
-	auto _f = [this,&p,position]{this->makePathsBuffer(p, position);};
+	auto _f = [this,&v,position]{this->makePathsBuffer(v, position);};
 	//スレッド起動
 	futureMakeBuffer = std::async(std::launch::async, _f);
 	
@@ -136,14 +142,14 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 	
 	//バッファの取得を別スレッドで実行
 	//メインスレッドと合わせて同時取得する
-	this->runMakePathsBuffer(pathsBuffer, TimeSeparation::Position::next);
+	this->runMakePathsBuffer(*vaoBuffer, TimeSeparation::Position::next);
 	
 	//トラックデータ格納用のvector
 	std::vector<Path> paths;
 	//メインスレッドで直近で使用するトラックデータを取得
-	this->makePathsBuffer(paths, TimeSeparation::Position::current);
+	this->makePathsBuffer(*vaoCurrent, TimeSeparation::Position::current);
 	
-	initVAO(paths, vao);
+	//initVAO(paths, vao);
 	
 	//TrackDataManager tdm;
 	//tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
@@ -227,7 +233,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			element.push_back(element.size());
 		}
 	}
-	vao.init(position, color, element, GL_TRIANGLE_STRIP);
+	v.init(position, color, element, GL_TRIANGLE_STRIP);
 }
 
 
@@ -323,15 +329,15 @@ int PathsVAO::display(time_t now)
 		cout << "futureMakeBuffer.wait() finish." << endl;
 		
 		//cout << "(*currentPaths).size() = " << (*currentPaths).size() << endl;
-		cout << " pathsBuffer.size() = " <<  pathsBuffer.size() << endl;
+		//cout << " pathsBuffer.size() = " <<  pathsBuffer.size() << endl;
 		
 		//バッファの入れ替え
-		//vector<Path>* dummy = bufferPaths;
-		//bufferPaths = currentPaths;
-		//currentPaths = dummy;
+		vaoType* dummy = vaoBuffer;
+		vaoBuffer = vaoCurrent;
+		vaoCurrent = dummy;
 		
 		//VAOの初期化 -> makePathsBuffer()に取り込む予定
-		this->initVAO(pathsBuffer,vao);
+		//this->initVAO(pathsBuffer,vao);
 		
 		
 		//now_indexとpast_time_indexの初期化
@@ -340,11 +346,11 @@ int PathsVAO::display(time_t now)
 		timeSeparation.setNextInterval();
 		
 		//別スレッドで次の区間のトラックデータ取得開始
-		this->runMakePathsBuffer(pathsBuffer, TimeSeparation::Position::next);
+		this->runMakePathsBuffer(*vaoBuffer, TimeSeparation::Position::next);
 		
 	}
 	
-	vao.display();
+	vaoCurrent->display();
 	
 	return 0;
 	
