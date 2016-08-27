@@ -189,6 +189,9 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initMain()
 			);
 		glEnableVertexAttribArray(1);
 	}
+	//データ格納用のvectorのクリア
+	positionColorData.clear();
+	elementData.clear();
 }
 
 template <typename S>

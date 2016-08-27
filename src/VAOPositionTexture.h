@@ -33,6 +33,8 @@ private:
 	VAOBase base;
 	VBOStatic positionTexture;
 	VBOElementStatic element;
+	std::vector<float> positionTextureData;
+	std::vector<unsigned int> elementData;
 	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
@@ -44,6 +46,8 @@ public:
 		base(),
 		positionTexture(),
 		element(),
+		positionTextureData(),
+		elementData(),
 		mode(0),
 		vertexCount(0),
 		shaderProgram(s),
@@ -61,6 +65,14 @@ public:
 	{
 		base.unbind();
 	}
+	void initReady
+		(
+			const std::vector<float>& p,
+			const std::vector<float>& c,
+			const std::vector<unsigned int>& e,
+			GLenum m
+		);
+	void initMain();
 	void init
 		(
 			const std::vector<float>& p,
@@ -94,7 +106,8 @@ void VAOPositionTexture<S>::initPositionTexture
 	)
 {
 	//初期化用のインターリーブ配列
-	std::vector<float> pt;
+	positionTextureData.clear();
+	
 	//頂点数の算出
 	unsigned int imax = std::min(p.size() / 3, t.size() / 2);
 	//インターリーブ配列の作成
@@ -105,14 +118,35 @@ void VAOPositionTexture<S>::initPositionTexture
 		unsigned int i3 = i * 3;
 		unsigned int i2 = i * 2;
 		
-		pt.push_back(p[i3    ]);
-		pt.push_back(p[i3 + 1]);
-		pt.push_back(p[i3 + 2]);
-		pt.push_back(t[i2    ]);
-		pt.push_back(t[i2 + 1]);
+		positionTextureData.push_back(p[i3    ]);
+		positionTextureData.push_back(p[i3 + 1]);
+		positionTextureData.push_back(p[i3 + 2]);
+		positionTextureData.push_back(t[i2    ]);
+		positionTextureData.push_back(t[i2 + 1]);
 	}
 	//作成したインターリーブ配列を使用して初期化
-	positionTexture.init(pt);
+	positionTexture.init(positionTextureData);
+}
+
+template <typename S>
+void VAOPositionTexture<S>::initReady
+	(
+		const std::vector<float>& p,
+		const std::vector<float>& t,
+		const std::vector<unsigned int>& e,
+		GLenum m
+	)
+{
+	//引数をバッファに格納
+	initPositionTexture(p, t);
+	
+	elementData = e;
+	
+	//頂点数を格納
+	vertexCount = e.size();
+	
+	//modeの設定
+	mode = m;
 }
 
 template <typename S>
@@ -124,16 +158,21 @@ void VAOPositionTexture<S>::init
 		GLenum m
 	)
 {
+	initReady(p, t, e, m);
+	initMain();
+}
+template <typename S>
+void VAOPositionTexture<S>::initMain()
+{
+	//作成したインターリーブ配列を使用して初期化
+	positionTexture.init(positionTextureData);
+	
+	//ベースクラスの初期化
 	base.init();
 	
-	//引数をバッファに格納
-	initPositionTexture(p, t);
-	element.init(e);
-	//頂点数を格納
-	vertexCount = e.size();
-	
-	//modeの設定
-	mode = m;
+	//作成したインターリーブ配列を使用して初期化
+	positionTexture.init(positionTextureData);
+	element.init(elementData);
 	
 	//自身のVAOをバインド
 	Bind<VAOPositionTexture> b(*this);
@@ -164,6 +203,8 @@ void VAOPositionTexture<S>::init
 			);
 		glEnableVertexAttribArray(1);
 	}
-	
+	//データ格納用のvectorのクリア
+	positionTextureData.clear();
+	elementData.clear();
 }
 
