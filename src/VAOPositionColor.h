@@ -34,6 +34,8 @@ private:
 	VAOBase base;
 	VBOClass positionColor;
 	VBOElementClass element;
+	std::vector<float> positionColorData;
+	std::vector<unsigned int> elementData;
 	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
@@ -44,6 +46,8 @@ public:
 			base(),
 			positionColor(),
 			element(),
+			positionColorData(),
+			elementData(),
 			mode(0),
 			vertexCount(0),
 			shaderProgram(s)
@@ -61,6 +65,8 @@ public:
 	{
 		base.unbind();
 	}
+	void initReady(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
+	void initMain();
 	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
 	void display(void)
 	{
@@ -93,22 +99,42 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initPositionColor
 	)
 {
 	//初期化用のvector
-	std::vector<float> pc;
+	positionColorData.clear();
+	
 	//頂点数
 	unsigned int imax = std::min(p.size(), c.size()) / 3;
 	//初期化用のvectorに詰め替える
 	for(unsigned int i = 0; i < imax; i++)
 	{
 		unsigned int i3 = i * 3;
-		pc.push_back(p[i3    ]);
-		pc.push_back(p[i3 + 1]);
-		pc.push_back(p[i3 + 2]);
-		pc.push_back(c[i3    ]);
-		pc.push_back(c[i3 + 1]);
-		pc.push_back(c[i3 + 2]);
+		positionColorData.push_back(p[i3    ]);
+		positionColorData.push_back(p[i3 + 1]);
+		positionColorData.push_back(p[i3 + 2]);
+		positionColorData.push_back(c[i3    ]);
+		positionColorData.push_back(c[i3 + 1]);
+		positionColorData.push_back(c[i3 + 2]);
 	}
-	//初期化
-	positionColor.init(pc);
+}
+
+template <typename S, typename VBOClass, typename VBOElementClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initReady
+	(
+		const std::vector<float>& p,
+		const std::vector<float>& c,
+		const std::vector<unsigned int>& e,
+		GLenum m
+	)
+{
+	//引数をメンバ変数に格納
+	initPositionColor(p,c);
+	elementData = e;
+	
+	//modeの設定
+	mode = m;
+	
+	//頂点数を格納
+	vertexCount = e.size();
+	
 }
 
 template <typename S, typename VBOClass, typename VBOElementClass>
@@ -120,18 +146,18 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 		GLenum m
 	)
 {
+	initReady(p, c, e, m);
+	initMain();
+}
+template <typename S, typename VBOClass, typename VBOElementClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initMain()
+{
 	//ベースクラスの初期化
 	base.init();
 	
-	//引数をバッファに格納
-	initPositionColor(p,c);
-	element.init(e);
-	
-	//modeの設定
-	mode = m;
-	
-	//頂点数を格納
-	vertexCount = e.size();
+	//初期化
+	positionColor.init(positionColorData);
+	element.init(elementData);
 	
 	//自身のVAOをバインド
 	Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
@@ -188,6 +214,14 @@ public:
 	void unbind()
 	{
 		base.unbind();
+	}
+	void initReady(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m)
+	{
+		base.initReady(p, c, e, m);
+	}
+	void initMain()
+	{
+		base.initMain();
 	}
 	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m)
 	{

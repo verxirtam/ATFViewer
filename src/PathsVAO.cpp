@@ -149,6 +149,7 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 	//メインスレッドで直近で使用するトラックデータを取得
 	this->makePathsBuffer(*vaoCurrent, TimeSeparation::Position::current);
 	
+	vaoCurrent->initMain();
 	//initVAO(paths, vao);
 	
 	//TrackDataManager tdm;
@@ -233,7 +234,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			element.push_back(element.size());
 		}
 	}
-	v.init(position, color, element, GL_TRIANGLE_STRIP);
+	v.initReady(position, color, element, GL_TRIANGLE_STRIP);
 }
 
 
@@ -336,9 +337,8 @@ int PathsVAO::display(time_t now)
 		vaoBuffer = vaoCurrent;
 		vaoCurrent = dummy;
 		
-		//VAOの初期化 -> makePathsBuffer()に取り込む予定
-		//this->initVAO(pathsBuffer,vao);
-		
+		//VAOの初期化のGLへの登録部分
+		vaoCurrent->initMain();
 		
 		//now_indexとpast_time_indexの初期化
 		this->resetTime();
