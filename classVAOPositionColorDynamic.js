@@ -8,6 +8,8 @@ var classVAOPositionColorDynamic =
     [ "getPositionDevicePointer", "classVAOPositionColorDynamic.html#a08d58545e8c04dbf8a7006d71f004ee5", null ],
     [ "getVertexCount", "classVAOPositionColorDynamic.html#a94c57e5cccf7fcd8d5671e624d3b6953", null ],
     [ "init", "classVAOPositionColorDynamic.html#ad1bd87eb0fbd55221cb667c7c97429aa", null ],
+    [ "initMain", "classVAOPositionColorDynamic.html#a4aa5e0fa405f3c4236355a890e20211b", null ],
+    [ "initReady", "classVAOPositionColorDynamic.html#af546b842715a8b32e6dd3af3c224e613", null ],
     [ "map", "classVAOPositionColorDynamic.html#a742dcd4e5740e4e87be5a3f5eb0717e5", null ],
     [ "unbind", "classVAOPositionColorDynamic.html#a9d4ff29f965de92afce10680852b47f0", null ],
     [ "unmap", "classVAOPositionColorDynamic.html#a4f19a903fdef6504799a3c75e2ebd006", null ],

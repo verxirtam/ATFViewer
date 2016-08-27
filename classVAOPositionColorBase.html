@@ -137,6 +137,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6c260309e553bad6e096e43d39331f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acfa057d50f08a71227cd69d379370100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#acfa057d50f08a71227cd69d379370100">unbind</a> ()</td></tr>
 <tr class="separator:acfa057d50f08a71227cd69d379370100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2465b3f240d579c895abdc62c3303a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#aaf2465b3f240d579c895abdc62c3303a">initReady</a> (const std::vector&lt; float &gt; &amp;p, const std::vector&lt; float &gt; &amp;c, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
+<tr class="separator:aaf2465b3f240d579c895abdc62c3303a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c6ca71e93cf6be9b93a094446be09c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#ab0c6ca71e93cf6be9b93a094446be09c">initMain</a> ()</td></tr>
+<tr class="separator:ab0c6ca71e93cf6be9b93a094446be09c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae297cd3bdc89073a5fb8aca92ba650db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#ae297cd3bdc89073a5fb8aca92ba650db">init</a> (const std::vector&lt; float &gt; &amp;p, const std::vector&lt; float &gt; &amp;c, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
 <tr class="separator:ae297cd3bdc89073a5fb8aca92ba650db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a297f0b3e0c7e610b5d6abdd8acacb1b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#a297f0b3e0c7e610b5d6abdd8acacb1b1">display</a> (void)</td></tr>
@@ -159,6 +163,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a94494fbc891ea85fed1cf4fc1aef8e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a41ff308e66e11e74e32e5f925b4dc9"><td class="memItemLeft" align="right" valign="top">VBOElementClass&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#a9a41ff308e66e11e74e32e5f925b4dc9">element</a></td></tr>
 <tr class="separator:a9a41ff308e66e11e74e32e5f925b4dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d48e0039e3165c91cde22ee49e173c4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#a6d48e0039e3165c91cde22ee49e173c4">positionColorData</a></td></tr>
+<tr class="separator:a6d48e0039e3165c91cde22ee49e173c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80986d6e5fb69b71d5daa1abd80f6d69"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#a80986d6e5fb69b71d5daa1abd80f6d69">elementData</a></td></tr>
+<tr class="separator:a80986d6e5fb69b71d5daa1abd80f6d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9620f450fcf92c069e0d033db67a1007"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#a9620f450fcf92c069e0d033db67a1007">mode</a></td></tr>
 <tr class="separator:a9620f450fcf92c069e0d033db67a1007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebaaf3f165ae9cc716444f50f0dbb2a1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionColorBase.html#aebaaf3f165ae9cc716444f50f0dbb2a1">vertexCount</a></td></tr>
@@ -378,6 +386,23 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="ab0c6ca71e93cf6be9b93a094446be09c"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S , typename VBOClass , typename VBOElementClass &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a>&lt; S, VBOClass, VBOElementClass &gt;::initMain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aa2c551878717296f2db888c2fba27aea"></a>
 <div class="memitem">
 <div class="memproto">
@@ -410,6 +435,46 @@ template&lt;typename S , typename VBOClass , typename VBOElementClass &gt; </div
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="aaf2465b3f240d579c895abdc62c3303a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S , typename VBOClass , typename VBOElementClass &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a>&lt; S, VBOClass, VBOElementClass &gt;::initReady </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; unsigned int &gt; &amp;&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLenum&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -484,6 +549,28 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="a80986d6e5fb69b71d5daa1abd80f6d69"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S, typename VBOClass, typename VBOElementClass&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;unsigned int&gt; <a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a>&lt; S, VBOClass, VBOElementClass &gt;::elementData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a9620f450fcf92c069e0d033db67a1007"></a>
 <div class="memitem">
 <div class="memproto">
@@ -517,6 +604,28 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">VBOClass <a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a>&lt; S, VBOClass, VBOElementClass &gt;::positionColor</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6d48e0039e3165c91cde22ee49e173c4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S, typename VBOClass, typename VBOElementClass&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;float&gt; <a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a>&lt; S, VBOClass, VBOElementClass &gt;::positionColorData</td>
         </tr>
       </table>
   </td>
@@ -581,7 +690,7 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classVAOPositionColorBase.html">VAOPositionColorBase</a></li>
-    <li class="footer">Generated on Sat Aug 27 2016 23:52:59 for ATFViewer by
+    <li class="footer">Generated on Sun Aug 28 2016 01:24:15 for ATFViewer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
