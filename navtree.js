@@ -32,7 +32,7 @@ var NAVTREEINDEX =
 "ATFViewerMainGLSL_8cpp.html",
 "classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0",
 "classTexture2D.html#aaeda5161b4c88019a3717b5b32d843f9",
-"globals_type.html"
+"globals_defs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

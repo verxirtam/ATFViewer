@@ -10,5 +10,6 @@ var searchData=
   ['position',['position',['../structSectorsVAO_1_1InitSectorsSettings.html#a48d14af6f4065309c537a420daebee62',1,'SectorsVAO::InitSectorsSettings']]],
   ['positioncolor',['positionColor',['../classVAOPositionColorBase.html#a94494fbc891ea85fed1cf4fc1aef8e9d',1,'VAOPositionColorBase']]],
   ['positioncolordata',['positionColorData',['../classVAOPositionColorBase.html#a6d48e0039e3165c91cde22ee49e173c4',1,'VAOPositionColorBase']]],
-  ['positiontexture',['positionTexture',['../classVAOPositionTexture.html#adba4c156247afdcd92a93432e7e13321',1,'VAOPositionTexture']]]
+  ['positiontexture',['positionTexture',['../classVAOPositionTexture.html#adba4c156247afdcd92a93432e7e13321',1,'VAOPositionTexture']]],
+  ['positiontexturedata',['positionTextureData',['../classVAOPositionTexture.html#ad4f9cde509f3b75785d2054432d639cf',1,'VAOPositionTexture']]]
 ];
