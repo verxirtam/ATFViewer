@@ -174,6 +174,7 @@ public:
 		//ウィンドウの生成
 		glutCreateWindow("ATFViewer");
 		
+		//GLEWの初期化
 		GLenum err;
 		err = glewInit();
 		if(err != GLEW_OK)

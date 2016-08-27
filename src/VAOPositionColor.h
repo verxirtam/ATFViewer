@@ -120,6 +120,7 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
 		GLenum m
 	)
 {
+	//ベースクラスの初期化
 	base.init();
 	
 	//引数をバッファに格納
