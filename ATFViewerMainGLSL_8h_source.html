@@ -280,28 +280,28 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="comment">//ウィンドウの生成</span></div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        glutCreateWindow(<span class="stringliteral">&quot;ATFViewer&quot;</span>);</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        GLenum err;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        err = glewInit();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">if</span>(err != GLEW_OK)</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        {</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glewInit().&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        }</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="comment">//デプスバッファを使用する</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        glEnable(GL_DEPTH_TEST);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        </div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">//コールバック関数の設定</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        this-&gt;<a class="code" href="classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f">initCallbacks</a>();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        <span class="comment">//シーンの初期化</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        this-&gt;<a class="code" href="classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3">initScene</a>();</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">  193</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">execMainLoop</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        glutMainLoop();</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    }</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="comment">//GLEWの初期化</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        GLenum err;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        err = glewInit();</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">if</span>(err != GLEW_OK)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glewInit().&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="comment">//デプスバッファを使用する</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        </div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="comment">//コールバック関数の設定</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        this-&gt;<a class="code" href="classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f">initCallbacks</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        <span class="comment">//シーンの初期化</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        this-&gt;<a class="code" href="classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3">initScene</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="line"><a name="l00194"></a><span class="lineno"><a class="line" href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">  194</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">execMainLoop</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        glutMainLoop();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;};</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
@@ -310,6 +310,7 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a722637249497211c1a48d45067f3bb59"><div class="ttname"><a href="classATFViewerMainGLSL.html#a722637249497211c1a48d45067f3bb59">ATFViewerMainGLSL::_display</a></div><div class="ttdeci">static void _display(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:105</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a087fb9110590f976c63b29bffa7b611f"><div class="ttname"><a href="classATFViewerMainGLSL.html#a087fb9110590f976c63b29bffa7b611f">ATFViewerMainGLSL::pollingInterval</a></div><div class="ttdeci">const unsigned int pollingInterval</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:46</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_acb9d1bf8ffdf253a78af821531cdea44"><div class="ttname"><a href="classATFViewerMainGLSL.html#acb9d1bf8ffdf253a78af821531cdea44">ATFViewerMainGLSL::camera_theta</a></div><div class="ttdeci">GLdouble camera_theta</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:52</div></div>
@@ -323,10 +324,10 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div class="ttc" id="classATFViewerMainGLSL_html_a320a489bf6bd216b7e9bcf84f01fda86"><div class="ttname"><a href="classATFViewerMainGLSL.html#a320a489bf6bd216b7e9bcf84f01fda86">ATFViewerMainGLSL::map</a></div><div class="ttdeci">MapVAO map</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:62</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a46e904f904e03ecb3800a6ffdf3cf535"><div class="ttname"><a href="classATFViewerMainGLSL.html#a46e904f904e03ecb3800a6ffdf3cf535">ATFViewerMainGLSL::_keyboard</a></div><div class="ttdeci">static void _keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:115</div></div>
 <div class="ttc" id="Joystick_8h_html"><div class="ttname"><a href="Joystick_8h.html">Joystick.h</a></div></div>
-<div class="ttc" id="classATFViewerMainGLSL_html_aa5b3f1b6fd3782099ddaf5f391b66904"><div class="ttname"><a href="classATFViewerMainGLSL.html#aa5b3f1b6fd3782099ddaf5f391b66904">ATFViewerMainGLSL::joystickTimer</a></div><div class="ttdeci">void joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:176</div></div>
+<div class="ttc" id="classATFViewerMainGLSL_html_aa5b3f1b6fd3782099ddaf5f391b66904"><div class="ttname"><a href="classATFViewerMainGLSL.html#aa5b3f1b6fd3782099ddaf5f391b66904">ATFViewerMainGLSL::joystickTimer</a></div><div class="ttdeci">void joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:184</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a7df57b2d9af43e912c423162a83a1760"><div class="ttname"><a href="classATFViewerMainGLSL.html#a7df57b2d9af43e912c423162a83a1760">ATFViewerMainGLSL::map2</a></div><div class="ttdeci">MapVAO map2</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:63</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a3a6112dff90609ec4e2e751f4257a655"><div class="ttname"><a href="classATFViewerMainGLSL.html#a3a6112dff90609ec4e2e751f4257a655">ATFViewerMainGLSL::windowHeight</a></div><div class="ttdeci">int windowHeight</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:45</div></div>
-<div class="ttc" id="classATFViewerMainGLSL_html_a57da7e2b9062792b8f67fe66f555efb4"><div class="ttname"><a href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">ATFViewerMainGLSL::execMainLoop</a></div><div class="ttdeci">void execMainLoop(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:193</div></div>
+<div class="ttc" id="classATFViewerMainGLSL_html_a57da7e2b9062792b8f67fe66f555efb4"><div class="ttname"><a href="classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4">ATFViewerMainGLSL::execMainLoop</a></div><div class="ttdeci">void execMainLoop(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:194</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a562a2fec7f001239285c239bc2600680"><div class="ttname"><a href="classATFViewerMainGLSL.html#a562a2fec7f001239285c239bc2600680">ATFViewerMainGLSL::operator=</a></div><div class="ttdeci">ATFViewerMainGLSL &amp; operator=(const ATFViewerMainGLSL &amp;a)</div></div>
 <div class="ttc" id="classTextureShaderProgram_html"><div class="ttname"><a href="classTextureShaderProgram.html">TextureShaderProgram</a></div><div class="ttdef"><b>Definition:</b> TextureShaderProgram.h:26</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a36e75bc6a338356b9613724009abb0a3"><div class="ttname"><a href="classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3">ATFViewerMainGLSL::initScene</a></div><div class="ttdeci">void initScene(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:23</div></div>
@@ -342,7 +343,7 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div class="ttc" id="classATFViewerMainGLSL_html_af7bb217d9a9bdfdfcaeda86c20cf69b6"><div class="ttname"><a href="classATFViewerMainGLSL.html#af7bb217d9a9bdfdfcaeda86c20cf69b6">ATFViewerMainGLSL::camera_target</a></div><div class="ttdeci">GLdouble camera_target[3]</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:54</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_ade969d0f06a7bbff1fa2b7021bef781a"><div class="ttname"><a href="classATFViewerMainGLSL.html#ade969d0f06a7bbff1fa2b7021bef781a">ATFViewerMainGLSL::path</a></div><div class="ttdeci">PathsVAO path</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:65</div></div>
 <div class="ttc" id="classJoystick_html"><div class="ttname"><a href="classJoystick.html">Joystick</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:52</div></div>
-<div class="ttc" id="classATFViewerMainGLSL_html_a6eee4b0a1c65d4671d6d213050bcb164"><div class="ttname"><a href="classATFViewerMainGLSL.html#a6eee4b0a1c65d4671d6d213050bcb164">ATFViewerMainGLSL::resize</a></div><div class="ttdeci">void resize(int w, int h)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:87</div></div>
+<div class="ttc" id="classATFViewerMainGLSL_html_a6eee4b0a1c65d4671d6d213050bcb164"><div class="ttname"><a href="classATFViewerMainGLSL.html#a6eee4b0a1c65d4671d6d213050bcb164">ATFViewerMainGLSL::resize</a></div><div class="ttdeci">void resize(int w, int h)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:95</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_adafd6ddb2c14961e9b17d8aab57a51bc"><div class="ttname"><a href="classATFViewerMainGLSL.html#adafd6ddb2c14961e9b17d8aab57a51bc">ATFViewerMainGLSL::joystickTimerId</a></div><div class="ttdeci">const int joystickTimerId</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:48</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a69d0f02c36e7e88118470724f9448f6a"><div class="ttname"><a href="classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a">ATFViewerMainGLSL::init</a></div><div class="ttdeci">void init(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:162</div></div>
 <div class="ttc" id="DBAccessor_8h_html"><div class="ttname"><a href="DBAccessor_8h.html">DBAccessor.h</a></div></div>
@@ -353,7 +354,7 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_af604774acb7603fb81ed028c58d4f19b"><div class="ttname"><a href="classATFViewerMainGLSL.html#af604774acb7603fb81ed028c58d4f19b">ATFViewerMainGLSL::PI</a></div><div class="ttdeci">const double PI</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:43</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_acde6e07d2a2742e78a9e41e0a0b27d95"><div class="ttname"><a href="classATFViewerMainGLSL.html#acde6e07d2a2742e78a9e41e0a0b27d95">ATFViewerMainGLSL::_joystickTimer</a></div><div class="ttdeci">static void _joystickTimer(int value)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:120</div></div>
-<div class="ttc" id="classATFViewerMainGLSL_html_ac496de134d382ae5bc17c95da6a7f249"><div class="ttname"><a href="classATFViewerMainGLSL.html#ac496de134d382ae5bc17c95da6a7f249">ATFViewerMainGLSL::keyboard</a></div><div class="ttdeci">void keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:97</div></div>
+<div class="ttc" id="classATFViewerMainGLSL_html_ac496de134d382ae5bc17c95da6a7f249"><div class="ttname"><a href="classATFViewerMainGLSL.html#ac496de134d382ae5bc17c95da6a7f249">ATFViewerMainGLSL::keyboard</a></div><div class="ttdeci">void keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.cpp:105</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_af6f049a640082feae20c2283b145f4a8"><div class="ttname"><a href="classATFViewerMainGLSL.html#af6f049a640082feae20c2283b145f4a8">ATFViewerMainGLSL::now</a></div><div class="ttdeci">time_t now</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:56</div></div>
 <div class="ttc" id="classATFViewerMainGLSL_html_a5a1b117e416efef43d4394c69a5004d6"><div class="ttname"><a href="classATFViewerMainGLSL.html#a5a1b117e416efef43d4394c69a5004d6">ATFViewerMainGLSL::mapTransform</a></div><div class="ttdeci">MapTransform mapTransform</div><div class="ttdef"><b>Definition:</b> ATFViewerMainGLSL.h:59</div></div>
 <div class="ttc" id="MapTransform_8h_html"><div class="ttname"><a href="MapTransform_8h.html">MapTransform.h</a></div></div>
@@ -371,7 +372,7 @@ $(document).ready(function(){initNavTree('ATFViewerMainGLSL_8h_source.html','');
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ATFViewerMainGLSL_8h.html">ATFViewerMainGLSL.h</a></li>
-    <li class="footer">Generated on Thu Aug 25 2016 00:43:14 for ATFViewer by
+    <li class="footer">Generated on Sat Aug 27 2016 23:52:18 for ATFViewer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

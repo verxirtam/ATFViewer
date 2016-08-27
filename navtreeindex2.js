@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"classTexture2D.html#a84210f27b55799a096b8abc36380a077":[0,0,36,1],
 "classTexture2D.html#aaeda5161b4c88019a3717b5b32d843f9":[0,0,36,3],
 "classTexture2D.html#ac21f1e200e9aa03d7371614e3026b079":[0,0,36,6],
 "classTexture2D.html#afddb3232f69f78c1860cd3fb212b40e4":[0,0,36,7],
@@ -56,8 +55,8 @@ var NAVTREEINDEX2 =
 "classUniformVariable.html":[0,0,42],
 "classUniformVariable.html#a09aee0411f8316a185f31d80561f35f3":[0,0,42,4],
 "classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0":[0,0,42,1],
-"classUniformVariable.html#a49fcad48f29dee49e6860e69585c9929":[0,0,42,2],
 "classUniformVariable.html#a49fcad48f29dee49e6860e69585c9929":[0,0,42,0],
+"classUniformVariable.html#a49fcad48f29dee49e6860e69585c9929":[0,0,42,2],
 "classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6":[0,0,42,3],
 "classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad":[0,0,42,5],
 "classUtil.html":[0,0,43],
@@ -169,8 +168,8 @@ var NAVTREEINDEX2 =
 "cudatestfunc_8h_source.html":[1,0,0,10],
 "dir_68267d1309a1af8e8297ef4c3efbcdba.html":[1,0,0],
 "files.html":[1,0],
-"functions.html":[0,2,0],
 "functions.html":[0,2,0,0],
+"functions.html":[0,2,0],
 "functions_a.html":[0,2,0,1],
 "functions_b.html":[0,2,0,2],
 "functions_c.html":[0,2,0,3],
@@ -218,8 +217,8 @@ var NAVTREEINDEX2 =
 "functions_type.html":[0,2,3],
 "functions_u.html":[0,2,0,20],
 "functions_v.html":[0,2,0,21],
-"functions_vars.html":[0,2,2,0],
 "functions_vars.html":[0,2,2],
+"functions_vars.html":[0,2,2,0],
 "functions_vars_b.html":[0,2,2,1],
 "functions_vars_c.html":[0,2,2,2],
 "functions_vars_d.html":[0,2,2,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX2 =
 "glunittest_8cpp.html":[1,0,0,16],
 "glunittest_8cpp.html#a840291bc02cba5474a4cb46a9b9566fe":[1,0,0,16,0],
 "index.html":[],
-"pages.html":[]
+"pages.html":[],
+"structEstimateSpecResult.html":[0,0,14]
 };

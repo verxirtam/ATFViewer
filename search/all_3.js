@@ -47,6 +47,6 @@ var searchData=
   ['cudatestfunctest',['cudatestfunctest',['../unittest_8cpp.html#a2d8662744453230ca13d0d0fe15a088f',1,'unittest.cpp']]],
   ['current',['current',['../classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5ba4c41bf2196765fbd58eb7aefd076c193',1,'TimeSeparation']]],
   ['currentindex',['currentIndex',['../classTimeSeparation.html#ac3871743288997dc6d67e533f43caf15',1,'TimeSeparation']]],
-  ['currentpaths',['currentPaths',['../classPaths.html#a80fe5288e26b74fe3a1568392d4828f0',1,'Paths::currentPaths()'],['../classPathsVAO.html#a743afb7e614e919570132ebf09aab618',1,'PathsVAO::currentPaths()']]],
+  ['currentpaths',['currentPaths',['../classPaths.html#a80fe5288e26b74fe3a1568392d4828f0',1,'Paths']]],
   ['currenttimeinterval',['currentTimeInterval',['../classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e',1,'ATFViewerMain::currentTimeInterval()'],['../classATFViewerMainGLSL.html#ae8ca6d01660bd6a97db130eeb4efbc13',1,'ATFViewerMainGLSL::currentTimeInterval()']]]
 ];

@@ -1,9 +1,13 @@
 var searchData=
 [
   ['v',['v',['../structMap_1_1MapVertex.html#ae66e809e409d0651aab70bd6217d88c9',1,'Map::MapVertex::v()'],['../structMapVAO_1_1MapVertex.html#a7fd41c17e630e4d6268e045f2cea08b5',1,'MapVAO::MapVertex::v()']]],
-  ['vao',['vao',['../classMapVAO.html#a555e725150a4f647cbe4828c9045da42',1,'MapVAO::vao()'],['../classPathsVAO.html#a67911c2c66a49fd3b7050a9974c7543f',1,'PathsVAO::vao()'],['../classSectorsVAO.html#ab4251a5614cb1ea2bee855d5abffbfba',1,'SectorsVAO::vao()'],['../classTestVBO.html#a0f595e8e0f3926bc530ef1a38f6021ef',1,'TestVBO::vao()']]],
+  ['vao',['vao',['../classMapVAO.html#a555e725150a4f647cbe4828c9045da42',1,'MapVAO::vao()'],['../classSectorsVAO.html#ab4251a5614cb1ea2bee855d5abffbfba',1,'SectorsVAO::vao()'],['../classTestVBO.html#a0f595e8e0f3926bc530ef1a38f6021ef',1,'TestVBO::vao()']]],
+  ['vao0',['vao0',['../classPathsVAO.html#ad5556236cd846b4dc609a8f782675e49',1,'PathsVAO']]],
+  ['vao1',['vao1',['../classPathsVAO.html#aa50e80f0e8f1737f19bae0273dcdcf8d',1,'PathsVAO']]],
   ['vaobase',['VAOBase',['../classVAOBase.html',1,'VAOBase'],['../classVAOBase.html#a39dffebf5293c232c64ecf9b0a075fe0',1,'VAOBase::VAOBase(const VAOBase &amp;v)=delete'],['../classVAOBase.html#aa01061a70c3dd4632f6b6bb7bb9210ef',1,'VAOBase::VAOBase(VAOBase &amp;&amp;v)=delete'],['../classVAOBase.html#a3fecd76b0e150bbbea66eea7b3129207',1,'VAOBase::VAOBase()']]],
   ['vaobase_2eh',['VAOBase.h',['../VAOBase_8h.html',1,'']]],
+  ['vaobuffer',['vaoBuffer',['../classPathsVAO.html#a6c5a505c6be2a5b9928a6d481f6a54c2',1,'PathsVAO']]],
+  ['vaocurrent',['vaoCurrent',['../classPathsVAO.html#a5ad508634ea02f7ae26b659b18693dc9',1,'PathsVAO']]],
   ['vaopositioncolor',['VAOPositionColor',['../VAOPositionColor_8h.html#ad116a122f70d46c7264d8d2311be2b93',1,'VAOPositionColor.h']]],
   ['vaopositioncolor_2eh',['VAOPositionColor.h',['../VAOPositionColor_8h.html',1,'']]],
   ['vaopositioncolorbase',['VAOPositionColorBase',['../classVAOPositionColorBase.html',1,'VAOPositionColorBase&lt; S, VBOClass, VBOElementClass &gt;'],['../classVAOPositionColorBase.html#adeb0bcaaad85ac49e4221cdbf407536e',1,'VAOPositionColorBase::VAOPositionColorBase()']]],
