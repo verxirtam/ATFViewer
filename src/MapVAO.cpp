@@ -126,9 +126,10 @@ void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting&
 
 void MapVAO::initVAO(InitMapSetting& ims)
 {
+	vaoType::inputType input;
 	
-	std::vector<float> p;
-	std::vector<float> t;
+	std::vector<float>& p = input.position;
+	std::vector<float>& t = input.texture;
 	
 	std::vector<unsigned int> e;
 	
@@ -171,7 +172,7 @@ void MapVAO::initVAO(InitMapSetting& ims)
 	//	std::cout << p[i] << "\t";
 	//}
 	
-	this->vao.init(p,t,e,GL_TRIANGLE_STRIP);
+	this->vao.init(input,e,GL_TRIANGLE_STRIP);
 }
 void MapVAO::display(void)
 {

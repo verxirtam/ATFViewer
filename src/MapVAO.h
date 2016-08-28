@@ -85,6 +85,8 @@ private:
 	std::string mapId;
 	Texture2D texture;
 	TextureShaderProgram::vaoType vao;
+	using vaoType = TextureShaderProgram::vaoType;
+	
 	void getSettings(DBAccessor& dba, std::string& map_id, InitMapSetting& ims);
 	void getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);
 	void getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);

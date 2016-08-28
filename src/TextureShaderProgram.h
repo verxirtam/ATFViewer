@@ -32,7 +32,7 @@ private:
 	UniformVariable<glm::mat4> mvpMatrix;
 	UniformVariable<int> textureSampler;
 public:
-	typedef VAOPositionTexture<TextureShaderProgram> vaoType;
+	using vaoType = VAOPositionTexture<TextureShaderProgram>;
 	TextureShaderProgram()
 		:
 			vertShader(GL_VERTEX_SHADER,  "texture.vert"),

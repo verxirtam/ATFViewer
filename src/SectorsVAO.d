@@ -16,4 +16,5 @@ SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  /usr/local/cuda-7.5/include/driver_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
- /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h VAOLayout.h
+ /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
+ VAOLayoutPositionColor.h
