@@ -19,5 +19,5 @@ ATFViewerMainGLSL.o: ATFViewerMainGLSL.cpp ATFViewerMainGLSL.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h Texture2D.h VAOBase.h \
  SectorsVAO.h GCS.h LongLat.h BasicShaderProgram.h VAOPositionColor.h \
- VAOLayout.h PathsVAO.h TrackDataManager.h Path.h TimeManager.h \
- TimeSeparation.h
+ VAOPositionBase.h VAOLayout.h PathsVAO.h TrackDataManager.h Path.h \
+ TimeManager.h TimeSeparation.h
