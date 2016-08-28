@@ -1,5 +1,5 @@
 <map id="src/PathsVAO.h" name="src/PathsVAO.h">
-<area shape="rect" id="node7" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="1869,387,1999,413"/>
+<area shape="rect" id="node7" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="1905,387,2035,413"/>
 <area shape="rect" id="node11" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="620,304,727,331"/>
 <area shape="rect" id="node15" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="351,229,495,256"/>
 <area shape="rect" id="node19" href="$Path_8h.html" title="Path.h" alt="" coords="230,304,289,331"/>
@@ -8,11 +8,11 @@
 <area shape="rect" id="node20" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="43,304,153,331"/>
 <area shape="rect" id="node23" href="$Shader_8h.html" title="Shader.h" alt="" coords="1060,229,1133,256"/>
 <area shape="rect" id="node25" href="$ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="1228,304,1351,331"/>
-<area shape="rect" id="node26" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="1853,304,1979,331"/>
-<area shape="rect" id="node27" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="1409,155,1548,181"/>
-<area shape="rect" id="node28" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="1492,229,1631,256"/>
-<area shape="rect" id="node29" href="$Lock_8h.html" title="Lock.h" alt="" coords="1733,387,1795,413"/>
+<area shape="rect" id="node26" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="1930,304,2056,331"/>
+<area shape="rect" id="node27" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="1429,155,1568,181"/>
+<area shape="rect" id="node28" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="1531,229,1669,256"/>
+<area shape="rect" id="node29" href="$Lock_8h.html" title="Lock.h" alt="" coords="1769,387,1831,413"/>
 <area shape="rect" id="node30" href="$VBO_8h.html" title="VBO.h" alt="" coords="1375,304,1436,331"/>
-<area shape="rect" id="node33" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="1636,304,1727,331"/>
-<area shape="rect" id="node34" href="$VAOLayout_8h.html" title="VAOLayout.h" alt="" coords="1511,304,1611,331"/>
+<area shape="rect" id="node33" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="1713,304,1804,331"/>
+<area shape="rect" id="node34" href="$VAOLayoutPositionColor_8h.html" title="VAOLayoutPositionColor.h" alt="" coords="1511,304,1689,331"/>
 </map>

@@ -1,4 +1,6 @@
 <map id="VAOPositionBase&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;" name="VAOPositionBase&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;">
-<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic \&gt;" alt="" coords="462,5,717,46"/>
-<area shape="rect" id="node3" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; BasicShader\lProgram \&gt;" alt="" coords="483,70,696,111"/>
+<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic \&gt;" alt="" coords="479,9,734,50"/>
+<area shape="rect" id="node3" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; Texture\lShaderProgram, VBOStatic,\l VBOElementStatic, VAOLayoutPosition\lTexture \&gt;" alt="" coords="477,74,736,145"/>
+<area shape="rect" id="node4" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; BasicShader\lProgram \&gt;" alt="" coords="500,169,713,210"/>
+<area shape="rect" id="node5" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOStatic, VBOElementStatic,\l VAOLayoutPositionTexture \&gt;" alt="" coords="501,233,712,289"/>
 </map>

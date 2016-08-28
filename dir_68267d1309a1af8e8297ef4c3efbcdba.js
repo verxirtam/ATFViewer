@@ -114,18 +114,22 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "VAOBase.h", "VAOBase_8h.html", [
       [ "VAOBase", "classVAOBase.html", "classVAOBase" ]
     ] ],
-    [ "VAOLayout.cpp", "VAOLayout_8cpp.html", null ],
-    [ "VAOLayout.h", "VAOLayout_8h.html", [
+    [ "VAOLayoutPositionColor.cpp", "VAOLayoutPositionColor_8cpp.html", null ],
+    [ "VAOLayoutPositionColor.h", "VAOLayoutPositionColor_8h.html", [
       [ "VAOLayoutPositionColor", "classVAOLayoutPositionColor.html", "classVAOLayoutPositionColor" ],
       [ "inputType1", "structVAOLayoutPositionColor_1_1inputType1.html", "structVAOLayoutPositionColor_1_1inputType1" ],
       [ "inputType2Vertex", "structVAOLayoutPositionColor_1_1inputType2Vertex.html", "structVAOLayoutPositionColor_1_1inputType2Vertex" ]
+    ] ],
+    [ "VAOLayoutPositionTexture.cpp", "VAOLayoutPositionTexture_8cpp.html", null ],
+    [ "VAOLayoutPositionTexture.h", "VAOLayoutPositionTexture_8h.html", [
+      [ "VAOLayoutPositionTexture", "classVAOLayoutPositionTexture.html", "classVAOLayoutPositionTexture" ],
+      [ "inputType1", "structVAOLayoutPositionTexture_1_1inputType1.html", "structVAOLayoutPositionTexture_1_1inputType1" ],
+      [ "inputType2Vertex", "structVAOLayoutPositionTexture_1_1inputType2Vertex.html", "structVAOLayoutPositionTexture_1_1inputType2Vertex" ]
     ] ],
     [ "VAOPositionBase.h", "VAOPositionBase_8h.html", [
       [ "VAOPositionBase", "classVAOPositionBase.html", "classVAOPositionBase" ]
     ] ],
     [ "VAOPositionColor.h", "VAOPositionColor_8h.html", "VAOPositionColor_8h" ],
-    [ "VAOPositionTexture.h", "VAOPositionTexture_8h.html", [
-      [ "VAOPositionTexture", "classVAOPositionTexture.html", "classVAOPositionTexture" ]
-    ] ],
+    [ "VAOPositionTexture.h", "VAOPositionTexture_8h.html", "VAOPositionTexture_8h" ],
     [ "VBO.h", "VBO_8h.html", "VBO_8h" ]
 ];

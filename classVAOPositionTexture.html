@@ -102,8 +102,9 @@ $(document).ready(function(){initNavTree('classVAOPositionTexture.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classVAOPositionTexture-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -124,9 +125,14 @@ Collaboration diagram for VAOPositionTexture&lt; S &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVAOPositionTexture__coll__graph.png" border="0" usemap="#VAOPositionTexture_3_01S_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="VAOPositionTexture_3_01S_01_4_coll__map" id="VAOPositionTexture_3_01S_01_4_coll__map">
-<area shape="rect" id="node2" href="classVAOBase.html" title="VAOBase" alt="" coords="5,187,84,213"/><area shape="rect" id="node3" href="classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="110,187,241,213"/><area shape="rect" id="node4" href="classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="62,96,236,123"/><area shape="rect" id="node5" href="classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="186,5,299,32"/><area shape="rect" id="node7" href="classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="261,96,389,123"/><area shape="rect" id="node6" href="classVBOStatic.html" title="VBOStatic" alt="" coords="266,187,349,213"/><area shape="rect" id="node9" href="classTexture2D.html" title="Texture2D" alt="" coords="476,187,557,213"/></map>
+<area shape="rect" id="node2" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOStatic, VBOElementStatic,\l VAOLayoutPositionTexture \&gt;" alt="" coords="1056,129,1267,185"/><area shape="rect" id="node3" href="classVAOBase.html" title="VAOBase" alt="" coords="315,140,395,167"/><area shape="rect" id="node11" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="584,291,795,347"/><area shape="rect" id="node4" href="classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="623,11,755,37"/><area shape="rect" id="node5" href="classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="267,11,442,37"/><area shape="rect" id="node6" href="classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,36,119,63"/><area shape="rect" id="node8" href="classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="290,61,419,88"/><area shape="rect" id="node7" href="classVBOStatic.html" title="VBOStatic" alt="" coords="647,61,731,88"/><area shape="rect" id="node9" href="classVAOLayoutPositionTexture.html" title="VAOLayoutPositionTexture" alt="" coords="599,175,779,201"/><area shape="rect" id="node15" href="classTexture2D.html" title="Texture2D" alt="" coords="1120,209,1203,236"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a7c155b09f2d39f4baaa3da0fd2efd345"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> = typename <a class="el" href="classVAOPositionBase.html#a481448e108c138d132da1c132f9d4bc5">baseType::inputType</a></td></tr>
+<tr class="separator:a7c155b09f2d39f4baaa3da0fd2efd345"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a87bfcb907873b3d89b61dfa6b8640f91"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a87bfcb907873b3d89b61dfa6b8640f91">VAOPositionTexture</a> (S &amp;s, <a class="el" href="classTexture2D.html">Texture2D</a> &amp;t)</td></tr>
@@ -137,41 +143,64 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a457e38f4077b91b652c18d7795ace904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1b695f23ee506eada6bf782df878d66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#ab1b695f23ee506eada6bf782df878d66">unbind</a> ()</td></tr>
 <tr class="separator:ab1b695f23ee506eada6bf782df878d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7286447c1d1447b53e009edce6b7e551"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a7286447c1d1447b53e009edce6b7e551">initReady</a> (const std::vector&lt; float &gt; &amp;p, const std::vector&lt; float &gt; &amp;c, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
-<tr class="separator:a7286447c1d1447b53e009edce6b7e551"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb1359afb34281db489ef70608e5f7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a5cb1359afb34281db489ef70608e5f7e">initReady</a> (const <a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> &amp;v, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
+<tr class="separator:a5cb1359afb34281db489ef70608e5f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a354d83956208df62f5119f65edc40af5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a354d83956208df62f5119f65edc40af5">initMain</a> ()</td></tr>
 <tr class="separator:a354d83956208df62f5119f65edc40af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a447f66536e9f12422a7d417a1cfe8738"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a447f66536e9f12422a7d417a1cfe8738">init</a> (const std::vector&lt; float &gt; &amp;p, const std::vector&lt; float &gt; &amp;c, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
-<tr class="separator:a447f66536e9f12422a7d417a1cfe8738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9466ad76dd8ea172ac5d8e5df1060cb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a9466ad76dd8ea172ac5d8e5df1060cb3">init</a> (const <a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> &amp;v, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</td></tr>
+<tr class="separator:a9466ad76dd8ea172ac5d8e5df1060cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3a9ecf952e6dedb9f34abf7677da453"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453">display</a> (void)</td></tr>
 <tr class="separator:ab3a9ecf952e6dedb9f34abf7677da453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
-Private Member Functions</h2></td></tr>
-<tr class="memitem:a28aaaf7bbf3edfde87dda9026597f120"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a28aaaf7bbf3edfde87dda9026597f120">initPositionTexture</a> (const std::vector&lt; float &gt; &amp;p, const std::vector&lt; float &gt; &amp;t)</td></tr>
-<tr class="separator:a28aaaf7bbf3edfde87dda9026597f120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:a77b1b540c6cf2907ea47d44042f62688"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a77b1b540c6cf2907ea47d44042f62688">baseType</a> = <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt; S, <a class="el" href="classVBOStatic.html">VBOStatic</a>, <a class="el" href="classVBOElementStatic.html">VBOElementStatic</a>, <a class="el" href="classVAOLayoutPositionTexture.html">VAOLayoutPositionTexture</a> &gt;</td></tr>
+<tr class="separator:a77b1b540c6cf2907ea47d44042f62688"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a01269b460634f565dfc067134b13f92e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVAOBase.html">VAOBase</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a01269b460634f565dfc067134b13f92e">base</a></td></tr>
-<tr class="separator:a01269b460634f565dfc067134b13f92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adba4c156247afdcd92a93432e7e13321"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVBOStatic.html">VBOStatic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#adba4c156247afdcd92a93432e7e13321">positionTexture</a></td></tr>
-<tr class="separator:adba4c156247afdcd92a93432e7e13321"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76b2220cb391990f0b912a44c33baa9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVBOElementStatic.html">VBOElementStatic</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a76b2220cb391990f0b912a44c33baa9c">element</a></td></tr>
-<tr class="separator:a76b2220cb391990f0b912a44c33baa9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4f9cde509f3b75785d2054432d639cf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#ad4f9cde509f3b75785d2054432d639cf">positionTextureData</a></td></tr>
-<tr class="separator:ad4f9cde509f3b75785d2054432d639cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b56fb1492f18288dd41e758bb7145f4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a9b56fb1492f18288dd41e758bb7145f4">elementData</a></td></tr>
-<tr class="separator:a9b56fb1492f18288dd41e758bb7145f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92cfb0e27555d9e61dfaacdf456299d4"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a92cfb0e27555d9e61dfaacdf456299d4">mode</a></td></tr>
-<tr class="separator:a92cfb0e27555d9e61dfaacdf456299d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d189bfc0a801119afe22f38abef42df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a9d189bfc0a801119afe22f38abef42df">vertexCount</a></td></tr>
-<tr class="separator:a9d189bfc0a801119afe22f38abef42df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a38db68dcb007723e4abf417582a4ecdf"><td class="memItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a38db68dcb007723e4abf417582a4ecdf">shaderProgram</a></td></tr>
-<tr class="separator:a38db68dcb007723e4abf417582a4ecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb16ef3069a89a55cefe8c8d5bb530b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classVAOPositionTexture.html#a77b1b540c6cf2907ea47d44042f62688">baseType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#abeb16ef3069a89a55cefe8c8d5bb530b">base</a></td></tr>
+<tr class="separator:abeb16ef3069a89a55cefe8c8d5bb530b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c0f8e21b02e150b03525a525c8adcc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classTexture2D.html">Texture2D</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionTexture.html#a5c0f8e21b02e150b03525a525c8adcc5">texture</a></td></tr>
 <tr class="separator:a5c0f8e21b02e150b03525a525c8adcc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="a77b1b540c6cf2907ea47d44042f62688"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::<a class="el" href="classVAOPositionTexture.html#a77b1b540c6cf2907ea47d44042f62688">baseType</a> =  <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt;S, <a class="el" href="classVBOStatic.html">VBOStatic</a>, <a class="el" href="classVBOElementStatic.html">VBOElementStatic</a>, <a class="el" href="classVAOLayoutPositionTexture.html">VAOLayoutPositionTexture</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a7c155b09f2d39f4baaa3da0fd2efd345"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::<a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> =  typename <a class="el" href="classVAOPositionBase.html#a481448e108c138d132da1c132f9d4bc5">baseType::inputType</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a87bfcb907873b3d89b61dfa6b8640f91"></a>
 <div class="memitem">
@@ -295,23 +324,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a447f66536e9f12422a7d417a1cfe8738"></a>
+<a class="anchor" id="a9466ad76dd8ea172ac5d8e5df1060cb3"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename S &gt; </div>
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::init </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramtype">const <a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -331,13 +357,18 @@ template&lt;typename S &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classVAOPositionTexture_a447f66536e9f12422a7d417a1cfe8738_icgraph.png" border="0" usemap="#classVAOPositionTexture_a447f66536e9f12422a7d417a1cfe8738_icgraph" alt=""/></div>
-<map name="classVAOPositionTexture_a447f66536e9f12422a7d417a1cfe8738_icgraph" id="classVAOPositionTexture_a447f66536e9f12422a7d417a1cfe8738_icgraph">
+<div class="center"><img src="classVAOPositionTexture_a9466ad76dd8ea172ac5d8e5df1060cb3_icgraph.png" border="0" usemap="#classVAOPositionTexture_a9466ad76dd8ea172ac5d8e5df1060cb3_icgraph" alt=""/></div>
+<map name="classVAOPositionTexture_a9466ad76dd8ea172ac5d8e5df1060cb3_icgraph" id="classVAOPositionTexture_a9466ad76dd8ea172ac5d8e5df1060cb3_icgraph">
 <area shape="rect" id="node2" href="classMapVAO.html#adc5caefb25c393c27b62cda53b3ce5bc" title="MapVAO::initVAO" alt="" coords="195,12,323,39"/><area shape="rect" id="node3" href="classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="371,12,471,39"/></map>
 </div>
 </p>
@@ -348,7 +379,10 @@ Here is the caller graph for this function:</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename S &gt; </div>
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::initMain </td>
@@ -357,63 +391,29 @@ template&lt;typename S &gt; </div>
           <td></td>
         </tr>
       </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a28aaaf7bbf3edfde87dda9026597f120"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::initPositionTexture </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a class="anchor" id="a7286447c1d1447b53e009edce6b7e551"></a>
+<a class="anchor" id="a5cb1359afb34281db489ef70608e5f7e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename S &gt; </div>
+template&lt;typename S&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::initReady </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>p</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
-          <td class="paramname"><em>c</em>, </td>
+          <td class="paramtype">const <a class="el" href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">inputType</a> &amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -433,6 +433,11 @@ template&lt;typename S &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
@@ -463,7 +468,7 @@ template&lt;typename S&gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a01269b460634f565dfc067134b13f92e"></a>
+<a class="anchor" id="abeb16ef3069a89a55cefe8c8d5bb530b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -473,139 +478,7 @@ template&lt;typename S&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classVAOBase.html">VAOBase</a> <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::base</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a76b2220cb391990f0b912a44c33baa9c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVBOElementStatic.html">VBOElementStatic</a> <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::element</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a9b56fb1492f18288dd41e758bb7145f4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;unsigned int&gt; <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::elementData</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a92cfb0e27555d9e61dfaacdf456299d4"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">GLenum <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::mode</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="adba4c156247afdcd92a93432e7e13321"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classVBOStatic.html">VBOStatic</a> <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::positionTexture</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="ad4f9cde509f3b75785d2054432d639cf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;float&gt; <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::positionTextureData</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a38db68dcb007723e4abf417582a4ecdf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">S&amp; <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::shaderProgram</td>
+          <td class="memname"><a class="el" href="classVAOPositionTexture.html#a77b1b540c6cf2907ea47d44042f62688">baseType</a> <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::base</td>
         </tr>
       </table>
   </td>
@@ -639,28 +512,6 @@ template&lt;typename S&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9d189bfc0a801119afe22f38abef42df"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a>&lt; S &gt;::vertexCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="VAOPositionTexture_8h_source.html">VAOPositionTexture.h</a></li>
 </ul>
@@ -670,7 +521,7 @@ template&lt;typename S&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classVAOPositionTexture.html">VAOPositionTexture</a></li>
-    <li class="footer">Generated on Sun Aug 28 2016 23:37:50 for ATFViewer by
+    <li class="footer">Generated on Mon Aug 29 2016 00:51:31 for ATFViewer by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

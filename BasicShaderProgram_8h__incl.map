@@ -2,11 +2,11 @@
 <area shape="rect" id="node2" href="$Shader_8h.html" title="Shader.h" alt="" coords="159,312,232,339"/>
 <area shape="rect" id="node9" href="$ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="257,312,380,339"/>
 <area shape="rect" id="node10" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="1210,312,1336,339"/>
-<area shape="rect" id="node13" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="680,80,819,107"/>
-<area shape="rect" id="node14" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="741,155,880,181"/>
+<area shape="rect" id="node13" href="$VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="623,80,761,107"/>
+<area shape="rect" id="node14" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="681,155,820,181"/>
 <area shape="rect" id="node15" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="1055,312,1184,339"/>
 <area shape="rect" id="node17" href="$Lock_8h.html" title="Lock.h" alt="" coords="404,312,465,339"/>
-<area shape="rect" id="node18" href="$VBO_8h.html" title="VBO.h" alt="" coords="780,229,841,256"/>
-<area shape="rect" id="node22" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="615,229,705,256"/>
-<area shape="rect" id="node23" href="$VAOLayout_8h.html" title="VAOLayout.h" alt="" coords="875,229,975,256"/>
+<area shape="rect" id="node18" href="$VBO_8h.html" title="VBO.h" alt="" coords="720,229,781,256"/>
+<area shape="rect" id="node22" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="555,229,645,256"/>
+<area shape="rect" id="node23" href="$VAOLayoutPositionColor_8h.html" title="VAOLayoutPositionColor.h" alt="" coords="805,229,984,256"/>
 </map>

@@ -3,6 +3,7 @@ var classMapVAO =
     [ "InitMapSetting", "structMapVAO_1_1InitMapSetting.html", "structMapVAO_1_1InitMapSetting" ],
     [ "MapVertex", "structMapVAO_1_1MapVertex.html", "structMapVAO_1_1MapVertex" ],
     [ "MapVertexIndex", "structMapVAO_1_1MapVertexIndex.html", "structMapVAO_1_1MapVertexIndex" ],
+    [ "vaoType", "classMapVAO.html#a1facf3fcd77a5d63250e22d9330a99e7", null ],
     [ "MapVAO", "classMapVAO.html#a74dd825c91fbe734d5290f90b66a9b62", null ],
     [ "display", "classMapVAO.html#a87bc947b3d3c08e961891077cc33cf2d", null ],
     [ "getSettings", "classMapVAO.html#ac234ab5128055905b778458e8504ab28", null ],

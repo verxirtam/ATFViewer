@@ -1,10 +1,10 @@
 <map id="SectorsVAO" name="SectorsVAO">
-<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; BasicShader\lProgram \&gt;" alt="" coords="989,163,1203,205"/>
-<area shape="rect" id="node4" href="$classVAOBase.html" title="VAOBase" alt="" coords="323,76,403,103"/>
-<area shape="rect" id="node12" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="579,121,789,177"/>
-<area shape="rect" id="node5" href="$classBasicShaderProgram.html" title="BasicShaderProgram" alt="" coords="611,201,757,228"/>
-<area shape="rect" id="node6" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="307,141,419,168"/>
-<area shape="rect" id="node7" href="$classShader.html" title="Shader" alt="" coords="331,201,394,228"/>
-<area shape="rect" id="node8" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="289,253,437,294"/>
-<area shape="rect" id="node9" href="$classUniformVariable.html" title="UniformVariable\&lt; T \&gt;" alt="" coords="5,260,152,287"/>
+<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; BasicShader\lProgram \&gt;" alt="" coords="989,189,1203,230"/>
+<area shape="rect" id="node12" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="579,133,789,189"/>
+<area shape="rect" id="node4" href="$classVAOBase.html" title="VAOBase" alt="" coords="323,67,403,93"/>
+<area shape="rect" id="node5" href="$classBasicShaderProgram.html" title="BasicShaderProgram" alt="" coords="611,383,757,409"/>
+<area shape="rect" id="node6" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="307,340,419,367"/>
+<area shape="rect" id="node7" href="$classShader.html" title="Shader" alt="" coords="331,400,394,427"/>
+<area shape="rect" id="node8" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="289,451,437,493"/>
+<area shape="rect" id="node9" href="$classUniformVariable.html" title="UniformVariable\&lt; T \&gt;" alt="" coords="5,459,152,485"/>
 </map>

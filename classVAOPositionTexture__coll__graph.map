@@ -1,9 +1,12 @@
 <map id="VAOPositionTexture&lt; S &gt;" name="VAOPositionTexture&lt; S &gt;">
-<area shape="rect" id="node2" href="$classVAOBase.html" title="VAOBase" alt="" coords="5,187,84,213"/>
-<area shape="rect" id="node3" href="$classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="110,187,241,213"/>
-<area shape="rect" id="node4" href="$classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="62,96,236,123"/>
-<area shape="rect" id="node5" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="186,5,299,32"/>
-<area shape="rect" id="node7" href="$classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="261,96,389,123"/>
-<area shape="rect" id="node6" href="$classVBOStatic.html" title="VBOStatic" alt="" coords="266,187,349,213"/>
-<area shape="rect" id="node9" href="$classTexture2D.html" title="Texture2D" alt="" coords="476,187,557,213"/>
+<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOStatic, VBOElementStatic,\l VAOLayoutPositionTexture \&gt;" alt="" coords="1056,129,1267,185"/>
+<area shape="rect" id="node3" href="$classVAOBase.html" title="VAOBase" alt="" coords="315,140,395,167"/>
+<area shape="rect" id="node11" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="584,291,795,347"/>
+<area shape="rect" id="node4" href="$classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="623,11,755,37"/>
+<area shape="rect" id="node5" href="$classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="267,11,442,37"/>
+<area shape="rect" id="node6" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,36,119,63"/>
+<area shape="rect" id="node8" href="$classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="290,61,419,88"/>
+<area shape="rect" id="node7" href="$classVBOStatic.html" title="VBOStatic" alt="" coords="647,61,731,88"/>
+<area shape="rect" id="node9" href="$classVAOLayoutPositionTexture.html" title="VAOLayoutPositionTexture" alt="" coords="599,175,779,201"/>
+<area shape="rect" id="node15" href="$classTexture2D.html" title="Texture2D" alt="" coords="1120,209,1203,236"/>
 </map>
