@@ -17,4 +17,4 @@ TextureShaderProgram.o: TextureShaderProgram.cpp TextureShaderProgram.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionColor.h VAOLayoutPositionTexture.h
+ VAOLayoutPositionTexture.h

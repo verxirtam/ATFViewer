@@ -1,8 +1,8 @@
 PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h DBAccessor.h \
  TrackDataManager.h Path.h TimeManager.h TimeSeparation.h \
  BasicShaderProgram.h Shader.h ShaderProgram.h UniformVariable.h \
- VAOPositionColor.h VAOPositionBase.h Lock.h VBO.h \
- /usr/local/cuda-7.5/include/cuda_runtime.h \
+ VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBase.h Lock.h \
+ VBO.h /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
  /usr/local/cuda-7.5/include/builtin_types.h \
  /usr/local/cuda-7.5/include/device_types.h \
@@ -18,4 +18,4 @@ PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h DBAccessor.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionColor.h
+ VAOPositionBaseDynamic.h VAOLayoutPositionColor.h

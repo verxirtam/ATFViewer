@@ -162,8 +162,8 @@ VAOLayoutPositionColor	VAOLayoutPositionColor.h	/^class VAOLayoutPositionColor$/
 VAOLayoutPositionTexture	VAOLayoutPositionTexture.h	/^class VAOLayoutPositionTexture$/;"	c
 VAOPositionBase	VAOPositionBase.h	/^	VAOPositionBase(S& s)$/;"	f	class:VAOPositionBase
 VAOPositionBase	VAOPositionBase.h	/^class VAOPositionBase$/;"	c
-VAOPositionColorDynamic	VAOPositionColor.h	/^	VAOPositionColorDynamic(S& s):base(s)$/;"	f	class:VAOPositionColorDynamic
-VAOPositionColorDynamic	VAOPositionColor.h	/^class VAOPositionColorDynamic$/;"	c
+VAOPositionBaseDynamic	VAOPositionBaseDynamic.h	/^	VAOPositionBaseDynamic(S& s):base(s)$/;"	f	class:VAOPositionBaseDynamic
+VAOPositionBaseDynamic	VAOPositionBaseDynamic.h	/^class VAOPositionBaseDynamic$/;"	c
 VAOPositionTexture	VAOPositionTexture.h	/^	VAOPositionTexture(S& s, Texture2D& t):$/;"	f	class:VAOPositionTexture
 VAOPositionTexture	VAOPositionTexture.h	/^class VAOPositionTexture$/;"	c
 VBOBase	VBO.h	/^	VBOBase(GLenum t, GLenum u):handle(0),type(t),usage(u)$/;"	f	class:VBOBase
@@ -308,7 +308,7 @@ begin	DBAccessor.h	/^	void begin()$/;"	f	class:DBAccessor
 bind	Texture2D.h	/^	void bind()$/;"	f	class:Texture2D
 bind	VAOBase.h	/^	void bind()$/;"	f	class:VAOBase
 bind	VAOPositionBase.h	/^	void bind()$/;"	f	class:VAOPositionBase
-bind	VAOPositionColor.h	/^	void bind()$/;"	f	class:VAOPositionColorDynamic
+bind	VAOPositionBaseDynamic.h	/^	void bind()$/;"	f	class:VAOPositionBaseDynamic
 bind	VAOPositionTexture.h	/^	void bind()$/;"	f	class:VAOPositionTexture
 bind	VBO.h	/^	void bind()$/;"	f	class:VBOBase
 bind	VBO.h	/^	void bind()$/;"	f	class:VBODynamicBase
@@ -390,7 +390,7 @@ display	Sectors.cpp	/^void Sectors::display(void)$/;"	f	class:Sectors
 display	SectorsVAO.h	/^	void display()$/;"	f	class:SectorsVAO
 display	TestVBO.cpp	/^void TestVBO::display()$/;"	f	class:TestVBO
 display	VAOPositionBase.h	/^	void display(void)$/;"	f	class:VAOPositionBase
-display	VAOPositionColor.h	/^	void display()$/;"	f	class:VAOPositionColorDynamic
+display	VAOPositionBaseDynamic.h	/^	void display()$/;"	f	class:VAOPositionBaseDynamic
 display	VAOPositionTexture.h	/^	void display(void)$/;"	f	class:VAOPositionTexture
 displayAll	Sectors.h	/^	bool displayAll;$/;"	m	class:Sectors
 displayAll	SectorsVAO.h	/^	bool displayAll;$/;"	m	class:SectorsVAO
@@ -437,7 +437,7 @@ getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
 getCellIndexFromPoint	CountCrossing_cuda.h	/^void getCellIndexFromPoint$/;"	f
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
-getColorDevicePointer	VAOPositionColor.h	/^	float* getColorDevicePointer()$/;"	f	class:VAOPositionColorDynamic
+getColorDevicePointer	VAOPositionBaseDynamic.h	/^	float* getColorDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getColumn	TrackDataManager.h	/^	void getColumn(DBAccessor& dba, std::string& id, double& lo, double& la, int& a, long long& t, std::string& ar)$/;"	f	class:TrackDataManager
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
@@ -454,7 +454,7 @@ getDeviceAddress	CountCrossing_cuda.h	/^	T* getDeviceAddress()$/;"	f	class:Devic
 getDeviceAddress	CountCrossing_cuda.h	/^	T* getDeviceAddress()$/;"	f	class:DeviceSeqConst
 getDevicePointer	VBO.h	/^	ElementType* getDevicePointer()$/;"	f	class:VBODynamicBase
 getElement	VAOPositionBase.h	/^	VBOElementClass& getElement()$/;"	f	class:VAOPositionBase
-getElementDevicePointer	VAOPositionColor.h	/^	unsigned int* getElementDevicePointer()$/;"	f	class:VAOPositionColorDynamic
+getElementDevicePointer	VAOPositionBaseDynamic.h	/^	unsigned int* getElementDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getEnd	CountCrossing.h	/^	time_t getEnd()$/;"	f	class:CountCrossing
 getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
 getHandle	Shader.h	/^	GLuint getHandle() const$/;"	f	class:Shader
@@ -472,7 +472,7 @@ getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex()$/;"	f	class:TimeSep
 getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex(unsigned int i)$/;"	f	class:TimeSeparation
 getNowPoint	Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
 getNowPoint	PathsVAO.cpp	/^PathPoint PathsVAO::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:PathsVAO
-getPositionDevicePointer	VAOPositionColor.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionColorDynamic
+getPositionDevicePointer	VAOPositionBaseDynamic.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
 getSectors	SectorsVAO.cpp	/^void SectorsVAO::getSectors(DBAccessor& dba, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
@@ -496,7 +496,7 @@ getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"
 getVertex	MapVAO.cpp	/^void MapVAO::getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 getVertexCount	CountCrossing.h	/^	int getVertexCount()$/;"	f	class:CountCrossing
 getVertexCount	VAOPositionBase.h	/^	int getVertexCount()$/;"	f	class:VAOPositionBase
-getVertexCount	VAOPositionColor.h	/^	int getVertexCount()$/;"	f	class:VAOPositionColorDynamic
+getVertexCount	VAOPositionBaseDynamic.h	/^	int getVertexCount()$/;"	f	class:VAOPositionBaseDynamic
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 getVertexIndex	MapVAO.cpp	/^void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 handle	Shader.h	/^	GLuint handle;$/;"	m	class:Shader
@@ -539,7 +539,7 @@ init	Texture2D.cpp	/^void Texture2D::init(const std::string& filepath, int width
 init	TextureShaderProgram.cpp	/^void TextureShaderProgram::init(void)$/;"	f	class:TextureShaderProgram
 init	VAOBase.h	/^	void init()$/;"	f	class:VAOBase
 init	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::init$/;"	f	class:VAOPositionBase
-init	VAOPositionColor.h	/^	void init(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionColorDynamic
+init	VAOPositionBaseDynamic.h	/^	void init(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionBaseDynamic
 init	VAOPositionTexture.h	/^	void init$/;"	f	class:VAOPositionTexture
 init	VBO.h	/^	void init(const std::vector<ElementType>& v)$/;"	f	class:VBODynamicBase
 init	VBO.h	/^	void init(const std::vector<V>& v)$/;"	f	class:VBOBase
@@ -550,12 +550,12 @@ initData	VAOLayoutPaths.cpp	/^void VAOLayoutPaths::initData(const inputType& inp
 initData	VAOLayoutPositionColor.cpp	/^void VAOLayoutPositionColor::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPositionColor
 initData	VAOLayoutPositionTexture.cpp	/^void VAOLayoutPositionTexture::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPositionTexture
 initMain	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initMain()$/;"	f	class:VAOPositionBase
-initMain	VAOPositionColor.h	/^	void initMain()$/;"	f	class:VAOPositionColorDynamic
+initMain	VAOPositionBaseDynamic.h	/^	void initMain()$/;"	f	class:VAOPositionBaseDynamic
 initMain	VAOPositionTexture.h	/^	void initMain()$/;"	f	class:VAOPositionTexture
 initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:Paths
 initPathPoint	PathsVAO.cpp	/^void PathsVAO::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:PathsVAO
 initReady	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initReady$/;"	f	class:VAOPositionBase
-initReady	VAOPositionColor.h	/^	void initReady(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionColorDynamic
+initReady	VAOPositionBaseDynamic.h	/^	void initReady(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionBaseDynamic
 initReady	VAOPositionTexture.h	/^	void initReady$/;"	f	class:VAOPositionTexture
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::initScene(void)$/;"	f	class:ATFViewerMainGLSL
@@ -620,7 +620,7 @@ makePathsBuffer	Paths.cpp	/^void Paths::makePathsBuffer(std::vector<Path>& p, Ti
 makePathsBuffer	PathsVAO.cpp	/^void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)$/;"	f	class:PathsVAO
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 map	ATFViewerMainGLSL.h	/^	MapVAO map;$/;"	m	class:ATFViewerMainGLSL
-map	VAOPositionColor.h	/^	void map()$/;"	f	class:VAOPositionColorDynamic
+map	VAOPositionBaseDynamic.h	/^	void map()$/;"	f	class:VAOPositionBaseDynamic
 map	VBO.h	/^	void map()$/;"	f	class:VBODynamicBase
 map2	ATFViewerMainGLSL.h	/^	MapVAO map2;$/;"	m	class:ATFViewerMainGLSL
 mapId	Map.h	/^	std::string mapId;$/;"	m	class:Map
@@ -788,7 +788,7 @@ u	MapVAO.h	/^		float u;$/;"	m	struct:MapVAO::MapVertex
 unbind	Texture2D.h	/^	void unbind()$/;"	f	class:Texture2D
 unbind	VAOBase.h	/^	void unbind()$/;"	f	class:VAOBase
 unbind	VAOPositionBase.h	/^	void unbind()$/;"	f	class:VAOPositionBase
-unbind	VAOPositionColor.h	/^	void unbind()$/;"	f	class:VAOPositionColorDynamic
+unbind	VAOPositionBaseDynamic.h	/^	void unbind()$/;"	f	class:VAOPositionBaseDynamic
 unbind	VAOPositionTexture.h	/^	void unbind()$/;"	f	class:VAOPositionTexture
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOBase
 unbind	VBO.h	/^	void unbind()$/;"	f	class:VBODynamicBase
@@ -797,7 +797,7 @@ unbind	VBO.h	/^	void unbind()$/;"	f	class:VBOStatic
 unit	Texture2D.h	/^	const GLenum unit;$/;"	m	class:Texture2D
 unitProvidingService	Sectors.h	/^		std::string unitProvidingService;$/;"	m	struct:Sectors::Sector
 unitProvidingService	SectorsVAO.h	/^		std::string unitProvidingService;$/;"	m	struct:SectorsVAO::Sector
-unmap	VAOPositionColor.h	/^	void unmap()$/;"	f	class:VAOPositionColorDynamic
+unmap	VAOPositionBaseDynamic.h	/^	void unmap()$/;"	f	class:VAOPositionBaseDynamic
 unmap	VBO.h	/^	void unmap()$/;"	f	class:VBODynamicBase
 unuse	BasicShaderProgram.h	/^	void unuse()$/;"	f	class:BasicShaderProgram
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram

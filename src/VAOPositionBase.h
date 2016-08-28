@@ -25,7 +25,6 @@
 #include "Lock.h"
 #include "VBO.h"
 #include "VAOBase.h"
-#include "VAOLayoutPositionColor.h"
 
 
 
@@ -89,6 +88,10 @@ public:
 	int getVertexCount()
 	{
 		return vertexCount;
+	}
+	VBOClass& getVertex()
+	{
+		return vertex;
 	}
 	VBOElementClass& getElement()
 	{

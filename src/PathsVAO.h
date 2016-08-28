@@ -31,12 +31,13 @@
 #include "TrackDataManager.h"
 #include "Path.h"
 #include "TimeSeparation.h"
-#include "BasicShaderProgram.h"
+#include "ShaderProgramPaths.h"
+
 
 class PathsVAO
 {
 private:
-	using vaoType = BasicShaderProgram::vaoTypeDynamic;
+	using vaoType = ShaderProgramPaths::vaoTypeDynamic;
 	
 	TimeSeparation timeSeparation;
 	//std::vector<Path> paths;

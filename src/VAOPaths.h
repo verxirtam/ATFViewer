@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  VAOPositionColor.h
+ *       Filename:  VAOPaths.h
  *
  *    Description:  
  *
  *        Version:  1.0
- *        Created:  2016年07月31日 19時48分15秒
+ *        Created:  2016年08月29日 02時09分10秒
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,15 +16,11 @@
  * =====================================================================================
  */
 
-#pragma once
-
-#include "VAOPositionBaseStatic.h"
 #include "VAOPositionBaseDynamic.h"
-#include "VAOLayoutPositionColor.h"
+#include "VAOLayoutPaths.h"
+
 
 template <typename S>
-using VAOPositionColor = VAOPositionBaseStatic<S, VAOLayoutPositionColor>;
+using VAOPaths = VAOPositionBaseDynamic<S, VAOLayoutPaths>;
 
-template <typename S>
-using VAOPositionColorDynamic = VAOPositionBaseDynamic<S, VAOLayoutPositionColor>;
 

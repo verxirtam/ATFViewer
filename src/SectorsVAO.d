@@ -1,6 +1,7 @@
 SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  DBAccessor.h Util.h BasicShaderProgram.h Shader.h ShaderProgram.h \
- UniformVariable.h VAOPositionColor.h VAOPositionBase.h Lock.h VBO.h \
+ UniformVariable.h VAOPositionColor.h VAOPositionBaseStatic.h \
+ VAOPositionBase.h Lock.h VBO.h \
  /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
  /usr/local/cuda-7.5/include/builtin_types.h \
@@ -17,4 +18,4 @@ SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionColor.h
+ VAOPositionBaseDynamic.h VAOLayoutPositionColor.h

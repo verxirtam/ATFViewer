@@ -18,6 +18,8 @@ ATFViewerMainGLSL.o: ATFViewerMainGLSL.cpp ATFViewerMainGLSL.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionColor.h VAOLayoutPositionTexture.h SectorsVAO.h GCS.h \
- LongLat.h BasicShaderProgram.h VAOPositionColor.h PathsVAO.h \
- TrackDataManager.h Path.h TimeManager.h TimeSeparation.h
+ VAOLayoutPositionTexture.h SectorsVAO.h GCS.h LongLat.h \
+ BasicShaderProgram.h VAOPositionColor.h VAOPositionBaseStatic.h \
+ VAOPositionBaseDynamic.h VAOLayoutPositionColor.h PathsVAO.h \
+ TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
+ VAOLayoutPaths.h
