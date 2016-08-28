@@ -1,4 +1,4 @@
-<map id="VAOPositionColorBase&lt; S, VBOClass, VBOElementClass &gt;" name="VAOPositionColorBase&lt; S, VBOClass, VBOElementClass &gt;">
-<area shape="rect" id="node2" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; BasicShaderProgram \&gt;" alt="" coords="449,5,618,46"/>
-<area shape="rect" id="node3" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBODynamicBase,\l VBODynamicBase \&gt;" alt="" coords="451,69,616,125"/>
+<map id="VAOPositionColorBase&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;" name="VAOPositionColorBase&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;">
+<area shape="rect" id="node2" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; BasicShaderProgram \&gt;" alt="" coords="542,5,711,46"/>
+<area shape="rect" id="node3" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBODynamic, VBOElement\lDynamic, VAOLayoutPositionColor \&gt;" alt="" coords="507,69,746,125"/>
 </map>

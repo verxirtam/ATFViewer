@@ -114,6 +114,12 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "VAOBase.h", "VAOBase_8h.html", [
       [ "VAOBase", "classVAOBase.html", "classVAOBase" ]
     ] ],
+    [ "VAOLayout.cpp", "VAOLayout_8cpp.html", null ],
+    [ "VAOLayout.h", "VAOLayout_8h.html", [
+      [ "VAOLayoutPositionColor", "classVAOLayoutPositionColor.html", "classVAOLayoutPositionColor" ],
+      [ "inputType1", "structVAOLayoutPositionColor_1_1inputType1.html", "structVAOLayoutPositionColor_1_1inputType1" ],
+      [ "inputType2Vertex", "structVAOLayoutPositionColor_1_1inputType2Vertex.html", "structVAOLayoutPositionColor_1_1inputType2Vertex" ]
+    ] ],
     [ "VAOPositionColor.h", "VAOPositionColor_8h.html", "VAOPositionColor_8h" ],
     [ "VAOPositionTexture.h", "VAOPositionTexture_8h.html", [
       [ "VAOPositionTexture", "classVAOPositionTexture.html", "classVAOPositionTexture" ]

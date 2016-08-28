@@ -1,6 +1,6 @@
 <map id="SectorsVAO::initVAO" name="SectorsVAO::initVAO">
 <area shape="rect" id="node2" href="$classSectorsVAO.html#a3e0ffd3c743121abe61b603d1a16923d" title="SectorsVAO::initSector" alt="" coords="203,41,362,68"/>
-<area shape="rect" id="node6" href="$classVAOPositionColorBase.html#ae297cd3bdc89073a5fb8aca92ba650db" title="VAOPositionColorBase\l::init" alt="" coords="203,93,362,134"/>
+<area shape="rect" id="node6" href="$classVAOPositionColorBase.html#a369f1174683c56d278d60d79233fb1af" title="VAOPositionColorBase\l::init" alt="" coords="203,93,362,134"/>
 <area shape="rect" id="node3" href="$classSectorsVAO.html#ab386302dda5eaba7493888586c76e763" title="SectorsVAO::initSubSector" alt="" coords="411,41,592,68"/>
 <area shape="rect" id="node4" href="$classSectorsVAO.html#a12d8d37941b76d243c30da27aacb7728" title="SectorsVAO::addPositionColor\lIndex" alt="" coords="640,5,843,46"/>
 <area shape="rect" id="node5" href="$classSectorsVAO.html#a259cf9b2c0408a54833abcb4ef601332" title="SectorsVAO::setElement" alt="" coords="657,71,826,97"/>

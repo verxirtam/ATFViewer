@@ -1,9 +1,10 @@
 var searchData=
 [
   ['vaobase',['VAOBase',['../classVAOBase.html',1,'']]],
+  ['vaolayoutpositioncolor',['VAOLayoutPositionColor',['../classVAOLayoutPositionColor.html',1,'']]],
   ['vaopositioncolorbase',['VAOPositionColorBase',['../classVAOPositionColorBase.html',1,'']]],
   ['vaopositioncolorbase_3c_20basicshaderprogram_20_3e',['VAOPositionColorBase&lt; BasicShaderProgram &gt;',['../classVAOPositionColorBase.html',1,'']]],
-  ['vaopositioncolorbase_3c_20s_2c_20vbodynamicbase_2c_20vbodynamicbase_20_3e',['VAOPositionColorBase&lt; S, VBODynamicBase, VBODynamicBase &gt;',['../classVAOPositionColorBase.html',1,'']]],
+  ['vaopositioncolorbase_3c_20s_2c_20vbodynamic_2c_20vboelementdynamic_2c_20vaolayoutpositioncolor_20_3e',['VAOPositionColorBase&lt; S, VBODynamic, VBOElementDynamic, VAOLayoutPositionColor &gt;',['../classVAOPositionColorBase.html',1,'']]],
   ['vaopositioncolordynamic',['VAOPositionColorDynamic',['../classVAOPositionColorDynamic.html',1,'']]],
   ['vaopositiontexture',['VAOPositionTexture',['../classVAOPositionTexture.html',1,'']]],
   ['vaopositiontexture_3c_20textureshaderprogram_20_3e',['VAOPositionTexture&lt; TextureShaderProgram &gt;',['../classVAOPositionTexture.html',1,'']]],
