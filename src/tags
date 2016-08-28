@@ -157,6 +157,7 @@ UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
 Util	Util.h	/^class Util$/;"	c
 VAOBase	VAOBase.h	/^	VAOBase():handle(0)$/;"	f	class:VAOBase
 VAOBase	VAOBase.h	/^class VAOBase$/;"	c
+VAOLayoutPaths	VAOLayoutPaths.h	/^class VAOLayoutPaths$/;"	c
 VAOLayoutPositionColor	VAOLayoutPositionColor.h	/^class VAOLayoutPositionColor$/;"	c
 VAOLayoutPositionTexture	VAOLayoutPositionTexture.h	/^class VAOLayoutPositionTexture$/;"	c
 VAOPositionBase	VAOPositionBase.h	/^	VAOPositionBase(S& s)$/;"	f	class:VAOPositionBase
@@ -299,7 +300,6 @@ arrival	Path.h	/^	std::string arrival;$/;"	m	struct:PathPoint
 atomicFloatAdd	CountCrossing_cuda.h	/^inline void atomicFloatAdd(float *address, float val)$/;"	f
 attach	ShaderProgram.h	/^	void attach(const Shader& s)$/;"	f	class:ShaderProgram
 base	VAOPositionBase.h	/^	VAOBase base;$/;"	m	class:VAOPositionBase
-base	VAOPositionTexture.h	/^	VAOBase base;$/;"	m	class:VAOPositionTexture
 base	VBO.h	/^	VBOBase<ElementType> base;$/;"	m	class:VBODynamicBase
 base	VBO.h	/^	VBOBase<float> base;$/;"	m	class:VBOStatic
 base	VBO.h	/^	VBOBase<unsigned int> base;$/;"	m	class:VBOElementStatic
@@ -332,6 +332,8 @@ caption	SectorsVAO.h	/^		std::string caption;$/;"	m	struct:SectorsVAO::Sector
 centerOffsetLat	MapTransform.h	/^	double centerOffsetLat;$/;"	m	class:MapTransform
 centerOffsetLong	MapTransform.h	/^	double centerOffsetLong;$/;"	m	class:MapTransform
 color	SectorsVAO.h	/^		std::vector<glm::vec3> color;\/**< 頂点色*\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
+color	VAOLayoutPaths.h	/^		glm::vec4 color;$/;"	m	struct:VAOLayoutPaths::inputType2Vertex
+color	VAOLayoutPaths.h	/^		std::vector<float> color;$/;"	m	struct:VAOLayoutPaths::inputType1
 color	VAOLayoutPositionColor.h	/^		glm::vec3 color;$/;"	m	struct:VAOLayoutPositionColor::inputType2Vertex
 color	VAOLayoutPositionColor.h	/^		std::vector<float> color;$/;"	m	struct:VAOLayoutPositionColor::inputType1
 commit	DBAccessor.h	/^	void commit()$/;"	f	class:DBAccessor
@@ -408,11 +410,10 @@ drawTimeWidth	PathsVAO.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:PathsV
 dsc	CountCrossing_cuda.h	/^	DeviceSeqConst<T> dsc;$/;"	m	class:DeviceSeq
 element	SectorsVAO.h	/^		std::vector<unsigned int> element;\/**< インデックス配列  *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 element	VAOPositionBase.h	/^	VBOElementClass element;$/;"	m	class:VAOPositionBase
-element	VAOPositionTexture.h	/^	VBOElementStatic element;$/;"	m	class:VAOPositionTexture
 elementData	VAOPositionBase.h	/^	std::vector<unsigned int> elementData;$/;"	m	class:VAOPositionBase
-elementData	VAOPositionTexture.h	/^	std::vector<unsigned int> elementData;$/;"	m	class:VAOPositionTexture
+enableVertexAttribPointer	VAOLayoutPaths.cpp	/^void VAOLayoutPaths::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPaths
 enableVertexAttribPointer	VAOLayoutPositionColor.cpp	/^void VAOLayoutPositionColor::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPositionColor
-enableVertexAttribPointer	VAOLayoutPositionTexture.cpp	/^void VAOLayoutPositionColor::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPositionColor
+enableVertexAttribPointer	VAOLayoutPositionTexture.cpp	/^void VAOLayoutPositionTexture::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPositionTexture
 end	CountCrossing.h	/^	time_t end;$/;"	m	class:CountCrossing
 end	unittest.cpp	/^	void end()$/;"	f	class:Timer
 endTime	unittest.cpp	/^	double endTime;$/;"	m	class:Timer	file:
@@ -539,23 +540,23 @@ init	TextureShaderProgram.cpp	/^void TextureShaderProgram::init(void)$/;"	f	clas
 init	VAOBase.h	/^	void init()$/;"	f	class:VAOBase
 init	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::init$/;"	f	class:VAOPositionBase
 init	VAOPositionColor.h	/^	void init(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionColorDynamic
-init	VAOPositionTexture.h	/^void VAOPositionTexture<S>::init$/;"	f	class:VAOPositionTexture
+init	VAOPositionTexture.h	/^	void init$/;"	f	class:VAOPositionTexture
 init	VBO.h	/^	void init(const std::vector<ElementType>& v)$/;"	f	class:VBODynamicBase
 init	VBO.h	/^	void init(const std::vector<V>& v)$/;"	f	class:VBOBase
 init	VBO.h	/^	void init(const std::vector<float>& v)$/;"	f	class:VBOStatic
 init	VBO.h	/^	void init(const std::vector<unsigned int>& v)$/;"	f	class:VBOElementStatic
 initCallbacks	ATFViewerMainGLSL.h	/^	void initCallbacks()$/;"	f	class:ATFViewerMainGLSL
+initData	VAOLayoutPaths.cpp	/^void VAOLayoutPaths::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPaths
 initData	VAOLayoutPositionColor.cpp	/^void VAOLayoutPositionColor::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPositionColor
-initData	VAOLayoutPositionTexture.cpp	/^void VAOLayoutPositionColor::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPositionColor
+initData	VAOLayoutPositionTexture.cpp	/^void VAOLayoutPositionTexture::initData(const inputType& input, std::vector<float>& data)$/;"	f	class:VAOLayoutPositionTexture
 initMain	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initMain()$/;"	f	class:VAOPositionBase
 initMain	VAOPositionColor.h	/^	void initMain()$/;"	f	class:VAOPositionColorDynamic
-initMain	VAOPositionTexture.h	/^void VAOPositionTexture<S>::initMain()$/;"	f	class:VAOPositionTexture
+initMain	VAOPositionTexture.h	/^	void initMain()$/;"	f	class:VAOPositionTexture
 initPathPoint	Paths.cpp	/^void Paths::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:Paths
 initPathPoint	PathsVAO.cpp	/^void PathsVAO::initPathPoint(time_t time_min, time_t time_max)$/;"	f	class:PathsVAO
-initPositionTexture	VAOPositionTexture.h	/^void VAOPositionTexture<S>::initPositionTexture$/;"	f	class:VAOPositionTexture
 initReady	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initReady$/;"	f	class:VAOPositionBase
 initReady	VAOPositionColor.h	/^	void initReady(const inputType& v, const std::vector<unsigned int>& e, GLenum m)$/;"	f	class:VAOPositionColorDynamic
-initReady	VAOPositionTexture.h	/^void VAOPositionTexture<S>::initReady$/;"	f	class:VAOPositionTexture
+initReady	VAOPositionTexture.h	/^	void initReady$/;"	f	class:VAOPositionTexture
 initScene	ATFViewerMain.cpp	/^void ATFViewerMain::initScene(void)$/;"	f	class:ATFViewerMain
 initScene	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::initScene(void)$/;"	f	class:ATFViewerMainGLSL
 initSector	SectorsVAO.cpp	/^void SectorsVAO::initSector(Sector& sector, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
@@ -566,10 +567,14 @@ initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSep
 initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
 initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)$/;"	f	class:PathsVAO
 initVAO	SectorsVAO.cpp	/^void SectorsVAO::initVAO(InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
+inputType1	VAOLayoutPaths.h	/^		inputType1():position(),time(),color()$/;"	f	struct:VAOLayoutPaths::inputType1
+inputType1	VAOLayoutPaths.h	/^	struct inputType1$/;"	s	class:VAOLayoutPaths
 inputType1	VAOLayoutPositionColor.h	/^		inputType1():position(),color()$/;"	f	struct:VAOLayoutPositionColor::inputType1
 inputType1	VAOLayoutPositionColor.h	/^	struct inputType1$/;"	s	class:VAOLayoutPositionColor
 inputType1	VAOLayoutPositionTexture.h	/^		inputType1():position(),texture()$/;"	f	struct:VAOLayoutPositionTexture::inputType1
 inputType1	VAOLayoutPositionTexture.h	/^	struct inputType1$/;"	s	class:VAOLayoutPositionTexture
+inputType2Vertex	VAOLayoutPaths.h	/^		inputType2Vertex():position(),time(),color()$/;"	f	struct:VAOLayoutPaths::inputType2Vertex
+inputType2Vertex	VAOLayoutPaths.h	/^	struct inputType2Vertex$/;"	s	class:VAOLayoutPaths
 inputType2Vertex	VAOLayoutPositionColor.h	/^		inputType2Vertex():position(),color()$/;"	f	struct:VAOLayoutPositionColor::inputType2Vertex
 inputType2Vertex	VAOLayoutPositionColor.h	/^	struct inputType2Vertex$/;"	s	class:VAOLayoutPositionColor
 inputType2Vertex	VAOLayoutPositionTexture.h	/^		inputType2Vertex():position(),texture()$/;"	f	struct:VAOLayoutPositionTexture::inputType2Vertex
@@ -638,7 +643,6 @@ minimumAltitude	Sectors.h	/^		int minimumAltitude;$/;"	m	struct:Sectors::SubSect
 minimumAltitude	SectorsVAO.h	/^		int minimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 mktimeFromInt	CountCrossing.h	/^	time_t mktimeFromInt(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 mode	VAOPositionBase.h	/^	GLenum mode;$/;"	m	class:VAOPositionBase
-mode	VAOPositionTexture.h	/^	GLenum mode;$/;"	m	class:VAOPositionTexture
 mvpMatrix	BasicShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:BasicShaderProgram
 mvpMatrix	TextureShaderProgram.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:TextureShaderProgram
 myfunc	unittest.cpp	/^typedef void (*myfunc)(void);$/;"	t	file:
@@ -667,12 +671,12 @@ pathsBuffer	Paths.h	/^	std::vector<Path> pathsBuffer;$/;"	m	class:Paths
 pollingInterval	ATFViewerMain.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMain
 pollingInterval	ATFViewerMainGLSL.h	/^	const unsigned int pollingInterval;$/;"	m	class:ATFViewerMainGLSL
 position	SectorsVAO.h	/^		std::vector<glm::vec3> position;\/**< 位置 *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
+position	VAOLayoutPaths.h	/^		glm::vec3 position;$/;"	m	struct:VAOLayoutPaths::inputType2Vertex
+position	VAOLayoutPaths.h	/^		std::vector<float> position;$/;"	m	struct:VAOLayoutPaths::inputType1
 position	VAOLayoutPositionColor.h	/^		glm::vec3 position;$/;"	m	struct:VAOLayoutPositionColor::inputType2Vertex
 position	VAOLayoutPositionColor.h	/^		std::vector<float> position;$/;"	m	struct:VAOLayoutPositionColor::inputType1
 position	VAOLayoutPositionTexture.h	/^		glm::vec3 position;$/;"	m	struct:VAOLayoutPositionTexture::inputType2Vertex
 position	VAOLayoutPositionTexture.h	/^		std::vector<float> position;$/;"	m	struct:VAOLayoutPositionTexture::inputType1
-positionTexture	VAOPositionTexture.h	/^	VBOStatic positionTexture;$/;"	m	class:VAOPositionTexture
-positionTextureData	VAOPositionTexture.h	/^	std::vector<float> positionTextureData;$/;"	m	class:VAOPositionTexture
 readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
@@ -728,7 +732,6 @@ setTransform	MapTransform.h	/^	void setTransform(glm::mat4& m)$/;"	f	class:MapTr
 shaderProgram	BasicShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:BasicShaderProgram
 shaderProgram	TextureShaderProgram.h	/^	ShaderProgram shaderProgram;$/;"	m	class:TextureShaderProgram
 shaderProgram	VAOPositionBase.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionBase
-shaderProgram	VAOPositionTexture.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionTexture
 sourcePath	Shader.h	/^	std::string sourcePath;\/\/コンストラクタでコンパイルすればメンバとしては不要？$/;"	m	class:Shader
 start	CountCrossing.h	/^	time_t start;$/;"	m	class:CountCrossing
 start	unittest.cpp	/^	void start()$/;"	f	class:Timer
@@ -764,6 +767,8 @@ textureWidth	MapVAO.h	/^		int textureWidth;$/;"	m	struct:MapVAO::InitMapSetting
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread	file:
 thread	unittest.cpp	/^	pthread_t thread;$/;"	m	class:TestThread_MemFunc	file:
 time	Path.h	/^	time_t time;$/;"	m	struct:PathPoint
+time	VAOLayoutPaths.h	/^		float time;$/;"	m	struct:VAOLayoutPaths::inputType2Vertex
+time	VAOLayoutPaths.h	/^		std::vector<float> time;$/;"	m	struct:VAOLayoutPaths::inputType1
 time	unittest.cpp	/^	long long time;$/;"	m	struct:id_time	file:
 timeInterval	ATFViewerMain.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMain
 timeInterval	ATFViewerMainGLSL.h	/^	const int timeInterval;$/;"	m	class:ATFViewerMainGLSL
@@ -820,7 +825,6 @@ vaoBuffer	PathsVAO.h	/^	vaoType* vaoBuffer;$/;"	m	class:PathsVAO
 vaoCurrent	PathsVAO.h	/^	vaoType* vaoCurrent;$/;"	m	class:PathsVAO
 vaoLayout	VAOPositionBase.h	/^	VAOLayoutClass vaoLayout;$/;"	m	class:VAOPositionBase
 vaoType	BasicShaderProgram.h	/^	typedef VAOPositionColor<BasicShaderProgram> vaoType;$/;"	t	class:BasicShaderProgram
-vaoType	TextureShaderProgram.h	/^	typedef VAOPositionTexture<TextureShaderProgram> vaoType;$/;"	t	class:TextureShaderProgram
 vaoTypeDynamic	BasicShaderProgram.h	/^	typedef VAOPositionColorDynamic<BasicShaderProgram> vaoTypeDynamic;$/;"	t	class:BasicShaderProgram
 vbo	TestVBO.h	/^	GLuint vbo;$/;"	m	class:TestVBO
 vertShader	BasicShaderProgram.h	/^	Shader vertShader;$/;"	m	class:BasicShaderProgram
@@ -828,7 +832,6 @@ vertShader	TextureShaderProgram.h	/^	Shader vertShader;$/;"	m	class:TextureShade
 vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertex	VAOPositionBase.h	/^	VBOClass vertex;$/;"	m	class:VAOPositionBase
 vertexCount	VAOPositionBase.h	/^	int vertexCount;$/;"	m	class:VAOPositionBase
-vertexCount	VAOPositionTexture.h	/^	int vertexCount;$/;"	m	class:VAOPositionTexture
 vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	file:
 vertexData	VAOPositionBase.h	/^	std::vector<float> vertexData;$/;"	m	class:VAOPositionBase
 vertexIndex	Map.h	/^		int vertexIndex;$/;"	m	struct:Map::MapVertexIndex
