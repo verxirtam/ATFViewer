@@ -9,7 +9,7 @@ var searchData=
   ['_7etestvbo',['~TestVBO',['../classTestVBO.html#afa66d401c6f1bd76a5ed154751d703c1',1,'TestVBO']]],
   ['_7etexture2d',['~Texture2D',['../classTexture2D.html#a84210f27b55799a096b8abc36380a077',1,'Texture2D']]],
   ['_7evaobase',['~VAOBase',['../classVAOBase.html#a6d0bd290978a5cda52bb1eb71a7e5c3d',1,'VAOBase']]],
-  ['_7evaopositioncolorbase',['~VAOPositionColorBase',['../classVAOPositionColorBase.html#a03bad62f94a6067f4b4f35a0d5d8f5b6',1,'VAOPositionColorBase']]],
+  ['_7evaopositionbase',['~VAOPositionBase',['../classVAOPositionBase.html#a1376df06e6af250e548e775ce3ad7a6c',1,'VAOPositionBase']]],
   ['_7evaopositiontexture',['~VAOPositionTexture',['../classVAOPositionTexture.html#a916f06f20ca160f3024d8379e4b19311',1,'VAOPositionTexture']]],
   ['_7evbobase',['~VBOBase',['../classVBOBase.html#aa06d90a425ce8332b2949fb29f55735a',1,'VBOBase']]],
   ['_7evbodynamicbase',['~VBODynamicBase',['../classVBODynamicBase.html#a64fa101f493580684d82bcb3f47ff1b4',1,'VBODynamicBase']]]

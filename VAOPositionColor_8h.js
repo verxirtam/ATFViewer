@@ -1,6 +1,6 @@
 var VAOPositionColor_8h =
 [
-    [ "VAOPositionColorBase", "classVAOPositionColorBase.html", "classVAOPositionColorBase" ],
     [ "VAOPositionColorDynamic", "classVAOPositionColorDynamic.html", "classVAOPositionColorDynamic" ],
-    [ "VAOPositionColor", "VAOPositionColor_8h.html#af58e8bef5bafcc9a3c64e1687a7a193f", null ]
+    [ "VAOPositionColor", "VAOPositionColor_8h.html#ad116a122f70d46c7264d8d2311be2b93", null ],
+    [ "VAOPositionColorBase", "VAOPositionColor_8h.html#a69a6cf2482a950e0f244d97242f2a12c", null ]
 ];

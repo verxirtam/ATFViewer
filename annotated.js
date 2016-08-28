@@ -46,7 +46,7 @@ var annotated =
     [ "Util", "classUtil.html", null ],
     [ "VAOBase", "classVAOBase.html", "classVAOBase" ],
     [ "VAOLayoutPositionColor", "classVAOLayoutPositionColor.html", "classVAOLayoutPositionColor" ],
-    [ "VAOPositionColorBase", "classVAOPositionColorBase.html", "classVAOPositionColorBase" ],
+    [ "VAOPositionBase", "classVAOPositionBase.html", "classVAOPositionBase" ],
     [ "VAOPositionColorDynamic", "classVAOPositionColorDynamic.html", "classVAOPositionColorDynamic" ],
     [ "VAOPositionTexture", "classVAOPositionTexture.html", "classVAOPositionTexture" ],
     [ "VBOBase", "classVBOBase.html", "classVBOBase" ],

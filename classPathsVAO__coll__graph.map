@@ -1,11 +1,10 @@
 <map id="PathsVAO" name="PathsVAO">
-<area shape="rect" id="node2" href="$classVAOPositionColorDynamic.html" title="VAOPositionColorDynamic\&lt; S \&gt;" alt="" coords="1421,253,1635,280"/>
-<area shape="rect" id="node3" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBODynamic, VBOElement\lDynamic, VAOLayoutPositionColor \&gt;" alt="" coords="1099,239,1338,295"/>
-<area shape="rect" id="node4" href="$classVAOBase.html" title="VAOBase" alt="" coords="325,5,405,32"/>
-<area shape="rect" id="node10" href="$classVAOPositionColorBase.html" title="VAOPositionColorBase\l\&lt; S, VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="597,127,832,183"/>
-<area shape="rect" id="node5" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="615,315,815,357"/>
-<area shape="rect" id="node6" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,323,456,349"/>
-<area shape="rect" id="node7" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,323,119,349"/>
-<area shape="rect" id="node8" href="$classVAOLayoutPositionColor.html" title="VAOLayoutPositionColor" alt="" coords="631,381,798,408"/>
-<area shape="rect" id="node14" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="1471,304,1585,331"/>
+<area shape="rect" id="node2" href="$classVAOPositionColorDynamic.html" title="VAOPositionColorDynamic\&lt; S \&gt;" alt="" coords="1333,135,1547,161"/>
+<area shape="rect" id="node3" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic \&gt;" alt="" coords="995,127,1250,169"/>
+<area shape="rect" id="node5" href="$classVAOBase.html" title="VAOBase" alt="" coords="325,79,405,105"/>
+<area shape="rect" id="node10" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="539,120,749,176"/>
+<area shape="rect" id="node6" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="544,199,744,241"/>
+<area shape="rect" id="node7" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,207,456,233"/>
+<area shape="rect" id="node8" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,207,119,233"/>
+<area shape="rect" id="node11" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="1383,185,1497,212"/>
 </map>

@@ -8,8 +8,6 @@ var searchData=
   ['pi',['PI',['../classATFViewerMain.html#a0232a87f0a1245d43df2a0024f97df58',1,'ATFViewerMain::PI()'],['../classATFViewerMainGLSL.html#af604774acb7603fb81ed028c58d4f19b',1,'ATFViewerMainGLSL::PI()']]],
   ['pollinginterval',['pollingInterval',['../classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306',1,'ATFViewerMain::pollingInterval()'],['../classATFViewerMainGLSL.html#a087fb9110590f976c63b29bffa7b611f',1,'ATFViewerMainGLSL::pollingInterval()']]],
   ['position',['position',['../structSectorsVAO_1_1InitSectorsSettings.html#a48d14af6f4065309c537a420daebee62',1,'SectorsVAO::InitSectorsSettings::position()'],['../structVAOLayoutPositionColor_1_1inputType1.html#ac536e1f388d9407ebcf7f93819c17ebd',1,'VAOLayoutPositionColor::inputType1::position()'],['../structVAOLayoutPositionColor_1_1inputType2Vertex.html#acb6eff4e321beca06f5f3a76998e16d0',1,'VAOLayoutPositionColor::inputType2Vertex::position()']]],
-  ['positioncolor',['positionColor',['../classVAOPositionColorBase.html#a07891bf3e5ed3262ad686f18b2301dcb',1,'VAOPositionColorBase']]],
-  ['positioncolordata',['positionColorData',['../classVAOPositionColorBase.html#adf67ec59d4b43f0d5edf45e7967a2082',1,'VAOPositionColorBase']]],
   ['positiontexture',['positionTexture',['../classVAOPositionTexture.html#adba4c156247afdcd92a93432e7e13321',1,'VAOPositionTexture']]],
   ['positiontexturedata',['positionTextureData',['../classVAOPositionTexture.html#ad4f9cde509f3b75785d2054432d639cf',1,'VAOPositionTexture']]]
 ];
