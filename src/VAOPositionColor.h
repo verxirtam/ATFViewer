@@ -25,13 +25,14 @@
 #include "Lock.h"
 #include "VBO.h"
 #include "VAOBase.h"
+#include "VAOLayout.h"
 
-
-template <typename S, typename VBOClass, typename VBOElementClass>
+template <typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass>
 class VAOPositionColorBase
 {
 private:
 	VAOBase base;
+	VAOLayoutClass vaoLayout;
 	VBOClass positionColor;
 	VBOElementClass element;
 	std::vector<float> positionColorData;
@@ -39,11 +40,13 @@ private:
 	GLenum mode;
 	int vertexCount;
 	S& shaderProgram;
-	void initPositionColor(const std::vector<float>& p, const std::vector<float>& c);
 public:
+	using inputType = typename VAOLayoutClass::inputType;
+	
 	VAOPositionColorBase(S& s)
 		:
 			base(),
+			vaoLayout(),
 			positionColor(),
 			element(),
 			positionColorData(),
@@ -65,15 +68,15 @@ public:
 	{
 		base.unbind();
 	}
-	void initReady(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
+	void initReady(const inputType& input, const std::vector<unsigned int>& e, GLenum m);
 	void initMain();
-	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m);
+	void init(const inputType& input, const std::vector<unsigned int>& e, GLenum m);
 	void display(void)
 	{
 		//シェーダを使用開始
 		Use<S> s(shaderProgram);
 		//自身のVAOをバインド
-		Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
+		Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass, VAOLayoutClass> > b(*this);
 		//インデックス配列をバインド
 		Bind<VBOElementClass> be(element);
 		
@@ -91,42 +94,17 @@ public:
 };
 
 
-template <typename S, typename VBOClass, typename VBOElementClass>
-void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initPositionColor
-	(
-		const std::vector<float>& p,
-		const std::vector<float>& c
-	)
-{
-	//初期化用のvector
-	positionColorData.clear();
-	
-	//頂点数
-	unsigned int imax = std::min(p.size(), c.size()) / 3;
-	//初期化用のvectorに詰め替える
-	for(unsigned int i = 0; i < imax; i++)
-	{
-		unsigned int i3 = i * 3;
-		positionColorData.push_back(p[i3    ]);
-		positionColorData.push_back(p[i3 + 1]);
-		positionColorData.push_back(p[i3 + 2]);
-		positionColorData.push_back(c[i3    ]);
-		positionColorData.push_back(c[i3 + 1]);
-		positionColorData.push_back(c[i3 + 2]);
-	}
-}
 
-template <typename S, typename VBOClass, typename VBOElementClass>
-void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initReady
+template <typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initReady
 	(
-		const std::vector<float>& p,
-		const std::vector<float>& c,
+		const inputType& input,
 		const std::vector<unsigned int>& e,
 		GLenum m
 	)
 {
 	//引数をメンバ変数に格納
-	initPositionColor(p,c);
+	vaoLayout.initData(/*p,c*/input, positionColorData);
 	elementData = e;
 	
 	//modeの設定
@@ -137,20 +115,19 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initReady
 	
 }
 
-template <typename S, typename VBOClass, typename VBOElementClass>
-void VAOPositionColorBase<S, VBOClass, VBOElementClass>::init
+template <typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::init
 	(
-		const std::vector<float>& p,
-		const std::vector<float>& c,
+		const inputType& input,
 		const std::vector<unsigned int>& e,
 		GLenum m
 	)
 {
-	initReady(p, c, e, m);
+	initReady(/*p, c,*/input, e, m);
 	initMain();
 }
-template <typename S, typename VBOClass, typename VBOElementClass>
-void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initMain()
+template <typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass>
+void VAOPositionColorBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initMain()
 {
 	//ベースクラスの初期化
 	base.init();
@@ -160,34 +137,42 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initMain()
 	element.init(elementData);
 	
 	//自身のVAOをバインド
-	Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass> > b(*this);
+	Bind<VAOPositionColorBase<S, VBOClass, VBOElementClass, VAOLayoutClass> > b(*this);
 	
 	//positionColorの初期化
 	{
 		//頂点配列をバインド
 		Bind<VBOClass> bp(positionColor);
-		//point部分の設定
-		glVertexAttribPointer
-			(
-				0,		//設定するバーテックスシェーダの引数のインデックスを指定する
-				3,		//1頂点あたりの要素数(ここでは3次元座標なので3)
-				GL_FLOAT,	//要素の型
-				GL_FALSE,	//正規化の要否 位置座標なのでFalse
-				6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLfloat*)0	//頂点データの開始アドレスから指定するデータの位置までの間隔
-			);
-		glEnableVertexAttribArray(0);
-		//color部分の設定
-		glVertexAttribPointer
-			(
-				1,		//設定するバーテックスシェーダの引数のインデックスを指定する
-				3,		//1頂点あたりの要素数(ここではrgbなので3)
-				GL_FLOAT,	//要素の型
-				GL_FALSE,	//正規化の要否 位置座標なのでFalse
-				6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
-				(GLfloat*)0 + 3	//頂点データの開始アドレスから指定するデータの位置までの間隔
-			);
-		glEnableVertexAttribArray(1);
+		
+		//インターリーブ配列への属性の割り当て
+		vaoLayout.enableVertexAttribPointer();
+		//次のブロックをLayout::enableVertexAttribPointer()として定義する
+		/*
+		{
+			//point部分の設定
+			glVertexAttribPointer
+				(
+					0,		//設定するバーテックスシェーダの引数のインデックスを指定する
+					3,		//1頂点あたりの要素数(ここでは3次元座標なので3)
+					GL_FLOAT,	//要素の型
+					GL_FALSE,	//正規化の要否 位置座標なのでFalse
+					6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+					(GLfloat*)0	//頂点データの開始アドレスから指定するデータの位置までの間隔
+				);
+			glEnableVertexAttribArray(0);
+			//color部分の設定
+			glVertexAttribPointer
+				(
+					1,		//設定するバーテックスシェーダの引数のインデックスを指定する
+					3,		//1頂点あたりの要素数(ここではrgbなので3)
+					GL_FLOAT,	//要素の型
+					GL_FALSE,	//正規化の要否 位置座標なのでFalse
+					6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
+					(GLfloat*)0 + 3	//頂点データの開始アドレスから指定するデータの位置までの間隔
+				);
+			glEnableVertexAttribArray(1);
+		}
+		*/
 	}
 	//データ格納用のvectorのクリア
 	positionColorData.clear();
@@ -195,7 +180,7 @@ void VAOPositionColorBase<S, VBOClass, VBOElementClass>::initMain()
 }
 
 template <typename S>
-using VAOPositionColor = VAOPositionColorBase<S, VBOStatic, VBOElementStatic>;
+using VAOPositionColor = VAOPositionColorBase<S, VBOStatic, VBOElementStatic, VAOLayoutPositionColor>;
 
 //template <typename S>
 //using VAOPositionColorDynamic = VAOPositionColorBase<S, VBODynamic, VBOElementDynamic>;
@@ -203,10 +188,13 @@ template <typename S>
 class VAOPositionColorDynamic
 {
 private:
-	VAOPositionColorBase<S, VBODynamic, VBOElementDynamic> base;
-
+	using baseType = VAOPositionColorBase<S, VBODynamic, VBOElementDynamic, VAOLayoutPositionColor>;
+	baseType base;
 
 public:
+	
+	using inputType = typename baseType::inputType;
+	
 	VAOPositionColorDynamic(S& s):base(s)
 	{
 	}
@@ -218,17 +206,17 @@ public:
 	{
 		base.unbind();
 	}
-	void initReady(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m)
+	void initReady(const inputType& v, const std::vector<unsigned int>& e, GLenum m)
 	{
-		base.initReady(p, c, e, m);
+		base.initReady(v, e, m);
 	}
 	void initMain()
 	{
 		base.initMain();
 	}
-	void init(const std::vector<float>& p, const std::vector<float>& c, const std::vector<unsigned int>& e, GLenum m)
+	void init(const inputType& v, const std::vector<unsigned int>& e, GLenum m)
 	{
-		base.init(p, c, e, m);
+		base.init(v, e, m);
 	}
 	void display()
 	{

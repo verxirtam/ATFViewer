@@ -158,8 +158,9 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 
 void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 {
-	std::vector<float> position;
-	std::vector<float> color;
+	BasicShaderProgram::vaoTypeDynamic::inputType input;
+	std::vector<float>& position = input.position;
+	std::vector<float>& color = input.color;
 	std::vector<unsigned int> element;
 
 	unsigned int imax = path.size();
@@ -234,7 +235,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			element.push_back(element.size());
 		}
 	}
-	v.initReady(position, color, element, GL_TRIANGLE_STRIP);
+	v.initReady(input, element, GL_TRIANGLE_STRIP);
 }
 
 

@@ -234,8 +234,9 @@ void SectorsVAO::initVAO(InitSectorsSettings& iss)
 	}
 	
 	//vao.init()向けにstd::vector<float>に詰め替える
-	std::vector<float> position_align;
-	std::vector<float>    color_align;
+	BasicShaderProgram::vaoType::inputType v;
+	std::vector<float>& position_align = v.position;
+	std::vector<float>&    color_align = v.color;
 	
 	int kmax = iss.position.size();
 	for(int k = 0; k < kmax; k++)
@@ -253,7 +254,7 @@ void SectorsVAO::initVAO(InitSectorsSettings& iss)
 		color_align.push_back(iss.color[k].z);
 	}
 	//vaoとしての初期化
-	vao.init(position_align, color_align, iss.element, GL_LINES);
+	vao.init(v, iss.element, GL_LINES);
 	
 	std::cout << "iss.position.size() = " << iss.position.size() << std::endl;
 	std::cout << "position_align.size() = " << position_align.size() << std::endl;
