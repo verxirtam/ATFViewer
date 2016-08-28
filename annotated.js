@@ -45,6 +45,7 @@ var annotated =
     [ "UniformVariable", "classUniformVariable.html", "classUniformVariable" ],
     [ "Util", "classUtil.html", null ],
     [ "VAOBase", "classVAOBase.html", "classVAOBase" ],
+    [ "VAOLayoutPaths", "classVAOLayoutPaths.html", "classVAOLayoutPaths" ],
     [ "VAOLayoutPositionColor", "classVAOLayoutPositionColor.html", "classVAOLayoutPositionColor" ],
     [ "VAOLayoutPositionTexture", "classVAOLayoutPositionTexture.html", "classVAOLayoutPositionTexture" ],
     [ "VAOPositionBase", "classVAOPositionBase.html", "classVAOPositionBase" ],
