@@ -1,4 +1,5 @@
 <map id="UniformVariable::setLocation" name="UniformVariable::setLocation">
 <area shape="rect" id="node2" href="$classBasicShaderProgram.html#a1d93ff8ee8d21f58a6d90186958272fd" title="BasicShaderProgram\l::init" alt="" coords="251,5,397,46"/>
-<area shape="rect" id="node3" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="246,70,402,111"/>
+<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="251,70,397,111"/>
+<area shape="rect" id="node4" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="246,135,402,177"/>
 </map>

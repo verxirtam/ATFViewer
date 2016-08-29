@@ -1,5 +1,6 @@
 <map id="Shader::getHandle" name="Shader::getHandle">
-<area shape="rect" id="node2" href="$classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba" title="ShaderProgram::attach" alt="" coords="185,45,341,72"/>
+<area shape="rect" id="node2" href="$classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba" title="ShaderProgram::attach" alt="" coords="185,77,341,104"/>
 <area shape="rect" id="node3" href="$classBasicShaderProgram.html#a1d93ff8ee8d21f58a6d90186958272fd" title="BasicShaderProgram\l::init" alt="" coords="395,5,541,46"/>
-<area shape="rect" id="node4" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="390,70,546,111"/>
+<area shape="rect" id="node4" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="395,70,541,111"/>
+<area shape="rect" id="node5" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="390,135,546,177"/>
 </map>

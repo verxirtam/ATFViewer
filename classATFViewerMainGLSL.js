@@ -29,6 +29,7 @@ var classATFViewerMainGLSL =
     [ "PI", "classATFViewerMainGLSL.html#af604774acb7603fb81ed028c58d4f19b", null ],
     [ "pollingInterval", "classATFViewerMainGLSL.html#a087fb9110590f976c63b29bffa7b611f", null ],
     [ "sector", "classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207", null ],
+    [ "shaderProgramPaths", "classATFViewerMainGLSL.html#a652f50139a5dde283d9a9bbdb78f5b93", null ],
     [ "textureShaderProgram", "classATFViewerMainGLSL.html#a8575c24c78a649f8945af52f05dbef86", null ],
     [ "timeInterval", "classATFViewerMainGLSL.html#ac9a72f18d74c12d037911195e63cf958", null ],
     [ "timeMax", "classATFViewerMainGLSL.html#a19d80a4043bbc65e3b70e9643d2bc54e", null ],

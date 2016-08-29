@@ -1,7 +1,7 @@
 var classBasicShaderProgram =
 [
-    [ "vaoType", "classBasicShaderProgram.html#a9e7110305432f57c5ab663ad1342660b", null ],
-    [ "vaoTypeDynamic", "classBasicShaderProgram.html#a5d4962f3b83b25589bf3bc9de60f4df6", null ],
+    [ "vaoType", "classBasicShaderProgram.html#ad69b4c4bb4db9cf75824417a542ffd7d", null ],
+    [ "vaoTypeDynamic", "classBasicShaderProgram.html#a2a4c1fe51625c96a870fd9fa9b2d05d3", null ],
     [ "BasicShaderProgram", "classBasicShaderProgram.html#a883f4f40ab2f47965777563e16a2ac28", null ],
     [ "init", "classBasicShaderProgram.html#a1d93ff8ee8d21f58a6d90186958272fd", null ],
     [ "setMVPMatrix", "classBasicShaderProgram.html#aa212d75713f013e056cecc0a0340ef7b", null ],

@@ -6,6 +6,7 @@ var searchData=
   ['sectorsvao',['SectorsVAO',['../classSectorsVAO.html',1,'']]],
   ['shader',['Shader',['../classShader.html',1,'']]],
   ['shaderprogram',['ShaderProgram',['../classShaderProgram.html',1,'']]],
-  ['subsector',['SubSector',['../structSectors_1_1SubSector.html',1,'Sectors']]],
-  ['subsector',['SubSector',['../structSectorsVAO_1_1SubSector.html',1,'SectorsVAO']]]
+  ['shaderprogrampaths',['ShaderProgramPaths',['../classShaderProgramPaths.html',1,'']]],
+  ['subsector',['SubSector',['../structSectorsVAO_1_1SubSector.html',1,'SectorsVAO']]],
+  ['subsector',['SubSector',['../structSectors_1_1SubSector.html',1,'Sectors']]]
 ];

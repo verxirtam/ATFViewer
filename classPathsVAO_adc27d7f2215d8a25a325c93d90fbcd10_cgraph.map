@@ -1,4 +1,4 @@
 <map id="PathsVAO::initVAO" name="PathsVAO::initVAO">
-<area shape="rect" id="node2" href="$classVAOPositionColorDynamic.html#a8342bae7ada87f532882c5a4690db59c" title="VAOPositionColorDynamic\l::initReady" alt="" coords="193,5,373,46"/>
-<area shape="rect" id="node3" href="$classVAOPositionBase.html#a4781d52bfa8498990b1f8e69c3a0ed54" title="VAOPositionBase::initReady" alt="" coords="422,12,613,39"/>
+<area shape="rect" id="node2" href="$classVAOPositionBaseDynamic.html#aeb2b57c04437e4f96440956e6e66276d" title="VAOPositionBaseDynamic\l::initReady" alt="" coords="192,5,371,46"/>
+<area shape="rect" id="node3" href="$classVAOPositionBase.html#a4781d52bfa8498990b1f8e69c3a0ed54" title="VAOPositionBase::initReady" alt="" coords="419,12,610,39"/>
 </map>

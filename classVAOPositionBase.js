@@ -6,6 +6,7 @@ var classVAOPositionBase =
     [ "bind", "classVAOPositionBase.html#a50675fdf23ba1ecc56eee29ffd629a35", null ],
     [ "display", "classVAOPositionBase.html#a405b239f98d227646da20846b5300e3f", null ],
     [ "getElement", "classVAOPositionBase.html#af603f4ad831b8dcf86fe690045239207", null ],
+    [ "getVertex", "classVAOPositionBase.html#aef920f68ed97c2095a5bfa41144caae6", null ],
     [ "getVertexCount", "classVAOPositionBase.html#aa9839aeed56fd6e2b3e5395125211742", null ],
     [ "init", "classVAOPositionBase.html#a15674d02bd98fd7c4e9ccf2f6917e580", null ],
     [ "initMain", "classVAOPositionBase.html#a9105e5df4cc24cbf7d8f93649ad74031", null ],
