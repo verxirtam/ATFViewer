@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('Sectors_8h_source.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('Sectors_8h_source.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">Sectors.h</div>  </div>
@@ -291,15 +274,11 @@ $(document).ready(function(){initNavTree('Sectors_8h_source.html','');});
 <div class="ttc" id="classSectors_html_ae32a9f276e9f825cdc2f439af7799e8e"><div class="ttname"><a href="classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e">Sectors::sector</a></div><div class="ttdeci">std::vector&lt; Sector &gt; sector</div><div class="ttdef"><b>Definition:</b> Sectors.h:75</div></div>
 <div class="ttc" id="structSectors_1_1SubSector_html_adb93ef4ca46a3f8fd96c2c52e917260a"><div class="ttname"><a href="structSectors_1_1SubSector.html#adb93ef4ca46a3f8fd96c2c52e917260a">Sectors::SubSector::includesMaximumAltitude</a></div><div class="ttdeci">bool includesMaximumAltitude</div><div class="ttdef"><b>Definition:</b> Sectors.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="Sectors_8h.html">Sectors.h</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:20 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

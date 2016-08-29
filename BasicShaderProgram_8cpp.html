@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('BasicShaderProgram_8cpp.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('BasicShaderProgram_8cpp.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">BasicShaderProgram.cpp File Reference</div>  </div>
@@ -113,15 +96,11 @@ Include dependency graph for BasicShaderProgram.cpp:</div>
 <area shape="rect" id="node2" href="BasicShaderProgram_8h.html" title="BasicShaderProgram.h" alt="" coords="377,80,532,107"/><area shape="rect" id="node3" href="Shader_8h.html" title="Shader.h" alt="" coords="236,379,309,405"/><area shape="rect" id="node10" href="ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="335,379,457,405"/><area shape="rect" id="node11" href="UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="482,379,608,405"/><area shape="rect" id="node14" href="VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="687,155,825,181"/><area shape="rect" id="node15" href="VAOPositionBaseStatic_8h.html" title="VAOPositionBaseStatic.h" alt="" coords="567,229,739,256"/><area shape="rect" id="node25" href="VAOPositionBaseDynamic_8h.html" title="VAOPositionBaseDynamic.h" alt="" coords="763,229,953,256"/><area shape="rect" id="node26" href="VAOLayoutPositionColor_8h.html" title="VAOLayoutPositionColor.h" alt="" coords="924,304,1103,331"/><area shape="rect" id="node16" href="VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="761,304,900,331"/><area shape="rect" id="node17" href="OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="847,379,976,405"/><area shape="rect" id="node19" href="Lock_8h.html" title="Lock.h" alt="" coords="1163,461,1224,488"/><area shape="rect" id="node20" href="VBO_8h.html" title="VBO.h" alt="" coords="1001,379,1063,405"/><area shape="rect" id="node24" href="VAOBase_8h.html" title="VAOBase.h" alt="" coords="633,379,724,405"/></map>
 </div>
 </div></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="BasicShaderProgram_8cpp.html">BasicShaderProgram.cpp</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:20 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

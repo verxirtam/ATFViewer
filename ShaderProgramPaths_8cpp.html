@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('ShaderProgramPaths_8cpp.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('ShaderProgramPaths_8cpp.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">ShaderProgramPaths.cpp File Reference</div>  </div>
@@ -113,15 +96,11 @@ Include dependency graph for ShaderProgramPaths.cpp:</div>
 <area shape="rect" id="node2" href="ShaderProgramPaths_8h.html" title="ShaderProgramPaths.h" alt="" coords="384,80,541,107"/><area shape="rect" id="node3" href="Shader_8h.html" title="Shader.h" alt="" coords="229,379,303,405"/><area shape="rect" id="node10" href="ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="328,379,451,405"/><area shape="rect" id="node11" href="UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="475,379,601,405"/><area shape="rect" id="node14" href="VAOPaths_8h.html" title="VAOPaths.h" alt="" coords="681,155,775,181"/><area shape="rect" id="node15" href="VAOPositionBaseDynamic_8h.html" title="VAOPositionBaseDynamic.h" alt="" coords="791,229,981,256"/><area shape="rect" id="node25" href="VAOLayoutPaths_8h.html" title="VAOLayoutPaths.h" alt="" coords="661,304,795,331"/><area shape="rect" id="node16" href="VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="857,304,996,331"/><area shape="rect" id="node17" href="OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="627,379,756,405"/><area shape="rect" id="node19" href="Lock_8h.html" title="Lock.h" alt="" coords="1245,461,1307,488"/><area shape="rect" id="node20" href="VBO_8h.html" title="VBO.h" alt="" coords="947,379,1008,405"/><area shape="rect" id="node24" href="VAOBase_8h.html" title="VAOBase.h" alt="" coords="832,379,923,405"/></map>
 </div>
 </div></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ShaderProgramPaths_8cpp.html">ShaderProgramPaths.cpp</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:21 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

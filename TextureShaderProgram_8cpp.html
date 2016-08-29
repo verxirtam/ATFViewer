@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('TextureShaderProgram_8cpp.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('TextureShaderProgram_8cpp.html','');})
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">TextureShaderProgram.cpp File Reference</div>  </div>
@@ -113,15 +96,11 @@ Include dependency graph for TextureShaderProgram.cpp:</div>
 <area shape="rect" id="node2" href="TextureShaderProgram_8h.html" title="TextureShaderProgram.h" alt="" coords="431,80,597,107"/><area shape="rect" id="node3" href="Shader_8h.html" title="Shader.h" alt="" coords="223,304,296,331"/><area shape="rect" id="node10" href="ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="321,304,444,331"/><area shape="rect" id="node11" href="UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="623,304,749,331"/><area shape="rect" id="node14" href="VAOPositionTexture_8h.html" title="VAOPositionTexture.h" alt="" coords="879,155,1031,181"/><area shape="rect" id="node15" href="Lock_8h.html" title="Lock.h" alt="" coords="1409,387,1471,413"/><area shape="rect" id="node16" href="Texture2D_8h.html" title="Texture2D.h" alt="" coords="774,304,868,331"/><area shape="rect" id="node20" href="VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="1075,229,1213,256"/><area shape="rect" id="node27" href="VAOLayoutPositionTexture_8h.html" title="VAOLayoutPositionTexture.h" alt="" coords="859,229,1049,256"/><area shape="rect" id="node21" href="OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="468,304,597,331"/><area shape="rect" id="node23" href="VBO_8h.html" title="VBO.h" alt="" coords="1013,304,1075,331"/><area shape="rect" id="node26" href="VAOBase_8h.html" title="VAOBase.h" alt="" coords="1099,304,1189,331"/></map>
 </div>
 </div></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="TextureShaderProgram_8cpp.html">TextureShaderProgram.cpp</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:21 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

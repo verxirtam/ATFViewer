@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('VAOPositionBaseDynamic_8h_source.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('VAOPositionBaseDynamic_8h_source.html'
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">VAOPositionBaseDynamic.h</div>  </div>
@@ -225,15 +208,11 @@ $(document).ready(function(){initNavTree('VAOPositionBaseDynamic_8h_source.html'
 <div class="ttc" id="classVAOPositionBaseDynamic_html_ad5830a77f1aee700ccffeac136ef9ae2"><div class="ttname"><a href="classVAOPositionBaseDynamic.html#ad5830a77f1aee700ccffeac136ef9ae2">VAOPositionBaseDynamic::init</a></div><div class="ttdeci">void init(const inputType &amp;v, const std::vector&lt; unsigned int &gt; &amp;e, GLenum m)</div><div class="ttdef"><b>Definition:</b> VAOPositionBaseDynamic.h:53</div></div>
 <div class="ttc" id="classVBODynamicBase_html_a111ad734d29840678cb5db5828301c92"><div class="ttname"><a href="classVBODynamicBase.html#a111ad734d29840678cb5db5828301c92">VBODynamicBase::unmap</a></div><div class="ttdeci">void unmap()</div><div class="ttdef"><b>Definition:</b> VBO.h:206</div></div>
 </div><!-- fragment --></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="VAOPositionBaseDynamic_8h.html">VAOPositionBaseDynamic.h</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:20 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>

@@ -8,13 +8,6 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
-<link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="resize.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
-<script type="text/javascript">
-  $(document).ready(initResizable);
-  $(window).load(resizeHeight);
-</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
@@ -70,21 +63,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
-<script type="text/javascript">
-$(document).ready(function(){initNavTree('SectorsVAO_8cpp.html','');});
-</script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -99,6 +77,11 @@ $(document).ready(function(){initNavTree('SectorsVAO_8cpp.html','');});
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">SectorsVAO.cpp File Reference</div>  </div>
@@ -113,15 +96,11 @@ Include dependency graph for SectorsVAO.cpp:</div>
 <area shape="rect" id="node2" href="SectorsVAO_8h.html" title="SectorsVAO.h" alt="" coords="975,80,1081,107"/><area shape="rect" id="node7" href="OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="412,453,541,480"/><area shape="rect" id="node11" href="GCS_8h.html" title="GCS.h" alt="" coords="997,155,1059,181"/><area shape="rect" id="node13" href="DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="1116,453,1223,480"/><area shape="rect" id="node16" href="Util_8h.html" title="Util.h" alt="" coords="1319,229,1372,256"/><area shape="rect" id="node18" href="BasicShaderProgram_8h.html" title="BasicShaderProgram.h" alt="" coords="735,155,891,181"/><area shape="rect" id="node12" href="LongLat_8h.html" title="LongLat.h" alt="" coords="1018,229,1096,256"/><area shape="rect" id="node19" href="Shader_8h.html" title="Shader.h" alt="" coords="1017,453,1091,480"/><area shape="rect" id="node22" href="ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="719,453,841,480"/><area shape="rect" id="node23" href="UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="567,453,693,480"/><area shape="rect" id="node24" href="VAOPositionColor_8h.html" title="VAOPositionColor.h" alt="" coords="568,229,707,256"/><area shape="rect" id="node25" href="VAOPositionBaseStatic_8h.html" title="VAOPositionBaseStatic.h" alt="" coords="517,304,688,331"/><area shape="rect" id="node32" href="VAOPositionBaseDynamic_8h.html" title="VAOPositionBaseDynamic.h" alt="" coords="302,304,492,331"/><area shape="rect" id="node33" href="VAOLayoutPositionColor_8h.html" title="VAOLayoutPositionColor.h" alt="" coords="561,379,740,405"/><area shape="rect" id="node26" href="VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="200,379,339,405"/><area shape="rect" id="node27" href="Lock_8h.html" title="Lock.h" alt="" coords="5,536,67,563"/><area shape="rect" id="node28" href="VBO_8h.html" title="VBO.h" alt="" coords="327,453,388,480"/><area shape="rect" id="node31" href="VAOBase_8h.html" title="VAOBase.h" alt="" coords="161,453,252,480"/></map>
 </div>
 </div></div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="SectorsVAO_8cpp.html">SectorsVAO.cpp</a></li>
-    <li class="footer">Generated on Tue Aug 30 2016 01:32:21 for ATFViewer by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated on Tue Aug 30 2016 01:38:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
 </body>
 </html>
