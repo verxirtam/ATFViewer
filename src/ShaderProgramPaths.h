@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  BasicShaderProgram.h
+ *       Filename:  ShaderProgramPaths.h
  *
  *    Description:  
  *
@@ -21,10 +21,10 @@
 #include "Shader.h"
 #include "ShaderProgram.h"
 #include "UniformVariable.h"
-#include "VAOPositionColor.h"
+#include "VAOPaths.h"
 
 
-class BasicShaderProgram
+class ShaderProgramPaths
 {
 private:
 	Shader vertShader;
@@ -32,10 +32,10 @@ private:
 	ShaderProgram shaderProgram;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
-	BasicShaderProgram()
+	ShaderProgramPaths()
 		:
-			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
-			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
+			vertShader(GL_VERTEX_SHADER,  "paths.vert"),
+			fragShader(GL_FRAGMENT_SHADER,"paths.frag"),
 			shaderProgram(),
 			mvpMatrix()
 	{
@@ -55,7 +55,6 @@ public:
 		mvpMatrix.set(m);
 		shaderProgram.unuse();
 	}
-	using vaoType = VAOPositionColor<BasicShaderProgram>;
-	using vaoTypeDynamic = VAOPositionColorDynamic<BasicShaderProgram>;
+	using vaoTypeDynamic = VAOPaths<ShaderProgramPaths>;
 };
 

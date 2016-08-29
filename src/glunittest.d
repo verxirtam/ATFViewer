@@ -21,4 +21,5 @@ glunittest.o: glunittest.cpp ATFViewerMainGLSL.h OpenGLHeaders.h \
  VAOLayoutPositionTexture.h SectorsVAO.h GCS.h LongLat.h \
  BasicShaderProgram.h VAOPositionColor.h VAOPositionBaseStatic.h \
  VAOPositionBaseDynamic.h VAOLayoutPositionColor.h PathsVAO.h \
- TrackDataManager.h Path.h TimeManager.h TimeSeparation.h
+ TrackDataManager.h Path.h TimeManager.h TimeSeparation.h \
+ ShaderProgramPaths.h VAOPaths.h VAOLayoutPaths.h

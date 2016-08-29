@@ -26,6 +26,7 @@ void ATFViewerMainGLSL::initScene(void)
 	
 	textureShaderProgram.init();
 	basicShaderProgram.init();
+	shaderProgramPaths.init();
 	
 	DBAccessor dba("../../db/ATFViewer.db");
 	map.init(dba);
@@ -65,6 +66,7 @@ void ATFViewerMainGLSL::setMatrix(void)
 	
 	textureShaderProgram.setMVPMatrix(mvp);
 	basicShaderProgram.setMVPMatrix(mvp);
+	shaderProgramPaths.setMVPMatrix(mvp);
 }
 
 void ATFViewerMainGLSL::display(void)

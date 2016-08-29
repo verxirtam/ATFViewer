@@ -59,6 +59,7 @@ private:
 	MapTransform mapTransform;
 	TextureShaderProgram textureShaderProgram;
 	BasicShaderProgram basicShaderProgram;
+	ShaderProgramPaths shaderProgramPaths;
 	MapVAO map;
 	MapVAO map2;
 	SectorsVAO sector;
@@ -84,10 +85,11 @@ private:
 		mapTransform(),
 		textureShaderProgram(),
 		basicShaderProgram(),
+		shaderProgramPaths(),
 		map("ENRC1_20160204",textureShaderProgram),
 		map2("ENRC2_20160204",textureShaderProgram),
 		sector(basicShaderProgram),
-		path(basicShaderProgram)
+		path(shaderProgramPaths)
 	{
 		camera_target[0]=0.0;
 		camera_target[1]=0.0;

@@ -158,9 +158,13 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 
 void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 {
-	BasicShaderProgram::vaoTypeDynamic::inputType input;
-	std::vector<float>& position = input.position;
-	std::vector<float>& color = input.color;
+	
+	using input_type = ShaderProgramPaths::vaoTypeDynamic::inputType;
+	using vertex_type = input_type::value_type;
+	input_type input;
+	
+	//std::vector<float>& position = input.position;
+	//std::vector<float>& color = input.color;
 	std::vector<unsigned int> element;
 
 	unsigned int imax = path.size();
@@ -175,19 +179,27 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			//ダミーの点(同じ点を2つ打つ)
 			auto pfirst = path[i].pathPoint.begin();
 			//下の点
-			position.push_back(pfirst->longitude);
-			position.push_back(pfirst->latitude);
-			position.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
+			//position.push_back(pfirst->longitude);
+			//position.push_back(pfirst->latitude);
+			//position.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			vertex_type vertex;
+			vertex.position = glm::vec3(pfirst->longitude, pfirst->latitude, 0.0f);
+			vertex.time =static_cast<float>(pfirst->time);
+			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
+			
+			input.push_back(vertex);
 			element.push_back(element.size());
-			position.push_back(pfirst->longitude);
-			position.push_back(pfirst->latitude);
-			position.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
+			
+			//position.push_back(pfirst->longitude);
+			//position.push_back(pfirst->latitude);
+			//position.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			input.push_back(vertex);
 			element.push_back(element.size());
 			
 		}
@@ -196,22 +208,29 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			const PathPoint& pij = path[i].pathPoint[j];
 			
 			//上の点
-			position.push_back(pij.longitude);
-			position.push_back(pij.latitude);
-			position.push_back(static_cast<float>(pij.altitude));
+			//position.push_back(pij.longitude);
+			//position.push_back(pij.latitude);
+			//position.push_back(static_cast<float>(pij.altitude));
 			float c=((double)pij.altitude)/40000.0f;
 			c=c*c;
-			color.push_back(   c);
-			color.push_back(0.5f);
-			color.push_back(1.0f);
+			//color.push_back(   c);
+			//color.push_back(0.5f);
+			//color.push_back(1.0f);
+			vertex_type vertex;
+			vertex.position = glm::vec3(pij.longitude, pij.latitude, static_cast<float>(pij.altitude));
+			vertex.time =static_cast<float>(pij.time);
+			vertex.color = glm::vec4(c, 0.5f, 1.0f, 1.0f);
+			input.push_back(vertex);
 			element.push_back(element.size());
 			//下の点
-			position.push_back(pij.longitude);
-			position.push_back(pij.latitude);
-			position.push_back(0.9375f * static_cast<float>(pij.altitude));//0.0f);
-			color.push_back(   c);
-			color.push_back(0.5f);
-			color.push_back(1.0f);
+			//position.push_back(pij.longitude);
+			//position.push_back(pij.latitude);
+			//position.push_back(0.9375f * static_cast<float>(pij.altitude));//0.0f);
+			//color.push_back(   c);
+			//color.push_back(0.5f);
+			//color.push_back(1.0f);
+			vertex.position.z = std::max(0.0f, vertex.position.z - 1000.0f);
+			input.push_back(vertex);
 			element.push_back(element.size());
 			
 		}
@@ -219,19 +238,28 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			//ダミーの点(同じ点を2つ打つ)
 			auto plast = path[i].pathPoint.rbegin();
 			//下の点
-			position.push_back(plast->longitude);
-			position.push_back(plast->latitude);
-			position.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
+			//position.push_back(plast->longitude);
+			//position.push_back(plast->latitude);
+			//position.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//element.push_back(element.size());
+			//position.push_back(plast->longitude);
+			//position.push_back(plast->latitude);
+			//position.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//color.push_back(0.0f);
+			//element.push_back(element.size());
+			
+			vertex_type vertex;
+			vertex.position = glm::vec3(plast->longitude, plast->latitude, 0.0f);
+			vertex.time =static_cast<float>(plast->time);
+			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
+			input.push_back(vertex);
 			element.push_back(element.size());
-			position.push_back(plast->longitude);
-			position.push_back(plast->latitude);
-			position.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
-			color.push_back(0.0f);
+			input.push_back(vertex);
 			element.push_back(element.size());
 		}
 	}

@@ -67,7 +67,7 @@ private:
 	//ムーブ代入演算子
 	PathsVAO& operator=(PathsVAO&&) = delete;
 public:
-	PathsVAO(BasicShaderProgram& bsp)
+	PathsVAO(ShaderProgramPaths& bsp)
 		:
 			timeSeparation(),
 			//pathsBuffer(),
