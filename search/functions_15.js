@@ -1,11 +1,14 @@
 var searchData=
 [
-  ['vaobase',['VAOBase',['../classVAOBase.html#a39dffebf5293c232c64ecf9b0a075fe0',1,'VAOBase::VAOBase(const VAOBase &amp;v)=delete'],['../classVAOBase.html#aa01061a70c3dd4632f6b6bb7bb9210ef',1,'VAOBase::VAOBase(VAOBase &amp;&amp;v)=delete'],['../classVAOBase.html#a3fecd76b0e150bbbea66eea7b3129207',1,'VAOBase::VAOBase()']]],
-  ['vaopositionbase',['VAOPositionBase',['../classVAOPositionBase.html#a5791a408c5b637eab1cc939baf22da00',1,'VAOPositionBase']]],
-  ['vaopositionbasedynamic',['VAOPositionBaseDynamic',['../classVAOPositionBaseDynamic.html#a954b95c29c8bcc4393961d3eb93f717d',1,'VAOPositionBaseDynamic']]],
-  ['vaopositiontexture',['VAOPositionTexture',['../classVAOPositionTexture.html#a87bfcb907873b3d89b61dfa6b8640f91',1,'VAOPositionTexture']]],
-  ['vbobase',['VBOBase',['../classVBOBase.html#aaf6ad7dd9c4143c420ea90a774ca03b6',1,'VBOBase::VBOBase(const VBOBase &amp;)=delete'],['../classVBOBase.html#a4bd85c601aa58ed0fb70eb7d222997e9',1,'VBOBase::VBOBase(VBOBase &amp;&amp;)=delete'],['../classVBOBase.html#aa457ab74914f3945bb7685472fc706fb',1,'VBOBase::VBOBase(GLenum t, GLenum u)']]],
-  ['vbodynamicbase',['VBODynamicBase',['../classVBODynamicBase.html#ac4f646ba941d9e6a0cb699e45c15fa8b',1,'VBODynamicBase::VBODynamicBase(const VBODynamicBase &amp;)=delete'],['../classVBODynamicBase.html#ab5f610bfd746ace1a6843c6ec309d6f9',1,'VBODynamicBase::VBODynamicBase(VBODynamicBase &amp;&amp;)=delete'],['../classVBODynamicBase.html#a53a96054c9e5ed646a3397ed0a66b584',1,'VBODynamicBase::VBODynamicBase()']]],
-  ['vboelementstatic',['VBOElementStatic',['../classVBOElementStatic.html#a45d42448dfcedecd86f427b9bcfc3c54',1,'VBOElementStatic']]],
-  ['vbostatic',['VBOStatic',['../classVBOStatic.html#afd7da69d27a7e4cd2374702469eb4685',1,'VBOStatic']]]
+  ['_7edbaccessor',['~DBAccessor',['../classDBAccessor.html#af9c0a5fcad819cb9810a3a419bce13c1',1,'DBAccessor']]],
+  ['_7eshader',['~Shader',['../classShader.html#aff01df87e8a102f270b5b135a295e59d',1,'Shader']]],
+  ['_7eshaderprogram',['~ShaderProgram',['../classShaderProgram.html#a2d2eadcfc48cc2e2ddb82aba70553a9f',1,'ShaderProgram']]],
+  ['_7etestusethread',['~TestUseThread',['../classTestUseThread.html#a512b9b882f57be4ae6500a4d022bfae4',1,'TestUseThread']]],
+  ['_7etestvbo',['~TestVBO',['../classTestVBO.html#afa66d401c6f1bd76a5ed154751d703c1',1,'TestVBO']]],
+  ['_7etexture2d',['~Texture2D',['../classTexture2D.html#a84210f27b55799a096b8abc36380a077',1,'Texture2D']]],
+  ['_7evaobase',['~VAOBase',['../classVAOBase.html#a6d0bd290978a5cda52bb1eb71a7e5c3d',1,'VAOBase']]],
+  ['_7evaopositionbase',['~VAOPositionBase',['../classVAOPositionBase.html#a1376df06e6af250e548e775ce3ad7a6c',1,'VAOPositionBase']]],
+  ['_7evaopositiontexture',['~VAOPositionTexture',['../classVAOPositionTexture.html#a916f06f20ca160f3024d8379e4b19311',1,'VAOPositionTexture']]],
+  ['_7evbobase',['~VBOBase',['../classVBOBase.html#aa06d90a425ce8332b2949fb29f55735a',1,'VBOBase']]],
+  ['_7evbodynamicbase',['~VBODynamicBase',['../classVBODynamicBase.html#a64fa101f493580684d82bcb3f47ff1b4',1,'VBODynamicBase']]]
 ];
