@@ -1,6 +1,6 @@
 ATFViewerMainGLSL.o: ATFViewerMainGLSL.cpp ATFViewerMainGLSL.h \
  OpenGLHeaders.h DBAccessor.h MapTransform.h Joystick.h MapVAO.h Util.h \
- TextureShaderProgram.h Shader.h ShaderProgram.h UniformVariable.h \
+ ShaderProgramTexture.h Shader.h ShaderProgram.h UniformVariable.h \
  VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
@@ -19,7 +19,7 @@ ATFViewerMainGLSL.o: ATFViewerMainGLSL.cpp ATFViewerMainGLSL.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
  VAOLayoutPositionTexture.h SectorsVAO.h GCS.h LongLat.h \
- BasicShaderProgram.h VAOPositionColor.h VAOPositionBaseStatic.h \
+ ShaderProgramPositionColor.h VAOPositionColor.h VAOPositionBaseStatic.h \
  VAOPositionBaseDynamic.h VAOLayoutPositionColor.h PathsVAO.h \
  TrackDataManager.h Path.h TimeManager.h TimeSeparation.h \
  ShaderProgramPaths.h VAOPaths.h VAOLayoutPaths.h

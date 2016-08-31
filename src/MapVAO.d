@@ -1,5 +1,5 @@
 MapVAO.o: MapVAO.cpp MapVAO.h OpenGLHeaders.h Util.h DBAccessor.h \
- TextureShaderProgram.h Shader.h ShaderProgram.h UniformVariable.h \
+ ShaderProgramTexture.h Shader.h ShaderProgram.h UniformVariable.h \
  VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \

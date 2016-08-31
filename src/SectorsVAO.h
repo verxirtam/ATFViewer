@@ -31,7 +31,7 @@
 #include "DBAccessor.h"
 #include "Util.h"
 
-#include "BasicShaderProgram.h"
+#include "ShaderProgramPositionColor.h"
 
 class SectorsVAO
 {
@@ -97,7 +97,7 @@ private:
 	//データメンバ
 	bool displayAll;
 	unsigned int displaySectorIndex;
-	BasicShaderProgram::vaoType vao;
+	ShaderProgramPositionColor::vaoType vao;
 	//メンバ関数
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
 	void getSectors(DBAccessor& dba, InitSectorsSettings& iss);
@@ -116,11 +116,11 @@ private:
 	void setElement(const std::vector<unsigned int>& index, InitSectorsSettings& iss);
 	void initVAO(InitSectorsSettings& iss);
 public:
-	SectorsVAO(BasicShaderProgram& b)
+	SectorsVAO(ShaderProgramPositionColor& s)
 		:
 			displayAll(true),
 			displaySectorIndex(0),
-			vao(b)
+			vao(s)
 	{
 	}
 	void init(DBAccessor& dba)

@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  BasicShaderProgram.h
+ *       Filename:  ShaderProgramPositionColor.h
  *
  *    Description:  
  *
@@ -24,7 +24,7 @@
 #include "VAOPositionColor.h"
 
 
-class BasicShaderProgram
+class ShaderProgramPositionColor
 {
 private:
 	Shader vertShader;
@@ -32,7 +32,7 @@ private:
 	ShaderProgram shaderProgram;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
-	BasicShaderProgram()
+	ShaderProgramPositionColor()
 		:
 			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
 			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
@@ -55,7 +55,7 @@ public:
 		mvpMatrix.set(m);
 		shaderProgram.unuse();
 	}
-	using vaoType = VAOPositionColor<BasicShaderProgram>;
-	using vaoTypeDynamic = VAOPositionColorDynamic<BasicShaderProgram>;
+	using vaoType = VAOPositionColor<ShaderProgramPositionColor>;
+	using vaoTypeDynamic = VAOPositionColorDynamic<ShaderProgramPositionColor>;
 };
 

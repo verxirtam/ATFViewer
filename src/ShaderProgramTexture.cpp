@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TextureShaderProgram.cpp
+ *       Filename:  ShaderProgramTexture.cpp
  *
  *    Description:  
  *
@@ -16,10 +16,10 @@
  * =====================================================================================
  */
 
-#include "TextureShaderProgram.h"
+#include "ShaderProgramTexture.h"
 
 
-void TextureShaderProgram::init(void)
+void ShaderProgramTexture::init(void)
 {
 	vertShader.init();
 	fragShader.init();

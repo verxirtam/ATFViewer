@@ -1,7 +1,6 @@
-SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
- DBAccessor.h Util.h ShaderProgramPositionColor.h Shader.h \
- ShaderProgram.h UniformVariable.h VAOPositionColor.h \
- VAOPositionBaseStatic.h VAOPositionBase.h Lock.h VBO.h \
+ShaderProgramTexture.o: ShaderProgramTexture.cpp ShaderProgramTexture.h \
+ Shader.h ShaderProgram.h UniformVariable.h VAOPositionTexture.h Lock.h \
+ Texture2D.h VAOPositionBase.h OpenGLHeaders.h VBO.h \
  /usr/local/cuda-7.5/include/cuda_runtime.h \
  /usr/local/cuda-7.5/include/host_config.h \
  /usr/local/cuda-7.5/include/builtin_types.h \
@@ -18,4 +17,4 @@ SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  /usr/local/cuda-7.5/include/vector_functions.h \
  /usr/local/cuda-7.5/include/vector_functions.hpp \
  /usr/local/cuda-7.5/include/cuda_gl_interop.h VAOBase.h \
- VAOPositionBaseDynamic.h VAOLayoutPositionColor.h
+ VAOLayoutPositionTexture.h

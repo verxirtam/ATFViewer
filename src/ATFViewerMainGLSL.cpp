@@ -24,8 +24,8 @@ void ATFViewerMainGLSL::initScene(void)
 {
 	cout<<"initScene() start"<<endl;
 	
-	textureShaderProgram.init();
-	basicShaderProgram.init();
+	shaderProgramTexture.init();
+	shaderProgramPositionColor.init();
 	shaderProgramPaths.init();
 	
 	DBAccessor dba("../../db/ATFViewer.db");
@@ -64,8 +64,8 @@ void ATFViewerMainGLSL::setMatrix(void)
 	
 	glm::mat4 mvp(projection * view * model);
 	
-	textureShaderProgram.setMVPMatrix(mvp);
-	basicShaderProgram.setMVPMatrix(mvp);
+	shaderProgramTexture.setMVPMatrix(mvp);
+	shaderProgramPositionColor.setMVPMatrix(mvp);
 	shaderProgramPaths.setMVPMatrix(mvp);
 }
 

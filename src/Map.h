@@ -31,7 +31,6 @@
 #include "Util.h"
 #include "DBAccessor.h"
 
-#include "TextureShaderProgram.h"
 
 
 

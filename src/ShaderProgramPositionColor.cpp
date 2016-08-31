@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  BasicShaderProgram.cpp
+ *       Filename:  ShaderProgramPositionColor.h
  *
  *    Description:  
  *
@@ -16,10 +16,10 @@
  * =====================================================================================
  */
 
-#include "BasicShaderProgram.h"
+#include "ShaderProgramPositionColor.h"
 
 
-void BasicShaderProgram::init(void)
+void ShaderProgramPositionColor::init(void)
 {
 	vertShader.init();
 	fragShader.init();

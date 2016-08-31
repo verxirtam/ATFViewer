@@ -31,7 +31,7 @@
 #include "Util.h"
 #include "DBAccessor.h"
 
-#include "TextureShaderProgram.h"
+#include "ShaderProgramTexture.h"
 #include "Texture2D.h"
 
 
@@ -84,15 +84,15 @@ private:
 	};
 	std::string mapId;
 	Texture2D texture;
-	TextureShaderProgram::vaoType vao;
-	using vaoType = TextureShaderProgram::vaoType;
+	ShaderProgramTexture::vaoType vao;
+	using vaoType = ShaderProgramTexture::vaoType;
 	
 	void getSettings(DBAccessor& dba, std::string& map_id, InitMapSetting& ims);
 	void getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);
 	void getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims);
 	void initVAO(InitMapSetting& ims);
 public:
-	MapVAO(const std::string& map_id,TextureShaderProgram& s):
+	MapVAO(const std::string& map_id,ShaderProgramTexture& s):
 		mapId(map_id),
 		texture(GL_TEXTURE0),
 		vao(s,texture)

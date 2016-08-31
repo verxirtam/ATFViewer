@@ -1,7 +1,7 @@
 /*
  * =====================================================================================
  *
- *       Filename:  TextureShaderProgram.h
+ *       Filename:  ShaderProgramTexture.h
  *
  *    Description:  
  *
@@ -23,7 +23,7 @@
 #include "UniformVariable.h"
 #include "VAOPositionTexture.h"
 
-class TextureShaderProgram
+class ShaderProgramTexture
 {
 private:
 	Shader vertShader;
@@ -32,8 +32,8 @@ private:
 	UniformVariable<glm::mat4> mvpMatrix;
 	UniformVariable<int> textureSampler;
 public:
-	using vaoType = VAOPositionTexture<TextureShaderProgram>;
-	TextureShaderProgram()
+	using vaoType = VAOPositionTexture<ShaderProgramTexture>;
+	ShaderProgramTexture()
 		:
 			vertShader(GL_VERTEX_SHADER,  "texture.vert"),
 			fragShader(GL_FRAGMENT_SHADER,"texture.frag"),

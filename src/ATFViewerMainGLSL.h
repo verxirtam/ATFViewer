@@ -57,8 +57,8 @@ private:
 	const time_t timeMin;
 	const time_t timeMax;
 	MapTransform mapTransform;
-	TextureShaderProgram textureShaderProgram;
-	BasicShaderProgram basicShaderProgram;
+	ShaderProgramTexture shaderProgramTexture;
+	ShaderProgramPositionColor shaderProgramPositionColor;
 	ShaderProgramPaths shaderProgramPaths;
 	MapVAO map;
 	MapVAO map2;
@@ -83,12 +83,12 @@ private:
 		timeMin(now),
 		timeMax(now+60*60*24*3),//1453300000),
 		mapTransform(),
-		textureShaderProgram(),
-		basicShaderProgram(),
+		shaderProgramTexture(),
+		shaderProgramPositionColor(),
 		shaderProgramPaths(),
-		map("ENRC1_20160204",textureShaderProgram),
-		map2("ENRC2_20160204",textureShaderProgram),
-		sector(basicShaderProgram),
+		map("ENRC1_20160204",shaderProgramTexture),
+		map2("ENRC2_20160204",shaderProgramTexture),
+		sector(shaderProgramPositionColor),
 		path(shaderProgramPaths)
 	{
 		camera_target[0]=0.0;
