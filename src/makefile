@@ -80,6 +80,7 @@ all: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 .PHONY: run
 run: $(TARGET)
 	./$(TARGET)
+	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TARGET).png
 
 #テストの実行ファイルを実行する
@@ -87,6 +88,7 @@ run: $(TARGET)
 .PHONY: test
 test: $(TESTTARGET)
 	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
+	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
 
 #画面テストの実行ファイルを実行する
@@ -94,6 +96,7 @@ test: $(TESTTARGET)
 .PHONY: gltest
 gltest: $(GLTESTTARGET)
 	./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
+	if [ -f core ]; then banner core dumped!;fi
 	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 
 
@@ -105,6 +108,18 @@ doc: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 	(cd ../docs; git push origin gh-pages;)
 	(cd ..; git add docs/;)
 	(cd ..; git commit -m "update docs.";)
+
+
+#makefile自体のテスト用
+MAKETEST_EXIST = glunittest
+MAKETEST_NOTEXIST = notexistfile
+.PHONY: maketest
+maketest:
+	banner test
+	if [ -f $(MAKETEST_EXIST)    ]; then banner "exist."; else banner "not exist.";fi
+	if [ -f $(MAKETEST_NOTEXIST) ]; then banner "exist."; else banner "not exist.";fi
+	if [ -f core                 ]; then banner core dumped!;fi
+	if [ -f $(MAKETEST_EXIST)    ]; then banner core dumped!;fi
 
 #実行ファイルの作成
 #オプションは最後に指定する
