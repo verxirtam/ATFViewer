@@ -1,18 +1,20 @@
 <map id="src/ATFViewer.cpp" name="src/ATFViewer.cpp">
-<area shape="rect" id="node2" href="$ATFViewerMain_8h.html" title="ATFViewerMain.h" alt="" coords="1271,95,1397,121"/>
-<area shape="rect" id="node9" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="2152,259,2281,285"/>
-<area shape="rect" id="node13" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="1312,333,1419,360"/>
-<area shape="rect" id="node16" href="$BitmapString_8h.html" title="BitmapString.h" alt="" coords="1078,259,1185,285"/>
-<area shape="rect" id="node17" href="$Paths_8h.html" title="Paths.h" alt="" coords="359,184,425,211"/>
-<area shape="rect" id="node23" href="$MapTransform_8h.html" title="MapTransform.h" alt="" coords="2355,184,2471,211"/>
-<area shape="rect" id="node26" href="$Map_8h.html" title="Map.h" alt="" coords="1677,184,1735,211"/>
-<area shape="rect" id="node30" href="$Fixes_8h.html" title="Fixes.h" alt="" coords="1337,184,1401,211"/>
-<area shape="rect" id="node31" href="$Sectors_8h.html" title="Sectors.h" alt="" coords="950,184,1028,211"/>
-<area shape="rect" id="node32" href="$Joystick_8h.html" title="Joystick.h" alt="" coords="1643,333,1724,360"/>
-<area shape="rect" id="node33" href="$TestVBO_8h.html" title="TestVBO.h" alt="" coords="2203,184,2289,211"/>
-<area shape="rect" id="node20" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="320,259,464,285"/>
-<area shape="rect" id="node21" href="$Path_8h.html" title="Path.h" alt="" coords="517,333,576,360"/>
-<area shape="rect" id="node22" href="$TimeSeparation_8h.html" title="TimeSeparation.h" alt="" coords="219,333,343,360"/>
-<area shape="rect" id="node28" href="$Util_8h.html" title="Util.h" alt="" coords="1211,259,1264,285"/>
-<area shape="rect" id="node29" href="$TextureShaderProgram_8h.html" title="TextureShaderProgram.h" alt="" coords="1745,259,1911,285"/>
+<area shape="rect" id="node2" href="$ATFViewerMain_8h.html" title="ATFViewerMain.h" alt="" coords="1759,80,1885,107"/>
+<area shape="rect" id="node9" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="2488,229,2617,256"/>
+<area shape="rect" id="node13" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="2039,304,2145,331"/>
+<area shape="rect" id="node16" href="$BitmapString_8h.html" title="BitmapString.h" alt="" coords="1605,229,1712,256"/>
+<area shape="rect" id="node17" href="$Paths_8h.html" title="Paths.h" alt="" coords="805,155,872,181"/>
+<area shape="rect" id="node27" href="$MapTransform_8h.html" title="MapTransform.h" alt="" coords="2691,155,2807,181"/>
+<area shape="rect" id="node30" href="$Map_8h.html" title="Map.h" alt="" coords="2128,155,2185,181"/>
+<area shape="rect" id="node33" href="$Fixes_8h.html" title="Fixes.h" alt="" coords="1818,155,1883,181"/>
+<area shape="rect" id="node34" href="$Sectors_8h.html" title="Sectors.h" alt="" coords="1451,155,1529,181"/>
+<area shape="rect" id="node37" href="$Joystick_8h.html" title="Joystick.h" alt="" coords="171,304,252,331"/>
+<area shape="rect" id="node42" href="$TestVBO_8h.html" title="TestVBO.h" alt="" coords="2539,155,2625,181"/>
+<area shape="rect" id="node20" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="657,229,801,256"/>
+<area shape="rect" id="node24" href="$Path_8h.html" title="Path.h" alt="" coords="962,304,1021,331"/>
+<area shape="rect" id="node26" href="$TimeSeparation_8h.html" title="TimeSeparation.h" alt="" coords="509,229,632,256"/>
+<area shape="rect" id="node25" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="480,304,591,331"/>
+<area shape="rect" id="node32" href="$Util_8h.html" title="Util.h" alt="" coords="1788,229,1841,256"/>
+<area shape="rect" id="node35" href="$GCS_8h.html" title="GCS.h" alt="" coords="1365,229,1427,256"/>
+<area shape="rect" id="node36" href="$LongLat_8h.html" title="LongLat.h" alt="" coords="1353,304,1431,331"/>
 </map>

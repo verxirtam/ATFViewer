@@ -1,6 +1,6 @@
 <map id="Shader::readShaderFile" name="Shader::readShaderFile">
 <area shape="rect" id="node2" href="$classShader.html#a5be69e48ac2436651ead777bf5fb5c9f" title="Shader::compile" alt="" coords="214,77,330,104"/>
-<area shape="rect" id="node3" href="$classBasicShaderProgram.html#a1d93ff8ee8d21f58a6d90186958272fd" title="BasicShaderProgram\l::init" alt="" coords="385,5,530,46"/>
-<area shape="rect" id="node4" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="384,70,531,111"/>
-<area shape="rect" id="node5" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="379,135,535,177"/>
+<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="401,5,548,46"/>
+<area shape="rect" id="node4" href="$classShaderProgramPositionColor.html#aaf033e1aa315111b5fc11a97f5853b71" title="ShaderProgramPositionColor\l::init" alt="" coords="379,70,570,111"/>
+<area shape="rect" id="node5" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="397,135,553,177"/>
 </map>

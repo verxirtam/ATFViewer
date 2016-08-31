@@ -1,6 +1,6 @@
 <map id="UniformVariable::set" name="UniformVariable::set">
-<area shape="rect" id="node2" href="$classBasicShaderProgram.html#aa212d75713f013e056cecc0a0340ef7b" title="BasicShaderProgram\l::setMVPMatrix" alt="" coords="201,5,346,46"/>
-<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="200,70,347,111"/>
-<area shape="rect" id="node4" href="$classTextureShaderProgram.html#a0f72249e1066f4256e1134a866fb3147" title="TextureShaderProgram\l::init" alt="" coords="195,135,351,177"/>
-<area shape="rect" id="node5" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="195,201,351,242"/>
+<area shape="rect" id="node2" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="217,5,364,46"/>
+<area shape="rect" id="node3" href="$classShaderProgramPositionColor.html#a6611d6328c312f92ac81c3c2e8ce9133" title="ShaderProgramPositionColor\l::setMVPMatrix" alt="" coords="195,70,386,111"/>
+<area shape="rect" id="node4" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="213,135,369,177"/>
+<area shape="rect" id="node5" href="$classShaderProgramTexture.html#a2194a69eb037f0ad5a35fe3a6805b2c6" title="ShaderProgramTexture\l::setMVPMatrix" alt="" coords="213,201,369,242"/>
 </map>

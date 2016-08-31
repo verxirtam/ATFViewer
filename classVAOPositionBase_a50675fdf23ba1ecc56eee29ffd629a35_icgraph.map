@@ -1,4 +1,4 @@
 <map id="VAOPositionBase::bind" name="VAOPositionBase::bind">
 <area shape="rect" id="node2" href="$classVAOPositionBaseDynamic.html#aa3e34ad3c9527f0587aec7cb1d487430" title="VAOPositionBaseDynamic\l::bind" alt="" coords="213,5,392,46"/>
-<area shape="rect" id="node3" href="$classVAOPositionTexture.html#a457e38f4077b91b652c18d7795ace904" title="VAOPositionTexture\l\&lt; TextureShaderProgram\l \&gt;::bind" alt="" coords="219,69,387,125"/>
+<area shape="rect" id="node3" href="$classVAOPositionTexture.html#a457e38f4077b91b652c18d7795ace904" title="VAOPositionTexture\l\&lt; ShaderProgramTexture\l \&gt;::bind" alt="" coords="219,69,387,125"/>
 </map>

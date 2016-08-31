@@ -1,8 +1,8 @@
 <map id="ShaderProgram::use" name="ShaderProgram::use">
-<area shape="rect" id="node2" href="$classBasicShaderProgram.html#a0751f6f2cc5cccc2ac0b345e4f070aef" title="BasicShaderProgram::use" alt="" coords="201,5,375,32"/>
-<area shape="rect" id="node3" href="$classBasicShaderProgram.html#aa212d75713f013e056cecc0a0340ef7b" title="BasicShaderProgram\l::setMVPMatrix" alt="" coords="215,57,361,98"/>
-<area shape="rect" id="node4" href="$classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427" title="ShaderProgramPaths::use" alt="" coords="201,123,375,149"/>
-<area shape="rect" id="node5" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="215,174,361,215"/>
-<area shape="rect" id="node6" href="$classTextureShaderProgram.html#a1c4c6e9102a1bf28a177962c8c28a513" title="TextureShaderProgram::use" alt="" coords="195,240,381,267"/>
-<area shape="rect" id="node7" href="$classTextureShaderProgram.html#af8ae2c9d25c457df75b147d29ccfe5b9" title="TextureShaderProgram\l::setMVPMatrix" alt="" coords="210,291,366,333"/>
+<area shape="rect" id="node2" href="$classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427" title="ShaderProgramPaths::use" alt="" coords="217,5,391,32"/>
+<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="231,57,377,98"/>
+<area shape="rect" id="node4" href="$classShaderProgramPositionColor.html#a55e0578afec2d8880dd2622f223464d6" title="ShaderProgramPositionColor::use" alt="" coords="195,123,413,149"/>
+<area shape="rect" id="node5" href="$classShaderProgramPositionColor.html#a6611d6328c312f92ac81c3c2e8ce9133" title="ShaderProgramPositionColor\l::setMVPMatrix" alt="" coords="209,174,399,215"/>
+<area shape="rect" id="node6" href="$classShaderProgramTexture.html#ad99a8fc74aef5ee28d76d38f20a5dffb" title="ShaderProgramTexture::use" alt="" coords="211,240,397,267"/>
+<area shape="rect" id="node7" href="$classShaderProgramTexture.html#a2194a69eb037f0ad5a35fe3a6805b2c6" title="ShaderProgramTexture\l::setMVPMatrix" alt="" coords="226,291,382,333"/>
 </map>

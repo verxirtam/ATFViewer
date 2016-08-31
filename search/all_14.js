@@ -12,11 +12,11 @@ var searchData=
   ['unittest_2ecpp',['unittest.cpp',['../unittest_8cpp.html',1,'']]],
   ['unittest_5fcuda_2eh',['unittest_cuda.h',['../unittest__cuda_8h.html',1,'']]],
   ['unmap',['unmap',['../classVAOPositionBaseDynamic.html#a7889ac078f14c6618237403edbfa0ce6',1,'VAOPositionBaseDynamic::unmap()'],['../classVBODynamicBase.html#a111ad734d29840678cb5db5828301c92',1,'VBODynamicBase::unmap()']]],
-  ['unuse',['unuse',['../classBasicShaderProgram.html#a06215c703d922d6a6598ff349d325d4c',1,'BasicShaderProgram::unuse()'],['../classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328',1,'ShaderProgram::unuse()'],['../classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1',1,'ShaderProgramPaths::unuse()'],['../classTextureShaderProgram.html#a44e6098d24cb82cf69b2c3ff9231dcd4',1,'TextureShaderProgram::unuse()']]],
+  ['unuse',['unuse',['../classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328',1,'ShaderProgram::unuse()'],['../classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1',1,'ShaderProgramPaths::unuse()'],['../classShaderProgramPositionColor.html#ab30e74228d71ac8129b4796035f588e2',1,'ShaderProgramPositionColor::unuse()'],['../classShaderProgramTexture.html#a431b440a7b878e749c081b3080a91633',1,'ShaderProgramTexture::unuse()']]],
   ['updatenowindex',['updateNowIndex',['../classPaths.html#a41f9539b83417c6855fca47c9d4b24e6',1,'Paths::updateNowIndex()'],['../classPathsVAO.html#a5832bd4e8713973564c21d57f69388e1',1,'PathsVAO::updateNowIndex()']]],
   ['updatepasttimeindex',['updatePastTimeIndex',['../classPaths.html#a45763fffde47980af820deacb1a785ed',1,'Paths::updatePastTimeIndex()'],['../classPathsVAO.html#af8f37c7a5602a05186a5309af330feb7',1,'PathsVAO::updatePastTimeIndex()']]],
   ['usage',['usage',['../classVBOBase.html#a08638d475f3b0831bd0b5ea7cd5fcc03',1,'VBOBase']]],
-  ['use',['use',['../classBasicShaderProgram.html#a0751f6f2cc5cccc2ac0b345e4f070aef',1,'BasicShaderProgram::use()'],['../classShaderProgram.html#a285c27da064068522f4900a8e8075f68',1,'ShaderProgram::use()'],['../classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427',1,'ShaderProgramPaths::use()'],['../classTextureShaderProgram.html#a1c4c6e9102a1bf28a177962c8c28a513',1,'TextureShaderProgram::use()']]],
+  ['use',['use',['../classShaderProgram.html#a285c27da064068522f4900a8e8075f68',1,'ShaderProgram::use()'],['../classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427',1,'ShaderProgramPaths::use()'],['../classShaderProgramPositionColor.html#a55e0578afec2d8880dd2622f223464d6',1,'ShaderProgramPositionColor::use()'],['../classShaderProgramTexture.html#ad99a8fc74aef5ee28d76d38f20a5dffb',1,'ShaderProgramTexture::use()']]],
   ['util',['Util',['../classUtil.html',1,'']]],
   ['util_2eh',['Util.h',['../Util_8h.html',1,'']]]
 ];

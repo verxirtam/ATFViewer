@@ -1,16 +1,5 @@
 <map id="src/Map.h" name="src/Map.h">
-<area shape="rect" id="node6" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="732,304,861,331"/>
-<area shape="rect" id="node10" href="$Util_8h.html" title="Util.h" alt="" coords="1096,80,1149,107"/>
-<area shape="rect" id="node11" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="1312,155,1419,181"/>
-<area shape="rect" id="node15" href="$TextureShaderProgram_8h.html" title="TextureShaderProgram.h" alt="" coords="823,80,989,107"/>
-<area shape="rect" id="node16" href="$Shader_8h.html" title="Shader.h" alt="" coords="869,155,943,181"/>
-<area shape="rect" id="node19" href="$ShaderProgram_8h.html" title="ShaderProgram.h" alt="" coords="976,155,1099,181"/>
-<area shape="rect" id="node20" href="$UniformVariable_8h.html" title="UniformVariable.h" alt="" coords="1090,304,1216,331"/>
-<area shape="rect" id="node21" href="$VAOPositionTexture_8h.html" title="VAOPositionTexture.h" alt="" coords="365,155,517,181"/>
-<area shape="rect" id="node22" href="$Lock_8h.html" title="Lock.h" alt="" coords="301,387,363,413"/>
-<area shape="rect" id="node23" href="$Texture2D_8h.html" title="Texture2D.h" alt="" coords="213,304,307,331"/>
-<area shape="rect" id="node24" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="483,229,621,256"/>
-<area shape="rect" id="node30" href="$VAOLayoutPositionTexture_8h.html" title="VAOLayoutPositionTexture.h" alt="" coords="162,229,352,256"/>
-<area shape="rect" id="node26" href="$VBO_8h.html" title="VBO.h" alt="" coords="433,304,495,331"/>
-<area shape="rect" id="node29" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="617,304,708,331"/>
+<area shape="rect" id="node6" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="381,80,511,107"/>
+<area shape="rect" id="node10" href="$Util_8h.html" title="Util.h" alt="" coords="304,80,357,107"/>
+<area shape="rect" id="node11" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="636,80,743,107"/>
 </map>
