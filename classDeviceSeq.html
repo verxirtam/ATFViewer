@@ -89,7 +89,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="CountCrossing__cuda_8h_source.html">CountCrossing_cuda.h</a>&gt;</code></p>
+<p>ホスト上の配列(変更可能)に対応したデバイス上のメモリを確保・使用する  
+ <a href="classDeviceSeq.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,7 +112,26 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a051c385014f7906306ac1a6608f195c3"><td class="memItemLeft" align="right" valign="top">T *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDeviceSeq.html#a051c385014f7906306ac1a6608f195c3">host</a></td></tr>
 <tr class="separator:a051c385014f7906306ac1a6608f195c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T&gt;<br/>
+class DeviceSeq&lt; T &gt;</h3>
+
+<p>ホスト上の配列(変更可能)に対応したデバイス上のメモリを確保・使用する </p>
+<p>ホストにデータを戻す場合はこれを使用する</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>格納するデータ型 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dsc</td><td>DeviceSeqConstを移譲している </td></tr>
+    <tr><td class="paramname">host</td><td>変更するためのホスト上の配列 </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a6b861c73f3444b2908cf398779ad1f12"></a>
 <div class="memitem">
 <div class="memproto">
@@ -202,7 +222,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDeviceSeq_a087e91f5830adefea544f8ae075ef2eb_icgraph.png" border="0" usemap="#classDeviceSeq_a087e91f5830adefea544f8ae075ef2eb_icgraph" alt=""/></div>
 <map name="classDeviceSeq_a087e91f5830adefea544f8ae075ef2eb_icgraph" id="classDeviceSeq_a087e91f5830adefea544f8ae075ef2eb_icgraph">
-<area shape="rect" id="node2" href="CountCrossing__cuda_8h.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="256,5,461,46"/></map>
+<area shape="rect" id="node2" href="CountCrossing_8cuh.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="256,5,461,46"/></map>
 </div>
 </p>
 
@@ -237,7 +257,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDeviceSeq_a843efd55b1f064683ae038bd34ace21b_icgraph.png" border="0" usemap="#classDeviceSeq_a843efd55b1f064683ae038bd34ace21b_icgraph" alt=""/></div>
 <map name="classDeviceSeq_a843efd55b1f064683ae038bd34ace21b_icgraph" id="classDeviceSeq_a843efd55b1f064683ae038bd34ace21b_icgraph">
-<area shape="rect" id="node2" href="CountCrossing__cuda_8h.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="283,5,488,46"/></map>
+<area shape="rect" id="node2" href="CountCrossing_8cuh.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="283,5,488,46"/></map>
 </div>
 </p>
 
@@ -272,7 +292,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classDeviceSeq_af7368902c52b3fde7faeaed9ca022ae4_icgraph.png" border="0" usemap="#classDeviceSeq_af7368902c52b3fde7faeaed9ca022ae4_icgraph" alt=""/></div>
 <map name="classDeviceSeq_af7368902c52b3fde7faeaed9ca022ae4_icgraph" id="classDeviceSeq_af7368902c52b3fde7faeaed9ca022ae4_icgraph">
-<area shape="rect" id="node2" href="CountCrossing__cuda_8h.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="283,5,488,46"/></map>
+<area shape="rect" id="node2" href="CountCrossing_8cuh.html#a803ab2520ebcc415d1a515f41c6bcf36" title="countCrossingSequenceDevice\lImple" alt="" coords="283,5,488,46"/></map>
 </div>
 </p>
 
@@ -324,12 +344,12 @@ template&lt;typename T&gt; </div>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="CountCrossing__cuda_8h_source.html">CountCrossing_cuda.h</a></li>
+<li>src/<a class="el" href="DeviceSeq_8cuh.html">DeviceSeq.cuh</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 31 2016 16:35:30 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 31 2016 18:55:34 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

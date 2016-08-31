@@ -5,7 +5,10 @@ var searchData=
   ['dbaccessor_2eh',['DBAccessor.h',['../DBAccessor_8h.html',1,'']]],
   ['dbfilename',['dbFileName',['../classDBAccessor.html#a97fbea92467989b7554f215a8a58721f',1,'DBAccessor']]],
   ['def_5flock',['DEF_LOCK',['../Lock_8h.html#af24acb7ebc10be717308d4280fde5157',1,'Lock.h']]],
-  ['device',['device',['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#af8e1eb269c975cde1ae5d25e355ee785',1,'Joystick::Device()']]],
+  ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()'],['../classJoystick.html#af8e1eb269c975cde1ae5d25e355ee785',1,'Joystick::Device()']]],
+  ['deviceseq',['DeviceSeq',['../classDeviceSeq.html',1,'DeviceSeq&lt; T &gt;'],['../classDeviceSeq.html#a6b861c73f3444b2908cf398779ad1f12',1,'DeviceSeq::DeviceSeq()']]],
+  ['deviceseq_2ecuh',['DeviceSeq.cuh',['../DeviceSeq_8cuh.html',1,'']]],
+  ['deviceseqconst',['DeviceSeqConst',['../classDeviceSeqConst.html',1,'DeviceSeqConst&lt; T &gt;'],['../classDeviceSeqConst.html#ac31372480a548a38bb3548aa1d4432a8',1,'DeviceSeqConst::DeviceSeqConst()']]],
   ['devicetime',['deviceTime',['../structEstimateSpecResult.html#ab1476644dae43209665b41324a6d7a40',1,'EstimateSpecResult']]],
   ['disp_5fbuttonmask',['disp_buttonMask',['../classATFViewerMain.html#aa47b28079204629245f529b6dc8b8157',1,'ATFViewerMain']]],
   ['disp_5fx',['disp_X',['../classATFViewerMain.html#a4efd595a62e856940fab49811bc224a7',1,'ATFViewerMain']]],
@@ -19,5 +22,6 @@ var searchData=
   ['drawpath',['drawPath',['../classPaths.html#ae106f351fe902cc69616e85573587107',1,'Paths::drawPath()'],['../classPathsVAO.html#a0d8a841142b031319fa205626799cbac',1,'PathsVAO::drawPath()']]],
   ['drawpathline',['drawPathLine',['../classPaths.html#a74ee48d529066437d733a1ffd1b1a558',1,'Paths::drawPathLine()'],['../classPathsVAO.html#a2ed9c73278537e9cec508252250e23c6',1,'PathsVAO::drawPathLine()']]],
   ['drawstring',['drawString',['../classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4',1,'BitmapString::drawString(const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#a1db57dc50aacb075e48480a3b9b0ee76',1,'BitmapString::drawString(double x, double y, double z, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#aa1baf22fecc374ee4926b2b1693c233d',1,'BitmapString::drawString(double x, double y, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)']]],
-  ['drawtimewidth',['drawTimeWidth',['../classPaths.html#a83cacb496526d6b75ffa3e20f6de6996',1,'Paths::drawTimeWidth()'],['../classPathsVAO.html#ac1d196ec4d800c2b42d487e9aa3ca16a',1,'PathsVAO::drawTimeWidth()']]]
+  ['drawtimewidth',['drawTimeWidth',['../classPaths.html#a83cacb496526d6b75ffa3e20f6de6996',1,'Paths::drawTimeWidth()'],['../classPathsVAO.html#ac1d196ec4d800c2b42d487e9aa3ca16a',1,'PathsVAO::drawTimeWidth()']]],
+  ['dsc',['dsc',['../classDeviceSeq.html#a7f8a12b7c9fc24496117d42f638810f0',1,'DeviceSeq']]]
 ];

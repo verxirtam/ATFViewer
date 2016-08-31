@@ -1,12 +1,7 @@
 var searchData=
 [
-  ['readjoystickevent',['readJoystickEvent',['../classJoystick.html#ab3664906f06d33bf4bdc3153c300f0cc',1,'Joystick']]],
-  ['readshaderfile',['readShaderFile',['../classShader.html#a99cd96b144222128bd9a9dc45cec3593',1,'Shader']]],
-  ['resetstmt',['resetStmt',['../classDBAccessor.html#a8319129abbb25313cfea071814c03fb7',1,'DBAccessor']]],
-  ['resettime',['resetTime',['../classPaths.html#ace31a29293f673c3d1d4b6e8a82c1e85',1,'Paths::resetTime()'],['../classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78',1,'PathsVAO::resetTime()']]],
-  ['resize',['resize',['../classATFViewerMain.html#a5ca52e99e4fb0f039077a9f9fc0b1b22',1,'ATFViewerMain::resize()'],['../classATFViewerMainGLSL.html#a6eee4b0a1c65d4671d6d213050bcb164',1,'ATFViewerMainGLSL::resize()']]],
-  ['run',['run',['../classTestThread.html#a5e0439ba1ade2e1ea4dadd6204c22d83',1,'TestThread::run()'],['../classTestThread__MemFunc.html#a878488d880a95dc86464e8e9af55ac71',1,'TestThread_MemFunc::run()']]],
-  ['runmakepathsbuffer',['runMakePathsBuffer',['../classPaths.html#a7f965a67f5b02935e918f0e26c1febe5',1,'Paths::runMakePathsBuffer()'],['../classPathsVAO.html#a91f4c20027086894fff07aad6af3a96c',1,'PathsVAO::runMakePathsBuffer()']]],
-  ['runondevice',['runOnDevice',['../classCountCrossing.html#aaa35db61fe3d12af73cc5b8ae6112794',1,'CountCrossing']]],
-  ['runonhost',['runOnHost',['../classCountCrossing.html#a1ad864316b6a147b756c1b62b6529f72',1,'CountCrossing']]]
+  ['path',['Path',['../structPath.html#af26cfab021ddf49af73da3b2beca85ac',1,'Path']]],
+  ['pathpoint',['PathPoint',['../structPathPoint.html#a9d16d51ebf4d22430d8c7b08e5ae8d07',1,'PathPoint']]],
+  ['paths',['Paths',['../classPaths.html#a44c260510a209a677e4c3e6bf7ac6fe3',1,'Paths::Paths(const Paths &amp;)=delete'],['../classPaths.html#ae23ae7814477cfe11fc14e37b6493ffe',1,'Paths::Paths(Paths &amp;&amp;)=delete'],['../classPaths.html#a6d135fd4b8af08a52627736ba5f705e1',1,'Paths::Paths()']]],
+  ['pathsvao',['PathsVAO',['../classPathsVAO.html#a1a534067f501a4acba2058cf3f3faf2d',1,'PathsVAO::PathsVAO(const PathsVAO &amp;)=delete'],['../classPathsVAO.html#a1880e17c57299275b91893272a200aa4',1,'PathsVAO::PathsVAO(PathsVAO &amp;&amp;)=delete'],['../classPathsVAO.html#a69e3f0a2ead42d6add4aab299a487b65',1,'PathsVAO::PathsVAO(ShaderProgramPaths &amp;bsp)']]]
 ];
