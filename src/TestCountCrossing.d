@@ -115,7 +115,7 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/local/cuda-7.5/bin/..//include/surface_indirect_functions.hpp \
     /usr/local/cuda-7.5/bin/..//include/device_launch_parameters.h \
     TestCountCrossing.h \
-    CountCrossing_cuda.h \
+    CountCrossing.cuh \
     /usr/include/c++/4.8/vector \
     /usr/include/c++/4.8/bits/stl_algobase.h \
     /usr/include/c++/4.8/bits/functexcept.h \
@@ -143,4 +143,5 @@ TestCountCrossing.o : TestCountCrossing.cu \
     /usr/include/c++/4.8/bits/functional_hash.h \
     /usr/include/c++/4.8/bits/hash_bytes.h \
     /usr/include/c++/4.8/bits/range_access.h \
-    /usr/include/c++/4.8/bits/vector.tcc
+    /usr/include/c++/4.8/bits/vector.tcc \
+    DeviceSeq.cuh

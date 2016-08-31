@@ -978,6 +978,7 @@ void test(bool test_result, bool& ret)
 
 int main(int argc, char const* argv[])
 {
+	system("banner \"TEST\"");
 	cout << nowstring() << " log: test start." << endl;
 	
 	bool ret = true;
@@ -1012,11 +1013,13 @@ int main(int argc, char const* argv[])
 	
 	if(ret)
 	{
-		cout << "tests succeeded." << endl;
+		//cout << "tests succeeded." << endl;
+		system("banner \"success\"");
 	}
 	else
 	{
-		cout << "tests failed." << endl;
+		//cout << "tests failed." << endl;
+		system("banner \"failed\"");
 	}
 	
 	cout << nowstring() << " log: test end." << endl;

@@ -18,7 +18,7 @@
 
 
 #include "unittest_cuda.h"
-#include "CountCrossing_cuda.h"
+#include "CountCrossing.cuh"
 
 using namespace std;
 

@@ -17,7 +17,7 @@
  */
 
 #include "CountCrossing.h"
-#include "CountCrossing_cuda.h"
+#include "CountCrossing.cuh"
 
 
 void CountCrossing::countCrossingSequenceHost

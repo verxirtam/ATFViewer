@@ -18,7 +18,7 @@
 
 
 #include "TestCountCrossing.h"
-#include "CountCrossing_cuda.h"
+#include "CountCrossing.cuh"
 /*
 #define SWITCH_D(F,ARG,D) \
 	switch ((D))\

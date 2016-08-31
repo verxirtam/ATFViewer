@@ -250,4 +250,5 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/sqlite3.h \
     Path.h \
     TimeManager.h \
-    CountCrossing_cuda.h
+    CountCrossing.cuh \
+    DeviceSeq.cuh

@@ -23,6 +23,7 @@
 #include <vector>
 #include <cuda_runtime.h>
 
+#include "DeviceSeq.cuh"
 
 //////////////////////////////////////////////////////////////////////////////////////
 // テンプレート関数の実体定義
@@ -337,7 +338,7 @@ void countCrossingSequenceHostImple
 }
 
 
-
+/*
 template <typename T>
 class DeviceSeqConst
 {
@@ -396,6 +397,7 @@ public:
 	}
 
 };
+*/
 ////////////////////////////////////////////////
 
 __device__ 
