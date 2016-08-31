@@ -250,6 +250,9 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 		}
 	}
 	v.initReady(input, element, GL_TRIANGLE_STRIP);
+
+	indexListDevice.malloc(indexList.size());
+	indexListDevice.memcpyHostToDevice(indexList.data());
 }
 
 
@@ -364,6 +367,8 @@ int PathsVAO::display(time_t now)
 		this->runMakePathsBuffer(*vaoBuffer, TimeSeparation::Position::next);
 		
 	}
+	//時刻に応じてデバイス上のPathsをアップデートする
+	updateDeviceData(now);
 	
 	vaoCurrent->display();
 	

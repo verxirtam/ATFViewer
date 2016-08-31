@@ -97,3 +97,65 @@ public:
 	}
 
 };
+
+template <typename T>
+class DeviceMemory
+{
+private:
+	T* device;
+	unsigned int count;
+	
+	void free()
+	{
+		cudaFree(device);
+		device = nullptr;
+	}
+	//ポインタメンバを持つがコピー不要なので禁止する
+	//コピーコンストラクタ
+	DeviceMemory(const DeviceMemory&) = delete;
+	//コピー代入演算子
+	DeviceMemory& operator=(const DeviceMemory&) = delete;
+	//ムーブコンストラクタ
+	DeviceMemory(DeviceMemory&&) = delete;
+	//ムーブ代入演算子
+	DeviceMemory& operator=(DeviceMemory&&) = delete;
+
+public:
+	DeviceMemory():device(nullptr),count(0)
+	{
+	}
+	~DeviceMemory()
+	{
+		free();
+	}
+	void malloc(unsigned int c)
+	{
+		free();
+		count = c;
+		cudaMalloc((void**)&device, count * sizeof(T));
+	}
+	void memcpyHostToDevice(const T* const host)
+	{
+		cudaMemcpy(device, host, count * sizeof(T), cudaMemcpyHostToDevice);
+	}
+	void memcpyDeviceToHost(T* const host)
+	{
+		cudaMemcpy(host, device, count * sizeof(T), cudaMemcpyDeviceToHost);
+	}
+	unsigned int getCount() const
+	{
+		return count;
+	}
+};
+
+
+
+
+
+
+
+
+
+
+
+

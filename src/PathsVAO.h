@@ -53,6 +53,8 @@ private:
 	vaoType* vaoBuffer;
 	
 	std::vector<unsigned int> indexList;
+	DeviceMemory<unsigned int> indexListDevice;
+	
 	enum indexListItem
 	{
 		beginIndex = 0,
@@ -90,7 +92,8 @@ public:
 			vao1(bsp),
 			vaoCurrent(&vao0),
 			vaoBuffer( &vao1),
-			indexList()
+			indexList(),
+			indexListDevice()
 	{
 	}
 	void initPathPoint(time_t time_min, time_t time_max);
