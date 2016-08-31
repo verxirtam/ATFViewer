@@ -33,6 +33,7 @@
 #include "TimeSeparation.h"
 #include "ShaderProgramPaths.h"
 
+#include "DeviceSeq.cuh"
 
 class PathsVAO
 {
@@ -50,6 +51,18 @@ private:
 	vaoType vao1;
 	vaoType* vaoCurrent;
 	vaoType* vaoBuffer;
+	
+	std::vector<unsigned int> indexList;
+	enum indexListItem
+	{
+		beginIndex = 0,
+		pastIndex = 1,
+		nowIndex =2
+	};
+	unsigned int getIndexListIndex(unsigned int path_index, indexListItem i)
+	{
+		return 3 * path_index + i;
+	}
 	
 	void makePathsBuffer(vaoType& v, TimeSeparation::Position position);
 	void runMakePathsBuffer(vaoType& v, TimeSeparation::Position position);
@@ -76,7 +89,8 @@ public:
 			vao0(bsp),
 			vao1(bsp),
 			vaoCurrent(&vao0),
-			vaoBuffer( &vao1)
+			vaoBuffer( &vao1),
+			indexList()
 	{
 	}
 	void initPathPoint(time_t time_min, time_t time_max);

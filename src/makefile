@@ -26,7 +26,7 @@ COMMON_FLAGS := -pg -g -O0
 #COMMON_FLAGS := 
 
 #g++のコンパイルのフラグ
-CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLEW -lGLU -lGL -I/usr/include
+CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLEW -lGLU -lGL -I/usr/include -I/usr/local/cuda/include
 CXXONLYFLAGS :=  -fopenmp -std=c++11 -Weffc++
 
 #CUDA関連の設定

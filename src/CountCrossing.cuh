@@ -338,66 +338,6 @@ void countCrossingSequenceHostImple
 }
 
 
-/*
-template <typename T>
-class DeviceSeqConst
-{
-private:
-	int count;
-	const T* const host;
-	T* device;
-public:
-	DeviceSeqConst(const T* const h, int c):count(c),host(h),device(NULL)
-	{
-		cudaMalloc((void**)&device, count * sizeof(T));
-	}
-	~DeviceSeqConst()
-	{
-		cudaFree(device);
-	}
-	void memcpyHostToDevice(void)
-	{
-		cudaMemcpy(device, host, count * sizeof(T), cudaMemcpyHostToDevice);
-	}
-	int getCount()
-	{
-		return count;
-	}
-	T* getDeviceAddress()
-	{
-		return device;
-	}
-};
-
-template <typename T>
-class DeviceSeq
-{
-private:
-	DeviceSeqConst<T> dsc;
-	T* const host;
-public:
-	DeviceSeq(T* const h, int c):dsc(h,c),host(h)
-	{
-	}
-	~DeviceSeq()
-	{
-		
-	}
-	void memcpyHostToDevice(void)
-	{
-		dsc.memcpyHostToDevice();
-	}
-	void memcpyDeviceToHost(void)
-	{
-		cudaMemcpy(host, dsc.getDeviceAddress(), dsc.getCount() * sizeof(T), cudaMemcpyDeviceToHost);
-	}
-	T* getDeviceAddress()
-	{
-		return dsc.getDeviceAddress();
-	}
-
-};
-*/
 ////////////////////////////////////////////////
 
 __device__ 

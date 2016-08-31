@@ -163,28 +163,28 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 	using vertex_type = input_type::value_type;
 	input_type input;
 	
-	//std::vector<float>& position = input.position;
-	//std::vector<float>& color = input.color;
 	std::vector<unsigned int> element;
-
+	
 	unsigned int imax = path.size();
 	for(unsigned int i = 0; i < imax; i++)
 	{
 		unsigned int jmax =  path[i].pathPoint.size();
-		if(imax == 0)
+		//2点以上無ければ起動が描けないのでスキップ
+		if(imax < 2)
 		{
 			continue;
 		}
+		//indexListの初期化
+		//各Pathの開始インデックスを設定する
+		//pastIndex, nowIndexは最初のvertexIndexを設定する
+		indexList.push_back(input.size()    );//beginIndex
+		indexList.push_back(input.size() + 2);//pastIndex
+		indexList.push_back(input.size() + 2);//nowIndex
 		{
+			/*
 			//ダミーの点(同じ点を2つ打つ)
 			auto pfirst = path[i].pathPoint.begin();
 			//下の点
-			//position.push_back(pfirst->longitude);
-			//position.push_back(pfirst->latitude);
-			//position.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
 			vertex_type vertex;
 			vertex.position = glm::vec3(pfirst->longitude, pfirst->latitude, 0.0f);
 			vertex.time =static_cast<float>(pfirst->time);
@@ -193,12 +193,23 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			input.push_back(vertex);
 			element.push_back(element.size());
 			
-			//position.push_back(pfirst->longitude);
-			//position.push_back(pfirst->latitude);
-			//position.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
+			input.push_back(vertex);
+			element.push_back(element.size());
+			*/
+			const PathPoint& pij = path[i].pathPoint[0];
+			//past用の頂点
+			vertex_type vertex;
+			vertex.position = glm::vec3(pij.longitude, pij.latitude, static_cast<float>(pij.altitude));
+			vertex.time = static_cast<float>(pij.time);
+			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
+			input.push_back(vertex);
+			element.push_back(element.size());
+			input.push_back(vertex);
+			element.push_back(element.size());
+			
+			//now用の頂点
+			input.push_back(vertex);
+			element.push_back(element.size());
 			input.push_back(vertex);
 			element.push_back(element.size());
 			
@@ -208,14 +219,8 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			const PathPoint& pij = path[i].pathPoint[j];
 			
 			//上の点
-			//position.push_back(pij.longitude);
-			//position.push_back(pij.latitude);
-			//position.push_back(static_cast<float>(pij.altitude));
 			float c=((double)pij.altitude)/40000.0f;
 			c=c*c;
-			//color.push_back(   c);
-			//color.push_back(0.5f);
-			//color.push_back(1.0f);
 			vertex_type vertex;
 			vertex.position = glm::vec3(pij.longitude, pij.latitude, static_cast<float>(pij.altitude));
 			vertex.time =static_cast<float>(pij.time);
@@ -223,36 +228,16 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			input.push_back(vertex);
 			element.push_back(element.size());
 			//下の点
-			//position.push_back(pij.longitude);
-			//position.push_back(pij.latitude);
-			//position.push_back(0.9375f * static_cast<float>(pij.altitude));//0.0f);
-			//color.push_back(   c);
-			//color.push_back(0.5f);
-			//color.push_back(1.0f);
 			vertex.position.z = std::max(0.0f, vertex.position.z - 1000.0f);
 			input.push_back(vertex);
 			element.push_back(element.size());
 			
 		}
 		{
+			/*
 			//ダミーの点(同じ点を2つ打つ)
 			auto plast = path[i].pathPoint.rbegin();
 			//下の点
-			//position.push_back(plast->longitude);
-			//position.push_back(plast->latitude);
-			//position.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//element.push_back(element.size());
-			//position.push_back(plast->longitude);
-			//position.push_back(plast->latitude);
-			//position.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//color.push_back(0.0f);
-			//element.push_back(element.size());
-			
 			vertex_type vertex;
 			vertex.position = glm::vec3(plast->longitude, plast->latitude, 0.0f);
 			vertex.time =static_cast<float>(plast->time);
@@ -261,6 +246,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			element.push_back(element.size());
 			input.push_back(vertex);
 			element.push_back(element.size());
+			*/
 		}
 	}
 	v.initReady(input, element, GL_TRIANGLE_STRIP);

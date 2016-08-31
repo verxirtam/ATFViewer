@@ -25,8 +25,8 @@
 
 #include "Lock.h"
 
-#include </usr/local/cuda-7.5/include/cuda_runtime.h>
-#include </usr/local/cuda-7.5/include/cuda_gl_interop.h>
+#include <cuda_runtime.h>
+#include <cuda_gl_interop.h>
 
 template<typename V>
 class VBOBase
