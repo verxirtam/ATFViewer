@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['beginindex',['beginIndex',['../classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00ac8cc5f268f12d0069f316c39e562ed33',1,'PathsVAO']]],
   ['button_5fa',['Button_A',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deade8f6552ddb820f012fd5d1b3aee3cc4',1,'Joystick.h']]],
   ['button_5fb',['Button_B',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea7974c0212eb1f78b692bcf31ca259541',1,'Joystick.h']]],
   ['button_5fback',['Button_BACK',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea60ca957ef9fa4432b1e5adc1a848045f',1,'Joystick.h']]],

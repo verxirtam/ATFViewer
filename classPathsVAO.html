@@ -97,7 +97,7 @@ Collaboration diagram for PathsVAO:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPathsVAO__coll__graph.png" border="0" usemap="#PathsVAO_coll__map" alt="Collaboration graph"/></div>
 <map name="PathsVAO_coll__map" id="PathsVAO_coll__map">
-<area shape="rect" id="node2" href="classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; S, VAOLayoutClass \&gt;" alt="" coords="1384,130,1563,171"/><area shape="rect" id="node3" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="1054,123,1301,179"/><area shape="rect" id="node10" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="597,123,808,179"/><area shape="rect" id="node5" href="classVAOBase.html" title="VAOBase" alt="" coords="325,252,405,279"/><area shape="rect" id="node6" href="classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="603,334,803,375"/><area shape="rect" id="node7" href="classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,341,456,368"/><area shape="rect" id="node8" href="classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,341,119,368"/><area shape="rect" id="node13" href="classTimeSeparation.html" title="TimeSeparation" alt="" coords="1417,196,1530,223"/></map>
+<area shape="rect" id="node2" href="classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="1450,87,1625,129"/><area shape="rect" id="node3" href="classDeviceMemory.html" title="DeviceMemory\&lt; T \&gt;" alt="" coords="1106,8,1249,35"/><area shape="rect" id="node5" href="classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; S, VAOLayoutClass \&gt;" alt="" coords="1448,215,1627,257"/><area shape="rect" id="node6" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="1054,232,1301,288"/><area shape="rect" id="node13" href="classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="597,236,808,292"/><area shape="rect" id="node8" href="classVAOBase.html" title="VAOBase" alt="" coords="325,389,405,416"/><area shape="rect" id="node9" href="classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="603,58,803,99"/><area shape="rect" id="node10" href="classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,65,456,92"/><area shape="rect" id="node11" href="classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,65,119,92"/><area shape="rect" id="node16" href="classTimeSeparation.html" title="TimeSeparation" alt="" coords="1481,281,1594,308"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -117,11 +117,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
 Private Types</h2></td></tr>
+<tr class="memitem:a1537c99c7736f681495f9feeaa961c00"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00">indexListItem</a> { <a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00ac8cc5f268f12d0069f316c39e562ed33">beginIndex</a> = 0, 
+<a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00a6fd808986ea169dac19df208d211f975">pastIndex</a> = 1, 
+<a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00a6003f845f74fc8943b54b583b7ac02a7">nowIndex</a> =2
+ }</td></tr>
+<tr class="separator:a1537c99c7736f681495f9feeaa961c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b7d6782270e77b718b1a2a243b1d372"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a4b7d6782270e77b718b1a2a243b1d372">vaoType</a> = <a class="el" href="classShaderProgramPaths.html#a24049a1223e950e38e3c6fe536e02ae9">ShaderProgramPaths::vaoTypeDynamic</a></td></tr>
 <tr class="separator:a4b7d6782270e77b718b1a2a243b1d372"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
+<tr class="memitem:a6880eea7b80abbba2b6424e83b0b614b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a6880eea7b80abbba2b6424e83b0b614b">getIndexListIndex</a> (unsigned int path_index, <a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00">indexListItem</a> i)</td></tr>
+<tr class="separator:a6880eea7b80abbba2b6424e83b0b614b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24f4cfafee68be00f657aa759e457859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a24f4cfafee68be00f657aa759e457859">makePathsBuffer</a> (<a class="el" href="classPathsVAO.html#a4b7d6782270e77b718b1a2a243b1d372">vaoType</a> &amp;v, <a class="el" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position)</td></tr>
 <tr class="separator:a24f4cfafee68be00f657aa759e457859"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91f4c20027086894fff07aad6af3a96c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a91f4c20027086894fff07aad6af3a96c">runMakePathsBuffer</a> (<a class="el" href="classPathsVAO.html#a4b7d6782270e77b718b1a2a243b1d372">vaoType</a> &amp;v, <a class="el" href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a> position)</td></tr>
@@ -159,6 +166,10 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5ad508634ea02f7ae26b659b18693dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c5a505c6be2a5b9928a6d481f6a54c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classPathsVAO.html#a4b7d6782270e77b718b1a2a243b1d372">vaoType</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a6c5a505c6be2a5b9928a6d481f6a54c2">vaoBuffer</a></td></tr>
 <tr class="separator:a6c5a505c6be2a5b9928a6d481f6a54c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51d56df835bde784c66141a0ee39964c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#a51d56df835bde784c66141a0ee39964c">indexList</a></td></tr>
+<tr class="separator:a51d56df835bde784c66141a0ee39964c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3658f7d92aed46644a0dd4b36e6f2ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDeviceMemory.html">DeviceMemory</a>&lt; unsigned int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPathsVAO.html#ad3658f7d92aed46644a0dd4b36e6f2ab">indexListDevice</a></td></tr>
+<tr class="separator:ad3658f7d92aed46644a0dd4b36e6f2ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a class="anchor" id="a4b7d6782270e77b718b1a2a243b1d372"></a>
@@ -178,6 +189,35 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a class="anchor" id="a1537c99c7736f681495f9feeaa961c00"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00">PathsVAO::indexListItem</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a1537c99c7736f681495f9feeaa961c00ac8cc5f268f12d0069f316c39e562ed33"></a>beginIndex</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1537c99c7736f681495f9feeaa961c00a6fd808986ea169dac19df208d211f975"></a>pastIndex</em>&#160;</td><td class="fielddoc">
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a1537c99c7736f681495f9feeaa961c00a6003f845f74fc8943b54b583b7ac02a7"></a>nowIndex</em>&#160;</td><td class="fielddoc">
+</td></tr>
+</table>
 
 </div>
 </div>
@@ -340,6 +380,40 @@ Here is the call graph for this function:</div>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a6880eea7b80abbba2b6424e83b0b614b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int PathsVAO::getIndexListIndex </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>path_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00">indexListItem</a>&#160;</td>
+          <td class="paramname"><em>i</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -697,6 +771,46 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="a51d56df835bde784c66141a0ee39964c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;unsigned int&gt; PathsVAO::indexList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="ad3658f7d92aed46644a0dd4b36e6f2ab"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classDeviceMemory.html">DeviceMemory</a>&lt;unsigned int&gt; PathsVAO::indexListDevice</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ab11972a82a5c3a481b2c0547aaf86181"></a>
 <div class="memitem">
 <div class="memproto">
@@ -804,7 +918,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 31 2016 19:29:37 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 1 2016 02:54:22 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

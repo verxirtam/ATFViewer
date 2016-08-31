@@ -1,6 +1,8 @@
 var searchData=
 [
   ['dbaccessor',['DBAccessor',['../classDBAccessor.html',1,'']]],
+  ['devicememory',['DeviceMemory',['../classDeviceMemory.html',1,'']]],
+  ['devicememory_3c_20unsigned_20int_20_3e',['DeviceMemory&lt; unsigned int &gt;',['../classDeviceMemory.html',1,'']]],
   ['deviceseq',['DeviceSeq',['../classDeviceSeq.html',1,'']]],
   ['deviceseqconst',['DeviceSeqConst',['../classDeviceSeqConst.html',1,'']]]
 ];

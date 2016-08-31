@@ -1,9 +1,9 @@
 var searchData=
 [
   ['scale',['scale',['../classMapTransform.html#a7e415efea56466628adf1a9efaf9bc27',1,'MapTransform']]],
-  ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
   ['sector',['Sector',['../structSectorsVAO_1_1Sector.html',1,'SectorsVAO']]],
-  ['sector',['sector',['../classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207',1,'ATFViewerMainGLSL::sector()'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()'],['../structSectors_1_1Sector.html#a882f8b6ee0a970b4b83df7879fb25fc0',1,'Sectors::Sector::Sector()'],['../structSectorsVAO_1_1Sector.html#afdc83ccc450bc3e0100d0c7cbb431753',1,'SectorsVAO::Sector::Sector()']]],
+  ['sector',['Sector',['../structSectors_1_1Sector.html',1,'Sectors']]],
+  ['sector',['Sector',['../structSectors_1_1Sector.html#a882f8b6ee0a970b4b83df7879fb25fc0',1,'Sectors::Sector::Sector()'],['../structSectorsVAO_1_1Sector.html#afdc83ccc450bc3e0100d0c7cbb431753',1,'SectorsVAO::Sector::Sector()'],['../classATFViewerMainGLSL.html#a12da4f9e7d5c08aa6dc3c13488bb5207',1,'ATFViewerMainGLSL::sector()'],['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()']]],
   ['sectorname',['sectorName',['../structSectors_1_1Sector.html#a88e0d06536b63918754b12cb1056021a',1,'Sectors::Sector::sectorName()'],['../structSectorsVAO_1_1Sector.html#a60e7a3309e186cd43ccae4825662e699',1,'SectorsVAO::Sector::sectorName()']]],
   ['sectors',['Sectors',['../classSectors.html',1,'Sectors'],['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain::sectors()'],['../classSectors.html#a0f6784211af111d5cb6f3773f6f0204b',1,'Sectors::Sectors()']]],
   ['sectors_2ecpp',['Sectors.cpp',['../Sectors_8cpp.html',1,'']]],
@@ -38,7 +38,7 @@ var searchData=
   ['shaderprogrampositioncolor',['ShaderProgramPositionColor',['../classShaderProgramPositionColor.html',1,'ShaderProgramPositionColor'],['../classATFViewerMainGLSL.html#a06f06748d151c2cf6fafa0deaf6d6785',1,'ATFViewerMainGLSL::shaderProgramPositionColor()'],['../classShaderProgramPositionColor.html#a86f27ca046810bf26761fb67f846781b',1,'ShaderProgramPositionColor::ShaderProgramPositionColor()']]],
   ['shaderprogrampositioncolor_2ecpp',['ShaderProgramPositionColor.cpp',['../ShaderProgramPositionColor_8cpp.html',1,'']]],
   ['shaderprogrampositioncolor_2eh',['ShaderProgramPositionColor.h',['../ShaderProgramPositionColor_8h.html',1,'']]],
-  ['shaderprogramtexture',['ShaderProgramTexture',['../classShaderProgramTexture.html',1,'ShaderProgramTexture'],['../classShaderProgramTexture.html#a1c2a74390b992db70fd42347542d201a',1,'ShaderProgramTexture::ShaderProgramTexture()'],['../classATFViewerMainGLSL.html#a3c684120a9ba56f31eab86da0da5d246',1,'ATFViewerMainGLSL::shaderProgramTexture()']]],
+  ['shaderprogramtexture',['ShaderProgramTexture',['../classShaderProgramTexture.html',1,'ShaderProgramTexture'],['../classATFViewerMainGLSL.html#a3c684120a9ba56f31eab86da0da5d246',1,'ATFViewerMainGLSL::shaderProgramTexture()'],['../classShaderProgramTexture.html#a1c2a74390b992db70fd42347542d201a',1,'ShaderProgramTexture::ShaderProgramTexture()']]],
   ['shaderprogramtexture_2ecpp',['ShaderProgramTexture.cpp',['../ShaderProgramTexture_8cpp.html',1,'']]],
   ['shaderprogramtexture_2eh',['ShaderProgramTexture.h',['../ShaderProgramTexture_8h.html',1,'']]],
   ['sourcepath',['sourcePath',['../classShader.html#ae0b332657ebd9a3254239a9eba47bd9f',1,'Shader']]],
