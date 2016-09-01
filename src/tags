@@ -394,6 +394,7 @@ drawTimeWidth	Paths.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:Paths
 drawTimeWidth	PathsVAO.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:PathsVAO
 element	SectorsVAO.h	/^		std::vector<unsigned int> element;\/**< インデックス配列  *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 element	VAOPositionBase.h	/^	VBOElementClass element;$/;"	m	class:VAOPositionBase
+elementCount	VAOPositionBase.h	/^	int elementCount;$/;"	m	class:VAOPositionBase
 elementData	VAOPositionBase.h	/^	std::vector<unsigned int> elementData;$/;"	m	class:VAOPositionBase
 enableVertexAttribPointer	VAOLayoutPaths.cpp	/^void VAOLayoutPaths::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPaths
 enableVertexAttribPointer	VAOLayoutPositionColor.cpp	/^void VAOLayoutPositionColor::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPositionColor
@@ -421,7 +422,6 @@ getAxisState	Joystick.h	/^	int getAxisState(int i)$/;"	f	class:Joystick
 getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
-getColorDevicePointer	VAOPositionBaseDynamic.h	/^	float* getColorDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getColumn	TrackDataManager.h	/^	void getColumn(DBAccessor& dba, std::string& id, double& lo, double& la, int& a, long long& t, std::string& ar)$/;"	f	class:TrackDataManager
 getColumnDouble	DBAccessor.h	/^	double getColumnDouble(int i)$/;"	f	class:DBAccessor
 getColumnInt	DBAccessor.h	/^	int getColumnInt(int i)$/;"	f	class:DBAccessor
@@ -433,6 +433,7 @@ getCounterValue	CountCrossing.h	/^	float getCounterValue(int d, int s, int cx, i
 getCrossingPoint	cudatestfunc.h	/^float*  getCrossingPoint$/;"	f
 getDevicePointer	VBO.h	/^	ElementType* getDevicePointer()$/;"	f	class:VBODynamicBase
 getElement	VAOPositionBase.h	/^	VBOElementClass& getElement()$/;"	f	class:VAOPositionBase
+getElementCount	VAOPositionBase.h	/^	int getElementCount()$/;"	f	class:VAOPositionBase
 getElementDevicePointer	VAOPositionBaseDynamic.h	/^	unsigned int* getElementDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getEnd	CountCrossing.h	/^	time_t getEnd()$/;"	f	class:CountCrossing
 getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
@@ -452,7 +453,6 @@ getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex()$/;"	f	class:TimeSep
 getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex(unsigned int i)$/;"	f	class:TimeSeparation
 getNowPoint	Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
 getNowPoint	PathsVAO.cpp	/^PathPoint PathsVAO::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:PathsVAO
-getPositionDevicePointer	VAOPositionBaseDynamic.h	/^	float* getPositionDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
 getSectors	SectorsVAO.cpp	/^void SectorsVAO::getSectors(DBAccessor& dba, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
@@ -475,8 +475,8 @@ getVertex	Map.cpp	/^void Map::getVertex(DBAccessor& dba,std::string& map_id)$/;"
 getVertex	MapVAO.cpp	/^void MapVAO::getVertex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 getVertex	VAOPositionBase.h	/^	VBOClass& getVertex()$/;"	f	class:VAOPositionBase
 getVertexCount	CountCrossing.h	/^	int getVertexCount()$/;"	f	class:CountCrossing
-getVertexCount	VAOPositionBase.h	/^	int getVertexCount()$/;"	f	class:VAOPositionBase
 getVertexCount	VAOPositionBaseDynamic.h	/^	int getVertexCount()$/;"	f	class:VAOPositionBaseDynamic
+getVertexDevicePointer	VAOPositionBaseDynamic.h	/^	float* getVertexDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getVertexIndex	Map.cpp	/^void Map::getVertexIndex(DBAccessor& dba,std::string& map_id)$/;"	f	class:Map
 getVertexIndex	MapVAO.cpp	/^void MapVAO::getVertexIndex(DBAccessor& dba,std::string& map_id, InitMapSetting& ims)$/;"	f	class:MapVAO
 handle	Shader.h	/^	GLuint handle;$/;"	m	class:Shader
@@ -500,7 +500,7 @@ includesMinimumAltitude	Sectors.h	/^		bool includesMinimumAltitude;$/;"	m	struct
 includesMinimumAltitude	SectorsVAO.h	/^		bool includesMinimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
 indexList	PathsVAO.h	/^	std::vector<unsigned int> indexList;$/;"	m	class:PathsVAO
-indexListDevice	PathsVAO.h	/^	DeviceSeq indexListDevice;$/;"	m	class:PathsVAO
+indexListDevice	PathsVAO.h	/^	DeviceMemory<unsigned int> indexListDevice;$/;"	m	class:PathsVAO
 indexListItem	PathsVAO.h	/^	enum indexListItem$/;"	g	class:PathsVAO
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMainGLSL.h	/^	void init(void)$/;"	f	class:ATFViewerMainGLSL
@@ -784,6 +784,7 @@ unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	ShaderProgramPaths.h	/^	void unuse()$/;"	f	class:ShaderProgramPaths
 unuse	ShaderProgramPositionColor.h	/^	void unuse()$/;"	f	class:ShaderProgramPositionColor
 unuse	ShaderProgramTexture.h	/^	void unuse()$/;"	f	class:ShaderProgramTexture
+updateDeviceData	PathsVAO.cpp	/^void PathsVAO::updateDeviceData(time_t now)$/;"	f	class:PathsVAO
 updateNowIndex	Paths.cpp	/^void Paths::updateNowIndex(Path& p, time_t now)$/;"	f	class:Paths
 updateNowIndex	PathsVAO.cpp	/^void PathsVAO::updateNowIndex(Path& p, time_t now)$/;"	f	class:PathsVAO
 updatePastTimeIndex	Paths.cpp	/^void Paths::updatePastTimeIndex(Path& p, time_t past_time)$/;"	f	class:Paths
@@ -813,7 +814,6 @@ vertShader	ShaderProgramPositionColor.h	/^	Shader vertShader;$/;"	m	class:Shader
 vertShader	ShaderProgramTexture.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramTexture
 vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertex	VAOPositionBase.h	/^	VBOClass vertex;$/;"	m	class:VAOPositionBase
-vertexCount	VAOPositionBase.h	/^	int vertexCount;$/;"	m	class:VAOPositionBase
 vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	file:
 vertexData	VAOPositionBase.h	/^	std::vector<float> vertexData;$/;"	m	class:VAOPositionBase
 vertexIndex	Map.h	/^		int vertexIndex;$/;"	m	struct:Map::MapVertexIndex

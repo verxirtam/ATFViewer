@@ -40,7 +40,7 @@ private:
 	std::vector<float> vertexData;
 	std::vector<unsigned int> elementData;
 	GLenum mode;
-	int vertexCount;
+	int elementCount;
 	S& shaderProgram;
 public:
 	using inputType = typename VAOLayoutClass::inputType;
@@ -54,7 +54,7 @@ public:
 			vertexData(),
 			elementData(),
 			mode(0),
-			vertexCount(0),
+			elementCount(0),
 			shaderProgram(s)
 	{
 	}
@@ -82,12 +82,12 @@ public:
 		//インデックス配列をバインド
 		Bind<VBOElementClass> be(element);
 		
-		glDrawElements(mode, vertexCount, GL_UNSIGNED_INT, 0);
+		glDrawElements(mode, elementCount, GL_UNSIGNED_INT, 0);
 		
 	}
-	int getVertexCount()
+	int getElementCount()
 	{
-		return vertexCount;
+		return elementCount;
 	}
 	VBOClass& getVertex()
 	{
@@ -117,7 +117,7 @@ void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::initReady
 	mode = m;
 	
 	//頂点数を格納
-	vertexCount = e.size();
+	elementCount = e.size();
 	
 }
 

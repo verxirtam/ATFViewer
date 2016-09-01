@@ -68,13 +68,9 @@ public:
 		base.getVertex().unmap();
 		base.getElement().unmap();
 	}
-	float* getPositionDevicePointer()
+	float* getVertexDevicePointer()
 	{
-		return base.getPosition().getDevicePointer();
-	}
-	float* getColorDevicePointer()
-	{
-		return base.getColor().getDevicePointer();
+		return base.getVertex().getDevicePointer();
 	}
 	unsigned int* getElementDevicePointer()
 	{

@@ -251,6 +251,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 	}
 	v.initReady(input, element, GL_TRIANGLE_STRIP);
 
+	//デバイスに転送
 	indexListDevice.malloc(indexList.size());
 	indexListDevice.memcpyHostToDevice(indexList.data());
 }
@@ -336,6 +337,19 @@ void PathsVAO::drawPathLine(Path& p, time_t past_time, time_t now)
 		drawPath(now_point,now);
 	}
 	glEnd();
+}
+
+
+void PathsVAO::updateDeviceData(time_t now)
+{
+	//VAOをCUDA向けに確保
+	Map<vaoType> m(*vaoCurrent);
+	//VAOのデバイスメモリを取得
+	float* v_d = vaoCurrent->getVertexDevicePointer();
+	//indexListDeviceのデバイスメモリを取得
+	unsigned int* il_d = indexListDevice.getDevicePointer();
+	//ここにCUDA関数を書く予定(多分引数足りない)
+	updateDeviceDataCUDA(v_d, il_d);
 }
 
 int PathsVAO::display(time_t now)

@@ -146,6 +146,10 @@ public:
 	{
 		return count;
 	}
+	T* getDevicePointer()
+	{
+		return device;
+	}
 };
 
 

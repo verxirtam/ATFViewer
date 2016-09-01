@@ -46,5 +46,5 @@
 DEF_LOCK(   Use,    use,    unuse)
 DEF_LOCK(  Bind,   bind,   unbind)
 DEF_LOCK(Active, active, inactive)
-
+DEF_LOCK(   Map,    map,    unmap)
 
