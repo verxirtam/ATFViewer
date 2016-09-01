@@ -129,8 +129,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a15674d02bd98fd7c4e9ccf2f6917e580"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a405b239f98d227646da20846b5300e3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#a405b239f98d227646da20846b5300e3f">display</a> (void)</td></tr>
 <tr class="separator:a405b239f98d227646da20846b5300e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9839aeed56fd6e2b3e5395125211742"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#aa9839aeed56fd6e2b3e5395125211742">getVertexCount</a> ()</td></tr>
-<tr class="separator:aa9839aeed56fd6e2b3e5395125211742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade35e02286ebeb58e484f5e7a4dfa9ba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#ade35e02286ebeb58e484f5e7a4dfa9ba">getElementCount</a> ()</td></tr>
+<tr class="separator:ade35e02286ebeb58e484f5e7a4dfa9ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef920f68ed97c2095a5bfa41144caae6"><td class="memItemLeft" align="right" valign="top">VBOClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#aef920f68ed97c2095a5bfa41144caae6">getVertex</a> ()</td></tr>
 <tr class="separator:aef920f68ed97c2095a5bfa41144caae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af603f4ad831b8dcf86fe690045239207"><td class="memItemLeft" align="right" valign="top">VBOElementClass &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#af603f4ad831b8dcf86fe690045239207">getElement</a> ()</td></tr>
@@ -152,8 +152,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a046ef0a498bd0dc94c7c8bfea033a013"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d9fc0888d1aa8df99493a38d83a71ed"><td class="memItemLeft" align="right" valign="top">GLenum&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#a1d9fc0888d1aa8df99493a38d83a71ed">mode</a></td></tr>
 <tr class="separator:a1d9fc0888d1aa8df99493a38d83a71ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afecd95d69724c64d33c6c87ed57b0e3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#afecd95d69724c64d33c6c87ed57b0e3a">vertexCount</a></td></tr>
-<tr class="separator:afecd95d69724c64d33c6c87ed57b0e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d66ed99dcbac051a216621a047fa771"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#a1d66ed99dcbac051a216621a047fa771">elementCount</a></td></tr>
+<tr class="separator:a1d66ed99dcbac051a216621a047fa771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2612ea6c1fa3c3e8f79b3555d76b7636"><td class="memItemLeft" align="right" valign="top">S &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classVAOPositionBase.html#a2612ea6c1fa3c3e8f79b3555d76b7636">shaderProgram</a></td></tr>
 <tr class="separator:a2612ea6c1fa3c3e8f79b3555d76b7636"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -328,6 +328,31 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="ade35e02286ebeb58e484f5e7a4dfa9ba"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;::getElementCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="aef920f68ed97c2095a5bfa41144caae6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -356,41 +381,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classVAOPositionBase_aef920f68ed97c2095a5bfa41144caae6_icgraph.png" border="0" usemap="#classVAOPositionBase_aef920f68ed97c2095a5bfa41144caae6_icgraph" alt=""/></div>
 <map name="classVAOPositionBase_aef920f68ed97c2095a5bfa41144caae6_icgraph" id="classVAOPositionBase_aef920f68ed97c2095a5bfa41144caae6_icgraph">
-<area shape="rect" id="node2" href="classVAOPositionBaseDynamic.html#ad2bc4f167986b425b7dd603d70370dd2" title="VAOPositionBaseDynamic::map" alt="" coords="246,5,458,32"/><area shape="rect" id="node3" href="classVAOPositionBaseDynamic.html#a7889ac078f14c6618237403edbfa0ce6" title="VAOPositionBaseDynamic\l::unmap" alt="" coords="263,57,441,98"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="aa9839aeed56fd6e2b3e5395125211742"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;::getVertexCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="classVAOPositionBase_aa9839aeed56fd6e2b3e5395125211742_icgraph.png" border="0" usemap="#classVAOPositionBase_aa9839aeed56fd6e2b3e5395125211742_icgraph" alt=""/></div>
-<map name="classVAOPositionBase_aa9839aeed56fd6e2b3e5395125211742_icgraph" id="classVAOPositionBase_aa9839aeed56fd6e2b3e5395125211742_icgraph">
-<area shape="rect" id="node2" href="classVAOPositionBaseDynamic.html#a073c417ef95023217321c9de1f868ef9" title="VAOPositionBaseDynamic\l::getVertexCount" alt="" coords="245,5,424,46"/></map>
+<area shape="rect" id="node2" href="classVAOPositionBaseDynamic.html#ad2bc4f167986b425b7dd603d70370dd2" title="VAOPositionBaseDynamic::map" alt="" coords="246,5,458,32"/><area shape="rect" id="node3" href="classVAOPositionBaseDynamic.html#a7889ac078f14c6618237403edbfa0ce6" title="VAOPositionBaseDynamic\l::unmap" alt="" coords="263,57,441,98"/><area shape="rect" id="node4" href="classVAOPositionBaseDynamic.html#a41a46b6dfbedf7aede088d5c362cb2d0" title="VAOPositionBaseDynamic\l::getVertexDevicePointer" alt="" coords="263,122,441,163"/></map>
 </div>
 </p>
 
@@ -587,6 +578,28 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VA
 
 </div>
 </div>
+<a class="anchor" id="a1d66ed99dcbac051a216621a047fa771"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;::elementCount</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a046ef0a498bd0dc94c7c8bfea033a013"></a>
 <div class="memitem">
 <div class="memproto">
@@ -697,28 +710,6 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VA
 
 </div>
 </div>
-<a class="anchor" id="afecd95d69724c64d33c6c87ed57b0e3a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VAOLayoutClass&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="classVAOPositionBase.html">VAOPositionBase</a>&lt; S, VBOClass, VBOElementClass, VAOLayoutClass &gt;::vertexCount</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a class="anchor" id="a8114defa64270b79f65a1895da78561b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -747,7 +738,7 @@ template&lt;typename S, typename VBOClass, typename VBOElementClass, typename VA
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 1 2016 02:54:22 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 2 2016 01:31:20 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

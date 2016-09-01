@@ -14,6 +14,7 @@ var searchData=
   ['unittest_5fcuda_2eh',['unittest_cuda.h',['../unittest__cuda_8h.html',1,'']]],
   ['unmap',['unmap',['../classVAOPositionBaseDynamic.html#a7889ac078f14c6618237403edbfa0ce6',1,'VAOPositionBaseDynamic::unmap()'],['../classVBODynamicBase.html#a111ad734d29840678cb5db5828301c92',1,'VBODynamicBase::unmap()']]],
   ['unuse',['unuse',['../classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328',1,'ShaderProgram::unuse()'],['../classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1',1,'ShaderProgramPaths::unuse()'],['../classShaderProgramPositionColor.html#ab30e74228d71ac8129b4796035f588e2',1,'ShaderProgramPositionColor::unuse()'],['../classShaderProgramTexture.html#a431b440a7b878e749c081b3080a91633',1,'ShaderProgramTexture::unuse()']]],
+  ['updatedevicedata',['updateDeviceData',['../classPathsVAO.html#aae7da1f03f903d2b3197fc84002d953c',1,'PathsVAO']]],
   ['updatenowindex',['updateNowIndex',['../classPaths.html#a41f9539b83417c6855fca47c9d4b24e6',1,'Paths::updateNowIndex()'],['../classPathsVAO.html#a5832bd4e8713973564c21d57f69388e1',1,'PathsVAO::updateNowIndex()']]],
   ['updatepasttimeindex',['updatePastTimeIndex',['../classPaths.html#a45763fffde47980af820deacb1a785ed',1,'Paths::updatePastTimeIndex()'],['../classPathsVAO.html#af8f37c7a5602a05186a5309af330feb7',1,'PathsVAO::updatePastTimeIndex()']]],
   ['usage',['usage',['../classVBOBase.html#a08638d475f3b0831bd0b5ea7cd5fcc03',1,'VBOBase']]],
