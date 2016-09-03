@@ -25,9 +25,12 @@ GLTESTTARGET := glunittest
 COMMON_FLAGS := -pg -g -O0
 #COMMON_FLAGS := 
 
+#CXX_LINKS
+CXX_LINKS := -L/usr/lib/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL
+
 #g++のコンパイルのフラグ
-CXXFLAGS := -Wall -lsqlite3 -L/usr/lib/x86_64-linux-gnu -lglut -lGLEW -lGLU -lGL -I/usr/include -I/usr/local/cuda/include
-CXXONLYFLAGS :=  -fopenmp -std=c++11 -Weffc++
+CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(CXX_LINKS)
+CXXONLYFLAGS := -std=c++11 -Weffc++
 
 #CUDA関連の設定
 
@@ -35,11 +38,13 @@ CXXONLYFLAGS :=  -fopenmp -std=c++11 -Weffc++
 NVCC := nvcc
 
 #CUDAコンパイルオプション
-NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp --std c++11
-#NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp  -arch=compute_13 -code=sm_13,compute_13
+NVCC_FLAGS := --std c++11
+
+#NVCC向けのg++オプション
+NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)
 
 #CUDAリンクオプション
-NVCC_LINKS := -lcuda -lcudart
+NVCC_LINKS := -lcuda -lcudart $(CXX_LINKS)
 
 
 #ソースファイル
@@ -115,6 +120,7 @@ MAKETEST_EXIST = glunittest
 MAKETEST_NOTEXIST = notexistfile
 .PHONY: maketest
 maketest:
+	echo AAA$(CXXFLAGS:%=-Xcompiler %)AAA
 	banner test
 	if [ -f $(MAKETEST_EXIST)    ]; then banner "exist."; else banner "not exist.";fi
 	if [ -f $(MAKETEST_NOTEXIST) ]; then banner "exist."; else banner "not exist.";fi
@@ -129,15 +135,15 @@ maketest:
 #$< : 最初の依存ファイル名(":"の右側の最初(一番左)の項目)
 #$^ : 依存ファイル全体
 $(TARGET): $(OBJSTARGET)
-	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ $(NVCC_CXX_FLAGS)
 
 #テスト用の実行ファイルを作成
 $(TESTTARGET): $(OBJSTEST)
-	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ $(NVCC_CXX_FLAGS)
 
 #画面テスト用の実行ファイルを作成
 $(GLTESTTARGET): $(OBJSGLTEST)
-	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ -Xcompiler $(CXXFLAGS)
+	$(NVCC) $(NVCC_LINKS) $(COMMON_FLAGS) $(NVCC_FLAGS) -o $@ $^ $(NVCC_CXX_FLAGS)
 
 #オブジェクトファイルの作成
 #"-MMD"オプションによって依存関係ファイル(*.d)も同時に作成する
@@ -145,8 +151,8 @@ $(GLTESTTARGET): $(OBJSGLTEST)
 	$(CXX) -c -MMD $< $(COMMON_FLAGS) $(CXXONLYFLAGS) $(CXXFLAGS)
 
 %.o: %.cu
-	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) -c $<
-	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) -M $< > $*.d
+	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) $(NVCC_CXX_FLAGS) -c $<
+	$(NVCC) $(COMMON_FLAGS) $(NVCC_LINKS) $(NVCC_FLAGS) $(NVCC_CXX_FLAGS) -M $< > $*.d
 
 #実行ファイル・中間ファイルの削除
 #".PHONY"はターゲットではなくコマンドであることを明示するためのコマンド

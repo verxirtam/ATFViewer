@@ -339,7 +339,7 @@ void PathsVAO::drawPathLine(Path& p, time_t past_time, time_t now)
 	glEnd();
 }
 
-
+/*
 void PathsVAO::updateDeviceData(time_t now)
 {
 	//VAOをCUDA向けに確保
@@ -351,6 +351,8 @@ void PathsVAO::updateDeviceData(time_t now)
 	//ここにCUDA関数を書く予定(多分引数足りない)
 	updateDeviceDataCUDA(v_d, il_d);
 }
+*/
+
 
 int PathsVAO::display(time_t now)
 {
@@ -382,7 +384,7 @@ int PathsVAO::display(time_t now)
 		
 	}
 	//時刻に応じてデバイス上のPathsをアップデートする
-	updateDeviceData(now);
+	//updateDeviceData(now);
 	
 	vaoCurrent->display();
 	

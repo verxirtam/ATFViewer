@@ -1,16 +1,16 @@
 unittest_cuda.o : unittest_cuda.cu \
     /usr/include/stdc-predef.h \
-    /usr/local/cuda-7.5/bin/..//include/cuda_runtime.h \
-    /usr/local/cuda-7.5/bin/..//include/host_config.h \
+    /usr/local/cuda/include/cuda_runtime.h \
+    /usr/local/cuda/include/host_config.h \
     /usr/include/features.h \
     /usr/include/x86_64-linux-gnu/sys/cdefs.h \
     /usr/include/x86_64-linux-gnu/bits/wordsize.h \
     /usr/include/x86_64-linux-gnu/gnu/stubs.h \
     /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
-    /usr/local/cuda-7.5/bin/..//include/builtin_types.h \
-    /usr/local/cuda-7.5/bin/..//include/device_types.h \
-    /usr/local/cuda-7.5/bin/..//include/host_defines.h \
-    /usr/local/cuda-7.5/bin/..//include/driver_types.h \
+    /usr/local/cuda/include/builtin_types.h \
+    /usr/local/cuda/include/device_types.h \
+    /usr/local/cuda/include/host_defines.h \
+    /usr/local/cuda/include/driver_types.h \
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/limits.h \
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include-fixed/syslimits.h \
     /usr/include/limits.h \
@@ -21,16 +21,16 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/x86_64-linux-gnu/bits/xopen_lim.h \
     /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include/stddef.h \
-    /usr/local/cuda-7.5/bin/..//include/surface_types.h \
-    /usr/local/cuda-7.5/bin/..//include/texture_types.h \
-    /usr/local/cuda-7.5/bin/..//include/vector_types.h \
-    /usr/local/cuda-7.5/bin/..//include/channel_descriptor.h \
-    /usr/local/cuda-7.5/bin/..//include/cuda_runtime_api.h \
-    /usr/local/cuda-7.5/bin/..//include/cuda_device_runtime_api.h \
-    /usr/local/cuda-7.5/bin/..//include/driver_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/vector_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/vector_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/common_functions.h \
+    /usr/local/cuda/include/surface_types.h \
+    /usr/local/cuda/include/texture_types.h \
+    /usr/local/cuda/include/vector_types.h \
+    /usr/local/cuda/include/channel_descriptor.h \
+    /usr/local/cuda/include/cuda_runtime_api.h \
+    /usr/local/cuda/include/cuda_device_runtime_api.h \
+    /usr/local/cuda/include/driver_functions.h \
+    /usr/local/cuda/include/vector_functions.h \
+    /usr/local/cuda/include/vector_functions.hpp \
+    /usr/local/cuda/include/common_functions.h \
     /usr/include/string.h \
     /usr/include/xlocale.h \
     /usr/include/time.h \
@@ -69,7 +69,7 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/alloca.h \
     /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
     /usr/include/assert.h \
-    /usr/local/cuda-7.5/bin/..//include/math_functions.h \
+    /usr/local/cuda/include/math_functions.h \
     /usr/include/math.h \
     /usr/include/x86_64-linux-gnu/bits/huge_val.h \
     /usr/include/x86_64-linux-gnu/bits/huge_valf.h \
@@ -82,38 +82,38 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/bits/cpp_type_traits.h \
     /usr/include/c++/4.8/ext/type_traits.h \
     /usr/include/c++/4.8/cstdlib \
-    /usr/local/cuda-7.5/bin/..//include/math_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/math_functions_dbl_ptx3.h \
-    /usr/local/cuda-7.5/bin/..//include/math_functions_dbl_ptx3.hpp \
-    /usr/local/cuda-7.5/bin/..//include/cuda_surface_types.h \
-    /usr/local/cuda-7.5/bin/..//include/cuda_texture_types.h \
-    /usr/local/cuda-7.5/bin/..//include/device_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/device_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/device_atomic_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/device_atomic_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/device_double_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/device_double_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_20_atomic_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_20_atomic_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_32_atomic_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_32_atomic_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_35_atomic_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_20_intrinsics.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_20_intrinsics.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_30_intrinsics.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_30_intrinsics.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_32_intrinsics.h \
-    /usr/local/cuda-7.5/bin/..//include/sm_32_intrinsics.hpp \
-    /usr/local/cuda-7.5/bin/..//include/sm_35_intrinsics.h \
-    /usr/local/cuda-7.5/bin/..//include/surface_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/surface_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/texture_fetch_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/texture_fetch_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/texture_indirect_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/texture_indirect_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/surface_indirect_functions.h \
-    /usr/local/cuda-7.5/bin/..//include/surface_indirect_functions.hpp \
-    /usr/local/cuda-7.5/bin/..//include/device_launch_parameters.h \
+    /usr/local/cuda/include/math_functions.hpp \
+    /usr/local/cuda/include/math_functions_dbl_ptx3.h \
+    /usr/local/cuda/include/math_functions_dbl_ptx3.hpp \
+    /usr/local/cuda/include/cuda_surface_types.h \
+    /usr/local/cuda/include/cuda_texture_types.h \
+    /usr/local/cuda/include/device_functions.h \
+    /usr/local/cuda/include/device_functions.hpp \
+    /usr/local/cuda/include/device_atomic_functions.h \
+    /usr/local/cuda/include/device_atomic_functions.hpp \
+    /usr/local/cuda/include/device_double_functions.h \
+    /usr/local/cuda/include/device_double_functions.hpp \
+    /usr/local/cuda/include/sm_20_atomic_functions.h \
+    /usr/local/cuda/include/sm_20_atomic_functions.hpp \
+    /usr/local/cuda/include/sm_32_atomic_functions.h \
+    /usr/local/cuda/include/sm_32_atomic_functions.hpp \
+    /usr/local/cuda/include/sm_35_atomic_functions.h \
+    /usr/local/cuda/include/sm_20_intrinsics.h \
+    /usr/local/cuda/include/sm_20_intrinsics.hpp \
+    /usr/local/cuda/include/sm_30_intrinsics.h \
+    /usr/local/cuda/include/sm_30_intrinsics.hpp \
+    /usr/local/cuda/include/sm_32_intrinsics.h \
+    /usr/local/cuda/include/sm_32_intrinsics.hpp \
+    /usr/local/cuda/include/sm_35_intrinsics.h \
+    /usr/local/cuda/include/surface_functions.h \
+    /usr/local/cuda/include/surface_functions.hpp \
+    /usr/local/cuda/include/texture_fetch_functions.h \
+    /usr/local/cuda/include/texture_fetch_functions.hpp \
+    /usr/local/cuda/include/texture_indirect_functions.h \
+    /usr/local/cuda/include/texture_indirect_functions.hpp \
+    /usr/local/cuda/include/surface_indirect_functions.h \
+    /usr/local/cuda/include/surface_indirect_functions.hpp \
+    /usr/local/cuda/include/device_launch_parameters.h \
     unittest_cuda.h \
     /usr/include/c++/4.8/iostream \
     /usr/include/c++/4.8/ostream \
