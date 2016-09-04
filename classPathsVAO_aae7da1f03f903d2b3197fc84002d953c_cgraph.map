@@ -1,0 +1,8 @@
+<map id="PathsVAO::updateDeviceData" name="PathsVAO::updateDeviceData">
+<area shape="rect" id="node2" href="$classVAOPositionBaseDynamic.html#a41a46b6dfbedf7aede088d5c362cb2d0" title="VAOPositionBaseDynamic\l::getVertexDevicePointer" alt="" coords="273,25,452,66"/>
+<area shape="rect" id="node5" href="$classVAOPositionBaseDynamic.html#a67c59c05d53a2baff5ba845d2e2013a8" title="VAOPositionBaseDynamic\l::getElementDevicePointer" alt="" coords="273,90,452,131"/>
+<area shape="rect" id="node7" href="$classDeviceMemory.html#a37441df0df055d397c2a698536f10a9e" title="DeviceMemory::getDevicePointer" alt="" coords="253,156,472,183"/>
+<area shape="rect" id="node3" href="$classVAOPositionBase.html#aef920f68ed97c2095a5bfa41144caae6" title="VAOPositionBase::getVertex" alt="" coords="526,5,717,32"/>
+<area shape="rect" id="node4" href="$classVBODynamicBase.html#adefab8e55ded81b0a98a8bfa4053dc40" title="VBODynamicBase::getDevice\lPointer" alt="" coords="522,57,721,98"/>
+<area shape="rect" id="node6" href="$classVAOPositionBase.html#af603f4ad831b8dcf86fe690045239207" title="VAOPositionBase::getElement" alt="" coords="521,123,722,149"/>
+</map>

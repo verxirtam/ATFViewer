@@ -186,22 +186,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <a class="code" href="classPathsVAO.html#ad3658f7d92aed46644a0dd4b36e6f2ab">indexListDevice</a>()</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a5eb5283db2760fd9c0f5169a0e69c05d">initPathPoint</a>(time_t time_min, time_t time_max);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a0d8a841142b031319fa205626799cbac">drawPath</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; p, time_t now);</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="structPathPoint.html">PathPoint</a> <a class="code" href="classPathsVAO.html#af3a5ae2ced85d2ef17e3a10a8c7bdbed">getNowPoint</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; from, <a class="code" href="structPathPoint.html">PathPoint</a>&amp; to, time_t time);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78">resetTime</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPathsVAO.html#a2849f5ce99734a810a6a30fe897a2eb0">display</a>(time_t now);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classPathsVAO.html#aef4fcc36e4fb3f2174ac103b30e83313">  100</a></span>&#160;    <a class="code" href="classPathsVAO.html#aef4fcc36e4fb3f2174ac103b30e83313">~PathsVAO</a>()</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="comment">//メンバを破棄する前に裏スレッドが完了するまで待機する</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">//(破棄したメンバを更新しないようにするため)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="classPathsVAO.html#abc46cd23ef8b8d44f6895a82f83a2e89">futureMakeBuffer</a>.wait();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a5eb5283db2760fd9c0f5169a0e69c05d">initPathPoint</a>(time_t time_min, time_t time_max);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a0d8a841142b031319fa205626799cbac">drawPath</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; p, time_t now);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="structPathPoint.html">PathPoint</a> <a class="code" href="classPathsVAO.html#af3a5ae2ced85d2ef17e3a10a8c7bdbed">getNowPoint</a>(<a class="code" href="structPathPoint.html">PathPoint</a>&amp; from, <a class="code" href="structPathPoint.html">PathPoint</a>&amp; to, time_t time);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78">resetTime</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classPathsVAO.html#a2849f5ce99734a810a6a30fe897a2eb0">display</a>(time_t now);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
 <div class="ttc" id="classPathsVAO_html_a1537c99c7736f681495f9feeaa961c00ac8cc5f268f12d0069f316c39e562ed33"><div class="ttname"><a href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00ac8cc5f268f12d0069f316c39e562ed33">PathsVAO::beginIndex</a></div><div class="ttdef"><b>Definition:</b> PathsVAO.h:60</div></div>
 <div class="ttc" id="classShaderProgramPaths_html"><div class="ttname"><a href="classShaderProgramPaths.html">ShaderProgramPaths</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:27</div></div>
 <div class="ttc" id="classDeviceMemory_html"><div class="ttname"><a href="classDeviceMemory.html">DeviceMemory&lt; unsigned int &gt;</a></div></div>
@@ -211,14 +217,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classPathsVAO_html_ad3658f7d92aed46644a0dd4b36e6f2ab"><div class="ttname"><a href="classPathsVAO.html#ad3658f7d92aed46644a0dd4b36e6f2ab">PathsVAO::indexListDevice</a></div><div class="ttdeci">DeviceMemory&lt; unsigned int &gt; indexListDevice</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:56</div></div>
 <div class="ttc" id="TrackDataManager_8h_html"><div class="ttname"><a href="TrackDataManager_8h.html">TrackDataManager.h</a></div></div>
 <div class="ttc" id="DeviceSeq_8cuh_html"><div class="ttname"><a href="DeviceSeq_8cuh.html">DeviceSeq.cuh</a></div></div>
-<div class="ttc" id="classPathsVAO_html_a2ed9c73278537e9cec508252250e23c6"><div class="ttname"><a href="classPathsVAO.html#a2ed9c73278537e9cec508252250e23c6">PathsVAO::drawPathLine</a></div><div class="ttdeci">void drawPathLine(Path &amp;p, time_t past_time, time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:312</div></div>
+<div class="ttc" id="classPathsVAO_html_a2ed9c73278537e9cec508252250e23c6"><div class="ttname"><a href="classPathsVAO.html#a2ed9c73278537e9cec508252250e23c6">PathsVAO::drawPathLine</a></div><div class="ttdeci">void drawPathLine(Path &amp;p, time_t past_time, time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:322</div></div>
 <div class="ttc" id="classPathsVAO_html_a1a534067f501a4acba2058cf3f3faf2d"><div class="ttname"><a href="classPathsVAO.html#a1a534067f501a4acba2058cf3f3faf2d">PathsVAO::PathsVAO</a></div><div class="ttdeci">PathsVAO(const PathsVAO &amp;)=delete</div></div>
-<div class="ttc" id="classPathsVAO_html_af8f37c7a5602a05186a5309af330feb7"><div class="ttname"><a href="classPathsVAO.html#af8f37c7a5602a05186a5309af330feb7">PathsVAO::updatePastTimeIndex</a></div><div class="ttdeci">void updatePastTimeIndex(Path &amp;p, time_t past_time)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:271</div></div>
+<div class="ttc" id="classPathsVAO_html_af8f37c7a5602a05186a5309af330feb7"><div class="ttname"><a href="classPathsVAO.html#af8f37c7a5602a05186a5309af330feb7">PathsVAO::updatePastTimeIndex</a></div><div class="ttdeci">void updatePastTimeIndex(Path &amp;p, time_t past_time)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:281</div></div>
 <div class="ttc" id="ShaderProgramPaths_8h_html"><div class="ttname"><a href="ShaderProgramPaths_8h.html">ShaderProgramPaths.h</a></div></div>
 <div class="ttc" id="classPathsVAO_html"><div class="ttname"><a href="classPathsVAO.html">PathsVAO</a></div><div class="ttdef"><b>Definition:</b> PathsVAO.h:38</div></div>
 <div class="ttc" id="classPathsVAO_html_ac1d196ec4d800c2b42d487e9aa3ca16a"><div class="ttname"><a href="classPathsVAO.html#ac1d196ec4d800c2b42d487e9aa3ca16a">PathsVAO::drawTimeWidth</a></div><div class="ttdeci">const unsigned int drawTimeWidth</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:48</div></div>
 <div class="ttc" id="structPathPoint_html"><div class="ttname"><a href="structPathPoint.html">PathPoint</a></div><div class="ttdef"><b>Definition:</b> Path.h:25</div></div>
-<div class="ttc" id="classPathsVAO_html_a5832bd4e8713973564c21d57f69388e1"><div class="ttname"><a href="classPathsVAO.html#a5832bd4e8713973564c21d57f69388e1">PathsVAO::updateNowIndex</a></div><div class="ttdeci">void updateNowIndex(Path &amp;p, time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:291</div></div>
+<div class="ttc" id="classPathsVAO_html_a5832bd4e8713973564c21d57f69388e1"><div class="ttname"><a href="classPathsVAO.html#a5832bd4e8713973564c21d57f69388e1">PathsVAO::updateNowIndex</a></div><div class="ttdeci">void updateNowIndex(Path &amp;p, time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:301</div></div>
 <div class="ttc" id="classPathsVAO_html_a0d8a841142b031319fa205626799cbac"><div class="ttname"><a href="classPathsVAO.html#a0d8a841142b031319fa205626799cbac">PathsVAO::drawPath</a></div><div class="ttdeci">void drawPath(PathPoint &amp;p, time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:74</div></div>
 <div class="ttc" id="classTimeSeparation_html_acb8ffdae615e317f817a3210c94ebf5b"><div class="ttname"><a href="classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5b">TimeSeparation::Position</a></div><div class="ttdeci">Position</div><div class="ttdef"><b>Definition:</b> TimeSeparation.h:63</div></div>
 <div class="ttc" id="classPathsVAO_html_aa50e80f0e8f1737f19bae0273dcdcf8d"><div class="ttname"><a href="classPathsVAO.html#aa50e80f0e8f1737f19bae0273dcdcf8d">PathsVAO::vao1</a></div><div class="ttdeci">vaoType vao1</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:51</div></div>
@@ -229,15 +235,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classPathsVAO_html_ab11972a82a5c3a481b2c0547aaf86181"><div class="ttname"><a href="classPathsVAO.html#ab11972a82a5c3a481b2c0547aaf86181">PathsVAO::timeSeparation</a></div><div class="ttdeci">TimeSeparation timeSeparation</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:43</div></div>
 <div class="ttc" id="DBAccessor_8h_html"><div class="ttname"><a href="DBAccessor_8h.html">DBAccessor.h</a></div></div>
 <div class="ttc" id="classPathsVAO_html_a4b7d6782270e77b718b1a2a243b1d372"><div class="ttname"><a href="classPathsVAO.html#a4b7d6782270e77b718b1a2a243b1d372">PathsVAO::vaoType</a></div><div class="ttdeci">ShaderProgramPaths::vaoTypeDynamic vaoType</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:41</div></div>
+<div class="ttc" id="classPathsVAO_html_aef4fcc36e4fb3f2174ac103b30e83313"><div class="ttname"><a href="classPathsVAO.html#aef4fcc36e4fb3f2174ac103b30e83313">PathsVAO::~PathsVAO</a></div><div class="ttdeci">~PathsVAO()</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:100</div></div>
 <div class="ttc" id="classTimeSeparation_html"><div class="ttname"><a href="classTimeSeparation.html">TimeSeparation</a></div><div class="ttdef"><b>Definition:</b> TimeSeparation.h:23</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
-<div class="ttc" id="classPathsVAO_html_aae7da1f03f903d2b3197fc84002d953c"><div class="ttname"><a href="classPathsVAO.html#aae7da1f03f903d2b3197fc84002d953c">PathsVAO::updateDeviceData</a></div><div class="ttdeci">void updateDeviceData(time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:343</div></div>
+<div class="ttc" id="classPathsVAO_html_aae7da1f03f903d2b3197fc84002d953c"><div class="ttname"><a href="classPathsVAO.html#aae7da1f03f903d2b3197fc84002d953c">PathsVAO::updateDeviceData</a></div><div class="ttdeci">void updateDeviceData(time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO_cuda.cu:230</div></div>
 <div class="ttc" id="Path_8h_html"><div class="ttname"><a href="Path_8h.html">Path.h</a></div></div>
 <div class="ttc" id="classPathsVAO_html_a6880eea7b80abbba2b6424e83b0b614b"><div class="ttname"><a href="classPathsVAO.html#a6880eea7b80abbba2b6424e83b0b614b">PathsVAO::getIndexListIndex</a></div><div class="ttdeci">unsigned int getIndexListIndex(unsigned int path_index, indexListItem i)</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:64</div></div>
 <div class="ttc" id="classPathsVAO_html_adc27d7f2215d8a25a325c93d90fbcd10"><div class="ttname"><a href="classPathsVAO.html#adc27d7f2215d8a25a325c93d90fbcd10">PathsVAO::initVAO</a></div><div class="ttdeci">void initVAO(const std::vector&lt; Path &gt; &amp;p, vaoType &amp;v)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:159</div></div>
 <div class="ttc" id="classPathsVAO_html_a69e3f0a2ead42d6add4aab299a487b65"><div class="ttname"><a href="classPathsVAO.html#a69e3f0a2ead42d6add4aab299a487b65">PathsVAO::PathsVAO</a></div><div class="ttdeci">PathsVAO(ShaderProgramPaths &amp;bsp)</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:86</div></div>
-<div class="ttc" id="classPathsVAO_html_a5a61b20682883ef6fa8a349e44e61e78"><div class="ttname"><a href="classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78">PathsVAO::resetTime</a></div><div class="ttdeci">void resetTime(void)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:260</div></div>
-<div class="ttc" id="classPathsVAO_html_a2849f5ce99734a810a6a30fe897a2eb0"><div class="ttname"><a href="classPathsVAO.html#a2849f5ce99734a810a6a30fe897a2eb0">PathsVAO::display</a></div><div class="ttdeci">int display(time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:355</div></div>
+<div class="ttc" id="classPathsVAO_html_a5a61b20682883ef6fa8a349e44e61e78"><div class="ttname"><a href="classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78">PathsVAO::resetTime</a></div><div class="ttdeci">void resetTime(void)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:270</div></div>
+<div class="ttc" id="classPathsVAO_html_a2849f5ce99734a810a6a30fe897a2eb0"><div class="ttname"><a href="classPathsVAO.html#a2849f5ce99734a810a6a30fe897a2eb0">PathsVAO::display</a></div><div class="ttdeci">int display(time_t now)</div><div class="ttdef"><b>Definition:</b> PathsVAO.cpp:367</div></div>
 <div class="ttc" id="classPathsVAO_html_a6c5a505c6be2a5b9928a6d481f6a54c2"><div class="ttname"><a href="classPathsVAO.html#a6c5a505c6be2a5b9928a6d481f6a54c2">PathsVAO::vaoBuffer</a></div><div class="ttdeci">vaoType * vaoBuffer</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:53</div></div>
 <div class="ttc" id="classPathsVAO_html_a1537c99c7736f681495f9feeaa961c00a6fd808986ea169dac19df208d211f975"><div class="ttname"><a href="classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00a6fd808986ea169dac19df208d211f975">PathsVAO::pastIndex</a></div><div class="ttdef"><b>Definition:</b> PathsVAO.h:61</div></div>
 <div class="ttc" id="classPathsVAO_html_a51d56df835bde784c66141a0ee39964c"><div class="ttname"><a href="classPathsVAO.html#a51d56df835bde784c66141a0ee39964c">PathsVAO::indexList</a></div><div class="ttdeci">std::vector&lt; unsigned int &gt; indexList</div><div class="ttdef"><b>Definition:</b> PathsVAO.h:55</div></div>
@@ -251,7 +258,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Sep 2 2016 01:31:17 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 5 2016 03:40:49 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

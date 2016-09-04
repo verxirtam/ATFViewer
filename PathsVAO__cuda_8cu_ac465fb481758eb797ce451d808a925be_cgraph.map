@@ -1,0 +1,6 @@
+<map id="updateDeviceDataCUDA" name="updateDeviceDataCUDA">
+<area shape="rect" id="node2" href="$PathsVAO__cuda_8cu.html#a5bf8d360be72949dac5451f9f76ffd2d" title="updateTimeIndex" alt="" coords="224,31,347,57"/>
+<area shape="rect" id="node5" href="$PathsVAO__cuda_8cu.html#a3cbcd8942d001cddd079d936c9f33ace" title="updateElement" alt="" coords="231,81,340,108"/>
+<area shape="rect" id="node3" href="$PathsVAO__cuda_8cu.html#a2224c4f27c8c0ee1df0435cb5422123b" title="isInInterval" alt="" coords="415,5,502,32"/>
+<area shape="rect" id="node4" href="$PathsVAO__cuda_8cu.html#afa3d03e3203c15ad06820f1de310ab81" title="updateTimeVertex" alt="" coords="395,56,523,83"/>
+</map>

@@ -1,11 +1,12 @@
 <map id="src/VAOLayoutPaths.h" name="src/VAOLayoutPaths.h">
-<area shape="rect" id="node2" href="$VAOPaths_8h.html" title="src/VAOPaths.h" alt="" coords="313,80,429,107"/>
-<area shape="rect" id="node10" href="$VAOLayoutPaths_8cpp.html" title="src/VAOLayoutPaths.cpp" alt="" coords="455,80,625,107"/>
-<area shape="rect" id="node3" href="$ShaderProgramPaths_8h.html" title="src/ShaderProgramPaths.h" alt="" coords="283,155,461,181"/>
-<area shape="rect" id="node4" href="$PathsVAO_8h.html" title="src/PathsVAO.h" alt="" coords="224,229,340,256"/>
-<area shape="rect" id="node9" href="$ShaderProgramPaths_8cpp.html" title="src/ShaderProgramPaths.cpp" alt="" coords="366,229,559,256"/>
+<area shape="rect" id="node2" href="$VAOPaths_8h.html" title="src/VAOPaths.h" alt="" coords="404,80,520,107"/>
+<area shape="rect" id="node11" href="$VAOLayoutPaths_8cpp.html" title="src/VAOLayoutPaths.cpp" alt="" coords="545,80,716,107"/>
+<area shape="rect" id="node3" href="$ShaderProgramPaths_8h.html" title="src/ShaderProgramPaths.h" alt="" coords="373,155,552,181"/>
+<area shape="rect" id="node4" href="$PathsVAO_8h.html" title="src/PathsVAO.h" alt="" coords="315,229,431,256"/>
+<area shape="rect" id="node10" href="$ShaderProgramPaths_8cpp.html" title="src/ShaderProgramPaths.cpp" alt="" coords="457,229,649,256"/>
 <area shape="rect" id="node5" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="103,304,284,331"/>
 <area shape="rect" id="node8" href="$PathsVAO_8cpp.html" title="src/PathsVAO.cpp" alt="" coords="308,304,437,331"/>
+<area shape="rect" id="node9" href="$PathsVAO__cuda_8cu.html" title="src/PathsVAO_cuda.cu" alt="" coords="463,304,621,331"/>
 <area shape="rect" id="node6" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="5,379,200,405"/>
 <area shape="rect" id="node7" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="224,379,347,405"/>
 </map>
