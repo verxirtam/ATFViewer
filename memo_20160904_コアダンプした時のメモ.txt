@@ -1,0 +1,273 @@
+
+Thread 4 の~PathsVAO()で破棄したvectorに対して
+thread 1 (PathsVAOの裏スレッド)でvaoへpush_back()をしようとしていた
+->対策：
+  ~PathsVAO()で、裏スレッドが完了するまで待機する
+
+
+
+////////////////////////
+// core dump時に起動中のスレッド
+////////////////////////
+
+(gdb) info thread
+  Id   Target Id         Frame 
+  14   Thread 0x2acc627af700 (LWP 3475) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  13   Thread 0x2acc625ae700 (LWP 3428) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  12   Thread 0x2acc623ad700 (LWP 3477) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  11   Thread 0x2acc621ac700 (LWP 3426) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  10   Thread 0x2acc629b0700 (LWP 3479) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  9    Thread 0x2acc617a7700 (LWP 3421) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  8    Thread 0x2acc61ba9700 (LWP 3478) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  7    Thread 0x2acc639cc700 (LWP 3434) pthread_cond_timedwait@@GLIBC_2.3.2 ()
+    at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S:238
+  6    Thread 0x2acc637cb700 (LWP 3433) 0x00002acc5cf6bfdd in poll () at ../sysdeps/unix/syscall-template.S:81
+  5    Thread 0x2acc619a8700 (LWP 3422) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  4    Thread 0x2acc5b169480 (LWP 3418) 0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0)
+    at pthread_join.c:92
+  3    Thread 0x2acc61daa700 (LWP 3424) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  2    Thread 0x2acc61fab700 (LWP 3476) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+* 1    Thread 0x2acc615a6700 (LWP 3474) 0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&)
+    (this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+(gdb) 
+
+
+////////////////////////
+// thread 1
+////////////////////////
+
+->裏スレッドでinitData()実行中だった
+
+(gdb) thread 1
+[Switching to thread 1 (Thread 0x2acc615a6700 (LWP 3474))]
+#0  0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+120             { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+(gdb) 
+
+(gdb) bt
+#0  0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+
+(中略)
+
+#4  0x000000000041b361 in std::vector<float, std::allocator<float> >::push_back(float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, 
+    __x=<unknown type in /home/daisuke/programs/ATFViewer/ATFViewer/src/glunittest, CU 0x72944, DIE 0x83e8c>)
+    at /usr/include/c++/4.8/bits/stl_vector.h:920
+#5  0x000000000043f2c9 in VAOLayoutPaths::initData (this=0x682fc4 <ATFViewerMainGLSL::getInstance()::atfvm+932>, input=..., data=...)
+    at VAOLayoutPaths.cpp:37
+#6  0x0000000000432f05 in VAOPositionBase<ShaderProgramPaths, VBODynamicBase<34962, float>, VBODynamicBase<34963, unsigned int>, VAOLayoutPaths>::initReady (this=0x682fc0 <ATFViewerMainGLSL::getInstance()::atfvm+928>, input=..., e=..., m=5) at VAOPositionBase.h:113
+#7  0x00000000004329f7 in VAOPositionBaseDynamic<ShaderProgramPaths, VAOLayoutPaths>::initReady (
+    this=0x682fc0 <ATFViewerMainGLSL::getInstance()::atfvm+928>, v=..., e=..., m=5) at VAOPositionBaseDynamic.h:47
+#8  0x000000000042e93b in PathsVAO::initVAO (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, path=..., v=...)
+    at PathsVAO.cpp:262
+#9  0x000000000042dd90 in PathsVAO::makePathsBuffer (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, v=..., 
+    position=TimeSeparation::next) at PathsVAO.cpp:55
+#10 0x000000000042de0e in PathsVAO::__lambda4::operator() (__closure=0x1e15f40) at PathsVAO.cpp:68
+
+(中略)
+
+#32 0x00002acc5c23a184 in start_thread (arg=0x2acc615a6700) at pthread_create.c:312
+#33 0x00002acc5cf7937d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+(gdb) 
+
+
+
+
+////////////////////////
+// thread 4
+////////////////////////
+
+-> ~PathsVAO()実行中で、PathsVAOは破棄されている最中だった。
+
+(gdb) thread 4
+[Switching to thread 4 (Thread 0x2acc5b169480 (LWP 3418))]
+#0  0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0) at pthread_join.c:92
+92      in pthread_join.c
+(gdb) 
+(gdb) 
+#0  0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0) at pthread_join.c:92
+#1  0x00002acc5c501837 in std::thread::join() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+
+(中略)
+
+#21 0x000000000040797d in std::future<void>::~future (this=0x682f28 <ATFViewerMainGLSL::getInstance()::atfvm+776>, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/future:726
+#22 0x0000000000410e77 in PathsVAO::~PathsVAO (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, __in_chrg=<optimized out>)
+    at PathsVAO.h:38
+#23 0x000000000041128d in ATFViewerMainGLSL::~ATFViewerMainGLSL (this=0x682c20 <ATFViewerMainGLSL::getInstance()::atfvm>, 
+    __in_chrg=<optimized out>) at ATFViewerMainGLSL.h:40
+#24 0x00002acc5cebb1a9 in __run_exit_handlers (status=0, listp=0x2acc5d23d6c8 <__exit_funcs>, 
+    run_list_atexit=run_list_atexit@entry=true) at exit.c:82
+#25 0x00002acc5cebb1f5 in __GI_exit (status=<optimized out>) at exit.c:104
+#26 0x00002acc5b880fb8 in glutMainLoopEvent () from /usr/lib/x86_64-linux-gnu/libglut.so.3
+#27 0x00002acc5b881065 in glutMainLoop () from /usr/lib/x86_64-linux-gnu/libglut.so.3
+#28 0x000000000043fb36 in ATFViewerMainGLSL::execMainLoop (this=0x682c20 <ATFViewerMainGLSL::getInstance()::atfvm>)
+    at ./ATFViewerMainGLSL.h:198
+#29 0x000000000043f926 in main () at glunittest.cpp:173
+(gdb) 
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+以下は中略無しの情報
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+(gdb) info thread
+  Id   Target Id         Frame 
+  14   Thread 0x2acc627af700 (LWP 3475) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  13   Thread 0x2acc625ae700 (LWP 3428) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  12   Thread 0x2acc623ad700 (LWP 3477) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  11   Thread 0x2acc621ac700 (LWP 3426) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  10   Thread 0x2acc629b0700 (LWP 3479) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  9    Thread 0x2acc617a7700 (LWP 3421) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  8    Thread 0x2acc61ba9700 (LWP 3478) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  7    Thread 0x2acc639cc700 (LWP 3434) pthread_cond_timedwait@@GLIBC_2.3.2 ()
+    at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_cond_timedwait.S:238
+  6    Thread 0x2acc637cb700 (LWP 3433) 0x00002acc5cf6bfdd in poll () at ../sysdeps/unix/syscall-template.S:81
+  5    Thread 0x2acc619a8700 (LWP 3422) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  4    Thread 0x2acc5b169480 (LWP 3418) 0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0)
+    at pthread_join.c:92
+  3    Thread 0x2acc61daa700 (LWP 3424) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+  2    Thread 0x2acc61fab700 (LWP 3476) 0x00002acc5ca63b72 in ?? () from /usr/lib/x86_64-linux-gnu/libgomp.so.1
+* 1    Thread 0x2acc615a6700 (LWP 3474) 0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&)
+    (this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+(gdb) 
+
+
+(gdb) thread 1
+[Switching to thread 1 (Thread 0x2acc615a6700 (LWP 3474))]
+#0  0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+120             { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+(gdb) 
+(gdb) bt
+#0  0x000000000041e290 in __gnu_cxx::new_allocator<float>::construct<float, float>(float*, float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, __p=0x2accc1436ec8) at /usr/include/c++/4.8/ext/new_allocator.h:120
+#1  0x000000000041d74a in std::allocator_traits<std::allocator<float> >::_S_construct<float, float>(std::allocator<float>&, float*, float&&) (__a=..., __p=0x2accc1436ec8) at /usr/include/c++/4.8/bits/alloc_traits.h:254
+#2  0x000000000041ca63 in std::allocator_traits<std::allocator<float> >::construct<float, float>(std::allocator<float>&, float*, float&&) (__a=..., __p=0x2accc1436ec8) at /usr/include/c++/4.8/bits/alloc_traits.h:393
+#3  0x000000000041becc in std::vector<float, std::allocator<float> >::emplace_back<float>(float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>) at /usr/include/c++/4.8/bits/vector.tcc:96
+#4  0x000000000041b361 in std::vector<float, std::allocator<float> >::push_back(float&&) (
+    this=0x683008 <ATFViewerMainGLSL::getInstance()::atfvm+1000>, 
+    __x=<unknown type in /home/daisuke/programs/ATFViewer/ATFViewer/src/glunittest, CU 0x72944, DIE 0x83e8c>)
+    at /usr/include/c++/4.8/bits/stl_vector.h:920
+#5  0x000000000043f2c9 in VAOLayoutPaths::initData (this=0x682fc4 <ATFViewerMainGLSL::getInstance()::atfvm+932>, input=..., data=...)
+    at VAOLayoutPaths.cpp:37
+#6  0x0000000000432f05 in VAOPositionBase<ShaderProgramPaths, VBODynamicBase<34962, float>, VBODynamicBase<34963, unsigned int>, VAOLayoutPaths>::initReady (this=0x682fc0 <ATFViewerMainGLSL::getInstance()::atfvm+928>, input=..., e=..., m=5) at VAOPositionBase.h:113
+#7  0x00000000004329f7 in VAOPositionBaseDynamic<ShaderProgramPaths, VAOLayoutPaths>::initReady (
+    this=0x682fc0 <ATFViewerMainGLSL::getInstance()::atfvm+928>, v=..., e=..., m=5) at VAOPositionBaseDynamic.h:47
+#8  0x000000000042e93b in PathsVAO::initVAO (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, path=..., v=...)
+    at PathsVAO.cpp:262
+#9  0x000000000042dd90 in PathsVAO::makePathsBuffer (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, v=..., 
+    position=TimeSeparation::next) at PathsVAO.cpp:55
+#10 0x000000000042de0e in PathsVAO::__lambda4::operator() (__closure=0x1e15f40) at PathsVAO.cpp:68
+#11 0x0000000000431371 in std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>::_M_invoke<>(std::_Index_tuple<>) (this=0x1e15f40) at /usr/include/c++/4.8/functional:1732
+#12 0x0000000000431136 in std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>::operator()(void) (this=0x1e15f40) at /usr/include/c++/4.8/functional:1720
+#13 0x0000000000430e10 in std::_Function_handler<void(), std::reference_wrapper<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()> > >::_M_invoke(const std::_Any_data &) (__functor=...)
+    at /usr/include/c++/4.8/functional:2101
+#14 0x000000000042d8f5 in std::function<void ()>::operator()() const (this=0x2acc8829df68) at /usr/include/c++/4.8/functional:2471
+#15 0x000000000042d71f in std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, void>::operator() (this=0x2acc8829df60) at /usr/include/c++/4.8/future:1235
+#16 0x000000000042d52d in std::_Function_handler<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> (), std::__future_base::_Task_setter<std::unique_ptr<std::__future_base::_Result<void>, std::__future_base::_Result_base::_Deleter>, void> >::_M_invoke(std::_Any_data const&) (__functor=...) at /usr/include/c++/4.8/functional:2057
+#17 0x0000000000426b34 in std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>::operator()() const (this=0x2acc615a5da0) at /usr/include/c++/4.8/functional:2471
+#18 0x0000000000424b59 in std::__future_base::_State_base::_M_do_set(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&) (this=0x1e15eb8, __f=..., __set=@0x2acc615a5d3f: false)
+    at /usr/include/c++/4.8/future:471
+#19 0x000000000042b922 in std::_Mem_fn<void (std::__future_base::_State_base::*)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&)>::operator()<std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >, std::reference_wrapper<bool>, void>(std::__future_base::_State_base*, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >&&, std::reference_wrapper<bool>&&) const (this=0x2acc615a5cc8, __object=0x1e15eb8) at /usr/include/c++/4.8/functional:601
+#20 0x000000000042ac80 in std::_Bind_simple<std::_Mem_fn<void (std::__future_base::_State_base::*)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&)> (std::__future_base::_State_base*, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >, std::reference_wrapper<bool>)>::_M_invoke<0ul, 1ul, 2ul>(std::_Index_tuple<0ul, 1ul, 2ul>) (this=0x2acc615a5cb0) at /usr/include/c++/4.8/functional:1732
+#21 0x0000000000429642 in std::_Bind_simple<std::_Mem_fn<void (std::__future_base::_State_base::*)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&)> (std::__future_base::_State_base*, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >, std::reference_wrapper<bool>)>::operator()() (this=0x2acc615a5cb0) at /usr/include/c++/4.8/functional:1720
+#22 0x00000000004282e0 in std::__once_call_impl<std::_Bind_simple<std::_Mem_fn<void (std::__future_base::_State_base::*)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&)> (std::__future_base::_State_base*, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >, std::reference_wrapper<bool>)> >() () at /usr/include/c++/4.8/mutex:754
+#23 0x00002acc5c23fa80 in pthread_once () at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_once.S:103
+#24 0x000000000041fc51 in __gthread_once (__once=0x1e15f24, __func=0x405150 <__once_proxy@plt>)
+    at /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:699
+#25 0x0000000000426a55 in std::call_once<void (std::__future_base::_State_base::*)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&), std::__future_base::_State_base* const, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >, std::reference_wrapper<bool> >(std::once_flag&, void (std::__future_base::_State_base::*&&)(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>&, bool&), std::__future_base::_State_base* const&&, std::reference_wrapper<std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()> >&&, std::reference_wrapper<bool>&&) (
+    __once=..., __f=<unknown type in /home/daisuke/programs/ATFViewer/ATFViewer/src/glunittest, CU 0x8a493, DIE 0xaadac>)
+    at /usr/include/c++/4.8/mutex:786
+#26 0x0000000000424abd in std::__future_base::_State_base::_M_set_result(std::function<std::unique_ptr<std::__future_base::_Result_base, std::__future_base::_Result_base::_Deleter> ()>, bool) (this=0x1e15eb8, __res=..., __ignore_failure=false)
+    at /usr/include/c++/4.8/future:358
+#27 0x00000000004305fa in std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(VAOPositionBaseDynamic<ShaderProgramPaths, VAOLayoutPaths>&, TimeSeparation::Position)::{lambda()#1} ()>, void>::_Async_state_impl(PathsVAO::runMakePathsBuffer(VAOPositionBaseDynamic<ShaderProgramPaths, VAOLayoutPaths>&, TimeSeparation::Position)::{lambda()#1} (&&)())::{lambda()#1}::operator()() const () at /usr/include/c++/4.8/future:1498
+#28 0x00000000004323d9 in std::_Bind_simple<std::__future_base::_Async_state_impl<_BoundFn, <template-parameter-1-2> >::_Async_state_impl(_BoundFn&&) [with _BoundFn = std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>; _Res = void]::__lambda3()>::_M_invoke<>(std::_Index_tuple<>) (this=0x1e15f90) at /usr/include/c++/4.8/functional:1732
+#29 0x0000000000432270 in std::_Bind_simple<std::__future_base::_Async_state_impl<_BoundFn, <template-parameter-1-2> >::_Async_state_impl(_BoundFn&&) [with _BoundFn = std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>; _Res = void]::__lambda3()>::operator()(void) (this=0x1e15f90) at /usr/include/c++/4.8/functional:1720
+#30 0x0000000000431e15 in std::thread::_Impl<std::_Bind_simple<std::__future_base::_Async_state_impl<_BoundFn, <template-parameter-1-2> >::_Async_state_impl(_BoundFn&&) [with _BoundFn = std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>; _Res = void]::__lambda3()> >::_M_run(void) (this=0x1e15f78) at /usr/include/c++/4.8/thread:115
+#31 0x00002acc5c501a40 in ?? () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#32 0x00002acc5c23a184 in start_thread (arg=0x2acc615a6700) at pthread_create.c:312
+#33 0x00002acc5cf7937d in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:111
+(gdb) 
+
+
+
+
+
+(gdb) thread 4
+[Switching to thread 4 (Thread 0x2acc5b169480 (LWP 3418))]
+#0  0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0) at pthread_join.c:92
+92      in pthread_join.c
+(gdb) 
+(gdb) 
+#0  0x00002acc5c23b65b in pthread_join (threadid=47057295009536, thread_return=0x0) at pthread_join.c:92
+#1  0x00002acc5c501837 in std::thread::join() () from /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+#2  0x000000000042c24c in std::_Mem_fn<void (std::thread::*)()>::operator()<, void>(std::thread&) const (this=0x7fff72514be8, 
+    __object=...) at /usr/include/c++/4.8/functional:588
+#3  0x000000000042badb in std::_Mem_fn<void (std::thread::*)()>::operator()<std::thread<>, void>(std::reference_wrapper<std::thread<> >, (void&&)...) const (this=0x7fff72514be8, __ref=...) at /usr/include/c++/4.8/functional:617
+#4  0x000000000042ae5c in std::_Bind_simple<std::_Mem_fn<void (std::thread::*)()> (std::reference_wrapper<std::thread>)>::_M_invoke<0ul>(std::_Index_tuple<0ul>) (this=0x7fff72514be0) at /usr/include/c++/4.8/functional:1732
+#5  0x0000000000429a04 in std::_Bind_simple<std::_Mem_fn<void (std::thread::*)()> (std::reference_wrapper<std::thread>)>::operator()() (
+    this=0x7fff72514be0) at /usr/include/c++/4.8/functional:1720
+#6  0x0000000000428639 in std::__once_call_impl<std::_Bind_simple<std::_Mem_fn<void (std::thread::*)()> (std::reference_wrapper<std::thread>)> >() () at /usr/include/c++/4.8/mutex:754
+#7  0x00002acc5c23fa80 in pthread_once () at ../nptl/sysdeps/unix/sysv/linux/x86_64/pthread_once.S:103
+#8  0x000000000041fc51 in __gthread_once (__once=0x1e15f30, __func=0x405150 <__once_proxy@plt>)
+    at /usr/include/x86_64-linux-gnu/c++/4.8/bits/gthr-default.h:699
+#9  0x0000000000427406 in std::call_once<void (std::thread::*)(), std::reference_wrapper<std::thread> >(std::once_flag&, void (std::thread::*&&)(), std::reference_wrapper<std::thread>&&) (__once=..., 
+    __f=<unknown type in /home/daisuke/programs/ATFViewer/ATFViewer/src/glunittest, CU 0x8a493, DIE 0xabebf>)
+    at /usr/include/c++/4.8/mutex:786
+#10 0x0000000000424e53 in std::__future_base::_Async_state_common::_M_join (this=0x1e15eb8) at /usr/include/c++/4.8/future:1482
+#11 0x000000000043219c in std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void>::~_Async_state_impl(void) (this=0x1e15eb8, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/future:1502
+#12 0x000000000043253b in __gnu_cxx::new_allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> >::destroy<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> >(std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> *) (this=0x1e15eb0, 
+    __p=0x1e15eb8) at /usr/include/c++/4.8/ext/new_allocator.h:124
+#13 0x0000000000432457 in std::allocator_traits<std::allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> > >::_S_destroy<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> >(std::allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> > &, std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> *) (__a=..., __p=0x1e15eb8) at /usr/include/c++/4.8/bits/alloc_traits.h:281
+#14 0x00000000004322ee in std::allocator_traits<std::allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> > >::destroy<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> >(std::allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> > &, std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> *) (__a=..., __p=0x1e15eb8) at /usr/include/c++/4.8/bits/alloc_traits.h:405
+#15 0x0000000000432008 in std::_Sp_counted_ptr_inplace<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void>, std::allocator<std::__future_base::_Async_state_impl<std::_Bind_simple<PathsVAO::runMakePathsBuffer(PathsVAO::vaoType&, TimeSeparation::Position)::__lambda4()>, void> >, (__gnu_cxx::_Lock_policy)2u>::_M_dispose(void) (this=0x1e15ea0) at /usr/include/c++/4.8/bits/shared_ptr_base.h:407
+#16 0x00000000004095ff in std::_Sp_counted_base<(__gnu_cxx::_Lock_policy)2>::_M_release (this=0x1e15ea0)
+    at /usr/include/c++/4.8/bits/shared_ptr_base.h:144
+#17 0x0000000000408bfe in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::~__shared_count (
+    this=0x682f30 <ATFViewerMainGLSL::getInstance()::atfvm+784>, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr_base.h:546
+#18 0x0000000000407851 in std::__shared_ptr<std::__future_base::_State_base, (__gnu_cxx::_Lock_policy)2>::~__shared_ptr (
+    this=0x682f28 <ATFViewerMainGLSL::getInstance()::atfvm+776>, __in_chrg=<optimized out>)
+    at /usr/include/c++/4.8/bits/shared_ptr_base.h:781
+#19 0x0000000000407871 in std::shared_ptr<std::__future_base::_State_base>::~shared_ptr (
+    this=0x682f28 <ATFViewerMainGLSL::getInstance()::atfvm+776>, __in_chrg=<optimized out>) at /usr/include/c++/4.8/bits/shared_ptr.h:93
+#20 0x0000000000407891 in std::__basic_future<void>::~__basic_future (this=0x682f28 <ATFViewerMainGLSL::getInstance()::atfvm+776>, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/future:550
+#21 0x000000000040797d in std::future<void>::~future (this=0x682f28 <ATFViewerMainGLSL::getInstance()::atfvm+776>, 
+    __in_chrg=<optimized out>) at /usr/include/c++/4.8/future:726
+#22 0x0000000000410e77 in PathsVAO::~PathsVAO (this=0x682ee8 <ATFViewerMainGLSL::getInstance()::atfvm+712>, __in_chrg=<optimized out>)
+    at PathsVAO.h:38
+#23 0x000000000041128d in ATFViewerMainGLSL::~ATFViewerMainGLSL (this=0x682c20 <ATFViewerMainGLSL::getInstance()::atfvm>, 
+    __in_chrg=<optimized out>) at ATFViewerMainGLSL.h:40
+#24 0x00002acc5cebb1a9 in __run_exit_handlers (status=0, listp=0x2acc5d23d6c8 <__exit_funcs>, 
+    run_list_atexit=run_list_atexit@entry=true) at exit.c:82
+#25 0x00002acc5cebb1f5 in __GI_exit (status=<optimized out>) at exit.c:104
+#26 0x00002acc5b880fb8 in glutMainLoopEvent () from /usr/lib/x86_64-linux-gnu/libglut.so.3
+#27 0x00002acc5b881065 in glutMainLoop () from /usr/lib/x86_64-linux-gnu/libglut.so.3
+#28 0x000000000043fb36 in ATFViewerMainGLSL::execMainLoop (this=0x682c20 <ATFViewerMainGLSL::getInstance()::atfvm>)
+    at ./ATFViewerMainGLSL.h:198
+#29 0x000000000043f926 in main () at glunittest.cpp:173
+(gdb) 
+
+
+
+
+
+
+
+
+
+

@@ -97,6 +97,12 @@ public:
 			indexListDevice()
 	{
 	}
+	~PathsVAO()
+	{
+		//メンバを破棄する前に裏スレッドが完了するまで待機する
+		//(破棄したメンバを更新しないようにするため)
+		futureMakeBuffer.wait();
+	}
 	void initPathPoint(time_t time_min, time_t time_max);
 	void drawPath(PathPoint& p, time_t now);
 	PathPoint getNowPoint(PathPoint& from, PathPoint& to, time_t time);

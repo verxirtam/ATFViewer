@@ -249,9 +249,19 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			*/
 		}
 	}
+	//indexListの初期化
+	//indexListの末尾にダミーの項目を追加する
+	//最後のPathの末尾を取得するため
+	//pastIndex, nowIndexは使用しないのでダミーで0を設定する
+	indexList.push_back(input.size());//beginIndex
+	indexList.push_back(           0);//pastIndex
+	indexList.push_back(           0);//nowIndex
+	
+	
+	//VAOの初期化(裏スレッドで実行可能なGL関数実行部分以外)
 	v.initReady(input, element, GL_TRIANGLE_STRIP);
 
-	//デバイスに転送
+	//indexListのデバイスへの転送
 	indexListDevice.malloc(indexList.size());
 	indexListDevice.memcpyHostToDevice(indexList.data());
 }
@@ -384,7 +394,7 @@ int PathsVAO::display(time_t now)
 		
 	}
 	//時刻に応じてデバイス上のPathsをアップデートする
-	//updateDeviceData(now);
+	updateDeviceData(now);
 	
 	vaoCurrent->display();
 	
