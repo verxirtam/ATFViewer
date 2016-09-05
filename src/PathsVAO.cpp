@@ -21,7 +21,7 @@
 using namespace std;
 
 
-void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)
+void PathsVAO::makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position)
 {
 	cout << "PathsVAO::makePathsBuffer() start." << endl;
 	
@@ -52,20 +52,20 @@ void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)
 	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 6);
 	
 	//トラックデータのVAOへの設定
-	this->initVAO(p, v);
+	this->initVAO(p, db);
 	
 	cout << "PathsVAO::makePathsBuffer() end." << endl;
 }
 
-void PathsVAO::runMakePathsBuffer(vaoType& v, TimeSeparation::Position position)
+void PathsVAO::runMakePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position)
 {
 	cout << "PathsVAO::runMakePathsBuffer() start." << endl;
 	
 	//スレッドで実行するラムダ式
 	//this : メンバ変数を実行するのでコピーキャプチャする
-	//v : 書き換えるので参照キャプチャする
+	//db : 書き換えるので参照キャプチャする
 	//position : 1次変数なのでコピーキャプチャする
-	auto _f = [this,&v,position]{this->makePathsBuffer(v, position);};
+	auto _f = [this, &db, position]{this->makePathsBuffer(db, position);};
 	//スレッド起動
 	futureMakeBuffer = std::async(std::launch::async, _f);
 	
@@ -142,21 +142,21 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 	
 	//バッファの取得を別スレッドで実行
 	//メインスレッドと合わせて同時取得する
-	this->runMakePathsBuffer(*vaoBuffer, TimeSeparation::Position::next);
+	this->runMakePathsBuffer(*doubleBufferingBuffer, TimeSeparation::Position::next);
 	
 	//トラックデータ格納用のvector
-	std::vector<Path> paths;
+	//std::vector<Path> paths;
 	//メインスレッドで直近で使用するトラックデータを取得
-	this->makePathsBuffer(*vaoCurrent, TimeSeparation::Position::current);
+	this->makePathsBuffer(*doubleBufferingCurrent, TimeSeparation::Position::current);
 	
-	vaoCurrent->initMain();
+	doubleBufferingCurrent->vao.initMain();
 	//initVAO(paths, vao);
 	
 	//TrackDataManager tdm;
 	//tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
 }
 
-void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
+void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 {
 	
 	using input_type = ShaderProgramPaths::vaoTypeDynamic::inputType;
@@ -164,6 +164,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 	input_type input;
 	
 	std::vector<unsigned int> element;
+	std::vector<unsigned int> index_list;
 	
 	unsigned int imax = path.size();
 	for(unsigned int i = 0; i < imax; i++)
@@ -174,12 +175,12 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 		{
 			continue;
 		}
-		//indexListの初期化
+		//index_listの初期化
 		//各Pathの開始インデックスを設定する
 		//pastIndex, nowIndexは最初のvertexIndexを設定する
-		indexList.push_back(input.size()    );//beginIndex
-		indexList.push_back(input.size() + 2);//pastIndex
-		indexList.push_back(input.size() + 2);//nowIndex
+		index_list.push_back(input.size()    );//beginIndex
+		index_list.push_back(input.size() + 2);//pastIndex
+		index_list.push_back(input.size() + 2);//nowIndex
 		{
 			/*
 			//ダミーの点(同じ点を2つ打つ)
@@ -249,21 +250,20 @@ void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)
 			*/
 		}
 	}
-	//indexListの初期化
-	//indexListの末尾にダミーの項目を追加する
+	//index_listの末尾にダミーの項目を追加する
 	//最後のPathの末尾を取得するため
 	//pastIndex, nowIndexは使用しないのでダミーで0を設定する
-	indexList.push_back(input.size());//beginIndex
-	indexList.push_back(           0);//pastIndex
-	indexList.push_back(           0);//nowIndex
+	index_list.push_back(input.size());//beginIndex
+	index_list.push_back(           0);//pastIndex
+	index_list.push_back(           0);//nowIndex
 	
 	
 	//VAOの初期化(裏スレッドで実行可能なGL関数実行部分以外)
-	v.initReady(input, element, GL_TRIANGLE_STRIP);
+	db.vao.initReady(input, element, GL_TRIANGLE_STRIP);
 
-	//indexListのデバイスへの転送
-	indexListDevice.malloc(indexList.size());
-	indexListDevice.memcpyHostToDevice(indexList.data());
+	//index_listのデバイスへの転送
+	db.indexListDevice.malloc(index_list.size());
+	db.indexListDevice.memcpyHostToDevice(index_list.data());
 }
 
 
@@ -377,12 +377,16 @@ int PathsVAO::display(time_t now)
 		//cout << " pathsBuffer.size() = " <<  pathsBuffer.size() << endl;
 		
 		//バッファの入れ替え
-		vaoType* dummy = vaoBuffer;
-		vaoBuffer = vaoCurrent;
-		vaoCurrent = dummy;
+		//vaoType* dummy = vaoBuffer;
+		//vaoBuffer = vaoCurrent;
+		//vaoCurrent = dummy;
+		doubleBufferingType* dummy = doubleBufferingBuffer;
+		doubleBufferingBuffer = doubleBufferingCurrent;
+		doubleBufferingCurrent = dummy;
+		
 		
 		//VAOの初期化のGLへの登録部分
-		vaoCurrent->initMain();
+		doubleBufferingCurrent->vao.initMain();
 		
 		//now_indexとpast_time_indexの初期化
 		this->resetTime();
@@ -390,13 +394,13 @@ int PathsVAO::display(time_t now)
 		timeSeparation.setNextInterval();
 		
 		//別スレッドで次の区間のトラックデータ取得開始
-		this->runMakePathsBuffer(*vaoBuffer, TimeSeparation::Position::next);
+		this->runMakePathsBuffer(*doubleBufferingBuffer, TimeSeparation::Position::next);
 		
 	}
 	//時刻に応じてデバイス上のPathsをアップデートする
 	updateDeviceData(now);
 	
-	vaoCurrent->display();
+	doubleBufferingCurrent->vao.display();
 	
 	return 0;
 	

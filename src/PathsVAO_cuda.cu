@@ -214,7 +214,7 @@ void updateDeviceDataCUDA
 	float* const past_vertex = &vertex_d[begin_index];
 	
 	//nowの頂点
-	float* const now_vertex = &vertex_d[begin_index + 9];
+	float* const now_vertex = &vertex_d[begin_index + VCOUNT];
 	
 	//pastIndexを更新する
 	updateTimeIndex(past, vertex_d, begin_index, end_index, past_index, past_vertex);
@@ -229,18 +229,21 @@ void updateDeviceDataCUDA
 
 void PathsVAO::updateDeviceData(time_t now)
 {
+	vaoType& vao = doubleBufferingCurrent->vao;
+	DeviceMemory<unsigned int>& indexListDevice = doubleBufferingCurrent->indexListDevice;
+	
 	//VAOをCUDA向けに確保
-	Map<vaoType> m(*vaoCurrent);
+	Map<vaoType> m(doubleBufferingCurrent->vao);
 	
 	//VAOのデバイスメモリを取得
-	float* v_d = vaoCurrent->getVertexDevicePointer();
-	unsigned int* e_d = vaoCurrent->getElementDevicePointer();
+	float* v_d = vao.getVertexDevicePointer();
+	unsigned int* e_d = vao.getElementDevicePointer();
 	
 	//indexListDeviceのデバイスメモリを取得
 	unsigned int* il_d = indexListDevice.getDevicePointer();
 	
 	//パスの個数
-	unsigned int path_count = ( indexList.size() / 3 ) - 1;
+	unsigned int path_count = ( indexListDevice.getCount() / 3 ) - 1;
 	
 	//ここにCUDA関数を書く予定(多分引数足りない)
 	dim3 grid(path_count, 1, 1);

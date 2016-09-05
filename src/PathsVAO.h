@@ -39,6 +39,16 @@ class PathsVAO
 {
 private:
 	using vaoType = ShaderProgramPaths::vaoTypeDynamic;
+	struct doubleBufferingType
+	{
+		vaoType vao;
+		DeviceMemory<unsigned int> indexListDevice;
+		doubleBufferingType(ShaderProgramPaths& spp):vao(spp),indexListDevice()
+		{
+		}
+	};
+	
+	
 	
 	TimeSeparation timeSeparation;
 	//std::vector<Path> paths;
@@ -47,13 +57,20 @@ private:
 	//std::vector<Path>* bufferPaths;
 	const unsigned int drawTimeWidth;
 	std::future<void> futureMakeBuffer;
-	vaoType vao0;
-	vaoType vao1;
-	vaoType* vaoCurrent;
-	vaoType* vaoBuffer;
+	//vaoType vao0;
+	//vaoType vao1;
+	//vaoType* vaoCurrent;
+	//vaoType* vaoBuffer;
 	
-	std::vector<unsigned int> indexList;
-	DeviceMemory<unsigned int> indexListDevice;
+	//std::vector<unsigned int> indexList;
+	//DeviceMemory<unsigned int> indexListDevice0;
+	//DeviceMemory<unsigned int> indexListDevice1;
+	//DeviceMemory<unsigned int>* indexListDeviceCurrent;
+	//DeviceMemory<unsigned int>* indexListDeviceBuffer;
+	doubleBufferingType doubleBuffer0;
+	doubleBufferingType doubleBuffer1;
+	doubleBufferingType* doubleBufferingCurrent;
+	doubleBufferingType* doubleBufferingBuffer;
 	
 	enum indexListItem
 	{
@@ -66,12 +83,12 @@ private:
 		return 3 * path_index + i;
 	}
 	
-	void makePathsBuffer(vaoType& v, TimeSeparation::Position position);
-	void runMakePathsBuffer(vaoType& v, TimeSeparation::Position position);
+	void makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position);
+	void runMakePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position);
 	void updatePastTimeIndex(Path& p, time_t past_time);
 	void updateNowIndex(Path& p, time_t now);
 	void drawPathLine(Path& p, time_t past_time, time_t now);
-	void initVAO(const std::vector<Path>& p, vaoType& v);
+	void initVAO(const std::vector<Path>& p, doubleBufferingType& db);
 	void updateDeviceData(time_t now);
 	//ポインタメンバを持っているが、コピー不要なので禁止する
 	//コピーコンストラクタ
@@ -83,18 +100,25 @@ private:
 	//ムーブ代入演算子
 	PathsVAO& operator=(PathsVAO&&) = delete;
 public:
-	PathsVAO(ShaderProgramPaths& bsp)
+	PathsVAO(ShaderProgramPaths& spp)
 		:
 			timeSeparation(),
 			//pathsBuffer(),
 			drawTimeWidth(600),
 			futureMakeBuffer(),
-			vao0(bsp),
-			vao1(bsp),
-			vaoCurrent(&vao0),
-			vaoBuffer( &vao1),
-			indexList(),
-			indexListDevice()
+			//vao0(bsp),
+			//vao1(bsp),
+			//vaoCurrent(&vao0),
+			//vaoBuffer( &vao1),
+			//indexList(),
+			//indexListDevice0(),
+			//indexListDevice1(),
+			//indexListDeviceCurrent(&indexListDevice0),
+			//indexListDeviceBuffer(&indexListDevice1)
+			doubleBuffer0(spp),
+			doubleBuffer1(spp),
+			doubleBufferingCurrent(&doubleBuffer0),
+			doubleBufferingBuffer(&doubleBuffer1)
 	{
 	}
 	~PathsVAO()

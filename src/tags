@@ -34,8 +34,9 @@ Button_X	Joystick.h	/^	Button_X = 2,$/;"	e	enum:KeyCode_F310
 Button_Y	Joystick.h	/^	Button_Y = 3,$/;"	e	enum:KeyCode_F310
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
-CXXFLAGS	makefile	/^CXXFLAGS := -Wall -lsqlite3 -L\/usr\/lib\/x86_64-linux-gnu -lglut -lGLEW -lGLU -lGL -I\/usr\/include -I\/usr\/local\/cuda\/include$/;"	m
-CXXONLYFLAGS	makefile	/^CXXONLYFLAGS :=  -fopenmp -std=c++11 -Weffc++$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS := -Wall -fopenmp -I\/usr\/include -I\/usr\/local\/cuda\/include $(CXX_LINKS)$/;"	m
+CXXONLYFLAGS	makefile	/^CXXONLYFLAGS := -std=c++11 -Weffc++$/;"	m
+CXX_LINKS	makefile	/^CXX_LINKS := -L\/usr\/lib\/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL$/;"	m
 CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
 CountCrossing	CountCrossing.h	/^class CountCrossing$/;"	c
 CountCrossing_H_	CountCrossing.h	21;"	d
@@ -53,7 +54,7 @@ Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
 GLM_FORCE_RADIANS	MapTransform.h	21;"	d
-GLM_FORCE_RADIANS	OpenGLHeaders.h	24;"	d
+GLM_FORCE_RADIANS	OpenGLHeaders.h	31;"	d
 GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
 GLTESTTARGET	makefile	/^GLTESTTARGET := glunittest$/;"	m
 GPROF2DOT	makefile	/^GPROF2DOT := ~\/tools\/gprof2dot\/gprof2dot.py$/;"	m
@@ -85,8 +86,9 @@ MapVertexIndex	Map.h	/^	struct MapVertexIndex$/;"	s	class:Map
 MapVertexIndex	MapVAO.h	/^		MapVertexIndex()$/;"	f	struct:MapVAO::MapVertexIndex
 MapVertexIndex	MapVAO.h	/^	struct MapVertexIndex$/;"	s	class:MapVAO
 NVCC	makefile	/^NVCC := nvcc$/;"	m
-NVCC_FLAGS	makefile	/^NVCC_FLAGS :=  -Xcompiler -Wall -Xcompiler -fopenmp --std c++11$/;"	m
-NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart$/;"	m
+NVCC_CXX_FLAGS	makefile	/^NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)$/;"	m
+NVCC_FLAGS	makefile	/^NVCC_FLAGS := --std c++11$/;"	m
+NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart $(CXX_LINKS)$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSGLTEST	makefile	/^OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o $(GLTESTTARGET).o, $(OBJS))$/;"	m
@@ -100,7 +102,7 @@ PathPoint	Path.h	/^struct PathPoint$/;"	s
 Path_H	Path.h	19;"	d
 Paths	Paths.h	/^	Paths()$/;"	f	class:Paths
 Paths	Paths.h	/^class Paths$/;"	c
-PathsVAO	PathsVAO.h	/^	PathsVAO(ShaderProgramPaths& bsp)$/;"	f	class:PathsVAO
+PathsVAO	PathsVAO.h	/^	PathsVAO(ShaderProgramPaths& spp)$/;"	f	class:PathsVAO
 PathsVAO	PathsVAO.h	/^class PathsVAO$/;"	c
 Paths_H	Paths.h	20;"	d
 Position	TimeSeparation.h	/^	enum Position$/;"	g	class:TimeSeparation
@@ -383,6 +385,12 @@ displaySector	Sectors.cpp	/^void Sectors::displaySector(Sector& sector)$/;"	f	cl
 displaySectorIndex	Sectors.h	/^	unsigned int displaySectorIndex;$/;"	m	class:Sectors
 displaySectorIndex	SectorsVAO.h	/^	unsigned int displaySectorIndex;$/;"	m	class:SectorsVAO
 displaySubSector	Sectors.cpp	/^void Sectors::displaySubSector(const std::string& sector_name, SubSector& ss)$/;"	f	class:Sectors
+doubleBuffer0	PathsVAO.h	/^	doubleBufferingType doubleBuffer0;$/;"	m	class:PathsVAO
+doubleBuffer1	PathsVAO.h	/^	doubleBufferingType doubleBuffer1;$/;"	m	class:PathsVAO
+doubleBufferType	PathsVAO.h	/^		doubleBufferType(ShaderProgramPaths& spp):vao(spp),indexListDevice()$/;"	f	struct:PathsVAO::doubleBufferingType
+doubleBufferingBuffer	PathsVAO.h	/^	doubleBufferingType* doubleBufferingBuffer;$/;"	m	class:PathsVAO
+doubleBufferingCurrent	PathsVAO.h	/^	doubleBufferingType* doubleBufferingCurrent;$/;"	m	class:PathsVAO
+doubleBufferingType	PathsVAO.h	/^	struct doubleBufferingType$/;"	s	class:PathsVAO
 drawPath	Paths.cpp	/^void Paths::drawPath(PathPoint& p, time_t now)$/;"	f	class:Paths
 drawPath	PathsVAO.cpp	/^void PathsVAO::drawPath(PathPoint& p, time_t now)$/;"	f	class:PathsVAO
 drawPathLine	Paths.cpp	/^void Paths::drawPathLine(Path& p, time_t past_time, time_t now)$/;"	f	class:Paths
@@ -500,7 +508,7 @@ includesMinimumAltitude	Sectors.h	/^		bool includesMinimumAltitude;$/;"	m	struct
 includesMinimumAltitude	SectorsVAO.h	/^		bool includesMinimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
 indexList	PathsVAO.h	/^	std::vector<unsigned int> indexList;$/;"	m	class:PathsVAO
-indexListDevice	PathsVAO.h	/^	DeviceMemory<unsigned int> indexListDevice;$/;"	m	class:PathsVAO
+indexListDevice	PathsVAO.h	/^		DeviceMemory<unsigned int> indexListDevice;$/;"	m	struct:PathsVAO::doubleBufferingType
 indexListItem	PathsVAO.h	/^	enum indexListItem$/;"	g	class:PathsVAO
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain
 init	ATFViewerMainGLSL.h	/^	void init(void)$/;"	f	class:ATFViewerMainGLSL
@@ -544,7 +552,7 @@ initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
 initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
 initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
-initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, vaoType& v)$/;"	f	class:PathsVAO
+initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)$/;"	f	class:PathsVAO
 initVAO	SectorsVAO.cpp	/^void SectorsVAO::initVAO(InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 inputType1	VAOLayoutPaths.h	/^		inputType1():position(),time(),color()$/;"	f	struct:VAOLayoutPaths::inputType1
 inputType1	VAOLayoutPaths.h	/^	struct inputType1$/;"	s	class:VAOLayoutPaths
@@ -595,7 +603,7 @@ main	glunittest.cpp	/^int main(void)$/;"	f
 main	unittest.cpp	/^int main(int argc, char const* argv[])$/;"	f
 makeDBFileName	TrackDataManager.h	/^	void makeDBFileName(time_t day, std::string& dbfilenamestr)$/;"	f	class:TrackDataManager
 makePathsBuffer	Paths.cpp	/^void Paths::makePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
-makePathsBuffer	PathsVAO.cpp	/^void PathsVAO::makePathsBuffer(vaoType& v, TimeSeparation::Position position)$/;"	f	class:PathsVAO
+makePathsBuffer	PathsVAO.cpp	/^void PathsVAO::makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position)$/;"	f	class:PathsVAO
 map	ATFViewerMain.h	/^	std::vector<Map> map;$/;"	m	class:ATFViewerMain
 map	ATFViewerMainGLSL.h	/^	MapVAO map;$/;"	m	class:ATFViewerMainGLSL
 map	VAOPositionBaseDynamic.h	/^	void map()$/;"	f	class:VAOPositionBaseDynamic
@@ -666,7 +674,7 @@ resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBODynamicBase
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread_MemFunc
 runMakePathsBuffer	Paths.cpp	/^void Paths::runMakePathsBuffer(std::vector<Path>& p, TimeSeparation::Position position)$/;"	f	class:Paths
-runMakePathsBuffer	PathsVAO.cpp	/^void PathsVAO::runMakePathsBuffer(vaoType& v, TimeSeparation::Position position)$/;"	f	class:PathsVAO
+runMakePathsBuffer	PathsVAO.cpp	/^void PathsVAO::runMakePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position)$/;"	f	class:PathsVAO
 s	Shader.h	/^	Shader& operator=(Shader&& s) = delete;$/;"	m	class:Shader
 s	Shader.h	/^	Shader& operator=(const Shader& s) = delete;$/;"	m	class:Shader
 s	Shader.h	/^	Shader(Shader&& s) = delete;$/;"	m	class:Shader
@@ -758,6 +766,7 @@ timeMax	ATFViewerMainGLSL.h	/^	const time_t timeMax;$/;"	m	class:ATFViewerMainGL
 timeMin	ATFViewerMain.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMain
 timeMin	ATFViewerMainGLSL.h	/^	const time_t timeMin;$/;"	m	class:ATFViewerMainGLSL
 timeSeparation	Paths.h	/^	TimeSeparation timeSeparation;$/;"	m	class:Paths
+timeSeparation	PathsVAO.h	/^	TimeSeparation timeSeparation;$/;"	m	class:PathsVAO
 timeSequence	TimeSeparation.h	/^	std::vector< time_t > timeSequence;$/;"	m	class:TimeSeparation
 timestring	unittest.cpp	/^string timestring(time_t t)$/;"	f
 today	TimeManager.h	/^	static time_t today(time_t t)$/;"	f	class:TimeManager
@@ -784,7 +793,6 @@ unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	ShaderProgramPaths.h	/^	void unuse()$/;"	f	class:ShaderProgramPaths
 unuse	ShaderProgramPositionColor.h	/^	void unuse()$/;"	f	class:ShaderProgramPositionColor
 unuse	ShaderProgramTexture.h	/^	void unuse()$/;"	f	class:ShaderProgramTexture
-updateDeviceData	PathsVAO.cpp	/^void PathsVAO::updateDeviceData(time_t now)$/;"	f	class:PathsVAO
 updateNowIndex	Paths.cpp	/^void Paths::updateNowIndex(Path& p, time_t now)$/;"	f	class:Paths
 updateNowIndex	PathsVAO.cpp	/^void PathsVAO::updateNowIndex(Path& p, time_t now)$/;"	f	class:PathsVAO
 updatePastTimeIndex	Paths.cpp	/^void Paths::updatePastTimeIndex(Path& p, time_t past_time)$/;"	f	class:Paths
@@ -801,12 +809,9 @@ v	VAOBase.h	/^	VAOBase& operator=(const VAOBase& v) = delete;$/;"	m	class:VAOBas
 v	VAOBase.h	/^	VAOBase(VAOBase&& v) = delete;$/;"	m	class:VAOBase
 v	VAOBase.h	/^	VAOBase(const VAOBase& v) = delete;$/;"	m	class:VAOBase
 vao	MapVAO.h	/^	ShaderProgramTexture::vaoType vao;$/;"	m	class:MapVAO
+vao	PathsVAO.h	/^		vaoType vao;$/;"	m	struct:PathsVAO::doubleBufferingType
 vao	SectorsVAO.h	/^	ShaderProgramPositionColor::vaoType vao;$/;"	m	class:SectorsVAO
 vao	TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
-vao0	PathsVAO.h	/^	vaoType vao0;$/;"	m	class:PathsVAO
-vao1	PathsVAO.h	/^	vaoType vao1;$/;"	m	class:PathsVAO
-vaoBuffer	PathsVAO.h	/^	vaoType* vaoBuffer;$/;"	m	class:PathsVAO
-vaoCurrent	PathsVAO.h	/^	vaoType* vaoCurrent;$/;"	m	class:PathsVAO
 vaoLayout	VAOPositionBase.h	/^	VAOLayoutClass vaoLayout;$/;"	m	class:VAOPositionBase
 vbo	TestVBO.h	/^	GLuint vbo;$/;"	m	class:TestVBO
 vertShader	ShaderProgramPaths.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramPaths
@@ -824,6 +829,7 @@ windowHeight	ATFViewerMainGLSL.h	/^	int windowHeight;$/;"	m	class:ATFViewerMainG
 windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMainGLSL.h	/^	int windowWidth;$/;"	m	class:ATFViewerMainGLSL
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor
+~PathsVAO	PathsVAO.h	/^	~PathsVAO()$/;"	f	class:PathsVAO
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
 ~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
 ~TestUseThread	unittest.cpp	/^	~TestUseThread()$/;"	f	class:TestUseThread
