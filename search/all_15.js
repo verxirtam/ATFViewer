@@ -1,13 +1,9 @@
 var searchData=
 [
   ['v',['v',['../structMap_1_1MapVertex.html#ae66e809e409d0651aab70bd6217d88c9',1,'Map::MapVertex::v()'],['../structMapVAO_1_1MapVertex.html#a7fd41c17e630e4d6268e045f2cea08b5',1,'MapVAO::MapVertex::v()']]],
-  ['vao',['vao',['../classMapVAO.html#a6913cf533ba84ff3fcb26d23c2bd03f1',1,'MapVAO::vao()'],['../classSectorsVAO.html#a294e7c166ef879f6304aa888a1db84ab',1,'SectorsVAO::vao()'],['../classTestVBO.html#a0f595e8e0f3926bc530ef1a38f6021ef',1,'TestVBO::vao()']]],
-  ['vao0',['vao0',['../classPathsVAO.html#ad5556236cd846b4dc609a8f782675e49',1,'PathsVAO']]],
-  ['vao1',['vao1',['../classPathsVAO.html#aa50e80f0e8f1737f19bae0273dcdcf8d',1,'PathsVAO']]],
+  ['vao',['vao',['../classMapVAO.html#a6913cf533ba84ff3fcb26d23c2bd03f1',1,'MapVAO::vao()'],['../structPathsVAO_1_1doubleBufferingType.html#ae529e8792fe5f0667e6abcfa837e4beb',1,'PathsVAO::doubleBufferingType::vao()'],['../classSectorsVAO.html#a294e7c166ef879f6304aa888a1db84ab',1,'SectorsVAO::vao()'],['../classTestVBO.html#a0f595e8e0f3926bc530ef1a38f6021ef',1,'TestVBO::vao()']]],
   ['vaobase',['VAOBase',['../classVAOBase.html',1,'VAOBase'],['../classVAOBase.html#a39dffebf5293c232c64ecf9b0a075fe0',1,'VAOBase::VAOBase(const VAOBase &amp;v)=delete'],['../classVAOBase.html#aa01061a70c3dd4632f6b6bb7bb9210ef',1,'VAOBase::VAOBase(VAOBase &amp;&amp;v)=delete'],['../classVAOBase.html#a3fecd76b0e150bbbea66eea7b3129207',1,'VAOBase::VAOBase()']]],
   ['vaobase_2eh',['VAOBase.h',['../VAOBase_8h.html',1,'']]],
-  ['vaobuffer',['vaoBuffer',['../classPathsVAO.html#a6c5a505c6be2a5b9928a6d481f6a54c2',1,'PathsVAO']]],
-  ['vaocurrent',['vaoCurrent',['../classPathsVAO.html#a5ad508634ea02f7ae26b659b18693dc9',1,'PathsVAO']]],
   ['vaolayout',['vaoLayout',['../classVAOPositionBase.html#a169fa9dc331f8b4ce9285a90016a7f60',1,'VAOPositionBase']]],
   ['vaolayoutpaths',['VAOLayoutPaths',['../classVAOLayoutPaths.html',1,'']]],
   ['vaolayoutpaths_2ecpp',['VAOLayoutPaths.cpp',['../VAOLayoutPaths_8cpp.html',1,'']]],

@@ -5,7 +5,7 @@ var searchData=
   ['includesminimumaltitude',['includesMinimumAltitude',['../structSectors_1_1SubSector.html#a481d9f0c9d6a7a2f5cad2013686ec311',1,'Sectors::SubSector::includesMinimumAltitude()'],['../structSectorsVAO_1_1SubSector.html#a80c48cd34dc956626b49543d207d1f6c',1,'SectorsVAO::SubSector::includesMinimumAltitude()']]],
   ['indexcount',['indexCount',['../classCountCrossing.html#aae55ba17f4bf00771b5a07451a728fc2',1,'CountCrossing']]],
   ['indexlist',['indexList',['../classPathsVAO.html#a51d56df835bde784c66141a0ee39964c',1,'PathsVAO']]],
-  ['indexlistdevice',['indexListDevice',['../classPathsVAO.html#ad3658f7d92aed46644a0dd4b36e6f2ab',1,'PathsVAO']]],
+  ['indexlistdevice',['indexListDevice',['../structPathsVAO_1_1doubleBufferingType.html#acb4d4e5b2b70f82adb9d5e82758d2cfa',1,'PathsVAO::doubleBufferingType']]],
   ['inittime',['initTime',['../structEstimateSpecResult.html#a51f12a5a711a8195d08e599d35fd3fed',1,'EstimateSpecResult']]],
   ['insidelonglatindex',['insideLongLatIndex',['../structSectors_1_1SubSector.html#adf7e7f7f4d9aa4890736b8bdb7678a7f',1,'Sectors::SubSector::insideLongLatIndex()'],['../structSectorsVAO_1_1SubSector.html#ae96321b5b55913aae72509884bc39de1',1,'SectorsVAO::SubSector::insideLongLatIndex()']]],
   ['interval',['interval',['../classCountCrossing.html#a705dfc8ad8d13cf266793627091c5b45',1,'CountCrossing']]]
