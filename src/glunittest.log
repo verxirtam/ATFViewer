@@ -51553,3 +51553,5580 @@ copy mp to p start.
 copy mp to p end.
 getTrackDataFromDBParallel() end.
 PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = PathsVAO::runMakePathsBuffer() end.1460649000
+, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460721000, time_end = 1460729400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460728200, time_end = 1460736600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460735400, time_end = 1460743800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460742600, time_end = 1460751000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460749800, time_end = 1460758200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460757000, time_end = 1460765400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460764200, time_end = 1460772600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460771400, time_end = 1460779800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460778600, time_end = 1460787000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460785800, time_end = 1460794200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460793000, time_end = 1460801400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460800200, time_end = 1460808600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460807400, time_end = 1460815800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460814600, time_end = 1460823000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460821800, time_end = 1460830200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+PathsVAO::runMakePathsBuffer() end.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::makePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460721000, time_end = 1460729400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460728200, time_end = 1460736600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460735400, time_end = 1460743800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460742600, time_end = 1460751000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460749800, time_end = 1460758200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460757000, time_end = 1460765400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460764200, time_end = 1460772600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460771400, time_end = 1460779800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460778600, time_end = 1460787000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460785800, time_end = 1460794200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.pragma omp parallel for start.
+
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460721000, time_end = 1460729400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460728200, time_end = 1460736600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460735400, time_end = 1460743800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460742600, time_end = 1460751000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460749800, time_end = 1460758200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460757000, time_end = 1460765400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460764200, time_end = 1460772600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460771400, time_end = 1460779800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460778600, time_end = 1460787000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460785800, time_end = 1460794200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460721000, time_end = 1460729400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460728200, time_end = 1460736600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+ATFViewerMainGLSL::init()
+glutInit(&argc,argv) end.
+initScene() start
+p.size() = 267
+t.size() = 178
+e.size() = 193
+p.size() = 237
+t.size() = 158
+e.size() = 143
+iss.position.size() = 3144
+position_align.size() = 9432
+iss.color.size() = 3144
+color_align.size() = 9432
+iss.element.size() = 7704
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() current.
+PathsVAO::makePathsBuffer(): time_start = 1460634600, time_end = 1460643000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460641800, time_end = 1460650200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+PathsVAO::makePathsBuffer() end.
+initScene() end
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460649000, time_end = 1460657400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460656200, time_end = 1460664600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460663400, time_end = 1460671800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460670600, time_end = 1460679000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460677800, time_end = 1460686200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460685000, time_end = 1460693400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460692200, time_end = 1460700600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460699400, time_end = 1460707800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460706600, time_end = 1460715000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460713800, time_end = 1460722200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460721000, time_end = 1460729400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460728200, time_end = 1460736600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 5
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460735400, time_end = 1460743800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460742600, time_end = 1460751000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 4
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460749800, time_end = 1460758200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = d
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460757000, time_end = 1460765400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460764200, time_end = 1460772600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460771400, time_end = 1460779800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 2
+id_last_char[i] = 8
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460778600, time_end = 1460787000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460785800, time_end = 1460794200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 1
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 2
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460793000, time_end = 1460801400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 3
+id_last_char[i] = 6
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 7
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 8
+id_last_char[i] = 5
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460800200, time_end = 1460808600
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 6
+id_last_char[i] = 9
+id_last_char[i] = 3
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = e
+id_last_char[i] = 4
+id_last_char[i] = f
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460807400, time_end = 1460815800
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 0
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = c
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = f
+id_last_char[i] = d
+id_last_char[i] = 1
+id_last_char[i] = 5
+id_last_char[i] = b
+id_last_char[i] = 8
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460814600, time_end = 1460823000
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = c
+id_last_char[i] = 9
+id_last_char[i] = 0
+id_last_char[i] = 6
+id_last_char[i] = 3
+id_last_char[i] = 4
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = a
+id_last_char[i] = 1
+id_last_char[i] = f
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460821800, time_end = 1460830200
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = e
+id_last_char[i] = 3
+id_last_char[i] = c
+id_last_char[i] = 0
+id_last_char[i] = 9
+id_last_char[i] = 6
+id_last_char[i] = 4
+id_last_char[i] = 1
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = a
+id_last_char[i] = 5
+id_last_char[i] = 8
+id_last_char[i] = 2
+id_last_char[i] = b
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.
+futureMakeBuffer.wait() finish.
+PathsVAO::runMakePathsBuffer() start.
+PathsVAO::runMakePathsBuffer() end.
+PathsVAO::makePathsBuffer() start.
+TimeSeparation::getIntervalStatus() next.
+PathsVAO::makePathsBuffer(): time_start = 1460829000, time_end = 1460837400
+getTrackDataFromDBParallel() start.
+getTrackDataFromDBToMapParallel() start.
+pragma omp parallel for start.
+id_last_char[i] = 3
+id_last_char[i] = 9
+id_last_char[i] = e
+id_last_char[i] = 6
+id_last_char[i] = 0
+id_last_char[i] = c
+id_last_char[i] = a
+id_last_char[i] = 7
+id_last_char[i] = d
+id_last_char[i] = f
+id_last_char[i] = 1
+id_last_char[i] = 4
+id_last_char[i] = 8
+id_last_char[i] = b
+id_last_char[i] = 5
+id_last_char[i] = 2
+pragma omp parallel for end.
+getTrackDataFromDBToMapParallel() end.
+reserve p start.
+reserve p end.
+copy mp to p start.
+copy mp to p end.
+getTrackDataFromDBParallel() end.
+PathsVAO::makePathsBuffer() end.

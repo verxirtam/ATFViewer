@@ -6,38 +6,45 @@
 #define VCOUNT2 (18)
 
 
+//インターリーブ配列としてのインデックスと
+//頂点配列としてのインデックスを区別するため、
+//接尾辞を下記にする
+//_index  : 頂点配列としてのインデックス
+//_iindex : インターリーブ配列としてのインデックス
 
 
+__host__
 __device__
 bool isInInterval
 	(
 		float time,
 		const float* const vertex_d,
-		unsigned int begin_index,
-		unsigned int end_index,
-		unsigned int  vertex_index
+		unsigned int begin_iindex,
+		unsigned int end_iindex,
+		unsigned int  vertex_iindex
 	)
 {
 	const unsigned int it = 3;
-	if((vertex_index < begin_index) || (end_index <= vertex_index))
+	if((vertex_iindex < begin_iindex) || (end_iindex <= vertex_iindex))
 	{
 		return false;
 	}
-	if((vertex_d[vertex_index + it] <= time) && (time < vertex_d[vertex_index + VCOUNT2 + it]))
+	if((vertex_d[vertex_iindex + it] <= time) && (time < vertex_d[vertex_iindex + VCOUNT2 + it]))
 	{
 		return true;
 	}
 	return false;
 }
 
+__host__
 __device__
 void updateTimeVertex
 	(
 	 float time,
 	 const float* const vertex_d,
-	 unsigned int begin_index,
-	 unsigned int end_index,
-	 unsigned int vi,
+	 unsigned int begin_iindex,
+	 unsigned int end_iindex,
+	 unsigned int v_iindex,
 	 float* const time_vertex
 	)
 {
@@ -51,8 +58,13 @@ void updateTimeVertex
 	const unsigned int ib = 6;
 	const unsigned int ia = 7;
 	
-	const float* const from = &vertex_d[vi          ];
-	const float* const to   = &vertex_d[vi + VCOUNT2];
+	unsigned int from_iindex = (v_iindex < begin_iindex) ? begin_iindex : v_iindex;
+	unsigned int   to_iindex = (v_iindex < begin_iindex) ? begin_iindex : (v_iindex + VCOUNT2);
+	from_iindex = (end_iindex <= from_iindex) ? (end_iindex - 1) : from_iindex;
+	  to_iindex = (end_iindex <=   to_iindex) ? (end_iindex - 1) :   to_iindex;
+	
+	const float* const from = &vertex_d[from_iindex];
+	const float* const to   = &vertex_d[  to_iindex];
 	float from_time = from[it];
 	float   to_time =   to[it];
 
@@ -85,6 +97,7 @@ void updateTimeVertex
 
 
 
+__host__
 __device__
 void updateTimeIndex
 	(
@@ -96,21 +109,31 @@ void updateTimeIndex
 		float* const time_vertex
 	)
 {
+	//インターリーブ配列としてのインデックスと
+	//頂点配列としてのインデックスを区別するため、
+	//接尾辞を下記にする
+	//_index  : 頂点配列としてのインデックス
+	//_iindex : インターリーブ配列としてのインデックス
+	
 	//区間に含まれているかをチェックするインデックス
-	unsigned int vi = *time_index;
+	unsigned int v_iindex = VCOUNT * (*time_index);
+	
+	unsigned int begin_iindex = VCOUNT * begin_index;
+	unsigned int   end_iindex = VCOUNT *   end_index;
+	
 	
 	//最初の区間の手前の場合
-	if(vi < begin_index)
+	if(v_iindex < begin_iindex)
 	{
 		//最初の区間に含まれなければそのまま終了
-		if(!isInInterval(time, vertex_d, begin_index, end_index, begin_index))
+		if(!isInInterval(time, vertex_d, begin_iindex, end_iindex, begin_iindex))
 		{
 			return;
 		}
 	}
 	
 	//最後の区間の先の場合はそのまま終了
-	if(vi >= end_index)
+	if(v_iindex >= end_iindex)
 	{
 		return;
 	}
@@ -118,20 +141,21 @@ void updateTimeIndex
 	
 	//time_indexから順に区間に含まれているかチェックし、
 	//含まれている区間の情報から頂点を設定する
-	for(; vi < end_index; vi+=VCOUNT2)
+	for(; v_iindex < end_iindex; v_iindex+=VCOUNT2)
 	{
-		if(isInInterval(time, vertex_d, begin_index, end_index, vi))
+		if(isInInterval(time, vertex_d, begin_iindex, end_iindex, v_iindex))
 		{
-			*time_index = vi;
-			updateTimeVertex(time, vertex_d, begin_index, end_index, vi, time_vertex);
+			*time_index = v_iindex / VCOUNT;
+			updateTimeVertex(time, vertex_d, begin_iindex, end_iindex, v_iindex, time_vertex);
 			return;
 		}
 	}
 	//見つからなかった場合は最後のインデックスを設定する
-	*time_index = end_index;
+	*time_index = end_iindex / VCOUNT;
 }
 
 //elementを更新する
+__host__
 __device__
 void updateElement
 	(
@@ -214,13 +238,13 @@ void updateDeviceDataCUDA
 	float* const past_vertex = &vertex_d[begin_index];
 	
 	//nowの頂点
-	float* const now_vertex = &vertex_d[begin_index + VCOUNT];
+	float* const now_vertex = &vertex_d[begin_index + VCOUNT2];
 	
 	//pastIndexを更新する
-	updateTimeIndex(past, vertex_d, begin_index, end_index, past_index, past_vertex);
+	updateTimeIndex(past, vertex_d, begin_index + 4, end_index, past_index, past_vertex);
 	
 	//nowIndexを更新する
-	updateTimeIndex( now, vertex_d, begin_index, end_index,  now_index,  now_vertex);
+	updateTimeIndex( now, vertex_d, begin_index + 4, end_index,  now_index,  now_vertex);
 	
 	//elementを更新する
 	updateElement(index_list_d, pi, element_d);
@@ -257,6 +281,7 @@ void PathsVAO::updateDeviceData(time_t now)
 			il_d,
 			path_count
 		);
+	
 }
 
 
