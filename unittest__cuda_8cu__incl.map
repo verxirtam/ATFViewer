@@ -1,5 +1,6 @@
 <map id="src/unittest_cuda.cu" name="src/unittest_cuda.cu">
 <area shape="rect" id="node2" href="$unittest__cuda_8h.html" title="unittest_cuda.h" alt="" coords="5,80,115,107"/>
 <area shape="rect" id="node4" href="$CountCrossing_8cuh.html" title="CountCrossing.cuh" alt="" coords="142,80,276,107"/>
+<area shape="rect" id="node8" href="$PathsVAO__cuda__kernel_8cuh.html" title="PathsVAO_cuda_kernel.cuh" alt="" coords="301,80,488,107"/>
 <area shape="rect" id="node7" href="$DeviceSeq_8cuh.html" title="DeviceSeq.cuh" alt="" coords="250,155,360,181"/>
 </map>

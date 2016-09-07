@@ -1,7 +1,6 @@
 <map id="CountCrossing::mktimeFromInt" name="CountCrossing::mktimeFromInt">
 <area shape="rect" id="node2" href="$classCountCrossing.html#a623e590074567c46294804a35e6de86c" title="CountCrossing::setStart" alt="" coords="259,5,421,32"/>
-<area shape="rect" id="node6" href="$classCountCrossing.html#a90b424b135d125b80841f5d2d28d8a1a" title="CountCrossing::setEnd" alt="" coords="261,56,419,83"/>
+<area shape="rect" id="node5" href="$classCountCrossing.html#a90b424b135d125b80841f5d2d28d8a1a" title="CountCrossing::setEnd" alt="" coords="261,56,419,83"/>
 <area shape="rect" id="node3" href="$unittest_8cpp.html#afd32474aaa2935a2f98d6a833c9a6178" title="EstimateSpec" alt="" coords="469,31,573,57"/>
 <area shape="rect" id="node4" href="$unittest_8cpp.html#a16a71b88b243c4f070cde32859630067" title="countCrossingTest_06D4EstimateSpec" alt="" coords="622,31,874,57"/>
-<area shape="rect" id="node5" href="$unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="923,31,973,57"/>
 </map>

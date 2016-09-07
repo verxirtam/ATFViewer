@@ -35,9 +35,9 @@ var searchData=
   ['inputtype1',['inputType1',['../structVAOLayoutPositionTexture_1_1inputType1.html',1,'VAOLayoutPositionTexture']]],
   ['inputtype1',['inputType1',['../structVAOLayoutPositionColor_1_1inputType1.html',1,'VAOLayoutPositionColor']]],
   ['inputtype2',['inputType2',['../classVAOLayoutPaths.html#a01a32e38afc705bb7463a79e7fa77d7c',1,'VAOLayoutPaths::inputType2()'],['../classVAOLayoutPositionColor.html#a083ebd16ac7ff3da57b255300b07905e',1,'VAOLayoutPositionColor::inputType2()'],['../classVAOLayoutPositionTexture.html#a1bd8bb5afe89841a278844d66cb22bb4',1,'VAOLayoutPositionTexture::inputType2()']]],
+  ['inputtype2vertex',['inputType2Vertex',['../structVAOLayoutPositionTexture_1_1inputType2Vertex.html',1,'VAOLayoutPositionTexture']]],
   ['inputtype2vertex',['inputType2Vertex',['../structVAOLayoutPaths_1_1inputType2Vertex.html#ad88f4d4d5fc4266784aff43febd24e06',1,'VAOLayoutPaths::inputType2Vertex::inputType2Vertex()'],['../structVAOLayoutPositionColor_1_1inputType2Vertex.html#a2d29e2ae30563b339b0b85a28ed3670a',1,'VAOLayoutPositionColor::inputType2Vertex::inputType2Vertex()'],['../structVAOLayoutPositionTexture_1_1inputType2Vertex.html#a8ee5f7c69993fd2bf7dfc3d1f7b25b32',1,'VAOLayoutPositionTexture::inputType2Vertex::inputType2Vertex()']]],
   ['inputtype2vertex',['inputType2Vertex',['../structVAOLayoutPaths_1_1inputType2Vertex.html',1,'VAOLayoutPaths']]],
-  ['inputtype2vertex',['inputType2Vertex',['../structVAOLayoutPositionTexture_1_1inputType2Vertex.html',1,'VAOLayoutPositionTexture']]],
   ['inputtype2vertex',['inputType2Vertex',['../structVAOLayoutPositionColor_1_1inputType2Vertex.html',1,'VAOLayoutPositionColor']]],
   ['insidelonglatindex',['insideLongLatIndex',['../structSectors_1_1SubSector.html#adf7e7f7f4d9aa4890736b8bdb7678a7f',1,'Sectors::SubSector::insideLongLatIndex()'],['../structSectorsVAO_1_1SubSector.html#ae96321b5b55913aae72509884bc39de1',1,'SectorsVAO::SubSector::insideLongLatIndex()']]],
   ['interval',['interval',['../classCountCrossing.html#a705dfc8ad8d13cf266793627091c5b45',1,'CountCrossing']]],
@@ -45,6 +45,5 @@ var searchData=
   ['iscellindexoutofrange',['isCellIndexOutOfRange',['../CountCrossing_8cuh.html#a9be63a281e7db869f040abd6e9f51bb6',1,'CountCrossing.cuh']]],
   ['isclockwise',['isClockwise',['../GCS_8cpp.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp'],['../GCS_8h.html#ad91614c033246a2eef1d0db13ee33ab4',1,'isClockwise(const std::vector&lt; unsigned int &gt; &amp;longLatIndex, const std::vector&lt; LongLat &gt; &amp;longLat):&#160;GCS.cpp']]],
   ['isenable',['isEnable',['../classJoystick.html#a0b8fca02b81b41f2473f55476e571564',1,'Joystick']]],
-  ['isexistdbfile',['isExistDBFile',['../classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63',1,'TrackDataManager']]],
-  ['isininterval',['isInInterval',['../PathsVAO__cuda_8cu.html#a7c4d6ba88acf1bd17f95498e4966ae35',1,'PathsVAO_cuda.cu']]]
+  ['isexistdbfile',['isExistDBFile',['../classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63',1,'TrackDataManager']]]
 ];

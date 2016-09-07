@@ -91,12 +91,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="unittest__cuda_8h_source.html">unittest_cuda.h</a>&quot;</code><br/>
 <code>#include &quot;<a class="el" href="CountCrossing_8cuh.html">CountCrossing.cuh</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="PathsVAO__cuda__kernel_8cuh.html">PathsVAO_cuda_kernel.cuh</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for unittest_cuda.cu:</div>
 <div class="dyncontent">
 <div class="center"><img src="unittest__cuda_8cu__incl.png" border="0" usemap="#src_2unittest__cuda_8cu" alt=""/></div>
 <map name="src_2unittest__cuda_8cu" id="src_2unittest__cuda_8cu">
-<area shape="rect" id="node2" href="unittest__cuda_8h.html" title="unittest_cuda.h" alt="" coords="5,80,115,107"/><area shape="rect" id="node4" href="CountCrossing_8cuh.html" title="CountCrossing.cuh" alt="" coords="142,80,276,107"/><area shape="rect" id="node7" href="DeviceSeq_8cuh.html" title="DeviceSeq.cuh" alt="" coords="250,155,360,181"/></map>
+<area shape="rect" id="node2" href="unittest__cuda_8h.html" title="unittest_cuda.h" alt="" coords="5,80,115,107"/><area shape="rect" id="node4" href="CountCrossing_8cuh.html" title="CountCrossing.cuh" alt="" coords="142,80,276,107"/><area shape="rect" id="node8" href="PathsVAO__cuda__kernel_8cuh.html" title="PathsVAO_cuda_kernel.cuh" alt="" coords="301,80,488,107"/><area shape="rect" id="node7" href="DeviceSeq_8cuh.html" title="DeviceSeq.cuh" alt="" coords="250,155,360,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -107,8 +108,47 @@ Functions</h2></td></tr>
 <tr class="separator:a0b2ca32c91004c415199c6b6a8224a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e747f3b1e0be92325c72c5662961894"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__cuda_8cu.html#a4e747f3b1e0be92325c72c5662961894">countCrossingTest_03D2Simple</a> ()</td></tr>
 <tr class="separator:a4e747f3b1e0be92325c72c5662961894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2abd4b91be868967bad6919c6792c583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__cuda_8cu.html#a2abd4b91be868967bad6919c6792c583">_test</a> (bool test_result, bool &amp;ret)</td></tr>
+<tr class="separator:a2abd4b91be868967bad6919c6792c583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac78e35963942559a20f7cba609ea3c04"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unittest__cuda_8cu.html#ac78e35963942559a20f7cba609ea3c04">PathsVAOTest_01isInInterval</a> ()</td></tr>
+<tr class="separator:ac78e35963942559a20f7cba609ea3c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a2abd4b91be868967bad6919c6792c583"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void _test </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>test_result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>ret</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__cuda_8cu_a2abd4b91be868967bad6919c6792c583_icgraph.png" border="0" usemap="#unittest__cuda_8cu_a2abd4b91be868967bad6919c6792c583_icgraph" alt=""/></div>
+<map name="unittest__cuda_8cu_a2abd4b91be868967bad6919c6792c583_icgraph" id="unittest__cuda_8cu_a2abd4b91be868967bad6919c6792c583_icgraph">
+<area shape="rect" id="node2" href="unittest__cuda_8h.html#ac78e35963942559a20f7cba609ea3c04" title="PathsVAOTest_01isInInterval" alt="" coords="104,5,299,32"/><area shape="rect" id="node3" href="unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="347,5,397,32"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a187d7e6cf0555693b06366cbdae271af"></a>
 <div class="memitem">
 <div class="memproto">
@@ -121,15 +161,6 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="unittest__cuda_8cu_a187d7e6cf0555693b06366cbdae271af_icgraph.png" border="0" usemap="#unittest__cuda_8cu_a187d7e6cf0555693b06366cbdae271af_icgraph" alt=""/></div>
-<map name="unittest__cuda_8cu_a187d7e6cf0555693b06366cbdae271af_icgraph" id="unittest__cuda_8cu_a187d7e6cf0555693b06366cbdae271af_icgraph">
-<area shape="rect" id="node2" href="unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="248,5,299,32"/></map>
-</div>
-</p>
 
 </div>
 </div>
@@ -146,15 +177,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="unittest__cuda_8cu_a0b2ca32c91004c415199c6b6a8224a9e_icgraph.png" border="0" usemap="#unittest__cuda_8cu_a0b2ca32c91004c415199c6b6a8224a9e_icgraph" alt=""/></div>
-<map name="unittest__cuda_8cu_a0b2ca32c91004c415199c6b6a8224a9e_icgraph" id="unittest__cuda_8cu_a0b2ca32c91004c415199c6b6a8224a9e_icgraph">
-<area shape="rect" id="node2" href="unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="253,5,304,32"/></map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a4e747f3b1e0be92325c72c5662961894"></a>
@@ -170,12 +192,36 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a class="anchor" id="ac78e35963942559a20f7cba609ea3c04"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PathsVAOTest_01isInInterval </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_cgraph.png" border="0" usemap="#unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_cgraph" alt=""/></div>
+<map name="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_cgraph" id="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_cgraph">
+<area shape="rect" id="node2" href="unittest__cuda_8cu.html#a2abd4b91be868967bad6919c6792c583" title="_test" alt="" coords="300,5,351,32"/><area shape="rect" id="node3" href="PathsVAO__cuda__kernel_8cu.html#a2eecd6c8798c70ceb1b1cb10540231a8" title="PathsVAO_isInInterval" alt="" coords="248,56,403,83"/></map>
+</div>
+</p>
+
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="unittest__cuda_8cu_a4e747f3b1e0be92325c72c5662961894_icgraph.png" border="0" usemap="#unittest__cuda_8cu_a4e747f3b1e0be92325c72c5662961894_icgraph" alt=""/></div>
-<map name="unittest__cuda_8cu_a4e747f3b1e0be92325c72c5662961894_icgraph" id="unittest__cuda_8cu_a4e747f3b1e0be92325c72c5662961894_icgraph">
-<area shape="rect" id="node2" href="unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="264,5,315,32"/></map>
+<div class="center"><img src="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_icgraph.png" border="0" usemap="#unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_icgraph" alt=""/></div>
+<map name="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_icgraph" id="unittest__cuda_8cu_ac78e35963942559a20f7cba609ea3c04_icgraph">
+<area shape="rect" id="node2" href="unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="248,5,299,32"/></map>
 </div>
 </p>
 
@@ -184,7 +230,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Sep 7 2016 03:11:59 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 8 2016 03:53:02 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

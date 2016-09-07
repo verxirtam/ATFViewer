@@ -1,5 +1,6 @@
 <map id="src/PathsVAO_cuda.cu" name="src/PathsVAO_cuda.cu">
 <area shape="rect" id="node2" href="$PathsVAO_8h.html" title="PathsVAO.h" alt="" coords="851,80,945,107"/>
+<area shape="rect" id="node38" href="$PathsVAO__cuda__kernel_8cuh.html" title="PathsVAO_cuda_kernel.cuh" alt="" coords="971,80,1157,107"/>
 <area shape="rect" id="node8" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="1628,453,1757,480"/>
 <area shape="rect" id="node12" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="519,453,625,480"/>
 <area shape="rect" id="node16" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="409,379,553,405"/>
