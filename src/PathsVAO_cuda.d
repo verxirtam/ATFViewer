@@ -367,4 +367,5 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/cuda/include/cuda_gl_interop.h \
     VAOBase.h \
     VAOLayoutPaths.h \
-    DeviceSeq.cuh
+    DeviceSeq.cuh \
+    PathsVAO_cuda_kernel.cuh

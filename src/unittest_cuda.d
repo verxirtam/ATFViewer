@@ -204,4 +204,5 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/bits/stl_vector.h \
     /usr/include/c++/4.8/bits/stl_bvector.h \
     /usr/include/c++/4.8/bits/vector.tcc \
-    DeviceSeq.cuh
+    DeviceSeq.cuh \
+    PathsVAO_cuda_kernel.cuh

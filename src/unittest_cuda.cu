@@ -20,6 +20,9 @@
 #include "unittest_cuda.h"
 #include "CountCrossing.cuh"
 
+#include "PathsVAO_cuda_kernel.cuh"
+
+
 using namespace std;
 
 bool countCrossingTest_01Simple()
@@ -312,3 +315,53 @@ bool countCrossingTest_03D2Simple()
 }
 
 
+
+void _test(bool test_result, bool& ret)
+{
+	if(!test_result)
+	{
+		cout << "this test failed." << endl;
+		ret = false;
+	}
+}
+
+bool PathsVAOTest_01isInInterval()
+{
+	bool ret = true;
+	
+	std::vector<float> vertex
+		{// x      y      z      t     r       g       b       a       p
+			0.0f, 10.0f, 20.0f, 30.0f, 0.000f, 0.100f, 0.200f, 0.300f, 0.0f,// 0   0 = past
+			0.5f, 10.5f, 20.5f, 30.0f, 0.005f, 0.105f, 0.205f, 0.305f, 0.0f,// 1   9
+			1.0f, 11.0f, 21.0f, 31.0f, 0.010f, 0.110f, 0.210f, 0.310f, 0.0f,// 2  18 =  now
+			1.5f, 11.5f, 21.5f, 31.0f, 0.015f, 0.115f, 0.215f, 0.315f, 0.0f,// 3  27
+			2.0f, 12.0f, 22.0f, 32.0f, 0.020f, 0.120f, 0.220f, 0.320f, 0.0f,// 4  36 = begin_iindex
+			2.5f, 12.5f, 22.5f, 32.0f, 0.025f, 0.125f, 0.225f, 0.325f, 0.0f,// 5  45
+			3.0f, 13.0f, 23.0f, 33.0f, 0.030f, 0.130f, 0.230f, 0.330f, 0.0f,// 6  54
+			3.5f, 13.5f, 23.5f, 33.0f, 0.035f, 0.135f, 0.235f, 0.335f, 0.0f,// 7  63
+			4.0f, 14.0f, 24.0f, 34.0f, 0.040f, 0.140f, 0.240f, 0.340f, 0.0f,// 8  72
+			4.5f, 14.5f, 24.5f, 34.0f, 0.045f, 0.145f, 0.245f, 0.345f, 0.0f,// 9  81
+			5.0f, 15.0f, 25.0f, 35.0f, 0.050f, 0.150f, 0.250f, 0.350f, 0.0f,//10  90
+			5.5f, 15.5f, 25.5f, 35.0f, 0.055f, 0.155f, 0.255f, 0.355f, 0.0f //11  99
+		};//                                                                //12 108 = end_iindex
+	unsigned int begin_iindex =  36;
+	unsigned int   end_iindex = 108;
+	
+	_test(!PathsVAO_isInInterval(30.5f, vertex.data(), begin_iindex, end_iindex,  9), ret);
+	
+	_test(!PathsVAO_isInInterval(31.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	_test( PathsVAO_isInInterval(32.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	_test( PathsVAO_isInInterval(32.5f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	_test(!PathsVAO_isInInterval(33.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	_test(!PathsVAO_isInInterval(33.5f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	
+	_test( PathsVAO_isInInterval(34.0f, vertex.data(), begin_iindex, end_iindex, 72), ret);
+	_test( PathsVAO_isInInterval(34.5f, vertex.data(), begin_iindex, end_iindex, 72), ret);
+	_test(!PathsVAO_isInInterval(35.0f, vertex.data(), begin_iindex, end_iindex, 72), ret);
+	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex, 72), ret);
+	
+	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex, 99), ret);
+	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex,108), ret);
+	
+	return ret;
+}
