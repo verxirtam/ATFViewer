@@ -344,24 +344,85 @@ bool PathsVAOTest_01isInInterval()
 			5.0f, 15.0f, 25.0f, 35.0f, 0.050f, 0.150f, 0.250f, 0.350f, 0.0f,//10  90
 			5.5f, 15.5f, 25.5f, 35.0f, 0.055f, 0.155f, 0.255f, 0.355f, 0.0f //11  99
 		};//                                                                //12 108 = end_iindex
+	unsigned int begin_index  =   4;
+	unsigned int   end_index  =  12;
 	unsigned int begin_iindex =  36;
 	unsigned int   end_iindex = 108;
 	
-	_test(!PathsVAO_isInInterval(30.5f, vertex.data(), begin_iindex, end_iindex,  9), ret);
+	vector<float> vertex1(vertex);
 	
-	_test(!PathsVAO_isInInterval(31.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
-	_test( PathsVAO_isInInterval(32.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
-	_test( PathsVAO_isInInterval(32.5f, vertex.data(), begin_iindex, end_iindex, 36), ret);
-	_test(!PathsVAO_isInInterval(33.0f, vertex.data(), begin_iindex, end_iindex, 36), ret);
-	_test(!PathsVAO_isInInterval(33.5f, vertex.data(), begin_iindex, end_iindex, 36), ret);
+	_test(!PathsVAO_isInInterval(30.5f, vertex1.data(), begin_iindex, end_iindex,  9), ret);
 	
-	_test( PathsVAO_isInInterval(34.0f, vertex.data(), begin_iindex, end_iindex, 72), ret);
-	_test( PathsVAO_isInInterval(34.5f, vertex.data(), begin_iindex, end_iindex, 72), ret);
-	_test(!PathsVAO_isInInterval(35.0f, vertex.data(), begin_iindex, end_iindex, 72), ret);
-	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex, 72), ret);
+	_test(!PathsVAO_isInInterval(31.0f, vertex1.data(), begin_iindex, end_iindex, 36), ret);
+	_test( PathsVAO_isInInterval(32.0f, vertex1.data(), begin_iindex, end_iindex, 36), ret);
+	_test( PathsVAO_isInInterval(32.5f, vertex1.data(), begin_iindex, end_iindex, 36), ret);
+	_test(!PathsVAO_isInInterval(33.0f, vertex1.data(), begin_iindex, end_iindex, 36), ret);
+	_test(!PathsVAO_isInInterval(33.5f, vertex1.data(), begin_iindex, end_iindex, 36), ret);
 	
-	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex, 99), ret);
-	_test(!PathsVAO_isInInterval(35.5f, vertex.data(), begin_iindex, end_iindex,108), ret);
+	_test( PathsVAO_isInInterval(34.0f, vertex1.data(), begin_iindex, end_iindex, 72), ret);
+	_test( PathsVAO_isInInterval(34.5f, vertex1.data(), begin_iindex, end_iindex, 72), ret);
+	_test(!PathsVAO_isInInterval(35.0f, vertex1.data(), begin_iindex, end_iindex, 72), ret);
+	_test(!PathsVAO_isInInterval(35.5f, vertex1.data(), begin_iindex, end_iindex, 72), ret);
+	
+	_test(!PathsVAO_isInInterval(35.5f, vertex1.data(), begin_iindex, end_iindex, 99), ret);
+	_test(!PathsVAO_isInInterval(35.5f, vertex1.data(), begin_iindex, end_iindex,108), ret);
+	
+	
+	vector<float> vertex2{vertex};
+	float* const past_vertex2(vertex2.data() +  0);
+	float* const  now_vertex2(vertex2.data() + 18);
+	
+	
+	unsigned int vii = 36;
+	PathsVAO_updateTimeVertex(32.5f, vertex2.data(), begin_iindex, end_iindex, vii, past_vertex2);
+	//_test();
+	// 2.0f, 12.0f, 22.0f, 32.0f, 0.020f, 0.120f, 0.220f, 0.320f, 0.0f,// 4  36 = begin_iindex
+	// 3.0f, 13.0f, 23.0f, 33.0f, 0.030f, 0.130f, 0.230f, 0.330f, 0.0f,// 6  54
+	// ---------------------------------------------------------------
+	// 2.5,  12.5,  22.5,  32.5,  0.025,  0.125,  0.225,  0.325
+	for(int i = 0; i < 18; i++)
+	{
+		if(past_vertex2[i] != ( vertex2[vii + i] + vertex2[vii + 18 + i] ) * 0.5f)
+		{
+			ret = false;
+		}
+	}
+	
+	
+	vii = 72;
+	PathsVAO_updateTimeVertex(34.5f, vertex2.data(), begin_iindex, end_iindex, vii, past_vertex2);
+	for(int i = 0; i < 18; i++)
+	{
+		if(past_vertex2[i] != ( vertex2[vii + i] + vertex2[vii + 18 + i] ) * 0.5f)
+		{
+			ret = false;
+		}
+	}
+	
+	vector<float> vertex3{vertex};
+	float* const past_vertex3(vertex3.data() +  0);
+	float* const  now_vertex3(vertex3.data() + 18);
+	unsigned int time_index = 4;
+	cout << "time_index = " << time_index << ", past_vertex3[0] = " << past_vertex3[0] << endl;
+	
+	cout << "PathsVAO_updateTimeIndex();" << endl;
+	PathsVAO_updateTimeIndex(32.5f, vertex3.data(), begin_index, end_index, &time_index, past_vertex3);
+	
+	cout << "time_index = " << time_index << ", past_vertex3[0] = " << past_vertex3[0] << endl;
+	_test(time_index      == 4   , ret);
+	_test(past_vertex3[0] == 2.5f, ret);
+	
+	PathsVAO_updateTimeIndex(33.5f, vertex3.data(), begin_index, end_index, &time_index, past_vertex3);
+	_test(time_index      == 6   , ret);
+	_test(past_vertex3[0] == 3.5f, ret);
+	
+	cout << "time = 35.5f" << endl;
+	PathsVAO_updateTimeIndex(35.5f, vertex3.data(), begin_index, end_index, &time_index, past_vertex3);
+	cout << "time_index = " << time_index << ", past_vertex3[0] = " << past_vertex3[0] << endl;
+	_test(time_index      == 12   , ret);
+	_test(past_vertex3[0] ==  3.5f, ret);
 	
 	return ret;
 }
+
+
