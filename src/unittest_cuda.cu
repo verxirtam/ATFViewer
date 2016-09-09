@@ -422,6 +422,13 @@ bool PathsVAOTest_01isInInterval()
 	_test(time_index      == 12   , ret);
 	_test(past_vertex3[0] ==  3.5f, ret);
 	
+	cout << "time = 31.5f" << endl;
+	PathsVAO_updateTimeIndex(31.5f, vertex3.data(), begin_index, end_index, &time_index, past_vertex3);
+	cout << "time_index = " << time_index << ", past_vertex3[0] = " << past_vertex3[0] << endl;
+	_test(time_index      ==  2   , ret);
+	_test(past_vertex3[0] ==  0.0f, ret);
+	
+	
 	return ret;
 }
 
