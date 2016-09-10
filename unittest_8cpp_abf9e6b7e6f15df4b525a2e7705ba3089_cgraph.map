@@ -1,10 +1,12 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$unittest_8cpp.html#a481f4aa4a5535fb839f361261341dc7d" title="nowstring" alt="" coords="162,5,241,32"/>
-<area shape="rect" id="node4" href="$unittest_8cpp.html#a15d93bd94e35ca87c003edde9a81a300" title="test" alt="" coords="179,56,223,83"/>
-<area shape="rect" id="node5" href="$unittest__cuda_8cu.html#ac78e35963942559a20f7cba609ea3c04" title="PathsVAOTest_01isInInterval" alt="" coords="104,107,299,133"/>
-<area shape="rect" id="node3" href="$unittest_8cpp.html#a28ce0b028b3475e82abd495dec635eae" title="timestring" alt="" coords="403,5,482,32"/>
-<area shape="rect" id="node6" href="$unittest__cuda_8cu.html#a2abd4b91be868967bad6919c6792c583" title="_test" alt="" coords="417,56,468,83"/>
-<area shape="rect" id="node7" href="$PathsVAO__cuda__kernel_8cu.html#a2eecd6c8798c70ceb1b1cb10540231a8" title="PathsVAO_isInInterval" alt="" coords="608,132,763,159"/>
-<area shape="rect" id="node8" href="$PathsVAO__cuda__kernel_8cu.html#a1e11368ded5771cbf1dfaffaad3b8127" title="PathsVAO_updateTimeVertex" alt="" coords="587,195,784,221"/>
-<area shape="rect" id="node9" href="$PathsVAO__cuda__kernel_8cu.html#a6cffd6dfa8771ca63fd0a5d4f540373e" title="PathsVAO_updateTimeIndex" alt="" coords="347,157,538,184"/>
+<area shape="rect" id="node2" href="$unittest_8cpp.html#a481f4aa4a5535fb839f361261341dc7d" title="nowstring" alt="" coords="174,19,253,45"/>
+<area shape="rect" id="node4" href="$unittest_8cpp.html#a15d93bd94e35ca87c003edde9a81a300" title="test" alt="" coords="191,95,235,121"/>
+<area shape="rect" id="node5" href="$unittest__cuda_8cu.html#ac78e35963942559a20f7cba609ea3c04" title="PathsVAOTest_01isInInterval" alt="" coords="116,145,311,172"/>
+<area shape="rect" id="node10" href="$unittest__cuda_8cu.html#acd24287454cc63feaf880e41f54ffdea" title="PathsVAOTest_02updateElement" alt="" coords="104,221,323,248"/>
+<area shape="rect" id="node3" href="$unittest_8cpp.html#a28ce0b028b3475e82abd495dec635eae" title="timestring" alt="" coords="427,5,506,32"/>
+<area shape="rect" id="node6" href="$unittest__cuda_8cu.html#a2abd4b91be868967bad6919c6792c583" title="_test" alt="" coords="441,56,492,83"/>
+<area shape="rect" id="node7" href="$PathsVAO__cuda__kernel_8cu.html#a2eecd6c8798c70ceb1b1cb10540231a8" title="PathsVAO_isInInterval" alt="" coords="632,120,787,147"/>
+<area shape="rect" id="node8" href="$PathsVAO__cuda__kernel_8cu.html#a1e11368ded5771cbf1dfaffaad3b8127" title="PathsVAO_updateTimeVertex" alt="" coords="611,196,808,223"/>
+<area shape="rect" id="node9" href="$PathsVAO__cuda__kernel_8cu.html#a6cffd6dfa8771ca63fd0a5d4f540373e" title="PathsVAO_updateTimeIndex" alt="" coords="371,157,562,184"/>
+<area shape="rect" id="node11" href="$PathsVAO__cuda__kernel_8cu.html#ac3404e04a206994d171fa10131774c0a" title="PathsVAO_updateElement" alt="" coords="377,259,556,285"/>
 </map>
