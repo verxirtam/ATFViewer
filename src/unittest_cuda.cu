@@ -422,6 +422,9 @@ bool PathsVAOTest_01isInInterval()
 	_test(time_index      == 12   , ret);
 	_test(past_vertex3[0] ==  3.5f, ret);
 	
+	
+	vertex3 = vertex;
+	time_index = 2;
 	cout << "time = 31.5f" << endl;
 	PathsVAO_updateTimeIndex(31.5f, vertex3.data(), begin_index, end_index, &time_index, past_vertex3);
 	cout << "time_index = " << time_index << ", past_vertex3[0] = " << past_vertex3[0] << endl;
@@ -429,7 +432,69 @@ bool PathsVAOTest_01isInInterval()
 	_test(past_vertex3[0] ==  0.0f, ret);
 	
 	
+	
+	
 	return ret;
 }
 
 
+bool PathsVAOTest_02updateElement()
+{
+	vector<unsigned int> index_list
+		{
+			 0, 4, 8,//0	past:途中		now:途中		(最長パターン)
+			10,16,16,//1	past:途中		now:途中		(同一インデックス)
+			20,22,22,//2	past:beginの前	now:beginの前
+			30,32,34,//3	past:beginの前	now:途中
+			40,44,50,//4	past:途中		now:end
+			50,60,60,//5	past:end		now:end
+			60,62,70,//6	past:beginの前	now:end
+			70, 0, 0,//7	最後のパスの後ろ
+		};
+	vector<unsigned int> element(12 * 7,0);
+	
+	
+	vector<unsigned int> element_ans
+		{
+			 0, 0, 0, 1, 6, 7, 8, 9, 2, 3, 3, 3,
+			10,10,10,11,12,13,13,13,13,13,13,13,
+			20,20,20,20,20,20,20,20,20,20,20,20,
+			34,34,34,35,32,33,33,33,33,33,33,33,
+			40,40,40,41,46,47,48,49,42,43,43,43,
+			50,50,50,50,50,50,50,50,50,50,50,50,
+			64,64,64,65,66,67,68,69,69,69,69,69
+		};
+	
+	PathsVAO_updateElement(index_list.data(), 0, element.data());
+	PathsVAO_updateElement(index_list.data(), 1, element.data());
+	PathsVAO_updateElement(index_list.data(), 2, element.data());
+	PathsVAO_updateElement(index_list.data(), 3, element.data());
+	PathsVAO_updateElement(index_list.data(), 4, element.data());
+	PathsVAO_updateElement(index_list.data(), 5, element.data());
+	PathsVAO_updateElement(index_list.data(), 6, element.data());
+	bool ret = (element == element_ans);
+	if(!ret)
+	{
+		for(int i =0; i < 7; i++)
+		{
+			for(int j = 0; j < 10; j++)
+			{
+				cout << element[i * 10 +j] << ",\t";
+			}
+			cout << endl;
+			for(int j = 0; j < 10; j++)
+			{
+				cout << element_ans[i * 10 +j] << ",\t";
+			}
+			cout << endl;
+			for(int j = 0; j < 10; j++)
+			{
+				std::string ret_string = (element[i * 10 +j] == element_ans[i * 10 +j])? " " : "X";
+				cout << ret_string << ",\t";
+			}
+			cout << endl;
+			cout << endl;
+		}
+	}
+	return ret;
+}

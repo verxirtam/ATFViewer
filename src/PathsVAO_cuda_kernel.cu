@@ -125,9 +125,10 @@ void PathsVAO_updateTimeIndex
 	//最初の区間の手前の場合
 	if(v_iindex < begin_iindex)
 	{
-		//最初の区間に含まれなければそのまま終了
+		//最初の区間に含まれなければ最初の区間の1つ手前のインデックスを返す
 		if(!PathsVAO_isInInterval(time, vertex_d, begin_iindex, end_iindex, begin_iindex))
 		{
+			*time_index = (begin_iindex - VCOUNT2) / VCOUNT;
 			return;
 		}
 	}

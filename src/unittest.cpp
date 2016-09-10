@@ -1012,6 +1012,7 @@ int main(int argc, char const* argv[])
 	//test(testPThread(), ret);
 	
 	test(PathsVAOTest_01isInInterval(), ret);
+	test(PathsVAOTest_02updateElement(), ret);
 	
 	
 	if(ret)
