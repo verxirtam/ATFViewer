@@ -14,8 +14,8 @@ var indexSectionsWithContent =
   4: "abcdefhijlmnprstuvw",
   5: "bfilmv",
   6: "ikp",
-  7: "abcnp",
-  8: "cdgv"
+  7: "abcenp",
+  8: "cdgiv"
 };
 
 var indexSectionNames =

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['element',['element',['../structSectorsVAO_1_1InitSectorsSettings.html#a70fe8131c176d6d5b0f0ffbacc7961b3',1,'SectorsVAO::InitSectorsSettings::element()'],['../classVAOPositionBase.html#a3833b616b8a910b9ccb4909a78957fcd',1,'VAOPositionBase::element()']]],
+  ['elementbeginindex',['elementBeginIndex',['../classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00a046c574e3758720dcdfda71217572712',1,'PathsVAO']]],
   ['elementcount',['elementCount',['../classVAOPositionBase.html#a1d66ed99dcbac051a216621a047fa771',1,'VAOPositionBase']]],
   ['elementdata',['elementData',['../classVAOPositionBase.html#a046ef0a498bd0dc94c7c8bfea033a013',1,'VAOPositionBase']]],
   ['enablevertexattribpointer',['enableVertexAttribPointer',['../classVAOLayoutPaths.html#a86dfe3523153cb5afe5a71b50110a96f',1,'VAOLayoutPaths::enableVertexAttribPointer()'],['../classVAOLayoutPositionColor.html#a992a8449870d7855a37b7abccd6c5c30',1,'VAOLayoutPositionColor::enableVertexAttribPointer()'],['../classVAOLayoutPositionTexture.html#a5be1242bbe52c70b2315a1bfc100e561',1,'VAOLayoutPositionTexture::enableVertexAttribPointer()']]],
