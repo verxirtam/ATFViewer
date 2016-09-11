@@ -170,7 +170,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 	for(unsigned int i = 0; i < imax; i++)
 	{
 		unsigned int jmax =  path[i].pathPoint.size();
-		//2点以上無ければ起動が描けないのでスキップ
+		//2点以上無ければ軌道が描けないのでスキップ
 		if(imax < 2)
 		{
 			continue;
@@ -178,9 +178,10 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 		//index_listの初期化
 		//各Pathの開始インデックスを設定する
 		//pastIndex, nowIndexは最初のvertexIndexを設定する
-		index_list.push_back(input.size()    );//beginIndex
-		index_list.push_back(input.size() + 2);//pastIndex
-		index_list.push_back(input.size() + 2);//nowIndex
+		index_list.push_back(input.size()   + 0);//beginIndex
+		index_list.push_back(input.size()   + 2);//pastIndex
+		index_list.push_back(input.size()   + 2);//nowIndex
+		index_list.push_back(element.size()    );//elementBeginIndex
 		{
 			/*
 			//ダミーの点(同じ点を2つ打つ)
@@ -204,14 +205,14 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 			vertex.time = static_cast<float>(pij.time);
 			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
 			input.push_back(vertex);
-			element.push_back(element.size());
 			input.push_back(vertex);
-			element.push_back(element.size());
 			
 			//now用の頂点
 			input.push_back(vertex);
-			element.push_back(element.size());
 			input.push_back(vertex);
+			
+			//1つのTriangleStripで表示するためのダミーの頂点
+			element.push_back(element.size());
 			element.push_back(element.size());
 			
 		}
@@ -235,6 +236,9 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 			
 		}
 		{
+			//1つのTriangleStripで表示するためのダミーの頂点
+			element.push_back(element.size());
+			element.push_back(element.size());
 			/*
 			//ダミーの点(同じ点を2つ打つ)
 			auto plast = path[i].pathPoint.rbegin();
@@ -253,9 +257,10 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 	//index_listの末尾にダミーの項目を追加する
 	//最後のPathの末尾を取得するため
 	//pastIndex, nowIndexは使用しないのでダミーで0を設定する
-	index_list.push_back(input.size());//beginIndex
-	index_list.push_back(           0);//pastIndex
-	index_list.push_back(           0);//nowIndex
+	index_list.push_back(  input.size());//beginIndex
+	index_list.push_back(             0);//pastIndex
+	index_list.push_back(             0);//nowIndex
+	index_list.push_back(element.size());//elementBeginIndex
 	
 	
 	//VAOの初期化(裏スレッドで実行可能なGL関数実行部分以外)

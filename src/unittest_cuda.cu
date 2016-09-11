@@ -442,14 +442,14 @@ bool PathsVAOTest_02updateElement()
 {
 	vector<unsigned int> index_list
 		{
-			 0, 4, 8,//0	past:途中		now:途中		(最長パターン)
-			10,16,16,//1	past:途中		now:途中		(同一インデックス)
-			20,22,22,//2	past:beginの前	now:beginの前
-			30,32,34,//3	past:beginの前	now:途中
-			40,44,50,//4	past:途中		now:end
-			50,60,60,//5	past:end		now:end
-			60,62,70,//6	past:beginの前	now:end
-			70, 0, 0,//7	最後のパスの後ろ
+			 0, 4, 8, 0,//0	past:途中		now:途中		(最長パターン)
+			10,16,16,12,//1	past:途中		now:途中		(同一インデックス)
+			20,22,22,24,//2	past:beginの前	now:beginの前
+			30,32,34,36,//3	past:beginの前	now:途中
+			40,44,50,48,//4	past:途中		now:end
+			50,60,60,60,//5	past:end		now:end
+			60,62,70,72,//6	past:beginの前	now:end
+			70, 0, 0,84 //7	最後のパスの後ろ
 		};
 	vector<unsigned int> element(12 * 7,0);
 	
@@ -477,20 +477,20 @@ bool PathsVAOTest_02updateElement()
 	{
 		for(int i =0; i < 7; i++)
 		{
-			for(int j = 0; j < 10; j++)
+			for(int j = 0; j < 12; j++)
 			{
-				cout << element[i * 10 +j] << ",\t";
+				cout << element[i * 12 +j] << ",\t";
 			}
 			cout << endl;
-			for(int j = 0; j < 10; j++)
+			for(int j = 0; j < 12; j++)
 			{
-				cout << element_ans[i * 10 +j] << ",\t";
+				cout << element_ans[i * 12 +j] << ",\t";
 			}
 			cout << endl;
-			for(int j = 0; j < 10; j++)
+			for(int j = 0; j < 12; j++)
 			{
-				std::string ret_string = (element[i * 10 +j] == element_ans[i * 10 +j])? " " : "X";
-				cout << ret_string << ",\t";
+				std::string ret_string = (element[i * 12 +j] == element_ans[i * 12 +j])? " " : "X";
+				cout << ret_string << " \t";
 			}
 			cout << endl;
 			cout << endl;

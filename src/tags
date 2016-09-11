@@ -387,9 +387,9 @@ displaySectorIndex	SectorsVAO.h	/^	unsigned int displaySectorIndex;$/;"	m	class:
 displaySubSector	Sectors.cpp	/^void Sectors::displaySubSector(const std::string& sector_name, SubSector& ss)$/;"	f	class:Sectors
 doubleBuffer0	PathsVAO.h	/^	doubleBufferingType doubleBuffer0;$/;"	m	class:PathsVAO
 doubleBuffer1	PathsVAO.h	/^	doubleBufferingType doubleBuffer1;$/;"	m	class:PathsVAO
-doubleBufferType	PathsVAO.h	/^		doubleBufferType(ShaderProgramPaths& spp):vao(spp),indexListDevice()$/;"	f	struct:PathsVAO::doubleBufferingType
 doubleBufferingBuffer	PathsVAO.h	/^	doubleBufferingType* doubleBufferingBuffer;$/;"	m	class:PathsVAO
 doubleBufferingCurrent	PathsVAO.h	/^	doubleBufferingType* doubleBufferingCurrent;$/;"	m	class:PathsVAO
+doubleBufferingType	PathsVAO.h	/^		doubleBufferingType(ShaderProgramPaths& spp):vao(spp),indexListDevice()$/;"	f	struct:PathsVAO::doubleBufferingType
 doubleBufferingType	PathsVAO.h	/^	struct doubleBufferingType$/;"	s	class:PathsVAO
 drawPath	Paths.cpp	/^void Paths::drawPath(PathPoint& p, time_t now)$/;"	f	class:Paths
 drawPath	PathsVAO.cpp	/^void PathsVAO::drawPath(PathPoint& p, time_t now)$/;"	f	class:PathsVAO
@@ -507,7 +507,6 @@ includesMaximumAltitude	SectorsVAO.h	/^		bool includesMaximumAltitude;$/;"	m	str
 includesMinimumAltitude	Sectors.h	/^		bool includesMinimumAltitude;$/;"	m	struct:Sectors::SubSector
 includesMinimumAltitude	SectorsVAO.h	/^		bool includesMinimumAltitude;$/;"	m	struct:SectorsVAO::SubSector
 indexCount	CountCrossing.h	/^	std::vector<int> indexCount;$/;"	m	class:CountCrossing
-indexList	PathsVAO.h	/^	std::vector<unsigned int> indexList;$/;"	m	class:PathsVAO
 indexListDevice	PathsVAO.h	/^		DeviceMemory<unsigned int> indexListDevice;$/;"	m	struct:PathsVAO::doubleBufferingType
 indexListItem	PathsVAO.h	/^	enum indexListItem$/;"	g	class:PathsVAO
 init	ATFViewerMain.h	/^	void init(void)$/;"	f	class:ATFViewerMain

@@ -76,7 +76,8 @@ private:
 	{
 		beginIndex = 0,
 		pastIndex = 1,
-		nowIndex =2
+		nowIndex =2,
+		elementBeginIndex = 3
 	};
 	unsigned int getIndexListIndex(unsigned int path_index, indexListItem i)
 	{
