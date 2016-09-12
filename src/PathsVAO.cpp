@@ -18,6 +18,9 @@
 
 #include "PathsVAO.h"
 
+//TEST
+#include <iomanip>
+
 using namespace std;
 
 
@@ -261,6 +264,51 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 	index_list.push_back(             0);//pastIndex
 	index_list.push_back(             0);//nowIndex
 	index_list.push_back(element.size());//elementBeginIndex
+	
+	//////////////////////////////////////
+	// テスト
+	//////////////////////////////////////
+	{
+		std::cout << std::setprecision(10);
+		
+		unsigned int path_index = 10;
+		
+		for(unsigned int i = path_index; i < path_index + 2; i++)
+		{
+			for(unsigned int j = 0; j < 4; j++)
+			{
+				std::cout << index_list[i * 4 + j];
+				std::cout << "\t";
+			}
+			std::cout << std::endl;
+		}
+		
+		unsigned int begin_index = index_list[ path_index      * 4 + 0];
+		unsigned int   end_index = index_list[(path_index + 1) * 4 + 0];
+		for(unsigned int i = begin_index; i < end_index; i++)
+		{
+			std::cout << i << ":\t";
+			std::cout << "(";
+			std::cout << input[i].position.x << ",\t";
+			std::cout << input[i].position.y << ",\t";
+			std::cout << input[i].position.z << "),\t";
+			std::cout << input[i].time << ",\t";
+			std::cout << "(";
+			std::cout << input[i].color.r << ",\t";
+			std::cout << input[i].color.g << ",\t";
+			std::cout << input[i].color.b << ",\t";
+			std::cout << input[i].color.a << ")";
+			std::cout << std::endl;
+		}
+		unsigned int element_begin_index = index_list[ path_index      * 4 + 3];
+		unsigned int element_end_index   = index_list[(path_index + 1) * 4 + 3];
+		for(unsigned int i = element_begin_index; i < element_end_index; i++)
+		{
+			std::cout << element[i] << ",\t";
+		}
+	}
+	//////////////////////////////////////
+	
 	
 	
 	//VAOの初期化(裏スレッドで実行可能なGL関数実行部分以外)
