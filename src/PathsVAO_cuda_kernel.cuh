@@ -66,6 +66,32 @@ void PathsVAO_updateElement
  *
  * @return 
  */
+__host__
+__device__
+void PathsVAO_updateDeviceDataCUDAMain
+	(
+		float now,
+		float past,
+		float* const vertex_d,
+		unsigned int* const element_d,
+		unsigned int* const index_list_d,
+		unsigned int path_count,
+		unsigned int path_index
+	);
+
+/**
+ * @brief nowに応じてVAOを更新する
+ *
+ * block 1つにpath 1つが対応する
+ *
+ * @param now
+ * @param vertex_d
+ * @param element_d
+ * @param index_list_d
+ * @param path_count
+ *
+ * @return 
+ */
 __global__
 void PathsVAO_updateDeviceDataCUDA
 	(

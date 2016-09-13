@@ -194,6 +194,15 @@ unittest_cuda.o : unittest_cuda.cu \
     /usr/include/c++/4.8/bits/ostream.tcc \
     /usr/include/c++/4.8/istream \
     /usr/include/c++/4.8/bits/istream.tcc \
+    /usr/include/c++/4.8/iomanip \
+    /usr/include/c++/4.8/locale \
+    /usr/include/c++/4.8/bits/locale_facets_nonio.h \
+    /usr/include/c++/4.8/ctime \
+    /usr/include/x86_64-linux-gnu/c++/4.8/bits/time_members.h \
+    /usr/include/x86_64-linux-gnu/c++/4.8/bits/messages_members.h \
+    /usr/include/libintl.h \
+    /usr/include/c++/4.8/bits/codecvt.h \
+    /usr/include/c++/4.8/bits/locale_facets_nonio.tcc \
     CountCrossing.cuh \
     /usr/include/c++/4.8/vector \
     /usr/include/c++/4.8/bits/stl_construct.h \

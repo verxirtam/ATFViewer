@@ -1013,6 +1013,7 @@ int main(int argc, char const* argv[])
 	
 	test(PathsVAOTest_01isInInterval(), ret);
 	test(PathsVAOTest_02updateElement(), ret);
+	test(PathsVAOTest_03updateDeviceDataCUDAMain(), ret);
 	
 	
 	if(ret)

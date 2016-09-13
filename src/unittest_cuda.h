@@ -18,6 +18,7 @@
 #pragma once
 
 #include <iostream>
+#include <iomanip>
 
 bool countCrossingTest_01Simple();
 bool countCrossingTest_02D1Long();
@@ -25,4 +26,5 @@ bool countCrossingTest_03D2Simple();
 
 bool PathsVAOTest_01isInInterval();
 bool PathsVAOTest_02updateElement();
+bool PathsVAOTest_03updateDeviceDataCUDAMain();
 

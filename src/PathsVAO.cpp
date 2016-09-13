@@ -285,21 +285,33 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 		
 		unsigned int begin_index = index_list[ path_index      * 4 + 0];
 		unsigned int   end_index = index_list[(path_index + 1) * 4 + 0];
+		std::cout << "\t{" << std::endl;
 		for(unsigned int i = begin_index; i < end_index; i++)
 		{
-			std::cout << i << ":\t";
-			std::cout << "(";
-			std::cout << input[i].position.x << ",\t";
-			std::cout << input[i].position.y << ",\t";
-			std::cout << input[i].position.z << "),\t";
-			std::cout << input[i].time << ",\t";
-			std::cout << "(";
-			std::cout << input[i].color.r << ",\t";
-			std::cout << input[i].color.g << ",\t";
-			std::cout << input[i].color.b << ",\t";
-			std::cout << input[i].color.a << ")";
-			std::cout << std::endl;
+			if((i % 2) == 0)
+			{
+				std::cout << "\t\t";
+			}
+			std::cout << input[i].position.x << ", ";
+			std::cout << input[i].position.y << ", ";
+			std::cout << input[i].position.z << ", ";
+			std::cout << input[i].time       << ", ";
+			std::cout << input[i].color.r    << ", ";
+			std::cout << input[i].color.g    << ", ";
+			std::cout << input[i].color.b    << ", ";
+			std::cout << input[i].color.a    << ", ";
+			std::cout << 0.0f                << ",";
+			if((i % 2) == 0)
+			{
+				std::cout << "\t";
+			}
+			else
+			{
+				std::cout << "\t//" << i;
+				std::cout << std::endl;
+			}
 		}
+		std::cout << "\t};" << std::endl;
 		unsigned int element_begin_index = index_list[ path_index      * 4 + 3];
 		unsigned int element_end_index   = index_list[(path_index + 1) * 4 + 3];
 		for(unsigned int i = element_begin_index; i < element_end_index; i++)

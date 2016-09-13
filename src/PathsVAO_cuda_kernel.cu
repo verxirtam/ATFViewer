@@ -299,10 +299,10 @@ void PathsVAO_updateDeviceDataCUDAMain
 	//unsigned int vertex_count = end_index - begin_index;
 	
 	//pastの頂点
-	float* const past_vertex = &vertex_d[begin_index];
+	float* const past_vertex = &vertex_d[VCOUNT * begin_index];
 	
 	//nowの頂点
-	float* const now_vertex = &vertex_d[begin_index + VCOUNT2];
+	float* const now_vertex = &vertex_d[VCOUNT * begin_index + VCOUNT2];
 	
 	//pastIndexを更新する
 	PathsVAO_updateTimeIndex(past, vertex_d, begin_index + 4, end_index, past_index, past_vertex);

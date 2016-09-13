@@ -498,3 +498,95 @@ bool PathsVAOTest_02updateElement()
 	}
 	return ret;
 }
+
+bool PathsVAOTest_03updateDeviceDataCUDAMain()
+{
+	
+	std::vector<float> vertex(728 * 9, 0.0f);
+	vertex.reserve(744);
+	std::vector<float> vertex_base
+	{
+		123.4914017, 41.63970184, 0, 1460641792, 0, 0, 0, 1, 0,	123.4914017, 41.63970184, 0, 1460641792, 0, 0, 0, 1, 0,	//729
+		123.4914017, 41.63970184, 0, 1460641792, 0, 0, 0, 1, 0,	123.4914017, 41.63970184, 0, 1460641792, 0, 0, 0, 1, 0,	//731
+		123.4914017, 41.63970184, 0, 1460641792, 0, 0.5, 1, 1, 0,	123.4914017, 41.63970184, 0, 1460641792, 0, 0.5, 1, 1, 0,	//733
+		123.4858017, 41.63600159, 0, 1460641920, 0, 0.5, 1, 1, 0,	123.4858017, 41.63600159, 0, 1460641920, 0, 0.5, 1, 1, 0,	//735
+		123.4788971, 41.63249969, 0, 1460642048, 0, 0.5, 1, 1, 0,	123.4788971, 41.63249969, 0, 1460642048, 0, 0.5, 1, 1, 0,	//737
+		123.4813004, 41.63040161, 0, 1460642048, 0, 0.5, 1, 1, 0,	123.4813004, 41.63040161, 0, 1460642048, 0, 0.5, 1, 1, 0,	//739
+		123.4842987, 41.63079834, 0, 1460642176, 0, 0.5, 1, 1, 0,	123.4842987, 41.63079834, 0, 1460642176, 0, 0.5, 1, 1, 0,	//741
+		123.4847031, 41.63100052, 0, 1460642176, 0, 0.5, 1, 1, 0,	123.4847031, 41.63100052, 0, 1460642176, 0, 0.5, 1, 1, 0,	//743
+	};
+	vertex.insert(vertex.end(), vertex_base.begin(), vertex_base.end());
+	
+	std::vector<unsigned int> element(744, 0);
+	
+	std::vector<unsigned int> index_list
+	{
+		728, 730, 730, 728,
+		744, 746, 746, 744
+	};
+	
+	std::vector<float> vertex_before(vertex);
+	std::vector<float> vertex_after(vertex);
+	std::vector<unsigned int> element_before(element);
+	std::vector<unsigned int> element_after(element);
+	std::vector<unsigned int> index_list_before(index_list);
+	std::vector<unsigned int> index_list_after(index_list);
+	
+	float now  = 1460642200.0f;
+	float past = 1460641800.0f;
+	
+	PathsVAO_updateDeviceDataCUDAMain
+		(
+			now,
+			past,
+			vertex_after.data(),
+			element_after.data(),
+			index_list_after.data(),
+			1,//path_count
+			0 //path_index
+		);
+	//vectorの比較
+	std::cout << std::setprecision(10);
+	int N = 18;
+	int imax = vertex_before.size() / N;
+	for(int i = 0; i < imax; i++)
+	{
+		for(int j = 0; j < N; j++)
+		{
+			std::cout << vertex_before[i * N + j] << ", ";
+		}
+		std::cout << std::endl;
+		for(int j = 0; j < N; j++)
+		{
+			std::cout << vertex_after[i * N + j] << ", ";
+		}
+		std::cout << std::endl << std::endl;
+	}
+	N = 4;
+	imax = 2;
+	for(int i = 0; i < imax; i++)
+	{
+		for(int j = 0; j < N; j++)
+		{
+			std::cout << index_list_before[i * N + j] << ", ";
+		}
+		std::cout << std::endl;
+		for(int j = 0; j < N; j++)
+		{
+			std::cout << index_list_after[i * N + j] << ", ";
+		}
+		std::cout << std::endl << std::endl;
+	}
+	
+	std::cout << "now  : " << now  << std::endl;
+	std::cout << "past : " << past << std::endl;
+	
+	
+	
+	return true;
+}
+
+
+
+
+
