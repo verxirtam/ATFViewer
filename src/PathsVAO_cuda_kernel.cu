@@ -210,7 +210,7 @@ void PathsVAO_updateElement
 	//(最初に2つ設定するダミーのインデックス)
 	// =(最初に描画する点のインデックス)を決定する
 	unsigned int first_vertex_index = past_draw ? past_vertex_index : main_begin_vertex_index;
-	unsigned int last_vertex_index  =  now_draw ?  now_vertex_index : main_end_vertex_index;
+	
 	//ダミーのインデックスを設定する
 	element_d[ei] = first_vertex_index; ei++;
 	element_d[ei] = first_vertex_index; ei++;
@@ -231,9 +231,10 @@ void PathsVAO_updateElement
 		element_d[ei] = now_vertex_index + 1; ei++;
 	}
 	//最後に描画した頂点のインデックスをダミーとして最後まで設定する
+	unsigned int last_vertex_index = element_d[ei -1];
 	for(;ei < element_end_index; ei++)
 	{
-		element_d[ei] = last_vertex_index + 1;
+		element_d[ei] = last_vertex_index;
 	}
 
 
@@ -246,8 +247,7 @@ void PathsVAO_updateElement
 	
 	unsigned int sei = past_index + 2;
 	for(; (ei < element_end_index) && (sei < now_index + 2); ei++, sei++)
-	{
-		element_d[ei] = sei;
+	{		element_d[ei] = sei;
 	}
 	if(ei < end_index)
 	{

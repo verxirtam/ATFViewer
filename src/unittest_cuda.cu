@@ -460,7 +460,7 @@ bool PathsVAOTest_02updateElement()
 			10,10,10,11,12,13,13,13,13,13,13,13,
 			20,20,20,20,20,20,20,20,20,20,20,20,
 			34,34,34,35,32,33,33,33,33,33,33,33,
-			40,40,40,41,46,47,48,49,42,43,43,43,
+			40,40,40,41,46,47,48,49,49,49,49,49,
 			50,50,50,50,50,50,50,50,50,50,50,50,
 			64,64,64,65,66,67,68,69,69,69,69,69
 		};
@@ -548,8 +548,9 @@ bool PathsVAOTest_03updateDeviceDataCUDAMain()
 	//vectorの比較
 	std::cout << std::setprecision(10);
 	int N = 18;
+	int imin = 728 * 9 / N;
 	int imax = vertex_before.size() / N;
-	for(int i = 0; i < imax; i++)
+	for(int i = imin; i < imax; i++)
 	{
 		for(int j = 0; j < N; j++)
 		{
@@ -583,7 +584,7 @@ bool PathsVAOTest_03updateDeviceDataCUDAMain()
 	
 	
 	
-	return true;
+	return false;
 }
 
 

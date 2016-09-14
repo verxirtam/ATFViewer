@@ -37,8 +37,8 @@ CXXONLYFLAGS := -std=c++11 -Weffc++
 #CUDAコンパイラ
 NVCC := nvcc
 
-#CUDAコンパイルオプション
-NVCC_FLAGS := --std c++11
+#CUDAコンパイルオプション(-Gはデバッグ情報出力)
+NVCC_FLAGS := --std c++11 -G
 
 #NVCC向けのg++オプション
 NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)

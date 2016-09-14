@@ -21,6 +21,8 @@ void PathsVAO::updateDeviceData(time_t now)
 	//パスの個数
 	unsigned int path_count = ( indexListDevice.getCount() / 4 ) - 1;
 	
+	//std::cout << "path_count = " << path_count << std::endl;
+	
 	//ここにCUDA関数を書く予定
 	dim3 grid(path_count, 1, 1);
 	dim3 block(1,1,1);

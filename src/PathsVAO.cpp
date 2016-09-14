@@ -268,6 +268,9 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 	//////////////////////////////////////
 	// テスト
 	//////////////////////////////////////
+	//std::cout << "path.size() = " << path.size() << std::endl;
+	//std::cout << "(index_list.size() / 4) - 1 = " << ((index_list.size() / 4) - 1) << std::endl;
+	/*
 	{
 		std::cout << std::setprecision(10);
 		
@@ -319,6 +322,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 			std::cout << element[i] << ",\t";
 		}
 	}
+	*/
 	//////////////////////////////////////
 	
 	
@@ -463,7 +467,7 @@ int PathsVAO::display(time_t now)
 		
 	}
 	//時刻に応じてデバイス上のPathsをアップデートする
-	updateDeviceData(now);
+	//updateDeviceData(now);
 	
 	doubleBufferingCurrent->vao.display();
 	
