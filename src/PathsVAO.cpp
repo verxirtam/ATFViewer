@@ -38,7 +38,7 @@ void PathsVAO::makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position
 	//時間の区間の開始・終了時刻を取得する
 	this->timeSeparation.getIntervalStatus(position, time_start, time_end);
 	
-	//前後にバッファを持たせる(過去分の起動も表示するため)
+	//前後にバッファを持たせる(過去分の軌道も表示するため)
 	time_start -= drawTimeWidth;
 	time_end += drawTimeWidth;
 	
@@ -467,7 +467,7 @@ int PathsVAO::display(time_t now)
 		
 	}
 	//時刻に応じてデバイス上のPathsをアップデートする
-	//updateDeviceData(now);
+	updateDeviceData(now);
 	
 	doubleBufferingCurrent->vao.display();
 	

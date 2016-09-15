@@ -87,7 +87,7 @@ MapVertexIndex	MapVAO.h	/^		MapVertexIndex()$/;"	f	struct:MapVAO::MapVertexIndex
 MapVertexIndex	MapVAO.h	/^	struct MapVertexIndex$/;"	s	class:MapVAO
 NVCC	makefile	/^NVCC := nvcc$/;"	m
 NVCC_CXX_FLAGS	makefile	/^NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)$/;"	m
-NVCC_FLAGS	makefile	/^NVCC_FLAGS := --std c++11$/;"	m
+NVCC_FLAGS	makefile	/^NVCC_FLAGS := --std c++11 -G$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart $(CXX_LINKS)$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSGLTEST	makefile	/^OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))$/;"	m
@@ -402,6 +402,7 @@ drawTimeWidth	Paths.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:Paths
 drawTimeWidth	PathsVAO.h	/^	const unsigned int drawTimeWidth;$/;"	m	class:PathsVAO
 element	SectorsVAO.h	/^		std::vector<unsigned int> element;\/**< インデックス配列  *\/$/;"	m	struct:SectorsVAO::InitSectorsSettings
 element	VAOPositionBase.h	/^	VBOElementClass element;$/;"	m	class:VAOPositionBase
+elementBeginIndex	PathsVAO.h	/^		elementBeginIndex = 3$/;"	e	enum:PathsVAO::indexListItem
 elementCount	VAOPositionBase.h	/^	int elementCount;$/;"	m	class:VAOPositionBase
 elementData	VAOPositionBase.h	/^	std::vector<unsigned int> elementData;$/;"	m	class:VAOPositionBase
 enableVertexAttribPointer	VAOLayoutPaths.cpp	/^void VAOLayoutPaths::enableVertexAttribPointer()$/;"	f	class:VAOLayoutPaths
@@ -442,6 +443,7 @@ getCrossingPoint	cudatestfunc.h	/^float*  getCrossingPoint$/;"	f
 getDevicePointer	VBO.h	/^	ElementType* getDevicePointer()$/;"	f	class:VBODynamicBase
 getElement	VAOPositionBase.h	/^	VBOElementClass& getElement()$/;"	f	class:VAOPositionBase
 getElementCount	VAOPositionBase.h	/^	int getElementCount()$/;"	f	class:VAOPositionBase
+getElementCount	VAOPositionBaseDynamic.h	/^	int getElementCount()$/;"	f	class:VAOPositionBaseDynamic
 getElementDevicePointer	VAOPositionBaseDynamic.h	/^	unsigned int* getElementDevicePointer()$/;"	f	class:VAOPositionBaseDynamic
 getEnd	CountCrossing.h	/^	time_t getEnd()$/;"	f	class:CountCrossing
 getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
@@ -635,7 +637,7 @@ next	TimeSeparation.h	/^		next = 1$/;"	e	enum:TimeSeparation::Position
 nextDayTime	TimeManager.h	/^	static time_t nextDayTime(time_t t)$/;"	f	class:TimeManager
 now	ATFViewerMain.h	/^	time_t now;$/;"	m	class:ATFViewerMain
 now	ATFViewerMainGLSL.h	/^	time_t now;$/;"	m	class:ATFViewerMainGLSL
-nowIndex	PathsVAO.h	/^		nowIndex =2$/;"	e	enum:PathsVAO::indexListItem
+nowIndex	PathsVAO.h	/^		nowIndex =2,$/;"	e	enum:PathsVAO::indexListItem
 now_index	Path.h	/^	int now_index;$/;"	m	struct:Path
 nowstring	unittest.cpp	/^string nowstring()$/;"	f
 openMPTest	unittest.cpp	/^bool openMPTest()$/;"	f

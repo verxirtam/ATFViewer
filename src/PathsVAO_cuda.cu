@@ -5,6 +5,14 @@
 
 void PathsVAO::updateDeviceData(time_t now)
 {
+	
+	////////////////////////////////////////
+	// テスト
+	////////////////////////////////////////
+	//GLの描画が完了するまで待機
+	glFinish();
+	////////////////////////////////////////
+	
 	vaoType& vao = doubleBufferingCurrent->vao;
 	DeviceMemory<unsigned int>& indexListDevice = doubleBufferingCurrent->indexListDevice;
 	
@@ -23,6 +31,31 @@ void PathsVAO::updateDeviceData(time_t now)
 	
 	//std::cout << "path_count = " << path_count << std::endl;
 	
+	
+	////////////////////////////////////////
+	// テスト
+	////////////////////////////////////////
+	static bool output = true;
+	std::vector<unsigned int> il_h_before;
+	std::vector<unsigned int> e_h_before;
+	if(output)
+	{
+		output = false;
+		//indexListの取得
+		std::vector<unsigned int> il_h(indexListDevice.getCount(),0);
+		indexListDevice.memcpyDeviceToHost(il_h.data());
+		il_h_before = il_h;
+		
+		//elementの取得
+		std::vector<unsigned int> e_h(vao.getElementCount(), 0);
+		cudaMemcpy(e_h.data(), e_d, e_h.size() * sizeof(float), cudaMemcpyDeviceToHost);
+		e_h_before = e_h;
+	}
+	
+	////////////////////////////////////////
+	
+	
+	
 	//ここにCUDA関数を書く予定
 	dim3 grid(path_count, 1, 1);
 	dim3 block(1,1,1);
@@ -37,6 +70,88 @@ void PathsVAO::updateDeviceData(time_t now)
 		);
 	//CUDA関数が完了するまで待機
 	cudaThreadSynchronize();
+	
+	////////////////////////////////////////
+	// テスト
+	////////////////////////////////////////
+	static bool output1 = true;
+	if(output1)
+	{
+		output1 = false;
+		//indexListの取得
+		std::vector<unsigned int> il_h(indexListDevice.getCount(),0);
+		indexListDevice.memcpyDeviceToHost(il_h.data());
+		
+		int imax = indexListDevice.getCount() / 4;
+		std::cout << "////////////////////////////////////////" << std::endl;
+		std::cout << "indexList: " << imax << std::endl;
+		for(int i = 0; i < imax; i++)
+		{
+			bool equal = true;
+			std::cout << i << ": ";
+			for(int j = 0; j < 4; j++)
+			{
+				std::cout << il_h_before[i * 4 + j] << " ";
+			}
+			std::cout << " | ";
+			for(int j = 0; j < 4; j++)
+			{
+				std::cout << il_h[i * 4 + j] << " ";
+				
+				if(il_h_before[i * 4 + j] != il_h[i * 4 + j])
+				{
+					equal = false;
+				}
+			}
+			std::cout << " | ";
+			if(!equal)
+			{
+				std::cout << " NOT EQUAL ";
+			}
+			std::cout << std::endl;
+		}
+		std::cout << "////////////////////////////////////////" << std::endl;
+		
+		//elementの取得
+		std::vector<unsigned int> e_h(vao.getElementCount(), 0);
+		cudaMemcpy(e_h.data(), e_d, e_h.size() * sizeof(float), cudaMemcpyDeviceToHost);
+		int kmax = imax - 1;
+		for(int k = 0; k < kmax; k++)
+		{
+			bool equal = true;
+			
+			std::cout << k << ": ";
+			int lmin = il_h[ k      * 4 + 3];
+			int lmax = il_h[(k + 1) * 4 + 3];
+			for(int l = lmin; l < lmax; l++)
+			{
+				std::cout << e_h_before[l] << ", ";
+			}
+			std::cout << std::endl;
+			
+			std::cout << k << ": ";
+			lmin = il_h[ k      * 4 + 3];
+			lmax = il_h[(k + 1) * 4 + 3];
+			for(int l = lmin; l < lmax; l++)
+			{
+				std::cout << e_h[l] << ", ";
+				
+				if(e_h_before[l] != e_h[l])
+				{
+					equal = false;
+				}
+			}
+			std::cout << std::endl;
+			std::cout << k << ": ";
+			if(!equal)
+			{
+				std::cout << "NOT EQUAL";
+			}
+			std::cout << std::endl;
+		}
+	}
+	
+	////////////////////////////////////////
 }
 
 

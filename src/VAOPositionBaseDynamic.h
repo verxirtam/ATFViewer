@@ -80,6 +80,10 @@ public:
 	{
 		return base.getVertexCount();
 	}
+	int getElementCount()
+	{
+		return base.getElementCount();
+	}
 };
 
 
