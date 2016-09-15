@@ -23,7 +23,7 @@ var searchData=
   ['getdeviceaddress',['getDeviceAddress',['../classDeviceSeqConst.html#aa2cb31e2aa6adb73505b147cdd70833a',1,'DeviceSeqConst::getDeviceAddress()'],['../classDeviceSeq.html#a087e91f5830adefea544f8ae075ef2eb',1,'DeviceSeq::getDeviceAddress()']]],
   ['getdevicepointer',['getDevicePointer',['../classDeviceMemory.html#a37441df0df055d397c2a698536f10a9e',1,'DeviceMemory::getDevicePointer()'],['../classVBODynamicBase.html#adefab8e55ded81b0a98a8bfa4053dc40',1,'VBODynamicBase::getDevicePointer()']]],
   ['getelement',['getElement',['../classVAOPositionBase.html#af603f4ad831b8dcf86fe690045239207',1,'VAOPositionBase']]],
-  ['getelementcount',['getElementCount',['../classVAOPositionBase.html#ade35e02286ebeb58e484f5e7a4dfa9ba',1,'VAOPositionBase']]],
+  ['getelementcount',['getElementCount',['../classVAOPositionBase.html#ade35e02286ebeb58e484f5e7a4dfa9ba',1,'VAOPositionBase::getElementCount()'],['../classVAOPositionBaseDynamic.html#ab5ac43f50d9e07fed56fa7fbadc21dd1',1,'VAOPositionBaseDynamic::getElementCount()']]],
   ['getelementdevicepointer',['getElementDevicePointer',['../classVAOPositionBaseDynamic.html#a67c59c05d53a2baff5ba845d2e2013a8',1,'VAOPositionBaseDynamic']]],
   ['getend',['getEnd',['../classCountCrossing.html#a487a0f4ab71bf2bdf925c1fb74d4343f',1,'CountCrossing']]],
   ['getfeetfromfl',['getFeetFromFL',['../classUtil.html#acaa1d88cb27062e845911bbf23e662b8',1,'Util']]],
