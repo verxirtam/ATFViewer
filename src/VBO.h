@@ -157,6 +157,15 @@ private:
 	VBOBase<ElementType> base;
 	cudaGraphicsResource* resource;
 	ElementType* device;
+	//CUDA向けのグラフィックスリソースを開放する
+	void unregister()
+	{
+		if(resource != nullptr)
+		{
+			cudaGraphicsUnregisterResource(resource);
+		}
+	}
+	
 	//ポインタメンバを持つがコピー不要なので禁止する
 	//コピーコンストラクタ
 	VBODynamicBase(const VBODynamicBase&) = delete;
@@ -172,14 +181,14 @@ public:
 	}
 	~VBODynamicBase()
 	{
-		if(resource != nullptr)
-		{
-			cudaGraphicsUnregisterResource(resource);
-		}
+		unregister();
 	}
 	void init(const std::vector<ElementType>& v)
 	{
 		base.init(v);
+		//CUDA向けのグラフィックスリソースを開放
+		unregister();
+		//CUDA向けのグラフィックスリソースの取得
 		cudaGraphicsGLRegisterBuffer(&resource, base.getHandle(), cudaGraphicsRegisterFlagsNone);
 		
 		#ifdef VBODYNAMICBASE_LOWTHROUGHPUT
