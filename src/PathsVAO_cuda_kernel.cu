@@ -66,8 +66,8 @@ void PathsVAO_updateTimeVertex
 	
 	unsigned int from_iindex = (v_iindex < begin_iindex) ? begin_iindex : v_iindex;
 	unsigned int   to_iindex = (v_iindex < begin_iindex) ? begin_iindex : (v_iindex + VCOUNT2);
-	from_iindex = (end_iindex <= from_iindex) ? (end_iindex - 1) : from_iindex;
-	  to_iindex = (end_iindex <=   to_iindex) ? (end_iindex - 1) :   to_iindex;
+	from_iindex = (end_iindex <= from_iindex) ? (end_iindex - VCOUNT2) : from_iindex;
+	  to_iindex = (end_iindex <=   to_iindex) ? (end_iindex - VCOUNT2) :   to_iindex;
 	
 	const float* const from = &vertex_d[from_iindex];
 	const float* const to   = &vertex_d[  to_iindex];
