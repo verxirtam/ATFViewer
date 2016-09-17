@@ -1,4 +1,5 @@
 <map id="VBODynamicBase::init" name="VBODynamicBase::init">
-<area shape="rect" id="node2" href="$classVBOBase.html#a3f0a77a1c5824a8d9d7d5d50415949e4" title="VBOBase::init" alt="" coords="231,5,337,32"/>
-<area shape="rect" id="node3" href="$classVBOBase.html#af048b39cc0ade92245b77762aa5168b0" title="VBOBase::getHandle" alt="" coords="211,56,357,83"/>
+<area shape="rect" id="node2" href="$classVBOBase.html#a3f0a77a1c5824a8d9d7d5d50415949e4" title="VBOBase::init" alt="" coords="257,5,362,32"/>
+<area shape="rect" id="node3" href="$classVBODynamicBase.html#ad79f9fdbcce077efde117b081fc31923" title="VBODynamicBase::unregister" alt="" coords="211,56,408,83"/>
+<area shape="rect" id="node4" href="$classVBOBase.html#af048b39cc0ade92245b77762aa5168b0" title="VBOBase::getHandle" alt="" coords="236,107,383,133"/>
 </map>
