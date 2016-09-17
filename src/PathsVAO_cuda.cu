@@ -35,7 +35,7 @@ void PathsVAO::updateDeviceData(time_t now)
 	////////////////////////////////////////
 	// テスト
 	////////////////////////////////////////
-	static bool output = true;
+	static bool output = false;
 	std::vector<unsigned int> il_h_before;
 	std::vector<unsigned int> e_h_before;
 	if(output)
@@ -87,7 +87,7 @@ void PathsVAO::updateDeviceData(time_t now)
 	////////////////////////////////////////
 	// テスト
 	////////////////////////////////////////
-	static bool output1 = true;
+	static bool output1 = false;
 	if(output1)
 	{
 		output1 = false;
