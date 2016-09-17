@@ -54,15 +54,28 @@ void PathsVAO::updateDeviceData(time_t now)
 	
 	////////////////////////////////////////
 	
+	TimeSeparation::Position position = TimeSeparation::Position::current;
 	
+	time_t time_start = 0;
+	time_t time_end   = 0;
+	
+	//時間の区間の開始・終了時刻を取得する
+	this->timeSeparation.getIntervalStatus(position, time_start, time_end);
+	
+	//DBから取得した時刻の範囲を取得する
+	time_start -= this->drawTimeWidth;
+	//time_end   += this->drawTimeWidth;
+	
+	float  now_float = static_cast<float>(now - time_start);
+	float past_float = static_cast<float>(now - this->drawTimeWidth - time_start);
 	
 	//ここにCUDA関数を書く予定
 	dim3 grid(path_count, 1, 1);
 	dim3 block(1,1,1);
 	PathsVAO_updateDeviceDataCUDA<<<grid, block>>>
 		(
-			static_cast<float>(now),
-			static_cast<float>(now - this->drawTimeWidth),
+			now_float,
+			past_float,
 			v_d,
 			e_d,
 			il_d,

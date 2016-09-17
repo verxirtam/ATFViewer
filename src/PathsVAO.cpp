@@ -55,7 +55,7 @@ void PathsVAO::makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position
 	tdm.getTrackDataFromDBParallel(p, time_start, time_end, 6);
 	
 	//トラックデータのVAOへの設定
-	this->initVAO(p, db);
+	this->initVAO(p, db, time_start, time_end);
 	
 	cout << "PathsVAO::makePathsBuffer() end." << endl;
 }
@@ -153,13 +153,10 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 	this->makePathsBuffer(*doubleBufferingCurrent, TimeSeparation::Position::current);
 	
 	doubleBufferingCurrent->vao.initMain();
-	//initVAO(paths, vao);
 	
-	//TrackDataManager tdm;
-	//tdm.getTrackDataFromDBParallel(paths,time_min,time_max);
 }
 
-void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
+void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db, time_t time_start, time_t time_end)
 {
 	
 	using input_type = ShaderProgramPaths::vaoTypeDynamic::inputType;
@@ -168,6 +165,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 	
 	std::vector<unsigned int> element;
 	std::vector<unsigned int> index_list;
+	
 	
 	unsigned int imax = path.size();
 	for(unsigned int i = 0; i < imax; i++)
@@ -186,26 +184,13 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 		index_list.push_back(input.size()   + 2);//nowIndex
 		index_list.push_back(element.size()    );//elementBeginIndex
 		{
-			/*
-			//ダミーの点(同じ点を2つ打つ)
-			auto pfirst = path[i].pathPoint.begin();
-			//下の点
-			vertex_type vertex;
-			vertex.position = glm::vec3(pfirst->longitude, pfirst->latitude, 0.0f);
-			vertex.time =static_cast<float>(pfirst->time);
-			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
-			
-			input.push_back(vertex);
-			element.push_back(element.size());
-			
-			input.push_back(vertex);
-			element.push_back(element.size());
-			*/
+			//past、nowのベースに使うPathPoint
 			const PathPoint& pij = path[i].pathPoint[0];
+			
 			//past用の頂点
 			vertex_type vertex;
 			vertex.position = glm::vec3(pij.longitude, pij.latitude, static_cast<float>(pij.altitude));
-			vertex.time = static_cast<float>(pij.time);
+			vertex.time = static_cast<float>(pij.time - time_start);
 			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 1.0f);
 			input.push_back(vertex);
 			input.push_back(vertex);
@@ -228,7 +213,7 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 			c=c*c;
 			vertex_type vertex;
 			vertex.position = glm::vec3(pij.longitude, pij.latitude, static_cast<float>(pij.altitude));
-			vertex.time =static_cast<float>(pij.time);
+			vertex.time =static_cast<float>(pij.time - time_start);
 			vertex.color = glm::vec4(c, 0.5f, 1.0f, 1.0f);
 			input.push_back(vertex);
 			element.push_back(element.size());
@@ -242,19 +227,6 @@ void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)
 			//1つのTriangleStripで表示するためのダミーの頂点
 			element.push_back(element.size());
 			element.push_back(element.size());
-			/*
-			//ダミーの点(同じ点を2つ打つ)
-			auto plast = path[i].pathPoint.rbegin();
-			//下の点
-			vertex_type vertex;
-			vertex.position = glm::vec3(plast->longitude, plast->latitude, 0.0f);
-			vertex.time =static_cast<float>(plast->time);
-			vertex.color = glm::vec4(0.0f, 0.0f, 0.0f, 0.0f);
-			input.push_back(vertex);
-			element.push_back(element.size());
-			input.push_back(vertex);
-			element.push_back(element.size());
-			*/
 		}
 	}
 	//index_listの末尾にダミーの項目を追加する

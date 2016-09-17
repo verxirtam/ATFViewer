@@ -93,12 +93,10 @@ public:
 		switch(p)
 		{
 		case Position::current:
-			std::cout << "TimeSeparation::getIntervalStatus() current." << std::endl;
 			start = timeSequence[currentIndex    ];
 			end   = timeSequence[currentIndex + 1];
 			break;
 		case Position::next:
-			std::cout << "TimeSeparation::getIntervalStatus() next." << std::endl;
 			start = timeSequence[getNextIndex()    ];
 			end   = timeSequence[getNextIndex() + 1];
 			break;
