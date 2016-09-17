@@ -5,8 +5,10 @@
 <area shape="rect" id="node8" href="$classDeviceMemory.html#a1d58cfc818f9a020aaa62111007c9daf" title="DeviceMemory::getCount" alt="" coords="277,205,448,232"/>
 <area shape="rect" id="node9" href="$classDeviceMemory.html#a0beeb59ed6143b4b29c3b1437f877d48" title="DeviceMemory::memcpyDevice\lToHost" alt="" coords="258,257,467,298"/>
 <area shape="rect" id="node10" href="$classVAOPositionBaseDynamic.html#ab5ac43f50d9e07fed56fa7fbadc21dd1" title="VAOPositionBaseDynamic\l::getElementCount" alt="" coords="273,322,452,363"/>
+<area shape="rect" id="node12" href="$classTimeSeparation.html#a2db4c33ca4c17566c94086e409083933" title="TimeSeparation::getInterval\lStatus" alt="" coords="271,387,454,429"/>
 <area shape="rect" id="node3" href="$classVAOPositionBase.html#aef920f68ed97c2095a5bfa41144caae6" title="VAOPositionBase::getVertex" alt="" coords="526,5,717,32"/>
 <area shape="rect" id="node4" href="$classVBODynamicBase.html#adefab8e55ded81b0a98a8bfa4053dc40" title="VBODynamicBase::getDevice\lPointer" alt="" coords="522,57,721,98"/>
 <area shape="rect" id="node6" href="$classVAOPositionBase.html#af603f4ad831b8dcf86fe690045239207" title="VAOPositionBase::getElement" alt="" coords="521,123,722,149"/>
 <area shape="rect" id="node11" href="$classVAOPositionBase.html#ade35e02286ebeb58e484f5e7a4dfa9ba" title="VAOPositionBase::getElement\lCount" alt="" coords="521,322,722,363"/>
+<area shape="rect" id="node13" href="$classTimeSeparation.html#ae4b4b0085a1fc3ffb2fb3c6eb72fcbd0" title="TimeSeparation::getNextIndex" alt="" coords="522,395,721,421"/>
 </map>
