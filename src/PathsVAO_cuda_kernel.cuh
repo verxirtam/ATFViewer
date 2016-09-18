@@ -75,7 +75,6 @@ void PathsVAO_updateDeviceDataCUDAMain
 		float* const vertex_d,
 		unsigned int* const element_d,
 		unsigned int* const index_list_d,
-		unsigned int path_count,
 		unsigned int path_index
 	);
 
@@ -99,8 +98,7 @@ void PathsVAO_updateDeviceDataCUDA
 		float past,
 		float* const vertex_d,
 		unsigned int* const element_d,
-		unsigned int* const index_list_d,
-		unsigned int path_count
+		unsigned int* const index_list_d
 	);
 
 

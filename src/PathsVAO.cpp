@@ -57,6 +57,18 @@ void PathsVAO::makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position
 	//トラックデータのVAOへの設定
 	this->initVAO(p, db, time_start, time_end);
 	
+	auto p_max = std::max_element
+		(
+			p.begin(),
+			p.end(),
+			[](const Path& p1,const Path& p2)
+			{
+				return p1.pathPoint.size() < p2.pathPoint.size();
+			}
+		);
+	cout << "max{p[].pathPoint.size()} = " << p_max->pathPoint.size() << endl;
+	
+	
 	cout << "PathsVAO::makePathsBuffer() end." << endl;
 }
 

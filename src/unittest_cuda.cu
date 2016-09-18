@@ -556,7 +556,6 @@ bool PathsVAOTest_03updateDeviceDataCUDAMain()
 			vertex_after.data(),
 			element_after.data(),
 			index_list_after.data(),
-			1,//path_count
 			0 //path_index
 		);
 	//vectorの比較

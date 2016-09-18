@@ -78,8 +78,7 @@ void PathsVAO::updateDeviceData(time_t now)
 			past_float,
 			v_d,
 			e_d,
-			il_d,
-			path_count
+			il_d
 		);
 	//CUDA関数が完了するまで待機
 	cudaThreadSynchronize();
@@ -87,10 +86,33 @@ void PathsVAO::updateDeviceData(time_t now)
 	////////////////////////////////////////
 	// テスト
 	////////////////////////////////////////
-	static bool output1 = false;
+	static int output1_counter = 10;
+	static bool output1 = true;
 	if(output1)
 	{
-		output1 = false;
+		//最初の10回分だけ表示するための処理
+		output1_counter--;
+		if(output1_counter<=0)
+		{
+			output1 = false;
+		}
+		//vertex_dの表示
+		int vcount = 900;
+		std::vector<float> v_h(vcount, 0.0f);
+		cudaMemcpy(v_h.data(), v_d, v_h.size() * sizeof(float), cudaMemcpyDeviceToHost);
+		int ppl = 18;
+		int imax = vcount / ppl;
+		std::cout << "////////////////////////////////////////" << std::endl;
+		std::cout << "vertex_d: " << imax << std::endl;
+		for(int i = 0; i < imax; i++)
+		{
+			for(int j = 0; j < ppl; j++)
+			{
+				std::cout << v_h[i * ppl + j] << ", ";
+			}
+			std::cout << std::endl;
+		}
+		/*
 		//indexListの取得
 		std::vector<unsigned int> il_h(indexListDevice.getCount(),0);
 		indexListDevice.memcpyDeviceToHost(il_h.data());
@@ -162,6 +184,7 @@ void PathsVAO::updateDeviceData(time_t now)
 			}
 			std::cout << std::endl;
 		}
+		*/
 	}
 	
 	////////////////////////////////////////
