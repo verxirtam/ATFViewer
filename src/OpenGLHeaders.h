@@ -19,7 +19,7 @@
 
 
 #include <GL/glew.h>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
 
 //nvcc実行時はGLM_FORCE_CUDAを定義
 //-> GLM 0.9.6.0 で削除されていたので不要

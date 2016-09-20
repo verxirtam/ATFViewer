@@ -173,6 +173,9 @@ public:
 		//ディスプレイモードの設定
 		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 		
+		//メインループ終了後に処理を戻す
+		glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_GLUTMAINLOOP_RETURNS);
+		
 		//ウィンドウの生成
 		glutCreateWindow("ATFViewer");
 		
@@ -195,7 +198,9 @@ public:
 	}
 	void execMainLoop(void)
 	{
+		std::cout << "glutMainLoop() start." << std::endl;
 		glutMainLoop();
+		std::cout << "glutMainLoop() finished." << std::endl;
 	}
 };
 
