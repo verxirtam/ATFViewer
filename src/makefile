@@ -26,7 +26,8 @@ COMMON_FLAGS := -pg -g -O0
 #COMMON_FLAGS := 
 
 #CXX_LINKS
-CXX_LINKS := -L/usr/lib/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL
+#CXX_LINKS := -L/usr/lib/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL
+CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 -lglut -lGLEW -lGLU -lGL
 
 #g++のコンパイルのフラグ
 CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(CXX_LINKS)
