@@ -996,20 +996,20 @@ int main(int argc, char const* argv[])
 	//cudatestfunctest();
 	
 	
-	//test(countCrossingTest_01Simple(), ret);
-	//test(countCrossingTest_02D1Long(), ret);
-	//test(countCrossingTest_03D2Simple(), ret);
-	//test(countCrossingTest_04D2Seqence(), ret);
-	//test(countCrossingTest_05Class(), ret);
-	//test(countCrossingTest_06D4EstimateSpec(), ret);
+	test(countCrossingTest_01Simple(), ret);
+	test(countCrossingTest_02D1Long(), ret);
+	test(countCrossingTest_03D2Simple(), ret);
+	test(countCrossingTest_04D2Seqence(), ret);
+	test(countCrossingTest_05Class(), ret);
+	test(countCrossingTest_06D4EstimateSpec(), ret);
 	
 	
-	//test(openMPTest(), ret);
+	test(openMPTest(), ret);
 	
-	//test(MapParallelTest(), ret);
-	//test(MapParallelTest2(), ret);
+	test(MapParallelTest(), ret);
+	test(MapParallelTest2(), ret);
 	
-	//test(testPThread(), ret);
+	test(testPThread(), ret);
 	
 	test(PathsVAOTest_01isInInterval(), ret);
 	test(PathsVAOTest_02updateElement(), ret);

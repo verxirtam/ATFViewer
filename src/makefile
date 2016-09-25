@@ -75,6 +75,9 @@ DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
 #gprof2dot.pyのパス
 GPROF2DOT := ~/tools/gprof2dot/gprof2dot.py
 
+#nvprofコマンド
+NVPROF := nvprof --unified-memory-profiling off
+
 #コマンド
 ###################################################
 
@@ -85,7 +88,7 @@ all: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 
 .PHONY: run
 run: $(TARGET)
-	./$(TARGET)
+	$(NVPROF) ./$(TARGET)
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TARGET).png
 
@@ -93,7 +96,7 @@ run: $(TARGET)
 #ログと標準出力両方に出力する
 .PHONY: test
 test: $(TESTTARGET)
-	./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
+	$(NVPROF) ./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
 
@@ -101,7 +104,7 @@ test: $(TESTTARGET)
 #ログと標準出力両方に出力する
 .PHONY: gltest
 gltest: $(GLTESTTARGET)
-	./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
+	$(NVPROF) ./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 
