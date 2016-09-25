@@ -10,6 +10,7 @@ ShaderProgramPaths.o: ShaderProgramPaths.cpp ShaderProgramPaths.h \
  /usr/local/cuda/include/surface_types.h \
  /usr/local/cuda/include/texture_types.h \
  /usr/local/cuda/include/vector_types.h \
+ /usr/local/cuda/include/library_types.h \
  /usr/local/cuda/include/channel_descriptor.h \
  /usr/local/cuda/include/cuda_runtime_api.h \
  /usr/local/cuda/include/cuda_device_runtime_api.h \

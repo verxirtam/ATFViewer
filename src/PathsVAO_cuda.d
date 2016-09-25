@@ -24,6 +24,7 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/cuda/include/surface_types.h \
     /usr/local/cuda/include/texture_types.h \
     /usr/local/cuda/include/vector_types.h \
+    /usr/local/cuda/include/library_types.h \
     /usr/local/cuda/include/channel_descriptor.h \
     /usr/local/cuda/include/cuda_runtime_api.h \
     /usr/local/cuda/include/cuda_device_runtime_api.h \
@@ -98,6 +99,8 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/cuda/include/sm_32_atomic_functions.h \
     /usr/local/cuda/include/sm_32_atomic_functions.hpp \
     /usr/local/cuda/include/sm_35_atomic_functions.h \
+    /usr/local/cuda/include/sm_60_atomic_functions.h \
+    /usr/local/cuda/include/sm_60_atomic_functions.hpp \
     /usr/local/cuda/include/sm_20_intrinsics.h \
     /usr/local/cuda/include/sm_20_intrinsics.hpp \
     /usr/local/cuda/include/sm_30_intrinsics.h \
@@ -106,13 +109,9 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/cuda/include/sm_32_intrinsics.hpp \
     /usr/local/cuda/include/sm_35_intrinsics.h \
     /usr/local/cuda/include/surface_functions.h \
-    /usr/local/cuda/include/surface_functions.hpp \
     /usr/local/cuda/include/texture_fetch_functions.h \
-    /usr/local/cuda/include/texture_fetch_functions.hpp \
     /usr/local/cuda/include/texture_indirect_functions.h \
-    /usr/local/cuda/include/texture_indirect_functions.hpp \
     /usr/local/cuda/include/surface_indirect_functions.h \
-    /usr/local/cuda/include/surface_indirect_functions.hpp \
     /usr/local/cuda/include/device_launch_parameters.h \
     PathsVAO.h \
     /usr/include/c++/4.8/ctime \
