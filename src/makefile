@@ -88,7 +88,7 @@ all: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
 
 .PHONY: run
 run: $(TARGET)
-	$(NVPROF) ./$(TARGET)
+	$(NVPROF) --log-file $(TARGET).nvprof ./$(TARGET)
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TARGET).png
 
@@ -96,7 +96,7 @@ run: $(TARGET)
 #ログと標準出力両方に出力する
 .PHONY: test
 test: $(TESTTARGET)
-	$(NVPROF) ./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
+	$(NVPROF) --log-file $(TESTTARGET).nvprof ./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
 
@@ -104,7 +104,7 @@ test: $(TESTTARGET)
 #ログと標準出力両方に出力する
 .PHONY: gltest
 gltest: $(GLTESTTARGET)
-	$(NVPROF) ./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
+	$(NVPROF) --log-file $(GLTESTTARGET).nvprof ./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 

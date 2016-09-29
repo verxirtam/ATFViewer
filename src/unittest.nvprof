@@ -1,0 +1,22 @@
+==15407== NVPROF is profiling process 15407, command: ./unittest
+==15407== Profiling application: ./unittest
+==15407== Profiling result:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 83.48%  136.23ms        11  12.384ms  2.5119ms  23.701ms  void countCrossingSequenceDeviceKernel<int=4, int=1024>(float const *, int, float const *, int const *, int const *, float*)
+ 15.94%  26.019ms        72  361.37us     800ns  4.1674ms  [CUDA memcpy HtoD]
+  0.51%  838.92us        12  69.909us     352ns  150.02us  [CUDA memcpy DtoH]
+  0.06%  99.041us         1  99.041us  99.041us  99.041us  void countCrossingSequenceDeviceKernel<int=2, int=1024>(float const *, int, float const *, int const *, int const *, float*)
+
+==15407== API calls:
+Time(%)      Time     Calls       Avg       Min       Max  Name
+ 58.80%  245.54ms        60  4.0924ms  7.0720us  234.86ms  cudaMalloc
+ 40.14%  167.61ms        84  1.9953ms  7.4870us  24.154ms  cudaMemcpy
+  0.65%  2.7196ms        60  45.326us  5.7860us  108.64us  cudaFree
+  0.17%  699.56us        90  7.7720us     311ns  323.82us  cuDeviceGetAttribute
+  0.11%  463.81us        12  38.650us  29.419us  46.697us  cudaLaunch
+  0.10%  428.54us         1  428.54us  428.54us  428.54us  cuDeviceTotalMem
+  0.01%  43.769us         1  43.769us  43.769us  43.769us  cuDeviceGetName
+  0.01%  28.265us        72     392ns     201ns  4.0880us  cudaSetupArgument
+  0.00%  18.067us        12  1.5050us  1.2150us  1.6940us  cudaConfigureCall
+  0.00%  4.7250us         2  2.3620us     783ns  3.9420us  cuDeviceGetCount
+  0.00%  1.2050us         2     602ns     386ns     819ns  cuDeviceGet
