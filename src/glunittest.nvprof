@@ -1,27 +1,29 @@
-==12615== NVPROF is profiling process 12615, command: ./glunittest
-==12615== Profiling application: ./glunittest
-==12615== Profiling result:
-Time(%)      Time     Calls       Avg       Min       Max  Name
- 99.99%  1.64850s      3488  472.62us  214.02us  705.54us  PathsVAO_updateDeviceDataCUDA(float, float, float*, unsigned int*, unsigned int*)
-  0.01%  82.656us        11  7.5140us  2.0480us  12.864us  [CUDA memcpy HtoD]
-  0.00%  6.7520us        10     675ns     512ns  1.1840us  [CUDA memcpy DtoH]
+==835== NVPROF is profiling process 835, command: ./glunittest
+==835== Profiling application: ./glunittest
+==835== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,s,,us,us,us,
+99.994741,1.750412,3595,486.901000,216.704000,716.510000,"PathsVAO_updateDeviceDataCUDA(float, float, float*, unsigned int*, unsigned int*)"
+0.004804,0.000084,11,7.645000,2.144000,12.832000,"[CUDA memcpy HtoD]"
+0.000455,0.000008,10,0.796000,0.608000,1.280000,"[CUDA memcpy DtoH]"
 
-==12615== API calls:
-Time(%)      Time     Calls       Avg       Min       Max  Name
- 65.86%  1.82560s      3488  523.39us  206.02us  1.7263ms  cudaThreadSynchronize
- 26.08%  722.82ms        11  65.711ms  38.492us  580.85ms  cudaFree
-  4.77%  132.21ms      3488  37.902us  20.221us  257.62us  cudaLaunch
-  2.01%  55.831ms        16  3.4894ms  124.12us  14.539ms  cudaGraphicsUnregisterResource
-  0.42%  11.701ms        20  585.03us  278.54us  3.2868ms  cudaGraphicsGLRegisterBuffer
-  0.35%  9.7190ms     17440     557ns     227ns  8.7030us  cudaSetupArgument
-  0.31%  8.5072ms      3488  2.4380us  1.2960us  15.722us  cudaConfigureCall
-  0.08%  2.2160ms        11  201.45us  15.830us  439.16us  cudaMalloc
-  0.07%  1.9227ms        21  91.557us  28.414us  1.0851ms  cudaMemcpy
-  0.02%  544.06us        20  27.202us  19.730us  50.829us  cudaGraphicsMapResources
-  0.01%  316.27us        90  3.5140us     201ns  119.78us  cuDeviceGetAttribute
-  0.01%  275.66us         1  275.66us  275.66us  275.66us  cuDeviceTotalMem
-  0.01%  248.29us        20  12.414us  10.380us  18.853us  cudaGraphicsUnmapResources
-  0.00%  46.051us        20  2.3020us  1.5330us  5.5000us  cudaGraphicsResourceGetMappedPointer
-  0.00%  36.041us         1  36.041us  36.041us  36.041us  cuDeviceGetName
-  0.00%  3.7180us         2  1.8590us     475ns  3.2430us  cuDeviceGetCount
-  0.00%     739ns         2     369ns     265ns     474ns  cuDeviceGet
+==835== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,s,,ms,us,ms,
+74.655686,1.940373,3595,0.539742,260.227000,2.077662,"cudaThreadSynchronize"
+16.813011,0.436986,11,39.726020,14.375000,435.663065,"cudaFree"
+5.173908,0.134475,3595,0.037406,20.323000,0.105496,"cudaLaunch"
+2.071251,0.053834,16,3.364612,124.208000,14.578983,"cudaGraphicsUnregisterResource"
+0.467785,0.012158,20,0.607908,281.456000,3.241808,"cudaGraphicsGLRegisterBuffer"
+0.310650,0.008074,3595,0.002245,1.224000,0.014785,"cudaConfigureCall"
+0.301055,0.007825,17975,0.000435,0.184000,0.126347,"cudaSetupArgument"
+0.072940,0.001896,21,0.090275,30.139000,1.089107,"cudaMemcpy"
+0.069706,0.001812,11,0.164702,15.591000,0.453821,"cudaMalloc"
+0.019606,0.000510,20,0.025478,19.909000,0.049076,"cudaGraphicsMapResources"
+0.015688,0.000408,91,0.004480,0.336000,0.152133,"cuDeviceGetAttribute"
+0.015525,0.000404,1,0.403511,403.511000,0.403511,"cuDeviceTotalMem"
+0.008767,0.000228,20,0.011393,9.911000,0.015252,"cudaGraphicsUnmapResources"
+0.002591,0.000067,20,0.003367,1.664000,0.024245,"cudaGraphicsResourceGetMappedPointer"
+0.001552,0.000040,1,0.040328,40.328000,0.040328,"cuDeviceGetName"
+0.000202,0.000005,3,0.001748,0.576000,0.003698,"cuDeviceGetCount"
+0.000078,0.000002,3,0.000673,0.451000,0.001053,"cuDeviceGet"

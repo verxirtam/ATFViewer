@@ -76,7 +76,7 @@ DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)
 GPROF2DOT := ~/tools/gprof2dot/gprof2dot.py
 
 #nvprofコマンド
-NVPROF := nvprof --unified-memory-profiling off
+NVPROF := nvprof --csv
 
 #コマンド
 ###################################################
