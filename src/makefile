@@ -99,6 +99,7 @@ test: $(TESTTARGET)
 	$(NVPROF) --log-file $(TESTTARGET).nvprof ./$(TESTTARGET) 2>&1 | tee -a $(TESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(TESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(TESTTARGET).png
+	./nvprof_graph.sh $(TESTTARGET)
 
 #画面テストの実行ファイルを実行する
 #ログと標準出力両方に出力する
@@ -107,7 +108,7 @@ gltest: $(GLTESTTARGET)
 	$(NVPROF) --log-file $(GLTESTTARGET).nvprof ./$(GLTESTTARGET) 2>&1 | tee -a $(GLTESTTARGET).log
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
-
+	./nvprof_graph.sh $(GLTESTTARGET)
 
 .PHONY: doc
 doc: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
