@@ -1,1 +1,24 @@
-======== Error: Application received signal 27
+==2937== NVPROF is profiling process 2937, command: ./unittest
+==2937== Profiling application: ./unittest
+==2937== Profiling result:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+83.229979,136.138008,11,12.376182,2.505440,23.665540,"void countCrossingSequenceDeviceKernel<int=4, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
+16.199955,26.498020,72,0.368028,0.000992,4.314273,"[CUDA memcpy HtoD]"
+0.512842,0.838848,12,0.069904,0.000352,0.149952,"[CUDA memcpy DtoH]"
+0.057224,0.093600,1,0.093600,0.093600,0.093600,"void countCrossingSequenceDeviceKernel<int=2, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
+
+==2937== API calls:
+"Time(%)","Time","Calls","Avg","Min","Max","Name"
+%,ms,,ms,ms,ms,
+71.038204,436.321089,60,7.272018,0.007443,425.845212,"cudaMalloc"
+27.322561,167.816875,84,1.997819,0.007926,24.115347,"cudaMemcpy"
+0.954745,5.864105,1,5.864105,5.864105,5.864105,"cuDeviceGetName"
+0.443908,2.726511,60,0.045441,0.005752,0.105825,"cudaFree"
+0.086207,0.529490,12,0.044124,0.033224,0.113853,"cudaLaunch"
+0.075095,0.461237,1,0.461237,0.461237,0.461237,"cuDeviceTotalMem"
+0.070514,0.433102,91,0.004759,0.000335,0.157939,"cuDeviceGetAttribute"
+0.004344,0.026682,72,0.000370,0.000183,0.004426,"cudaSetupArgument"
+0.002924,0.017959,12,0.001496,0.001254,0.002817,"cudaConfigureCall"
+0.000991,0.006089,3,0.002029,0.000596,0.003998,"cuDeviceGetCount"
+0.000507,0.003113,3,0.001037,0.000606,0.001744,"cuDeviceGet"

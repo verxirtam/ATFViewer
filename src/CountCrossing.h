@@ -17,8 +17,8 @@
  */
 
 
-#ifndef CountCrossing_H_
-#define CountCrossing_H_
+
+#pragma once
 
 #include "TrackDataManager.h"
 
@@ -149,5 +149,4 @@ public:
 };
 
 
-#endif
 
