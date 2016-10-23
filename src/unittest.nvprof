@@ -1,24 +1,24 @@
-==2937== NVPROF is profiling process 2937, command: ./unittest
-==2937== Profiling application: ./unittest
-==2937== Profiling result:
+==21119== NVPROF is profiling process 21119, command: ./unittest
+==21119== Profiling application: ./unittest
+==21119== Profiling result:
 "Time(%)","Time","Calls","Avg","Min","Max","Name"
 %,ms,,ms,ms,ms,
-83.229979,136.138008,11,12.376182,2.505440,23.665540,"void countCrossingSequenceDeviceKernel<int=4, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
-16.199955,26.498020,72,0.368028,0.000992,4.314273,"[CUDA memcpy HtoD]"
-0.512842,0.838848,12,0.069904,0.000352,0.149952,"[CUDA memcpy DtoH]"
-0.057224,0.093600,1,0.093600,0.093600,0.093600,"void countCrossingSequenceDeviceKernel<int=2, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
+82.788936,138.744676,11,12.613152,2.520204,23.660878,"void countCrossingSequenceDeviceKernel<int=4, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
+16.644893,27.894915,72,0.387429,0.001024,4.832982,"[CUDA memcpy HtoD]"
+0.505641,0.847396,12,0.070616,0.000320,0.150656,"[CUDA memcpy DtoH]"
+0.060530,0.101441,1,0.101441,0.101441,0.101441,"void countCrossingSequenceDeviceKernel<int=2, int=1024>(float const *, int, float const *, int const *, int const *, float*)"
 
-==2937== API calls:
+==21119== API calls:
 "Time(%)","Time","Calls","Avg","Min","Max","Name"
-%,ms,,ms,ms,ms,
-71.038204,436.321089,60,7.272018,0.007443,425.845212,"cudaMalloc"
-27.322561,167.816875,84,1.997819,0.007926,24.115347,"cudaMemcpy"
-0.954745,5.864105,1,5.864105,5.864105,5.864105,"cuDeviceGetName"
-0.443908,2.726511,60,0.045441,0.005752,0.105825,"cudaFree"
-0.086207,0.529490,12,0.044124,0.033224,0.113853,"cudaLaunch"
-0.075095,0.461237,1,0.461237,0.461237,0.461237,"cuDeviceTotalMem"
-0.070514,0.433102,91,0.004759,0.000335,0.157939,"cuDeviceGetAttribute"
-0.004344,0.026682,72,0.000370,0.000183,0.004426,"cudaSetupArgument"
-0.002924,0.017959,12,0.001496,0.001254,0.002817,"cudaConfigureCall"
-0.000991,0.006089,3,0.002029,0.000596,0.003998,"cuDeviceGetCount"
-0.000507,0.003113,3,0.001037,0.000606,0.001744,"cuDeviceGet"
+%,ms,,ms,us,ms,
+73.969683,513.029940,60,8.550499,7.357000,500.733524,"cudaMalloc"
+24.928403,172.895386,84,2.058278,7.589000,24.153936,"cudaMemcpy"
+0.886394,6.147741,60,0.102462,5.752000,3.049925,"cudaFree"
+0.069383,0.481218,1,0.481218,481.218000,0.481218,"cuDeviceTotalMem"
+0.065978,0.457602,12,0.038133,36.267000,0.040743,"cudaLaunch"
+0.061727,0.428117,91,0.004704,0.344000,0.157000,"cuDeviceGetAttribute"
+0.010029,0.069560,1,0.069560,69.560000,0.069560,"cuDeviceGetName"
+0.003856,0.026744,72,0.000371,0.184000,0.004187,"cudaSetupArgument"
+0.002871,0.019910,12,0.001659,1.379000,0.002984,"cudaConfigureCall"
+0.001184,0.008213,3,0.002737,0.891000,0.005524,"cuDeviceGetCount"
+0.000493,0.003419,3,0.001139,0.730000,0.001733,"cuDeviceGet"
