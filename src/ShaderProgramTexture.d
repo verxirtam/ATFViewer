@@ -1,6 +1,6 @@
 ShaderProgramTexture.o: ShaderProgramTexture.cpp ShaderProgramTexture.h \
- Shader.h ShaderProgram.h UniformVariable.h VAOPositionTexture.h Lock.h \
- Texture2D.h VAOPositionBase.h OpenGLHeaders.h VBO.h \
+ Shader.h OpenGLHeaders.h ShaderProgram.h UniformVariable.h \
+ VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \

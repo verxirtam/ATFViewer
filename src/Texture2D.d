@@ -1,1 +1,1 @@
-Texture2D.o: Texture2D.cpp Texture2D.h Lock.h
+Texture2D.o: Texture2D.cpp Texture2D.h OpenGLHeaders.h Lock.h

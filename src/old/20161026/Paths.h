@@ -26,7 +26,8 @@
 #include <algorithm>
 #include <future>
 
-#include <GL/glut.h>
+#include <GL/glew.h>
+#include <GL/freeglut.h>
 
 #include "DBAccessor.h"
 #include "TrackDataManager.h"

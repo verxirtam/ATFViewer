@@ -20,12 +20,7 @@
 
 #include <string>
 
-
-#include <GL/glew.h>
-#include <GL/glut.h>
-
-#define GLM_FORCE_RADIANS
-#include <glm/glm.hpp>
+#include "OpenGLHeaders.h"
 
 template <typename T>
 class UniformVariable

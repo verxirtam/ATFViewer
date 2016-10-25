@@ -257,9 +257,7 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/include/GL/glew.h \
     /usr/include/GL/glu.h \
     /usr/include/GL/gl.h \
-    /usr/include/GL/freeglut.h \
-    /usr/include/GL/freeglut_std.h \
-    /usr/include/GL/freeglut_ext.h \
+    /usr/local/include/GLFW/glfw3.h \
     /usr/local/glm/glm/glm.hpp \
     /usr/local/glm/glm/detail/_fixes.hpp \
     /usr/include/c++/4.8/climits \
@@ -359,7 +357,6 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     TimeSeparation.h \
     ShaderProgramPaths.h \
     Shader.h \
-    /usr/include/GL/glut.h \
     ShaderProgram.h \
     UniformVariable.h \
     VAOPaths.h \

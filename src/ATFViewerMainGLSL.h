@@ -40,6 +40,7 @@
 class ATFViewerMainGLSL
 {
 private:
+	GLFWwindow* window;
 	const double PI;
 	int windowWidth;
 	int windowHeight;
@@ -66,6 +67,7 @@ private:
 	PathsVAO path;
 	//初期化
 	ATFViewerMainGLSL():
+		window(nullptr),
 		PI(3.14159265358979),
 		windowWidth(100),
 		windowHeight(100),
@@ -95,6 +97,15 @@ private:
 		camera_target[1]=0.0;
 		camera_target[2]=0.0;
 	}
+	
+	~ATFViewerMainGLSL()
+	{
+		//Window を閉じる
+		glfwDestroyWindow(window);
+		//GLFW を破棄する
+		glfwTerminate();
+	}
+	
 	//シーンの初期化
 	void initScene(void);
 	//void initPathPoint(DBAccessor& dba);
@@ -137,20 +148,20 @@ private:
 	void joystickTimer(int value);
 	void idle(void)
 	{
-		glutPostRedisplay();
+		//glutPostRedisplay();
 	}
 	void initCallbacks()
 	{
 		//画面更新関数の設定
-		glutDisplayFunc(ATFViewerMainGLSL::_display);
+		//glutDisplayFunc(ATFViewerMainGLSL::_display);
 		//画面リサイズ時に実行される関数の設定
-		glutReshapeFunc(ATFViewerMainGLSL::_resize);
+		//glutReshapeFunc(ATFViewerMainGLSL::_resize);
 		//キーボード入力時に実行される関数の設定
-		glutKeyboardFunc(ATFViewerMainGLSL::_keyboard);
+		//glutKeyboardFunc(ATFViewerMainGLSL::_keyboard);
 		//ジョイスティックイベントの検出のための関数
-		glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
+		//glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
 		//アイドル時に実行される関数の設定
-		glutIdleFunc(ATFViewerMainGLSL::_idle);
+		//glutIdleFunc(ATFViewerMainGLSL::_idle);
 		
 	}
 	void setMatrix(void);
@@ -165,8 +176,10 @@ public:
 	{
 		std::cout << "ATFViewerMainGLSL::init()" << std::endl;
 		
-		int argc=0;
-		char* argv[]={};
+		//int argc=0;
+		//char* argv[]={};
+		
+		/*
 		//GLUTの初期化
 		glutInit(&argc,argv);
 		std::cout << "glutInit(&argc,argv) end." << std::endl;
@@ -186,6 +199,22 @@ public:
 		{
 			std::cout << "error at glewInit()." << std::endl;
 		}
+		*/
+		
+		if(!glfwInit())
+		{
+			std::cout << "GLFW initialization failed." << std::endl;
+		}
+		//対応させるOpenGLのバージョンを指定する
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+		
+		//Window と、それに関連する OpenGL context を作成する
+		window = glfwCreateWindow(640, 480, "glfwtest", NULL, NULL);
+		if(!window)
+		{
+			std::cout << "Window initialization failed." << std::endl;
+		}
 		
 		//デプスバッファを使用する
 		glEnable(GL_DEPTH_TEST);
@@ -199,7 +228,13 @@ public:
 	void execMainLoop(void)
 	{
 		std::cout << "glutMainLoop() start." << std::endl;
-		glutMainLoop();
+		//glutMainLoop();
+		//イベントループ
+		while(!glfwWindowShouldClose(window))
+		{
+			//イベントの発生をポーリングする
+			glfwPollEvents();
+		}
 		std::cout << "glutMainLoop() finished." << std::endl;
 	}
 };

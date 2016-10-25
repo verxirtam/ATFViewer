@@ -34,12 +34,11 @@ Button_X	Joystick.h	/^	Button_X = 2,$/;"	e	enum:KeyCode_F310
 Button_Y	Joystick.h	/^	Button_Y = 3,$/;"	e	enum:KeyCode_F310
 COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
-CXXFLAGS	makefile	/^CXXFLAGS := -Wall -fopenmp -I\/usr\/include -I\/usr\/local\/cuda\/include $(CXX_LINKS)$/;"	m
+CXXFLAGS	makefile	/^CXXFLAGS := -Wall -fopenmp -I\/usr\/include -I\/usr\/local\/cuda\/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS := -std=c++11 -Weffc++$/;"	m
-CXX_LINKS	makefile	/^CXX_LINKS := -L\/usr\/lib\/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL$/;"	m
+CXX_LINKS	makefile	/^CXX_LINKS := -L\/usr\/lib\/nvidia-367 -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW$/;"	m
 CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
 CountCrossing	CountCrossing.h	/^class CountCrossing$/;"	c
-CountCrossing_H_	CountCrossing.h	21;"	d
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
@@ -54,8 +53,7 @@ Fixes	Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
 GLM_FORCE_RADIANS	MapTransform.h	21;"	d
-GLM_FORCE_RADIANS	OpenGLHeaders.h	31;"	d
-GLM_FORCE_RADIANS	UniformVariable.h	27;"	d
+GLM_FORCE_RADIANS	OpenGLHeaders.h	24;"	d
 GLTESTTARGET	makefile	/^GLTESTTARGET := glunittest$/;"	m
 GPROF2DOT	makefile	/^GPROF2DOT := ~\/tools\/gprof2dot\/gprof2dot.py$/;"	m
 InitMapSetting	MapVAO.h	/^		InitMapSetting()$/;"	f	struct:MapVAO::InitMapSetting
@@ -87,8 +85,9 @@ MapVertexIndex	MapVAO.h	/^		MapVertexIndex()$/;"	f	struct:MapVAO::MapVertexIndex
 MapVertexIndex	MapVAO.h	/^	struct MapVertexIndex$/;"	s	class:MapVAO
 NVCC	makefile	/^NVCC := nvcc$/;"	m
 NVCC_CXX_FLAGS	makefile	/^NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)$/;"	m
-NVCC_FLAGS	makefile	/^NVCC_FLAGS := --std c++11 -G$/;"	m
+NVCC_FLAGS	makefile	/^NVCC_FLAGS := --std c++11 -G -Wno-deprecated-gpu-targets$/;"	m
 NVCC_LINKS	makefile	/^NVCC_LINKS := -lcuda -lcudart $(CXX_LINKS)$/;"	m
+NVPROF	makefile	/^NVPROF := nvprof --csv$/;"	m
 OBJS	makefile	/^OBJS := $(SRCS:.cpp=.o) $(CUDA_SRCS:.cu=.o)$/;"	m
 OBJSGLTEST	makefile	/^OBJSGLTEST := $(filter-out $(TARGET).o $(TESTTARGET).o, $(OBJS))$/;"	m
 OBJSTARGET	makefile	/^OBJSTARGET := $(filter-out $(TESTTARGET).o $(GLTESTTARGET).o, $(OBJS))$/;"	m
@@ -169,7 +168,7 @@ VAOPositionTexture	VAOPositionTexture.h	/^	VAOPositionTexture(S& s, Texture2D& t
 VAOPositionTexture	VAOPositionTexture.h	/^class VAOPositionTexture$/;"	c
 VBOBase	VBO.h	/^	VBOBase(GLenum t, GLenum u):handle(0),type(t),usage(u)$/;"	f	class:VBOBase
 VBOBase	VBO.h	/^class VBOBase$/;"	c
-VBODYNAMICBASE_LOWTHROUGHPUT	VBO.h	151;"	d
+VBODYNAMICBASE_LOWTHROUGHPUT	VBO.h	150;"	d
 VBODynamicBase	VBO.h	/^	VBODynamicBase():base(VboType, GL_DYNAMIC_DRAW),resource(nullptr), device(nullptr)$/;"	f	class:VBODynamicBase
 VBODynamicBase	VBO.h	/^class VBODynamicBase$/;"	c
 VBOElementStatic	VBO.h	/^	VBOElementStatic():base(GL_ELEMENT_ARRAY_BUFFER, GL_STATIC_DRAW)$/;"	f	class:VBOElementStatic
@@ -553,7 +552,7 @@ initTexture	Map.cpp	/^void Map::initTexture(std::string& texture_file_name)$/;"	
 initTime	unittest.cpp	/^	double initTime;$/;"	m	struct:EstimateSpecResult	file:
 initTimeSequence	TimeSeparation.h	/^	void initTimeSequence()$/;"	f	class:TimeSeparation
 initVAO	MapVAO.cpp	/^void MapVAO::initVAO(InitMapSetting& ims)$/;"	f	class:MapVAO
-initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db)$/;"	f	class:PathsVAO
+initVAO	PathsVAO.cpp	/^void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db, time_t time_start, time_t time_end)$/;"	f	class:PathsVAO
 initVAO	SectorsVAO.cpp	/^void SectorsVAO::initVAO(InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 inputType1	VAOLayoutPaths.h	/^		inputType1():position(),time(),color()$/;"	f	struct:VAOLayoutPaths::inputType1
 inputType1	VAOLayoutPaths.h	/^	struct inputType1$/;"	s	class:VAOLayoutPaths
@@ -790,6 +789,7 @@ unitProvidingService	Sectors.h	/^		std::string unitProvidingService;$/;"	m	struc
 unitProvidingService	SectorsVAO.h	/^		std::string unitProvidingService;$/;"	m	struct:SectorsVAO::Sector
 unmap	VAOPositionBaseDynamic.h	/^	void unmap()$/;"	f	class:VAOPositionBaseDynamic
 unmap	VBO.h	/^	void unmap()$/;"	f	class:VBODynamicBase
+unregister	VBO.h	/^	void unregister()$/;"	f	class:VBODynamicBase
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	ShaderProgramPaths.h	/^	void unuse()$/;"	f	class:ShaderProgramPaths
 unuse	ShaderProgramPositionColor.h	/^	void unuse()$/;"	f	class:ShaderProgramPositionColor
@@ -825,10 +825,12 @@ vertexData	VAOPositionBase.h	/^	std::vector<float> vertexData;$/;"	m	class:VAOPo
 vertexIndex	Map.h	/^		int vertexIndex;$/;"	m	struct:Map::MapVertexIndex
 vertexIndex	MapVAO.h	/^		int vertexIndex;$/;"	m	struct:MapVAO::MapVertexIndex
 width	TimeSeparation.h	/^	time_t width;$/;"	m	class:TimeSeparation
+window	ATFViewerMainGLSL.h	/^	GLFWwindow* window;$/;"	m	class:ATFViewerMainGLSL
 windowHeight	ATFViewerMain.h	/^	int windowHeight;$/;"	m	class:ATFViewerMain
 windowHeight	ATFViewerMainGLSL.h	/^	int windowHeight;$/;"	m	class:ATFViewerMainGLSL
 windowWidth	ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFViewerMain
 windowWidth	ATFViewerMainGLSL.h	/^	int windowWidth;$/;"	m	class:ATFViewerMainGLSL
+~ATFViewerMainGLSL	ATFViewerMainGLSL.h	/^	~ATFViewerMainGLSL()$/;"	f	class:ATFViewerMainGLSL
 ~DBAccessor	DBAccessor.h	/^	~DBAccessor()$/;"	f	class:DBAccessor
 ~PathsVAO	PathsVAO.h	/^	~PathsVAO()$/;"	f	class:PathsVAO
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader

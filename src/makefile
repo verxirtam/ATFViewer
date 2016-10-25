@@ -27,10 +27,11 @@ COMMON_FLAGS := -pg -g -O0
 
 #CXX_LINKS
 #CXX_LINKS := -L/usr/lib/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL
-CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 -lglut -lGLEW -lGLU -lGL
+#CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 -lglut -lGLEW -lGLU -lGL
+CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW
 
 #g++のコンパイルのフラグ
-CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(CXX_LINKS)
+CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)
 CXXONLYFLAGS := -std=c++11 -Weffc++
 
 #CUDA関連の設定
@@ -39,7 +40,7 @@ CXXONLYFLAGS := -std=c++11 -Weffc++
 NVCC := nvcc
 
 #CUDAコンパイルオプション(-Gはデバッグ情報出力)
-NVCC_FLAGS := --std c++11 -G
+NVCC_FLAGS := --std c++11 -G -Wno-deprecated-gpu-targets
 
 #NVCC向けのg++オプション
 NVCC_CXX_FLAGS := $(CXXFLAGS:%=-Xcompiler %)

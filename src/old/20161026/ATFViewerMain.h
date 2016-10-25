@@ -29,7 +29,9 @@
 #include <ctime>
 
 
-#include "OpenGLHeaders.h"
+//#include "OpenGLHeaders.h"
+#include <GL/glew.h>
+#include <GL/freeglut.h>
 
 #include "DBAccessor.h"
 #include "BitmapString.h"

@@ -90,7 +90,7 @@ void ATFViewerMainGLSL::display(void)
 	path.display(now);
 	
 	//描画対象のバッファを入れ替える
-	glutSwapBuffers();
+	glfwSwapBuffers(window);
 }
 
 
@@ -163,13 +163,13 @@ void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)
 		static bool animation_enable = true;
 		if(animation_enable)
 		{
-			glutIdleFunc(ATFViewerMainGLSL::_idle);
+			//glutIdleFunc(ATFViewerMainGLSL::_idle);
 			animation_enable = false;
 			currentTimeInterval = 0;
 		}
 		else
 		{
-			glutIdleFunc(NULL);
+			//glutIdleFunc(NULL);
 			animation_enable = true;
 			currentTimeInterval = timeInterval;
 		}
@@ -273,6 +273,6 @@ void ATFViewerMainGLSL::joystickTimer(int value)
 		mapTransform.setScale(mapTransform.getScale() * rd);
 	}
 	//タイマー関数の設定
-	glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
+	//glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
 }
 

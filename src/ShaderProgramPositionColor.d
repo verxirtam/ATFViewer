@@ -1,7 +1,7 @@
 ShaderProgramPositionColor.o: ShaderProgramPositionColor.cpp \
- ShaderProgramPositionColor.h Shader.h ShaderProgram.h UniformVariable.h \
- VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBase.h \
- OpenGLHeaders.h Lock.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
+ ShaderProgramPositionColor.h Shader.h OpenGLHeaders.h ShaderProgram.h \
+ UniformVariable.h VAOPositionColor.h VAOPositionBaseStatic.h \
+ VAOPositionBase.h Lock.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
  /usr/local/cuda/include/device_types.h \
