@@ -1,13 +1,14 @@
 <map id="src/GCS.h" name="src/GCS.h">
-<area shape="rect" id="node2" href="$Sectors_8h.html" title="src/Sectors.h" alt="" coords="319,80,419,107"/>
-<area shape="rect" id="node7" href="$SectorsVAO_8h.html" title="src/SectorsVAO.h" alt="" coords="477,80,605,107"/>
-<area shape="rect" id="node12" href="$GCS_8cpp.html" title="src/GCS.cpp" alt="" coords="629,80,728,107"/>
-<area shape="rect" id="node3" href="$ATFViewerMain_8h.html" title="src/ATFViewerMain.h" alt="" coords="139,155,287,181"/>
-<area shape="rect" id="node6" href="$Sectors_8cpp.html" title="src/Sectors.cpp" alt="" coords="312,155,427,181"/>
-<area shape="rect" id="node4" href="$ATFViewer_8cpp.html" title="src/ATFViewer.cpp" alt="" coords="5,229,139,256"/>
-<area shape="rect" id="node5" href="$ATFViewerMain_8cpp.html" title="src/ATFViewerMain.cpp" alt="" coords="164,229,327,256"/>
-<area shape="rect" id="node8" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="451,155,632,181"/>
-<area shape="rect" id="node11" href="$SectorsVAO_8cpp.html" title="src/SectorsVAO.cpp" alt="" coords="657,155,799,181"/>
-<area shape="rect" id="node9" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="413,229,608,256"/>
-<area shape="rect" id="node10" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="632,229,755,256"/>
+<area shape="rect" id="node2" href="$SectorsVAO_8h.html" title="src/SectorsVAO.h" alt="" coords="356,80,484,107"/>
+<area shape="rect" id="node8" href="$GCS_8cpp.html" title="src/GCS.cpp" alt="" coords="508,80,607,107"/>
+<area shape="rect" id="node9" href="$Sectors_8h.html" title="src/old/20161026/Sectors.h" alt="" coords="631,80,812,107"/>
+<area shape="rect" id="node3" href="$ATFViewerMainGLSL_8h.html" title="src/ATFViewerMainGLSL.h" alt="" coords="171,163,352,189"/>
+<area shape="rect" id="node7" href="$SectorsVAO_8cpp.html" title="src/SectorsVAO.cpp" alt="" coords="377,163,519,189"/>
+<area shape="rect" id="node4" href="$ATFViewer_8cpp.html" title="src/ATFViewer.cpp" alt="" coords="5,253,139,280"/>
+<area shape="rect" id="node5" href="$ATFViewerMainGLSL_8cpp.html" title="src/ATFViewerMainGLSL.cpp" alt="" coords="164,253,359,280"/>
+<area shape="rect" id="node6" href="$glunittest_8cpp.html" title="src/glunittest.cpp" alt="" coords="383,253,505,280"/>
+<area shape="rect" id="node10" href="$ATFViewerMain_8h.html" title="src/old/20161026/ATFViewer\lMain.h" alt="" coords="598,155,788,197"/>
+<area shape="rect" id="node13" href="$Sectors_8cpp.html" title="src/old/20161026/Sectors.cpp" alt="" coords="813,163,1008,189"/>
+<area shape="rect" id="node11" href="$old_220161026_2ATFViewer_8cpp.html" title="src/old/20161026/ATFViewer.cpp" alt="" coords="558,253,772,280"/>
+<area shape="rect" id="node12" href="$ATFViewerMain_8cpp.html" title="src/old/20161026/ATFViewer\lMain.cpp" alt="" coords="797,246,987,287"/>
 </map>

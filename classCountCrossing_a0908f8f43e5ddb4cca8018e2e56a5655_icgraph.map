@@ -1,5 +1,6 @@
 <map id="CountCrossing::getCounterDevice" name="CountCrossing::getCounterDevice">
-<area shape="rect" id="node2" href="$unittest_8cpp.html#a4a3c96c20b8497246be7e1b384b095a2" title="countCrossingTest_05Class" alt="" coords="235,5,421,32"/>
-<area shape="rect" id="node3" href="$unittest_8cpp.html#afd32474aaa2935a2f98d6a833c9a6178" title="EstimateSpec" alt="" coords="276,56,380,83"/>
-<area shape="rect" id="node4" href="$unittest_8cpp.html#a16a71b88b243c4f070cde32859630067" title="countCrossingTest_06D4EstimateSpec" alt="" coords="470,56,722,83"/>
+<area shape="rect" id="node2" href="$unittest_8cpp.html#a4a3c96c20b8497246be7e1b384b095a2" title="countCrossingTest_05Class" alt="" coords="420,5,607,32"/>
+<area shape="rect" id="node4" href="$unittest_8cpp.html#afd32474aaa2935a2f98d6a833c9a6178" title="EstimateSpec" alt="" coords="235,56,339,83"/>
+<area shape="rect" id="node3" href="$unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="688,31,739,57"/>
+<area shape="rect" id="node5" href="$unittest_8cpp.html#a16a71b88b243c4f070cde32859630067" title="countCrossingTest_06D4EstimateSpec" alt="" coords="387,56,639,83"/>
 </map>

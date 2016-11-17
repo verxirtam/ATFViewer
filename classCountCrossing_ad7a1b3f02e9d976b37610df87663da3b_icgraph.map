@@ -1,7 +1,8 @@
 <map id="CountCrossing::countCrossingSequenceHost" name="CountCrossing::countCrossingSequenceHost">
-<area shape="rect" id="node2" href="$classCountCrossing.html#a1ad864316b6a147b756c1b62b6529f72" title="CountCrossing::runOnHost" alt="" coords="277,31,457,57"/>
-<area shape="rect" id="node6" href="$unittest_8cpp.html#a02656a209ccf860acbf832756c11159f" title="countCrossingTest_04D2Seqence" alt="" coords="256,81,477,108"/>
-<area shape="rect" id="node3" href="$unittest_8cpp.html#a4a3c96c20b8497246be7e1b384b095a2" title="countCrossingTest_05Class" alt="" coords="525,5,712,32"/>
-<area shape="rect" id="node4" href="$unittest_8cpp.html#afd32474aaa2935a2f98d6a833c9a6178" title="EstimateSpec" alt="" coords="567,56,671,83"/>
-<area shape="rect" id="node5" href="$unittest_8cpp.html#a16a71b88b243c4f070cde32859630067" title="countCrossingTest_06D4EstimateSpec" alt="" coords="761,56,1013,83"/>
+<area shape="rect" id="node2" href="$classCountCrossing.html#a1ad864316b6a147b756c1b62b6529f72" title="CountCrossing::runOnHost" alt="" coords="257,56,437,83"/>
+<area shape="rect" id="node7" href="$unittest_8cpp.html#a02656a209ccf860acbf832756c11159f" title="countCrossingTest_04D2Seqence" alt="" coords="485,107,707,133"/>
+<area shape="rect" id="node3" href="$unittest_8cpp.html#a4a3c96c20b8497246be7e1b384b095a2" title="countCrossingTest_05Class" alt="" coords="788,5,975,32"/>
+<area shape="rect" id="node5" href="$unittest_8cpp.html#afd32474aaa2935a2f98d6a833c9a6178" title="EstimateSpec" alt="" coords="544,56,648,83"/>
+<area shape="rect" id="node4" href="$unittest_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="1056,56,1107,83"/>
+<area shape="rect" id="node6" href="$unittest_8cpp.html#a16a71b88b243c4f070cde32859630067" title="countCrossingTest_06D4EstimateSpec" alt="" coords="755,56,1007,83"/>
 </map>
