@@ -69,7 +69,7 @@ void ATFViewerMainGLSL::setMatrix(void)
 	shaderProgramPaths.setMVPMatrix(mvp);
 }
 
-void ATFViewerMainGLSL::display(void)
+void ATFViewerMainGLSL::display(GLFWwindow* window)
 {
 	//時刻の更新
 	now += currentTimeInterval;
@@ -94,7 +94,7 @@ void ATFViewerMainGLSL::display(void)
 }
 
 
-void ATFViewerMainGLSL::resize(int w, int h)
+void ATFViewerMainGLSL::resize(GLFWwindow* window, int w, int h)
 {
 	//ウィンドウのどの範囲をビューポートにするかを設定する
 	//下記はウィンドウの全範囲をビューポートに設定している
@@ -104,61 +104,67 @@ void ATFViewerMainGLSL::resize(int w, int h)
 	windowHeight = h;
 }
 
-void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)
+void ATFViewerMainGLSL::keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
+	//GLFW_PRESSのイベント以外は無視する
+	if(action != GLFW_PRESS)
+	{
+		return;
+	}
+	//キーが押された時の処理
 	switch (key)
 	{
-	case 'f':
+	case GLFW_KEY_F://'f':
 		//center_offset_long += 1.0 / scale;
 		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() + 1.0 / mapTransform.getScale());
-		display();
+		display(window);
 		break;
-	case 's':
+	case GLFW_KEY_S://'s':
 		//center_offset_long -= 1.0 / scale;
 		mapTransform.setCenterOffsetLong(mapTransform.getCenterOffsetLong() - 1.0 / mapTransform.getScale());
-		display();
+		display(window);
 		break;
-	case 'e':
+	case GLFW_KEY_E://'e':
 		//center_offset_lat += 1.0 / scale;
 		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() + 1.0 / mapTransform.getScale());
-		display();
+		display(window);
 		break;
-	case 'd':
+	case GLFW_KEY_D://'d':
 		//center_offset_lat -= 1.0 / scale;
 		mapTransform.setCenterOffsetLat(mapTransform.getCenterOffsetLat() - 1.0 / mapTransform.getScale());
-		display();
+		display(window);
 		break;
-	case 'l':
+	case GLFW_KEY_L://'l':
 		camera_theta+=2.5*PI/180.0;
 		camera_theta = (camera_theta > 2.0 * PI) ? camera_theta-2.0*PI : camera_theta;
-		display();
+		display(window);
 		break;
-	case 'j':
+	case GLFW_KEY_J://'j':
 		camera_theta-=2.5*PI/180.0;
 		camera_theta = (camera_theta < 0.0) ? camera_theta+2.0*PI : camera_theta;
-		display();
+		display(window);
 		break;
-	case 'i':
+	case GLFW_KEY_I://'i':
 		camera_phi+=5.0*PI/180.0;
 		camera_phi = (camera_phi > 90.0*PI/180.0) ? 90.0*PI/180.0 : camera_phi;
-		display();
+		display(window);
 		break;
-	case 'k':
+	case GLFW_KEY_K://'k':
 		camera_phi-=5.0*PI/180.0;
 		camera_phi = (camera_phi < 0.0) ? 0.0*PI/180.0 : camera_phi;
-		display();
+		display(window);
 		break;
-	case 'b':
+	case GLFW_KEY_B://'b':
 		//scale*=0.875;
 		mapTransform.setScale(mapTransform.getScale()*0.875);
-		display();
+		display(window);
 		break;
-	case ' ':
+	case GLFW_KEY_SPACE://' ':
 		//scale/=0.875;
 		mapTransform.setScale(mapTransform.getScale()/0.875);
-		display();
+		display(window);
 		break;
-	case 't':
+	case GLFW_KEY_T://'t':
 		std::cout<<::asctime(::localtime(&now))<<std::endl;
 		static bool animation_enable = true;
 		if(animation_enable)
@@ -174,7 +180,7 @@ void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)
 			currentTimeInterval = timeInterval;
 		}
 		break;
-	case 'y':
+	case GLFW_KEY_Y://'y':
 		//表示するセクタを切り替える
 		//sectors.switchDisplaySector();
 		break;

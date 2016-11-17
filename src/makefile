@@ -28,7 +28,7 @@ COMMON_FLAGS := -pg -g -O0
 #CXX_LINKS
 #CXX_LINKS := -L/usr/lib/x86_64-linux-gnu -lsqlite3 -lglut -lGLEW -lGLU -lGL
 #CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 -lglut -lGLEW -lGLU -lGL
-CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW
+CXX_LINKS := -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW -lGLU -lGL
 
 #g++のコンパイルのフラグ
 CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)
@@ -110,6 +110,13 @@ gltest: $(GLTESTTARGET)
 	if [ -f core ]; then banner core dumped!;fi
 	gprof $(GLTESTTARGET) | $(GPROF2DOT) | dot -Tpng -o gprof_call_graph_$(GLTESTTARGET).png
 	./nvprof_graph.sh $(GLTESTTARGET)
+
+#githubにアップロードする
+.PHONY: git
+git: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)
+	(cd ..; git add --all .;)
+	(cd ..; git commit -a;)
+	(cd ..; git push -u origin master;)
 
 .PHONY: doc
 doc: $(TARGET) $(TESTTARGET) $(GLTESTTARGET)

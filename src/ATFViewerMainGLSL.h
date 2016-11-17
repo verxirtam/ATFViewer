@@ -114,20 +114,15 @@ private:
 	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない
 	ATFViewerMainGLSL(const ATFViewerMainGLSL& a);
 	ATFViewerMainGLSL& operator=(const ATFViewerMainGLSL& a);
-	//画面更新用の関数
-	static void _display(void)
-	{
-		ATFViewerMainGLSL::getInstance().display();
-	}
 	//画面のリサイズ時に実行される関数
-	static void _resize(int w, int h)
+	static void _resize(GLFWwindow* window, int w, int h)
 	{
-		ATFViewerMainGLSL::getInstance().resize(w,h);
+		ATFViewerMainGLSL::getInstance().resize(window, w, h);
 	}
 	//キーボード入力時に実行される関数
-	static void _keyboard(unsigned char key, int x, int y)
+	static void _keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)
 	{
-		ATFViewerMainGLSL::getInstance().keyboard(key,x,y);
+		ATFViewerMainGLSL::getInstance().keyboard(window, key, scancode, action, mods);
 	}
 	//ジョイスティックイベントの検出のための関数
 	static void _joystickTimer(int value)
@@ -139,11 +134,11 @@ private:
 		ATFViewerMainGLSL::getInstance().idle();
 	}
 	//画面更新用の関数
-	void display(void);
+	void display(GLFWwindow* window);
 	//画面のリサイズ時に実行される関数
-	void resize(int w, int h);
+	void resize(GLFWwindow* window, int w, int h);
 	//キーボード入力時に実行される関数
-	void keyboard(unsigned char key, int x, int y);
+	void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
 	//ジョイスティックイベントの検出のためのタイマー関数
 	void joystickTimer(int value);
 	void idle(void)
@@ -152,12 +147,10 @@ private:
 	}
 	void initCallbacks()
 	{
-		//画面更新関数の設定
-		//glutDisplayFunc(ATFViewerMainGLSL::_display);
 		//画面リサイズ時に実行される関数の設定
-		//glutReshapeFunc(ATFViewerMainGLSL::_resize);
+		glfwSetWindowSizeCallback(window, ATFViewerMainGLSL::_resize);
 		//キーボード入力時に実行される関数の設定
-		//glutKeyboardFunc(ATFViewerMainGLSL::_keyboard);
+		glfwSetKeyCallback(window, ATFViewerMainGLSL::_keyboard);
 		//ジョイスティックイベントの検出のための関数
 		//glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
 		//アイドル時に実行される関数の設定
@@ -176,21 +169,26 @@ public:
 	{
 		std::cout << "ATFViewerMainGLSL::init()" << std::endl;
 		
-		//int argc=0;
-		//char* argv[]={};
+		//GLFWの初期化
+		if(!glfwInit())
+		{
+			std::cout << "GLFW initialization failed." << std::endl;
+		}
+		//対応させるOpenGLのバージョンを指定する
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 		
-		/*
-		//GLUTの初期化
-		glutInit(&argc,argv);
-		std::cout << "glutInit(&argc,argv) end." << std::endl;
-		//ディスプレイモードの設定
-		glutInitDisplayMode(GLUT_RGBA | GLUT_DEPTH | GLUT_DOUBLE);
 		
-		//メインループ終了後に処理を戻す
-		glutSetOption(GLUT_ACTION_ON_WINDOW_CLOSE,GLUT_ACTION_GLUTMAINLOOP_RETURNS);
+		//Window と、それに関連する OpenGL context を作成する
+		window = glfwCreateWindow(640, 480, "glfwtest", NULL, NULL);
+		if(!window)
+		{
+			std::cout << "Window initialization failed." << std::endl;
+		}
 		
-		//ウィンドウの生成
-		glutCreateWindow("ATFViewer");
+		//GLで描画する画面を指定する
+		glfwMakeContextCurrent(window);
 		
 		//GLEWの初期化
 		GLenum err;
@@ -199,22 +197,9 @@ public:
 		{
 			std::cout << "error at glewInit()." << std::endl;
 		}
-		*/
 		
-		if(!glfwInit())
-		{
-			std::cout << "GLFW initialization failed." << std::endl;
-		}
-		//対応させるOpenGLのバージョンを指定する
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-		
-		//Window と、それに関連する OpenGL context を作成する
-		window = glfwCreateWindow(640, 480, "glfwtest", NULL, NULL);
-		if(!window)
-		{
-			std::cout << "Window initialization failed." << std::endl;
-		}
+		//バッファを切り替える間隔を指定する
+		glfwSwapInterval(1);
 		
 		//デプスバッファを使用する
 		glEnable(GL_DEPTH_TEST);
@@ -227,15 +212,21 @@ public:
 	}
 	void execMainLoop(void)
 	{
-		std::cout << "glutMainLoop() start." << std::endl;
+		std::cout << "execMainLoop() start." << std::endl;
 		//glutMainLoop();
 		//イベントループ
 		while(!glfwWindowShouldClose(window))
 		{
+			//オブジェクトの表示
+			display(window);
+			
+			
+			this->joystickTimer(0);
+			
 			//イベントの発生をポーリングする
 			glfwPollEvents();
 		}
-		std::cout << "glutMainLoop() finished." << std::endl;
+		std::cout << "execMainLoop() finished." << std::endl;
 	}
 };
 
