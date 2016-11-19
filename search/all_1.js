@@ -15,12 +15,14 @@ var searchData=
   ['atfviewermainglsl_2eh',['ATFViewerMainGLSL.h',['../ATFViewerMainGLSL_8h.html',1,'']]],
   ['atomicfloatadd',['atomicFloatAdd',['../CountCrossing_8cuh.html#af92fae01ddc0556e70e100a89230125d',1,'CountCrossing.cuh']]],
   ['attach',['attach',['../classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba',1,'ShaderProgram']]],
-  ['axis',['Axis',['../classJoystick.html#a634e6fe7cc46046c0e65eda2e93d0537',1,'Joystick']]],
+  ['axis',['axis',['../classJoystickManagerSystem.html#abafcdd18d8f1a656fcf12089efbaf5a3',1,'JoystickManagerSystem']]],
   ['axis_5fleftstick_5fleftright',['Axis_LeftStick_LeftRight',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea1f1fd87c21eccc98e507990f7b10163e',1,'Joystick.h']]],
   ['axis_5fleftstick_5fupdown',['Axis_LeftStick_UpDown',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaa1e30db702605487bed218b75a7bab31',1,'Joystick.h']]],
   ['axis_5flefttrigger_5foffon',['Axis_LeftTrigger_OffOn',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaf950a4f5a6571747708ce3c350d82823',1,'Joystick.h']]],
   ['axis_5frightstick_5fleftright',['Axis_RightStick_LeftRight',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deacf8c855cba8ab12541a5f5022ad958f8',1,'Joystick.h']]],
   ['axis_5frightstick_5fupdown',['Axis_RightStick_UpDown',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dead88abde9cd8c3e2db92168ce5c49df3f',1,'Joystick.h']]],
   ['axis_5frighttrigger_5foffon',['Axis_RightTrigger_OffOn',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea86a2ce82d4e6f2e1f03845e169473a25',1,'Joystick.h']]],
-  ['axiscount',['AxisCount',['../classJoystick.html#ae885b0542c2ef7eb6fe1a6a6ef9b81fc',1,'Joystick']]]
+  ['axiscount',['axisCount',['../classJoystickManagerGLFW.html#a2aa610d4195f54e2d83255576aa979b4',1,'JoystickManagerGLFW::axisCount()'],['../classJoystickManagerSystem.html#a8db235b3f026813a9a8c6fa42608179d',1,'JoystickManagerSystem::axisCount()']]],
+  ['axisstate',['axisState',['../classJoystickManagerGLFW.html#ae29c325b60160d7de1e0cebfcb76ab7e',1,'JoystickManagerGLFW']]],
+  ['axisvaluemax',['axisValueMax',['../classJoystickManagerSystem.html#add4b577273a641d249e99e1a53c770e1',1,'JoystickManagerSystem']]]
 ];

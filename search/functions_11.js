@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['readjoystickevent',['readJoystickEvent',['../classJoystick.html#ab3664906f06d33bf4bdc3153c300f0cc',1,'Joystick']]],
+  ['readjoystickevent',['readJoystickEvent',['../classJoystickBase.html#afaef57c63a99cdca32aed4c1777115e6',1,'JoystickBase::readJoystickEvent()'],['../classJoystickManagerGLFW.html#a326c2165f24a6d655d15c2eb132e3176',1,'JoystickManagerGLFW::readJoystickEvent()'],['../classJoystickManagerSystem.html#ac41cf8624425a00b286065c490a9f610',1,'JoystickManagerSystem::readJoystickEvent()']]],
   ['readshaderfile',['readShaderFile',['../classShader.html#a99cd96b144222128bd9a9dc45cec3593',1,'Shader']]],
   ['resetstmt',['resetStmt',['../classDBAccessor.html#a8319129abbb25313cfea071814c03fb7',1,'DBAccessor']]],
   ['resettime',['resetTime',['../classPaths.html#ace31a29293f673c3d1d4b6e8a82c1e85',1,'Paths::resetTime()'],['../classPathsVAO.html#a5a61b20682883ef6fa8a349e44e61e78',1,'PathsVAO::resetTime()']]],

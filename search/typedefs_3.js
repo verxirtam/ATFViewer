@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['longlat',['LongLat',['../LongLat_8h.html#a82e413fe90c32eb06fdd7aebfa0184ee',1,'LongLat.h']]],
-  ['longlatd',['LongLatD',['../LongLat_8h.html#a1e52efffe24bee57bed7ab1f0d208200',1,'LongLat.h']]],
-  ['longlatf',['LongLatF',['../LongLat_8h.html#a5c13f529755a86b058baffdfb726bed2',1,'LongLat.h']]]
+  ['joystick',['Joystick',['../Joystick_8h.html#a5152e5d7e53534be65ef6c1c93e1eb77',1,'Joystick.h']]]
 ];

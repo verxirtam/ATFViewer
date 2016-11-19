@@ -12,7 +12,7 @@ var searchData=
   ['bitmapstring',['BitmapString',['../classBitmapString.html',1,'']]],
   ['bitmapstring_2eh',['BitmapString.h',['../BitmapString_8h.html',1,'']]],
   ['bufferpaths',['bufferPaths',['../classPaths.html#a9b97cb3a74ac2645f75d6ecaae136c69',1,'Paths']]],
-  ['button',['Button',['../classJoystick.html#a96b69863a1ce0fb518ba3a61e01cfcdc',1,'Joystick']]],
+  ['button',['button',['../classJoystickManagerSystem.html#a3ff5a8d6c0a39aff2ea43ea0b4662448',1,'JoystickManagerSystem']]],
   ['button_5fa',['Button_A',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deade8f6552ddb820f012fd5d1b3aee3cc4',1,'Joystick.h']]],
   ['button_5fb',['Button_B',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea7974c0212eb1f78b692bcf31ca259541',1,'Joystick.h']]],
   ['button_5fback',['Button_BACK',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea60ca957ef9fa4432b1e5adc1a848045f',1,'Joystick.h']]],
@@ -24,5 +24,6 @@ var searchData=
   ['button_5fstart',['Button_START',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea3ef46995e0f1defeae353f6c53021fcd',1,'Joystick.h']]],
   ['button_5fx',['Button_X',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaf14a135ca7a0cc0727696e6ea16ad545',1,'Joystick.h']]],
   ['button_5fy',['Button_Y',['../Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea6198ed093ad470f5319d7f19b52e06ca',1,'Joystick.h']]],
-  ['buttoncount',['ButtonCount',['../classJoystick.html#a8d77e735855a21ca8d6080cda62dd914',1,'Joystick']]]
+  ['buttoncount',['buttonCount',['../classJoystickManagerGLFW.html#a889908e523f878673226e9630838ca50',1,'JoystickManagerGLFW::buttonCount()'],['../classJoystickManagerSystem.html#a57e90b3c56afe1ad6aeb578a6d90f042',1,'JoystickManagerSystem::buttonCount()']]],
+  ['buttonstate',['buttonState',['../classJoystickManagerGLFW.html#a0ad2bae593c0d6cf8de401e9401c76fa',1,'JoystickManagerGLFW']]]
 ];

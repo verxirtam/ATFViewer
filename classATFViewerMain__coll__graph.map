@@ -1,9 +1,11 @@
 <map id="ATFViewerMain" name="ATFViewerMain">
-<area shape="rect" id="node2" href="$classJoystick.html" title="Joystick" alt="" coords="5,96,75,123"/>
-<area shape="rect" id="node3" href="$classTestVBO.html" title="TestVBO" alt="" coords="99,96,175,123"/>
-<area shape="rect" id="node4" href="$classPaths.html" title="Paths" alt="" coords="200,96,255,123"/>
-<area shape="rect" id="node5" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="171,5,284,32"/>
-<area shape="rect" id="node6" href="$classSectors.html" title="Sectors" alt="" coords="280,96,347,123"/>
-<area shape="rect" id="node7" href="$classFixes.html" title="Fixes" alt="" coords="371,96,425,123"/>
-<area shape="rect" id="node8" href="$classMapTransform.html" title="MapTransform" alt="" coords="451,96,557,123"/>
+<area shape="rect" id="node2" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager\lSystem \&gt;" alt="" coords="173,97,384,138"/>
+<area shape="rect" id="node3" href="$classJoystickManagerSystem.html" title="JoystickManagerSystem" alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node4" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager \&gt;" alt="" coords="195,5,417,32"/>
+<area shape="rect" id="node5" href="$classTestVBO.html" title="TestVBO" alt="" coords="409,104,484,131"/>
+<area shape="rect" id="node6" href="$classPaths.html" title="Paths" alt="" coords="509,104,564,131"/>
+<area shape="rect" id="node7" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="481,5,593,32"/>
+<area shape="rect" id="node8" href="$classSectors.html" title="Sectors" alt="" coords="589,104,656,131"/>
+<area shape="rect" id="node9" href="$classFixes.html" title="Fixes" alt="" coords="681,104,735,131"/>
+<area shape="rect" id="node10" href="$classMapTransform.html" title="MapTransform" alt="" coords="760,104,867,131"/>
 </map>

@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a715c8a0370fdac8957611d6920600628">   50</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#a715c8a0370fdac8957611d6920600628">windowWidth</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a99db132c9bbdfbe62bbeeffa8c05fb1c">   51</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#a99db132c9bbdfbe62bbeeffa8c05fb1c">windowHeight</a>;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306">   52</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#a1e3c0761f7545a4245222a44d1b2d306">pollingInterval</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a7a5a6cacb83ae27094474e3c55893d9b">   53</a></span>&#160;    <a class="code" href="classJoystick.html">Joystick</a> <a class="code" href="classATFViewerMain.html#a7a5a6cacb83ae27094474e3c55893d9b">joystick</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#a7a5a6cacb83ae27094474e3c55893d9b">   53</a></span>&#160;    <a class="code" href="classJoystickBase.html">Joystick</a> <a class="code" href="classATFViewerMain.html#a7a5a6cacb83ae27094474e3c55893d9b">joystick</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">   54</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c">joystickTimerId</a>;</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300">   55</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#aa617a6b344671c09aab864a24fe57300">timeInterval</a>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e">   56</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classATFViewerMain.html#ab72d5bbb999401e89f567ee6dba25c9e">currentTimeInterval</a>;</div>
@@ -320,6 +320,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="BitmapString_8h_html"><div class="ttname"><a href="BitmapString_8h.html">BitmapString.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_a4a6edae32ce1bac1c0b2c3686e844a9c"><div class="ttname"><a href="classATFViewerMain.html#a4a6edae32ce1bac1c0b2c3686e844a9c">ATFViewerMain::tv</a></div><div class="ttdeci">TestVBO tv</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:62</div></div>
 <div class="ttc" id="classATFViewerMain_html_aac0d487e5d8e92385170ce6782bf806f"><div class="ttname"><a href="classATFViewerMain.html#aac0d487e5d8e92385170ce6782bf806f">ATFViewerMain::getInstance</a></div><div class="ttdeci">static ATFViewerMain &amp; getInstance()</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:164</div></div>
+<div class="ttc" id="classJoystickBase_html"><div class="ttname"><a href="classJoystickBase.html">JoystickBase&lt; JoystickManagerSystem &gt;</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_ab184eda281eead567d265b12432ef775"><div class="ttname"><a href="classATFViewerMain.html#ab184eda281eead567d265b12432ef775">ATFViewerMain::display</a></div><div class="ttdeci">void display(void)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:68</div></div>
 <div class="ttc" id="classFixes_html"><div class="ttname"><a href="classFixes.html">Fixes</a></div><div class="ttdef"><b>Definition:</b> Fixes.h:32</div></div>
 <div class="ttc" id="classATFViewerMain_html_a2127af7a49dd571ec157ce90e5427b87"><div class="ttname"><a href="classATFViewerMain.html#a2127af7a49dd571ec157ce90e5427b87">ATFViewerMain::keyboard</a></div><div class="ttdeci">void keyboard(unsigned char key, int x, int y)</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.cpp:223</div></div>
@@ -341,7 +342,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classATFViewerMain_html_ae1bc483dd72b11c3bef8925c58d0f495"><div class="ttname"><a href="classATFViewerMain.html#ae1bc483dd72b11c3bef8925c58d0f495">ATFViewerMain::camera_theta</a></div><div class="ttdeci">GLdouble camera_theta</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:65</div></div>
 <div class="ttc" id="classATFViewerMain_html_add8058abe74c49efbcb473e2e83d3392"><div class="ttname"><a href="classATFViewerMain.html#add8058abe74c49efbcb473e2e83d3392">ATFViewerMain::map</a></div><div class="ttdeci">std::vector&lt; Map &gt; map</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:73</div></div>
 <div class="ttc" id="classMap_html"><div class="ttname"><a href="classMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> Map.h:38</div></div>
-<div class="ttc" id="classJoystick_html"><div class="ttname"><a href="classJoystick.html">Joystick</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:52</div></div>
 <div class="ttc" id="DBAccessor_8h_html"><div class="ttname"><a href="DBAccessor_8h.html">DBAccessor.h</a></div></div>
 <div class="ttc" id="classATFViewerMain_html_aa44905fd4137395157f5461275c36d2a"><div class="ttname"><a href="classATFViewerMain.html#aa44905fd4137395157f5461275c36d2a">ATFViewerMain::paths</a></div><div class="ttdeci">Paths paths</div><div class="ttdef"><b>Definition:</b> ATFViewerMain.h:68</div></div>
 <div class="ttc" id="classPaths_html"><div class="ttname"><a href="classPaths.html">Paths</a></div><div class="ttdef"><b>Definition:</b> Paths.h:38</div></div>
@@ -363,7 +363,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 18 2016 01:35:18 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 20 2016 02:55:53 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
