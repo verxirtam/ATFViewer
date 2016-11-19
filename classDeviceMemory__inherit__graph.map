@@ -1,3 +1,3 @@
 <map id="DeviceMemory&lt; T &gt;" name="DeviceMemory&lt; T &gt;">
-<area shape="rect" id="node2" href="$classDeviceMemory.html" title="{DeviceMemory\&lt; unsigned\l int \&gt;\n|&#45; device\l&#45; count\l|+ DeviceMemory()\l+ ~DeviceMemory()\l+ malloc()\l+ memcpyHostToDevice()\l+ memcpyDeviceToHost()\l+ getCount()\l+ getDevicePointer()\l&#45; free()\l&#45; DeviceMemory()\l&#45; DeviceMemory()\l&#45; operator=()\l&#45; operator=()\l}" alt="" coords="5,323,181,591"/>
+<area shape="rect" id="node2" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="5,97,179,138"/>
 </map>
