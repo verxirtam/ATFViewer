@@ -1,3 +1,3 @@
 <map id="Paths" name="Paths">
-<area shape="rect" id="node2" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="5,5,117,32"/>
+<area shape="rect" id="node2" href="$classTimeSeparation.html" title="{TimeSeparation\n|&#45; min\l&#45; max\l&#45; width\l&#45; timeSequence\l&#45; currentIndex\l|+ TimeSeparation()\l+ inCurrentInterval()\l+ inNextInterval()\l+ getIntervalStatus()\l+ setNextInterval()\l&#45; inTheInterval()\l&#45; getNextIndex()\l&#45; getNextIndex()\l&#45; initTimeSequence()\l}" alt="" coords="15,5,157,259"/>
 </map>

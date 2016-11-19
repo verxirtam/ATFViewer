@@ -1,12 +1,12 @@
 <map id="VAOPositionTexture&lt; S &gt;" name="VAOPositionTexture&lt; S &gt;">
-<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOStatic, VBOElementStatic,\l VAOLayoutPositionTexture \&gt;" alt="" coords="1056,129,1267,185"/>
-<area shape="rect" id="node3" href="$classVAOBase.html" title="VAOBase" alt="" coords="315,140,395,167"/>
-<area shape="rect" id="node11" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="584,291,795,347"/>
-<area shape="rect" id="node4" href="$classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="623,11,755,37"/>
-<area shape="rect" id="node5" href="$classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="267,11,442,37"/>
-<area shape="rect" id="node6" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,36,119,63"/>
-<area shape="rect" id="node8" href="$classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="290,61,419,88"/>
-<area shape="rect" id="node7" href="$classVBOStatic.html" title="VBOStatic" alt="" coords="647,61,731,88"/>
-<area shape="rect" id="node9" href="$classVAOLayoutPositionTexture.html" title="VAOLayoutPositionTexture" alt="" coords="599,175,779,201"/>
-<area shape="rect" id="node15" href="$classTexture2D.html" title="Texture2D" alt="" coords="1120,209,1203,236"/>
+<area shape="rect" id="node2" href="$classVAOPositionBase.html" title="{VAOPositionBase\&lt; S,\l VBOStatic, VBOElementStatic,\l VAOLayoutPositionTexture \&gt;\n|&#45; vertexData\l&#45; elementData\l&#45; mode\l&#45; elementCount\l|+ VAOPositionBase()\l+ ~VAOPositionBase()\l+ bind()\l+ unbind()\l+ initReady()\l+ initMain()\l+ init()\l+ display()\l+ getElementCount()\l+ getVertex()\l+ getElement()\l}" alt="" coords="560,990,769,1287"/>
+<area shape="rect" id="node3" href="$classVAOBase.html" title="{VAOBase\n|&#45; handle\l|+ VAOBase()\l+ ~VAOBase()\l+ bind()\l+ unbind()\l+ init()\l&#45; VAOBase()\l&#45; operator=()\l&#45; VAOBase()\l&#45; operator=()\l}" alt="" coords="153,332,260,527"/>
+<area shape="rect" id="node11" href="$classVAOPositionBase.html" title="{VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;\n|&#45; vertexData\l&#45; elementData\l&#45; mode\l&#45; elementCount\l|+ VAOPositionBase()\l+ ~VAOPositionBase()\l+ bind()\l+ unbind()\l+ initReady()\l+ initMain()\l+ init()\l+ display()\l+ getElementCount()\l+ getVertex()\l+ getElement()\l}" alt="" coords="268,614,477,911"/>
+<area shape="rect" id="node4" href="$classVBOElementStatic.html" title="{VBOElementStatic\n||+ VBOElementStatic()\l+ bind()\l+ unbind()\l+ init()\l}" alt="" coords="727,702,879,823"/>
+<area shape="rect" id="node5" href="$classVBOBase.html" title="{VBOBase\&lt; unsigned int \&gt;\n|&#45; handle\l&#45; type\l&#45; usage\l|+ VBOBase()\l+ ~VBOBase()\l+ bind()\l+ unbind()\l+ init()\l+ getHandle()\l&#45; VBOBase()\l&#45; VBOBase()\l&#45; operator=()\l&#45; operator=()\l}" alt="" coords="709,310,883,549"/>
+<area shape="rect" id="node6" href="$classVBOBase.html" title="{VBOBase\&lt; V \&gt;\n|&#45; handle\l&#45; type\l&#45; usage\l|+ VBOBase()\l+ ~VBOBase()\l+ bind()\l+ unbind()\l+ init()\l+ getHandle()\l&#45; VBOBase()\l&#45; operator=()\l&#45; VBOBase()\l&#45; operator=()\l}" alt="" coords="833,6,945,245"/>
+<area shape="rect" id="node8" href="$classVBOBase.html" title="{VBOBase\&lt; float \&gt;\n|&#45; handle\l&#45; type\l&#45; usage\l|+ VBOBase()\l+ ~VBOBase()\l+ bind()\l+ unbind()\l+ init()\l+ getHandle()\l&#45; VBOBase()\l&#45; VBOBase()\l&#45; operator=()\l&#45; operator=()\l}" alt="" coords="907,310,1036,549"/>
+<area shape="rect" id="node7" href="$classVBOStatic.html" title="{VBOStatic\n||+ VBOStatic()\l+ bind()\l+ unbind()\l+ init()\l}" alt="" coords="903,702,1007,823"/>
+<area shape="rect" id="node9" href="$classVAOLayoutPositionTexture.html" title="{VAOLayoutPositionTexture\n||+ initData()\l+ enableVertexAttribPointer()\l}" alt="" coords="1031,717,1221,809"/>
+<area shape="rect" id="node15" href="$classTexture2D.html" title="{Texture2D\n|&#45; name\l&#45; unit\l&#45; target\l|+ Texture2D()\l+ ~Texture2D()\l+ active()\l+ inactive()\l+ bind()\l+ unbind()\l+ init()\l}" alt="" coords="795,1041,905,1236"/>
 </map>

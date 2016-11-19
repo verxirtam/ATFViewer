@@ -1,4 +1,4 @@
 <map id="VBOStatic" name="VBOStatic">
-<area shape="rect" id="node2" href="$classVBOBase.html" title="VBOBase\&lt; float \&gt;" alt="" coords="5,96,133,123"/>
-<area shape="rect" id="node3" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="13,5,125,32"/>
+<area shape="rect" id="node2" href="$classVBOBase.html" title="{VBOBase\&lt; float \&gt;\n|&#45; handle\l&#45; type\l&#45; usage\l|+ VBOBase()\l+ ~VBOBase()\l+ bind()\l+ unbind()\l+ init()\l+ getHandle()\l&#45; VBOBase()\l&#45; VBOBase()\l&#45; operator=()\l&#45; operator=()\l}" alt="" coords="5,310,133,549"/>
+<area shape="rect" id="node3" href="$classVBOBase.html" title="{VBOBase\&lt; V \&gt;\n|&#45; handle\l&#45; type\l&#45; usage\l|+ VBOBase()\l+ ~VBOBase()\l+ bind()\l+ unbind()\l+ init()\l+ getHandle()\l&#45; VBOBase()\l&#45; operator=()\l&#45; VBOBase()\l&#45; operator=()\l}" alt="" coords="13,6,125,245"/>
 </map>
