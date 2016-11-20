@@ -6,11 +6,12 @@ var searchData=
   ['joystickbase',['JoystickBase',['../classJoystickBase.html',1,'JoystickBase&lt; JoystickManager &gt;'],['../classJoystickBase.html#a2e4de1ee35f4b6a2d3d71aeb4951c476',1,'JoystickBase::JoystickBase()']]],
   ['joystickbase_2eh',['JoystickBase.h',['../JoystickBase_8h.html',1,'']]],
   ['joystickbase_3c_20joystickmanagersystem_20_3e',['JoystickBase&lt; JoystickManagerSystem &gt;',['../classJoystickBase.html',1,'']]],
+  ['joystickinput',['joystickInput',['../classATFViewerMainGLSL.html#a593a3f16b3f4360853a3be8bc2a01295',1,'ATFViewerMainGLSL']]],
   ['joystickmanager',['joystickManager',['../classJoystickBase.html#a35281d615ddd34e212966a701d074cd1',1,'JoystickBase']]],
   ['joystickmanagerglfw',['JoystickManagerGLFW',['../classJoystickManagerGLFW.html',1,'JoystickManagerGLFW'],['../classJoystickManagerGLFW.html#a416e14142501aa2c0b363ea2dde47154',1,'JoystickManagerGLFW::JoystickManagerGLFW()']]],
   ['joystickmanagerglfw_2eh',['JoystickManagerGLFW.h',['../JoystickManagerGLFW_8h.html',1,'']]],
   ['joystickmanagersystem',['JoystickManagerSystem',['../classJoystickManagerSystem.html',1,'JoystickManagerSystem'],['../classJoystickManagerSystem.html#a2b854075910f9b2fefe0ec20f3d6dffc',1,'JoystickManagerSystem::JoystickManagerSystem()']]],
   ['joystickmanagersystem_2eh',['JoystickManagerSystem.h',['../JoystickManagerSystem_8h.html',1,'']]],
-  ['joysticktimer',['joystickTimer',['../classATFViewerMainGLSL.html#aa5b3f1b6fd3782099ddaf5f391b66904',1,'ATFViewerMainGLSL::joystickTimer()'],['../classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995',1,'ATFViewerMain::joystickTimer()']]],
-  ['joysticktimerid',['joystickTimerId',['../classATFViewerMainGLSL.html#adafd6ddb2c14961e9b17d8aab57a51bc',1,'ATFViewerMainGLSL::joystickTimerId()'],['../classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c',1,'ATFViewerMain::joystickTimerId()']]]
+  ['joysticktimer',['joystickTimer',['../classATFViewerMain.html#a06f1a631c99e64b6d0bf00c0359e8995',1,'ATFViewerMain']]],
+  ['joysticktimerid',['joystickTimerId',['../classATFViewerMain.html#aa7fa1e759a1a313885d56f714f156a8c',1,'ATFViewerMain']]]
 ];

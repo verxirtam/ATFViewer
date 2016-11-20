@@ -10,7 +10,7 @@ var searchData=
   ['atfviewermain',['ATFViewerMain',['../classATFViewerMain.html',1,'ATFViewerMain'],['../classATFViewerMain.html#ae9cd25e403dc2c417f4b7af45b950490',1,'ATFViewerMain::ATFViewerMain()'],['../classATFViewerMain.html#a26974703a24f513c75839e1ffca80938',1,'ATFViewerMain::ATFViewerMain(const ATFViewerMain &amp;a)']]],
   ['atfviewermain_2ecpp',['ATFViewerMain.cpp',['../ATFViewerMain_8cpp.html',1,'']]],
   ['atfviewermain_2eh',['ATFViewerMain.h',['../ATFViewerMain_8h.html',1,'']]],
-  ['atfviewermainglsl',['ATFViewerMainGLSL',['../classATFViewerMainGLSL.html',1,'ATFViewerMainGLSL'],['../classATFViewerMainGLSL.html#ad9b244070ad098d171be832916b7dd99',1,'ATFViewerMainGLSL::ATFViewerMainGLSL()'],['../classATFViewerMainGLSL.html#a831ced883e795bbae3aa9c9e71118ee0',1,'ATFViewerMainGLSL::ATFViewerMainGLSL(const ATFViewerMainGLSL &amp;a)']]],
+  ['atfviewermainglsl',['ATFViewerMainGLSL',['../classATFViewerMainGLSL.html',1,'ATFViewerMainGLSL'],['../classATFViewerMainGLSL.html#ad9b244070ad098d171be832916b7dd99',1,'ATFViewerMainGLSL::ATFViewerMainGLSL()'],['../classATFViewerMainGLSL.html#a28132f1d31fc1b9a46449c97c55744e1',1,'ATFViewerMainGLSL::ATFViewerMainGLSL(const ATFViewerMainGLSL &amp;a)=delete'],['../classATFViewerMainGLSL.html#adf0fa0b2d135421237c6a82b8a838a33',1,'ATFViewerMainGLSL::ATFViewerMainGLSL(ATFViewerMainGLSL &amp;&amp;)=delete']]],
   ['atfviewermainglsl_2ecpp',['ATFViewerMainGLSL.cpp',['../ATFViewerMainGLSL_8cpp.html',1,'']]],
   ['atfviewermainglsl_2eh',['ATFViewerMainGLSL.h',['../ATFViewerMainGLSL_8h.html',1,'']]],
   ['atomicfloatadd',['atomicFloatAdd',['../CountCrossing_8cuh.html#af92fae01ddc0556e70e100a89230125d',1,'CountCrossing.cuh']]],
