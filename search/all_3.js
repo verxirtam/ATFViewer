@@ -44,6 +44,7 @@ var searchData=
   ['counter',['counter',['../classCountCrossing.html#a45259e5f331c3e6b2e54bfd63b6b3253',1,'CountCrossing']]],
   ['counter_5fdevice',['counter_device',['../classCountCrossing.html#a4d29c41c92adff37cba7ab7fee502f49',1,'CountCrossing']]],
   ['countercount',['counterCount',['../structEstimateSpecResult.html#a473f7f7bf855170fecd71b58e00b6257',1,'EstimateSpecResult']]],
+  ['createwindow',['createWindow',['../classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8',1,'ATFViewerMainGLSL']]],
   ['cudatestfunc',['cudatestfunc',['../cudatestfunc_8cu.html#ad26023e6b89acb145db2ebb671634ec9',1,'cudatestfunc(float *h_a, int n):&#160;cudatestfunc.cu'],['../cudatestfunc_8h.html#a69b958aa9b5cd8c271f50e6be8a2d7ec',1,'cudatestfunc(float *a, int n):&#160;cudatestfunc.cu']]],
   ['cudatestfunc_2ecu',['cudatestfunc.cu',['../cudatestfunc_8cu.html',1,'']]],
   ['cudatestfunc_2eh',['cudatestfunc.h',['../cudatestfunc_8h.html',1,'']]],
