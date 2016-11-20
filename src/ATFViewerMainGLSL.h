@@ -103,9 +103,6 @@ private:
 	
 	//シーンの初期化
 	void initScene(void);
-	//void initPathPoint(DBAccessor& dba);
-	//void drawPath(PathPoint& p);
-	//PathPoint getNowPoint(PathPoint& from, PathPoint& to, double time);
 	//シングルトンとするためコピーコンストラクタ、代入演算子、
 	//ムーブコンストラクタ、ムーブ代入演算子はdeleteする
 	ATFViewerMainGLSL(const ATFViewerMainGLSL& a) = delete;
@@ -138,6 +135,46 @@ private:
 		glfwSetKeyCallback(window, ATFViewerMainGLSL::_keyboard);
 	}
 	void setMatrix(void);
+	//GLFWの初期化
+	void initGLFW()
+	{
+		//GLFWの初期化
+		if(!glfwInit())
+		{
+			std::cout << "GLFW initialization failed." << std::endl;
+		}
+		//対応させるOpenGLのバージョンを指定する
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
+		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+	}
+	//描画対象となるWindowを作成する
+	void createWindow()
+	{
+		//Window と、それに関連する OpenGL context を作成する
+		window = glfwCreateWindow(640, 480, "glfwtest", NULL, NULL);
+		if(!window)
+		{
+			std::cout << "Window initialization failed." << std::endl;
+		}
+		
+		//GLで描画する画面を指定する
+		glfwMakeContextCurrent(window);
+		
+	}
+	//GLEWの初期化
+	//GLFWが初期化され、描画対象のWindowが生成された後に実施する必要がある
+	void initGLEW()
+	{
+		//GLEWの初期化
+		GLenum err;
+		err = glewInit();
+		if(err != GLEW_OK)
+		{
+			std::cout << "error at glewInit()." << std::endl;
+		}
+		
+	}
 public:
 	//インスタンスの取得
 	inline static ATFViewerMainGLSL& getInstance()
@@ -150,33 +187,13 @@ public:
 		std::cout << "ATFViewerMainGLSL::init()" << std::endl;
 		
 		//GLFWの初期化
-		if(!glfwInit())
-		{
-			std::cout << "GLFW initialization failed." << std::endl;
-		}
-		//対応させるOpenGLのバージョンを指定する
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		initGLFW();
 		
-		
-		//Window と、それに関連する OpenGL context を作成する
-		window = glfwCreateWindow(640, 480, "glfwtest", NULL, NULL);
-		if(!window)
-		{
-			std::cout << "Window initialization failed." << std::endl;
-		}
-		
-		//GLで描画する画面を指定する
-		glfwMakeContextCurrent(window);
+		//描画対象となるWindowを作成する
+		createWindow();
 		
 		//GLEWの初期化
-		GLenum err;
-		err = glewInit();
-		if(err != GLEW_OK)
-		{
-			std::cout << "error at glewInit()." << std::endl;
-		}
+		initGLEW();
 		
 		//バッファを切り替える間隔を指定する
 		glfwSwapInterval(1);

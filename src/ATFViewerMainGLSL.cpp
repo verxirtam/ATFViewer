@@ -33,7 +33,7 @@ void ATFViewerMainGLSL::initScene(void)
 	map2.init(dba);
 	sector.init(dba);
 	path.initPathPoint(this->timeMin, this->timeMax);
-
+	
 	cout<<"initScene() end"<<endl;
 }
 
