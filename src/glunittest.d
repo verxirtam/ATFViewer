@@ -1,5 +1,6 @@
 glunittest.o: glunittest.cpp ATFViewerMainGLSL.h OpenGLHeaders.h \
- DBAccessor.h MapTransform.h Joystick.h MapVAO.h Util.h \
+ DBAccessor.h MapTransform.h Joystick.h JoystickBase.h \
+ JoystickManagerSystem.h JoystickManagerGLFW.h MapVAO.h Util.h \
  ShaderProgramTexture.h Shader.h ShaderProgram.h UniformVariable.h \
  VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \

@@ -9,8 +9,9 @@ ATFViewerMain	old/20161026/ATFViewerMain.h	/^class ATFViewerMain$/;"	c
 ATFViewerMainGLSL	ATFViewerMainGLSL.h	/^	ATFViewerMainGLSL():$/;"	f	class:ATFViewerMainGLSL
 ATFViewerMainGLSL	ATFViewerMainGLSL.h	/^class ATFViewerMainGLSL$/;"	c
 ATFViewerMain_H	old/20161026/ATFViewerMain.h	22;"	d
-Axis	Joystick.h	/^	std::vector<int> Axis;$/;"	m	class:Joystick
-AxisCount	Joystick.h	/^	int AxisCount;$/;"	m	class:Joystick
+Axis	JoystickManagerSystem.h	/^	std::vector<int> Axis;$/;"	m	class:JoystickManagerSystem
+AxisCount	JoystickManagerGLFW.h	/^	int AxisCount;$/;"	m	class:JoystickManagerGLFW
+AxisCount	JoystickManagerSystem.h	/^	int AxisCount;$/;"	m	class:JoystickManagerSystem
 Axis_LeftStick_LeftRight	Joystick.h	/^	Axis_LeftStick_LeftRight = 0,$/;"	e	enum:KeyCode_F310
 Axis_LeftStick_UpDown	Joystick.h	/^	Axis_LeftStick_UpDown = 1,$/;"	e	enum:KeyCode_F310
 Axis_LeftTrigger_OffOn	Joystick.h	/^	Axis_LeftTrigger_OffOn = 2,$/;"	e	enum:KeyCode_F310
@@ -19,8 +20,9 @@ Axis_RightStick_UpDown	Joystick.h	/^	Axis_RightStick_UpDown = 4,$/;"	e	enum:KeyC
 Axis_RightTrigger_OffOn	Joystick.h	/^	Axis_RightTrigger_OffOn = 5,$/;"	e	enum:KeyCode_F310
 BitmapString	old/20161026/BitmapString.h	/^class BitmapString$/;"	c
 BitmapString_H	old/20161026/BitmapString.h	20;"	d
-Button	Joystick.h	/^	std::vector<bool> Button;$/;"	m	class:Joystick
-ButtonCount	Joystick.h	/^	int ButtonCount;$/;"	m	class:Joystick
+Button	JoystickManagerSystem.h	/^	std::vector<bool> Button;$/;"	m	class:JoystickManagerSystem
+ButtonCount	JoystickManagerGLFW.h	/^	int ButtonCount;$/;"	m	class:JoystickManagerGLFW
+ButtonCount	JoystickManagerSystem.h	/^	int ButtonCount;$/;"	m	class:JoystickManagerSystem
 Button_A	Joystick.h	/^	Button_A = 0,$/;"	e	enum:KeyCode_F310
 Button_B	Joystick.h	/^	Button_B = 1,$/;"	e	enum:KeyCode_F310
 Button_BACK	Joystick.h	/^	Button_BACK = 6,$/;"	e	enum:KeyCode_F310
@@ -36,7 +38,7 @@ COMMON_FLAGS	makefile	/^COMMON_FLAGS := -pg -g -O0$/;"	m
 CUDA_SRCS	makefile	/^CUDA_SRCS := $(shell ls *.cu)$/;"	m
 CXXFLAGS	makefile	/^CXXFLAGS := -Wall -fopenmp -I\/usr\/include -I\/usr\/local\/cuda\/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)$/;"	m
 CXXONLYFLAGS	makefile	/^CXXONLYFLAGS := -std=c++11 -Weffc++$/;"	m
-CXX_LINKS	makefile	/^CXX_LINKS := -L\/usr\/lib\/nvidia-367 -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW -lGLU -lGL$/;"	m
+CXX_LINKS	makefile	/^CXX_LINKS := -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW -lGLU -lGL$/;"	m
 CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
 CountCrossing	CountCrossing.h	/^class CountCrossing$/;"	c
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
@@ -44,11 +46,13 @@ DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
 DBAccessor_H_	DBAccessor.h	20;"	d
 DEF_LOCK	Lock.h	29;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
-Device	Joystick.h	/^	const std::string Device;$/;"	m	class:Joystick
+Device	JoystickManagerGLFW.h	/^	const std::string Device;$/;"	m	class:JoystickManagerGLFW
+Device	JoystickManagerSystem.h	/^	const std::string Device;$/;"	m	class:JoystickManagerSystem
 EstimateSpec	unittest.cpp	/^void EstimateSpec(int hours, EstimateSpecResult& esr)$/;"	f
 EstimateSpecResult	unittest.cpp	/^struct EstimateSpecResult$/;"	s	file:
 FIXES_H_	old/20161026/Fixes.h	20;"	d
-File	Joystick.h	/^	int File;$/;"	m	class:Joystick
+File	JoystickManagerGLFW.h	/^	int File;$/;"	m	class:JoystickManagerGLFW
+File	JoystickManagerSystem.h	/^	int File;$/;"	m	class:JoystickManagerSystem
 Fixes	old/20161026/Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	old/20161026/Fixes.h	/^class Fixes$/;"	c
 GCS_H_	GCS.h	21;"	d
@@ -60,9 +64,12 @@ InitMapSetting	MapVAO.h	/^		InitMapSetting()$/;"	f	struct:MapVAO::InitMapSetting
 InitMapSetting	MapVAO.h	/^	struct InitMapSetting$/;"	s	class:MapVAO
 InitSectorsSettings	SectorsVAO.h	/^		InitSectorsSettings()$/;"	f	struct:SectorsVAO::InitSectorsSettings
 InitSectorsSettings	SectorsVAO.h	/^	struct InitSectorsSettings$/;"	s	class:SectorsVAO
-Joystick	Joystick.h	/^	Joystick():$/;"	f	class:Joystick
-Joystick	Joystick.h	/^class Joystick$/;"	c
-Joystick_H_	Joystick.h	20;"	d
+JoystickBase	JoystickBase.h	/^	JoystickBase():$/;"	f	class:JoystickBase
+JoystickBase	JoystickBase.h	/^class JoystickBase$/;"	c
+JoystickManagerGLFW	JoystickManagerGLFW.h	/^class JoystickManagerGLFW$/;"	c
+JoystickManagerSystem	JoystickManagerGLFW.h	/^	JoystickManagerSystem():$/;"	f	class:JoystickManagerGLFW
+JoystickManagerSystem	JoystickManagerSystem.h	/^	JoystickManagerSystem():$/;"	f	class:JoystickManagerSystem
+JoystickManagerSystem	JoystickManagerSystem.h	/^class JoystickManagerSystem$/;"	c
 KeyCode_F310	Joystick.h	/^enum KeyCode_F310$/;"	g
 LongLatBase	LongLat.h	/^struct LongLatBase$/;"	s
 MAKETEST_EXIST	makefile	/^MAKETEST_EXIST = glunittest$/;"	m
@@ -287,7 +294,7 @@ _idle	ATFViewerMainGLSL.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMainGL
 _idle	old/20161026/ATFViewerMain.h	/^	static void _idle(void)$/;"	f	class:ATFViewerMain
 _joystickTimer	ATFViewerMainGLSL.h	/^	static void _joystickTimer(int value)$/;"	f	class:ATFViewerMainGLSL
 _joystickTimer	old/20161026/ATFViewerMain.h	/^	static void _joystickTimer(int value)$/;"	f	class:ATFViewerMain
-_keyboard	ATFViewerMainGLSL.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMainGLSL
+_keyboard	ATFViewerMainGLSL.h	/^	static void _keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)$/;"	f	class:ATFViewerMainGLSL
 _keyboard	old/20161026/ATFViewerMain.h	/^	static void _keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 _resize	ATFViewerMainGLSL.h	/^	static void _resize(GLFWwindow* window, int w, int h)$/;"	f	class:ATFViewerMainGLSL
 _resize	old/20161026/ATFViewerMain.h	/^	static void _resize(int w, int h)$/;"	f	class:ATFViewerMain
@@ -425,8 +432,12 @@ futureMakeBuffer	PathsVAO.h	/^	std::future<void> futureMakeBuffer;$/;"	m	class:P
 futureMakeBuffer	old/20161026/Paths.h	/^	std::future<void> futureMakeBuffer;$/;"	m	class:Paths
 getAllTrackData	unittest.cpp	/^void getAllTrackData(void)$/;"	f
 getAllTrackDataReserve	unittest.cpp	/^void getAllTrackDataReserve(void)$/;"	f
-getAxisState	Joystick.h	/^	int getAxisState(int i)$/;"	f	class:Joystick
-getButtonState	Joystick.h	/^	bool getButtonState(int i)$/;"	f	class:Joystick
+getAxisState	JoystickBase.h	/^	int getAxisState(int i)$/;"	f	class:JoystickBase
+getAxisState	JoystickManagerGLFW.h	/^	int getAxisState(int i)$/;"	f	class:JoystickManagerGLFW
+getAxisState	JoystickManagerSystem.h	/^	int getAxisState(int i)$/;"	f	class:JoystickManagerSystem
+getButtonState	JoystickBase.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickBase
+getButtonState	JoystickManagerGLFW.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickManagerGLFW
+getButtonState	JoystickManagerSystem.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickManagerSystem
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
 getColumn	TrackDataManager.h	/^	void getColumn(DBAccessor& dba, std::string& id, double& lo, double& la, int& a, long long& t, std::string& ar)$/;"	f	class:TrackDataManager
@@ -569,17 +580,20 @@ insideLongLatIndex	SectorsVAO.h	/^		std::vector<unsigned int> insideLongLatIndex
 insideLongLatIndex	old/20161026/Sectors.h	/^		std::vector<unsigned int> insideLongLatIndex;$/;"	m	struct:Sectors::SubSector
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
 isClockwise	GCS.cpp	/^bool isClockwise(const std::vector<unsigned int>& longLatIndex, const std::vector<LongLat>& longLat)$/;"	f
-isEnable	Joystick.h	/^	bool isEnable()$/;"	f	class:Joystick
+isEnable	JoystickBase.h	/^	bool isEnable()$/;"	f	class:JoystickBase
+isEnable	JoystickManagerGLFW.h	/^	bool isEnable()$/;"	f	class:JoystickManagerGLFW
+isEnable	JoystickManagerSystem.h	/^	bool isEnable()$/;"	f	class:JoystickManagerSystem
 isExistDBFile	TrackDataManager.h	/^	bool isExistDBFile(const std::string& dbfilename)$/;"	f	class:TrackDataManager
 join	unittest.cpp	/^	void join()$/;"	f	class:TestThread
 join	unittest.cpp	/^	void join()$/;"	f	class:TestThread_MemFunc
 joystick	ATFViewerMainGLSL.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMainGLSL
 joystick	old/20161026/ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
+joystickManager	JoystickBase.h	/^	JoystickManager joystickManager;$/;"	m	class:JoystickBase
 joystickTimer	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::joystickTimer(int value)$/;"	f	class:ATFViewerMainGLSL
 joystickTimer	old/20161026/ATFViewerMain.cpp	/^void ATFViewerMain::joystickTimer(int value)$/;"	f	class:ATFViewerMain
 joystickTimerId	ATFViewerMainGLSL.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMainGLSL
 joystickTimerId	old/20161026/ATFViewerMain.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMain
-keyboard	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMainGLSL
+keyboard	ATFViewerMainGLSL.cpp	/^void ATFViewerMainGLSL::keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)$/;"	f	class:ATFViewerMainGLSL
 keyboard	old/20161026/ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	LongLat.h	/^	T latitude; \/\/\/< 緯度$/;"	m	struct:LongLatBase
 latitude	MapVAO.h	/^		float latitude;$/;"	m	struct:MapVAO::MapVertex
@@ -663,7 +677,9 @@ position	VAOLayoutPositionColor.h	/^		glm::vec3 position;$/;"	m	struct:VAOLayout
 position	VAOLayoutPositionColor.h	/^		std::vector<float> position;$/;"	m	struct:VAOLayoutPositionColor::inputType1
 position	VAOLayoutPositionTexture.h	/^		glm::vec3 position;$/;"	m	struct:VAOLayoutPositionTexture::inputType2Vertex
 position	VAOLayoutPositionTexture.h	/^		std::vector<float> position;$/;"	m	struct:VAOLayoutPositionTexture::inputType1
-readJoystickEvent	Joystick.h	/^	void readJoystickEvent()$/;"	f	class:Joystick
+readJoystickEvent	JoystickBase.h	/^	void readJoystickEvent()$/;"	f	class:JoystickBase
+readJoystickEvent	JoystickManagerGLFW.h	/^	void readJoystickEvent()$/;"	f	class:JoystickManagerGLFW
+readJoystickEvent	JoystickManagerSystem.h	/^	void readJoystickEvent()$/;"	f	class:JoystickManagerSystem
 readShaderFile	Shader.h	/^	std::string readShaderFile(const std::string& filename)$/;"	f	class:Shader
 resetStmt	DBAccessor.h	/^	void resetStmt()$/;"	f	class:DBAccessor
 resetTime	PathsVAO.cpp	/^void PathsVAO::resetTime(void)$/;"	f	class:PathsVAO

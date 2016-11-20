@@ -44,16 +44,13 @@ private:
 	const double PI;
 	int windowWidth;
 	int windowHeight;
-	const unsigned int pollingInterval;
 	Joystick joystick;
-	const int joystickTimerId;
 	const int timeInterval;
 	int currentTimeInterval;
 	GLdouble camera_r;
 	GLdouble camera_theta;
 	GLdouble camera_phi;
 	GLdouble camera_target[3];
-	//Paths paths;
 	time_t now;
 	const time_t timeMin;
 	const time_t timeMax;
@@ -71,9 +68,7 @@ private:
 		PI(3.14159265358979),
 		windowWidth(100),
 		windowHeight(100),
-		pollingInterval(10),
 		joystick(),
-		joystickTimerId(1),
 		timeInterval(20),//5),
 		currentTimeInterval(timeInterval),
 		//tv(),
@@ -111,9 +106,12 @@ private:
 	//void initPathPoint(DBAccessor& dba);
 	//void drawPath(PathPoint& p);
 	//PathPoint getNowPoint(PathPoint& from, PathPoint& to, double time);
-	//シングルトンとするためコピーコンストラクタ、代入演算子は定義しない
-	ATFViewerMainGLSL(const ATFViewerMainGLSL& a);
-	ATFViewerMainGLSL& operator=(const ATFViewerMainGLSL& a);
+	//シングルトンとするためコピーコンストラクタ、代入演算子、
+	//ムーブコンストラクタ、ムーブ代入演算子はdeleteする
+	ATFViewerMainGLSL(const ATFViewerMainGLSL& a) = delete;
+	ATFViewerMainGLSL& operator=(const ATFViewerMainGLSL& a) = delete;
+	ATFViewerMainGLSL(ATFViewerMainGLSL&&) = delete;
+	ATFViewerMainGLSL& operator=(ATFViewerMainGLSL&&) = delete;
 	//画面のリサイズ時に実行される関数
 	static void _resize(GLFWwindow* window, int w, int h)
 	{
@@ -124,38 +122,20 @@ private:
 	{
 		ATFViewerMainGLSL::getInstance().keyboard(window, key, scancode, action, mods);
 	}
-	//ジョイスティックイベントの検出のための関数
-	static void _joystickTimer(int value)
-	{
-		ATFViewerMainGLSL::getInstance().joystickTimer(value);
-	}
-	static void _idle(void)
-	{
-		ATFViewerMainGLSL::getInstance().idle();
-	}
 	//画面更新用の関数
 	void display(GLFWwindow* window);
 	//画面のリサイズ時に実行される関数
 	void resize(GLFWwindow* window, int w, int h);
 	//キーボード入力時に実行される関数
 	void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
-	//ジョイスティックイベントの検出のためのタイマー関数
-	void joystickTimer(int value);
-	void idle(void)
-	{
-		//glutPostRedisplay();
-	}
+	//ジョイスティックイベントの処理
+	void joystickInput();
 	void initCallbacks()
 	{
 		//画面リサイズ時に実行される関数の設定
 		glfwSetWindowSizeCallback(window, ATFViewerMainGLSL::_resize);
 		//キーボード入力時に実行される関数の設定
 		glfwSetKeyCallback(window, ATFViewerMainGLSL::_keyboard);
-		//ジョイスティックイベントの検出のための関数
-		//glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
-		//アイドル時に実行される関数の設定
-		//glutIdleFunc(ATFViewerMainGLSL::_idle);
-		
 	}
 	void setMatrix(void);
 public:
@@ -220,8 +200,8 @@ public:
 			//オブジェクトの表示
 			display(window);
 			
-			
-			this->joystickTimer(0);
+			//ジョイスティックによる入力の処理
+			joystickInput();
 			
 			//イベントの発生をポーリングする
 			glfwPollEvents();

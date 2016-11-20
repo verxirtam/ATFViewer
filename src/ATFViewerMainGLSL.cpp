@@ -106,8 +106,8 @@ void ATFViewerMainGLSL::resize(GLFWwindow* window, int w, int h)
 
 void ATFViewerMainGLSL::keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
-	//GLFW_PRESSのイベント以外は無視する
-	if(action != GLFW_PRESS)
+	//GLFW_PRESS か GLFW_REPEATのイベント以外は無視する
+	if((action != GLFW_PRESS) && (action != GLFW_REPEAT))
 	{
 		return;
 	}
@@ -189,66 +189,68 @@ void ATFViewerMainGLSL::keyboard(GLFWwindow* window, int key, int scancode, int 
 
 
 //ジョイスティックイベントの検出のための関数
-void ATFViewerMainGLSL::joystickTimer(int value)
+void ATFViewerMainGLSL::joystickInput()
 {
 	//ジョイスティックの状況を取得する
 	if(joystick.isEnable())
 	{
 		joystick.readJoystickEvent();
 	}
+	else
+	{
+		return;
+	}
 	
 	//ポーリング間隔に応じた倍率
-	double pr = ((double)(pollingInterval)) / 100.0;
+	double pr = 10.0 / 100.0;
 	
 	
 	//各軸の傾きに応じた割合
-	const int baffer = 3000;
-	const double max = 32767.0;
-	const int maxint = 32767;
+	const float baffer = 0.125f;
 	
 	//ジョイスティックの操作が行われたかを表す
 	bool occurred = false;
 	
 	//X軸:左スティック左右
-	double xd = 0.0;
-	int x = joystick.getAxisState(Axis_LeftStick_LeftRight);
+	float xd = 0.0f;
+	float x = joystick.getAxisState(Axis_LeftStick_LeftRight);
 	//Y軸:左スティック上下
-	double yd = 0.0;
-	int y = joystick.getAxisState(Axis_LeftStick_UpDown);
+	float yd = 0.0f;
+	float y = joystick.getAxisState(Axis_LeftStick_UpDown);
 	if((x >= baffer) || (x < -baffer) || (y >= baffer) || (y < -baffer))
 	{
-		xd = ((double)(x)) / max * pr;
-		yd = ((double)(y)) / max * pr;
+		xd = x * pr;
+		yd = y * pr;
 		occurred = true;
 	}
 	
 	//U軸:右スティック左右
-	double ud = 0.0;
-	int u = joystick.getAxisState(Axis_RightStick_LeftRight);
+	float ud = 0.0f;
+	float u = joystick.getAxisState(Axis_RightStick_LeftRight);
 	//V軸:右スティック上下
-	double vd = 0.0;
-	int v = joystick.getAxisState(Axis_RightStick_UpDown);
+	float vd = 0.0f;
+	float v = joystick.getAxisState(Axis_RightStick_UpDown);
 	if((u >= baffer) || (u < -baffer) || (v >= baffer) || (v < -baffer))
 	{
-		ud = ((double)(u)) / max * pr;
-		vd = ((double)(v)) / max * pr;
+		ud = u * pr;
+		vd = v * pr;
 		occurred = true;
 	}
 	
 	
 	//マップの拡大縮小率
-	double rd = 1.0;
+	float rd = 1.0f;
 	
 	//左トリガー
-	int p = joystick.getAxisState(Axis_LeftTrigger_OffOn);
+	float p = joystick.getAxisState(Axis_LeftTrigger_OffOn);
 	
 	//右トリガー
-	int q = joystick.getAxisState(Axis_RightTrigger_OffOn);
-	if((p >= - maxint + baffer) || (q >= - maxint + baffer))
+	float q = joystick.getAxisState(Axis_RightTrigger_OffOn);
+	if((p >= - 1.0f + baffer) || (q >= - 1.0f + baffer))
 	{
-		double pd = ((double)(p + maxint)) / (2 * max) * pr;
-		double qd = ((double)(q + maxint)) / (2 * max) * pr;
-		rd = 1.0 - 0.125 * (pd - qd);
+		float pd = (p + 1.0f) / 2.0f * pr;
+		float qd = (q + 1.0f) / 2.0f * pr;
+		rd = 1.0f - 0.125f * (pd - qd);
 		
 		occurred = true;
 	}
@@ -278,7 +280,5 @@ void ATFViewerMainGLSL::joystickTimer(int value)
 		//マップの拡大縮小
 		mapTransform.setScale(mapTransform.getScale() * rd);
 	}
-	//タイマー関数の設定
-	//glutTimerFunc(pollingInterval, ATFViewerMainGLSL::_joystickTimer, joystickTimerId);
 }
 
