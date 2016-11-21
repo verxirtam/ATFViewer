@@ -14,10 +14,10 @@
 <area shape="rect" id="node9" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="323,279,471,321"/>
 <area shape="rect" id="node10" href="$classUniformVariable.html" title="UniformVariable\&lt; T \&gt;" alt="" coords="5,335,152,361"/>
 <area shape="rect" id="node19" href="$classUniformVariable.html" title="UniformVariable\&lt; int \&gt;" alt="" coords="321,381,474,408"/>
-<area shape="rect" id="node15" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager\lSystem \&gt;" alt="" coords="2350,282,2562,323"/>
-<area shape="rect" id="node16" href="$classJoystickManagerSystem.html" title="JoystickManagerSystem" alt="" coords="1933,247,2099,273"/>
+<area shape="rect" id="node15" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager\lGLFW \&gt;" alt="" coords="2342,282,2554,323"/>
+<area shape="rect" id="node16" href="$classJoystickManagerGLFW.html" title="JoystickManagerGLFW" alt="" coords="1937,247,2095,273"/>
 <area shape="rect" id="node17" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager \&gt;" alt="" coords="1904,297,2128,324"/>
-<area shape="rect" id="node20" href="$classMapVAO.html" title="MapVAO" alt="" coords="2419,560,2493,587"/>
+<area shape="rect" id="node20" href="$classMapVAO.html" title="MapVAO" alt="" coords="2411,560,2485,587"/>
 <area shape="rect" id="node21" href="$classVAOPositionTexture.html" title="VAOPositionTexture\l\&lt; ShaderProgramTexture \&gt;" alt="" coords="1926,553,2106,594"/>
 <area shape="rect" id="node23" href="$classVBOElementStatic.html" title="VBOElementStatic" alt="" coords="669,552,801,579"/>
 <area shape="rect" id="node24" href="$classVBOBase.html" title="VBOBase\&lt; unsigned int \&gt;" alt="" coords="310,552,485,579"/>
@@ -28,8 +28,8 @@
 <area shape="rect" id="node28" href="$classVAOLayoutPositionTexture.html" title="VAOLayoutPositionTexture" alt="" coords="645,733,825,760"/>
 <area shape="rect" id="node29" href="$classTexture2D.html" title="Texture2D" alt="" coords="1189,653,1272,680"/>
 <area shape="rect" id="node30" href="$classVAOPositionTexture.html" title="VAOPositionTexture\&lt; S \&gt;" alt="" coords="1509,560,1683,587"/>
-<area shape="rect" id="node33" href="$classMapTransform.html" title="MapTransform" alt="" coords="2403,780,2509,807"/>
-<area shape="rect" id="node34" href="$classPathsVAO.html" title="PathsVAO" alt="" coords="2414,916,2498,943"/>
+<area shape="rect" id="node33" href="$classMapTransform.html" title="MapTransform" alt="" coords="2395,780,2501,807"/>
+<area shape="rect" id="node34" href="$classPathsVAO.html" title="PathsVAO" alt="" coords="2406,916,2490,943"/>
 <area shape="rect" id="node35" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="1959,916,2073,943"/>
 <area shape="rect" id="node36" href="$structPathsVAO_1_1doubleBufferingType.html" title="PathsVAO::doubleBufferingType" alt="" coords="1911,1105,2121,1132"/>
 <area shape="rect" id="node37" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="1509,1098,1683,1139"/>

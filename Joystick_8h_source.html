@@ -108,7 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="JoystickBase_8h.html">JoystickBase.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="JoystickManagerSystem_8h.html">JoystickManagerSystem.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">//#include &quot;JoystickManagerSystem.h&quot;</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="JoystickManagerGLFW_8h.html">JoystickManagerGLFW.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
@@ -134,20 +134,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="Joystick_8h.html#a5152e5d7e53534be65ef6c1c93e1eb77">   48</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classJoystickBase.html">Joystick</a> = <a class="code" href="classJoystickBase.html">JoystickBase&lt;JoystickManagerSystem&gt;</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="Joystick_8h.html#ad8747e7712b776c2859eb80015124deb">   48</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classJoystickBase.html">Joystick</a> = <a class="code" href="classJoystickBase.html">JoystickBase&lt;JoystickManagerGLFW&gt;</a>;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="ttc" id="JoystickBase_8h_html"><div class="ttname"><a href="JoystickBase_8h.html">JoystickBase.h</a></div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea86a2ce82d4e6f2e1f03845e169473a25"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea86a2ce82d4e6f2e1f03845e169473a25">Axis_RightTrigger_OffOn</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:33</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6deaea5087a7436e3ef87184f1603c1c34fb"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaea5087a7436e3ef87184f1603c1c34fb">Button_RB</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:39</div></div>
 <div class="ttc" id="JoystickManagerGLFW_8h_html"><div class="ttname"><a href="JoystickManagerGLFW_8h.html">JoystickManagerGLFW.h</a></div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea2a39b8c9c56af5271726cb73ec13d2aa"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea2a39b8c9c56af5271726cb73ec13d2aa">Button_LB</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:38</div></div>
-<div class="ttc" id="classJoystickBase_html"><div class="ttname"><a href="classJoystickBase.html">JoystickBase&lt; JoystickManagerSystem &gt;</a></div></div>
+<div class="ttc" id="classJoystickBase_html"><div class="ttname"><a href="classJoystickBase.html">JoystickBase&lt; JoystickManagerGLFW &gt;</a></div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea60ca957ef9fa4432b1e5adc1a848045f"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea60ca957ef9fa4432b1e5adc1a848045f">Button_BACK</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:40</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6deaf14a135ca7a0cc0727696e6ea16ad545"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaf14a135ca7a0cc0727696e6ea16ad545">Button_X</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:36</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea7974c0212eb1f78b692bcf31ca259541"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea7974c0212eb1f78b692bcf31ca259541">Button_B</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:35</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6de"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6de">KeyCode_F310</a></div><div class="ttdeci">KeyCode_F310</div><div class="ttdef"><b>Definition:</b> Joystick.h:26</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dead88abde9cd8c3e2db92168ce5c49df3f"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dead88abde9cd8c3e2db92168ce5c49df3f">Axis_RightStick_UpDown</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:32</div></div>
-<div class="ttc" id="JoystickManagerSystem_8h_html"><div class="ttname"><a href="JoystickManagerSystem_8h.html">JoystickManagerSystem.h</a></div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea1b57c7cb70405c5df5bae14b2db58ae8"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea1b57c7cb70405c5df5bae14b2db58ae8">Button_LeftStick_Push</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:43</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6deaa1e30db702605487bed218b75a7bab31"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6deaa1e30db702605487bed218b75a7bab31">Axis_LeftStick_UpDown</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:29</div></div>
 <div class="ttc" id="Joystick_8h_html_a5269f71eeff2db5bd7d185fa3c10d6dea1acbbdff5e84dd0f2860189417e6300f"><div class="ttname"><a href="Joystick_8h.html#a5269f71eeff2db5bd7d185fa3c10d6dea1acbbdff5e84dd0f2860189417e6300f">Button_RightStick_Push</a></div><div class="ttdef"><b>Definition:</b> Joystick.h:44</div></div>
@@ -161,7 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 21 2016 01:26:32 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 21 2016 23:51:51 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

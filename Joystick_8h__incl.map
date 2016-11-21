@@ -1,6 +1,5 @@
 <map id="src/Joystick.h" name="src/Joystick.h">
-<area shape="rect" id="node2" href="$JoystickBase_8h.html" title="JoystickBase.h" alt="" coords="59,80,169,107"/>
-<area shape="rect" id="node3" href="$JoystickManagerSystem_8h.html" title="JoystickManagerSystem.h" alt="" coords="195,80,372,107"/>
-<area shape="rect" id="node10" href="$JoystickManagerGLFW_8h.html" title="JoystickManagerGLFW.h" alt="" coords="480,80,651,107"/>
-<area shape="rect" id="node11" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="583,155,712,181"/>
+<area shape="rect" id="node2" href="$JoystickBase_8h.html" title="JoystickBase.h" alt="" coords="4,80,115,107"/>
+<area shape="rect" id="node3" href="$JoystickManagerGLFW_8h.html" title="JoystickManagerGLFW.h" alt="" coords="140,80,311,107"/>
+<area shape="rect" id="node4" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="160,155,289,181"/>
 </map>
