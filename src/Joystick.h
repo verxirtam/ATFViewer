@@ -19,7 +19,7 @@
 #pragma once
 
 #include "JoystickBase.h"
-#include "JoystickManagerSystem.h"
+//#include "JoystickManagerSystem.h"
 #include "JoystickManagerGLFW.h"
 
 
@@ -45,5 +45,5 @@ enum KeyCode_F310
 };
 
 
-using Joystick = JoystickBase<JoystickManagerSystem>;
+using Joystick = JoystickBase<JoystickManagerGLFW>;
 
