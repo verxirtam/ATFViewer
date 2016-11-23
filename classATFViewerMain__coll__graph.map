@@ -1,11 +1,10 @@
 <map id="ATFViewerMain" name="ATFViewerMain">
-<area shape="rect" id="node2" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager\lGLFW \&gt;" alt="" coords="162,97,373,138"/>
-<area shape="rect" id="node3" href="$classJoystickManagerGLFW.html" title="JoystickManagerGLFW" alt="" coords="5,5,163,32"/>
-<area shape="rect" id="node4" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager \&gt;" alt="" coords="188,5,411,32"/>
-<area shape="rect" id="node5" href="$classTestVBO.html" title="TestVBO" alt="" coords="398,104,473,131"/>
-<area shape="rect" id="node6" href="$classPaths.html" title="Paths" alt="" coords="499,104,553,131"/>
-<area shape="rect" id="node7" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="470,5,583,32"/>
-<area shape="rect" id="node8" href="$classSectors.html" title="Sectors" alt="" coords="579,104,645,131"/>
-<area shape="rect" id="node9" href="$classFixes.html" title="Fixes" alt="" coords="670,104,724,131"/>
-<area shape="rect" id="node10" href="$classMapTransform.html" title="MapTransform" alt="" coords="749,104,856,131"/>
+<area shape="rect" id="node2" href="$classJoystickBase.html" title="JoystickBase\&lt; JoystickManager\lGLFW \&gt;" alt="" coords="5,97,216,138"/>
+<area shape="rect" id="node3" href="$classJoystickManagerGLFW.html" title="JoystickManagerGLFW" alt="" coords="31,5,189,32"/>
+<area shape="rect" id="node4" href="$classTestVBO.html" title="TestVBO" alt="" coords="241,104,316,131"/>
+<area shape="rect" id="node5" href="$classPaths.html" title="Paths" alt="" coords="341,104,396,131"/>
+<area shape="rect" id="node6" href="$classTimeSeparation.html" title="TimeSeparation" alt="" coords="313,5,425,32"/>
+<area shape="rect" id="node7" href="$classSectors.html" title="Sectors" alt="" coords="421,104,488,131"/>
+<area shape="rect" id="node8" href="$classFixes.html" title="Fixes" alt="" coords="513,104,567,131"/>
+<area shape="rect" id="node9" href="$classMapTransform.html" title="MapTransform" alt="" coords="592,104,699,131"/>
 </map>

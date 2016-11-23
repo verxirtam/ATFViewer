@@ -1,11 +1,8 @@
 <map id="PathsVAO::doubleBufferingType" name="PathsVAO::doubleBufferingType">
-<area shape="rect" id="node2" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="1450,81,1625,122"/>
-<area shape="rect" id="node3" href="$classDeviceMemory.html" title="DeviceMemory\&lt; T \&gt;" alt="" coords="1106,88,1249,115"/>
-<area shape="rect" id="node4" href="$classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; S, VAOLayoutClass \&gt;" alt="" coords="1448,146,1627,187"/>
-<area shape="rect" id="node5" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="1054,139,1301,195"/>
-<area shape="rect" id="node12" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBOClass, VBOElementClass,\l VAOLayoutClass \&gt;" alt="" coords="597,139,808,195"/>
-<area shape="rect" id="node7" href="$classVAOBase.html" title="VAOBase" alt="" coords="325,268,405,295"/>
-<area shape="rect" id="node8" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="603,350,803,391"/>
-<area shape="rect" id="node9" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="275,357,456,384"/>
-<area shape="rect" id="node10" href="$classVBOBase.html" title="VBOBase\&lt; V \&gt;" alt="" coords="6,357,119,384"/>
+<area shape="rect" id="node2" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="5,337,179,378"/>
+<area shape="rect" id="node3" href="$classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; S, VAOLayoutClass \&gt;" alt="" coords="204,337,383,378"/>
+<area shape="rect" id="node4" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="170,216,416,272"/>
+<area shape="rect" id="node6" href="$classVAOBase.html" title="VAOBase" alt="" coords="197,104,276,131"/>
+<area shape="rect" id="node7" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="301,97,500,138"/>
+<area shape="rect" id="node8" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="311,5,492,32"/>
 </map>

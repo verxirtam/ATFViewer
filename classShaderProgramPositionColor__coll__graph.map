@@ -1,6 +1,5 @@
 <map id="ShaderProgramPositionColor" name="ShaderProgramPositionColor">
-<area shape="rect" id="node2" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="5,104,116,131"/>
-<area shape="rect" id="node3" href="$classShader.html" title="Shader" alt="" coords="154,104,216,131"/>
-<area shape="rect" id="node4" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="241,97,388,138"/>
-<area shape="rect" id="node5" href="$classUniformVariable.html" title="UniformVariable\&lt; T \&gt;" alt="" coords="241,5,388,32"/>
+<area shape="rect" id="node2" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="5,13,116,40"/>
+<area shape="rect" id="node3" href="$classShader.html" title="Shader" alt="" coords="154,13,216,40"/>
+<area shape="rect" id="node4" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="241,6,388,47"/>
 </map>
