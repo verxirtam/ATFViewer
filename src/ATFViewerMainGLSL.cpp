@@ -15,6 +15,7 @@
  *
  * =====================================================================================
  */
+/*
 #include "ATFViewerMainGLSL.h"
 
 using namespace std;
@@ -31,6 +32,7 @@ void ATFViewerMainGLSL::initScene(void)
 	DBAccessor dba("../../db/ATFViewer.db");
 	map.init(dba);
 	map2.init(dba);
+	map3.init(dba);
 	sector.init(dba);
 	path.initPathPoint(this->timeMin, this->timeMax);
 	
@@ -86,6 +88,7 @@ void ATFViewerMainGLSL::display(GLFWwindow* window)
 	
 	map.display();
 	map2.display();
+	map3.display();
 	sector.display();
 	path.display(now);
 	
@@ -281,4 +284,4 @@ void ATFViewerMainGLSL::joystickInput()
 		mapTransform.setScale(mapTransform.getScale() * rd);
 	}
 }
-
+*/

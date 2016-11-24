@@ -46,7 +46,7 @@ public:
 	}
 	//ジョイスティック自体が有効かを返す
 	//ジョイスティックが読み込めなかった場合はfalseを返す
-	bool isEnable()
+	bool isEnable() const
 	{
 		return (glfwJoystickPresent(GLFW_JOYSTICK_1) == GLFW_TRUE);
 	}
@@ -57,7 +57,7 @@ public:
 		buttonState = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &buttonCount);
 	}
 	//軸の状態の取得
-	float getAxisState(int i)
+	float getAxisState(int i) const
 	{
 		if(i < 0 || i >= axisCount)
 		{
@@ -68,7 +68,7 @@ public:
 	//ボタンの状態の取得
 	//true:押されている
 	//false:押されていない
-	bool getButtonState(int i)
+	bool getButtonState(int i) const
 	{
 		if(i < 0 || i >= buttonCount)
 		{

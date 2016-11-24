@@ -31,7 +31,7 @@ public:
 	}
 	//ジョイスティック自体が有効かを返す
 	//ジョイスティックが読み込めなかった場合はfalseを返す
-	bool isEnable()
+	bool isEnable() const
 	{
 		return joystickManager.isEnable();
 	}
@@ -43,14 +43,14 @@ public:
 		joystickManager.readJoystickEvent();
 	}
 	//軸の状態の取得
-	float getAxisState(int i)
+	float getAxisState(int i) const
 	{
 		return joystickManager.getAxisState(i);
 	}
 	//ボタンの状態の取得
 	//true:押されている
 	//false:押されていない
-	bool getButtonState(int i)
+	bool getButtonState(int i) const
 	{
 		return joystickManager.getButtonState(i);
 	}

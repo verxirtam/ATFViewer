@@ -21,76 +21,29 @@
 #pragma once
 
 #include <iostream>
-#include <sstream>
-#include <vector>
-#include <cstdio>
-#include <cmath>
-#include <ctime>
-
+#include <memory>
 
 #include "OpenGLHeaders.h"
-
-#include "DBAccessor.h"
-#include "MapTransform.h"
 #include "Joystick.h"
-#include "MapVAO.h"
-#include "SectorsVAO.h"
-#include "PathsVAO.h"
+
+#include "SceanLatLongFlow.h"
 
 class ATFViewerMainGLSL
 {
 private:
 	GLFWwindow* window;
-	const double PI;
 	int windowWidth;
 	int windowHeight;
 	Joystick joystick;
-	const int timeInterval;
-	int currentTimeInterval;
-	GLdouble camera_r;
-	GLdouble camera_theta;
-	GLdouble camera_phi;
-	GLdouble camera_target[3];
-	time_t now;
-	const time_t timeMin;
-	const time_t timeMax;
-	MapTransform mapTransform;
-	ShaderProgramTexture shaderProgramTexture;
-	ShaderProgramPositionColor shaderProgramPositionColor;
-	ShaderProgramPaths shaderProgramPaths;
-	MapVAO map;
-	MapVAO map2;
-	SectorsVAO sector;
-	PathsVAO path;
+	std::unique_ptr<Scean> scean;
 	//初期化
 	ATFViewerMainGLSL():
 		window(nullptr),
-		PI(3.14159265358979),
 		windowWidth(100),
 		windowHeight(100),
 		joystick(),
-		timeInterval(20),//5),
-		currentTimeInterval(timeInterval),
-		//tv(),
-		camera_r(30.0),
-		camera_theta(270.0*PI/180.0),
-		camera_phi(60.0*PI/180.0),
-		//paths(),
-		now(1460635200),//1460631600),//1456153155),
-		timeMin(now),
-		timeMax(now+60*60*24*3),//1453300000),
-		mapTransform(),
-		shaderProgramTexture(),
-		shaderProgramPositionColor(),
-		shaderProgramPaths(),
-		map("ENRC1_20160204",shaderProgramTexture),
-		map2("ENRC2_20160204",shaderProgramTexture),
-		sector(shaderProgramPositionColor),
-		path(shaderProgramPaths)
+		scean(nullptr)
 	{
-		camera_target[0]=0.0;
-		camera_target[1]=0.0;
-		camera_target[2]=0.0;
 	}
 	
 	~ATFViewerMainGLSL()
@@ -101,8 +54,6 @@ private:
 		glfwTerminate();
 	}
 	
-	//シーンの初期化
-	void initScene(void);
 	//シングルトンとするためコピーコンストラクタ、代入演算子、
 	//ムーブコンストラクタ、ムーブ代入演算子はdeleteする
 	ATFViewerMainGLSL(const ATFViewerMainGLSL& a) = delete;
@@ -120,13 +71,25 @@ private:
 		ATFViewerMainGLSL::getInstance().keyboard(window, key, scancode, action, mods);
 	}
 	//画面更新用の関数
-	void display(GLFWwindow* window);
+	void display(GLFWwindow* window)
+	{
+		scean->display(window);
+	}
 	//画面のリサイズ時に実行される関数
-	void resize(GLFWwindow* window, int w, int h);
+	void resize(GLFWwindow* window, int w, int h)
+	{
+		scean->resize(window, w, h);
+	}
 	//キーボード入力時に実行される関数
-	void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods);
+	void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)
+	{
+		scean->keyboard(window, key, scancode, action, mods);
+	}
 	//ジョイスティックイベントの処理
-	void joystickInput();
+	void joystickInput()
+	{
+		scean->joystickInput(joystick);
+	}
 	void initCallbacks()
 	{
 		//画面リサイズ時に実行される関数の設定
@@ -134,7 +97,6 @@ private:
 		//キーボード入力時に実行される関数の設定
 		glfwSetKeyCallback(window, ATFViewerMainGLSL::_keyboard);
 	}
-	void setMatrix(void);
 	//GLFWの初期化
 	void initGLFW()
 	{
@@ -205,7 +167,8 @@ public:
 		this->initCallbacks();
 		
 		//シーンの初期化
-		this->initScene();
+		scean.reset(new SceanLatLongFlow());
+		scean->init();
 	}
 	void execMainLoop(void)
 	{
