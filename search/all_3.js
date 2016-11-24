@@ -17,7 +17,6 @@ var searchData=
   ['countcrossing_2ecu',['CountCrossing.cu',['../CountCrossing_8cu.html',1,'']]],
   ['countcrossing_2ecuh',['CountCrossing.cuh',['../CountCrossing_8cuh.html',1,'']]],
   ['countcrossing_2eh',['CountCrossing.h',['../CountCrossing_8h.html',1,'']]],
-  ['countcrossing_5fhost_5fh_5f',['CountCrossing_host_H_',['../CountCrossing_8cuh.html#a00d50aae86ad65837bf042dc31a5e74e',1,'CountCrossing.cuh']]],
   ['countcrossingbydirection',['countCrossingByDirection',['../cudatestfunc_8h.html#a313b3c12a5edbbf870f106f5e0e96776',1,'cudatestfunc.h']]],
   ['countcrossingbydirectiondevice',['countCrossingByDirectionDevice',['../CountCrossing_8cuh.html#ae93d2bb98152ffb28300f2f224419d3a',1,'CountCrossing.cuh']]],
   ['countcrossingbydirectionhost',['countCrossingByDirectionHost',['../CountCrossing_8cuh.html#ad1ee3f5a7a6dfb2a7cc7e1820b833c43',1,'CountCrossing.cuh']]],
