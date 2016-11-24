@@ -3,7 +3,7 @@ var searchData=
   ['name',['name',['../classFixes.html#a375ab3e64204d3e9fe8ffe7821a9c8fd',1,'Fixes::name()'],['../classTexture2D.html#afddb3232f69f78c1860cd3fb212b40e4',1,'Texture2D::name()']]],
   ['next',['next',['../classTimeSeparation.html#acb8ffdae615e317f817a3210c94ebf5bab71d8b5889997ebd49d3f706344a1301',1,'TimeSeparation']]],
   ['nextdaytime',['nextDayTime',['../classTimeManager.html#abb3908d94bde3f881b929de9838b1394',1,'TimeManager']]],
-  ['now',['now',['../classATFViewerMainGLSL.html#af6f049a640082feae20c2283b145f4a8',1,'ATFViewerMainGLSL::now()'],['../classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731',1,'ATFViewerMain::now()']]],
+  ['now',['now',['../classATFViewerMain.html#a624b253574fa29c91bd27a7ce373f731',1,'ATFViewerMain::now()'],['../classSceanLatLongFlow.html#ab65d8ec61225e193a22bfb764d64d8a1',1,'SceanLatLongFlow::now()']]],
   ['now_5findex',['now_index',['../structPath.html#a0569ee34ab09d49f039e38b897e216d4',1,'Path']]],
   ['nowindex',['nowIndex',['../classPathsVAO.html#a1537c99c7736f681495f9feeaa961c00a6003f845f74fc8943b54b583b7ac02a7',1,'PathsVAO']]],
   ['nowstring',['nowstring',['../unittest_8cpp.html#a481f4aa4a5535fb839f361261341dc7d',1,'unittest.cpp']]]

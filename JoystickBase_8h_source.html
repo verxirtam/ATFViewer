@@ -120,8 +120,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//ジョイスティック自体が有効かを返す</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">//ジョイスティックが読み込めなかった場合はfalseを返す</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classJoystickBase.html#aa9dc4bfb91cda7fd31c1781cce129f02">   34</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickBase.html#aa9dc4bfb91cda7fd31c1781cce129f02">isEnable</a>()</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classJoystickBase.html#a21eab01a57b87152fc625fb213f4a154">   34</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickBase.html#a21eab01a57b87152fc625fb213f4a154">isEnable</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classJoystickBase.html#a35281d615ddd34e212966a701d074cd1">joystickManager</a>.isEnable();</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//イベントの読み取り</span></div>
@@ -132,30 +132,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classJoystickBase.html#a35281d615ddd34e212966a701d074cd1">joystickManager</a>.readJoystickEvent();</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">//軸の状態の取得</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classJoystickBase.html#aa59f4d561c2fdaaccdf3208b03cfdd4a">   46</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classJoystickBase.html#aa59f4d561c2fdaaccdf3208b03cfdd4a">getAxisState</a>(<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classJoystickBase.html#ad70a53c474f71da1ad68c54d8a0d742f">   46</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classJoystickBase.html#ad70a53c474f71da1ad68c54d8a0d742f">getAxisState</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classJoystickBase.html#a35281d615ddd34e212966a701d074cd1">joystickManager</a>.getAxisState(i);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">//ボタンの状態の取得</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">//true:押されている</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">//false:押されていない</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classJoystickBase.html#ac914219bf346bf80b6c4aa66f5bb7e3f">   53</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickBase.html#ac914219bf346bf80b6c4aa66f5bb7e3f">getButtonState</a>(<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classJoystickBase.html#ad4e2a4f7aa0016813b64952f2a7442fd">   53</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickBase.html#ad4e2a4f7aa0016813b64952f2a7442fd">getButtonState</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classJoystickBase.html#a35281d615ddd34e212966a701d074cd1">joystickManager</a>.getButtonState(i);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="ttc" id="classJoystickBase_html_afaef57c63a99cdca32aed4c1777115e6"><div class="ttname"><a href="classJoystickBase.html#afaef57c63a99cdca32aed4c1777115e6">JoystickBase::readJoystickEvent</a></div><div class="ttdeci">void readJoystickEvent()</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:41</div></div>
-<div class="ttc" id="classJoystickBase_html_ac914219bf346bf80b6c4aa66f5bb7e3f"><div class="ttname"><a href="classJoystickBase.html#ac914219bf346bf80b6c4aa66f5bb7e3f">JoystickBase::getButtonState</a></div><div class="ttdeci">bool getButtonState(int i)</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:53</div></div>
 <div class="ttc" id="classJoystickBase_html"><div class="ttname"><a href="classJoystickBase.html">JoystickBase</a></div><div class="ttdef"><b>Definition:</b> JoystickBase.h:23</div></div>
+<div class="ttc" id="classJoystickBase_html_a21eab01a57b87152fc625fb213f4a154"><div class="ttname"><a href="classJoystickBase.html#a21eab01a57b87152fc625fb213f4a154">JoystickBase::isEnable</a></div><div class="ttdeci">bool isEnable() const </div><div class="ttdef"><b>Definition:</b> JoystickBase.h:34</div></div>
 <div class="ttc" id="classJoystickBase_html_a2e4de1ee35f4b6a2d3d71aeb4951c476"><div class="ttname"><a href="classJoystickBase.html#a2e4de1ee35f4b6a2d3d71aeb4951c476">JoystickBase::JoystickBase</a></div><div class="ttdeci">JoystickBase()</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:28</div></div>
-<div class="ttc" id="classJoystickBase_html_aa59f4d561c2fdaaccdf3208b03cfdd4a"><div class="ttname"><a href="classJoystickBase.html#aa59f4d561c2fdaaccdf3208b03cfdd4a">JoystickBase::getAxisState</a></div><div class="ttdeci">float getAxisState(int i)</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:46</div></div>
-<div class="ttc" id="classJoystickBase_html_aa9dc4bfb91cda7fd31c1781cce129f02"><div class="ttname"><a href="classJoystickBase.html#aa9dc4bfb91cda7fd31c1781cce129f02">JoystickBase::isEnable</a></div><div class="ttdeci">bool isEnable()</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:34</div></div>
+<div class="ttc" id="classJoystickBase_html_ad4e2a4f7aa0016813b64952f2a7442fd"><div class="ttname"><a href="classJoystickBase.html#ad4e2a4f7aa0016813b64952f2a7442fd">JoystickBase::getButtonState</a></div><div class="ttdeci">bool getButtonState(int i) const </div><div class="ttdef"><b>Definition:</b> JoystickBase.h:53</div></div>
 <div class="ttc" id="classJoystickBase_html_a35281d615ddd34e212966a701d074cd1"><div class="ttname"><a href="classJoystickBase.html#a35281d615ddd34e212966a701d074cd1">JoystickBase::joystickManager</a></div><div class="ttdeci">JoystickManager joystickManager</div><div class="ttdef"><b>Definition:</b> JoystickBase.h:26</div></div>
+<div class="ttc" id="classJoystickBase_html_ad70a53c474f71da1ad68c54d8a0d742f"><div class="ttname"><a href="classJoystickBase.html#ad70a53c474f71da1ad68c54d8a0d742f">JoystickBase::getAxisState</a></div><div class="ttdeci">float getAxisState(int i) const </div><div class="ttdef"><b>Definition:</b> JoystickBase.h:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 23 2016 22:52:35 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 25 2016 00:52:27 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

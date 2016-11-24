@@ -128,15 +128,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classJoystickManagerGLFW.html#a889908e523f878673226e9630838ca50">buttonCount</a>(0),</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classJoystickManagerGLFW.html#a0ad2bae593c0d6cf8de401e9401c76fa">buttonState</a>(nullptr)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classJoystickManagerGLFW.html#a1592245abf4b7bb7d035e74fa31c44bb">isEnable</a>())</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span>(this-&gt;<a class="code" href="classJoystickManagerGLFW.html#afdb35cf275fddc4fcda2f80c2669eeea">isEnable</a>())</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <a class="code" href="classJoystickManagerGLFW.html#a326c2165f24a6d655d15c2eb132e3176">readJoystickEvent</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">//ジョイスティック自体が有効かを返す</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">//ジョイスティックが読み込めなかった場合はfalseを返す</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#a1592245abf4b7bb7d035e74fa31c44bb">   49</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickManagerGLFW.html#a1592245abf4b7bb7d035e74fa31c44bb">isEnable</a>()</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#afdb35cf275fddc4fcda2f80c2669eeea">   49</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickManagerGLFW.html#afdb35cf275fddc4fcda2f80c2669eeea">isEnable</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> (glfwJoystickPresent(GLFW_JOYSTICK_1) == GLFW_TRUE);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">//イベントの読み取り</span></div>
@@ -146,8 +146,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classJoystickManagerGLFW.html#a0ad2bae593c0d6cf8de401e9401c76fa">buttonState</a> = glfwGetJoystickButtons(GLFW_JOYSTICK_1, &amp;<a class="code" href="classJoystickManagerGLFW.html#a889908e523f878673226e9630838ca50">buttonCount</a>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">//軸の状態の取得</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#a8f25fa9d5b99886913673084586de069">   60</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classJoystickManagerGLFW.html#a8f25fa9d5b99886913673084586de069">getAxisState</a>(<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#a431c9bc61557896149bfa6a620327c86">   60</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="classJoystickManagerGLFW.html#a431c9bc61557896149bfa6a620327c86">getAxisState</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">if</span>(i &lt; 0 || i &gt;= <a class="code" href="classJoystickManagerGLFW.html#a2aa610d4195f54e2d83255576aa979b4">axisCount</a>)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">return</span> 0;</div>
@@ -157,8 +157,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">//ボタンの状態の取得</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//true:押されている</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//false:押されていない</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#a064934d1e7bb7767cdd363c296fb193b">   71</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickManagerGLFW.html#a064934d1e7bb7767cdd363c296fb193b">getButtonState</a>(<span class="keywordtype">int</span> i)</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classJoystickManagerGLFW.html#a17df32b82f30f9b806a0dfc88891bc9a">   71</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJoystickManagerGLFW.html#a17df32b82f30f9b806a0dfc88891bc9a">getButtonState</a>(<span class="keywordtype">int</span> i)<span class="keyword"> const</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">    </span>{</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">if</span>(i &lt; 0 || i &gt;= <a class="code" href="classJoystickManagerGLFW.html#a889908e523f878673226e9630838ca50">buttonCount</a>)</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -168,21 +168,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;};</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="ttc" id="classJoystickManagerGLFW_html_a8f25fa9d5b99886913673084586de069"><div class="ttname"><a href="classJoystickManagerGLFW.html#a8f25fa9d5b99886913673084586de069">JoystickManagerGLFW::getAxisState</a></div><div class="ttdeci">float getAxisState(int i)</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:60</div></div>
+<div class="ttc" id="classJoystickManagerGLFW_html_afdb35cf275fddc4fcda2f80c2669eeea"><div class="ttname"><a href="classJoystickManagerGLFW.html#afdb35cf275fddc4fcda2f80c2669eeea">JoystickManagerGLFW::isEnable</a></div><div class="ttdeci">bool isEnable() const </div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:49</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_ae29c325b60160d7de1e0cebfcb76ab7e"><div class="ttname"><a href="classJoystickManagerGLFW.html#ae29c325b60160d7de1e0cebfcb76ab7e">JoystickManagerGLFW::axisState</a></div><div class="ttdeci">const float * axisState</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:30</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_a326c2165f24a6d655d15c2eb132e3176"><div class="ttname"><a href="classJoystickManagerGLFW.html#a326c2165f24a6d655d15c2eb132e3176">JoystickManagerGLFW::readJoystickEvent</a></div><div class="ttdeci">void readJoystickEvent()</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:54</div></div>
+<div class="ttc" id="classJoystickManagerGLFW_html_a431c9bc61557896149bfa6a620327c86"><div class="ttname"><a href="classJoystickManagerGLFW.html#a431c9bc61557896149bfa6a620327c86">JoystickManagerGLFW::getAxisState</a></div><div class="ttdeci">float getAxisState(int i) const </div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:60</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_a416e14142501aa2c0b363ea2dde47154"><div class="ttname"><a href="classJoystickManagerGLFW.html#a416e14142501aa2c0b363ea2dde47154">JoystickManagerGLFW::JoystickManagerGLFW</a></div><div class="ttdeci">JoystickManagerGLFW()</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:36</div></div>
-<div class="ttc" id="classJoystickManagerGLFW_html_a064934d1e7bb7767cdd363c296fb193b"><div class="ttname"><a href="classJoystickManagerGLFW.html#a064934d1e7bb7767cdd363c296fb193b">JoystickManagerGLFW::getButtonState</a></div><div class="ttdeci">bool getButtonState(int i)</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:71</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html"><div class="ttname"><a href="classJoystickManagerGLFW.html">JoystickManagerGLFW</a></div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:24</div></div>
+<div class="ttc" id="classJoystickManagerGLFW_html_a17df32b82f30f9b806a0dfc88891bc9a"><div class="ttname"><a href="classJoystickManagerGLFW.html#a17df32b82f30f9b806a0dfc88891bc9a">JoystickManagerGLFW::getButtonState</a></div><div class="ttdeci">bool getButtonState(int i) const </div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:71</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
-<div class="ttc" id="classJoystickManagerGLFW_html_a1592245abf4b7bb7d035e74fa31c44bb"><div class="ttname"><a href="classJoystickManagerGLFW.html#a1592245abf4b7bb7d035e74fa31c44bb">JoystickManagerGLFW::isEnable</a></div><div class="ttdeci">bool isEnable()</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:49</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_a889908e523f878673226e9630838ca50"><div class="ttname"><a href="classJoystickManagerGLFW.html#a889908e523f878673226e9630838ca50">JoystickManagerGLFW::buttonCount</a></div><div class="ttdeci">int buttonCount</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:32</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_a2aa610d4195f54e2d83255576aa979b4"><div class="ttname"><a href="classJoystickManagerGLFW.html#a2aa610d4195f54e2d83255576aa979b4">JoystickManagerGLFW::axisCount</a></div><div class="ttdeci">int axisCount</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:28</div></div>
 <div class="ttc" id="classJoystickManagerGLFW_html_a0ad2bae593c0d6cf8de401e9401c76fa"><div class="ttname"><a href="classJoystickManagerGLFW.html#a0ad2bae593c0d6cf8de401e9401c76fa">JoystickManagerGLFW::buttonState</a></div><div class="ttdeci">const unsigned char * buttonState</div><div class="ttdef"><b>Definition:</b> JoystickManagerGLFW.h:34</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Nov 23 2016 22:52:35 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 25 2016 00:52:27 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

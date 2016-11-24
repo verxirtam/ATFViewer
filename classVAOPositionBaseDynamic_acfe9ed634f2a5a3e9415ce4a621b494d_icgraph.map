@@ -1,3 +1,5 @@
 <map id="VAOPositionBaseDynamic::initMain" name="VAOPositionBaseDynamic::initMain">
 <area shape="rect" id="node2" href="$classPathsVAO.html#a2849f5ce99734a810a6a30fe897a2eb0" title="PathsVAO::display" alt="" coords="232,12,365,39"/>
+<area shape="rect" id="node3" href="$classSceanLatLongFlow.html#ab25b9b3fbcfae746d5edf22a3ba06abd" title="SceanLatLongFlow::display" alt="" coords="414,12,597,39"/>
+<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a1ba161e67f5b806165c484280a85d96f" title="SceanLatLongFlow::keyboard" alt="" coords="645,12,840,39"/>
 </map>

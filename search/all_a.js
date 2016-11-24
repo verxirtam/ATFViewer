@@ -6,7 +6,7 @@ var searchData=
   ['joystickbase',['JoystickBase',['../classJoystickBase.html',1,'JoystickBase&lt; JoystickManager &gt;'],['../classJoystickBase.html#a2e4de1ee35f4b6a2d3d71aeb4951c476',1,'JoystickBase::JoystickBase()']]],
   ['joystickbase_2eh',['JoystickBase.h',['../JoystickBase_8h.html',1,'']]],
   ['joystickbase_3c_20joystickmanagerglfw_20_3e',['JoystickBase&lt; JoystickManagerGLFW &gt;',['../classJoystickBase.html',1,'']]],
-  ['joystickinput',['joystickInput',['../classATFViewerMainGLSL.html#a593a3f16b3f4360853a3be8bc2a01295',1,'ATFViewerMainGLSL']]],
+  ['joystickinput',['joystickInput',['../classATFViewerMainGLSL.html#a593a3f16b3f4360853a3be8bc2a01295',1,'ATFViewerMainGLSL::joystickInput()'],['../classScean.html#a9eb676d75948e126a44d6660c5950862',1,'Scean::joystickInput()'],['../classSceanLatLongFlow.html#a23250742e12e674230f6e8e7fa791b29',1,'SceanLatLongFlow::joystickInput()']]],
   ['joystickmanager',['joystickManager',['../classJoystickBase.html#a35281d615ddd34e212966a701d074cd1',1,'JoystickBase']]],
   ['joystickmanagerglfw',['JoystickManagerGLFW',['../classJoystickManagerGLFW.html',1,'JoystickManagerGLFW'],['../classJoystickManagerGLFW.html#a416e14142501aa2c0b363ea2dde47154',1,'JoystickManagerGLFW::JoystickManagerGLFW()']]],
   ['joystickmanagerglfw_2eh',['JoystickManagerGLFW.h',['../JoystickManagerGLFW_8h.html',1,'']]],

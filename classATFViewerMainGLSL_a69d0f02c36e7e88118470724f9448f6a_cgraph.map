@@ -3,10 +3,9 @@
 <area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8" title="ATFViewerMainGLSL::\lcreateWindow" alt="" coords="227,70,383,111"/>
 <area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#af5b531e85432b40de7f29e4fdc0e1e1e" title="ATFViewerMainGLSL::\linitGLEW" alt="" coords="227,135,383,177"/>
 <area shape="rect" id="node5" href="$classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="227,201,383,242"/>
-<area shape="rect" id="node11" href="$classATFViewerMainGLSL.html#a36e75bc6a338356b9613724009abb0a3" title="ATFViewerMainGLSL::\linitScene" alt="" coords="227,266,383,307"/>
-<area shape="rect" id="node6" href="$classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="433,169,589,210"/>
-<area shape="rect" id="node9" href="$classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="433,234,589,275"/>
-<area shape="rect" id="node7" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="638,201,794,242"/>
-<area shape="rect" id="node8" href="$classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="638,135,794,177"/>
-<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="638,266,794,307"/>
+<area shape="rect" id="node6" href="$classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="433,167,589,209"/>
+<area shape="rect" id="node9" href="$classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="433,233,589,274"/>
+<area shape="rect" id="node7" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="638,199,794,241"/>
+<area shape="rect" id="node8" href="$classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="638,134,794,175"/>
+<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="638,265,794,306"/>
 </map>
