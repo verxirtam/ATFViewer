@@ -15,8 +15,8 @@
  *
  * =====================================================================================
  */
-#ifndef TimeManager_H_
-#define TimeManager_H_
+#pragma once
+
 #include <ctime>
 
 class TimeManager
@@ -43,4 +43,3 @@ public:
 };
 
 
-#endif

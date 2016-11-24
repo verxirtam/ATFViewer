@@ -16,8 +16,7 @@
  * =====================================================================================
  */
 
-#ifndef cudatestfunc_H_
-#define cudatestfunc_H_
+#pragma once
 
 #include <cmath>
 
@@ -236,5 +235,4 @@ void countCrossingSequence
 }
 
 
-#endif
 

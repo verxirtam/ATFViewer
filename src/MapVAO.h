@@ -16,9 +16,8 @@
  * =====================================================================================
  */
 
+#pragma once
 
-#ifndef MAP_H_
-#define MAP_H_
 
 #include <cstdio>
 #include <cstdlib>
@@ -106,4 +105,3 @@ public:
 
 
 
-#endif

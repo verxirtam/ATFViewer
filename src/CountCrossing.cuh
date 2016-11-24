@@ -17,8 +17,7 @@
  */
 
 
-#ifndef CountCrossing_host_H_
-#define CountCrossing_host_H_
+#pragma once
 
 #include <vector>
 #include <cuda_runtime.h>
@@ -610,4 +609,3 @@ void countCrossingSequenceDeviceImple
 	cudaFree(vertex_d);
 }
 
-#endif

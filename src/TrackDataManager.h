@@ -15,8 +15,7 @@
  *
  * =====================================================================================
  */
-#ifndef TrackDataManager_H_
-#define TrackDataManager_H_
+#pragma once
 
 #include <ctime>
 #include <vector>
@@ -345,4 +344,3 @@ public:
 
 
 
-#endif

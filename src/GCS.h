@@ -17,8 +17,7 @@
  */
 
 
-#ifndef GCS_H_
-#define GCS_H_
+#pragma once
 
 #include <vector>
 
@@ -27,4 +26,3 @@
 //頂点配列が右回り(時計回り)かどうかを判定する
 bool isClockwise(const std::vector<unsigned int>& longLatIndex, const std::vector<LongLat>& longLat);
 
-#endif

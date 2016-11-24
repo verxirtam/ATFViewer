@@ -16,8 +16,7 @@
  * =====================================================================================
  */
 
-#ifndef Sectors_H
-#define Sectors_H
+#pragma once
 
 #include <algorithm>
 #include <vector>
@@ -192,4 +191,3 @@ public:
 
 
 
-#endif

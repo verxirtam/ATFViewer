@@ -16,8 +16,7 @@
  * =====================================================================================
  */
 
-#ifndef DBAccessor_H_
-#define DBAccessor_H_
+#pragma once
 
 #include <iostream>
 
@@ -130,5 +129,4 @@ public:
 	}
 };
 
-#endif
 

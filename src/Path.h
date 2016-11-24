@@ -15,8 +15,7 @@
  *
  * =====================================================================================
  */
-#ifndef Path_H
-#define Path_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -103,4 +102,3 @@ struct Path
 	}
 };
 
-#endif
