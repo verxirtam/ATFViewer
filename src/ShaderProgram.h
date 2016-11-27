@@ -20,6 +20,8 @@
 
 #include "OpenGLHeaders.h"
 
+#include "Shader.h"
+
 
 #include <iostream>
 

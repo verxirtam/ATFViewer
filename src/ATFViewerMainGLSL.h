@@ -26,6 +26,7 @@
 #include "OpenGLHeaders.h"
 #include "Joystick.h"
 
+#include "SceanNothing.h"
 #include "SceanLatLongFlow.h"
 
 class ATFViewerMainGLSL
@@ -168,6 +169,7 @@ public:
 		
 		//シーンの初期化
 		scean.reset(new SceanLatLongFlow());
+		//scean.reset(new SceanNothing());
 		scean->init();
 	}
 	void execMainLoop(void)

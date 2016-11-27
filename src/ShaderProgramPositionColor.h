@@ -19,7 +19,7 @@
 #pragma once
 
 #include "Shader.h"
-#include "ShaderProgram.h"
+#include "ShaderProgramVertexFragment.h"
 #include "UniformVariable.h"
 #include "VAOPositionColor.h"
 
@@ -27,16 +27,12 @@
 class ShaderProgramPositionColor
 {
 private:
-	Shader vertShader;
-	Shader fragShader;
-	ShaderProgram shaderProgram;
+	ShaderProgramVertexFragment shaderProgram;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
 	ShaderProgramPositionColor()
 		:
-			vertShader(GL_VERTEX_SHADER,  "basic.vert"),
-			fragShader(GL_FRAGMENT_SHADER,"basic.frag"),
-			shaderProgram(),
+			shaderProgram("basic.vert", "basic.frag"),
 			mvpMatrix()
 	{
 	}

@@ -37,7 +37,6 @@ CountCrossing	CountCrossing.h	/^	CountCrossing():$/;"	f	class:CountCrossing
 CountCrossing	CountCrossing.h	/^class CountCrossing$/;"	c
 DBAccessor	DBAccessor.h	/^	DBAccessor(const std::string& dbfilename):dbFileName(dbfilename),db(NULL),stmt(NULL)$/;"	f	class:DBAccessor
 DBAccessor	DBAccessor.h	/^class DBAccessor$/;"	c
-DBAccessor_H_	DBAccessor.h	20;"	d
 DEF_LOCK	Lock.h	29;"	d
 DEPS	makefile	/^DEPS := $(SRCS:.cpp=.d) $(CUDA_SRCS:.cu=.d)$/;"	m
 EstimateSpec	unittest.cpp	/^void EstimateSpec(int hours, EstimateSpecResult& esr)$/;"	f
@@ -45,7 +44,6 @@ EstimateSpecResult	unittest.cpp	/^struct EstimateSpecResult$/;"	s	file:
 FIXES_H_	old/20161026/Fixes.h	20;"	d
 Fixes	old/20161026/Fixes.h	/^	Fixes()$/;"	f	class:Fixes
 Fixes	old/20161026/Fixes.h	/^class Fixes$/;"	c
-GCS_H_	GCS.h	21;"	d
 GLM_FORCE_RADIANS	MapTransform.h	21;"	d
 GLM_FORCE_RADIANS	OpenGLHeaders.h	24;"	d
 GLTESTTARGET	makefile	/^GLTESTTARGET := glunittest$/;"	m
@@ -64,7 +62,6 @@ KeyCode_F310	Joystick.h	/^enum KeyCode_F310$/;"	g
 LongLatBase	LongLat.h	/^struct LongLatBase$/;"	s
 MAKETEST_EXIST	makefile	/^MAKETEST_EXIST = glunittest$/;"	m
 MAKETEST_NOTEXIST	makefile	/^MAKETEST_NOTEXIST = notexistfile$/;"	m
-MAP_H_	MapVAO.h	21;"	d
 MAP_H_	old/20161026/Map.h	21;"	d
 Map	old/20161026/Map.h	/^	Map(const std::string& map_id)$/;"	f	class:Map
 Map	old/20161026/Map.h	/^class Map$/;"	c
@@ -94,7 +91,6 @@ Path	Path.h	/^	Path()$/;"	f	struct:Path
 Path	Path.h	/^struct Path$/;"	s
 PathPoint	Path.h	/^	PathPoint(double lo,double la, int a, long long t, const std::string ar)$/;"	f	struct:PathPoint
 PathPoint	Path.h	/^struct PathPoint$/;"	s
-Path_H	Path.h	19;"	d
 Paths	old/20161026/Paths.h	/^	Paths()$/;"	f	class:Paths
 Paths	old/20161026/Paths.h	/^class Paths$/;"	c
 PathsVAO	PathsVAO.h	/^	PathsVAO(ShaderProgramPaths& spp)$/;"	f	class:PathsVAO
@@ -105,6 +101,7 @@ SRCS	makefile	/^SRCS := $(shell ls *.cpp)$/;"	m
 Scean	Scean.h	/^class Scean$/;"	c
 SceanLatLongFlow	SceanLatLongFlow.h	/^	SceanLatLongFlow():$/;"	f	class:SceanLatLongFlow
 SceanLatLongFlow	SceanLatLongFlow.h	/^class SceanLatLongFlow : public Scean$/;"	c
+SceanNothing	SceanNothing.h	/^class SceanNothing : public Scean$/;"	c
 Sector	SectorsVAO.h	/^		Sector()$/;"	f	struct:SectorsVAO::Sector
 Sector	SectorsVAO.h	/^	struct Sector$/;"	s	class:SectorsVAO
 Sector	old/20161026/Sectors.h	/^		Sector()$/;"	f	struct:Sectors::Sector
@@ -113,7 +110,6 @@ Sectors	old/20161026/Sectors.h	/^	Sectors():sector(),longLat(),displayAll(true),
 Sectors	old/20161026/Sectors.h	/^class Sectors$/;"	c
 SectorsVAO	SectorsVAO.h	/^	SectorsVAO(ShaderProgramPositionColor& s)$/;"	f	class:SectorsVAO
 SectorsVAO	SectorsVAO.h	/^class SectorsVAO$/;"	c
-Sectors_H	SectorsVAO.h	20;"	d
 Sectors_H	old/20161026/Sectors.h	20;"	d
 Shader	Shader.h	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
@@ -126,6 +122,8 @@ ShaderProgramPositionColor	ShaderProgramPositionColor.h	/^	ShaderProgramPosition
 ShaderProgramPositionColor	ShaderProgramPositionColor.h	/^class ShaderProgramPositionColor$/;"	c
 ShaderProgramTexture	ShaderProgramTexture.h	/^	ShaderProgramTexture()$/;"	f	class:ShaderProgramTexture
 ShaderProgramTexture	ShaderProgramTexture.h	/^class ShaderProgramTexture$/;"	c
+ShaderProgramVertexFragment	ShaderProgramVertexFragment.h	/^	ShaderProgramVertexFragment(const std::string& vertshaderfilename, const std::string& fragshaderfilename)$/;"	f	class:ShaderProgramVertexFragment
+ShaderProgramVertexFragment	ShaderProgramVertexFragment.h	/^class ShaderProgramVertexFragment$/;"	c
 SubSector	SectorsVAO.h	/^		SubSector()$/;"	f	struct:SectorsVAO::SubSector
 SubSector	SectorsVAO.h	/^	struct SubSector$/;"	s	class:SectorsVAO
 SubSector	old/20161026/Sectors.h	/^		SubSector()$/;"	f	struct:Sectors::SubSector
@@ -144,14 +142,11 @@ TestVBO	old/20161026/TestVBO.h	/^class TestVBO$/;"	c
 Texture2D	Texture2D.h	/^	Texture2D(GLenum u):name(0), unit(u), target(GL_TEXTURE_2D)$/;"	f	class:Texture2D
 Texture2D	Texture2D.h	/^class Texture2D$/;"	c
 TimeManager	TimeManager.h	/^class TimeManager$/;"	c
-TimeManager_H_	TimeManager.h	19;"	d
 TimeSeparation	TimeSeparation.h	/^	TimeSeparation(time_t _min = 0, time_t _max = 10, time_t _width = 100)$/;"	f	class:TimeSeparation
 TimeSeparation	TimeSeparation.h	/^class TimeSeparation$/;"	c
 Timer	unittest.cpp	/^	Timer():startTime(0.0),endTime(0.0)$/;"	f	class:Timer
 Timer	unittest.cpp	/^class Timer$/;"	c	file:
 TrackDataManager	TrackDataManager.h	/^class TrackDataManager$/;"	c
-TrackDataManager_H_	TrackDataManager.h	19;"	d
-UTIL_H_	Util.h	19;"	d
 UniformVariable	UniformVariable.h	/^class UniformVariable$/;"	c
 Util	Util.h	/^class Util$/;"	c
 VAOBase	VAOBase.h	/^	VAOBase():handle(0)$/;"	f	class:VAOBase
@@ -358,7 +353,6 @@ counter	CountCrossing.h	/^	std::vector<float> counter;$/;"	m	class:CountCrossing
 counterCount	unittest.cpp	/^	int counterCount;$/;"	m	struct:EstimateSpecResult	file:
 counter_device	CountCrossing.h	/^	std::vector<float> counter_device;$/;"	m	class:CountCrossing
 createWindow	ATFViewerMainGLSL.h	/^	void createWindow()$/;"	f	class:ATFViewerMainGLSL
-cudatestfunc_H_	cudatestfunc.h	20;"	d
 cudatestfunctest	unittest.cpp	/^void cudatestfunctest()$/;"	f
 current	TimeSeparation.h	/^		current = 0,$/;"	e	enum:TimeSeparation::Position
 currentIndex	TimeSeparation.h	/^	unsigned int currentIndex;$/;"	m	class:TimeSeparation
@@ -374,9 +368,11 @@ disp_X	old/20161026/ATFViewerMain.h	/^	int disp_X;$/;"	m	class:ATFViewerMain
 disp_Y	old/20161026/ATFViewerMain.h	/^	int disp_Y;$/;"	m	class:ATFViewerMain
 disp_Z	old/20161026/ATFViewerMain.h	/^	int disp_Z;$/;"	m	class:ATFViewerMain
 disp_buttonMask	old/20161026/ATFViewerMain.h	/^	unsigned int disp_buttonMask;$/;"	m	class:ATFViewerMain
+display	ATFViewerMainGLSL.h	/^	void display(GLFWwindow* window)$/;"	f	class:ATFViewerMainGLSL
 display	MapVAO.cpp	/^void MapVAO::display(void)$/;"	f	class:MapVAO
 display	PathsVAO.cpp	/^int PathsVAO::display(time_t now)$/;"	f	class:PathsVAO
 display	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::display(GLFWwindow* window)$/;"	f	class:SceanLatLongFlow
+display	SceanNothing.h	/^	virtual void display(GLFWwindow* window)$/;"	f	class:SceanNothing
 display	SectorsVAO.h	/^	void display()$/;"	f	class:SectorsVAO
 display	VAOPositionBase.h	/^	void display(void)$/;"	f	class:VAOPositionBase
 display	VAOPositionBaseDynamic.h	/^	void display()$/;"	f	class:VAOPositionBaseDynamic
@@ -428,19 +424,19 @@ f	unittest.cpp	/^	F f;$/;"	m	class:TestThread_MemFunc	file:
 file	JoystickManagerSystem.h	/^	int file;$/;"	m	class:JoystickManagerSystem
 fixes	old/20161026/ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
 fragShader	ShaderProgramPaths.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramPaths
-fragShader	ShaderProgramPositionColor.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramPositionColor
 fragShader	ShaderProgramTexture.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramTexture
+fragShader	ShaderProgramVertexFragment.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramVertexFragment
 function1	unittest.cpp	/^	void function1()$/;"	f	class:TestUseThread	file:
 functype	unittest.cpp	/^	typedef void (TestUseThread::*functype)();$/;"	t	class:TestUseThread	file:
 futureMakeBuffer	PathsVAO.h	/^	std::future<void> futureMakeBuffer;$/;"	m	class:PathsVAO
 futureMakeBuffer	old/20161026/Paths.h	/^	std::future<void> futureMakeBuffer;$/;"	m	class:Paths
 getAllTrackData	unittest.cpp	/^void getAllTrackData(void)$/;"	f
 getAllTrackDataReserve	unittest.cpp	/^void getAllTrackDataReserve(void)$/;"	f
-getAxisState	JoystickBase.h	/^	float getAxisState(int i)$/;"	f	class:JoystickBase
-getAxisState	JoystickManagerGLFW.h	/^	float getAxisState(int i)$/;"	f	class:JoystickManagerGLFW
+getAxisState	JoystickBase.h	/^	float getAxisState(int i) const$/;"	f	class:JoystickBase
+getAxisState	JoystickManagerGLFW.h	/^	float getAxisState(int i) const$/;"	f	class:JoystickManagerGLFW
 getAxisState	JoystickManagerSystem.h	/^	float getAxisState(int i)$/;"	f	class:JoystickManagerSystem
-getButtonState	JoystickBase.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickBase
-getButtonState	JoystickManagerGLFW.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickManagerGLFW
+getButtonState	JoystickBase.h	/^	bool getButtonState(int i) const$/;"	f	class:JoystickBase
+getButtonState	JoystickManagerGLFW.h	/^	bool getButtonState(int i) const$/;"	f	class:JoystickManagerGLFW
 getButtonState	JoystickManagerSystem.h	/^	bool getButtonState(int i)$/;"	f	class:JoystickManagerSystem
 getCenterOffsetLat	MapTransform.h	/^	GLdouble getCenterOffsetLat(void)$/;"	f	class:MapTransform
 getCenterOffsetLong	MapTransform.h	/^	GLdouble getCenterOffsetLong(void)$/;"	f	class:MapTransform
@@ -526,12 +522,14 @@ indexListItem	PathsVAO.h	/^	enum indexListItem$/;"	g	class:PathsVAO
 init	ATFViewerMainGLSL.h	/^	void init(void)$/;"	f	class:ATFViewerMainGLSL
 init	MapVAO.cpp	/^void MapVAO::init(DBAccessor& dba)$/;"	f	class:MapVAO
 init	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::init(void)$/;"	f	class:SceanLatLongFlow
+init	SceanNothing.h	/^	virtual void init()$/;"	f	class:SceanNothing
 init	SectorsVAO.h	/^	void init(DBAccessor& dba)$/;"	f	class:SectorsVAO
 init	Shader.h	/^	void init()$/;"	f	class:Shader
 init	ShaderProgram.h	/^	void init()$/;"	f	class:ShaderProgram
 init	ShaderProgramPaths.cpp	/^void ShaderProgramPaths::init(void)$/;"	f	class:ShaderProgramPaths
 init	ShaderProgramPositionColor.cpp	/^void ShaderProgramPositionColor::init(void)$/;"	f	class:ShaderProgramPositionColor
 init	ShaderProgramTexture.cpp	/^void ShaderProgramTexture::init(void)$/;"	f	class:ShaderProgramTexture
+init	ShaderProgramVertexFragment.cpp	/^void ShaderProgramVertexFragment::init(void)$/;"	f	class:ShaderProgramVertexFragment
 init	Texture2D.cpp	/^void Texture2D::init(const std::string& filepath, int width, int height)$/;"	f	class:Texture2D
 init	VAOBase.h	/^	void init()$/;"	f	class:VAOBase
 init	VAOPositionBase.h	/^void VAOPositionBase<S, VBOClass, VBOElementClass, VAOLayoutClass>::init$/;"	f	class:VAOPositionBase
@@ -585,8 +583,8 @@ insideLongLatIndex	SectorsVAO.h	/^		std::vector<unsigned int> insideLongLatIndex
 insideLongLatIndex	old/20161026/Sectors.h	/^		std::vector<unsigned int> insideLongLatIndex;$/;"	m	struct:Sectors::SubSector
 interval	CountCrossing.h	/^	std::vector<float> interval;$/;"	m	class:CountCrossing
 isClockwise	GCS.cpp	/^bool isClockwise(const std::vector<unsigned int>& longLatIndex, const std::vector<LongLat>& longLat)$/;"	f
-isEnable	JoystickBase.h	/^	bool isEnable()$/;"	f	class:JoystickBase
-isEnable	JoystickManagerGLFW.h	/^	bool isEnable()$/;"	f	class:JoystickManagerGLFW
+isEnable	JoystickBase.h	/^	bool isEnable() const$/;"	f	class:JoystickBase
+isEnable	JoystickManagerGLFW.h	/^	bool isEnable() const$/;"	f	class:JoystickManagerGLFW
 isEnable	JoystickManagerSystem.h	/^	bool isEnable()$/;"	f	class:JoystickManagerSystem
 isExistDBFile	TrackDataManager.h	/^	bool isExistDBFile(const std::string& dbfilename)$/;"	f	class:TrackDataManager
 join	unittest.cpp	/^	void join()$/;"	f	class:TestThread
@@ -594,12 +592,14 @@ join	unittest.cpp	/^	void join()$/;"	f	class:TestThread_MemFunc
 joystick	ATFViewerMainGLSL.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMainGLSL
 joystick	old/20161026/ATFViewerMain.h	/^	Joystick joystick;$/;"	m	class:ATFViewerMain
 joystickInput	ATFViewerMainGLSL.h	/^	void joystickInput()$/;"	f	class:ATFViewerMainGLSL
-joystickInput	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::joystickInput(const Joystick& joystick)$/;"	f	class:SceanLatLongFlow
+joystickInput	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::joystickInput(Joystick& joystick)$/;"	f	class:SceanLatLongFlow
+joystickInput	SceanNothing.h	/^	virtual void joystickInput(Joystick& joystick)$/;"	f	class:SceanNothing
 joystickManager	JoystickBase.h	/^	JoystickManager joystickManager;$/;"	m	class:JoystickBase
 joystickTimer	old/20161026/ATFViewerMain.cpp	/^void ATFViewerMain::joystickTimer(int value)$/;"	f	class:ATFViewerMain
 joystickTimerId	old/20161026/ATFViewerMain.h	/^	const int joystickTimerId;$/;"	m	class:ATFViewerMain
 keyboard	ATFViewerMainGLSL.h	/^	void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)$/;"	f	class:ATFViewerMainGLSL
 keyboard	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)$/;"	f	class:SceanLatLongFlow
+keyboard	SceanNothing.h	/^	virtual void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods)$/;"	f	class:SceanNothing
 keyboard	old/20161026/ATFViewerMain.cpp	/^void ATFViewerMain::keyboard(unsigned char key, int x, int y)$/;"	f	class:ATFViewerMain
 latitude	LongLat.h	/^	T latitude; \/\/\/< 緯度$/;"	m	struct:LongLatBase
 latitude	MapVAO.h	/^		float latitude;$/;"	m	struct:MapVAO::MapVertex
@@ -670,7 +670,7 @@ operator ==	Path.h	/^	bool operator ==(const PathPoint& p) const$/;"	f	struct:Pa
 operator ==	Path.h	/^	bool operator ==(const std::string& s) const$/;"	f	struct:Path
 override	SceanLatLongFlow.h	/^	virtual void display(GLFWwindow* window) override;$/;"	m	class:SceanLatLongFlow
 override	SceanLatLongFlow.h	/^	virtual void init() override;$/;"	m	class:SceanLatLongFlow
-override	SceanLatLongFlow.h	/^	virtual void joystickInput() override;$/;"	m	class:SceanLatLongFlow
+override	SceanLatLongFlow.h	/^	virtual void joystickInput(Joystick& joystick) override;$/;"	m	class:SceanLatLongFlow
 override	SceanLatLongFlow.h	/^	virtual void keyboard(GLFWwindow* window, int key, int scancode, int action, int mods) override;$/;"	m	class:SceanLatLongFlow
 override	SceanLatLongFlow.h	/^	virtual void resize(GLFWwindow* window, int w, int h) override;$/;"	m	class:SceanLatLongFlow
 pastIndex	PathsVAO.h	/^		pastIndex = 1,$/;"	e	enum:PathsVAO::indexListItem
@@ -699,6 +699,7 @@ resetTime	PathsVAO.cpp	/^void PathsVAO::resetTime(void)$/;"	f	class:PathsVAO
 resetTime	old/20161026/Paths.cpp	/^void Paths::resetTime(void)$/;"	f	class:Paths
 resize	ATFViewerMainGLSL.h	/^	void resize(GLFWwindow* window, int w, int h)$/;"	f	class:ATFViewerMainGLSL
 resize	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::resize(GLFWwindow* window, int w, int h)$/;"	f	class:SceanLatLongFlow
+resize	SceanNothing.h	/^	virtual void resize(GLFWwindow* window, int w, int h)$/;"	f	class:SceanNothing
 resize	old/20161026/ATFViewerMain.cpp	/^void ATFViewerMain::resize(int w, int h)$/;"	f	class:ATFViewerMain
 resource	VBO.h	/^	cudaGraphicsResource* resource;$/;"	m	class:VBODynamicBase
 run	unittest.cpp	/^	void run()$/;"	f	class:TestThread
@@ -714,7 +715,7 @@ s	ShaderProgram.h	/^	ShaderProgram& operator=(const ShaderProgram& s) = delete;$
 s	ShaderProgram.h	/^	ShaderProgram(ShaderProgram&& s) = delete;$/;"	m	class:ShaderProgram
 s	ShaderProgram.h	/^	ShaderProgram(const ShaderProgram& s) = delete;$/;"	m	class:ShaderProgram
 scale	MapTransform.h	/^	double scale;$/;"	m	class:MapTransform
-scean	ATFViewerMainGLSL.h	/^	Scean* scean;$/;"	m	class:ATFViewerMainGLSL
+scean	ATFViewerMainGLSL.h	/^	std::unique_ptr<Scean> scean;$/;"	m	class:ATFViewerMainGLSL
 sector	SceanLatLongFlow.h	/^	SectorsVAO sector;$/;"	m	class:SceanLatLongFlow
 sector	SectorsVAO.h	/^		std::vector<Sector> sector;$/;"	m	struct:SectorsVAO::InitSectorsSettings
 sector	old/20161026/Sectors.h	/^	std::vector<Sector> sector;$/;"	m	class:Sectors
@@ -747,8 +748,9 @@ setStartEndTime	unittest.cpp	/^void setStartEndTime(time_t& start, time_t& end)$
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
 setTransform	MapTransform.h	/^	void setTransform(glm::mat4& m)$/;"	f	class:MapTransform
 shaderProgram	ShaderProgramPaths.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramPaths
-shaderProgram	ShaderProgramPositionColor.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramPositionColor
+shaderProgram	ShaderProgramPositionColor.h	/^	ShaderProgramVertexFragment shaderProgram;$/;"	m	class:ShaderProgramPositionColor
 shaderProgram	ShaderProgramTexture.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramTexture
+shaderProgram	ShaderProgramVertexFragment.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramVertexFragment
 shaderProgram	VAOPositionBase.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionBase
 shaderProgramPaths	SceanLatLongFlow.h	/^	ShaderProgramPaths shaderProgramPaths;$/;"	m	class:SceanLatLongFlow
 shaderProgramPositionColor	SceanLatLongFlow.h	/^	ShaderProgramPositionColor shaderProgramPositionColor;$/;"	m	class:SceanLatLongFlow
@@ -825,6 +827,7 @@ unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
 unuse	ShaderProgramPaths.h	/^	void unuse()$/;"	f	class:ShaderProgramPaths
 unuse	ShaderProgramPositionColor.h	/^	void unuse()$/;"	f	class:ShaderProgramPositionColor
 unuse	ShaderProgramTexture.h	/^	void unuse()$/;"	f	class:ShaderProgramTexture
+unuse	ShaderProgramVertexFragment.h	/^	void unuse()$/;"	f	class:ShaderProgramVertexFragment
 updateNowIndex	PathsVAO.cpp	/^void PathsVAO::updateNowIndex(Path& p, time_t now)$/;"	f	class:PathsVAO
 updateNowIndex	old/20161026/Paths.cpp	/^void Paths::updateNowIndex(Path& p, time_t now)$/;"	f	class:Paths
 updatePastTimeIndex	PathsVAO.cpp	/^void PathsVAO::updatePastTimeIndex(Path& p, time_t past_time)$/;"	f	class:PathsVAO
@@ -834,6 +837,7 @@ use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
 use	ShaderProgramPaths.h	/^	void use()$/;"	f	class:ShaderProgramPaths
 use	ShaderProgramPositionColor.h	/^	void use()$/;"	f	class:ShaderProgramPositionColor
 use	ShaderProgramTexture.h	/^	void use()$/;"	f	class:ShaderProgramTexture
+use	ShaderProgramVertexFragment.h	/^	void use()$/;"	f	class:ShaderProgramVertexFragment
 v	MapVAO.h	/^		float v;$/;"	m	struct:MapVAO::MapVertex
 v	VAOBase.h	/^	VAOBase& operator=(VAOBase&& v) = delete;$/;"	m	class:VAOBase
 v	VAOBase.h	/^	VAOBase& operator=(const VAOBase& v) = delete;$/;"	m	class:VAOBase
@@ -847,8 +851,8 @@ vao	old/20161026/TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
 vaoLayout	VAOPositionBase.h	/^	VAOLayoutClass vaoLayout;$/;"	m	class:VAOPositionBase
 vbo	old/20161026/TestVBO.h	/^	GLuint vbo;$/;"	m	class:TestVBO
 vertShader	ShaderProgramPaths.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramPaths
-vertShader	ShaderProgramPositionColor.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramPositionColor
 vertShader	ShaderProgramTexture.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramTexture
+vertShader	ShaderProgramVertexFragment.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramVertexFragment
 vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertex	VAOPositionBase.h	/^	VBOClass vertex;$/;"	m	class:VAOPositionBase
 vertexCount	unittest.cpp	/^	int vertexCount;$/;"	m	struct:EstimateSpecResult	file:
@@ -868,6 +872,7 @@ windowWidth	old/20161026/ATFViewerMain.h	/^	int windowWidth;$/;"	m	class:ATFView
 ~PathsVAO	PathsVAO.h	/^	~PathsVAO()$/;"	f	class:PathsVAO
 ~Scean	Scean.h	/^	virtual ~Scean()$/;"	f	class:Scean
 ~SceanLatLongFlow	SceanLatLongFlow.h	/^	virtual ~SceanLatLongFlow()$/;"	f	class:SceanLatLongFlow
+~SceanNothing	SceanNothing.h	/^	virtual ~SceanNothing()$/;"	f	class:SceanNothing
 ~Shader	Shader.h	/^	~Shader()$/;"	f	class:Shader
 ~ShaderProgram	ShaderProgram.h	/^	~ShaderProgram()$/;"	f	class:ShaderProgram
 ~TestUseThread	unittest.cpp	/^	~TestUseThread()$/;"	f	class:TestUseThread

@@ -357,6 +357,7 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     TimeSeparation.h \
     ShaderProgramPaths.h \
     Shader.h \
+    ShaderProgramVertexFragment.h \
     ShaderProgram.h \
     UniformVariable.h \
     VAOPaths.h \

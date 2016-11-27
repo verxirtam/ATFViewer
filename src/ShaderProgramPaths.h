@@ -19,7 +19,7 @@
 #pragma once
 
 #include "Shader.h"
-#include "ShaderProgram.h"
+#include "ShaderProgramVertexFragment.h"
 #include "UniformVariable.h"
 #include "VAOPaths.h"
 
@@ -27,16 +27,12 @@
 class ShaderProgramPaths
 {
 private:
-	Shader vertShader;
-	Shader fragShader;
-	ShaderProgram shaderProgram;
+	ShaderProgramVertexFragment shaderProgram;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
 	ShaderProgramPaths()
 		:
-			vertShader(GL_VERTEX_SHADER,  "paths.vert"),
-			fragShader(GL_FRAGMENT_SHADER,"paths.frag"),
-			shaderProgram(),
+			shaderProgram("paths.vert", "paths.frag"),
 			mvpMatrix()
 	{
 	}
