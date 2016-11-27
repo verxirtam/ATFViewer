@@ -15,7 +15,7 @@
  *
  * =====================================================================================
  */
-
+/*
 #include "ShaderProgramPositionColor.h"
 
 
@@ -25,4 +25,4 @@ void ShaderProgramPositionColor::init(void)
 	
 	mvpMatrix.setLocation(shaderProgram.getHandle(), "mvpMatrix");
 }
-
+*/

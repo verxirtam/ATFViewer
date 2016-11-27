@@ -18,6 +18,33 @@
 
 #pragma once
 
+#include "ShaderProgramBaseMVPMatrix.h"
+#include "VAOPositionColor.h"
+
+class ShaderVertPathBasic
+{
+public:
+	static std::string getPath()
+	{
+		return "basic.vert";
+	}
+};
+
+
+class ShaderFragPathBasic
+{
+public:
+	static std::string getPath()
+	{
+		return "basic.frag";
+	}
+};
+
+using ShaderProgramPositionColor = ShaderProgramBaseMVPMatrix<ShaderVertPathBasic, ShaderFragPathBasic, VAOPositionColor, VAOPositionColorDynamic>;
+
+
+
+/*
 #include "Shader.h"
 #include "ShaderProgramVertexFragment.h"
 #include "UniformVariable.h"
@@ -54,4 +81,4 @@ public:
 	using vaoType = VAOPositionColor<ShaderProgramPositionColor>;
 	using vaoTypeDynamic = VAOPositionColorDynamic<ShaderProgramPositionColor>;
 };
-
+*/

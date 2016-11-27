@@ -114,16 +114,22 @@ Sectors_H	old/20161026/Sectors.h	20;"	d
 Shader	Shader.h	/^	Shader(GLenum t, const char* path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^	Shader(GLenum t, const std::string& path):handle(0),type(t),sourcePath(path)$/;"	f	class:Shader
 Shader	Shader.h	/^class Shader$/;"	c
+ShaderFragPathBasic	ShaderProgramPositionColor.h	/^class ShaderFragPathBasic$/;"	c
 ShaderProgram	ShaderProgram.h	/^	ShaderProgram():handle(0)$/;"	f	class:ShaderProgram
 ShaderProgram	ShaderProgram.h	/^class ShaderProgram$/;"	c
+ShaderProgramBase	ShaderProgramBase.h	/^	ShaderProgramBase():$/;"	f	class:ShaderProgramBase
+ShaderProgramBase	ShaderProgramBase.h	/^class ShaderProgramBase$/;"	c
+ShaderProgramBaseMVPMatrix	ShaderProgramBaseMVPMatrix.h	/^	ShaderProgramBaseMVPMatrix():$/;"	f	class:ShaderProgramBaseMVPMatrix
+ShaderProgramBaseMVPMatrix	ShaderProgramBaseMVPMatrix.h	/^class ShaderProgramBaseMVPMatrix$/;"	c
 ShaderProgramPaths	ShaderProgramPaths.h	/^	ShaderProgramPaths()$/;"	f	class:ShaderProgramPaths
 ShaderProgramPaths	ShaderProgramPaths.h	/^class ShaderProgramPaths$/;"	c
-ShaderProgramPositionColor	ShaderProgramPositionColor.h	/^	ShaderProgramPositionColor()$/;"	f	class:ShaderProgramPositionColor
-ShaderProgramPositionColor	ShaderProgramPositionColor.h	/^class ShaderProgramPositionColor$/;"	c
 ShaderProgramTexture	ShaderProgramTexture.h	/^	ShaderProgramTexture()$/;"	f	class:ShaderProgramTexture
 ShaderProgramTexture	ShaderProgramTexture.h	/^class ShaderProgramTexture$/;"	c
 ShaderProgramVertexFragment	ShaderProgramVertexFragment.h	/^	ShaderProgramVertexFragment(const std::string& vertshaderfilename, const std::string& fragshaderfilename)$/;"	f	class:ShaderProgramVertexFragment
 ShaderProgramVertexFragment	ShaderProgramVertexFragment.h	/^class ShaderProgramVertexFragment$/;"	c
+ShaderVertPathBasic	ShaderProgramPositionColor.h	/^class ShaderVertPathBasic$/;"	c
+StringVAO	StringVAO.h	/^	StringVAO():$/;"	f	class:StringVAO
+StringVAO	StringVAO.h	/^class StringVAO$/;"	c
 SubSector	SectorsVAO.h	/^		SubSector()$/;"	f	struct:SectorsVAO::SubSector
 SubSector	SectorsVAO.h	/^	struct SubSector$/;"	s	class:SectorsVAO
 SubSector	old/20161026/Sectors.h	/^		SubSector()$/;"	f	struct:Sectors::SubSector
@@ -423,8 +429,7 @@ f	unittest.cpp	/^	F f;$/;"	m	class:TestThread	file:
 f	unittest.cpp	/^	F f;$/;"	m	class:TestThread_MemFunc	file:
 file	JoystickManagerSystem.h	/^	int file;$/;"	m	class:JoystickManagerSystem
 fixes	old/20161026/ATFViewerMain.h	/^	Fixes fixes;$/;"	m	class:ATFViewerMain
-fragShader	ShaderProgramPaths.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramPaths
-fragShader	ShaderProgramTexture.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramTexture
+fragShader	ShaderProgramBase.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramBase
 fragShader	ShaderProgramVertexFragment.h	/^	Shader fragShader;$/;"	m	class:ShaderProgramVertexFragment
 function1	unittest.cpp	/^	void function1()$/;"	f	class:TestUseThread	file:
 functype	unittest.cpp	/^	typedef void (TestUseThread::*functype)();$/;"	t	class:TestUseThread	file:
@@ -458,6 +463,8 @@ getEnd	CountCrossing.h	/^	time_t getEnd()$/;"	f	class:CountCrossing
 getFeetFromFL	Util.h	/^	static int getFeetFromFL(std::string fl)$/;"	f	class:Util
 getHandle	Shader.h	/^	GLuint getHandle() const$/;"	f	class:Shader
 getHandle	ShaderProgram.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgram
+getHandle	ShaderProgramBase.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgramBase
+getHandle	ShaderProgramVertexFragment.h	/^	GLuint getHandle()$/;"	f	class:ShaderProgramVertexFragment
 getHandle	VBO.h	/^	GLuint getHandle()$/;"	f	class:VBOBase
 getIndexCount	CountCrossing.h	/^	int getIndexCount(int i)$/;"	f	class:CountCrossing
 getIndexListIndex	PathsVAO.h	/^	unsigned int getIndexListIndex(unsigned int path_index, indexListItem i)$/;"	f	class:PathsVAO
@@ -472,6 +479,8 @@ getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex()$/;"	f	class:TimeSep
 getNextIndex	TimeSeparation.h	/^	unsigned int getNextIndex(unsigned int i)$/;"	f	class:TimeSeparation
 getNowPoint	PathsVAO.cpp	/^PathPoint PathsVAO::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:PathsVAO
 getNowPoint	old/20161026/Paths.cpp	/^PathPoint Paths::getNowPoint(PathPoint& from, PathPoint& to, time_t time)$/;"	f	class:Paths
+getPath	ShaderProgramPositionColor.h	/^	static std::string getPath()$/;"	f	class:ShaderFragPathBasic
+getPath	ShaderProgramPositionColor.h	/^	static std::string getPath()$/;"	f	class:ShaderVertPathBasic
 getScale	MapTransform.h	/^	GLdouble getScale(void)$/;"	f	class:MapTransform
 getSectors	SectorsVAO.cpp	/^void SectorsVAO::getSectors(DBAccessor& dba, InitSectorsSettings& iss)$/;"	f	class:SectorsVAO
 getSectors	old/20161026/Sectors.cpp	/^void Sectors::getSectors(DBAccessor& dba)$/;"	f	class:Sectors
@@ -526,8 +535,9 @@ init	SceanNothing.h	/^	virtual void init()$/;"	f	class:SceanNothing
 init	SectorsVAO.h	/^	void init(DBAccessor& dba)$/;"	f	class:SectorsVAO
 init	Shader.h	/^	void init()$/;"	f	class:Shader
 init	ShaderProgram.h	/^	void init()$/;"	f	class:ShaderProgram
+init	ShaderProgramBase.h	/^void ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass, VAOClass, VAODynamicClass>::init(void)$/;"	f	class:ShaderProgramBase
+init	ShaderProgramBaseMVPMatrix.h	/^	void init(void)$/;"	f	class:ShaderProgramBaseMVPMatrix
 init	ShaderProgramPaths.cpp	/^void ShaderProgramPaths::init(void)$/;"	f	class:ShaderProgramPaths
-init	ShaderProgramPositionColor.cpp	/^void ShaderProgramPositionColor::init(void)$/;"	f	class:ShaderProgramPositionColor
 init	ShaderProgramTexture.cpp	/^void ShaderProgramTexture::init(void)$/;"	f	class:ShaderProgramTexture
 init	ShaderProgramVertexFragment.cpp	/^void ShaderProgramVertexFragment::init(void)$/;"	f	class:ShaderProgramVertexFragment
 init	Texture2D.cpp	/^void Texture2D::init(const std::string& filepath, int width, int height)$/;"	f	class:Texture2D
@@ -647,8 +657,8 @@ minimumAltitude	SectorsVAO.h	/^		int minimumAltitude;$/;"	m	struct:SectorsVAO::S
 minimumAltitude	old/20161026/Sectors.h	/^		int minimumAltitude;$/;"	m	struct:Sectors::SubSector
 mktimeFromInt	CountCrossing.h	/^	time_t mktimeFromInt(int year,int month,int day,int hour = 0,int min = 0, int sec = 0)$/;"	f	class:CountCrossing
 mode	VAOPositionBase.h	/^	GLenum mode;$/;"	m	class:VAOPositionBase
+mvpMatrix	ShaderProgramBaseMVPMatrix.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:ShaderProgramBaseMVPMatrix
 mvpMatrix	ShaderProgramPaths.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:ShaderProgramPaths
-mvpMatrix	ShaderProgramPositionColor.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:ShaderProgramPositionColor
 mvpMatrix	ShaderProgramTexture.h	/^	UniformVariable<glm::mat4> mvpMatrix;$/;"	m	class:ShaderProgramTexture
 myfunc	unittest.cpp	/^typedef void (*myfunc)(void);$/;"	t	file:
 name	Texture2D.h	/^	GLuint name;$/;"	m	class:Texture2D
@@ -734,8 +744,8 @@ setEnd	CountCrossing.h	/^	void setEnd(int year,int month,int day,int hour = 0,in
 setEnd	CountCrossing.h	/^	void setEnd(time_t e)$/;"	f	class:CountCrossing
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const char* name)$/;"	f	class:UniformVariable
 setLocation	UniformVariable.h	/^	void setLocation(GLuint program_handle, const std::string& name)$/;"	f	class:UniformVariable
+setMVPMatrix	ShaderProgramBaseMVPMatrix.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:ShaderProgramBaseMVPMatrix
 setMVPMatrix	ShaderProgramPaths.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:ShaderProgramPaths
-setMVPMatrix	ShaderProgramPositionColor.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:ShaderProgramPositionColor
 setMVPMatrix	ShaderProgramTexture.h	/^	void setMVPMatrix(const glm::mat4& m)$/;"	f	class:ShaderProgramTexture
 setMatrix	SceanLatLongFlow.cpp	/^void SceanLatLongFlow::setMatrix(void)$/;"	f	class:SceanLatLongFlow
 setNextInterval	TimeSeparation.h	/^	void setNextInterval()$/;"	f	class:TimeSeparation
@@ -747,9 +757,9 @@ setStart	CountCrossing.h	/^	void setStart(time_t s)$/;"	f	class:CountCrossing
 setStartEndTime	unittest.cpp	/^void setStartEndTime(time_t& start, time_t& end)$/;"	f
 setTransform	MapTransform.h	/^	void setTransform()$/;"	f	class:MapTransform
 setTransform	MapTransform.h	/^	void setTransform(glm::mat4& m)$/;"	f	class:MapTransform
-shaderProgram	ShaderProgramPaths.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramPaths
-shaderProgram	ShaderProgramPositionColor.h	/^	ShaderProgramVertexFragment shaderProgram;$/;"	m	class:ShaderProgramPositionColor
-shaderProgram	ShaderProgramTexture.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramTexture
+shaderProgram	ShaderProgramBase.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramBase
+shaderProgram	ShaderProgramPaths.h	/^	ShaderProgramVertexFragment shaderProgram;$/;"	m	class:ShaderProgramPaths
+shaderProgram	ShaderProgramTexture.h	/^	ShaderProgramVertexFragment shaderProgram;$/;"	m	class:ShaderProgramTexture
 shaderProgram	ShaderProgramVertexFragment.h	/^	ShaderProgram shaderProgram;$/;"	m	class:ShaderProgramVertexFragment
 shaderProgram	VAOPositionBase.h	/^	S& shaderProgram;$/;"	m	class:VAOPositionBase
 shaderProgramPaths	SceanLatLongFlow.h	/^	ShaderProgramPaths shaderProgramPaths;$/;"	m	class:SceanLatLongFlow
@@ -776,6 +786,7 @@ test	unittest.cpp	/^void test(bool test_result, bool& ret)$/;"	f
 testPThread	unittest.cpp	/^bool testPThread()$/;"	f
 testTrackDataManager	unittest.cpp	/^bool testTrackDataManager()$/;"	f
 texture	MapVAO.h	/^	Texture2D texture;$/;"	m	class:MapVAO
+texture	StringVAO.h	/^	Texture2D texture;$/;"	m	class:StringVAO
 texture	VAOLayoutPositionTexture.h	/^		glm::vec2 texture;$/;"	m	struct:VAOLayoutPositionTexture::inputType2Vertex
 texture	VAOLayoutPositionTexture.h	/^		std::vector<float> texture;$/;"	m	struct:VAOLayoutPositionTexture::inputType1
 texture	VAOPositionTexture.h	/^	Texture2D& texture;$/;"	m	class:VAOPositionTexture
@@ -824,8 +835,9 @@ unmap	VAOPositionBaseDynamic.h	/^	void unmap()$/;"	f	class:VAOPositionBaseDynami
 unmap	VBO.h	/^	void unmap()$/;"	f	class:VBODynamicBase
 unregister	VBO.h	/^	void unregister()$/;"	f	class:VBODynamicBase
 unuse	ShaderProgram.h	/^	void unuse()$/;"	f	class:ShaderProgram
+unuse	ShaderProgramBase.h	/^	void unuse()$/;"	f	class:ShaderProgramBase
+unuse	ShaderProgramBaseMVPMatrix.h	/^	void unuse()$/;"	f	class:ShaderProgramBaseMVPMatrix
 unuse	ShaderProgramPaths.h	/^	void unuse()$/;"	f	class:ShaderProgramPaths
-unuse	ShaderProgramPositionColor.h	/^	void unuse()$/;"	f	class:ShaderProgramPositionColor
 unuse	ShaderProgramTexture.h	/^	void unuse()$/;"	f	class:ShaderProgramTexture
 unuse	ShaderProgramVertexFragment.h	/^	void unuse()$/;"	f	class:ShaderProgramVertexFragment
 updateNowIndex	PathsVAO.cpp	/^void PathsVAO::updateNowIndex(Path& p, time_t now)$/;"	f	class:PathsVAO
@@ -834,8 +846,9 @@ updatePastTimeIndex	PathsVAO.cpp	/^void PathsVAO::updatePastTimeIndex(Path& p, t
 updatePastTimeIndex	old/20161026/Paths.cpp	/^void Paths::updatePastTimeIndex(Path& p, time_t past_time)$/;"	f	class:Paths
 usage	VBO.h	/^	const GLenum usage;$/;"	m	class:VBOBase
 use	ShaderProgram.h	/^	void use()$/;"	f	class:ShaderProgram
+use	ShaderProgramBase.h	/^	void use()$/;"	f	class:ShaderProgramBase
+use	ShaderProgramBaseMVPMatrix.h	/^	void use()$/;"	f	class:ShaderProgramBaseMVPMatrix
 use	ShaderProgramPaths.h	/^	void use()$/;"	f	class:ShaderProgramPaths
-use	ShaderProgramPositionColor.h	/^	void use()$/;"	f	class:ShaderProgramPositionColor
 use	ShaderProgramTexture.h	/^	void use()$/;"	f	class:ShaderProgramTexture
 use	ShaderProgramVertexFragment.h	/^	void use()$/;"	f	class:ShaderProgramVertexFragment
 v	MapVAO.h	/^		float v;$/;"	m	struct:MapVAO::MapVertex
@@ -850,8 +863,6 @@ vao	SectorsVAO.h	/^	ShaderProgramPositionColor::vaoType vao;$/;"	m	class:Sectors
 vao	old/20161026/TestVBO.h	/^	GLuint vao;$/;"	m	class:TestVBO
 vaoLayout	VAOPositionBase.h	/^	VAOLayoutClass vaoLayout;$/;"	m	class:VAOPositionBase
 vbo	old/20161026/TestVBO.h	/^	GLuint vbo;$/;"	m	class:TestVBO
-vertShader	ShaderProgramPaths.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramPaths
-vertShader	ShaderProgramTexture.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramTexture
 vertShader	ShaderProgramVertexFragment.h	/^	Shader vertShader;$/;"	m	class:ShaderProgramVertexFragment
 vertex	CountCrossing.h	/^	std::vector<float> vertex;$/;"	m	class:CountCrossing
 vertex	VAOPositionBase.h	/^	VBOClass vertex;$/;"	m	class:VAOPositionBase
