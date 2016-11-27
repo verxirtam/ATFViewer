@@ -1,6 +1,7 @@
 <map id="ShaderProgramTexture" name="ShaderProgramTexture">
-<area shape="rect" id="node2" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="5,13,116,40"/>
-<area shape="rect" id="node3" href="$classShader.html" title="Shader" alt="" coords="147,13,209,40"/>
-<area shape="rect" id="node4" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="234,6,381,47"/>
-<area shape="rect" id="node5" href="$classUniformVariable.html" title="UniformVariable\&lt; int \&gt;" alt="" coords="406,13,559,40"/>
+<area shape="rect" id="node2" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="5,110,152,151"/>
+<area shape="rect" id="node3" href="$classShaderProgramVertexFragment.html" title="ShaderProgramVertexFragment" alt="" coords="177,117,383,144"/>
+<area shape="rect" id="node4" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="163,5,273,32"/>
+<area shape="rect" id="node5" href="$classShader.html" title="Shader" alt="" coords="311,5,373,32"/>
+<area shape="rect" id="node6" href="$classUniformVariable.html" title="UniformVariable\&lt; int \&gt;" alt="" coords="407,117,560,144"/>
 </map>

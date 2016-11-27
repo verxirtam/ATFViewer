@@ -1,9 +1,11 @@
 <map id="SceanLatLongFlow::setMatrix" name="SceanLatLongFlow::setMatrix">
 <area shape="rect" id="node2" href="$classMapTransform.html#a29bf172c11837bdcfebc3451dd2a5b94" title="MapTransform::setTransform" alt="" coords="249,5,439,32"/>
 <area shape="rect" id="node3" href="$classShaderProgramTexture.html#a2194a69eb037f0ad5a35fe3a6805b2c6" title="ShaderProgramTexture\l::setMVPMatrix" alt="" coords="266,57,422,98"/>
-<area shape="rect" id="node7" href="$classShaderProgramPositionColor.html#a6611d6328c312f92ac81c3c2e8ce9133" title="ShaderProgramPositionColor\l::setMVPMatrix" alt="" coords="249,122,439,163"/>
-<area shape="rect" id="node8" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="271,187,417,229"/>
-<area shape="rect" id="node4" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="495,79,636,105"/>
-<area shape="rect" id="node5" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="495,129,636,156"/>
-<area shape="rect" id="node6" href="$classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328" title="ShaderProgram::unuse" alt="" coords="488,180,643,207"/>
+<area shape="rect" id="node9" href="$classShaderProgramPositionColor.html#a6611d6328c312f92ac81c3c2e8ce9133" title="ShaderProgramPositionColor\l::setMVPMatrix" alt="" coords="249,122,439,163"/>
+<area shape="rect" id="node10" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="271,187,417,229"/>
+<area shape="rect" id="node4" href="$classShaderProgramVertexFragment.html#a9cfce18217a052d2a17b2fdc72d5b77a" title="ShaderProgramVertexFragment::use" alt="" coords="488,79,723,105"/>
+<area shape="rect" id="node6" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="535,129,676,156"/>
+<area shape="rect" id="node7" href="$classShaderProgramVertexFragment.html#a28e52a6b36d9e43676353d442eb843a1" title="ShaderProgramVertexFragment\l::unuse" alt="" coords="503,181,708,222"/>
+<area shape="rect" id="node5" href="$classShaderProgram.html#a285c27da064068522f4900a8e8075f68" title="ShaderProgram::use" alt="" coords="777,79,919,105"/>
+<area shape="rect" id="node8" href="$classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328" title="ShaderProgram::unuse" alt="" coords="771,188,925,215"/>
 </map>

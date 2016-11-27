@@ -1,6 +1,7 @@
 <map id="ShaderProgram::attach" name="ShaderProgram::attach">
-<area shape="rect" id="node2" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="233,5,380,46"/>
-<area shape="rect" id="node4" href="$classShaderProgramPositionColor.html#aaf033e1aa315111b5fc11a97f5853b71" title="ShaderProgramPositionColor\l::init" alt="" coords="211,70,402,111"/>
-<area shape="rect" id="node5" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="229,135,385,177"/>
-<area shape="rect" id="node3" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="451,77,610,104"/>
+<area shape="rect" id="node2" href="$classShaderProgramVertexFragment.html#a53f94d867b6e0c10042b14ca23b91cd1" title="ShaderProgramVertexFragment\l::init" alt="" coords="211,70,416,111"/>
+<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="487,5,633,46"/>
+<area shape="rect" id="node5" href="$classShaderProgramPositionColor.html#aaf033e1aa315111b5fc11a97f5853b71" title="ShaderProgramPositionColor\l::init" alt="" coords="465,70,655,111"/>
+<area shape="rect" id="node6" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="482,135,638,177"/>
+<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="705,77,863,104"/>
 </map>

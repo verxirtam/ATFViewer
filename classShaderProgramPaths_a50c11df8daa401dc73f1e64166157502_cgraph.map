@@ -1,11 +1,13 @@
 <map id="ShaderProgramPaths::init" name="ShaderProgramPaths::init">
-<area shape="rect" id="node2" href="$classShader.html#a5af3b80cdbd90bba614ae23276f61a4e" title="Shader::init" alt="" coords="252,5,340,32"/>
-<area shape="rect" id="node3" href="$classShader.html#a5be69e48ac2436651ead777bf5fb5c9f" title="Shader::compile" alt="" coords="238,56,354,83"/>
-<area shape="rect" id="node5" href="$classShaderProgram.html#a281fef47667e0f41481b9d9137088882" title="ShaderProgram::init" alt="" coords="227,107,365,133"/>
-<area shape="rect" id="node6" href="$classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba" title="ShaderProgram::attach" alt="" coords="218,157,374,184"/>
-<area shape="rect" id="node8" href="$classShaderProgram.html#ade9890eb840126bd3f9b9db42389253c" title="ShaderProgram::link" alt="" coords="226,208,366,235"/>
-<area shape="rect" id="node9" href="$classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6" title="UniformVariable::setLocation" alt="" coords="201,259,391,285"/>
-<area shape="rect" id="node10" href="$classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce" title="ShaderProgram::getHandle" alt="" coords="207,309,385,336"/>
-<area shape="rect" id="node4" href="$classShader.html#a99cd96b144222128bd9a9dc45cec3593" title="Shader::readShaderFile" alt="" coords="441,56,599,83"/>
-<area shape="rect" id="node7" href="$classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa" title="Shader::getHandle" alt="" coords="455,157,585,184"/>
+<area shape="rect" id="node2" href="$classShaderProgramVertexFragment.html#a53f94d867b6e0c10042b14ca23b91cd1" title="ShaderProgramVertexFragment\l::init" alt="" coords="200,105,405,146"/>
+<area shape="rect" id="node10" href="$classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6" title="UniformVariable::setLocation" alt="" coords="207,175,398,201"/>
+<area shape="rect" id="node11" href="$classShaderProgramVertexFragment.html#ac0a145de38ee4ccdcd8e6552be9bd654" title="ShaderProgramVertexFragment\l::getHandle" alt="" coords="200,234,405,275"/>
+<area shape="rect" id="node3" href="$classShader.html#a5af3b80cdbd90bba614ae23276f61a4e" title="Shader::init" alt="" coords="499,5,587,32"/>
+<area shape="rect" id="node4" href="$classShader.html#a5be69e48ac2436651ead777bf5fb5c9f" title="Shader::compile" alt="" coords="485,56,601,83"/>
+<area shape="rect" id="node6" href="$classShaderProgram.html#a281fef47667e0f41481b9d9137088882" title="ShaderProgram::init" alt="" coords="474,107,611,133"/>
+<area shape="rect" id="node7" href="$classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba" title="ShaderProgram::attach" alt="" coords="465,157,621,184"/>
+<area shape="rect" id="node9" href="$classShaderProgram.html#ade9890eb840126bd3f9b9db42389253c" title="ShaderProgram::link" alt="" coords="473,208,613,235"/>
+<area shape="rect" id="node5" href="$classShader.html#a99cd96b144222128bd9a9dc45cec3593" title="Shader::readShaderFile" alt="" coords="681,56,839,83"/>
+<area shape="rect" id="node8" href="$classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa" title="Shader::getHandle" alt="" coords="695,157,825,184"/>
+<area shape="rect" id="node12" href="$classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce" title="ShaderProgram::getHandle" alt="" coords="453,259,632,285"/>
 </map>
