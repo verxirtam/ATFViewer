@@ -30,6 +30,7 @@
 #include "DBAccessor.h"
 #include "Util.h"
 
+#include "VAOPositionColor.h"
 #include "ShaderProgramPositionColor.h"
 
 class SectorsVAO
@@ -96,7 +97,8 @@ private:
 	//データメンバ
 	bool displayAll;
 	unsigned int displaySectorIndex;
-	ShaderProgramPositionColor::vaoType vao;
+	using vaoType = VAOPositionColor<ShaderProgramPositionColor>;
+	vaoType vao;
 	//メンバ関数
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
 	void getSectors(DBAccessor& dba, InitSectorsSettings& iss);

@@ -234,7 +234,7 @@ void SectorsVAO::initVAO(InitSectorsSettings& iss)
 	}
 	
 	//vao.init()向けにstd::vector<float>に詰め替える
-	ShaderProgramPositionColor::vaoType::inputType v;
+	vaoType::inputType v;
 	std::vector<float>& position_align = v.position;
 	std::vector<float>&    color_align = v.color;
 	

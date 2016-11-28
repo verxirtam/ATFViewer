@@ -18,39 +18,19 @@
 
 #pragma once
 
-#include "Shader.h"
-#include "ShaderProgramVertexFragment.h"
-#include "UniformVariable.h"
-#include "VAOPaths.h"
+#include "ShaderProgramBaseMVPMatrix.h"
 
 
-class ShaderProgramPaths
+struct ShaderVertPathPaths
 {
-private:
-	ShaderProgramVertexFragment shaderProgram;
-	UniformVariable<glm::mat4> mvpMatrix;
-public:
-	ShaderProgramPaths()
-		:
-			shaderProgram("paths.vert", "paths.frag"),
-			mvpMatrix()
-	{
-	}
-	void init(void);
-	void use()
-	{
-		shaderProgram.use();
-	}
-	void unuse()
-	{
-		shaderProgram.unuse();
-	}
-	void setMVPMatrix(const glm::mat4& m)
-	{
-		shaderProgram.use();
-		mvpMatrix.set(m);
-		shaderProgram.unuse();
-	}
-	using vaoTypeDynamic = VAOPaths<ShaderProgramPaths>;
+	static std::string getPath(){return "paths.vert";}
 };
+
+struct ShaderFragPathPaths
+{
+	static std::string getPath(){return "paths.frag";}
+};
+
+using ShaderProgramPaths = ShaderProgramBaseMVPMatrix<ShaderVertPathPaths, ShaderFragPathPaths>;
+
 

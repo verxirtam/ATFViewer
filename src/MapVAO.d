@@ -1,7 +1,5 @@
 MapVAO.o: MapVAO.cpp MapVAO.h OpenGLHeaders.h Util.h DBAccessor.h \
- ShaderProgramTexture.h Shader.h ShaderProgramVertexFragment.h \
- ShaderProgram.h UniformVariable.h VAOPositionTexture.h Lock.h \
- Texture2D.h VAOPositionBase.h VBO.h \
+ VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
@@ -19,4 +17,6 @@ MapVAO.o: MapVAO.cpp MapVAO.h OpenGLHeaders.h Util.h DBAccessor.h \
  /usr/local/cuda/include/vector_functions.h \
  /usr/local/cuda/include/vector_functions.hpp \
  /usr/local/cuda/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionTexture.h
+ VAOLayoutPositionTexture.h ShaderProgramTexture.h \
+ ShaderProgramBaseMVPMatrix.h ShaderProgramBase.h Shader.h \
+ ShaderProgram.h UniformVariable.h

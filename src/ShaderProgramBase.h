@@ -25,14 +25,12 @@
 template
 <
 	typename ShaderVertPathClass,
-	typename ShaderFragPathClass,
-	template<typename X> class VAOClass,
-	template<typename Y> class VAODynamicClass
+	typename ShaderFragPathClass
 >
 class ShaderProgramBase
 {
 private:
-	using thisType = ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass, VAOClass, VAODynamicClass>;
+	using thisType = ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass>;
 	Shader vertShader;
 	Shader fragShader;
 	ShaderProgram shaderProgram;
@@ -56,18 +54,14 @@ public:
 	{
 		return shaderProgram.getHandle();
 	}
-	using vaoType        = VAOClass<thisType>;
-	using vaoTypeDynamic = VAODynamicClass<thisType>;
 };
 
 template
 <
 	typename ShaderVertPathClass,
-	typename ShaderFragPathClass,
-	template<typename X> class VAOClass,
-	template<typename Y> class VAODynamicClass
+	typename ShaderFragPathClass
 >
-void ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass, VAOClass, VAODynamicClass>::init(void)
+void ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass>::init(void)
 {
 	vertShader.init();
 	fragShader.init();

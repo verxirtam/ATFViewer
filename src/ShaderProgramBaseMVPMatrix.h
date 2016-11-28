@@ -25,14 +25,12 @@
 template
 <
 	typename ShaderVertPathClass,
-	typename ShaderFragPathClass,
-	template<typename X> class VAOClass,
-	template<typename Y> class VAODynamicClass
+	typename ShaderFragPathClass
 >
 class ShaderProgramBaseMVPMatrix
 {
 private:
-	using baseType = ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass, VAOClass, VAODynamicClass>;
+	using baseType = ShaderProgramBase<ShaderVertPathClass, ShaderFragPathClass>;
 	baseType base;
 	UniformVariable<glm::mat4> mvpMatrix;
 public:
@@ -60,6 +58,8 @@ public:
 		mvpMatrix.set(m);
 		base.unuse();
 	}
-	using vaoType = typename baseType::vaoType;
-	using vaoTypeDynamic = typename baseType::vaoTypeDynamic;
+	GLuint getHandle()
+	{
+		return base.getHandle();
+	}
 };

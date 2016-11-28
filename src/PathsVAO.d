@@ -1,8 +1,7 @@
 PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h DBAccessor.h \
- TrackDataManager.h Path.h TimeManager.h TimeSeparation.h \
- ShaderProgramPaths.h Shader.h ShaderProgramVertexFragment.h \
- ShaderProgram.h UniformVariable.h VAOPaths.h VAOPositionBaseDynamic.h \
- VAOPositionBase.h Lock.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
+ TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
+ VAOPositionBaseDynamic.h VAOPositionBase.h Lock.h VBO.h \
+ /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
  /usr/local/cuda/include/device_types.h \
@@ -19,4 +18,5 @@ PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h DBAccessor.h \
  /usr/local/cuda/include/vector_functions.h \
  /usr/local/cuda/include/vector_functions.hpp \
  /usr/local/cuda/include/cuda_gl_interop.h VAOBase.h VAOLayoutPaths.h \
- DeviceSeq.cuh
+ ShaderProgramPaths.h ShaderProgramBaseMVPMatrix.h ShaderProgramBase.h \
+ Shader.h ShaderProgram.h UniformVariable.h DeviceSeq.cuh

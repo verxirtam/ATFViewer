@@ -171,7 +171,7 @@ void PathsVAO::initPathPoint(time_t time_min, time_t time_max)
 void PathsVAO::initVAO(const std::vector<Path>& path, doubleBufferingType& db, time_t time_start, time_t time_end)
 {
 	
-	using input_type = ShaderProgramPaths::vaoTypeDynamic::inputType;
+	using input_type = vaoType::inputType;
 	using vertex_type = input_type::value_type;
 	input_type input;
 	

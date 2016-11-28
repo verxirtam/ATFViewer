@@ -18,39 +18,45 @@
 
 #pragma once
 
-#include "Shader.h"
-#include "ShaderProgramVertexFragment.h"
+#include "ShaderProgramBaseMVPMatrix.h"
 #include "UniformVariable.h"
-#include "VAOPositionTexture.h"
 
 class ShaderProgramTexture
 {
 private:
-	ShaderProgramVertexFragment shaderProgram;
-	UniformVariable<glm::mat4> mvpMatrix;
+	struct ShaderVertPathTexture
+	{
+		static std::string getPath(){return "texture.vert";}
+	};
+	struct ShaderFragPathTexture
+	{
+		static std::string getPath(){return "texture.frag";}
+	};
+	ShaderProgramBaseMVPMatrix<ShaderVertPathTexture,ShaderFragPathTexture> base;
 	UniformVariable<int> textureSampler;
 public:
-	using vaoType = VAOPositionTexture<ShaderProgramTexture>;
 	ShaderProgramTexture()
 		:
-			shaderProgram("texture.vert", "texture.frag"),
-			mvpMatrix(),
+			base(),
 			textureSampler()
 	{
 	}
-	void init(void);
+	void init(void)
+	{
+		base.init();
+		textureSampler.setLocation(base.getHandle(), "tex");
+		textureSampler.set(0);
+	}
 	void use()
 	{
-		shaderProgram.use();
+		base.use();
 	}
 	void unuse()
 	{
-		shaderProgram.unuse();
+		base.unuse();
 	}
 	void setMVPMatrix(const glm::mat4& m)
 	{
-		shaderProgram.use();
-		mvpMatrix.set(m);
-		shaderProgram.unuse();
+		base.setMVPMatrix(m);
 	}
 };

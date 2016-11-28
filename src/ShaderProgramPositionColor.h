@@ -19,7 +19,6 @@
 #pragma once
 
 #include "ShaderProgramBaseMVPMatrix.h"
-#include "VAOPositionColor.h"
 
 class ShaderVertPathBasic
 {
@@ -40,7 +39,7 @@ public:
 	}
 };
 
-using ShaderProgramPositionColor = ShaderProgramBaseMVPMatrix<ShaderVertPathBasic, ShaderFragPathBasic, VAOPositionColor, VAOPositionColorDynamic>;
+using ShaderProgramPositionColor = ShaderProgramBaseMVPMatrix<ShaderVertPathBasic, ShaderFragPathBasic>;
 
 
 

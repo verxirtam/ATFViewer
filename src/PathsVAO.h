@@ -31,6 +31,7 @@
 #include "TrackDataManager.h"
 #include "Path.h"
 #include "TimeSeparation.h"
+#include "VAOPaths.h"
 #include "ShaderProgramPaths.h"
 
 #include "DeviceSeq.cuh"
@@ -38,7 +39,7 @@
 class PathsVAO
 {
 private:
-	using vaoType = ShaderProgramPaths::vaoTypeDynamic;
+	using vaoType = VAOPaths<ShaderProgramPaths>;
 	struct doubleBufferingType
 	{
 		vaoType vao;

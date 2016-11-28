@@ -355,11 +355,6 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     Path.h \
     TimeManager.h \
     TimeSeparation.h \
-    ShaderProgramPaths.h \
-    Shader.h \
-    ShaderProgramVertexFragment.h \
-    ShaderProgram.h \
-    UniformVariable.h \
     VAOPaths.h \
     VAOPositionBaseDynamic.h \
     VAOPositionBase.h \
@@ -368,5 +363,11 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/cuda/include/cuda_gl_interop.h \
     VAOBase.h \
     VAOLayoutPaths.h \
+    ShaderProgramPaths.h \
+    ShaderProgramBaseMVPMatrix.h \
+    ShaderProgramBase.h \
+    Shader.h \
+    ShaderProgram.h \
+    UniformVariable.h \
     DeviceSeq.cuh \
     PathsVAO_cuda_kernel.cuh
