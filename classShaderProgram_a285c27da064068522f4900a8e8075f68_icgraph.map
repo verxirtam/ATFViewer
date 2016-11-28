@@ -1,12 +1,3 @@
 <map id="ShaderProgram::use" name="ShaderProgram::use">
-<area shape="rect" id="node2" href="$classShaderProgramVertexFragment.html#a9cfce18217a052d2a17b2fdc72d5b77a" title="ShaderProgramVertexFragment::use" alt="" coords="195,152,429,179"/>
-<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427" title="ShaderProgramPaths::use" alt="" coords="499,5,674,32"/>
-<area shape="rect" id="node4" href="$classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf" title="ShaderProgramPaths\l::setMVPMatrix" alt="" coords="513,57,660,98"/>
-<area shape="rect" id="node8" href="$classShaderProgramPositionColor.html#a55e0578afec2d8880dd2622f223464d6" title="ShaderProgramPositionColor::use" alt="" coords="477,123,696,149"/>
-<area shape="rect" id="node9" href="$classShaderProgramPositionColor.html#a6611d6328c312f92ac81c3c2e8ce9133" title="ShaderProgramPositionColor\l::setMVPMatrix" alt="" coords="491,174,682,215"/>
-<area shape="rect" id="node10" href="$classShaderProgramTexture.html#ad99a8fc74aef5ee28d76d38f20a5dffb" title="ShaderProgramTexture::use" alt="" coords="494,240,679,267"/>
-<area shape="rect" id="node11" href="$classShaderProgramTexture.html#a2194a69eb037f0ad5a35fe3a6805b2c6" title="ShaderProgramTexture\l::setMVPMatrix" alt="" coords="509,291,665,333"/>
-<area shape="rect" id="node5" href="$classSceanLatLongFlow.html#a7bc6ca6b4416f2841b056e5e5c269ded" title="SceanLatLongFlow::setMatrix" alt="" coords="744,181,939,208"/>
-<area shape="rect" id="node6" href="$classSceanLatLongFlow.html#ab25b9b3fbcfae746d5edf22a3ba06abd" title="SceanLatLongFlow::display" alt="" coords="987,181,1170,208"/>
-<area shape="rect" id="node7" href="$classSceanLatLongFlow.html#a1ba161e67f5b806165c484280a85d96f" title="SceanLatLongFlow::keyboard" alt="" coords="1219,181,1413,208"/>
+<area shape="rect" id="node2" href="$classShaderProgramBase.html#a9e01b743ddd140b537218140292cdfd1" title="ShaderProgramBase\&lt;\l ShaderVertPathPaths,\l ShaderFragPathPaths\l \&gt;::use" alt="" coords="195,5,351,75"/>
 </map>

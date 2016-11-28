@@ -1,7 +1,3 @@
 <map id="ShaderProgram::getHandle" name="ShaderProgram::getHandle">
-<area shape="rect" id="node2" href="$classShaderProgramVertexFragment.html#ac0a145de38ee4ccdcd8e6552be9bd654" title="ShaderProgramVertexFragment\l::getHandle" alt="" coords="232,70,437,111"/>
-<area shape="rect" id="node3" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="508,5,655,46"/>
-<area shape="rect" id="node5" href="$classShaderProgramPositionColor.html#aaf033e1aa315111b5fc11a97f5853b71" title="ShaderProgramPositionColor\l::init" alt="" coords="486,70,677,111"/>
-<area shape="rect" id="node6" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="503,135,659,177"/>
-<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="726,77,885,104"/>
+<area shape="rect" id="node2" href="$classShaderProgramBase.html#a187d122e344069ebef801864b3a114d6" title="ShaderProgramBase\&lt;\l ShaderVertPathPaths,\l ShaderFragPathPaths\l \&gt;::getHandle" alt="" coords="233,5,389,75"/>
 </map>

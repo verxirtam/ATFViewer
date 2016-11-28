@@ -1,6 +1,5 @@
 <map id="PathsVAO::initVAO" name="PathsVAO::initVAO">
 <area shape="rect" id="node2" href="$classVAOPositionBaseDynamic.html#aeb2b57c04437e4f96440956e6e66276d" title="VAOPositionBaseDynamic\l::initReady" alt="" coords="201,5,380,46"/>
-<area shape="rect" id="node4" href="$classDeviceMemory.html#ad2838d77168b9ee938780d8319ab6486" title="DeviceMemory::malloc" alt="" coords="213,71,369,97"/>
-<area shape="rect" id="node5" href="$classDeviceMemory.html#a0698b423962d5692ba3a6d8c00cae5e5" title="DeviceMemory::memcpyHost\lToDevice" alt="" coords="193,122,389,163"/>
-<area shape="rect" id="node3" href="$classVAOPositionBase.html#a4781d52bfa8498990b1f8e69c3a0ed54" title="VAOPositionBase::initReady" alt="" coords="438,12,629,39"/>
+<area shape="rect" id="node3" href="$classDeviceMemory.html#ad2838d77168b9ee938780d8319ab6486" title="DeviceMemory::malloc" alt="" coords="213,71,369,97"/>
+<area shape="rect" id="node4" href="$classDeviceMemory.html#a0698b423962d5692ba3a6d8c00cae5e5" title="DeviceMemory::memcpyHost\lToDevice" alt="" coords="193,122,389,163"/>
 </map>

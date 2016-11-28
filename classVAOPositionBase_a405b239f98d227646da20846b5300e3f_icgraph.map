@@ -1,7 +1,7 @@
 <map id="VAOPositionBase::display" name="VAOPositionBase::display">
 <area shape="rect" id="node2" href="$classSectorsVAO.html#a03e9d3b7e35322d0e041c54fe48f0e63" title="SectorsVAO::display" alt="" coords="247,5,391,32"/>
-<area shape="rect" id="node5" href="$classVAOPositionBaseDynamic.html#ab8d4f4715ae17439a775611da56f9b4c" title="VAOPositionBaseDynamic\l::display" alt="" coords="229,57,408,98"/>
-<area shape="rect" id="node6" href="$classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453" title="VAOPositionTexture\l\&lt; ShaderProgramTexture\l \&gt;::display" alt="" coords="235,121,403,177"/>
+<area shape="rect" id="node5" href="$classVAOPositionBaseDynamic.html#ab8d4f4715ae17439a775611da56f9b4c" title="VAOPositionBaseDynamic\l\&lt; ShaderProgramPaths \&gt;\l::display" alt="" coords="229,56,408,112"/>
+<area shape="rect" id="node6" href="$classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453" title="VAOPositionTexture\l\&lt; ShaderProgramTexture\l \&gt;::display" alt="" coords="235,136,403,192"/>
 <area shape="rect" id="node3" href="$classSceanLatLongFlow.html#ab25b9b3fbcfae746d5edf22a3ba06abd" title="SceanLatLongFlow::display" alt="" coords="457,5,639,32"/>
 <area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a1ba161e67f5b806165c484280a85d96f" title="SceanLatLongFlow::keyboard" alt="" coords="688,5,883,32"/>
 </map>

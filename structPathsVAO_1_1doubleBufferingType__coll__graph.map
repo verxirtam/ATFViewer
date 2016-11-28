@@ -1,8 +1,13 @@
 <map id="PathsVAO::doubleBufferingType" name="PathsVAO::doubleBufferingType">
-<area shape="rect" id="node2" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="5,337,179,378"/>
-<area shape="rect" id="node3" href="$classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; S, VAOLayoutClass \&gt;" alt="" coords="204,337,383,378"/>
-<area shape="rect" id="node4" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; S,\l VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="170,216,416,272"/>
-<area shape="rect" id="node6" href="$classVAOBase.html" title="VAOBase" alt="" coords="197,104,276,131"/>
-<area shape="rect" id="node7" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="301,97,500,138"/>
-<area shape="rect" id="node8" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="311,5,492,32"/>
+<area shape="rect" id="node2" href="$classVAOPositionBaseDynamic.html" title="VAOPositionBaseDynamic\l\&lt; ShaderProgramPaths \&gt;" alt="" coords="1299,79,1477,121"/>
+<area shape="rect" id="node3" href="$classVAOPositionBase.html" title="VAOPositionBase\&lt; ShaderProgram\lPaths, VBODynamic, VBOElementDynamic,\l VAOLayoutClass \&gt;" alt="" coords="931,72,1215,128"/>
+<area shape="rect" id="node5" href="$classVAOBase.html" title="VAOBase" alt="" coords="632,56,712,83"/>
+<area shape="rect" id="node6" href="$classVBODynamicBase.html" title="VBODynamicBase\&lt; VboType,\l ElementType \&gt;" alt="" coords="572,107,772,149"/>
+<area shape="rect" id="node7" href="$classVBOBase.html" title="VBOBase\&lt; ElementType \&gt;" alt="" coords="259,115,440,141"/>
+<area shape="rect" id="node8" href="$classShaderProgramBaseMVPMatrix.html" title="ShaderProgramBaseMVPMatrix\l\&lt; ShaderVertPathPaths, ShaderFrag\lPathPaths \&gt;" alt="" coords="555,172,789,228"/>
+<area shape="rect" id="node9" href="$classShaderProgramBase.html" title="ShaderProgramBase\&lt;\l ShaderVertPathPaths,\l ShaderFragPathPaths \&gt;" alt="" coords="266,167,433,223"/>
+<area shape="rect" id="node10" href="$classShaderProgram.html" title="ShaderProgram" alt="" coords="5,151,117,177"/>
+<area shape="rect" id="node11" href="$classShader.html" title="Shader" alt="" coords="30,211,93,237"/>
+<area shape="rect" id="node12" href="$classUniformVariable.html" title="UniformVariable\&lt; glm\l::mat4 \&gt;" alt="" coords="275,246,423,287"/>
+<area shape="rect" id="node13" href="$classDeviceMemory.html" title="DeviceMemory\&lt; unsigned\l int \&gt;" alt="" coords="1301,145,1475,186"/>
 </map>

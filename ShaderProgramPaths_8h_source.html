@@ -107,64 +107,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Shader_8h.html">Shader.h</a>&quot;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ShaderProgramVertexFragment_8h.html">ShaderProgramVertexFragment.h</a>&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="UniformVariable_8h.html">UniformVariable.h</a>&quot;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VAOPaths_8h.html">VAOPaths.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classShaderProgramPaths.html">ShaderProgramPaths</a></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">   30</a></span>&#160;    <a class="code" href="classShaderProgramVertexFragment.html">ShaderProgramVertexFragment</a> <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a2172c1eb0d51b0a700de32743190898e">   31</a></span>&#160;    <a class="code" href="classUniformVariable.html">UniformVariable&lt;glm::mat4&gt;</a> <a class="code" href="classShaderProgramPaths.html#a2172c1eb0d51b0a700de32743190898e">mvpMatrix</a>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a655bd1a56bb0f0a15a1b739379f48fab">   33</a></span>&#160;    <a class="code" href="classShaderProgramPaths.html#a655bd1a56bb0f0a15a1b739379f48fab">ShaderProgramPaths</a>()</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        :</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>(<span class="stringliteral">&quot;paths.vert&quot;</span>, <span class="stringliteral">&quot;paths.frag&quot;</span>),</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classShaderProgramPaths.html#a2172c1eb0d51b0a700de32743190898e">mvpMatrix</a>()</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502">init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427">   40</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427">use</a>()</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>.<a class="code" href="classShaderProgramVertexFragment.html#a9cfce18217a052d2a17b2fdc72d5b77a">use</a>();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1">   44</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1">unuse</a>()</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>.<a class="code" href="classShaderProgramVertexFragment.html#a28e52a6b36d9e43676353d442eb843a1">unuse</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf">   48</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf">setMVPMatrix</a>(<span class="keyword">const</span> glm::mat4&amp; m)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>.<a class="code" href="classShaderProgramVertexFragment.html#a9cfce18217a052d2a17b2fdc72d5b77a">use</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="classShaderProgramPaths.html#a2172c1eb0d51b0a700de32743190898e">mvpMatrix</a>.<a class="code" href="classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0">set</a>(m);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">shaderProgram</a>.<a class="code" href="classShaderProgramVertexFragment.html#a28e52a6b36d9e43676353d442eb843a1">unuse</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classShaderProgramPaths.html#a24049a1223e950e38e3c6fe536e02ae9">   54</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="classVAOPositionBaseDynamic.html">vaoTypeDynamic</a> = <a class="code" href="classVAOPositionBaseDynamic.html">VAOPaths&lt;ShaderProgramPaths&gt;</a>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="ttc" id="UniformVariable_8h_html"><div class="ttname"><a href="UniformVariable_8h.html">UniformVariable.h</a></div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a0c7639ded055e92861c396ba13673427"><div class="ttname"><a href="classShaderProgramPaths.html#a0c7639ded055e92861c396ba13673427">ShaderProgramPaths::use</a></div><div class="ttdeci">void use()</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:40</div></div>
-<div class="ttc" id="classShaderProgramPaths_html"><div class="ttname"><a href="classShaderProgramPaths.html">ShaderProgramPaths</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:27</div></div>
-<div class="ttc" id="ShaderProgramVertexFragment_8h_html"><div class="ttname"><a href="ShaderProgramVertexFragment_8h.html">ShaderProgramVertexFragment.h</a></div></div>
-<div class="ttc" id="classVAOPositionBaseDynamic_html"><div class="ttname"><a href="classVAOPositionBaseDynamic.html">VAOPositionBaseDynamic</a></div><div class="ttdef"><b>Definition:</b> VAOPositionBaseDynamic.h:24</div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a655bd1a56bb0f0a15a1b739379f48fab"><div class="ttname"><a href="classShaderProgramPaths.html#a655bd1a56bb0f0a15a1b739379f48fab">ShaderProgramPaths::ShaderProgramPaths</a></div><div class="ttdeci">ShaderProgramPaths()</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:33</div></div>
-<div class="ttc" id="classShaderProgramVertexFragment_html"><div class="ttname"><a href="classShaderProgramVertexFragment.html">ShaderProgramVertexFragment</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramVertexFragment.h:23</div></div>
-<div class="ttc" id="classUniformVariable_html"><div class="ttname"><a href="classUniformVariable.html">UniformVariable&lt; glm::mat4 &gt;</a></div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a2172c1eb0d51b0a700de32743190898e"><div class="ttname"><a href="classShaderProgramPaths.html#a2172c1eb0d51b0a700de32743190898e">ShaderProgramPaths::mvpMatrix</a></div><div class="ttdeci">UniformVariable&lt; glm::mat4 &gt; mvpMatrix</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:31</div></div>
-<div class="ttc" id="Shader_8h_html"><div class="ttname"><a href="Shader_8h.html">Shader.h</a></div></div>
-<div class="ttc" id="classShaderProgramVertexFragment_html_a28e52a6b36d9e43676353d442eb843a1"><div class="ttname"><a href="classShaderProgramVertexFragment.html#a28e52a6b36d9e43676353d442eb843a1">ShaderProgramVertexFragment::unuse</a></div><div class="ttdeci">void unuse()</div><div class="ttdef"><b>Definition:</b> ShaderProgramVertexFragment.h:42</div></div>
-<div class="ttc" id="classShaderProgramVertexFragment_html_a9cfce18217a052d2a17b2fdc72d5b77a"><div class="ttname"><a href="classShaderProgramVertexFragment.html#a9cfce18217a052d2a17b2fdc72d5b77a">ShaderProgramVertexFragment::use</a></div><div class="ttdeci">void use()</div><div class="ttdef"><b>Definition:</b> ShaderProgramVertexFragment.h:38</div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a50c11df8daa401dc73f1e64166157502"><div class="ttname"><a href="classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502">ShaderProgramPaths::init</a></div><div class="ttdeci">void init(void)</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.cpp:22</div></div>
-<div class="ttc" id="classUniformVariable_html_a41cfd8f88fa1b5fa73705b5b53767eb0"><div class="ttname"><a href="classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0">UniformVariable::set</a></div><div class="ttdeci">void set(const T &amp;t)</div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a38cac7d74615f492a7a91e7984f73ca0"><div class="ttname"><a href="classShaderProgramPaths.html#a38cac7d74615f492a7a91e7984f73ca0">ShaderProgramPaths::shaderProgram</a></div><div class="ttdeci">ShaderProgramVertexFragment shaderProgram</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:30</div></div>
-<div class="ttc" id="VAOPaths_8h_html"><div class="ttname"><a href="VAOPaths_8h.html">VAOPaths.h</a></div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a18d7da822c377ba04da5903babeb04d1"><div class="ttname"><a href="classShaderProgramPaths.html#a18d7da822c377ba04da5903babeb04d1">ShaderProgramPaths::unuse</a></div><div class="ttdeci">void unuse()</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:44</div></div>
-<div class="ttc" id="classShaderProgramPaths_html_a9680c3dfa92a2e202510671846d26bbf"><div class="ttname"><a href="classShaderProgramPaths.html#a9680c3dfa92a2e202510671846d26bbf">ShaderProgramPaths::setMVPMatrix</a></div><div class="ttdeci">void setMVPMatrix(const glm::mat4 &amp;m)</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:48</div></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ShaderProgramBaseMVPMatrix_8h.html">ShaderProgramBaseMVPMatrix.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structShaderVertPathPaths.html">   24</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structShaderVertPathPaths.html">ShaderVertPathPaths</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="structShaderVertPathPaths.html#a70708fca18dc2ee25d490888efc2098a">   26</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="structShaderVertPathPaths.html#a70708fca18dc2ee25d490888efc2098a">getPath</a>(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;paths.vert&quot;</span>;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="structShaderFragPathPaths.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structShaderFragPathPaths.html">ShaderFragPathPaths</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structShaderFragPathPaths.html#a33c8387bef1dd57d29374685cf76c0c9">   31</a></span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="structShaderFragPathPaths.html#a33c8387bef1dd57d29374685cf76c0c9">getPath</a>(){<span class="keywordflow">return</span> <span class="stringliteral">&quot;paths.frag&quot;</span>;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="ShaderProgramPaths_8h.html#ab4a76f3319084e98300f755d6e9d4e1f">   34</a></span>&#160;<span class="keyword">using</span> <a class="code" href="classShaderProgramBaseMVPMatrix.html">ShaderProgramPaths</a> = <a class="code" href="classShaderProgramBaseMVPMatrix.html">ShaderProgramBaseMVPMatrix&lt;ShaderVertPathPaths, ShaderFragPathPaths&gt;</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="ttc" id="ShaderProgramBaseMVPMatrix_8h_html"><div class="ttname"><a href="ShaderProgramBaseMVPMatrix_8h.html">ShaderProgramBaseMVPMatrix.h</a></div></div>
+<div class="ttc" id="structShaderVertPathPaths_html"><div class="ttname"><a href="structShaderVertPathPaths.html">ShaderVertPathPaths</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:24</div></div>
+<div class="ttc" id="classShaderProgramBaseMVPMatrix_html"><div class="ttname"><a href="classShaderProgramBaseMVPMatrix.html">ShaderProgramBaseMVPMatrix&lt; ShaderVertPathPaths, ShaderFragPathPaths &gt;</a></div></div>
+<div class="ttc" id="structShaderVertPathPaths_html_a70708fca18dc2ee25d490888efc2098a"><div class="ttname"><a href="structShaderVertPathPaths.html#a70708fca18dc2ee25d490888efc2098a">ShaderVertPathPaths::getPath</a></div><div class="ttdeci">static std::string getPath()</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:26</div></div>
+<div class="ttc" id="structShaderFragPathPaths_html"><div class="ttname"><a href="structShaderFragPathPaths.html">ShaderFragPathPaths</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:29</div></div>
+<div class="ttc" id="structShaderFragPathPaths_html_a33c8387bef1dd57d29374685cf76c0c9"><div class="ttname"><a href="structShaderFragPathPaths.html#a33c8387bef1dd57d29374685cf76c0c9">ShaderFragPathPaths::getPath</a></div><div class="ttdeci">static std::string getPath()</div><div class="ttdef"><b>Definition:</b> ShaderProgramPaths.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 28 2016 03:57:44 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 29 2016 01:35:36 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

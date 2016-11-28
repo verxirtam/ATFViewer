@@ -1,7 +1,7 @@
 <map id="VAOPositionBase::init" name="VAOPositionBase::init">
 <area shape="rect" id="node2" href="$classSectorsVAO.html#ad08bf05e726561423fbbf4411d2a2fce" title="SectorsVAO::initVAO" alt="" coords="221,5,369,32"/>
-<area shape="rect" id="node5" href="$classVAOPositionBaseDynamic.html#ad5830a77f1aee700ccffeac136ef9ae2" title="VAOPositionBaseDynamic\l::init" alt="" coords="205,57,384,98"/>
-<area shape="rect" id="node6" href="$classVAOPositionTexture.html#a9466ad76dd8ea172ac5d8e5df1060cb3" title="VAOPositionTexture\l\&lt; ShaderProgramTexture\l \&gt;::init" alt="" coords="211,121,379,177"/>
+<area shape="rect" id="node5" href="$classVAOPositionBaseDynamic.html#ad5830a77f1aee700ccffeac136ef9ae2" title="VAOPositionBaseDynamic\l\&lt; ShaderProgramPaths \&gt;\l::init" alt="" coords="205,56,384,112"/>
+<area shape="rect" id="node6" href="$classVAOPositionTexture.html#a9466ad76dd8ea172ac5d8e5df1060cb3" title="VAOPositionTexture\l\&lt; ShaderProgramTexture\l \&gt;::init" alt="" coords="211,136,379,192"/>
 <area shape="rect" id="node3" href="$classSectorsVAO.html#a63c7e1cd1a30591c54daee297df807e2" title="SectorsVAO::init" alt="" coords="432,5,552,32"/>
 <area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="601,5,759,32"/>
 </map>

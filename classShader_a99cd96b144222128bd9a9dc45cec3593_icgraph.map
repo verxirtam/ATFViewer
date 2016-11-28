@@ -1,8 +1,3 @@
 <map id="Shader::readShaderFile" name="Shader::readShaderFile">
-<area shape="rect" id="node2" href="$classShader.html#a5be69e48ac2436651ead777bf5fb5c9f" title="Shader::compile" alt="" coords="214,77,330,104"/>
-<area shape="rect" id="node3" href="$classShaderProgramVertexFragment.html#a53f94d867b6e0c10042b14ca23b91cd1" title="ShaderProgramVertexFragment\l::init" alt="" coords="379,70,584,111"/>
-<area shape="rect" id="node4" href="$classShaderProgramPaths.html#a50c11df8daa401dc73f1e64166157502" title="ShaderProgramPaths\l::init" alt="" coords="655,5,801,46"/>
-<area shape="rect" id="node6" href="$classShaderProgramPositionColor.html#aaf033e1aa315111b5fc11a97f5853b71" title="ShaderProgramPositionColor\l::init" alt="" coords="633,70,823,111"/>
-<area shape="rect" id="node7" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="650,135,806,177"/>
-<area shape="rect" id="node5" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="873,77,1031,104"/>
+<area shape="rect" id="node2" href="$classShader.html#a5be69e48ac2436651ead777bf5fb5c9f" title="Shader::compile" alt="" coords="214,5,330,32"/>
 </map>
