@@ -25,4 +25,4 @@ ATFViewer.o: ATFViewer.cpp ATFViewerMainGLSL.h OpenGLHeaders.h Joystick.h \
  VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBaseDynamic.h \
  VAOLayoutPositionColor.h ShaderProgramPositionColor.h PathsVAO.h \
  TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
- VAOLayoutPaths.h ShaderProgramPaths.h DeviceSeq.cuh
+ VAOLayoutPaths.h ShaderProgramPaths.h DeviceSeq.cuh StringVAO.h

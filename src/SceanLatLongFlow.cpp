@@ -35,6 +35,8 @@ void SceanLatLongFlow::init(void)
 	sector.init(dba);
 	path.initPathPoint(this->timeMin, this->timeMax);
 	
+	string.init();
+	
 	std::cout<<"initScene() end" << std::endl;
 }
 
@@ -90,6 +92,9 @@ void SceanLatLongFlow::display(GLFWwindow* window)
 	map3.display();
 	sector.display();
 	path.display(now);
+	
+	string.display();
+	
 	
 	//描画対象のバッファを入れ替える
 	glfwSwapBuffers(window);

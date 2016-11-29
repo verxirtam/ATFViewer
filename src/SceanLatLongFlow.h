@@ -36,6 +36,8 @@
 #include "SectorsVAO.h"
 #include "PathsVAO.h"
 
+#include "StringVAO.h"
+
 class SceanLatLongFlow : public Scean
 {
 private:
@@ -60,6 +62,7 @@ private:
 	MapVAO map3;
 	SectorsVAO sector;
 	PathsVAO path;
+	StringVAO string;
 	void setMatrix(void);
 public:
 
@@ -82,7 +85,8 @@ public:
 		map2("ENRC2_20160204",shaderProgramTexture),
 		map3("ENRC3_20160204",shaderProgramTexture),
 		sector(shaderProgramPositionColor),
-		path(shaderProgramPaths)
+		path(shaderProgramPaths),
+		string()
 	{
 	}
 
