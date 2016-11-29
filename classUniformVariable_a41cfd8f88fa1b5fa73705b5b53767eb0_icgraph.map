@@ -1,5 +1,6 @@
 <map id="UniformVariable::set" name="UniformVariable::set">
 <area shape="rect" id="node2" href="$classShaderProgramBaseMVPMatrix.html#ad04d509a8047919eff5b88ec654e90ba" title="ShaderProgramBaseMVPMatrix\l\&lt; ShaderVertPathPaths, ShaderFrag\lPathPaths \&gt;::setMVPMatrix" alt="" coords="195,5,429,61"/>
 <area shape="rect" id="node3" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="234,85,390,126"/>
-<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="478,92,637,119"/>
+<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="478,67,637,93"/>
+<area shape="rect" id="node5" href="$classStringVAO.html#a788ad87c2b60d2d789f605ebc59db535" title="StringVAO::init" alt="" coords="503,117,612,144"/>
 </map>

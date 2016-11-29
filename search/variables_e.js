@@ -5,7 +5,7 @@ var searchData=
   ['sector',['sector',['../classSectors.html#ae32a9f276e9f825cdc2f439af7799e8e',1,'Sectors::sector()'],['../classSceanLatLongFlow.html#a3c23faed2d7c6a0eb3712227861dfeae',1,'SceanLatLongFlow::sector()'],['../structSectorsVAO_1_1InitSectorsSettings.html#a5e348f65d879beaa85e35c9e54283ad1',1,'SectorsVAO::InitSectorsSettings::sector()']]],
   ['sectorname',['sectorName',['../structSectors_1_1Sector.html#a88e0d06536b63918754b12cb1056021a',1,'Sectors::Sector::sectorName()'],['../structSectorsVAO_1_1Sector.html#a60e7a3309e186cd43ccae4825662e699',1,'SectorsVAO::Sector::sectorName()']]],
   ['sectors',['sectors',['../classATFViewerMain.html#a70d1e0a883d6df415764f975080cd7eb',1,'ATFViewerMain']]],
-  ['shaderprogram',['shaderProgram',['../classShaderProgramBase.html#aab92fca3e6e413b6ece9e58c40c02eeb',1,'ShaderProgramBase::shaderProgram()'],['../classVAOPositionBase.html#a2612ea6c1fa3c3e8f79b3555d76b7636',1,'VAOPositionBase::shaderProgram()']]],
+  ['shaderprogram',['shaderProgram',['../classShaderProgramBase.html#aab92fca3e6e413b6ece9e58c40c02eeb',1,'ShaderProgramBase::shaderProgram()'],['../classStringVAO.html#a6ea92891198fc6a96905e85e8ef772cf',1,'StringVAO::shaderProgram()'],['../classVAOPositionBase.html#a2612ea6c1fa3c3e8f79b3555d76b7636',1,'VAOPositionBase::shaderProgram()']]],
   ['shaderprogrampaths',['shaderProgramPaths',['../classSceanLatLongFlow.html#a0cffdf224da68df47374ba342f121a59',1,'SceanLatLongFlow']]],
   ['shaderprogrampositioncolor',['shaderProgramPositionColor',['../classSceanLatLongFlow.html#aaff1945b6c7aa128805f0d5e2821dd95',1,'SceanLatLongFlow']]],
   ['shaderprogramtexture',['shaderProgramTexture',['../classSceanLatLongFlow.html#a16754e2ff017c38ce8a56a2ca168fe12',1,'SceanLatLongFlow']]],
@@ -14,6 +14,7 @@ var searchData=
   ['startindex',['startIndex',['../classCountCrossing.html#ae1011195ba40e9514bdbae9ea34b0650',1,'CountCrossing']]],
   ['starttime',['startTime',['../classTimer.html#ac25f19f863f8208a57eda026605c1cd6',1,'Timer']]],
   ['stmt',['stmt',['../classDBAccessor.html#a9ed244611d27eb29856bfe2169249a88',1,'DBAccessor']]],
+  ['string',['string',['../classSceanLatLongFlow.html#a973eddca69f3cd9ff5f94f06ecd653d5',1,'SceanLatLongFlow']]],
   ['subsector',['subSector',['../structSectors_1_1Sector.html#a8ccdb98261a5fc8be67ec0577f388ffa',1,'Sectors::Sector::subSector()'],['../structSectorsVAO_1_1Sector.html#a41dbc859f3a72e1b9b4f14bfac5061ff',1,'SectorsVAO::Sector::subSector()']]],
   ['subsectorcount',['subSectorCount',['../structSectors_1_1Sector.html#a2e2eb3ecddfc3a5599a0823a07e0abc6',1,'Sectors::Sector::subSectorCount()'],['../structSectorsVAO_1_1Sector.html#a22b6c5f385b02b7ca7d315bfa6b8a559',1,'SectorsVAO::Sector::subSectorCount()']]],
   ['success',['success',['../structEstimateSpecResult.html#af2a41f7accc6fb0f11ede26cfd52f082',1,'EstimateSpecResult']]]
