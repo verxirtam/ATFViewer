@@ -42,6 +42,7 @@ var searchData=
   ['getstart',['getStart',['../classCountCrossing.html#a330df00f52f07ebcffd2e7a46e94df20',1,'CountCrossing']]],
   ['getsubsectors',['getSubSectors',['../classSectors.html#a9dcf49007516497795626f31f9aedaf3',1,'Sectors::getSubSectors()'],['../classSectorsVAO.html#aef4998cc9559ecd960de18c77f133369',1,'SectorsVAO::getSubSectors()']]],
   ['getsubsectorvertex',['getSubSectorVertex',['../classSectors.html#add79067cdfce4d1c130573c10d8f63e5',1,'Sectors::getSubSectorVertex()'],['../classSectorsVAO.html#aa65011e70ece9282a948018522f18a99',1,'SectorsVAO::getSubSectorVertex()']]],
+  ['gettexturecoordinate',['getTextureCoordinate',['../classStringVAO.html#a6719acd08ccda50cbc109049f86b0cc3',1,'StringVAO']]],
   ['gettime',['getTime',['../classTimer.html#a490604efc23a4ff9bef8d1f9f418ecb2',1,'Timer']]],
   ['gettotalcellindex',['getTotalCellIndex',['../CountCrossing_8cuh.html#a3ca951bcee0d1f377757090e1036f5ad',1,'getTotalCellIndex(const int *const cellindex, const int *const startindex, const int *const indexcount):&#160;CountCrossing.cuh'],['../cudatestfunc_8h.html#a8c29f73603fc16e153410fd6dbac8f68',1,'getTotalCellIndex(const int *const cellindex, const int *const startindex, const int *const indexcount):&#160;cudatestfunc.h']]],
   ['gettrackdatafromdb',['getTrackDataFromDB',['../classTrackDataManager.html#a0ba42f71eb64dc74ee01d9bc5edcb026',1,'TrackDataManager']]],
