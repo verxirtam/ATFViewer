@@ -88,17 +88,17 @@ void StringVAO::setString
 }
 
 
-glm::mat4 StringVAO::getTransform(const glm::vec3& position, const glm::vec3& horisontal, const glm::vec3& vertical)
+glm::mat4 StringVAO::getTransform(const glm::vec3& position, const glm::vec3& horizontal, const glm::vec3& vertical)
 {
 	//結果を格納する変換行列
 	glm::mat4 transform;
 	
 	//文字列の水平方向
-	transform[0] = glm::vec4(horisontal, 0.0f);
+	transform[0] = glm::vec4(horizontal, 0.0f);
 	//文字列の垂直方向
 	transform[1] = glm::vec4(vertical  , 0.0f);
 	//文字列を描画する面の法線ベクトル
-	glm::vec3 cross = glm::cross(horisontal, vertical);
+	glm::vec3 cross = glm::cross(horizontal, vertical);
 	transform[2] = glm::normalize(glm::vec4(cross, 0.0f));
 	
 	//平行移動
@@ -115,7 +115,7 @@ void StringVAO::init()
 	SingleString single_string;
 	single_string.dispString = std::string("test."),
 	single_string.position   = glm::vec3(139.0 + ( 46.0/60.0 + 87.0/3600.0 ), 35.0 + ( 33.0/60.0 + 20.0/3600.0 ), 100.0f);
-	single_string.horisontal = glm::vec3(1.0f, 0.0f, 0.0f);
+	single_string.horizontal = glm::vec3(1.0f, 0.0f, 0.0f);
 	single_string.vertical   = glm::vec3(0.0f, 1.0f, 0.0f);
 	
 	//stringに追加
@@ -139,7 +139,7 @@ void StringVAO::init(const std::vector<SingleString>& string)
 	for(auto&& s : string)
 	{
 		//座標変換行列の取得
-		glm::mat4 transform = getTransform(s.position, s.horisontal, s.vertical);
+		glm::mat4 transform = getTransform(s.position, s.horizontal, s.vertical);
 		//1つの文字列分のVAOの情報を取得
 		setString(s.dispString, transform, input, element);
 	}

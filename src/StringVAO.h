@@ -72,9 +72,9 @@ private:
 		);
 	//文字の配置から座標変換行列を取得する
 	//position		1文字目の左下の点の位置を示す
-	//horisontal	1文字目の左下から右下へのベクトル
+	//horizontal	1文字目の左下から右下へのベクトル
 	//vertical		1文字目の左下から左上へのベクトル
-	glm::mat4 getTransform(const glm::vec3& position, const glm::vec3& horisontal, const glm::vec3& vertical);
+	glm::mat4 getTransform(const glm::vec3& position, const glm::vec3& horizontal, const glm::vec3& vertical);
 public:
 	//単一の文字列と
 	//その配置を示すベクトルを格納する
@@ -85,13 +85,13 @@ public:
 		//1文字目の左下の点の位置を示すベクトル
 		glm::vec3   position;
 		//1文字目の左下から右下へのベクトル
-		glm::vec3   horisontal;
+		glm::vec3   horizontal;
 		//1文字目の左下から左上へのベクトル
 		glm::vec3   vertical;
 		SingleString():
 			dispString(),
 			position(),
-			horisontal(),
+			horizontal(),
 			vertical()
 		{
 		}

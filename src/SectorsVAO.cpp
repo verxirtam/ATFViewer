@@ -381,7 +381,7 @@ void SectorsVAO::initSubSector(const std::string& sector_name, SubSector& ss, co
 	LongLat ll = iss.longLat[ss.longLatIndex[0]];
 	float altitude = ((float)ss.maximumAltitude)+1000.0f;
 	single_string.position = glm::vec3(ll.longitude, ll.latitude, altitude);
-	single_string.horisontal = glm::vec3(0.125f, 0.0f, 0.0f);
+	single_string.horizontal = glm::vec3(0.125f, 0.0f, 0.0f);
 	single_string.vertical = glm::vec3(0.0f, 0.125f, 5000.0f);
 	single_string.dispString = sector_name;
 	iss.sectorName.push_back(single_string);
