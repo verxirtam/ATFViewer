@@ -1,3 +1,5 @@
 <map id="SectorsVAO::display" name="SectorsVAO::display">
 <area shape="rect" id="node2" href="$classVAOPositionBase.html#a405b239f98d227646da20846b5300e3f" title="VAOPositionBase::display" alt="" coords="197,5,373,32"/>
+<area shape="rect" id="node3" href="$classStringVAO.html#a24e756d6d58b0bd4a129f2f5bfe89420" title="StringVAO::display" alt="" coords="219,56,352,83"/>
+<area shape="rect" id="node4" href="$classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453" title="VAOPositionTexture\l::display" alt="" coords="421,49,563,90"/>
 </map>

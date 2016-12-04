@@ -8,5 +8,6 @@ var searchData=
   ['vertexcount',['vertexCount',['../structEstimateSpecResult.html#a5a73c4fcb0d96501ecbceff0d054e805',1,'EstimateSpecResult']]],
   ['vertexdata',['vertexData',['../classVAOPositionBase.html#a8114defa64270b79f65a1895da78561b',1,'VAOPositionBase']]],
   ['vertexindex',['vertexIndex',['../structMapVAO_1_1MapVertexIndex.html#a26fb6314c9bfb0f45cbe72cf8a114b1b',1,'MapVAO::MapVertexIndex::vertexIndex()'],['../structMap_1_1MapVertexIndex.html#aae3f36199b6df0606c80e24ea5d8a540',1,'Map::MapVertexIndex::vertexIndex()']]],
+  ['vertical',['vertical',['../structStringVAO_1_1SingleString.html#a8d90ff1e15306a53d399a83592c427e5',1,'StringVAO::SingleString']]],
   ['vertshader',['vertShader',['../classShaderProgramBase.html#a2bf78fb15ec6ff67fbf0da61269cd483',1,'ShaderProgramBase']]]
 ];

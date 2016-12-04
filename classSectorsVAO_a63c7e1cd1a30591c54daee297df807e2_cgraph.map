@@ -1,6 +1,7 @@
 <map id="SectorsVAO::init" name="SectorsVAO::init">
 <area shape="rect" id="node2" href="$classSectorsVAO.html#abda9921abe4299f9636d8663fadf6b2c" title="SectorsVAO::getSectors" alt="" coords="174,267,341,293"/>
 <area shape="rect" id="node14" href="$classSectorsVAO.html#ad08bf05e726561423fbbf4411d2a2fce" title="SectorsVAO::initVAO" alt="" coords="183,495,331,521"/>
+<area shape="rect" id="node20" href="$classStringVAO.html#a788ad87c2b60d2d789f605ebc59db535" title="StringVAO::init" alt="" coords="203,545,312,572"/>
 <area shape="rect" id="node3" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="881,5,1039,32"/>
 <area shape="rect" id="node4" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="875,56,1045,83"/>
 <area shape="rect" id="node5" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="859,309,1061,336"/>

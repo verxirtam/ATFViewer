@@ -1,5 +1,5 @@
 <map id="Texture2D::init" name="Texture2D::init">
-<area shape="rect" id="node2" href="$classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="167,5,267,32"/>
-<area shape="rect" id="node4" href="$classStringVAO.html#a788ad87c2b60d2d789f605ebc59db535" title="StringVAO::init" alt="" coords="163,56,272,83"/>
-<area shape="rect" id="node3" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="321,5,479,32"/>
+<area shape="rect" id="node2" href="$classMapVAO.html#aca435360d181c1527eef20094741b42d" title="MapVAO::init" alt="" coords="193,5,293,32"/>
+<area shape="rect" id="node4" href="$classStringTextureManager.html#a4f685eb3f3c19c554327e3a424079349" title="StringTextureManager\l::StringTextureManager" alt="" coords="163,57,322,98"/>
+<area shape="rect" id="node3" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="371,5,530,32"/>
 </map>
