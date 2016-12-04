@@ -23,6 +23,7 @@ SceanLatLongFlow.o: SceanLatLongFlow.cpp SceanLatLongFlow.h Scean.h \
  ShaderProgramBaseMVPMatrix.h ShaderProgramBase.h Shader.h \
  ShaderProgram.h UniformVariable.h SectorsVAO.h GCS.h LongLat.h \
  VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBaseDynamic.h \
- VAOLayoutPositionColor.h ShaderProgramPositionColor.h PathsVAO.h \
- TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
- VAOLayoutPaths.h ShaderProgramPaths.h DeviceSeq.cuh StringVAO.h
+ VAOLayoutPositionColor.h ShaderProgramPositionColor.h StringVAO.h \
+ StringTextureManager.h PathsVAO.h TrackDataManager.h Path.h \
+ TimeManager.h TimeSeparation.h VAOPaths.h VAOLayoutPaths.h \
+ ShaderProgramPaths.h DeviceSeq.cuh

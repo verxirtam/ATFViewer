@@ -32,6 +32,10 @@
 
 #include "VAOPositionColor.h"
 #include "ShaderProgramPositionColor.h"
+#include "StringVAO.h"
+
+#include <glm/gtx/string_cast.hpp>
+
 
 class SectorsVAO
 {
@@ -84,13 +88,15 @@ private:
 		std::vector<glm::vec3> position;/**< 位置 */
 		std::vector<glm::vec3> color;/**< 頂点色*/
 		std::vector<unsigned int> element;/**< インデックス配列  */
+		std::vector<StringVAO::SingleString> sectorName;
 		InitSectorsSettings()
 			:
 				sector(),
 				longLat(),
 				position(),
 				color(),
-				element()
+				element(),
+				sectorName()
 		{
 		}
 	};
@@ -99,6 +105,7 @@ private:
 	unsigned int displaySectorIndex;
 	using vaoType = VAOPositionColor<ShaderProgramPositionColor>;
 	vaoType vao;
+	StringVAO sectorName;
 	//メンバ関数
 	LongLat getInsideLongLat(LongLat& xi, LongLat& xj, LongLat& xk, double d);
 	void getSectors(DBAccessor& dba, InitSectorsSettings& iss);
@@ -121,7 +128,8 @@ public:
 		:
 			displayAll(true),
 			displaySectorIndex(0),
-			vao(s)
+			vao(s),
+			sectorName()
 	{
 	}
 	void init(DBAccessor& dba)
@@ -132,6 +140,21 @@ public:
 		
 		initVAO(iss);
 		
+		//std::cout << "iss.sectorName.size() = " << iss.sectorName.size() << std::endl;
+		//for (auto&& sn : iss.sectorName)
+		//{
+		//	std::cout << "iss.sectorName[].dispString = " << sn.dispString << std::endl;
+		//	std::cout << "iss.sectorName[].position = "   << glm::to_string(sn.position) << std::endl;
+		//	std::cout << "iss.sectorName[].horisontal = " << glm::to_string(sn.horisontal) << std::endl;
+		//	std::cout << "iss.sectorName[].vertical = "   << glm::to_string(sn.vertical) << std::endl;
+		//}
+		iss.sectorName[0].dispString = std::string("A");
+		iss.sectorName[1].dispString = std::string("BB");
+		iss.sectorName[2].dispString = std::string("CCC");
+		iss.sectorName[3].dispString = std::string("DDDD");
+		iss.sectorName[4].dispString = std::string("EEEEE");
+		iss.sectorName[5].dispString = std::string("FFFFFF");
+		sectorName.init(iss.sectorName);
 		//デバッグ用の出力//////////////////////
 		/*
 		return;
@@ -183,9 +206,14 @@ public:
 			}
 		}
 	}*/
+	void setMVPMatrix(const glm::mat4& m)
+	{
+		sectorName.setMVPMatrix(m);
+	}
 	void display()
 	{
 		vao.display();
+		sectorName.display();
 	}
 };
 

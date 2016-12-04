@@ -19,4 +19,6 @@ SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  /usr/local/cuda/include/cuda_gl_interop.h VAOBase.h \
  VAOPositionBaseDynamic.h VAOLayoutPositionColor.h \
  ShaderProgramPositionColor.h ShaderProgramBaseMVPMatrix.h \
- ShaderProgramBase.h Shader.h ShaderProgram.h UniformVariable.h
+ ShaderProgramBase.h Shader.h ShaderProgram.h UniformVariable.h \
+ StringVAO.h StringTextureManager.h Texture2D.h VAOPositionTexture.h \
+ VAOLayoutPositionTexture.h ShaderProgramTexture.h

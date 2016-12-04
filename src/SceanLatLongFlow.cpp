@@ -70,6 +70,8 @@ void SceanLatLongFlow::setMatrix(void)
 	shaderProgramTexture.setMVPMatrix(mvp);
 	shaderProgramPositionColor.setMVPMatrix(mvp);
 	shaderProgramPaths.setMVPMatrix(mvp);
+	string.setMVPMatrix(mvp);
+	sector.setMVPMatrix(mvp);
 }
 
 void SceanLatLongFlow::display(GLFWwindow* window)
