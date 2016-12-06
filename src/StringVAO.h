@@ -118,4 +118,52 @@ public:
 	}
 };
 
+/*
+	StringVAOBillBoadをどう作るか
+	
+	mat4 MVPMatrix
+	int w Windowの幅(ピクセル)
+	int h Windowの高さ(ピクセル)
+	
+	{
+		vec3 描画位置(モデル座標系)
+		int 文字の幅(ピクセル)
+		int 文字の高さ(ピクセル)
+		std::string 表示する文字列
+	}
+-------------------
+VAOのレイアウト
+	x	モデル座標系x座標
+	y	モデル座標系y座標
+	u	テクスチャ座標系u座標
+	v	テクスチャ座標系v座標
+	i	文字列インデックス
+
+VAOと別にバッファオブジェクトを用意する
+文字列毎の情報を格納する
+	x_i	文字列の描画位置(モデル座標系)x座標
+	y_i	文字列の描画位置(モデル座標系)y座標
+	z_i	文字列の描画位置(モデル座標系)z座標
+	w_i	文字の幅
+	h_i	文字の高さ
+	r_i	文字色
+	g_i	文字色
+	b_i	文字色
+
+頂点シェーダでの動き
+	この文字列_iが従うMVPMatrix(MVPMatrix_i とする)を算出する
+	MVPMatrix_i = translate(MVPMatrix * (x_i, y_i, z_i)) * scale(2.0f / w, 2.0f / h, 1.0f) * scale(w_i, h_i, 1.0f)
+	
+	モデル座標にMVPMatrix_iを施す
+	(X,Y,Z) = MVPMatrix_i * (x, y, 1.0f)
+	(X,Y,u,v,r_i,g_i,b_i)を出力とする
+
+フラグメントシェーダの動き
+	a = texture(u,v)_r (_gでも_bでもOK)をアルファとして
+	(r_i,g_i,b_i,a)を描画する
+*/
+
+
+
+
 
