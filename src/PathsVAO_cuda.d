@@ -340,7 +340,7 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/glm/glm/integer.hpp \
     /usr/local/glm/glm/detail/func_integer.hpp \
     /usr/local/glm/glm/detail/func_integer.inl \
-    DBAccessor.h \
+    /home/daisuke/programs/ATFViewer/include/DBAccessor.h \
     /usr/include/sqlite3.h \
     TrackDataManager.h \
     /usr/include/c++/4.8/map \

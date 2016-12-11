@@ -1,8 +1,8 @@
 SceanLatLongFlow.o: SceanLatLongFlow.cpp SceanLatLongFlow.h Scean.h \
  OpenGLHeaders.h GLCall.h Joystick.h JoystickBase.h JoystickManagerGLFW.h \
- DBAccessor.h MapTransform.h MapVAO.h Util.h VAOPositionTexture.h Lock.h \
- Texture2D.h VAOPositionBase.h VBO.h \
- /usr/local/cuda/include/cuda_runtime.h \
+ /home/daisuke/programs/ATFViewer/include/DBAccessor.h MapTransform.h \
+ MapVAO.h Util.h VAOPositionTexture.h Lock.h Texture2D.h \
+ VAOPositionBase.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
  /usr/local/cuda/include/device_types.h \

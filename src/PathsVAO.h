@@ -27,7 +27,7 @@
 
 #include "OpenGLHeaders.h"
 
-#include "DBAccessor.h"
+#include <DBAccessor.h>
 #include "TrackDataManager.h"
 #include "Path.h"
 #include "TimeSeparation.h"

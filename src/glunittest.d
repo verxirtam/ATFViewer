@@ -1,8 +1,8 @@
 glunittest.o: glunittest.cpp ATFViewerMainGLSL.h OpenGLHeaders.h GLCall.h \
  Joystick.h JoystickBase.h JoystickManagerGLFW.h SceanNothing.h Scean.h \
- SceanLatLongFlow.h DBAccessor.h MapTransform.h MapVAO.h Util.h \
- VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
- /usr/local/cuda/include/cuda_runtime.h \
+ SceanLatLongFlow.h /home/daisuke/programs/ATFViewer/include/DBAccessor.h \
+ MapTransform.h MapVAO.h Util.h VAOPositionTexture.h Lock.h Texture2D.h \
+ VAOPositionBase.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
  /usr/local/cuda/include/device_types.h \

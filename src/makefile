@@ -30,8 +30,11 @@ COMMON_FLAGS := -pg -g -O0
 #CXX_LINKS := -L/usr/lib/nvidia-367 -lsqlite3 -lglut -lGLEW -lGLU -lGL
 CXX_LINKS := -lsqlite3 $(shell pkg-config --static --libs glfw3) -lGLEW -lGLU -lGL
 
+#ホームディレクトリのパス(末尾に"/"無し)
+HOME := $(shell echo ~)
+
 #g++のコンパイルのフラグ
-CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)
+CXXFLAGS := -Wall -fopenmp -I/usr/include -I/usr/local/cuda/include -I$(HOME)/programs/ATFViewer/include $(shell pkg-config --cflags glfw3) $(CXX_LINKS)
 CXXONLYFLAGS := -std=c++11 -Weffc++
 
 #CUDA関連の設定

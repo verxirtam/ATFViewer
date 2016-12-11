@@ -1,5 +1,6 @@
-PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h GLCall.h DBAccessor.h \
- TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
+PathsVAO.o: PathsVAO.cpp PathsVAO.h OpenGLHeaders.h GLCall.h \
+ /home/daisuke/programs/ATFViewer/include/DBAccessor.h TrackDataManager.h \
+ Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
  VAOPositionBaseDynamic.h VAOPositionBase.h Lock.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \

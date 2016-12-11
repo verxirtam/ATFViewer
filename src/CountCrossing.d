@@ -246,7 +246,7 @@ CountCrossing.o : CountCrossing.cu \
     /usr/include/x86_64-linux-gnu/c++/4.8/bits/c++io.h \
     /usr/include/c++/4.8/bits/fstream.tcc \
     /usr/lib/gcc/x86_64-linux-gnu/4.8/include/omp.h \
-    DBAccessor.h \
+    /home/daisuke/programs/ATFViewer/include/DBAccessor.h \
     /usr/include/c++/4.8/iostream \
     /usr/include/sqlite3.h \
     Path.h \

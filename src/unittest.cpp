@@ -27,7 +27,7 @@
 
 #include <pthread.h>
 
-#include "DBAccessor.h"
+#include <DBAccessor.h>
 #include "TrackDataManager.h"
 
 #include "cudatestfunc.h"

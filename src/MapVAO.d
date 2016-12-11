@@ -1,6 +1,7 @@
 MapVAO.o: MapVAO.cpp MapVAO.h OpenGLHeaders.h GLCall.h Util.h \
- DBAccessor.h VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h \
- VBO.h /usr/local/cuda/include/cuda_runtime.h \
+ /home/daisuke/programs/ATFViewer/include/DBAccessor.h \
+ VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
+ /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
  /usr/local/cuda/include/device_types.h \

@@ -28,7 +28,7 @@
 #include "OpenGLHeaders.h"
 
 #include "Util.h"
-#include "DBAccessor.h"
+#include <DBAccessor.h>
 
 #include "VAOPositionTexture.h"
 #include "ShaderProgramTexture.h"

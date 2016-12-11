@@ -26,7 +26,7 @@
 
 #include <omp.h>
 
-#include "DBAccessor.h"
+#include <DBAccessor.h>
 #include "Path.h"
 #include "TimeManager.h"
 
