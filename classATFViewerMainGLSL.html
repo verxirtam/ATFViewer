@@ -151,6 +151,8 @@ Static Private Member Functions</h2></td></tr>
 <tr class="separator:a8a8d0f5e14974be5f8ce07de0d9d96fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d1b9fb60623400ad43cdb4644900b8f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f">_keyboard</a> (GLFWwindow *<a class="el" href="classATFViewerMainGLSL.html#a4dc492919160ef89517ed01ef99b1548">window</a>, int key, int scancode, int action, int mods)</td></tr>
 <tr class="separator:a1d1b9fb60623400ad43cdb4644900b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab48edfc71c615e93ea4566a405946b11"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classATFViewerMainGLSL.html#ab48edfc71c615e93ea4566a405946b11">_callbackGLFWError</a> (int error, const char *description)</td></tr>
+<tr class="separator:ab48edfc71c615e93ea4566a405946b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -261,6 +263,49 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ab48edfc71c615e93ea4566a405946b11"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void ATFViewerMainGLSL::_callbackGLFWError </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>error</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classATFViewerMainGLSL_ab48edfc71c615e93ea4566a405946b11_icgraph.png" border="0" usemap="#classATFViewerMainGLSL_ab48edfc71c615e93ea4566a405946b11_icgraph" alt=""/></div>
+<map name="classATFViewerMainGLSL_ab48edfc71c615e93ea4566a405946b11_icgraph" id="classATFViewerMainGLSL_ab48edfc71c615e93ea4566a405946b11_icgraph">
+<area shape="rect" id="node2" href="classATFViewerMainGLSL.html#a22337c4bd9f93811775ffd3abaccf5af" title="ATFViewerMainGLSL::\linitGLFW" alt="" coords="211,5,367,46"/><area shape="rect" id="node3" href="classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="416,12,589,39"/><area shape="rect" id="node4" href="ATFViewer_8cpp.html#abf9e6b7e6f15df4b525a2e7705ba3089" title="main" alt="" coords="637,12,688,39"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a1d1b9fb60623400ad43cdb4644900b8f"></a>
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +600,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classATFViewerMainGLSL_a69d0f02c36e7e88118470724f9448f6a_cgraph.png" border="0" usemap="#classATFViewerMainGLSL_a69d0f02c36e7e88118470724f9448f6a_cgraph" alt=""/></div>
 <map name="classATFViewerMainGLSL_a69d0f02c36e7e88118470724f9448f6a_cgraph" id="classATFViewerMainGLSL_a69d0f02c36e7e88118470724f9448f6a_cgraph">
-<area shape="rect" id="node2" href="classATFViewerMainGLSL.html#a22337c4bd9f93811775ffd3abaccf5af" title="ATFViewerMainGLSL::\linitGLFW" alt="" coords="227,5,383,46"/><area shape="rect" id="node3" href="classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8" title="ATFViewerMainGLSL::\lcreateWindow" alt="" coords="227,70,383,111"/><area shape="rect" id="node4" href="classATFViewerMainGLSL.html#af5b531e85432b40de7f29e4fdc0e1e1e" title="ATFViewerMainGLSL::\linitGLEW" alt="" coords="227,135,383,177"/><area shape="rect" id="node5" href="classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="227,201,383,242"/><area shape="rect" id="node6" href="classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="433,167,589,209"/><area shape="rect" id="node9" href="classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="433,233,589,274"/><area shape="rect" id="node7" href="classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="638,199,794,241"/><area shape="rect" id="node8" href="classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="638,134,794,175"/><area shape="rect" id="node10" href="classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="638,265,794,306"/></map>
+<area shape="rect" id="node2" href="classATFViewerMainGLSL.html#a22337c4bd9f93811775ffd3abaccf5af" title="ATFViewerMainGLSL::\linitGLFW" alt="" coords="227,5,383,46"/><area shape="rect" id="node4" href="classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8" title="ATFViewerMainGLSL::\lcreateWindow" alt="" coords="227,70,383,111"/><area shape="rect" id="node5" href="classATFViewerMainGLSL.html#af5b531e85432b40de7f29e4fdc0e1e1e" title="ATFViewerMainGLSL::\linitGLEW" alt="" coords="227,135,383,177"/><area shape="rect" id="node6" href="classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="227,201,383,242"/><area shape="rect" id="node3" href="classATFViewerMainGLSL.html#ab48edfc71c615e93ea4566a405946b11" title="ATFViewerMainGLSL::\l_callbackGLFWError" alt="" coords="433,5,589,46"/><area shape="rect" id="node7" href="classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="433,167,589,209"/><area shape="rect" id="node10" href="classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="433,233,589,274"/><area shape="rect" id="node8" href="classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="638,199,794,241"/><area shape="rect" id="node9" href="classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="638,134,794,175"/><area shape="rect" id="node11" href="classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="638,265,794,306"/></map>
 </div>
 </p>
 
@@ -663,6 +708,15 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classATFViewerMainGLSL_a22337c4bd9f93811775ffd3abaccf5af_cgraph.png" border="0" usemap="#classATFViewerMainGLSL_a22337c4bd9f93811775ffd3abaccf5af_cgraph" alt=""/></div>
+<map name="classATFViewerMainGLSL_a22337c4bd9f93811775ffd3abaccf5af_cgraph" id="classATFViewerMainGLSL_a22337c4bd9f93811775ffd3abaccf5af_cgraph">
+<area shape="rect" id="node2" href="classATFViewerMainGLSL.html#ab48edfc71c615e93ea4566a405946b11" title="ATFViewerMainGLSL::\l_callbackGLFWError" alt="" coords="211,5,367,46"/></map>
+</div>
+</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -972,7 +1026,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 11 2016 20:35:02 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 12 2016 04:03:49 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,15 +1,16 @@
 <map id="main" name="main">
-<area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="737,259,893,301"/>
+<area shape="rect" id="node2" href="$classATFViewerMainGLSL.html#a601f681c657b902f5f70c2404f852a5f" title="ATFViewerMainGLSL::\lgetInstance" alt="" coords="737,70,893,111"/>
 <area shape="rect" id="node3" href="$classATFViewerMainGLSL.html#a69d0f02c36e7e88118470724f9448f6a" title="ATFViewerMainGLSL::init" alt="" coords="104,143,277,169"/>
-<area shape="rect" id="node12" href="$classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4" title="ATFViewerMainGLSL::\lexecMainLoop" alt="" coords="113,318,269,359"/>
-<area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#a22337c4bd9f93811775ffd3abaccf5af" title="ATFViewerMainGLSL::\linitGLFW" alt="" coords="326,201,482,242"/>
-<area shape="rect" id="node5" href="$classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8" title="ATFViewerMainGLSL::\lcreateWindow" alt="" coords="326,5,482,46"/>
-<area shape="rect" id="node6" href="$classATFViewerMainGLSL.html#af5b531e85432b40de7f29e4fdc0e1e1e" title="ATFViewerMainGLSL::\linitGLEW" alt="" coords="326,70,482,111"/>
-<area shape="rect" id="node7" href="$classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="326,135,482,177"/>
-<area shape="rect" id="node8" href="$classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="531,198,687,239"/>
-<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="531,133,687,174"/>
-<area shape="rect" id="node9" href="$classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="737,194,893,235"/>
-<area shape="rect" id="node11" href="$classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="737,129,893,170"/>
-<area shape="rect" id="node13" href="$classATFViewerMainGLSL.html#a67e6d15d5d16927eccd73a955d68d9fe" title="ATFViewerMainGLSL::\ldisplay" alt="" coords="326,383,482,425"/>
-<area shape="rect" id="node14" href="$classATFViewerMainGLSL.html#a593a3f16b3f4360853a3be8bc2a01295" title="ATFViewerMainGLSL::\ljoystickInput" alt="" coords="326,318,482,359"/>
+<area shape="rect" id="node13" href="$classATFViewerMainGLSL.html#a57da7e2b9062792b8f67fe66f555efb4" title="ATFViewerMainGLSL::\lexecMainLoop" alt="" coords="113,318,269,359"/>
+<area shape="rect" id="node4" href="$classATFViewerMainGLSL.html#a22337c4bd9f93811775ffd3abaccf5af" title="ATFViewerMainGLSL::\linitGLFW" alt="" coords="326,135,482,177"/>
+<area shape="rect" id="node6" href="$classATFViewerMainGLSL.html#a03424af8785bb576fa73c67a9d14c0f8" title="ATFViewerMainGLSL::\lcreateWindow" alt="" coords="326,201,482,242"/>
+<area shape="rect" id="node7" href="$classATFViewerMainGLSL.html#af5b531e85432b40de7f29e4fdc0e1e1e" title="ATFViewerMainGLSL::\linitGLEW" alt="" coords="326,70,482,111"/>
+<area shape="rect" id="node8" href="$classATFViewerMainGLSL.html#a0e6171a05c3e088eef6e4aa4f79aec3f" title="ATFViewerMainGLSL::\linitCallbacks" alt="" coords="326,5,482,46"/>
+<area shape="rect" id="node5" href="$classATFViewerMainGLSL.html#ab48edfc71c615e93ea4566a405946b11" title="ATFViewerMainGLSL::\l_callbackGLFWError" alt="" coords="531,135,687,177"/>
+<area shape="rect" id="node9" href="$classATFViewerMainGLSL.html#a8a8d0f5e14974be5f8ce07de0d9d96fa" title="ATFViewerMainGLSL::\l_resize" alt="" coords="531,70,687,111"/>
+<area shape="rect" id="node11" href="$classATFViewerMainGLSL.html#a1d1b9fb60623400ad43cdb4644900b8f" title="ATFViewerMainGLSL::\l_keyboard" alt="" coords="531,5,687,46"/>
+<area shape="rect" id="node10" href="$classATFViewerMainGLSL.html#acf3de7aa0aea8873db7d702bf7ddcb36" title="ATFViewerMainGLSL::\lresize" alt="" coords="737,135,893,177"/>
+<area shape="rect" id="node12" href="$classATFViewerMainGLSL.html#a0d669b4c1a39e13261e5f1fd819111f1" title="ATFViewerMainGLSL::\lkeyboard" alt="" coords="737,5,893,46"/>
+<area shape="rect" id="node14" href="$classATFViewerMainGLSL.html#a67e6d15d5d16927eccd73a955d68d9fe" title="ATFViewerMainGLSL::\ldisplay" alt="" coords="326,383,482,425"/>
+<area shape="rect" id="node15" href="$classATFViewerMainGLSL.html#a593a3f16b3f4360853a3be8bc2a01295" title="ATFViewerMainGLSL::\ljoystickInput" alt="" coords="326,318,482,359"/>
 </map>
