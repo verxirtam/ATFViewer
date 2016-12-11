@@ -29,7 +29,7 @@ var searchData=
   ['doublebufferingtype',['doubleBufferingType',['../structPathsVAO_1_1doubleBufferingType.html#a2335f4fcc3198fb4b66e856af8e360c6',1,'PathsVAO::doubleBufferingType']]],
   ['doublebufferingtype',['doubleBufferingType',['../structPathsVAO_1_1doubleBufferingType.html',1,'PathsVAO']]],
   ['drawpath',['drawPath',['../classPaths.html#ae106f351fe902cc69616e85573587107',1,'Paths::drawPath()'],['../classPathsVAO.html#a0d8a841142b031319fa205626799cbac',1,'PathsVAO::drawPath()']]],
-  ['drawpathline',['drawPathLine',['../classPaths.html#a74ee48d529066437d733a1ffd1b1a558',1,'Paths::drawPathLine()'],['../classPathsVAO.html#a2ed9c73278537e9cec508252250e23c6',1,'PathsVAO::drawPathLine()']]],
+  ['drawpathline',['drawPathLine',['../classPaths.html#a74ee48d529066437d733a1ffd1b1a558',1,'Paths']]],
   ['drawstring',['drawString',['../classBitmapString.html#a999b3b01ca928098a5b5ae83045c9cf4',1,'BitmapString::drawString(const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#a1db57dc50aacb075e48480a3b9b0ee76',1,'BitmapString::drawString(double x, double y, double z, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)'],['../classBitmapString.html#aa1baf22fecc374ee4926b2b1693c233d',1,'BitmapString::drawString(double x, double y, const char *str, void *font=GLUT_BITMAP_TIMES_ROMAN_10)']]],
   ['drawtimewidth',['drawTimeWidth',['../classPaths.html#a83cacb496526d6b75ffa3e20f6de6996',1,'Paths::drawTimeWidth()'],['../classPathsVAO.html#ac1d196ec4d800c2b42d487e9aa3ca16a',1,'PathsVAO::drawTimeWidth()']]],
   ['dsc',['dsc',['../classDeviceSeq.html#a7f8a12b7c9fc24496117d42f638810f0',1,'DeviceSeq']]]

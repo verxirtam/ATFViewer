@@ -205,15 +205,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        </div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="comment">//アルファブレンド有効化</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        glEnable(GL_BLEND);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glEnable(GL_BLEND));</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="comment">//アルファブレンドの方法を指定</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="comment">//描画</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        <a class="code" href="classStringVAO.html#abaebedf4567c80a567f83f3163b3f346">vao</a>.<a class="code" href="classVAOPositionTexture.html#ab3a9ecf952e6dedb9f34abf7677da453">display</a>();</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="comment">//アルファブレンド無効化</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        glDisable(GL_BLEND);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glDisable(GL_BLEND));</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="comment">//デプスバッファ有効化</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        glEnable(GL_DEPTH_TEST);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glEnable(GL_DEPTH_TEST));</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
@@ -276,11 +276,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classStringVAO_html_ab2259824ba62996720ab0f98f7a35b4b"><div class="ttname"><a href="classStringVAO.html#ab2259824ba62996720ab0f98f7a35b4b">StringVAO::setString</a></div><div class="ttdeci">void setString(const std::string &amp;disp_string, const glm::mat4 &amp;transform, vaoType::inputType &amp;input, std::vector&lt; unsigned int &gt; &amp;element)</div><div class="ttdef"><b>Definition:</b> StringVAO.cpp:23</div></div>
 <div class="ttc" id="classStringTextureManager_html"><div class="ttname"><a href="classStringTextureManager.html">StringTextureManager</a></div><div class="ttdef"><b>Definition:</b> StringTextureManager.h:20</div></div>
 <div class="ttc" id="classStringVAO_html"><div class="ttname"><a href="classStringVAO.html">StringVAO</a></div><div class="ttdef"><b>Definition:</b> StringVAO.h:30</div></div>
-<div class="ttc" id="classShaderProgramString_html_a60ea2f0b246254f912f2c8140a048445"><div class="ttname"><a href="classShaderProgramString.html#a60ea2f0b246254f912f2c8140a048445">ShaderProgramString::setMVPMatrix</a></div><div class="ttdeci">void setMVPMatrix(const glm::mat4 &amp;m)</div><div class="ttdef"><b>Definition:</b> ShaderProgramString.h:63</div></div>
+<div class="ttc" id="classShaderProgramString_html_a60ea2f0b246254f912f2c8140a048445"><div class="ttname"><a href="classShaderProgramString.html#a60ea2f0b246254f912f2c8140a048445">ShaderProgramString::setMVPMatrix</a></div><div class="ttdeci">void setMVPMatrix(const glm::mat4 &amp;m)</div><div class="ttdef"><b>Definition:</b> ShaderProgramString.h:68</div></div>
 <div class="ttc" id="classStringVAO_html_a096b75c52c9391309459e2742dba8730"><div class="ttname"><a href="classStringVAO.html#a096b75c52c9391309459e2742dba8730">StringVAO::shaderProgram</a></div><div class="ttdeci">ShaderProgramString shaderProgram</div><div class="ttdef"><b>Definition:</b> StringVAO.h:34</div></div>
 <div class="ttc" id="classVAOPositionTexture_html_a7c155b09f2d39f4baaa3da0fd2efd345"><div class="ttname"><a href="classVAOPositionTexture.html#a7c155b09f2d39f4baaa3da0fd2efd345">VAOPositionTexture&lt; ShaderProgramString &gt;::inputType</a></div><div class="ttdeci">typename baseType::inputType inputType</div><div class="ttdef"><b>Definition:</b> VAOPositionTexture.h:42</div></div>
 <div class="ttc" id="classStringVAO_html_abb4946ea1f6526c546730f9ffeca5cb6"><div class="ttname"><a href="classStringVAO.html#abb4946ea1f6526c546730f9ffeca5cb6">StringVAO::StringVAO</a></div><div class="ttdeci">StringVAO()</div><div class="ttdef"><b>Definition:</b> StringVAO.h:99</div></div>
 <div class="ttc" id="structStringVAO_1_1SingleString_html"><div class="ttname"><a href="structStringVAO_1_1SingleString.html">StringVAO::SingleString</a></div><div class="ttdef"><b>Definition:</b> StringVAO.h:81</div></div>
+<div class="ttc" id="GLCall_8h_html_ae5c4035818248f6631e1dbc4a63d0fc2"><div class="ttname"><a href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(cmd)</div><div class="ttdef"><b>Definition:</b> GLCall.h:36</div></div>
 <div class="ttc" id="classShaderProgramString_html"><div class="ttname"><a href="classShaderProgramString.html">ShaderProgramString</a></div><div class="ttdef"><b>Definition:</b> ShaderProgramString.h:24</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 <div class="ttc" id="classVAOPositionTexture_html"><div class="ttname"><a href="classVAOPositionTexture.html">VAOPositionTexture&lt; ShaderProgramString &gt;</a></div></div>
@@ -295,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 11 2016 16:57:17 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 11 2016 20:35:01 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

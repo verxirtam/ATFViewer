@@ -116,15 +116,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classUniformVariable.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUniformVariable.html">UniformVariable</a></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad">   30</a></span>&#160;    GLuint <a class="code" href="classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad">location</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classUniformVariable.html#a62cc0fd61cd01f87e61e4fa4784391dd">   30</a></span>&#160;    GLint <a class="code" href="classUniformVariable.html#a62cc0fd61cd01f87e61e4fa4784391dd">location</a>;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6">   32</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6">setLocation</a>(GLuint program_handle, <span class="keyword">const</span> <span class="keywordtype">char</span>* name)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad">location</a> = glGetUniformLocation(program_handle, name);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(<a class="code" href="classUniformVariable.html#a62cc0fd61cd01f87e61e4fa4784391dd">location</a> = glGetUniformLocation(program_handle, name));</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classUniformVariable.html#a09aee0411f8316a185f31d80561f35f3">   36</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniformVariable.html#a09aee0411f8316a185f31d80561f35f3">setLocation</a>(GLuint program_handle, <span class="keyword">const</span> std::string&amp; name)</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad">location</a> = glGetUniformLocation(program_handle, name.c_str());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(<a class="code" href="classUniformVariable.html#a62cc0fd61cd01f87e61e4fa4784391dd">location</a> = glGetUniformLocation(program_handle, name.c_str()));</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0">set</a>(<span class="keyword">const</span> T&amp; t);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
@@ -139,15 +139,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0">UniformVariable&lt;int&gt;::set</a>(<span class="keyword">const</span> <span class="keywordtype">int</span>&amp; i);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="ttc" id="classUniformVariable_html"><div class="ttname"><a href="classUniformVariable.html">UniformVariable</a></div><div class="ttdef"><b>Definition:</b> UniformVariable.h:27</div></div>
-<div class="ttc" id="classUniformVariable_html_a7b3cfd5b2f800d6bbc86f9c76791a0ad"><div class="ttname"><a href="classUniformVariable.html#a7b3cfd5b2f800d6bbc86f9c76791a0ad">UniformVariable::location</a></div><div class="ttdeci">GLuint location</div><div class="ttdef"><b>Definition:</b> UniformVariable.h:30</div></div>
 <div class="ttc" id="classUniformVariable_html_a09aee0411f8316a185f31d80561f35f3"><div class="ttname"><a href="classUniformVariable.html#a09aee0411f8316a185f31d80561f35f3">UniformVariable::setLocation</a></div><div class="ttdeci">void setLocation(GLuint program_handle, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> UniformVariable.h:36</div></div>
+<div class="ttc" id="GLCall_8h_html_ae5c4035818248f6631e1dbc4a63d0fc2"><div class="ttname"><a href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(cmd)</div><div class="ttdef"><b>Definition:</b> GLCall.h:36</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 <div class="ttc" id="classUniformVariable_html_a41cfd8f88fa1b5fa73705b5b53767eb0"><div class="ttname"><a href="classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0">UniformVariable::set</a></div><div class="ttdeci">void set(const T &amp;t)</div></div>
 <div class="ttc" id="classUniformVariable_html_a55a1e3a8db2ade58ad28d3f3ad1cf5a6"><div class="ttname"><a href="classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6">UniformVariable::setLocation</a></div><div class="ttdeci">void setLocation(GLuint program_handle, const char *name)</div><div class="ttdef"><b>Definition:</b> UniformVariable.h:32</div></div>
+<div class="ttc" id="classUniformVariable_html_a62cc0fd61cd01f87e61e4fa4784391dd"><div class="ttname"><a href="classUniformVariable.html#a62cc0fd61cd01f87e61e4fa4784391dd">UniformVariable::location</a></div><div class="ttdeci">GLint location</div><div class="ttdef"><b>Definition:</b> UniformVariable.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 11 2016 16:57:17 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 11 2016 20:35:01 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

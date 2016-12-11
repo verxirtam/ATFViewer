@@ -135,14 +135,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classShaderProgram.html#a2d2eadcfc48cc2e2ddb82aba70553a9f">   47</a></span>&#160;    <a class="code" href="classShaderProgram.html#a2d2eadcfc48cc2e2ddb82aba70553a9f">~ShaderProgram</a>()</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        glDeleteProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glDeleteProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classShaderProgram.html#a281fef47667e0f41481b9d9137088882">   51</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgram.html#a281fef47667e0f41481b9d9137088882">init</a>()</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">//Proguramオブジェクトの開放</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        glDeleteProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glDeleteProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>));</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">//Proguramオブジェクトの生成</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a> = glCreateProgram();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a> = glCreateProgram());</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a> == 0)</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glCreateProgram().&quot;</span> &lt;&lt; std::endl;</div>
@@ -152,15 +152,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba">attach</a>(<span class="keyword">const</span> <a class="code" href="classShader.html">Shader</a>&amp; s)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        glAttachShader(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>, s.<a class="code" href="classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa">getHandle</a>());</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glAttachShader(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>, s.<a class="code" href="classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa">getHandle</a>()));</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classShaderProgram.html#ade9890eb840126bd3f9b9db42389253c">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgram.html#ade9890eb840126bd3f9b9db42389253c">link</a>()</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        glLinkProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glLinkProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>));</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="comment">//リンクの結果確認</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        GLint status;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        glGetProgramiv(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>, GL_LINK_STATUS, &amp;status);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glGetProgramiv(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>, GL_LINK_STATUS, &amp;status));</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">if</span>(status == GL_FALSE)</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;error at glLinkProgram(handle).&quot;</span> &lt;&lt; std::endl;</div>
@@ -169,12 +169,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="classShaderProgram.html#a285c27da064068522f4900a8e8075f68">   80</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgram.html#a285c27da064068522f4900a8e8075f68">use</a>()</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">//OpenGLパイプラインにインストール</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        glUseProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glUseProgram(<a class="code" href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">handle</a>));</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328">   85</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classShaderProgram.html#ae7fe9df75b9dbcbe659766896a231328">unuse</a>()</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">//OpenGLパイプラインプログラムを割り当てない</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        glUseProgram(0);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glUseProgram(0));</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce">   90</a></span>&#160;    GLuint <a class="code" href="classShaderProgram.html#a8ca8fa296747519e425e209f9a3ec8ce">getHandle</a>()</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    {</div>
@@ -191,15 +191,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="Shader_8h_html"><div class="ttname"><a href="Shader_8h.html">Shader.h</a></div></div>
 <div class="ttc" id="classShaderProgram_html_a86e8e6f6f1d45809ce94f275e6e06a65"><div class="ttname"><a href="classShaderProgram.html#a86e8e6f6f1d45809ce94f275e6e06a65">ShaderProgram::operator=</a></div><div class="ttdeci">ShaderProgram &amp; operator=(const ShaderProgram &amp;s)=delete</div></div>
 <div class="ttc" id="classShaderProgram_html_ade9890eb840126bd3f9b9db42389253c"><div class="ttname"><a href="classShaderProgram.html#ade9890eb840126bd3f9b9db42389253c">ShaderProgram::link</a></div><div class="ttdeci">void link()</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:68</div></div>
-<div class="ttc" id="classShader_html_a1bfc00b8e17549b41af544ef41c7d4aa"><div class="ttname"><a href="classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa">Shader::getHandle</a></div><div class="ttdeci">GLuint getHandle() const </div><div class="ttdef"><b>Definition:</b> Shader.h:120</div></div>
+<div class="ttc" id="classShader_html_a1bfc00b8e17549b41af544ef41c7d4aa"><div class="ttname"><a href="classShader.html#a1bfc00b8e17549b41af544ef41c7d4aa">Shader::getHandle</a></div><div class="ttdeci">GLuint getHandle() const </div><div class="ttdef"><b>Definition:</b> Shader.h:121</div></div>
 <div class="ttc" id="classShaderProgram_html_af532d9f837262129ad7f70b92c7bc4ba"><div class="ttname"><a href="classShaderProgram.html#af532d9f837262129ad7f70b92c7bc4ba">ShaderProgram::attach</a></div><div class="ttdeci">void attach(const Shader &amp;s)</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:64</div></div>
 <div class="ttc" id="classShaderProgram_html_add585b75cb78f4afa865ea7b27c9651e"><div class="ttname"><a href="classShaderProgram.html#add585b75cb78f4afa865ea7b27c9651e">ShaderProgram::ShaderProgram</a></div><div class="ttdeci">ShaderProgram()</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:44</div></div>
 <div class="ttc" id="classShaderProgram_html_ad9d15b13ec0133ca40e238e64a2d9b94"><div class="ttname"><a href="classShaderProgram.html#ad9d15b13ec0133ca40e238e64a2d9b94">ShaderProgram::handle</a></div><div class="ttdeci">GLuint handle</div><div class="ttdef"><b>Definition:</b> ShaderProgram.h:32</div></div>
+<div class="ttc" id="GLCall_8h_html_ae5c4035818248f6631e1dbc4a63d0fc2"><div class="ttname"><a href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(cmd)</div><div class="ttdef"><b>Definition:</b> GLCall.h:36</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 11 2016 16:57:17 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 11 2016 20:35:01 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

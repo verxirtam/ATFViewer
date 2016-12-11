@@ -139,30 +139,30 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classVBOBase.html#aa06d90a425ce8332b2949fb29f55735a">   51</a></span>&#160;    <a class="code" href="classVBOBase.html#aa06d90a425ce8332b2949fb29f55735a">~VBOBase</a>()</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        glDeleteBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glDeleteBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classVBOBase.html#aad24792665dc71396ea509169362fce9">   55</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVBOBase.html#aad24792665dc71396ea509169362fce9">bind</a>()</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        glBindBuffer(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, <a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glBindBuffer(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, <a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classVBOBase.html#afd7a281706c0bf9cf8c845022a22fd1f">   59</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVBOBase.html#afd7a281706c0bf9cf8c845022a22fd1f">unbind</a>()</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        glBindBuffer(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, 0);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glBindBuffer(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, 0));</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classVBOBase.html#a3f0a77a1c5824a8d9d7d5d50415949e4">   63</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classVBOBase.html#a3f0a77a1c5824a8d9d7d5d50415949e4">init</a>(<span class="keyword">const</span> std::vector&lt;V&gt;&amp; v)</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">//handle!=0の時のためにdeleteしておく</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">//handleが0の時は無視される</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        glDeleteBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glDeleteBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>));</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="comment">//バッファオブジェクトの確保</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        glGenBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glGenBuffers(1, &amp;<a class="code" href="classVBOBase.html#a2322cceb6d46cc0d4c309ff6fbf32565">handle</a>));</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">//バッファのバインド</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Bind&lt;VBOBase&lt;V&gt; &gt; b(*<span class="keyword">this</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">//バッファのサイズ</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        GLsizeiptr size = v.size() * <span class="keyword">sizeof</span>(V);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">//バッファにデータを格納(GPUへ転送)</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        glBufferData(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, size, v.data(), <a class="code" href="classVBOBase.html#a08638d475f3b0831bd0b5ea7cd5fcc03">usage</a>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a>(glBufferData(<a class="code" href="classVBOBase.html#ac48cbf3bbca2d731cd84e209ce104b13">type</a>, size, v.data(), <a class="code" href="classVBOBase.html#a08638d475f3b0831bd0b5ea7cd5fcc03">usage</a>));</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classVBOBase.html#af048b39cc0ade92245b77762aa5168b0">   78</a></span>&#160;    GLuint <a class="code" href="classVBOBase.html#af048b39cc0ade92245b77762aa5168b0">getHandle</a>()</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
@@ -350,6 +350,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classVBOBase_html_acf346fdfd3d7a3f697822d88c1600442"><div class="ttname"><a href="classVBOBase.html#acf346fdfd3d7a3f697822d88c1600442">VBOBase::operator=</a></div><div class="ttdeci">VBOBase &amp; operator=(const VBOBase &amp;)=delete</div></div>
 <div class="ttc" id="classVBODynamicBase_html_ad6d536ea8d7586af554cd5248561801e"><div class="ttname"><a href="classVBODynamicBase.html#ad6d536ea8d7586af554cd5248561801e">VBODynamicBase::init</a></div><div class="ttdeci">void init(const std::vector&lt; ElementType &gt; &amp;v)</div><div class="ttdef"><b>Definition:</b> VBO.h:185</div></div>
 <div class="ttc" id="classVBODynamicBase_html_a34bed1460fd2e14e291f4f3c0af434f8"><div class="ttname"><a href="classVBODynamicBase.html#a34bed1460fd2e14e291f4f3c0af434f8">VBODynamicBase::map</a></div><div class="ttdeci">void map()</div><div class="ttdef"><b>Definition:</b> VBO.h:207</div></div>
+<div class="ttc" id="GLCall_8h_html_ae5c4035818248f6631e1dbc4a63d0fc2"><div class="ttname"><a href="GLCall_8h.html#ae5c4035818248f6631e1dbc4a63d0fc2">GL_CALL</a></div><div class="ttdeci">#define GL_CALL(cmd)</div><div class="ttdef"><b>Definition:</b> GLCall.h:36</div></div>
 <div class="ttc" id="OpenGLHeaders_8h_html"><div class="ttname"><a href="OpenGLHeaders_8h.html">OpenGLHeaders.h</a></div></div>
 <div class="ttc" id="classVBOBase_html_aa06d90a425ce8332b2949fb29f55735a"><div class="ttname"><a href="classVBOBase.html#aa06d90a425ce8332b2949fb29f55735a">VBOBase::~VBOBase</a></div><div class="ttdeci">~VBOBase()</div><div class="ttdef"><b>Definition:</b> VBO.h:51</div></div>
 <div class="ttc" id="classVBODynamicBase_html_ae54982a8773847f62c60f9741849e0f7"><div class="ttname"><a href="classVBODynamicBase.html#ae54982a8773847f62c60f9741849e0f7">VBODynamicBase::base</a></div><div class="ttdeci">VBOBase&lt; ElementType &gt; base</div><div class="ttdef"><b>Definition:</b> VBO.h:156</div></div>
@@ -360,7 +361,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Dec 11 2016 16:57:17 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Dec 11 2016 20:35:01 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
