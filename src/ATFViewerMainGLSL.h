@@ -98,6 +98,10 @@ private:
 		//キーボード入力時に実行される関数の設定
 		glfwSetKeyCallback(window, ATFViewerMainGLSL::_keyboard);
 	}
+	static void _callbackGLFWError(int error, const char* description)
+	{
+		std::cerr << "GLFWError: %s\n"  << description << std::endl;
+	}
 	//GLFWの初期化
 	void initGLFW()
 	{
@@ -110,6 +114,9 @@ private:
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
 		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		
+		//GLFWでエラーが発生した時に実行するコールバック関数を登録する
+		glfwSetErrorCallback(_callbackGLFWError);
 	}
 	//描画対象となるWindowを作成する
 	void createWindow()
