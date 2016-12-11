@@ -15,7 +15,7 @@ var indexSectionsWithContent =
   5: "bfijlmstv",
   6: "ikp",
   7: "abcenp",
-  8: "dgiv"
+  8: "cdgiv"
 };
 
 var indexSectionNames =

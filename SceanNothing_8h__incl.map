@@ -1,7 +1,8 @@
 <map id="src/SceanNothing.h" name="src/SceanNothing.h">
-<area shape="rect" id="node2" href="$Scean_8h.html" title="Scean.h" alt="" coords="46,80,116,107"/>
-<area shape="rect" id="node3" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="99,304,228,331"/>
-<area shape="rect" id="node7" href="$Joystick_8h.html" title="Joystick.h" alt="" coords="87,155,168,181"/>
-<area shape="rect" id="node8" href="$JoystickBase_8h.html" title="JoystickBase.h" alt="" coords="72,229,183,256"/>
-<area shape="rect" id="node9" href="$JoystickManagerGLFW_8h.html" title="JoystickManagerGLFW.h" alt="" coords="208,229,379,256"/>
+<area shape="rect" id="node2" href="$Scean_8h.html" title="Scean.h" alt="" coords="103,80,173,107"/>
+<area shape="rect" id="node3" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="156,304,285,331"/>
+<area shape="rect" id="node9" href="$Joystick_8h.html" title="Joystick.h" alt="" coords="144,155,225,181"/>
+<area shape="rect" id="node6" href="$GLCall_8h.html" title="GLCall.h" alt="" coords="242,379,315,405"/>
+<area shape="rect" id="node10" href="$JoystickBase_8h.html" title="JoystickBase.h" alt="" coords="129,229,240,256"/>
+<area shape="rect" id="node11" href="$JoystickManagerGLFW_8h.html" title="JoystickManagerGLFW.h" alt="" coords="265,229,436,256"/>
 </map>

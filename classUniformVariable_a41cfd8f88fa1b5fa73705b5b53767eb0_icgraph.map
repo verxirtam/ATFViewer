@@ -1,6 +1,8 @@
 <map id="UniformVariable::set" name="UniformVariable::set">
 <area shape="rect" id="node2" href="$classShaderProgramBaseMVPMatrix.html#ad04d509a8047919eff5b88ec654e90ba" title="ShaderProgramBaseMVPMatrix\l\&lt; ShaderVertPathPaths, ShaderFrag\lPathPaths \&gt;::setMVPMatrix" alt="" coords="195,5,429,61"/>
-<area shape="rect" id="node3" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="234,85,390,126"/>
-<area shape="rect" id="node4" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="478,67,637,93"/>
-<area shape="rect" id="node5" href="$classStringVAO.html#af4c7281ac1be8397c45350178d462479" title="StringVAO::init" alt="" coords="503,117,612,144"/>
+<area shape="rect" id="node3" href="$classShaderProgramString.html#a2205618eacd32c5f4d768f6affaba13c" title="ShaderProgramString\l::init" alt="" coords="239,85,385,126"/>
+<area shape="rect" id="node5" href="$classShaderProgramString.html#a4c7270b38f14dd48bee854e80ebdc84d" title="ShaderProgramString\l::setColor" alt="" coords="239,150,385,191"/>
+<area shape="rect" id="node6" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="234,215,390,257"/>
+<area shape="rect" id="node4" href="$classStringVAO.html#af4c7281ac1be8397c45350178d462479" title="StringVAO::init" alt="" coords="503,125,612,152"/>
+<area shape="rect" id="node7" href="$classSceanLatLongFlow.html#a2844ac256ab020f4b6f74975a76968e3" title="SceanLatLongFlow::init" alt="" coords="478,223,637,249"/>
 </map>

@@ -24,7 +24,7 @@ var searchData=
   ['texturefilename',['textureFileName',['../structMapVAO_1_1InitMapSetting.html#ab16733299a62697278d118098de5b9f9',1,'MapVAO::InitMapSetting']]],
   ['textureheight',['textureHeight',['../structMapVAO_1_1InitMapSetting.html#a8835774a71152d3a16dccc8a8c7a81df',1,'MapVAO::InitMapSetting::textureHeight()'],['../classMap.html#a3f318bf407e76559857e67db9dff5422',1,'Map::textureHeight()']]],
   ['texturename',['textureName',['../classMap.html#a589b107d647e7653b39d98731a7b1a57',1,'Map']]],
-  ['texturesampler',['textureSampler',['../classShaderProgramTexture.html#aa703877b94fc1dc0ce85e903844efe05',1,'ShaderProgramTexture']]],
+  ['texturesampler',['textureSampler',['../classShaderProgramString.html#acedcf9860a8c2c5b53cddeaf37e78e54',1,'ShaderProgramString::textureSampler()'],['../classShaderProgramTexture.html#aa703877b94fc1dc0ce85e903844efe05',1,'ShaderProgramTexture::textureSampler()']]],
   ['texturewidth',['textureWidth',['../structMapVAO_1_1InitMapSetting.html#ae1a69ab84151812feb8c4159e11613a2',1,'MapVAO::InitMapSetting::textureWidth()'],['../classMap.html#a1b387fe6ffac367b266d4bc405e4a8f5',1,'Map::textureWidth()']]],
   ['thistype',['thisType',['../classShaderProgramBase.html#a1e75456bb8ca1d314c9d14deb3200f5c',1,'ShaderProgramBase']]],
   ['thread',['thread',['../classTestThread.html#aa4ea69a4df31addce604ff14b9fb56e2',1,'TestThread::thread()'],['../classTestThread__MemFunc.html#a155b3e9b7887a20052b26b6ad57cbaa8',1,'TestThread_MemFunc::thread()']]],

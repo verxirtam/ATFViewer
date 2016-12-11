@@ -1,9 +1,10 @@
 <map id="StringVAO::init" name="StringVAO::init">
-<area shape="rect" id="node2" href="$classShaderProgramTexture.html#a711af7048c07a6acd88b68e647a9fe0f" title="ShaderProgramTexture\l::init" alt="" coords="170,23,326,65"/>
-<area shape="rect" id="node5" href="$classShaderProgramTexture.html#a2194a69eb037f0ad5a35fe3a6805b2c6" title="ShaderProgramTexture\l::setMVPMatrix" alt="" coords="170,89,326,130"/>
-<area shape="rect" id="node6" href="$classStringVAO.html#a7173439c6e933f9da7bbcdf6e7f11671" title="StringVAO::getTransform" alt="" coords="163,155,333,181"/>
-<area shape="rect" id="node7" href="$classStringVAO.html#ab2259824ba62996720ab0f98f7a35b4b" title="StringVAO::setString" alt="" coords="176,205,320,232"/>
-<area shape="rect" id="node8" href="$classVAOPositionTexture.html#a9466ad76dd8ea172ac5d8e5df1060cb3" title="VAOPositionTexture\l::init" alt="" coords="177,257,319,298"/>
-<area shape="rect" id="node3" href="$classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6" title="UniformVariable::setLocation" alt="" coords="382,5,573,32"/>
-<area shape="rect" id="node4" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="407,56,548,83"/>
+<area shape="rect" id="node2" href="$classShaderProgramString.html#a2205618eacd32c5f4d768f6affaba13c" title="ShaderProgramString\l::init" alt="" coords="175,5,321,46"/>
+<area shape="rect" id="node5" href="$classShaderProgramString.html#a60ea2f0b246254f912f2c8140a048445" title="ShaderProgramString\l::setMVPMatrix" alt="" coords="175,70,321,111"/>
+<area shape="rect" id="node6" href="$classShaderProgramString.html#a4c7270b38f14dd48bee854e80ebdc84d" title="ShaderProgramString\l::setColor" alt="" coords="175,135,321,177"/>
+<area shape="rect" id="node7" href="$classStringVAO.html#a7173439c6e933f9da7bbcdf6e7f11671" title="StringVAO::getTransform" alt="" coords="163,201,333,228"/>
+<area shape="rect" id="node8" href="$classStringVAO.html#ab2259824ba62996720ab0f98f7a35b4b" title="StringVAO::setString" alt="" coords="176,252,320,279"/>
+<area shape="rect" id="node9" href="$classVAOPositionTexture.html#a9466ad76dd8ea172ac5d8e5df1060cb3" title="VAOPositionTexture\l::init" alt="" coords="177,303,319,345"/>
+<area shape="rect" id="node3" href="$classUniformVariable.html#a55a1e3a8db2ade58ad28d3f3ad1cf5a6" title="UniformVariable::setLocation" alt="" coords="382,12,573,39"/>
+<area shape="rect" id="node4" href="$classUniformVariable.html#a41cfd8f88fa1b5fa73705b5b53767eb0" title="UniformVariable::set" alt="" coords="407,103,548,129"/>
 </map>

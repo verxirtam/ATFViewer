@@ -1,9 +1,10 @@
 <map id="src/VAOPaths.h" name="src/VAOPaths.h">
 <area shape="rect" id="node2" href="$VAOPositionBaseDynamic_8h.html" title="VAOPositionBaseDynamic.h" alt="" coords="258,80,448,107"/>
-<area shape="rect" id="node15" href="$VAOLayoutPaths_8h.html" title="VAOLayoutPaths.h" alt="" coords="478,229,612,256"/>
+<area shape="rect" id="node17" href="$VAOLayoutPaths_8h.html" title="VAOLayoutPaths.h" alt="" coords="478,229,612,256"/>
 <area shape="rect" id="node3" href="$VAOPositionBase_8h.html" title="VAOPositionBase.h" alt="" coords="208,155,347,181"/>
 <area shape="rect" id="node4" href="$OpenGLHeaders_8h.html" title="OpenGLHeaders.h" alt="" coords="375,304,504,331"/>
-<area shape="rect" id="node9" href="$Lock_8h.html" title="Lock.h" alt="" coords="5,304,67,331"/>
-<area shape="rect" id="node10" href="$VBO_8h.html" title="VBO.h" alt="" coords="128,229,189,256"/>
-<area shape="rect" id="node14" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="213,229,304,256"/>
+<area shape="rect" id="node11" href="$Lock_8h.html" title="Lock.h" alt="" coords="5,304,67,331"/>
+<area shape="rect" id="node12" href="$VBO_8h.html" title="VBO.h" alt="" coords="128,229,189,256"/>
+<area shape="rect" id="node16" href="$VAOBase_8h.html" title="VAOBase.h" alt="" coords="213,229,304,256"/>
+<area shape="rect" id="node7" href="$GLCall_8h.html" title="GLCall.h" alt="" coords="461,379,533,405"/>
 </map>
