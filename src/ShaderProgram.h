@@ -46,14 +46,14 @@ public:
 	}
 	~ShaderProgram()
 	{
-		glDeleteProgram(handle);
+		GL_CALL(glDeleteProgram(handle));
 	}
 	void init()
 	{
 		//Proguramオブジェクトの開放
-		glDeleteProgram(handle);
+		GL_CALL(glDeleteProgram(handle));
 		//Proguramオブジェクトの生成
-		handle = glCreateProgram();
+		GL_CALL(handle = glCreateProgram());
 		if(handle == 0)
 		{
 			std::cout << "error at glCreateProgram()." << std::endl;
@@ -63,15 +63,15 @@ public:
 	
 	void attach(const Shader& s)
 	{
-		glAttachShader(handle, s.getHandle());
+		GL_CALL(glAttachShader(handle, s.getHandle()));
 	}
 	void link()
 	{
-		glLinkProgram(handle);
+		GL_CALL(glLinkProgram(handle));
 		
 		//リンクの結果確認
 		GLint status;
-		glGetProgramiv(handle, GL_LINK_STATUS, &status);
+		GL_CALL(glGetProgramiv(handle, GL_LINK_STATUS, &status));
 		if(status == GL_FALSE)
 		{
 			std::cout << "error at glLinkProgram(handle)." << std::endl;
@@ -80,12 +80,12 @@ public:
 	void use()
 	{
 		//OpenGLパイプラインにインストール
-		glUseProgram(handle);
+		GL_CALL(glUseProgram(handle));
 	}
 	void unuse()
 	{
 		//OpenGLパイプラインプログラムを割り当てない
-		glUseProgram(0);
+		GL_CALL(glUseProgram(0));
 	}
 	GLuint getHandle()
 	{

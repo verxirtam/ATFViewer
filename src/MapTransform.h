@@ -63,19 +63,6 @@ public:
 	{
 		return scale;
 	}
-	void setTransform()
-	{
-		//モデリング変換行列の設定
-		//モデル座標は経緯度-feetのサイズになっているので
-		//地図っぽくスケーリングする
-		//経緯度はそのままで行けそうなので、feetのみ変更
-		//40000feetが4cmになるように1/10000に縮小する
-		glScaled(scale,scale,0.0001);
-		//羽田+offsetがワールド座標系の原点に来るように平行移動する
-		double haneda_x = 139.0 + ( 46.0/60.0 + 87.0/3600.0 );
-		double haneda_y =  35.0 + ( 33.0/60.0 + 20.0/3600.0 );
-		glTranslated( - haneda_x - centerOffsetLong, - haneda_y - centerOffsetLat, 0.0);
-	}
 	/// @brief モデリング変換行列を設定する
 	///
 	/// @param m 設定する行列

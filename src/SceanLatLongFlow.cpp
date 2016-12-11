@@ -85,7 +85,7 @@ void SceanLatLongFlow::display(GLFWwindow* window)
 	}
 	
 	//フレームバッファ、深度バッファをクリアする
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	GL_CALL(glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT));
 	
 	setMatrix();
 	
@@ -107,7 +107,7 @@ void SceanLatLongFlow::resize(GLFWwindow* window, int w, int h)
 {
 	//ウィンドウのどの範囲をビューポートにするかを設定する
 	//下記はウィンドウの全範囲をビューポートに設定している
-	glViewport(0, 0, w, h);
+	GL_CALL(glViewport(0, 0, w, h));
 
 	windowWidth = w;
 	windowHeight = h;
@@ -183,7 +183,6 @@ void SceanLatLongFlow::keyboard(GLFWwindow* window, int key, int scancode, int a
 		}
 		else
 		{
-			//glutIdleFunc(NULL);
 			animation_enable = true;
 			currentTimeInterval = timeInterval;
 		}

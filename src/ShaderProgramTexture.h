@@ -32,7 +32,10 @@ private:
 	{
 		static std::string getPath(){return "texture.frag";}
 	};
-	ShaderProgramBaseMVPMatrix<ShaderVertPathTexture,ShaderFragPathTexture> base;
+	
+	using baseType = ShaderProgramBaseMVPMatrix<ShaderVertPathTexture,ShaderFragPathTexture>;
+	baseType base;
+	
 	UniformVariable<int> textureSampler;
 public:
 	ShaderProgramTexture()
@@ -44,6 +47,9 @@ public:
 	void init(void)
 	{
 		base.init();
+		
+		Use<baseType> u(base);
+		
 		textureSampler.setLocation(base.getHandle(), "tex");
 		textureSampler.set(0);
 	}

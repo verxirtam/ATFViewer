@@ -82,7 +82,7 @@ public:
 		//インデックス配列をバインド
 		Bind<VBOElementClass> be(element);
 		
-		glDrawElements(mode, elementCount, GL_UNSIGNED_INT, 0);
+		GL_CALL(glDrawElements(mode, elementCount, GL_UNSIGNED_INT, 0));
 		
 	}
 	int getElementCount()

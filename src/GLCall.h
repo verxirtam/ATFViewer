@@ -34,6 +34,7 @@
 }
 
 #define GL_CALL(cmd)\
+	CHECK_GL_CALL(BEFORE #cmd);\
 	cmd;\
 	CHECK_GL_CALL(#cmd);
 

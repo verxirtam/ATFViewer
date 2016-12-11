@@ -116,15 +116,15 @@ public:
 	{
 		
 		//アルファブレンド有効化
-		glEnable(GL_BLEND);
+		GL_CALL(glEnable(GL_BLEND));
 		//アルファブレンドの方法を指定
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		GL_CALL(glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA));
 		//描画
 		vao.display();
 		//アルファブレンド無効化
-		glDisable(GL_BLEND);
+		GL_CALL(glDisable(GL_BLEND));
 		//デプスバッファ有効化
-		glEnable(GL_DEPTH_TEST);
+		GL_CALL(glEnable(GL_DEPTH_TEST));
 	}
 };
 

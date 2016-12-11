@@ -72,17 +72,17 @@ public:
 	~Shader()
 	{
 		//シェーダオブジェクトを削除する
-		glDeleteShader(handle);
+		GL_CALL(glDeleteShader(handle));
 	}
 	void init()
 	{
 		//2重に生成しないように
 		//シェーダオブジェクトを削除する
 		//handle==0の時は無視される
-		glDeleteShader(handle);
+		GL_CALL(glDeleteShader(handle));
 		
 		//シェーダオブジェクトを生成する
-		handle = glCreateShader(type);
+		GL_CALL(handle = glCreateShader(type));
 		if(handle == 0)
 		{
 			std::cout << "error at Shader()." << std::endl;
@@ -96,23 +96,24 @@ public:
 		//シェーダのコードを配列に格納する
 		const GLchar* code_array[] = {shader_code.c_str()};
 		//シェーダへのソースの読み込み
-		glShaderSource(handle, 1, code_array, NULL);
+		GL_CALL(glShaderSource(handle, 1, code_array, NULL));
 		
 		GLint result;
 		
 		//シェーダのコンパイル
-		glCompileShader(handle);
-		glGetShaderiv(handle, GL_COMPILE_STATUS, &result);
+		GL_CALL(glCompileShader(handle));
+		GL_CALL(glGetShaderiv(handle, GL_COMPILE_STATUS, &result));
 		if(result == GL_FALSE)
 		{
+			//シェーダのコンパイルエラーを表示する
 			std::cout << "error at glGetShaderiv()." << std::endl;
 			GLint log_len;
-			glGetShaderiv(handle,GL_INFO_LOG_LENGTH, &log_len);
+			GL_CALL(glGetShaderiv(handle,GL_INFO_LOG_LENGTH, &log_len));
 			if(log_len > 0)
 			{
 				std::unique_ptr<char> log(new char[log_len]);
 				GLsizei written;
-				glGetShaderInfoLog(handle, log_len, &written, log.get());
+				GL_CALL(glGetShaderInfoLog(handle, log_len, &written, log.get()));
 				std::cout << log.get() << std::endl;
 			}
 		}

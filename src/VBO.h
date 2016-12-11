@@ -50,30 +50,30 @@ public:
 	}
 	~VBOBase()
 	{
-		glDeleteBuffers(1, &handle);
+		GL_CALL(glDeleteBuffers(1, &handle));
 	}
 	void bind()
 	{
-		glBindBuffer(type, handle);
+		GL_CALL(glBindBuffer(type, handle));
 	}
 	void unbind()
 	{
-		glBindBuffer(type, 0);
+		GL_CALL(glBindBuffer(type, 0));
 	}
 	void init(const std::vector<V>& v)
 	{
 		//handle!=0の時のためにdeleteしておく
 		//handleが0の時は無視される
-		glDeleteBuffers(1, &handle);
+		GL_CALL(glDeleteBuffers(1, &handle));
 		//バッファオブジェクトの確保
-		glGenBuffers(1, &handle);
+		GL_CALL(glGenBuffers(1, &handle));
 		
 		//バッファのバインド
 		Bind<VBOBase<V> > b(*this);
 		//バッファのサイズ
 		GLsizeiptr size = v.size() * sizeof(V);
 		//バッファにデータを格納(GPUへ転送)
-		glBufferData(type, size, v.data(), usage);
+		GL_CALL(glBufferData(type, size, v.data(), usage));
 	}
 	GLuint getHandle()
 	{

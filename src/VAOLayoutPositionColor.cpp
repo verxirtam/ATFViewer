@@ -45,7 +45,7 @@ void VAOLayoutPositionColor::initData(const inputType& input, std::vector<float>
 void VAOLayoutPositionColor::enableVertexAttribPointer()
 {
 	//point部分の設定
-	glVertexAttribPointer
+	GL_CALL(glVertexAttribPointer
 		(
 			0,		//設定するバーテックスシェーダの引数のインデックスを指定する
 			3,		//1頂点あたりの要素数(ここでは3次元座標なので3)
@@ -53,10 +53,10 @@ void VAOLayoutPositionColor::enableVertexAttribPointer()
 			GL_FALSE,	//正規化の要否 位置座標なのでFalse
 			6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
 			(GLfloat*)0	//頂点データの開始アドレスから指定するデータの位置までの間隔
-		);
-	glEnableVertexAttribArray(0);
+		));
+	GL_CALL(glEnableVertexAttribArray(0));
 	//color部分の設定
-	glVertexAttribPointer
+	GL_CALL(glVertexAttribPointer
 		(
 			1,		//設定するバーテックスシェーダの引数のインデックスを指定する
 			3,		//1頂点あたりの要素数(ここではrgbなので3)
@@ -64,8 +64,8 @@ void VAOLayoutPositionColor::enableVertexAttribPointer()
 			GL_FALSE,	//正規化の要否 位置座標なのでFalse
 			6 * sizeof(float),		//頂点データ同士の間隔(byte単位) 0なら隙間なく配置されているとみなされる
 			(GLfloat*)0 + 3	//頂点データの開始アドレスから指定するデータの位置までの間隔
-		);
-	glEnableVertexAttribArray(1);
+		));
+	GL_CALL(glEnableVertexAttribArray(1));
 
 }
 

@@ -21,6 +21,7 @@
 #include "ShaderProgramBase.h"
 #include "UniformVariable.h"
 
+#include "Lock.h"
 
 template
 <
@@ -54,9 +55,8 @@ public:
 	}
 	void setMVPMatrix(const glm::mat4& m)
 	{
-		base.use();
+		Use<baseType> u(base);
 		mvpMatrix.set(m);
-		base.unuse();
 	}
 	GLuint getHandle()
 	{

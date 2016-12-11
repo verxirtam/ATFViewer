@@ -27,15 +27,15 @@ template <typename T>
 class UniformVariable
 {
 private:
-	GLuint location;
+	GLint location;
 public:
 	void setLocation(GLuint program_handle, const char* name)
 	{
-		location = glGetUniformLocation(program_handle, name);
+		GL_CALL(location = glGetUniformLocation(program_handle, name));
 	}
 	void setLocation(GLuint program_handle, const std::string& name)
 	{
-		location = glGetUniformLocation(program_handle, name.c_str());
+		GL_CALL(location = glGetUniformLocation(program_handle, name.c_str()));
 	}
 	void set(const T& t);
 };

@@ -32,7 +32,8 @@ private:
 	{
 		static std::string getPath(){return "string.frag";}
 	};
-	ShaderProgramBaseMVPMatrix<ShaderVertPathTexture,ShaderFragPathTexture> base;
+	using baseType = ShaderProgramBaseMVPMatrix<ShaderVertPathTexture,ShaderFragPathTexture>;
+	baseType base;
 	UniformVariable<int> textureSampler;
 	UniformVariable<glm::vec3> color;
 
@@ -47,8 +48,12 @@ public:
 	void init(void)
 	{
 		base.init();
+		
+		Use<baseType> u(base);
+		
 		textureSampler.setLocation(base.getHandle(), "tex");
 		textureSampler.set(0);
+		
 		color.setLocation(base.getHandle(), "stringColor");
 		color.set(glm::vec3(1.0f, 0.0f, 0.0f));
 	}
@@ -66,6 +71,7 @@ public:
 	}
 	void setColor(const glm::vec3& c)
 	{
+		Use<baseType> u(base);
 		color.set(c);
 	}
 

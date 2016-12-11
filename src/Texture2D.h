@@ -41,24 +41,24 @@ public:
 	}
 	~Texture2D()
 	{
-		glDeleteTextures(1, &name);
+		GL_CALL(glDeleteTextures(1, &name));
 	}
 	void active()
 	{
 		//テクスチャユニットの選択
-		glActiveTexture(unit);
+		GL_CALL(glActiveTexture(unit));
 	}
 	void inactive()
 	{
-		glActiveTexture(GL_TEXTURE0);
+		GL_CALL(glActiveTexture(GL_TEXTURE0));
 	}
 	void bind()
 	{
-		glBindTexture(target, name);
+		GL_CALL(glBindTexture(target, name));
 	}
 	void unbind()
 	{
-		glBindTexture(target, 0);
+		GL_CALL(glBindTexture(target, 0));
 	}
 	
 	void init(const std::string& filepath, int width, int height);

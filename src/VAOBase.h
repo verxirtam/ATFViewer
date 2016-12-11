@@ -36,24 +36,24 @@ public:
 	~VAOBase()
 	{
 		//VAOの開放
-		glDeleteVertexArrays(1, &handle);
+		GL_CALL(glDeleteVertexArrays(1, &handle));
 	}
 	void bind()
 	{
-		glBindVertexArray(handle);
+		GL_CALL(glBindVertexArray(handle));
 	}
 	void unbind()
 	{
-		glBindVertexArray(0);
+		GL_CALL(glBindVertexArray(0));
 	}
 	void init()
 	{
 		//VAOの開放
 		//handle!=0の時のために実行する
-		glDeleteVertexArrays(1, &handle);
+		GL_CALL(glDeleteVertexArrays(1, &handle));
 		
 		//VAOの確保
-		glGenVertexArrays(1, &handle);
+		GL_CALL(glGenVertexArrays(1, &handle));
 		
 	}
 };

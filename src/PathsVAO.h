@@ -88,8 +88,6 @@ private:
 	void makePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position);
 	void runMakePathsBuffer(doubleBufferingType& db, TimeSeparation::Position position);
 	void updatePastTimeIndex(Path& p, time_t past_time);
-	void updateNowIndex(Path& p, time_t now);
-	void drawPathLine(Path& p, time_t past_time, time_t now);
 	void initVAO(const std::vector<Path>& p, doubleBufferingType& db, time_t time_start, time_t time_end);
 	void updateDeviceData(time_t now);
 	//ポインタメンバを持っているが、コピー不要なので禁止する
