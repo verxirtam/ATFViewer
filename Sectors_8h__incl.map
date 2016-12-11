@@ -1,7 +1,6 @@
 <map id="src/old/20161026/Sectors.h" name="src/old/20161026/Sectors.h">
-<area shape="rect" id="node7" href="$BitmapString_8h.html" title="BitmapString.h" alt="" coords="377,80,484,107"/>
-<area shape="rect" id="node8" href="$GCS_8h.html" title="GCS.h" alt="" coords="155,80,217,107"/>
-<area shape="rect" id="node10" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="560,80,667,107"/>
-<area shape="rect" id="node13" href="$Util_8h.html" title="Util.h" alt="" coords="732,80,785,107"/>
-<area shape="rect" id="node9" href="$LongLat_8h.html" title="LongLat.h" alt="" coords="171,155,249,181"/>
+<area shape="rect" id="node7" href="$BitmapString_8h.html" title="BitmapString.h" alt="" coords="457,80,564,107"/>
+<area shape="rect" id="node8" href="$GCS_8h.html" title="GCS.h" alt="" coords="318,80,380,107"/>
+<area shape="rect" id="node11" href="$Util_8h.html" title="Util.h" alt="" coords="720,80,773,107"/>
+<area shape="rect" id="node9" href="$LongLat_8h.html" title="LongLat.h" alt="" coords="310,155,388,181"/>
 </map>

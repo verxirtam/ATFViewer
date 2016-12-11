@@ -2,11 +2,5 @@
 <area shape="rect" id="node2" href="$classTrackDataManager.html#ad3c11f99bbac64a794f14bd21333e044" title="TrackDataManager::makeDBFileName" alt="" coords="245,5,493,32"/>
 <area shape="rect" id="node3" href="$classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63" title="TrackDataManager::isExist\lDBFile" alt="" coords="279,57,460,98"/>
 <area shape="rect" id="node4" href="$classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758" title="TrackDataManager::setQuery" alt="" coords="272,123,467,149"/>
-<area shape="rect" id="node6" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="284,173,455,200"/>
-<area shape="rect" id="node7" href="$classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a" title="TrackDataManager::getColumn" alt="" coords="267,224,471,251"/>
-<area shape="rect" id="node5" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="575,123,732,149"/>
-<area shape="rect" id="node8" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="553,173,754,200"/>
-<area shape="rect" id="node9" href="$classDBAccessor.html#a38433ea833d261853dd986b0c135a780" title="DBAccessor::getColumnDouble" alt="" coords="549,224,757,251"/>
-<area shape="rect" id="node10" href="$classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186" title="DBAccessor::getColumnInt" alt="" coords="562,275,745,301"/>
-<area shape="rect" id="node11" href="$classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91" title="DBAccessor::getColumnLongLong" alt="" coords="542,325,765,352"/>
+<area shape="rect" id="node5" href="$classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a" title="TrackDataManager::getColumn" alt="" coords="267,173,471,200"/>
 </map>

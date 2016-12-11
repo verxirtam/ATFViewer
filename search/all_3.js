@@ -9,7 +9,6 @@ var searchData=
   ['centeroffsetlong',['centerOffsetLong',['../classMapTransform.html#a782e3c3b12869b3410ef243d6568e87a',1,'MapTransform']]],
   ['check_5fgl_5fcall',['CHECK_GL_CALL',['../GLCall_8h.html#aae8dce836f3ff888fbefa1e04a0c4fbf',1,'GLCall.h']]],
   ['color',['color',['../structSectorsVAO_1_1InitSectorsSettings.html#a7468dc834594112f612c6d63fa6e1f82',1,'SectorsVAO::InitSectorsSettings::color()'],['../classShaderProgramString.html#a7512e60c01dc687d1b08a40509feac17',1,'ShaderProgramString::color()'],['../structVAOLayoutPaths_1_1inputType1.html#aed14215b6cd8bd31c394bc179e3bc3ac',1,'VAOLayoutPaths::inputType1::color()'],['../structVAOLayoutPaths_1_1inputType2Vertex.html#a23b07f020780b4e6663107e1ce2b0b91',1,'VAOLayoutPaths::inputType2Vertex::color()'],['../structVAOLayoutPositionColor_1_1inputType1.html#aeee87af3509c91e24f8f31387f9b71c9',1,'VAOLayoutPositionColor::inputType1::color()'],['../structVAOLayoutPositionColor_1_1inputType2Vertex.html#a0d10b333bd8f71ca4ad685e3f25ee281',1,'VAOLayoutPositionColor::inputType2Vertex::color()']]],
-  ['commit',['commit',['../classDBAccessor.html#a341178e029df9f86a1ac31d0eb4863f7',1,'DBAccessor']]],
   ['comp_5fpath',['comp_path',['../unittest_8cpp.html#a9f00842c93beb1dfd57ec2244dcba1fb',1,'unittest.cpp']]],
   ['comp_5fpath_5ftime',['comp_path_time',['../unittest_8cpp.html#a834da6a7fc491546ff3b955b4adcce83',1,'unittest.cpp']]],
   ['compile',['compile',['../classShader.html#a5be69e48ac2436651ead777bf5fb5c9f',1,'Shader']]],

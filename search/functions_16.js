@@ -1,7 +1,6 @@
 var searchData=
 [
   ['_7eatfviewermainglsl',['~ATFViewerMainGLSL',['../classATFViewerMainGLSL.html#a24a68ad5de28b0286e2467ebe7e56668',1,'ATFViewerMainGLSL']]],
-  ['_7edbaccessor',['~DBAccessor',['../classDBAccessor.html#af9c0a5fcad819cb9810a3a419bce13c1',1,'DBAccessor']]],
   ['_7edevicememory',['~DeviceMemory',['../classDeviceMemory.html#a30d403a34b0ca527a0d5757c636d68b2',1,'DeviceMemory']]],
   ['_7edeviceseq',['~DeviceSeq',['../classDeviceSeq.html#a7a8d045f05c3fbe253b47677ee1d917c',1,'DeviceSeq']]],
   ['_7edeviceseqconst',['~DeviceSeqConst',['../classDeviceSeqConst.html#aa24c1070a928315bdd7728e48ee18e33',1,'DeviceSeqConst']]],

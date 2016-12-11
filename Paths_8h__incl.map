@@ -1,7 +1,6 @@
 <map id="src/old/20161026/Paths.h" name="src/old/20161026/Paths.h">
-<area shape="rect" id="node9" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="749,155,855,181"/>
-<area shape="rect" id="node13" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="455,80,599,107"/>
-<area shape="rect" id="node17" href="$Path_8h.html" title="Path.h" alt="" coords="232,155,291,181"/>
-<area shape="rect" id="node19" href="$TimeSeparation_8h.html" title="TimeSeparation.h" alt="" coords="31,80,154,107"/>
-<area shape="rect" id="node18" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="317,155,427,181"/>
+<area shape="rect" id="node10" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="552,80,696,107"/>
+<area shape="rect" id="node14" href="$Path_8h.html" title="Path.h" alt="" coords="349,155,408,181"/>
+<area shape="rect" id="node17" href="$TimeSeparation_8h.html" title="TimeSeparation.h" alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node16" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="677,155,788,181"/>
 </map>

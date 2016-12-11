@@ -1,6 +1,5 @@
 <map id="src/CountCrossing.h" name="src/CountCrossing.h">
-<area shape="rect" id="node2" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="328,80,472,107"/>
-<area shape="rect" id="node10" href="$DBAccessor_8h.html" title="DBAccessor.h" alt="" coords="296,155,402,181"/>
-<area shape="rect" id="node14" href="$Path_8h.html" title="Path.h" alt="" coords="160,155,220,181"/>
-<area shape="rect" id="node15" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="24,155,134,181"/>
+<area shape="rect" id="node2" href="$TrackDataManager_8h.html" title="TrackDataManager.h" alt="" coords="289,80,433,107"/>
+<area shape="rect" id="node11" href="$Path_8h.html" title="Path.h" alt="" coords="160,155,220,181"/>
+<area shape="rect" id="node13" href="$TimeManager_8h.html" title="TimeManager.h" alt="" coords="24,155,134,181"/>
 </map>

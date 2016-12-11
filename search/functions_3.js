@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['commit',['commit',['../classDBAccessor.html#a341178e029df9f86a1ac31d0eb4863f7',1,'DBAccessor']]],
   ['comp_5fpath',['comp_path',['../unittest_8cpp.html#a9f00842c93beb1dfd57ec2244dcba1fb',1,'unittest.cpp']]],
   ['comp_5fpath_5ftime',['comp_path_time',['../unittest_8cpp.html#a834da6a7fc491546ff3b955b4adcce83',1,'unittest.cpp']]],
   ['compile',['compile',['../classShader.html#a5be69e48ac2436651ead777bf5fb5c9f',1,'Shader']]],

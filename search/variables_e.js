@@ -13,7 +13,6 @@ var searchData=
   ['start',['start',['../classCountCrossing.html#a53fe6ec3169a35b84d2c43125cb24d80',1,'CountCrossing']]],
   ['startindex',['startIndex',['../classCountCrossing.html#ae1011195ba40e9514bdbae9ea34b0650',1,'CountCrossing']]],
   ['starttime',['startTime',['../classTimer.html#ac25f19f863f8208a57eda026605c1cd6',1,'Timer']]],
-  ['stmt',['stmt',['../classDBAccessor.html#a9ed244611d27eb29856bfe2169249a88',1,'DBAccessor']]],
   ['string',['string',['../classSceanLatLongFlow.html#a973eddca69f3cd9ff5f94f06ecd653d5',1,'SceanLatLongFlow']]],
   ['subsector',['subSector',['../structSectors_1_1Sector.html#a8ccdb98261a5fc8be67ec0577f388ffa',1,'Sectors::Sector::subSector()'],['../structSectorsVAO_1_1Sector.html#a41dbc859f3a72e1b9b4f14bfac5061ff',1,'SectorsVAO::Sector::subSector()']]],
   ['subsectorcount',['subSectorCount',['../structSectors_1_1Sector.html#a2e2eb3ecddfc3a5599a0823a07e0abc6',1,'Sectors::Sector::subSectorCount()'],['../structSectorsVAO_1_1Sector.html#a22b6c5f385b02b7ca7d315bfa6b8a559',1,'SectorsVAO::Sector::subSectorCount()']]],

@@ -115,7 +115,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;omp.h&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="DBAccessor_8h.html">DBAccessor.h</a>&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;DBAccessor.h&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Path_8h.html">Path.h</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TimeManager_8h.html">TimeManager.h</a>&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
@@ -133,7 +133,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        dbfilename &lt;&lt; <span class="stringliteral">&quot;.db&quot;</span>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        dbfilenamestr =  dbfilename.str();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758">setQuery</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba, time_t start, time_t end, <span class="keywordtype">char</span> n = <span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758">   47</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758">setQuery</a>(DBAccessor&amp; dba, time_t start, time_t end, <span class="keywordtype">char</span> n = <span class="charliteral">&#39; &#39;</span>)</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">//クエリを実行</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        std::stringstream query(<span class="stringliteral">&quot;&quot;</span>);</div>
@@ -145,17 +145,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            query &lt;&lt; <span class="stringliteral">&quot; and substr(id,-1,1) = &#39;&quot;</span> &lt;&lt; n &lt;&lt; <span class="stringliteral">&quot;&#39;&quot;</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        query &lt;&lt; <span class="stringliteral">&quot; order by id,time;&quot;</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        dba.<a class="code" href="classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274">setQuery</a>(query.str());</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        dba.setQuery(query.str());</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a">getColumn</a>(<a class="code" href="classDBAccessor.html">DBAccessor</a>&amp; dba, std::string&amp; <span class="keywordtype">id</span>, <span class="keywordtype">double</span>&amp; lo, <span class="keywordtype">double</span>&amp; la, <span class="keywordtype">int</span>&amp; a, <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; t, std::string&amp; ar)</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a">   62</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a">getColumn</a>(DBAccessor&amp; dba, std::string&amp; <span class="keywordtype">id</span>, <span class="keywordtype">double</span>&amp; lo, <span class="keywordtype">double</span>&amp; la, <span class="keywordtype">int</span>&amp; a, <span class="keywordtype">long</span> <span class="keywordtype">long</span>&amp; t, std::string&amp; ar)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">id</span> = dba.<a class="code" href="classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b">getColumnString</a>(0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        lo = dba.<a class="code" href="classDBAccessor.html#a38433ea833d261853dd986b0c135a780">getColumnDouble</a>(1);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        la = dba.<a class="code" href="classDBAccessor.html#a38433ea833d261853dd986b0c135a780">getColumnDouble</a>(2);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        a = dba.<a class="code" href="classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186">getColumnInt</a>(3);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        t = dba.<a class="code" href="classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91">getColumnLongLong</a>(4);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ar = dba.<a class="code" href="classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b">getColumnString</a>(5);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordtype">id</span> = dba.getColumnString(0);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        lo = dba.getColumnDouble(1);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        la = dba.getColumnDouble(2);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        a = dba.getColumnInt(3);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        t = dba.getColumnLongLong(4);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        ar = dba.getColumnString(5);</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
 <div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63">   72</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63">isExistDBFile</a>(<span class="keyword">const</span> std::string&amp; dbfilename)</div>
@@ -186,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="comment">//ファイル名を指定してDBAccessorを生成</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="classDBAccessor.html">DBAccessor</a> dba(dbfilename.c_str());</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        DBAccessor dba(dbfilename.c_str());</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="comment">//クエリを実行</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        std::stringstream query(<span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        query &lt;&lt; <span class="stringliteral">&quot;select id,longitude,latitude,altitude,time,arrival from TrackData where time &gt;= &quot;</span>;</div>
@@ -254,7 +254,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        }</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="comment">//DBに接続</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <a class="code" href="classDBAccessor.html">DBAccessor</a> dba(dbfilename);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        DBAccessor dba(dbfilename);</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;        <span class="comment">//クエリを実行</span></div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <a class="code" href="classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758">setQuery</a>(dba, start, end, n);</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        </div>
@@ -262,7 +262,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        std::map&lt;std::string, Path&gt;::iterator i = paths.end();</div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        </div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="comment">//クエリの結果の取得</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">while</span>(SQLITE_ROW == dba.<a class="code" href="classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0">step_select</a>())</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">while</span>(SQLITE_ROW == dba.step_select())</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        {</div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">//1レコード分のカラムデータ</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            std::string id;</div>
@@ -441,27 +441,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classTrackDataManager_html_a02f92bde7973bf5cf1092dc8ca7ccb63"><div class="ttname"><a href="classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63">TrackDataManager::isExistDBFile</a></div><div class="ttdeci">bool isExistDBFile(const std::string &amp;dbfilename)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:72</div></div>
 <div class="ttc" id="TimeManager_8h_html"><div class="ttname"><a href="TimeManager_8h.html">TimeManager.h</a></div></div>
 <div class="ttc" id="classTrackDataManager_html_a500d68843465bcc7c1049ef04bf19bf2"><div class="ttname"><a href="classTrackDataManager.html#a500d68843465bcc7c1049ef04bf19bf2">TrackDataManager::getTrackDataFromDBToMapParallel</a></div><div class="ttdeci">void getTrackDataFromDBToMapParallel(std::vector&lt; std::map&lt; std::string, Path &gt; &gt; &amp;p, time_t start, time_t end, int thread_count=0)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:253</div></div>
-<div class="ttc" id="classDBAccessor_html_a172a6a245cf74f9adf420ea98552bbd0"><div class="ttname"><a href="classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0">DBAccessor::step_select</a></div><div class="ttdeci">int step_select()</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:99</div></div>
-<div class="ttc" id="classDBAccessor_html_a79c00b82d7a919fbcc1a79b91dd72274"><div class="ttname"><a href="classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274">DBAccessor::setQuery</a></div><div class="ttdeci">void setQuery(const std::string &amp;sql)</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:57</div></div>
 <div class="ttc" id="structPathPoint_html"><div class="ttname"><a href="structPathPoint.html">PathPoint</a></div><div class="ttdef"><b>Definition:</b> Path.h:24</div></div>
-<div class="ttc" id="classDBAccessor_html"><div class="ttname"><a href="classDBAccessor.html">DBAccessor</a></div><div class="ttdef"><b>Definition:</b> DBAccessor.h:26</div></div>
 <div class="ttc" id="classTimeManager_html_a9f072b3f3ef9c04c7025274d16e5b57b"><div class="ttname"><a href="classTimeManager.html#a9f072b3f3ef9c04c7025274d16e5b57b">TimeManager::today</a></div><div class="ttdeci">static time_t today(time_t t)</div><div class="ttdef"><b>Definition:</b> TimeManager.h:28</div></div>
 <div class="ttc" id="classTrackDataManager_html_aecb62dbdb2c6d1355bb60a189a58425a"><div class="ttname"><a href="classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a">TrackDataManager::getColumn</a></div><div class="ttdeci">void getColumn(DBAccessor &amp;dba, std::string &amp;id, double &amp;lo, double &amp;la, int &amp;a, long long &amp;t, std::string &amp;ar)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:62</div></div>
-<div class="ttc" id="classDBAccessor_html_ab4e18d3d9c95f3980f591b22f5c18186"><div class="ttname"><a href="classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186">DBAccessor::getColumnInt</a></div><div class="ttdeci">int getColumnInt(int i)</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:103</div></div>
 <div class="ttc" id="classTrackDataManager_html_aa5c348371ca52487a316c361f46fe1f6"><div class="ttname"><a href="classTrackDataManager.html#aa5c348371ca52487a316c361f46fe1f6">TrackDataManager::getTrackDataFromDBToMapWithDay</a></div><div class="ttdeci">void getTrackDataFromDBToMapWithDay(std::map&lt; std::string, Path &gt; &amp;paths, time_t start, time_t end, time_t day, char n= ' ')</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:149</div></div>
-<div class="ttc" id="DBAccessor_8h_html"><div class="ttname"><a href="DBAccessor_8h.html">DBAccessor.h</a></div></div>
-<div class="ttc" id="classDBAccessor_html_abc0345359f2f790aec86e53a4acdde1b"><div class="ttname"><a href="classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b">DBAccessor::getColumnString</a></div><div class="ttdeci">std::string getColumnString(int i)</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:115</div></div>
-<div class="ttc" id="classDBAccessor_html_ad884911f1e235f6c1380a984d38f7d91"><div class="ttname"><a href="classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91">DBAccessor::getColumnLongLong</a></div><div class="ttdeci">long long getColumnLongLong(int i)</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:107</div></div>
 <div class="ttc" id="Path_8h_html"><div class="ttname"><a href="Path_8h.html">Path.h</a></div></div>
 <div class="ttc" id="classTrackDataManager_html_a56f66ea6cd01a3549c7ac94d9c171e24"><div class="ttname"><a href="classTrackDataManager.html#a56f66ea6cd01a3549c7ac94d9c171e24">TrackDataManager::getTrackDataFromDBParallel</a></div><div class="ttdeci">void getTrackDataFromDBParallel(std::vector&lt; Path &gt; &amp;p, time_t start, time_t end, int thread_count=0)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:296</div></div>
 <div class="ttc" id="classTrackDataManager_html_a0ba42f71eb64dc74ee01d9bc5edcb026"><div class="ttname"><a href="classTrackDataManager.html#a0ba42f71eb64dc74ee01d9bc5edcb026">TrackDataManager::getTrackDataFromDB</a></div><div class="ttdeci">void getTrackDataFromDB(std::vector&lt; Path &gt; &amp;p, time_t start, time_t end)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:229</div></div>
 <div class="ttc" id="classTrackDataManager_html_aac87f46737bdfb8cced8ecf2671caed1"><div class="ttname"><a href="classTrackDataManager.html#aac87f46737bdfb8cced8ecf2671caed1">TrackDataManager::getTrackDataFromDBToMap</a></div><div class="ttdeci">void getTrackDataFromDBToMap(std::map&lt; std::string, Path &gt; &amp;p, time_t start, time_t end)</div><div class="ttdef"><b>Definition:</b> TrackDataManager.h:241</div></div>
 <div class="ttc" id="structPath_html"><div class="ttname"><a href="structPath.html">Path</a></div><div class="ttdef"><b>Definition:</b> Path.h:70</div></div>
-<div class="ttc" id="classDBAccessor_html_a38433ea833d261853dd986b0c135a780"><div class="ttname"><a href="classDBAccessor.html#a38433ea833d261853dd986b0c135a780">DBAccessor::getColumnDouble</a></div><div class="ttdeci">double getColumnDouble(int i)</div><div class="ttdef"><b>Definition:</b> DBAccessor.h:111</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 12 2016 04:03:49 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Dec 12 2016 04:30:47 for ATFViewer by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

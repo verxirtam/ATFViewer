@@ -1,12 +1,8 @@
 <map id="Map::init" name="Map::init">
-<area shape="rect" id="node2" href="$classMap.html#ae87977da0d0baddf7628a1ad76e71558" title="Map::getSettings" alt="" coords="137,107,258,133"/>
-<area shape="rect" id="node7" href="$classMap.html#a91aba0cb987d4c16705d9b39cd214534" title="Map::initTexture" alt="" coords="139,208,255,235"/>
-<area shape="rect" id="node8" href="$classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605" title="Map::getVertex" alt="" coords="142,157,253,184"/>
-<area shape="rect" id="node11" href="$classMap.html#a03d6b0e3e5a2d224b20089a9143952d6" title="Map::getVertexIndex" alt="" coords="126,56,269,83"/>
-<area shape="rect" id="node3" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="340,5,497,32"/>
-<area shape="rect" id="node4" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="333,56,504,83"/>
-<area shape="rect" id="node5" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="318,157,519,184"/>
-<area shape="rect" id="node6" href="$classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186" title="DBAccessor::getColumnInt" alt="" coords="327,107,510,133"/>
-<area shape="rect" id="node9" href="$classUtil.html#a10d9205506a75853dce601c2e598af15" title="Util::getLongitudeFromDMS" alt="" coords="327,208,511,235"/>
-<area shape="rect" id="node10" href="$classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9" title="Util::getLatitudeFromDMS" alt="" coords="331,259,506,285"/>
+<area shape="rect" id="node2" href="$classMap.html#ae87977da0d0baddf7628a1ad76e71558" title="Map::getSettings" alt="" coords="137,5,258,32"/>
+<area shape="rect" id="node3" href="$classMap.html#a91aba0cb987d4c16705d9b39cd214534" title="Map::initTexture" alt="" coords="139,56,255,83"/>
+<area shape="rect" id="node4" href="$classMap.html#ab4f7914e8ef2e0815ddf149ba6d75605" title="Map::getVertex" alt="" coords="142,107,253,133"/>
+<area shape="rect" id="node7" href="$classMap.html#a03d6b0e3e5a2d224b20089a9143952d6" title="Map::getVertexIndex" alt="" coords="126,157,269,184"/>
+<area shape="rect" id="node5" href="$classUtil.html#a10d9205506a75853dce601c2e598af15" title="Util::getLongitudeFromDMS" alt="" coords="317,81,501,108"/>
+<area shape="rect" id="node6" href="$classUtil.html#ad7bc552e58847549b3fae4d8fc6a2fd9" title="Util::getLatitudeFromDMS" alt="" coords="322,132,497,159"/>
 </map>

@@ -1,7 +1,3 @@
 <map id="getAllTrackData" name="getAllTrackData">
-<area shape="rect" id="node2" href="$unittest_8cpp.html#a564aa59ffd624c9e4a7061fcec6e1b37" title="addTrackData" alt="" coords="171,81,275,108"/>
-<area shape="rect" id="node3" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="356,5,513,32"/>
-<area shape="rect" id="node4" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="349,56,520,83"/>
-<area shape="rect" id="node5" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="334,107,535,133"/>
-<area shape="rect" id="node6" href="$classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91" title="DBAccessor::getColumnLongLong" alt="" coords="323,157,546,184"/>
+<area shape="rect" id="node2" href="$unittest_8cpp.html#a564aa59ffd624c9e4a7061fcec6e1b37" title="addTrackData" alt="" coords="171,5,275,32"/>
 </map>

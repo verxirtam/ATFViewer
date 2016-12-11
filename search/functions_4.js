@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['dbaccessor',['DBAccessor',['../classDBAccessor.html#a1a3a6782ae62b9679401f4a03b5543bf',1,'DBAccessor::DBAccessor(const DBAccessor &amp;)=delete'],['../classDBAccessor.html#a7fe93eb8d58db58cfd3dd6fdd135500c',1,'DBAccessor::DBAccessor(DBAccessor &amp;&amp;)=delete'],['../classDBAccessor.html#a406ac80e9d2c41d64044af128eb527b1',1,'DBAccessor::DBAccessor(const std::string &amp;dbfilename)']]],
   ['devicememory',['DeviceMemory',['../classDeviceMemory.html#aaa379fafd3950e531dec6659aee3e75b',1,'DeviceMemory::DeviceMemory(const DeviceMemory &amp;)=delete'],['../classDeviceMemory.html#af6eac62de01c0a414717d07d78200fd3',1,'DeviceMemory::DeviceMemory(DeviceMemory &amp;&amp;)=delete'],['../classDeviceMemory.html#a24512aba0afada7fdf3d4e9adde2f59c',1,'DeviceMemory::DeviceMemory()']]],
   ['deviceseq',['DeviceSeq',['../classDeviceSeq.html#a6b861c73f3444b2908cf398779ad1f12',1,'DeviceSeq']]],
   ['deviceseqconst',['DeviceSeqConst',['../classDeviceSeqConst.html#ac31372480a548a38bb3548aa1d4432a8',1,'DeviceSeqConst']]],

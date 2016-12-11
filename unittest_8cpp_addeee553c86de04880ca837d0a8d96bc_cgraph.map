@@ -11,15 +11,9 @@
 <area shape="rect" id="node5" href="$classTimeManager.html#a9f072b3f3ef9c04c7025274d16e5b57b" title="TimeManager::today" alt="" coords="473,123,615,149"/>
 <area shape="rect" id="node6" href="$classTimeManager.html#abb3908d94bde3f881b929de9838b1394" title="TimeManager::nextDayTime" alt="" coords="451,173,637,200"/>
 <area shape="rect" id="node7" href="$classTrackDataManager.html#a5b71eff33191fe6c5d4b89e8c1ad30cc" title="TrackDataManager::getTrack\lDataFromDBWithDay" alt="" coords="448,57,640,98"/>
-<area shape="rect" id="node8" href="$classTrackDataManager.html#ad3c11f99bbac64a794f14bd21333e044" title="TrackDataManager::makeDBFileName" alt="" coords="688,128,936,155"/>
-<area shape="rect" id="node9" href="$classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63" title="TrackDataManager::isExist\lDBFile" alt="" coords="721,58,903,99"/>
+<area shape="rect" id="node8" href="$classTrackDataManager.html#ad3c11f99bbac64a794f14bd21333e044" title="TrackDataManager::makeDBFileName" alt="" coords="688,64,936,91"/>
+<area shape="rect" id="node9" href="$classTrackDataManager.html#a02f92bde7973bf5cf1092dc8ca7ccb63" title="TrackDataManager::isExist\lDBFile" alt="" coords="721,115,903,157"/>
 <area shape="rect" id="node16" href="$classTrackDataManager.html#aa5c348371ca52487a316c361f46fe1f6" title="TrackDataManager::getTrack\lDataFromDBToMapWithDay" alt="" coords="448,225,640,266"/>
-<area shape="rect" id="node17" href="$classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758" title="TrackDataManager::setQuery" alt="" coords="715,181,909,208"/>
-<area shape="rect" id="node19" href="$classDBAccessor.html#a172a6a245cf74f9adf420ea98552bbd0" title="DBAccessor::step_select" alt="" coords="727,232,897,259"/>
-<area shape="rect" id="node20" href="$classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a" title="TrackDataManager::getColumn" alt="" coords="710,283,914,309"/>
-<area shape="rect" id="node18" href="$classDBAccessor.html#a79c00b82d7a919fbcc1a79b91dd72274" title="DBAccessor::setQuery" alt="" coords="1017,181,1175,208"/>
-<area shape="rect" id="node21" href="$classDBAccessor.html#abc0345359f2f790aec86e53a4acdde1b" title="DBAccessor::getColumnString" alt="" coords="995,333,1197,360"/>
-<area shape="rect" id="node22" href="$classDBAccessor.html#a38433ea833d261853dd986b0c135a780" title="DBAccessor::getColumnDouble" alt="" coords="992,384,1200,411"/>
-<area shape="rect" id="node23" href="$classDBAccessor.html#ab4e18d3d9c95f3980f591b22f5c18186" title="DBAccessor::getColumnInt" alt="" coords="1005,232,1187,259"/>
-<area shape="rect" id="node24" href="$classDBAccessor.html#ad884911f1e235f6c1380a984d38f7d91" title="DBAccessor::getColumnLongLong" alt="" coords="985,283,1207,309"/>
+<area shape="rect" id="node17" href="$classTrackDataManager.html#a2b90a67173ad909356c2426e0a8a3758" title="TrackDataManager::setQuery" alt="" coords="715,207,909,233"/>
+<area shape="rect" id="node18" href="$classTrackDataManager.html#aecb62dbdb2c6d1355bb60a189a58425a" title="TrackDataManager::getColumn" alt="" coords="710,257,914,284"/>
 </map>

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['db',['db',['../classDBAccessor.html#abc3886f57179e2ffac2ef6c1b9e3624e',1,'DBAccessor']]],
-  ['dbfilename',['dbFileName',['../classDBAccessor.html#a97fbea92467989b7554f215a8a58721f',1,'DBAccessor']]],
   ['device',['device',['../classDeviceSeqConst.html#a377d8d7ebba267f387593adc47fbb9a1',1,'DeviceSeqConst::device()'],['../classDeviceMemory.html#abe16588c5ec82625f6a4b408c16f31c1',1,'DeviceMemory::device()'],['../classJoystickManagerSystem.html#aa2f7673dcdfa6b46a3b36fd77e0745d7',1,'JoystickManagerSystem::device()'],['../classVBODynamicBase.html#a4da3202b0ef24e079fcac8d628ac9359',1,'VBODynamicBase::device()']]],
   ['devicetime',['deviceTime',['../structEstimateSpecResult.html#ab1476644dae43209665b41324a6d7a40',1,'EstimateSpecResult']]],
   ['disp_5fbuttonmask',['disp_buttonMask',['../classATFViewerMain.html#aa47b28079204629245f529b6dc8b8157',1,'ATFViewerMain']]],
