@@ -1,4 +1,4 @@
-StringVAO.o: StringVAO.cpp StringVAO.h OpenGLHeaders.h \
+StringVAO.o: StringVAO.cpp StringVAO.h OpenGLHeaders.h GLCall.h \
  StringTextureManager.h Texture2D.h Lock.h VAOPositionTexture.h \
  VAOPositionBase.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
@@ -17,6 +17,6 @@ StringVAO.o: StringVAO.cpp StringVAO.h OpenGLHeaders.h \
  /usr/local/cuda/include/vector_functions.h \
  /usr/local/cuda/include/vector_functions.hpp \
  /usr/local/cuda/include/cuda_gl_interop.h VAOBase.h \
- VAOLayoutPositionTexture.h ShaderProgramTexture.h \
+ VAOLayoutPositionTexture.h ShaderProgramString.h \
  ShaderProgramBaseMVPMatrix.h ShaderProgramBase.h Shader.h \
  ShaderProgram.h UniformVariable.h

@@ -21,6 +21,7 @@
 #include <string>
 
 #include "OpenGLHeaders.h"
+#include <glm/gtc/type_ptr.hpp>
 
 template <typename T>
 class UniformVariable

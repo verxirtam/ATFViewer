@@ -162,7 +162,7 @@ public:
 		glfwSwapInterval(1);
 		
 		//デプスバッファを使用する
-		glEnable(GL_DEPTH_TEST);
+		GL_CALL(glEnable(GL_DEPTH_TEST));
 		
 		//コールバック関数の設定
 		this->initCallbacks();

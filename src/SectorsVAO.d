@@ -1,5 +1,5 @@
-SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
- DBAccessor.h Util.h VAOPositionColor.h VAOPositionBaseStatic.h \
+SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GLCall.h GCS.h \
+ LongLat.h DBAccessor.h Util.h VAOPositionColor.h VAOPositionBaseStatic.h \
  VAOPositionBase.h Lock.h VBO.h /usr/local/cuda/include/cuda_runtime.h \
  /usr/local/cuda/include/host_config.h \
  /usr/local/cuda/include/builtin_types.h \
@@ -21,4 +21,4 @@ SectorsVAO.o: SectorsVAO.cpp SectorsVAO.h OpenGLHeaders.h GCS.h LongLat.h \
  ShaderProgramPositionColor.h ShaderProgramBaseMVPMatrix.h \
  ShaderProgramBase.h Shader.h ShaderProgram.h UniformVariable.h \
  StringVAO.h StringTextureManager.h Texture2D.h VAOPositionTexture.h \
- VAOLayoutPositionTexture.h ShaderProgramTexture.h
+ VAOLayoutPositionTexture.h ShaderProgramString.h

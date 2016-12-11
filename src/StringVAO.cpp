@@ -131,6 +131,8 @@ void StringVAO::init(const std::vector<SingleString>& string)
 	glm::mat4 m;
 	m = glm::scale(m, glm::vec3(0.125f, 0.125f, 0.125f));
 	shaderProgram.setMVPMatrix(m);
+	//文字色の設定
+	shaderProgram.setColor(glm::vec3(1.0f, 0.0f, 0.0f));
 	//文字列の初期化
 	vaoType::inputType input;
 	std::vector<unsigned int> element;

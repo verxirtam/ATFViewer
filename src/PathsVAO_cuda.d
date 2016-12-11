@@ -258,6 +258,8 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/include/GL/glu.h \
     /usr/include/GL/gl.h \
     /usr/local/include/GLFW/glfw3.h \
+    GLCall.h \
+    /usr/include/c++/4.8/iostream \
     /usr/local/glm/glm/glm.hpp \
     /usr/local/glm/glm/detail/_fixes.hpp \
     /usr/include/c++/4.8/climits \
@@ -339,7 +341,6 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     /usr/local/glm/glm/detail/func_integer.hpp \
     /usr/local/glm/glm/detail/func_integer.inl \
     DBAccessor.h \
-    /usr/include/c++/4.8/iostream \
     /usr/include/sqlite3.h \
     TrackDataManager.h \
     /usr/include/c++/4.8/map \
@@ -369,5 +370,12 @@ PathsVAO_cuda.o : PathsVAO_cuda.cu \
     Shader.h \
     ShaderProgram.h \
     UniformVariable.h \
+    /usr/local/glm/glm/gtc/type_ptr.hpp \
+    /usr/local/glm/glm/gtc/quaternion.hpp \
+    /usr/local/glm/glm/gtc/constants.hpp \
+    /usr/local/glm/glm/gtc/constants.inl \
+    /usr/local/glm/glm/gtc/quaternion.inl \
+    /usr/include/c++/4.8/cstring \
+    /usr/local/glm/glm/gtc/type_ptr.inl \
     DeviceSeq.cuh \
     PathsVAO_cuda_kernel.cuh

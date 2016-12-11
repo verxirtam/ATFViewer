@@ -1,5 +1,5 @@
-ATFViewer.o: ATFViewer.cpp ATFViewerMainGLSL.h OpenGLHeaders.h Joystick.h \
- JoystickBase.h JoystickManagerGLFW.h SceanNothing.h Scean.h \
+ATFViewer.o: ATFViewer.cpp ATFViewerMainGLSL.h OpenGLHeaders.h GLCall.h \
+ Joystick.h JoystickBase.h JoystickManagerGLFW.h SceanNothing.h Scean.h \
  SceanLatLongFlow.h DBAccessor.h MapTransform.h MapVAO.h Util.h \
  VAOPositionTexture.h Lock.h Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \
@@ -24,6 +24,6 @@ ATFViewer.o: ATFViewer.cpp ATFViewerMainGLSL.h OpenGLHeaders.h Joystick.h \
  ShaderProgram.h UniformVariable.h SectorsVAO.h GCS.h LongLat.h \
  VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBaseDynamic.h \
  VAOLayoutPositionColor.h ShaderProgramPositionColor.h StringVAO.h \
- StringTextureManager.h PathsVAO.h TrackDataManager.h Path.h \
- TimeManager.h TimeSeparation.h VAOPaths.h VAOLayoutPaths.h \
- ShaderProgramPaths.h DeviceSeq.cuh
+ StringTextureManager.h ShaderProgramString.h PathsVAO.h \
+ TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
+ VAOLayoutPaths.h ShaderProgramPaths.h DeviceSeq.cuh

@@ -23,7 +23,7 @@
 
 #include "StringTextureManager.h"
 #include "VAOPositionTexture.h"
-#include "ShaderProgramTexture.h"
+#include "ShaderProgramString.h"
 
 //単一のモデル座標系にある
 //複数の文字列を任意の位置に表示する
@@ -31,9 +31,9 @@ class StringVAO
 {
 private:
 	//シェーダプログラム
-	ShaderProgramTexture shaderProgram;
+	ShaderProgramString shaderProgram;
 	//VAOクラス
-	using vaoType = VAOPositionTexture<ShaderProgramTexture>;
+	using vaoType = VAOPositionTexture<ShaderProgramString>;
 	//VAOオブジェクト
 	vaoType vao;
 	//文字コードから文字テクスチャのテクスチャ座標を取得する
@@ -114,7 +114,17 @@ public:
 	//描画を行う
 	void display()
 	{
+		
+		//アルファブレンド有効化
+		glEnable(GL_BLEND);
+		//アルファブレンドの方法を指定
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		//描画
 		vao.display();
+		//アルファブレンド無効化
+		glDisable(GL_BLEND);
+		//デプスバッファ有効化
+		glEnable(GL_DEPTH_TEST);
 	}
 };
 

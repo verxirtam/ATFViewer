@@ -27,7 +27,7 @@ void UniformVariable<glm::mat4>::set(const glm::mat4& m)
 template<>
 void UniformVariable<glm::vec3>::set(const glm::vec3& v)
 {
-	glUniform3fv(this->location, 1, &v[0]);
+	glUniform3fv(this->location, 1, glm::value_ptr(v));
 }
 
 template<>

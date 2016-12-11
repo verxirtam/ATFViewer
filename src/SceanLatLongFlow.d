@@ -1,5 +1,5 @@
 SceanLatLongFlow.o: SceanLatLongFlow.cpp SceanLatLongFlow.h Scean.h \
- OpenGLHeaders.h Joystick.h JoystickBase.h JoystickManagerGLFW.h \
+ OpenGLHeaders.h GLCall.h Joystick.h JoystickBase.h JoystickManagerGLFW.h \
  DBAccessor.h MapTransform.h MapVAO.h Util.h VAOPositionTexture.h Lock.h \
  Texture2D.h VAOPositionBase.h VBO.h \
  /usr/local/cuda/include/cuda_runtime.h \
@@ -24,6 +24,6 @@ SceanLatLongFlow.o: SceanLatLongFlow.cpp SceanLatLongFlow.h Scean.h \
  ShaderProgram.h UniformVariable.h SectorsVAO.h GCS.h LongLat.h \
  VAOPositionColor.h VAOPositionBaseStatic.h VAOPositionBaseDynamic.h \
  VAOLayoutPositionColor.h ShaderProgramPositionColor.h StringVAO.h \
- StringTextureManager.h PathsVAO.h TrackDataManager.h Path.h \
- TimeManager.h TimeSeparation.h VAOPaths.h VAOLayoutPaths.h \
- ShaderProgramPaths.h DeviceSeq.cuh
+ StringTextureManager.h ShaderProgramString.h PathsVAO.h \
+ TrackDataManager.h Path.h TimeManager.h TimeSeparation.h VAOPaths.h \
+ VAOLayoutPaths.h ShaderProgramPaths.h DeviceSeq.cuh
